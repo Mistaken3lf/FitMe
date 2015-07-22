@@ -1,0 +1,28 @@
+.sidebarLogo {
+  display: block;
+  width: auto;
+  height: 140px;
+  margin: auto;
+  transform: translateY(-5%);
+}
+
+.logoContainer {
+  background-color: #9e9e9e;
+}
+
+.navSeperator {
+  border: 5px solid #2196f3;
+}
+
+.linkPadding {
+  padding-top: 50px;
+}
+
+#navPad {
+  width: 90%;
+  margin: auto auto 10px auto;
+}
+
+.nav-wrapper {
+  margin-left: 10px;
+}

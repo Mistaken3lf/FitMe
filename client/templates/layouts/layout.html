@@ -1,0 +1,22 @@
+<!--Template to control the layout of the app-->
+<template name="layout">
+
+  <header>
+    {{> navigation}}
+  </header>
+
+  <main>
+
+    <div class="innerContent">
+      <div class="container">
+      {{> yield}}
+    </div>
+    </div>
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+</template>
