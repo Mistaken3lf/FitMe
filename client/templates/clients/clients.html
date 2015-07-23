@@ -1,66 +1,67 @@
 <template name="clients">
-  <img class="responsive-img" id="client_header" src="/headers/fitMeClientManagement.png">
-  <hr class="header_seperator">
-  <h1>My Clients</h1>
-
-  <!--Client Table-->
-  <table class="striped">
-    <thead>
-      <tr>
-          <th data-field="id">Email</th>
-          <th data-field="name">First Name</th>
-          <th data-field="price">Last Name</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {{#each clients}}
-      <tr>
-        <td>{{email}}</td>
-        <td>{{firstName}}</td>
-        <td>{{lastName}}</td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-  <!--End of client table-->
-  <br><br>
-  <!--Add client modal-->
-  <!-- Modal Trigger -->
-  <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Add Client</h4>
-      <form>
-        <div class="row">
-          <div class="input-field col s12">
-            <input name="clientEmail" type="email" class="validate">
-            <label for="email">Email:</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input name="clientPassword" type="password" class="validate">
-            <label for="password">Password:</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input name="clientFirstName" type="text" class="validate">
-            <label for="clientFirstName">First Name:</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input name="clientLastName" type="text" class="validate">
-            <label for="clientLastName">Last Name:</label>
-          </div>
-        </div>
-        <button class="btn blue waves-effect" type="submit">Create Client</button>
-      </form>
+  <div class="card-panel white z-depth-2">
+    <img class="responsive-img" id="client_header" src="/headers/fitMeClientManagement.png">
+    <hr class="header_seperator">
+    <div class="container">
+      <h1>My Clients</h1>
+      <!--Client Table-->
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each clients}}
+          <tr>
+            <td>{{email}}</td>
+            <td>{{firstName}}</td>
+            <td>{{lastName}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <!--End of client table-->
+      <br><br>
+      <!--Add client modal-->
+      <!-- Modal Trigger -->
+      <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
     </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Add Client</h4>
+        <form>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="clientEmail" type="email" class="validate">
+              <label for="email">Email:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="clientPassword" type="password" class="validate">
+              <label for="password">Password:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="clientFirstName" type="text" class="validate">
+              <label for="clientFirstName">First Name:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="clientLastName" type="text" class="validate">
+              <label for="clientLastName">Last Name:</label>
+            </div>
+          </div>
+          <button class="btn blue waves-effect" type="submit">Create Client</button>
+        </form>
+      </div>
+    </div>
+    <!--End of add client modal-->
   </div>
-  <!--End of add client modal-->
 </template>
