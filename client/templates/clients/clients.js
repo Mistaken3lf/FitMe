@@ -12,11 +12,14 @@ Template.clients.events({
     var email = $('[name=email]').val();
 
     Accounts.createUser({
-      first_name: first_name,
-      last_name: last_name,
       username: username,
       password: password,
-      email: email
+      email: email,
+
+      profile: {
+        first_name: first_name,
+        last_name: last_name
+      },
     },
 
     function(error) {
@@ -25,8 +28,14 @@ Template.clients.events({
       }
 
       else {
-        Router.go('/');
+        Router.go('/clients');
       }
     });
+  }
+});
+
+Template.clients.helpers({
+  'users': function () {
+    return Meteor.users.find();
   }
 });

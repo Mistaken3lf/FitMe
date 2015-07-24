@@ -8,11 +8,14 @@ Template.register.events({
     var email = $('[name=email]').val();
 
     Accounts.createUser({
-      first_name: first_name,
-      last_name: last_name,
       username: username,
       password: password,
-      email: email
+      email: email,
+
+      profile: {
+        first_name: first_name,
+        last_name: last_name
+      },
     },
 
     function(error) {
