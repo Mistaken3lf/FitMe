@@ -4,6 +4,13 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo left">FitMe</a>
         <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+        {{#if currentUser}}
+          {{> loggedin_dropdown}}
+        {{else}}
+          {{> notlogged_dropdown}}
+        {{/if}}
+
         <ul class="side-nav" id="mobile-menu">
           <div class="logoContainer">
             <a href="/"><img class="sidebarLogo" src="../logos/fitMeSidebar.png"></a>
@@ -14,11 +21,8 @@
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal logout" id="navPad" href="#">Logout</a>
           {{else}}
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'login'}}">Login</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'register'}}">Register</a>
           {{/if}}
         </ul>
         <ul class="side-nav fixed" id="desktop-menu">
@@ -31,14 +35,34 @@
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal logout" id="navPad" href="#">Logout</a>
           {{else}}
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'login'}}">Login</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'register'}}">Register</a>
           {{/if}}
         </ul>
       </div>
     </nav>
   </div>
+</template>
+
+<template name="loggedin_dropdown">
+  <div class="valign-wrapper right">
+    <a class='dropdown dropdown-align' href='#!' data-activates='dropdown1'>{{currentUser.username}}<i class="material-icons right">arrow_drop_down</i></a>
+  </div>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a class="waves-effect waves-teal" href="#!">Profile</a></li>
+    <li class="divider"></li>
+    <li><a class="waves-effect waves-teal logout" href="#">Logout</a></li>
+  </ul>
+</template>
+
+<template name="notlogged_dropdown">
+  <div class="valign-wrapper right">
+    <a class='dropdown dropdown-align' href='#!' data-activates='dropdown2'>Login<i class="material-icons right">arrow_drop_down</i></a>
+  </div>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown2' class='dropdown-content'>
+    <li><a class="waves-effect waves-teal" href="{{pathFor 'login'}}">Login</a></li>
+    <li><a class="waves-effect waves-teal" href="{{pathFor 'register'}}">Register</a></li>
+  </ul>
 </template>

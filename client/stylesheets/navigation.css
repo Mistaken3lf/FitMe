@@ -26,3 +26,13 @@
 .nav-wrapper {
   margin-left: 10px;
 }
+
+.dropdown-align {
+  margin-right: 260px;
+}
+
+@media only screen and (max-width : 992px) {
+  .dropdown-align {
+    margin-right: 20px;
+  }
+}

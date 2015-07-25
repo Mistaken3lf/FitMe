@@ -12,3 +12,17 @@ Template.navigation.onRendered(function () {
     closeOnClick: true
   });
 });
+
+Template.loggedin_dropdown.onRendered(function () {
+  $('.dropdown').dropdown({
+    belowOrigin: true,
+    gutter: -10
+  });
+});
+
+Template.notlogged_dropdown.onRendered(function () {
+  $('.dropdown').dropdown({
+    belowOrigin: true,
+    gutter: -10
+  });
+});
