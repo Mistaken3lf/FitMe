@@ -35,7 +35,7 @@ Template.clients.events({
 });
 
 Template.clients.helpers({
-  'user': function () {
+  'users': function () {
     return Meteor.users.find();
   }
 });
