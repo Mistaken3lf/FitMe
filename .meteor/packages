@@ -9,3 +9,7 @@ insecure
 materialize:materialize
 accounts-password
 iron:router
+aldeed:autoform
+aldeed:simple-schema
+aldeed:collection2
+gildaspk:autoform-materialize
