@@ -6,7 +6,7 @@ Template.login.events({
 
     Meteor.loginWithPassword(username, password, function(error){
       if(error) {
-        alert(error.reason);
+        Materialize.toast(error.reason, 4000, "centerToast")
       }
 
       else {
