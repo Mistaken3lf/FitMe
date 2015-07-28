@@ -20,8 +20,8 @@
           <tr>
             <td>{{username}}</td>
             <td>{{emails.[0].address}}</td>
-            <td>{{profile.first_name}}</td>
-            <td>{{profile.last_name}}</td>
+            <td>{{profile.firstName}}</td>
+            <td>{{profile.lastName}}</td>
           </tr>
           {{/each}}
         </tbody>
@@ -34,39 +34,14 @@
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
         <h4 class="blue-text">Add Client</h4>
-        <form>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="first_name" type="text" class="validate">
-              <label for="first_name">First Name:</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="last_name" type="text" class="validate">
-              <label for="last_name">Last Name:</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="username" type="text" class="validate">
-              <label for="username">Username:</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="password" type="password" class="validate">
-              <label for="password">Password:</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="email" type="email" class="validate">
-              <label for="email">Email:</label>
-            </div>
-          </div>
+        {{#autoForm schema="Schema.client" id="clientForm"}}
+          {{> afQuickField name="username"}}
+          {{> afQuickField name="password" type="password"}}
+          {{> afQuickField name="email" type="email"}}
+          {{> afQuickField name="firstName"}}
+          {{> afQuickField name="lastName"}}
           <button class="btn blue waves-effect" type="submit">Create Client</button>
-        </form>
+        {{/autoForm}}
       </div>
     </div>
     <!--End of add client modal-->

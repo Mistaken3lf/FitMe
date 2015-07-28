@@ -1,8 +1,8 @@
 Template.register.events({
   'submit form': function(event){
     event.preventDefault();
-    var first_name = $('[name=first_name]').val();
-    var last_name = $('[name=last_name]').val();
+    var firstName = $('[name=firstName]').val();
+    var lastName = $('[name=lastName]').val();
     var username = $('[name=username]').val();
     var password = $('[name=password]').val();
     var email = $('[name=email]').val();
@@ -13,8 +13,8 @@ Template.register.events({
       email: email,
 
       profile: {
-        first_name: first_name,
-        last_name: last_name
+        firstName: firstName,
+        lastName: lastName
       },
     },
 

@@ -3,37 +3,14 @@
     <div class="col s12 m6 offset-m3 l4 offset-l4" id="register_form">
       <div class="card-panel white z-depth-2">
         <h1 class="blue-text">Register</h1>
-        <form>
-          <div class="row">
-            <div class="input-field col s6">
-              <input name="first_name" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="last_name" name="last_name" type="text" class="validate">
-              <label for="last_name">Last Name</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="username" name="username" type="text" class="validate">
-              <label for="username">Username</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" name="password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="email" id="email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-          </div>
+        {{#autoForm schema="Schema.register" id="registerForm"}}
+          {{> afQuickField name="username"}}
+          {{> afQuickField name="password" type="password"}}
+          {{> afQuickField name="email"}}
+          {{> afQuickField name="firstName"}}
+          {{> afQuickField name="lastName"}}
           <button type="submit" class="btn blue waves-effect">Register</button>
-        </form>
+        {{/autoForm}}
       </div>
     </div>
   </div>
