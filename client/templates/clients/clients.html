@@ -34,7 +34,7 @@
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
         <h4 class="blue-text">Add Client</h4>
-        {{#autoForm schema="Schema.client" id="clientForm"}}
+        {{#autoForm schema="ClientSchema" id="clientForm"}}
           {{> afQuickField name="username"}}
           {{> afQuickField name="password" type="password"}}
           {{> afQuickField name="email" type="email"}}

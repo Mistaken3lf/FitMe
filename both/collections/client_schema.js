@@ -1,6 +1,4 @@
-Schema = {};
-
-Schema.client = new SimpleSchema({
+ClientSchema = new SimpleSchema({
   username: {
     type: String,
     regEx: /^[a-z0-9A-Z_]{3,15}$/
