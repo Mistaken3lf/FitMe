@@ -12,6 +12,7 @@
             <hr class="navSeperator">
           </div>
           {{#if currentUser}}
+          <a class="btn grey lighten-5" id="navPad" href="#">Welcome, {{currentUser.username}}</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
@@ -29,6 +30,8 @@
             <hr class="navSeperator">
           </div>
           {{#if currentUser}}
+          <a class="btn grey lighten-5" id="navPad" href="#">Welcome, {{currentUser.username}}</a>
+          <hr>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
