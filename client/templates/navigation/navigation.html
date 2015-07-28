@@ -12,15 +12,15 @@
             <hr class="navSeperator">
           </div>
           {{#if currentUser}}
-          <a class="btn grey lighten-5" id="navPad" href="#">Welcome, {{currentUser.username}}</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal logout" id="navPad"  href="#!">Logout</a>
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
+          <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{else}}
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'login'}}">Login</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'register'}}">Register</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'login'}}">Login</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'register'}}">Register</a>
           {{/if}}
         </ul>
         <ul class="side-nav fixed" id="desktop-menu">
@@ -30,16 +30,15 @@
             <hr class="navSeperator">
           </div>
           {{#if currentUser}}
-          <a class="btn grey lighten-5" id="navPad" href="#">Welcome, {{currentUser.username}}</a>
-          <hr>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal logout" id="navPad"  href="#!">Logout</a>
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
+          <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{else}}
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'login'}}">Login</a>
-          <a class="btn grey lighten-5 waves-effect waves-teal" id="navPad" href="{{pathFor 'register'}}">Register</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'login'}}">Login</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'register'}}">Register</a>
           {{/if}}
         </ul>
       </div>

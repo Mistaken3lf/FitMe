@@ -26,3 +26,7 @@
 .nav-wrapper {
   margin-left: 10px;
 }
+
+#usernameText {
+  margin-top: -15px;
+}
