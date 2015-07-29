@@ -11,23 +11,13 @@ Template.clients.events({
     var password = $('[name=password]').val();
     var email = $('[name=email]').val();
 
-    Accounts.createUser({
-      username: username,
-      password: password,
-      email: email,
-
-      profile: {
-        firstName: firstName,
-        lastName: lastName
-      },
-    },
-
-    function(error) {
+    Meteor.call("createClient", firstName, lastName, username, password, email, function(error) {
       if(error) {
-        alert(error.reason);
+        Materialize.toast(error.reason, 4000, "centerToast")
       }
 
       else {
+        $('#modal1').closeModal();        
         Router.go('/clients');
       }
     });
