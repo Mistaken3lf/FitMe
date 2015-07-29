@@ -1,3 +1,5 @@
-Meteor.publish('current_users', function () {
-  return Meteor.users.find();
+Meteor.publish('current_clients', function () {
+  if(this.userId) {
+    return Meteor.users.find();
+  }
 });
