@@ -28,10 +28,10 @@
       </table>
       <!--End of client table-->
       <br><br>
-      <button data-target="modal1" class="btn-floating btn-large waves-effect red modal-trigger"><i class="material-icons">add</i></button>
+      <button data-target="addClientModal" class="btn-floating btn-large waves-effect red clientModal"><i class="material-icons">add</i></button>
     </div>
     <!-- Add client modal -->
-    <div id="modal1" class="modal">
+    <div id="addClientModal" class="modal">
       <div class="modal-content">
         <h4 class="blue-text">Add Client</h4>
         {{#autoForm schema="ClientSchema" id="clientForm"}}

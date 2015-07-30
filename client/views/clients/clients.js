@@ -1,5 +1,5 @@
 Template.clients.onRendered(function () {
-  $('.modal-trigger').leanModal();
+  $('.clientModal').leanModal();
 });
 
 Template.clients.events({
@@ -17,7 +17,7 @@ Template.clients.events({
       }
 
       else {
-        $('#modal1').closeModal();
+        $('#addClientModal').closeModal();
         Router.go('/clients');
       }
     });

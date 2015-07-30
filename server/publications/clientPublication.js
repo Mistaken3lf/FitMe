@@ -8,4 +8,8 @@ Meteor.publish('currentClients', function () {
         "profile.lastName": 1
       }});
     }
+
+    else {
+      throw new Meteor.Error("not-authorized");
+    }
 });

@@ -11,7 +11,7 @@ Meteor.methods({
 
       profile: {
         firstName: firstName,
-        lastName: lastName
+        lastName: lastName,
       },
     });
   }
