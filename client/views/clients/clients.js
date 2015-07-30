@@ -17,7 +17,7 @@ Template.clients.events({
       }
 
       else {
-        $('#modal1').closeModal();        
+        $('#modal1').closeModal();
         Router.go('/clients');
       }
     });
