@@ -1,5 +1,6 @@
 RegisterSchema = {};
 
+  //Create validation rules for registering a new user
 RegisterSchema.register = new SimpleSchema({
   username: {
     type: String,

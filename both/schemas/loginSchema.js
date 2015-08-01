@@ -1,5 +1,6 @@
 LoginSchema = {};
 
+  //Create validation rules for logins
 LoginSchema.login = new SimpleSchema({
   username: {
     type: String,

@@ -1,11 +1,14 @@
+/* push login form down 5% from top */
 #userLoginForm {
   margin-top: 5%;
 }
 
+/* push registration form down 5% from top */
 #registrationForm {
   margin-top: 5%;
 }
 
+/* Color the error toast popup in red when errors occur */
 .centerToast {
   background-color: #f44336;
 }

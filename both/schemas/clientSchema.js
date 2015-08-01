@@ -1,5 +1,6 @@
 ClientSchema = {};
 
+  //Create validation rules for adding a new client
 ClientSchema.client = new SimpleSchema({
   username: {
     type: String,

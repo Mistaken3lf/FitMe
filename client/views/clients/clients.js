@@ -1,3 +1,4 @@
+//Activate add client modal when template is rendered
 Template.clients.onRendered(function () {
   $('.clientModal').leanModal();
 });
