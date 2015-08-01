@@ -17,6 +17,11 @@ Template.clients.events({
       }
 
       else {
+        firstName = $('[name=firstName]').val('');
+        lastName = $('[name=lastName]').val('');
+        username = $('[name=username]').val('');
+        password = $('[name=password]').val('');
+        email = $('[name=email]').val('');
         $('#addClientModal').closeModal();
         Router.go('/clients');
       }

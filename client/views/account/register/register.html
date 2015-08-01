@@ -3,7 +3,7 @@
     <div class="col s12 m6 offset-m3 l4 offset-l4" id="registrationForm">
       <div class="card-panel white z-depth-2">
         <h1 class="blue-text">Register</h1>
-        {{#autoForm schema="RegisterSchema" id="registerForm"}}
+        {{#autoForm schema="RegisterSchema.register" id="registerForm"}}
           {{> afQuickField name="username"}}
           {{> afQuickField name="password" type="password"}}
           {{> afQuickField name="email"}}
