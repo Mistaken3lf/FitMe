@@ -15,10 +15,7 @@ Template.login.events({
       if(error) {
         //Pop up a toast to show login errors
         Materialize.toast(error.reason, 4000, "centerToast")
-      }
-
-      //Login successful!!!
-      else {
+      } else {
         //Go home since user is logged in now
         Router.go('/');
       }

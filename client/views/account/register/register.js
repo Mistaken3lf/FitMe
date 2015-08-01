@@ -18,10 +18,7 @@ Template.register.events({
       if(error) {
         //Pop up a toast to show the error
         Materialize.toast(error.reason, 4000, "centerToast")
-      }
-
-      //Registration successful
-      else {
+      } else {
         //Login user with provided credentials
         Meteor.loginWithPassword(username, password, function(error){
 
@@ -29,10 +26,7 @@ Template.register.events({
           if(error) {
             //Pop up a toast to show reason for failed login
             Materialize.toast(error.reason, 4000, "centerToast")
-          }
-
-          //Login successful!!!
-          else {
+          } else {
             //Route the newly logged in user home
             Router.go('/');
           }
