@@ -4,15 +4,18 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    Accounts.createUser({
+    id = Accounts.createUser({
       username: username,
       password: password,
       email: email,
+      createdBy: Meteor.userId(),
 
       profile: {
         firstName: firstName,
         lastName: lastName,
       },
     });
+
+    Roles.addUsersToRoles(id, 'client');
   }
 });
