@@ -40,6 +40,7 @@ Template.clients.events({
 Template.clients.helpers({
   //Helper function to display users in table from subscription
   'users': function () {
-    return Meteor.users.find();
+    //Show all clients and dont show my own information
+    return Meteor.users.find({_id: {$ne: Meteor.userId()}});
   }
 });

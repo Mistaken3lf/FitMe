@@ -1,6 +1,6 @@
 Meteor.methods({
   createTrainer: function (firstName, lastName, username, password, email) {
-    Accounts.createUser({
+    trainerId = Accounts.createUser({
       username: username,
       password: password,
       email: email,
@@ -10,5 +10,7 @@ Meteor.methods({
         lastName: lastName,
       },
     });
+
+    Roles.addUsersToRoles(trainerId, 'trainer');
   }
 });

@@ -8,11 +8,11 @@ Meteor.methods({
       username: username,
       password: password,
       email: email,
-      createdBy: Meteor.userId(),
 
       profile: {
         firstName: firstName,
         lastName: lastName,
+        createdBy: Meteor.userId()
       },
     });
 
