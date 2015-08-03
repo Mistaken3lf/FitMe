@@ -5,32 +5,38 @@
         <a href="/" class="brand-logo left">FitMe</a>
         <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
+        <!--Mobile sidebar menu-->
         <ul class="side-nav" id="mobile-menu">
           <div class="logoContainer">
             <a href="/"><img class="sidebarLogo" src="../logos/fitMeSidebar.png"></a>
             <br>
             <hr class="navSeperator">
           </div>
-          {{#if currentUser}}
+          {{#if isInRole 'trainer'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'exercises'}}">Exercises</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
-          {{else}}
+          {{/if}}
+          {{#if isInRole 'client'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'login'}}">Login</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'register'}}">Register</a>
-          {{/if}}
         </ul>
+        <!--End of mobile menu-->
         <ul class="side-nav fixed" id="desktop-menu">
           <div class="logoContainer">
             <a href="/"><img class="sidebarLogo" src="../logos/fitMeSidebar.png"></a>
             <br>
             <hr class="navSeperator">
           </div>
-          {{#if currentUser}}
+          {{#if isInRole 'trainer'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
@@ -38,6 +44,11 @@
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{else}}
+          {{#if isInRole 'client'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'login'}}">Login</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'register'}}">Register</a>
