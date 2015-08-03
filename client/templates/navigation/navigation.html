@@ -23,11 +23,14 @@
           {{#if isInRole 'client'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+            <a class="btn grey lighten-5 waves-effect" id="navPad" href="#">My Workout</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
+          {{#unless currentUser}}
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'login'}}">Login</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'register'}}">Register</a>
+          {{/unless}}
         </ul>
         <!--End of mobile menu-->
         <ul class="side-nav fixed" id="desktop-menu">
@@ -43,16 +46,18 @@
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'exercises'}}">Exercises</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'workouts'}}">Workouts</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
-          {{else}}
+          {{/if}}
           {{#if isInRole 'client'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="#">My Workout</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
+          {{#unless currentUser}}
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'login'}}">Login</a>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'register'}}">Register</a>
-          {{/if}}
+          {{/unless}}
         </ul>
       </div>
     </nav>
