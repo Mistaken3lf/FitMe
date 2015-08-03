@@ -1,49 +1,59 @@
 <template name="clients">
+  <!--White panel to use as a background-->
   <div class="card-panel white z-depth-2">
-    <img class="responsive-img" id="pageHeader" src="/headers/fitMeClientManagement.png">
-    <hr class="headerSeperator">
-    <br><br>
+    <div class="row">
+      <img class="responsive-img" id="pageHeader" src="/headers/fitMeClientManagement.png">
+      <hr class="headerSeperator">
+    </div>
     <div class="container">
-      <h3>Current Clients</h3>
-      <!--Client Table-->
-      <table class="striped responsive-table">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each users}}
-          <tr>
-            <td>{{username}}</td>
-            <td>{{emails.[0].address}}</td>
-            <td>{{profile.firstName}}</td>
-            <td>{{profile.lastName}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
-      <!--End of client table-->
-      <br><br>
-      <button data-target="addClientModal" class="btn-floating btn-large waves-effect red clientModal"><i class="material-icons">add</i></button>
+      <div class="row">
+        <div class="col s12">
+          <h3>Current Clients</h3>
+          <!--Client Table-->
+          <table class="striped responsive-table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each users}}
+              <tr>
+                <td>{{username}}</td>
+                <td>{{emails.[0].address}}</td>
+                <td>{{profile.firstName}}</td>
+                <td>{{profile.lastName}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <!--End of client table-->
+        </div>
+      </div>
+      <!--Row for the add modal-->
+      <div class="row">
+        <button data-target="addClientModal" class="btn-floating btn-large waves-effect red clientModal right"><i class="material-icons">add</i></button>
+      </div>
+      <!--End of button row-->
     </div>
     <!-- Add client modal -->
     <div id="addClientModal" class="modal">
       <div class="modal-content">
         <h4 class="blue-text">Add Client</h4>
         {{#autoForm schema="ClientSchema.client" id="clientForm"}}
-          {{> afQuickField name="username"}}
-          {{> afQuickField name="password" type="password"}}
-          {{> afQuickField name="email" type="email"}}
-          {{> afQuickField name="firstName"}}
-          {{> afQuickField name="lastName"}}
-          <button class="btn blue waves-effect" type="submit">Create Client</button>
+        {{> afQuickField name="username"}}
+        {{> afQuickField name="password" type="password"}}
+        {{> afQuickField name="email" type="email"}}
+        {{> afQuickField name="firstName"}}
+        {{> afQuickField name="lastName"}}
+        <button class="btn blue waves-effect" type="submit">Create Client</button>
         {{/autoForm}}
       </div>
     </div>
     <!--End of add client modal-->
   </div>
+  <!--End of white panel-->
 </template>
