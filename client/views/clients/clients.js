@@ -34,6 +34,11 @@ Template.clients.events({
         $('#addClientModal').closeModal();
       }
     });
+  },
+  //////////////////////////////////////////////////////////////////////////////
+
+  'click .deleteButton': function(event) {
+    Meteor.call("deleteClient", this._id);
   }
 });
 
