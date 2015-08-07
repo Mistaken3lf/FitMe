@@ -23,7 +23,7 @@
             <tbody>
               {{#each users}}
               <tr>
-                <td>{{username}}</td>
+                <td><a href="/clientDashboard/{{_id}}">{{username}}</a></td>
                 <td>{{emails.[0].address}}</td>
                 <td>{{profile.firstName}}</td>
                 <td>{{profile.lastName}}</td>
