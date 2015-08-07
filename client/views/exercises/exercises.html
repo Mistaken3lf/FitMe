@@ -3,8 +3,45 @@
     <img class="responsive-img" id="pageHeader" src="/headers/fitMeExerciseManagement.png">
     <hr class="headerSeperator">
     <br><br>
-    <div class="container">
-      <h3>Current Exercise's</h3>
+    <div class="row">
+      <div class="col s12">
+        <h3>Manage Exercises</h3>
+        <!--Client Table-->
+        <table class="striped responsive-table">
+          <thead>
+            <tr>
+              <th>Exercise Name</th>
+              <th>Machine Brand</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each users}}
+            <tr>
+              <td>{{exerciseName}}</td>
+              <td>{{machineBrand}}</td>
+              <td><button class="btn-floating red waves-effect deleteButton"><i class="material-icons">remove</i></button></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <!--End of client table-->
+      </div>
     </div>
+    <div class="row">
+      <button data-target="addExerciseModal" class="btn-floating btn-large waves-effect green exerciseModal right"><i class="material-icons">add</i></button>
+    </div>
+    <!-- Add client modal -->
+    <div id="addExerciseModal" class="modal">
+      <div class="modal-content">
+        <h4 class="blue-text">Add Exercise</h4>
+        {{#autoForm schema="ExerciseSchema.exercise" id="exerciseForm"}}
+        {{> afQuickField name="exerciseName"}}
+        {{> afQuickField name="machineBrand"}}
+        <button class="btn blue waves-effect" type="submit">Create Exercise</button>
+        {{/autoForm}}
+      </div>
+    </div>
+    <!--End of add client modal-->
   </div>
 </template>

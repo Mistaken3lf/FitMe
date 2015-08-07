@@ -1,0 +1,11 @@
+/*Center delete button on large screens*/
+.deleteButton {
+  margin-left: 15px;
+}
+
+/*Push button all the way to the left on small screens*/
+@media only screen and (max-width : 992px) {
+  .deleteButton {
+    margin-left: auto;
+  }
+}
