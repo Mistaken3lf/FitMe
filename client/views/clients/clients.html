@@ -23,7 +23,7 @@
             <tbody>
               {{#each users}}
               <tr>
-                <td>{{username}}</td>
+                <td><a href="/clientDashboard/{{_id}}">{{username}}</a></td>
                 <td>{{emails.[0].address}}</td>
                 <td>{{profile.firstName}}</td>
                 <td>{{profile.lastName}}</td>
@@ -37,7 +37,11 @@
       </div>
       <!--Row for the add modal-->
       <div class="row">
+<<<<<<< HEAD
         <button data-target="addClientModal" class="btn-floating btn-large waves-effect green clientModal left"><i class="material-icons">add</i></button>
+=======
+        <button data-target="addClientModal" class="btn-floating btn-large waves-effect grey clientModal right"><i class="material-icons">add</i></button>
+>>>>>>> upstream/devel
       </div>
       <!--End of button row-->
     </div>

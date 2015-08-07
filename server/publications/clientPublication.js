@@ -11,5 +11,6 @@ Meteor.publish('currentClients', function () {
 
     else {
       throw new Meteor.Error("not-authorized");
+      return this.ready();
     }
 });
