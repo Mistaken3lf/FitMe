@@ -37,25 +37,10 @@
       </div>
       <!--Row for the add modal-->
       <div class="row">
-        <button data-target="addClientModal" class="btn-floating btn-large waves-effect grey clientModal right"><i class="material-icons">add</i></button>
+        <a href="/addClient" class="btn-floating btn-large waves-effect green right"><i class="material-icons">add</i></a>
       </div>
       <!--End of button row-->
     </div>
-    <!-- Add client modal -->
-    <div id="addClientModal" class="modal">
-      <div class="modal-content">
-        <h4 class="blue-text">Add Client</h4>
-        {{#autoForm schema="ClientSchema.client" id="clientForm"}}
-        {{> afQuickField name="username"}}
-        {{> afQuickField name="password" type="password"}}
-        {{> afQuickField name="email" type="email"}}
-        {{> afQuickField name="firstName"}}
-        {{> afQuickField name="lastName"}}
-        <button class="btn blue waves-effect" type="submit">Create Client</button>
-        {{/autoForm}}
-      </div>
-    </div>
-    <!--End of add client modal-->
   </div>
   <!--End of white panel-->
 </template>

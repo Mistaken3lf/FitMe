@@ -1,0 +1,36 @@
+<template name="addClient">
+  <div class="card-panel white z-depth-2">
+    <div class="row">
+      <img class="responsive-img" id="pageHeader" src="/headers/fitMeClientManagement.png">
+      <hr class="headerSeperator">
+    </div>
+    <div class="container">
+      <h1 class="center blue-text">Register Client</h1>
+      <div class="row">
+        <div class="col s12 m6 l6 offset-m3 offset-l3">
+          {{#autoForm schema="ClientSchema.client" id="clientForm"}}
+          {{> afQuickField name="username"}}
+          {{> afQuickField name="password" type="password"}}
+          {{> afQuickField name="email" type="email"}}
+          {{> afQuickField name="firstName"}}
+          {{> afQuickField name="lastName"}}
+          {{> afQuickField name="birthday"}}
+          {{> afQuickField name="address"}}
+          {{> afQuickField name="city"}}
+          {{> afQuickField name="state"}}
+          {{> afQuickField name="zip"}}
+          {{> afQuickField name="homePhone"}}
+          {{> afQuickField name="cellPhone"}}
+          {{> afQuickField name="workPhone"}}
+          {{> afQuickField name="emergencyContact"}}
+          {{> afQuickField name="bio" rows=6}}
+          {{> afQuickField name="fitnessGoals" rows=6}}
+          <br>
+          <button class="btn blue waves-effect" type="submit">Create Client</button>
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>
