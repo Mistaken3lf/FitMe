@@ -2,3 +2,16 @@
   width: 97%;
   margin: auto;
 }
+
+.tabs .indicator {
+  background-color: #2196f3;
+}
+
+/*
+.tabs .tab a {
+  /*background-color: blue;
+  color: #2196f3;
+  text-decoration-color: #2196f3;
+}
+
+*/
