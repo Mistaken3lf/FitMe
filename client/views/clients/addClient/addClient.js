@@ -17,7 +17,7 @@ Template.addClient.events({
     var zip = $('[name=zip]').val();
     var homePhone = $('[name=homePhone]').val();
     var cellPhone = $('[name=cellPhone]').val();
-    var workPhone = $('[name=firstName]').val();
+    var workPhone = $('[name=workPhone]').val();
     var emergencyContact = $('[name=emergencyContact]').val();
     var bio = $('[name=firstName]').val();
     var fitnessGoals = $('[name=fitnessGoals]').val();

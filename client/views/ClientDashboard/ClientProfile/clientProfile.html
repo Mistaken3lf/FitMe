@@ -1,0 +1,68 @@
+<template name="clientProfile">
+  <div class="row">
+    <div class="col s12 m6 offset-m3 l6 offset-l3">
+      <div class="row">
+        <table class="responsive bordered tableFontSize">
+          <tbody>
+            <tr>
+              <b><td>Username</td></b>
+              <td class="blue-text"><b>{{username}}</b></td>
+            </tr>
+            <tr>
+              <b><td>First Name</td></b>
+              <td class="blue-text"><b>{{profile.firstName}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Last Name</td></b>
+              <td class="blue-text"><b>{{profile.lastName}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Birthday</td></b>
+              <td class="blue-text"><b>{{profile.birthday}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Address</td></b>
+              <td class="blue-text"><b>{{profile.address}}</b></td>
+            </tr>
+            <tr>
+              <b><td>City</td></b>
+              <td class="blue-text"><b>{{profile.city}}</b></td>
+            </tr>
+            <tr>
+              <b><td>State</td></b>
+              <td class="blue-text"><b>{{profile.state}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Zip</td></b>
+              <td class="blue-text"><b>{{profile.zip}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Home Phone</td></b>
+              <td class="blue-text"><b>{{profile.homePhone}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Work Phone</td></b>
+              <td class="blue-text"><b>{{profile.workPhone}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Emergency Contact #</td></b>
+              <td class="blue-text"><b>{{profile.emergencyContact}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Email</td></b>
+              <td class="blue-text"><b>{{emails.[0].address}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Biography</td></b>
+              <td class="blue-text"><b>{{profile.bio}}</b></td>
+            </tr>
+            <tr>
+              <b><td>Fitness Goals</td></b>
+              <td class="blue-text"><b>{{profile.fitnessGoals}}</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
