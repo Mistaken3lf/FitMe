@@ -3,7 +3,7 @@ Template.navigation.events ({
   'click .logout': function(event) {
 
     //Prevent default form submission
-    event.preventDefault(); 
+    event.preventDefault();
 
     //Bring user back to home page after logging out
     Router.go('/');
