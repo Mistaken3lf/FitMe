@@ -26,7 +26,7 @@ Template.addClient.events({
     var cellPhone = $('[name=cellPhone]').val();
     var workPhone = $('[name=workPhone]').val();
     var emergencyContact = $('[name=emergencyContact]').val();
-    var bio = $('[name=firstName]').val();
+    var bio = $('[name=bio]').val();
     var fitnessGoals = $('[name=fitnessGoals]').val();
 
     //Call server method createClient with provided info
@@ -51,10 +51,10 @@ Template.addClient.events({
         cellPhone = $('[name=cellPhone]').val('');
         workPhone = $('[name=firstName]').val('');
         emergencyContact = $('[name=emergencyContact]').val('');
-        bio = $('[name=firstName]').val('');
+        bio = $('[name=bio]').val('');
         fitnessGoals = $('[name=fitnessGoals]').val('');
 
-        Router.go("/clients");
+        Router.go("/currentClients");
       }
     });
   }
