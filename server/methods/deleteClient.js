@@ -5,7 +5,6 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    var client = Meteor.users.findOne(clientId);
     Meteor.users.remove(clientId);
   }
 });
