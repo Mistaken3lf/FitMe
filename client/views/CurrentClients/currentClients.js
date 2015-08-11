@@ -1,10 +1,10 @@
-Template.clients.events({
+Template.currentClients.events({
   'click .deleteButton': function(event) {
     Meteor.call("deleteClient", this._id);
   }
 });
 
-Template.clients.helpers({
+Template.currentClients.helpers({
   //Helper function to display users in table from subscription
   'users': function () {
     //Show all clients and dont show my own information

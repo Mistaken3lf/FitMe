@@ -15,7 +15,7 @@
           {{#if isInRole 'trainer'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'currentClients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
           {{#if isInRole 'client'}}
@@ -40,7 +40,7 @@
           {{#if isInRole 'trainer'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn grey lighten-5 waves-effect" id="navPad" href="/">Home</a>
-          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'clients'}}">Clients</a>
+          <a class="btn grey lighten-5 waves-effect" id="navPad" href="{{pathFor 'currentClients'}}">Clients</a>
           <a class="btn grey lighten-5 waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
           {{#if isInRole 'client'}}
