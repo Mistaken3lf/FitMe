@@ -1,24 +1,20 @@
-Template.login.events({
-  //Capture login form submission
-  'submit form': function(event){
-    //Prevent default form submission
-    event.preventDefault();
+AutoForm.hooks({
+  loginForm: {
+    onSubmit: function (doc) {
+      this.event.preventDefault();
 
-    //Capture username and password from form
-    var username = $('[name=username]').val();
-    var password = $('[name=password]').val();
+      //Log user in with userrname and password
+      Meteor.loginWithPassword(doc.username, doc.services.$.password, function(error){
 
-    //Log user in with userrname and password
-    Meteor.loginWithPassword(username, password, function(error){
-
-      //Invalid login
-      if(error) {
-        //Pop up a toast to show login errors
-        Materialize.toast(error.reason, 4000, "centerToast")
-      } else {
-        //Go home since user is logged in now
-        Router.go('/');
-      }
-    });
+        //Invalid login
+        if(error) {
+          //Pop up a toast to show login errors
+          Materialize.toast(error.reason, 4000, "centerToast")
+        } else {
+          //Go home since user is logged in now
+          Router.go('/');
+        }
+      });
+    }
   }
 });

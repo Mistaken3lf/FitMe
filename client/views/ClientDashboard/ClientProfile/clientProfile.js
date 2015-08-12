@@ -5,20 +5,10 @@ Template.clientProfile.onRendered(function () {
     });
 });
 
-Template.clientProfile.helpers({
-  clientUsername: function() {
-    return this.username;
+Template.clientProfile.events({
+  'keyup [name=profileFirstName]': function (event) {
+    var profileId = this._id;
+    var profileItem = $(event.target).val();
+    Meteor.call("updateClientFirstName", profileId, profileItem);
   },
-
-  clientFirstName: function() {
-    return this.profile.firstName;
-  },
-
-  clientLastName: function() {
-    return this.profile.lastName;
-  },
-
-  clientEmail: function() {
-    return this.users.emails[0].address;
-  }
 });

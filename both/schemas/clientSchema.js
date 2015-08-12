@@ -1,30 +1,18 @@
-ClientSchema = {};
+Schema = {};
 
-  //Create validation rules for adding a new client
-ClientSchema.client = new SimpleSchema({
-  username: {
-    type: String,
-    regEx: /^[a-z0-9A-Z_]{3,15}$/
-  },
+SimpleSchema.debug = true
 
-  password: {
-    type: String,
-    regEx: /^[a-z0-9A-Z_]{3,15}$/
-  },
-
-  email: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Email
-  },
-
+Schema.UserProfile = new SimpleSchema({
   firstName: {
     type: String,
-    regEx: /^[a-zA-Z-]{2,25}$/
+    regEx: /^[a-zA-Z-]{2,25}$/,
+    optional: true
    },
 
    lastName: {
        type: String,
-       regEx: /^[a-zA-Z]{2,25}$/
+       regEx: /^[a-zA-Z]{2,25}$/,
+       optional: true
    },
 
    birthday: {
@@ -35,7 +23,7 @@ ClientSchema.client = new SimpleSchema({
    address: {
      type: String,
      regEx: /^[a-z0-9A-Z ]{3,40}$/,
-     optional: true,
+     optional: true
    },
 
    city: {
@@ -91,3 +79,37 @@ ClientSchema.client = new SimpleSchema({
      optional: true
    },
 });
+
+Schema.User = new SimpleSchema({
+  username: {
+        type: String,
+        regEx: /^[a-z0-9A-Z_]{3,15}$/
+    },
+
+    email: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Email,
+        optional: true
+    },
+    profile: {
+        type: Schema.UserProfile,
+        optional: true
+    },
+    services: {
+        type: Object,
+        blackbox: true,
+        optional: true
+    },
+
+    "services.$.password": {
+      type: String,
+      regEx: /^[a-z0-9A-Z_]{3,15}$/
+    },
+
+    roles: {
+       type: [String],
+       optional: true
+   }
+});
+
+Meteor.users.attachSchema(Schema.User);

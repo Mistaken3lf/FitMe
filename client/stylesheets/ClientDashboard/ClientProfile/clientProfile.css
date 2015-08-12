@@ -1,3 +1,8 @@
 .profileFontSize {
   font-size: 120%;
 }
+
+.input-field input[type=text]:focus {
+  border: none;
+  box-shadow: 0;
+}
