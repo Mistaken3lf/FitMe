@@ -4,7 +4,7 @@ AutoForm.hooks({
       this.event.preventDefault();
 
       //Call server method to register the trainer
-      Meteor.call("createTrainer", doc.profile.firstName, doc.profile.lastName, doc.username, doc.services.$.password, doc.email, function(error) {
+      Meteor.call("registerTrainer", doc.profile.firstName, doc.profile.lastName, doc.username, doc.services.$.password, doc.email, function(error) {
 
         //Error registering trainer
         if(error) {
