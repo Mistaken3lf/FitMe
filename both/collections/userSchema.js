@@ -1,7 +1,5 @@
 Schema = {};
 
-SimpleSchema.debug = true
-
 Schema.UserProfile = new SimpleSchema({
   firstName: {
     type: String,
