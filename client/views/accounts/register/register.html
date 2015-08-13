@@ -3,12 +3,12 @@
     <div class="col s12 m6 offset-m3 l4 offset-l4" id="registrationForm">
       <div class="card-panel white z-depth-2">
         <h1 class="blue-text">Register</h1>
-        {{#autoForm collection="Meteor.users" id="registerForm" type="normal" doc=someDoc}}
+        {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" id="registerForm" type="normal" doc=someDoc}}
           {{> afQuickField name="username"}}
-          {{> afQuickField name="services.$.password" type="password"}}
+          {{> afQuickField name="password" type="password"}}
           {{> afQuickField name="email"}}
-          {{> afQuickField name="profile.firstName"}}
-          {{> afQuickField name="profile.lastName"}}
+          {{> afQuickField name="firstName"}}
+          {{> afQuickField name="lastName"}}
           <button type="submit" class="btn blue waves-effect">Register</button>
         {{/autoForm}}
       </div>

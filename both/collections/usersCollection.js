@@ -13,6 +13,11 @@ Schema.UserProfile = new SimpleSchema({
        optional: true
    },
 
+   createdBy: {
+     type: String,
+     optional: true
+   },
+
    birthday: {
      type: String,
      optional: true
@@ -84,24 +89,26 @@ Schema.User = new SimpleSchema({
         regEx: /^[a-z0-9A-Z_]{3,15}$/
     },
 
-    email: {
-        type: String,
-        regEx: SimpleSchema.RegEx.Email,
-        optional: true
-    },
+    emails: {
+       type: [Object],
+       // this must be optional if you also use other login services like facebook,
+       // but if you use only accounts-password, then it can be required
+       optional: false
+   },
+   "emails.$.address": {
+       type: String,
+       regEx: SimpleSchema.RegEx.Email
+   },
+
     profile: {
         type: Schema.UserProfile,
         optional: true
     },
-    services: {
-        type: Object,
-        blackbox: true,
-        optional: true
-    },
 
-    "services.$.password": {
-      type: String,
-      regEx: /^[a-z0-9A-Z_]{3,15}$/
+    services: {
+        type: Schema.Services,
+        blackbox: true,
+        optional: true,
     },
 
     roles: {

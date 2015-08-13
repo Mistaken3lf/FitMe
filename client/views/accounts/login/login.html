@@ -3,9 +3,9 @@
     <div class="col s12 m6 offset-m3 l4 offset-l4" id="userLoginForm">
       <div class="card-panel white z-depth-2">
         <h1 class="blue-text">Sign In</h1>
-        {{#autoForm collection="Meteor.users" id="loginForm" type="normal" doc=someDoc}}
+        {{#autoForm collection="Meteor.users" schema="LoginSchema.login" id="loginForm" type="normal" doc=someDoc}}
           {{> afQuickField name="username"}}
-          {{> afQuickField name="services.$.password" type="password"}}
+          {{> afQuickField name="password" type="password"}}
           <button type="submit" class="btn blue waves-effect">Sign In</button>
         {{/autoForm}}
       </div>
