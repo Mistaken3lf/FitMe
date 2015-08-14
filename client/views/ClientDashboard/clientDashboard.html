@@ -13,29 +13,28 @@
         </div>
         <div class="col s12 m9 l10">
           <div class="row">
-            <ul class="tabs">
-              <li class="tab"><a class="blue-text" href="#stats">Stats</a></li>
-              <li class="tab"><a class="blue-text" href="#cardio">Cardio</a></li>
-              <li class="tab"><a class="blue-text" href="#workouts">Workouts</a></li>
-              <li class="tab"><a class="blue-text" href="#calendar">Calendar</a></li>
-              <li class="tab"><a class="blue-text" href="#profile">Profile</a></li>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header"><i class="material-icons">filter_drama</i>Profile</div>
+                <div class="collapsible-body">{{> clientProfile}}</div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">place</i>Stats</div>
+                <div class="collapsible-body">{{> clientStats}}</div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>Workouts</div>
+                <div class="collapsible-body">{{> clientWorkouts}}</div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>Cardio</div>
+                <div class="collapsible-body">{{> clientCardio}}</div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>Calendar</div>
+                <div class="collapsible-body">{{> clientCalendar}}</div>
+              </li>
             </ul>
-
-            <div id="stats" class="col s12">
-              {{> clientStats}}
-            </div>
-            <div id="cardio" class="col s12">
-              {{> clientCardio}}
-            </div>
-            <div id="workouts" class="col s12">
-              {{> clientWorkouts}}
-            </div>
-            <div id="calendar" class="col s12">
-              {{> clientCalendar}}
-            </div>
-            <div id="profile" class="col s12">
-              {{> clientProfile}}
-            </div>
           </div>
         </div>
       </div>
