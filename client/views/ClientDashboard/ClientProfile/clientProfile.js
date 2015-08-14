@@ -11,4 +11,10 @@ Template.clientProfile.events({
     var profileItem = $(event.target).val();
     Meteor.call("updateClientFirstName", profileId, profileItem);
   },
+
+  'keyup [name=profileLastName]': function (event) {
+    var profileId = this._id;
+    var profileItem = $(event.target).val();
+    Meteor.call("updateClientLastName", profileId, profileItem);
+  },
 });
