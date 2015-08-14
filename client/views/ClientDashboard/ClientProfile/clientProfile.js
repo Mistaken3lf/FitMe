@@ -5,83 +5,147 @@ Template.clientProfile.onRendered(function () {
     });
 });
 
-
 Template.clientProfile.events({
   'keyup [name=clientProfileFirstName]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileFirstName", profileId, profileItem);
+    Meteor.call("updateClientProfileFirstName", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileLastName]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileLastName", profileId, profileItem);
+    Meteor.call("updateClientProfileLastName", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileBirthday]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileBirthday", profileId, profileItem);
+    Meteor.call("updateClientProfileBirthday", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileAddress]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileAddress", profileId, profileItem);
+    Meteor.call("updateClientProfileAddress", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileCity]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileCity", profileId, profileItem);
+    Meteor.call("updateClientProfileCity", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileState]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileState", profileId, profileItem);
+    Meteor.call("updateClientProfileState", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileZip]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileZip", profileId, profileItem);
+    Meteor.call("updateClientProfileZip", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileHomePhone]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileHomePhone", profileId, profileItem);
+    Meteor.call("updateClientProfileHomePhone", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileWorkPhone]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileWorkPhone", profileId, profileItem);
+    Meteor.call("updateClientProfileWorkPhone", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileEmergencyContact]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileEmergencyContact", profileId, profileItem);
+    Meteor.call("updateClientProfileEmergencyContact", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientEmail]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientEmail", profileId, profileItem);
+    Meteor.call("updateClientEmail", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileBio]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileBio", profileId, profileItem);
+    Meteor.call("updateClientProfileBio", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 
   'keyup [name=clientProfileFitnessGoals]': function(event) {
     var profileId = this._id;
     var profileItem = $(event.target).val();
-    Meteor.call("updateClientProfileFitnessGoals", profileId, profileItem);
+    Meteor.call("updateClientProfileFitnessGoals", profileId, profileItem, function(error) {
+      if(error) {
+        //Popup a toast to display reason for error
+        Materialize.toast(error.reason, 4000, "centerToast")
+      }
+    });
   },
 });
