@@ -18,7 +18,7 @@
             </tr>
             <tr>
               <b><td>Birthday</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.birthday" acceptEmpty=true}}</b></td>
+              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.birthday" acceptEmpty=true inputClass="datepicker" type="date"}}</b></td>
             </tr>
             <tr>
               <b><td>Address</td></b>
@@ -54,11 +54,11 @@
             </tr>
             <tr>
               <b><td>Biography</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.bio" acceptEmpty=true}}</b></td>
+              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.bio" acceptEmpty=true textarea=true}}</b></td>
             </tr>
             <tr>
               <b><td>Fitness Goals</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.fitnessGoals" acceptEmpty=true}}</b></td>
+              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.fitnessGoals" acceptEmpty=true textarea=true}}</b></td>
             </tr>
           </tbody>
         </table>
