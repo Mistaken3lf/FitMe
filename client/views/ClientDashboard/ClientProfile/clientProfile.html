@@ -1,68 +1,70 @@
 <template name="clientProfile">
   <div class="row">
-    <div class="col s12 m6 offset-m3 l6 offset-l3">
-      <div class="row">
-        <table class="responsive bordered profileFontSize">
-          <tbody>
-            <tr>
-              <b><td>Username</td></b>
-              <td class="blue-text"><b>{{username}}</b></td>
-            </tr>
-            <tr>
-              <b><td>First Name</td></b>
-              <td class="blue-text"><b>{{> editableText collection="users" field="profile.firstName"}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Last Name</td></b>
-              <td class="blue-text"><b>{{> editableText collection="users" field="profile.lastName"}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Birthday</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.birthday" acceptEmpty=true inputClass="datepicker" type="date"}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Address</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.address" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>City</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.city" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>State</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.state" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Zip</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.zip" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Home Phone</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.homePhone" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Work Phone</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.workPhone" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Emergency Contact #</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.emergencyContact" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Email</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="emmails.[0].address" acceptEmpty=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Biography</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.bio" acceptEmpty=true textarea=true}}</b></td>
-            </tr>
-            <tr>
-              <b><td>Fitness Goals</td></b>
-              <td class="blue-text editable-text-trigger"><b>{{> editableText collection="users" field="profile.fitnessGoals" acceptEmpty=true textarea=true}}</b></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="col s12 m3 l3">
+        <img src="../profile/profilePicture.jpg" class="responsive-img">
+        <h5 class="center blue-text"><b>{{profile.firstName}} {{profile.lastName}}</b></h5>
+    </div>
+    <div class="col s12 m6 offset-m2 l6 offset-l1 ">
+      <table class="responsive bordered profileFontSize">
+        <tbody>
+          <tr>
+            <b><td>Username</td></b>
+            <td class="blue-text"><b>{{username}}</b></td>
+          </tr>
+          <tr>
+            <b><td>First Name</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.firstName}}" name="clientProfileFirstName"></b></td>
+          </tr>
+          <tr>
+            <b><td>Last Name</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.lastName}}" name="clientProfileLastName"></b></td>
+          </tr>
+          <tr>
+            <b><td>Birthday</td></b>
+            <td class="blue-text "><b><input class="noStyleInput datepicker" style="font-size: 20px;" type="text" value="{{profile.birthday}}" name="clientProfileBirthday"></b></td>
+          </tr>
+          <tr>
+            <b><td>Address</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.address}}" name="clientProfileAddress"></b></td>
+          </tr>
+          <tr>
+            <b><td>City</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.city}}" name="clientProfileCity"></b></td>
+          </tr>
+          <tr>
+            <b><td>State</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.state}}" name="clientProfileState"></b></td>
+          </tr>
+          <tr>
+            <b><td>Zip</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.zip}}" name="clientProfileZip"></b></td>
+          </tr>
+          <tr>
+            <b><td>Home Phone</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.homePhone}}" name="clientProfileHomePhone"></b></td>
+          </tr>
+          <tr>
+            <b><td>Work Phone</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.workPhone}}" name="clientProfileWorkPhone"></b></td>
+          </tr>
+          <tr>
+            <b><td>Emergency Contact #</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="text" value="{{profile.emergencyContact}}" name="clientProfileEmergencyContact"></b></td>
+          </tr>
+          <tr>
+            <b><td>Email</td></b>
+            <td class="blue-text"><b><input class="noStyleInput" style="font-size: 20px;" type="email" value="{{emails.[0].address}}" name="clientEmail"></b></td>
+          </tr>
+          <tr>
+            <b><td>Biography</td></b>
+            <td class="blue-text"><b><textarea rows=6 style="height: 100%" name="clientProfileBio">{{profile.bio}}</textarea></b></td>
+          </tr>
+          <tr>
+            <b><td>Fitness Goals</td></b>
+            <td class="blue-text"><b><textarea rows=6 style="height: 100%" name="clientProfileFitnessGoals">{{profile.fitnessGoals}}</textarea></b></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>

@@ -80,13 +80,11 @@ RegisterSchema.register = new SimpleSchema({
 
      bio: {
        type: String,
-       regEx: /^[a-z0-9A-Z ]$/,
        optional: true
      },
 
      fitnessGoals: {
        type: String,
-       regEx: /^[a-z0-9A-Z ]$/,
        optional: true
      },
 });
