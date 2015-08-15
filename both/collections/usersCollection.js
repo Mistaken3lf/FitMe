@@ -19,7 +19,7 @@ Schema.UserProfile = new SimpleSchema({
    },
 
    birthday: {
-     type: String,
+     type: Date,
      optional: true
    },
 
