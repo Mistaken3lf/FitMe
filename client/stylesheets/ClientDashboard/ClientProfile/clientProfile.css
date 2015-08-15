@@ -5,3 +5,7 @@
 .noStyleInput {
     border: none !important;
 }
+
+.clientSession {
+  padding-bottom: 20px;
+}

@@ -1,3 +1,102 @@
 <template name="clientCardio">
-  <h1>Cardio</h1>
+  <br>
+  <div class="row">
+      <div class="col s12 m12 l12">
+        {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" doc=this id="clientForm"}}
+      <table>
+        <thead>
+          <tr>
+              <th class="center-align white-text blue headingFontSize" colspan="12">CARDIO PROGRAM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Age: _________</b></td>
+            <td>Beginner:  55 - 70% Intensity</td>
+          </tr>
+          <tr>
+            <td><b>Resting Heart Rate: ___________</b></td>
+            <td>Intermediate:  60 - 75% Intensity</td>
+          </tr>
+          <tr>
+            <td><b>Max Heart Rate: ( 220  -  ___________ )  =  ______________</b></td>
+            <td class="right-align">Advanced:  65 - 80% Intensity</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <hr>
+      <br>
+      <table>
+        <thead>
+          <tr>
+              <th class="center-align white-text blue" colspan="12">WEEKS 1 - 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Start Date: ____________</b></td>
+            <td>Beginner:  </td>
+          </tr>
+          <tr>
+            <td><b>( ________  -  __________ ) x __________  +  ___________  =  ___________</b></td>
+            <td>Intermediate: </td>
+          </tr>
+          <tr>
+            <td><b>Max Heart Rate: (220  -  )  =  </b></td>
+            <td class="right-align">Advanced:  65 - 80% Intensity</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <hr>
+      <br>
+      <table>
+        <thead>
+          <tr>
+              <th class="center-align white-text blue" colspan="12">WEEKS 5 - 8</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Start Date: ____________</b></td>
+            <td>Beginner:  </td>
+          </tr>
+          <tr>
+            <td><b>( ________  -  __________ ) x __________  +  ___________  =  ___________</b></td>
+            <td>Intermediate: </td>
+          </tr>
+          <tr>
+            <td><b>Max Heart Rate: (220  -  )  =  </b></td>
+            <td class="right-align">Advanced:  65 - 80% Intensity</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <hr>
+      <br>
+      <table>
+        <thead>
+          <tr>
+              <th class="center-align white-text blue" colspan="12">WEEKS 9 - 12</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Start Date: ____________</b></td>
+            <td>Beginner:  </td>
+          </tr>
+          <tr>
+            <td><b>( ________  -  __________ ) x __________  +  ___________  =  ___________</b></td>
+            <td>Intermediate: </td>
+          </tr>
+          <tr>
+            <td><b>Max Heart Rate: (220  -  )  =  </b></td>
+            <td class="right-align">Advanced:  65 - 80% Intensity</td>
+          </tr>
+        </tbody>
+      </table>
+      {{/autoForm}}
+      </div>
+  </div>
 </template>
