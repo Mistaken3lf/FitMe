@@ -4,7 +4,7 @@ Meteor.methods({
     if(!Meteor.userId()) {
       throw new Meteor.Error("not-authorized");
     }
-
+    
     Meteor.users.remove(clientId);
   }
 });

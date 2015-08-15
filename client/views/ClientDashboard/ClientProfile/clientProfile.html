@@ -11,7 +11,7 @@
         <h6 class="center blue-text"><b><u>Payment Due</u></b></h6>
     </div>
     <div class="col s12 m6 offset-m2 l6 offset-l1">
-      {{#autoForm collection="Meteor.users" id="clientProfileForm" type="update" doc=this resetOnSuccess=false autosave=true}}
+      {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=this resetOnSuccess=false autosave=true}}
       <table class="responsive bordered profileFontSize">
         <tbody>
           <tr>
