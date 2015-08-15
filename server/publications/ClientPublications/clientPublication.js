@@ -1,5 +1,5 @@
 Meteor.publish('currentClients', function () {
-  if(this.userId) {
+  if(this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     return Meteor.users.find({roles: 'client', "profile.createdBy": this.userId}, {
       fields: {
         username: 1,
