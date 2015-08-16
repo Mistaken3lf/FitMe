@@ -1,73 +1,103 @@
 <template name="clientProfile">
-  <br>
   <div class="row">
     <div class="col s12 m3 l3">
-        <img src="../profile/profilePicture.jpg" class="responsive-img">
-        <h5 class="center blue-text"><b>{{profile.firstName}} {{profile.lastName}}</b></h5>
-        <br>
-        <h6 class="center blue-text clientSession"><b><u>Client Sessions Log</u></b></h6>
-        <h6 class="center blue-text"><b><u>Sessions Remaining</u></b></h6>
-        <br>
-        <h6 class="center blue-text"><b><u>Payment Due</u></b></h6>
+      <img src="../profile/profilePicture.jpg" class="responsive-img">
+      <h5 class="center blue-text"><b>{{profile.firstName}} {{profile.lastName}}</b></h5>
+      <h6 class="center blue-text clientSessionPadding"><b><u>Client Sessions Log</u></b></h6>
+      <h6 class="center blue-text clientSessionPadding"><b><u>Sessions Remaining</u></b></h6>
+      <h6 class="center blue-text clientSessionPadding"><b><u>Payment Due</u></b></h6>
     </div>
     <div class="col s12 m6 offset-m2 l6 offset-l1">
       {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=this resetOnSuccess=false autosave=true}}
       <table class="responsive bordered profileFontSize">
+        <thead>
+          <tr>
+            <th class="center-align white-text blue" colspan="2">User Profile</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
-            <b><td>Username</td></b>
+            <b>
+              <td>Username</td>
+            </b>
             <td class="blue-text"><b>{{username}}</b></td>
           </tr>
           <tr>
-            <b><td>First Name</td></b>
+            <b>
+              <td>First Name</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.firstName" style="font-size: 20px;" class="noStyleInput" type="text" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Last Name</td></b>
+            <b>
+              <td>Last Name</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.lastName" type="text" style="font-size: 20px;" label=false class="noStyleInput"}}</b></td>
           </tr>
           <tr>
-            <b><td>Birthday</td></b>
+            <b>
+              <td>Birthday</td>
+            </b>
             <td class="blue-text "><b>{{> afQuickField name="profile.birthday" type="date" style="font-size: 20px;" label=false class="datepicker noStyleInput"}}</b></td>
           </tr>
           <tr>
-            <b><td>Address</td></b>
+            <b>
+              <td>Address</td>
+            </b>
             <td class="blue-text"><b>{{>afQuickField name="profile.address" style="font-size: 20px;" label=false class="noStyleInput"}}</b></td>
           </tr>
           <tr>
-            <b><td>City</td></b>
+            <b>
+              <td>City</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.city" style="font-size: 20px;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>State</td></b>
+            <b>
+              <td>State</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.state" style="font-size: 20px;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Zip</td></b>
+            <b>
+              <td>Zip</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.zip" style="font-size: 20px;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Home Phone</td></b>
+            <b>
+              <td>Home Phone</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.homePhone" style="font-size: 20px;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Work Phone</td></b>
+            <b>
+              <td>Work Phone</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.workPhone" style="font-size: 20px;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Emergency Contact #</td></b>
+            <b>
+              <td>Emergency Contact #</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.emergencyContact" style="font-size: 20px;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Email</td></b>
+            <b>
+              <td>Email</td>
+            </b>
             <td class="blue-text"><b>{{emails.[0].address}}</b></td>
           </tr>
           <tr>
-            <b><td>Biography</td></b>
+            <b>
+              <td>Biography</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.bio" rows=6 style="font-size: 20px; height: 100%;" class="noStyleInput" label=false}}</b></td>
           </tr>
           <tr>
-            <b><td>Fitness Goals</td></b>
+            <b>
+              <td>Fitness Goals</td>
+            </b>
             <td class="blue-text"><b>{{> afQuickField name="profile.fitnessGoals" rows=6 style="font-size: 20px; height: 100%;" class="noStyleInput" label=false}}</b></td>
           </tr>
         </tbody>
