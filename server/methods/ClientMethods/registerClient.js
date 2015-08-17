@@ -11,26 +11,27 @@ Meteor.methods({
       username: username,
       password: password,
       email: email,
-
-      profile: {
-        firstName: firstName,
-        lastName: lastName,
-        birthday: birthday,
-        address: address,
-        city: city,
-        state: state,
-        zip: zip,
-        homePhone: homePhone,
-        cellPhone: cellPhone,
-        workPhone: workPhone,
-        emergencyContact: emergencyContact,
-        bio: bio,
-        fitnessGoals: fitnessGoals,
-        createdBy: Meteor.userId()
-      },
     });
 
     //Assign client to the client role
     Roles.addUsersToRoles(id, 'client');
+
+    Meteor.users.update(id, {$set:
+      {
+        'userProfile.firstName': firstName,
+        'userProfile.lastName': lastName,
+        'userProfile.birthday': birthday,
+        'userProfile.address': address,
+        'userProfile.city': city,
+        'userProfile.state': state,
+        'userProfile.zip': zip,
+        'userProfile.homePhone': homePhone,
+        'userProfile.cellPhone': cellPhone,
+        'userProfile.workPhone': workPhone,
+        'userProfile.emergencyContact': emergencyContact,
+        'userProfile.bio': bio,
+        'userProfile.fitnessGoals': fitnessGoals,
+        'userProfile.createdBy': Meteor.userId()
+      }});
   }
 });

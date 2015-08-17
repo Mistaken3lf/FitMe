@@ -7,14 +7,15 @@ Meteor.methods({
       username: username,
       password: password,
       email: email,
-
-      profile: {
-        firstName: firstName,
-        lastName: lastName,
-      },
     });
 
     //Assign newly created trainer a trainer role
     Roles.addUsersToRoles(trainerId, 'trainer');
+
+    Meteor.users.update({}, {$set:
+      {
+        'userProfile.firstName': firstName,
+        'userProfile.lastName': lastName,
+      }});
   }
 });

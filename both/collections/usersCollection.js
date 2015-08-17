@@ -98,7 +98,7 @@ Schema.User = new SimpleSchema({
        regEx: SimpleSchema.RegEx.Email
    },
 
-    profile: {
+    userProfile: {
         type: Schema.UserProfile,
         optional: true
     },
