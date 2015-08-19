@@ -1,10 +1,10 @@
 ClientCardio = new Mongo.Collection("clientCardio");
 
-ClientCardioSchema = {};
+var ClientCardioSchema = {};
 
 ClientCardioSchema.cardio = new SimpleSchema({
 
 
-  });
+});
 
 ClientCardio.attachSchema(ClientCardioSchema.cardio);

@@ -8,7 +8,7 @@
       <h6 class="center blue-text clientSessionPadding"><b><u>Payment Due</u></b></h6>
     </div>
     <div class="col s12 m6 offset-m2 l6 offset-l1">
-      {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=this resetOnSuccess=false autosave=true}}
+      {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=currentClient resetOnSuccess=false autosave=true}}
       <table class="responsive-table bordered profileFontSize">
         <thead>
           <tr>
@@ -20,7 +20,7 @@
             <b>
               <td>Username</td>
             </b>
-            <td class="blue-text"><b>{{username}}</b></td>
+            <td class="blue-text"><b>{{currentClient.username}}</b></td>
           </tr>
           <tr>
             <b>
@@ -86,7 +86,7 @@
             <b>
               <td>Email</td>
             </b>
-            <td class="blue-text"><b>{{emails.[0].address}}</b></td>
+            <td class="blue-text"><b>{{currentClient.emails.[0].address}}</b></td>
           </tr>
           <tr>
             <b>

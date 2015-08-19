@@ -1,4 +1,4 @@
-Schema = {};
+var Schema = {};
 
 Schema.UserProfile = new SimpleSchema({
   firstName: {

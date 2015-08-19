@@ -32,6 +32,12 @@ Meteor.methods({
         'userProfile.bio': bio,
         'userProfile.fitnessGoals': fitnessGoals,
         'userProfile.createdBy': Meteor.userId()
-      }});
+      }
+    });
+
+    ClientStats.insert({
+      whosStats: id,
+      createdBy: Meteor.userId(),
+    });
   }
 });
