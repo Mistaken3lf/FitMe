@@ -1,6 +1,6 @@
 //Server method that will create a new client user
 Meteor.methods({
-  createClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
+  registerClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
     //Make sure they are logged in before creating a user
     if(!Meteor.userId()) {
       throw new Meteor.Error("not-authorized");

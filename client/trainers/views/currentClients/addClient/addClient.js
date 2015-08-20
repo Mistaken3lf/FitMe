@@ -30,7 +30,7 @@ Template.addClient.events({
     var fitnessGoals = $('[name=fitnessGoals]').val();
 
     //Call server method createClient with provided info
-    Meteor.call("createClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function(error) {
+    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function(error) {
       //Create client failed
       if(error) {
         //Popup a toast to display reason for error
