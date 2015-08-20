@@ -6,7 +6,7 @@
   padding-bottom: 20px;
 }
 
-.profileHeadingText {
-  font-size: 110%;
+.boldProfileHeading {
   font-weight: bold;
+  font-size: 120%;
 }

@@ -2,81 +2,16 @@
   <div class="row">
     <div class="col s12 m12 l12">
       {{#autoForm collection="ClientStats" id="clientStatsForm" type="method-update" meteormethod="updateClientsStats" doc=currentClientsStats resetOnSuccess=false autosave=true}}
-      <table class="responsive-table bordered">
-        <thead>
-          <tr>
-            <th class="center-align white-text blue" colspan="9">Stats</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th></th>
-            <th>Date</th>
-            <th>Body Weight</th>
-            <th>Body Fat %</th>
-            <th>Lbs. Body Fat</th>
-            <th>Lbs. Lean Mass</th>
-            <th>Lbs. Body Fat Lost</th>
-            <th>Lbs. Body Fat</th>
-            <th>Lbs. Lean Muscle Gain</th>
-          </tr>
-          <tr>
-            <td>Initial Test</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-          </tr>
-          <tr>
-            <td>Initial Test</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-          </tr>
-          <tr>
-            <td>Initial Test</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-          </tr>
-          <tr>
-            <td>Initial Test</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-          </tr>
-          <tr>
-            <td>Initial Test</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-            <td>{{> afQuickField name="bodyFat" type="text" label=false}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title black-text">Stats</span>
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              <span class="blue-text">Username:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+            </div>
+          </div>
+        </div>
+      </div>
       {{/autoForm}}
     </div>
   </div>
