@@ -1,11 +1,12 @@
-.profileFontSize {
-  font-size: 20px;
-}
-
 .noStyleInput {
     border: none !important;
 }
 
 .clientSessionPadding {
   padding-bottom: 20px;
+}
+
+.profileHeadingText {
+  font-size: 110%;
+  font-weight: bold;
 }
