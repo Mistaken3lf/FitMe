@@ -4,10 +4,55 @@
       {{#autoForm collection="ClientStats" id="clientStatsForm" type="method-update" meteormethod="updateClientsStats" doc=currentClientsStats resetOnSuccess=false autosave=true}}
       <div class="card">
         <div class="card-content">
-          <span class="card-title black-text">Stats</span>
+          <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
           <div class="row">
-            <div class="input-field col s12 m6 l6">
-              <span class="blue-text">Username:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+            <div class="col s12 m2 l2">
+              <h5 class="bodyStatsHeading">Initial Test</h5>
+              <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+            </div>
+            <div class="col s12 m3 l3">
+              <h5 class="bodyStatsHeading">Retest 1</h5>
+              <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="bodyStatsHeading">Retest 2</h5>
+              <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+            </div>
+            <div class="col s12 m3 l3">
+              <h5 class="bodyStatsHeading">Retest 3</h5>
+              <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="bodyStatsHeading">Change</h5>
+              <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="bodyFat" type="text" label=false}}
             </div>
           </div>
         </div>
