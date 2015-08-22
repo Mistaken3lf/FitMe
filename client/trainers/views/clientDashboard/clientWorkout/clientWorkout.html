@@ -1,0 +1,327 @@
+<template name="clientWorkout">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      {{#autoForm collection="ClientWorkout" id="clientWorkoutForm" type="method-update" meteormethod="updateClientsWorkout" doc=currentClientsWorkout resetOnSuccess=false autosave=true}}
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Workout Card{{/with}}</span>
+          <div class="row">
+            <div class="col s12 m3 l3">
+              <span class="blue-text workoutHeadings">Date:</span>{{> afQuickField name="workoutDate" type="date" label=false class="datepicker"}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName1" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex1set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex1set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex1set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex1set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex1set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex1set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex1set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex1set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex1set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex1set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName2" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex2set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex2set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex2set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex2set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex2set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex2set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex2set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex2set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex2set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex2set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span  class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName3" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex3set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex3set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex3set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex3set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex3set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex3set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex3set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex3set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex3set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex3set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span  class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName4" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex4set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex4set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex4set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex4set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex4set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex4set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex4set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex4set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex4set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex4set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName5" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex5set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex5set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex5set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex5set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex5set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex5set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex5set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex5set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex5set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex5set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span  class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName6" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex6set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex6set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex6set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex6set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex6set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex6set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex6set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex6set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex6set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex6set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName7" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex7set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex7set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex7set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex7set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex7set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex7set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex7set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex7set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex7set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex7set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName8" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex8set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex8set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5  class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex8set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex8set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex8set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex8set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex8set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex8set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex8set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex8set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName9" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex9set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex9set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex9set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex9set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex9set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex9set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex9set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex9set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex9set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex9set5wt" type="number" label=false}}
+            </div>
+          </div>
+          <div class="card-panel blue"></div>
+          <div class="row">
+            <div class="col s12 m2 l2">
+              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName10" type="text" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 1</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex10set1rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex10set1wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 2</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex10set2rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex10set2wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 3</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex10set3rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex10set3wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 4</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex10set4rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex10set4wt" type="number" label=false}}
+            </div>
+            <div class="col s12 m2 l2">
+              <h5 class="blue-text workoutHeadings">SET 5</h5>
+              <span class="workoutLabels">Reps:</span>{{> afQuickField name="ex10set5rep" type="number" label=false}}
+              <span class="workoutLabels">Weight:</span>{{> afQuickField name="ex10set5wt" type="number" label=false}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

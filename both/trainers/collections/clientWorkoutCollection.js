@@ -4,7 +4,7 @@ var ClientWorkoutSchema = {};
 
 ClientWorkoutSchema.workout = new SimpleSchema({
 
-  whosStats: {
+  whosWorkout: {
     type: String,
   },
 
