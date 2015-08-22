@@ -6,6 +6,11 @@
         <div class="card-content">
           <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Workout Card{{/with}}</span>
           <div class="row">
+            <div class="col s12 m3 l3">
+            <span class="blue-text boldProfileHeading">DATE:</span>{{> afQuickField name="workoutDate" type="date" label=false class="datepicker"}}
+          </div>
+        </div>
+          <div class="row">
             <div class="col s12 m2 l2">
               <span style="text-decoration: underline;" class="blue-text boldProfileHeading">Exercise:</span>{{> afQuickField name="ExName1" type="text" label=false}}
           </div>
@@ -342,9 +347,6 @@
             </div>
           </div>
           
-          <div class="input-field col s12 m6 l6">
-            <span class="blue-text boldProfileHeading">DATE:</span>{{> afQuickField name="workoutDate" type="date" label=false class="datepicker"}}
-          </div>
         </div>
       </div>
       {{/autoForm}}
