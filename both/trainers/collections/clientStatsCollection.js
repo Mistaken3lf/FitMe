@@ -188,7 +188,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurement Initial Test
   measureITDate: {
-    type: Number,
+    type: Date,
     optional: true,
   },
 
@@ -240,7 +240,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Retest 1
   measureRT1Date: {
-    type: Number,
+    type: Date,
     optional: true,
   },
 
@@ -292,7 +292,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Retest 2
   measureRT2Date: {
-    type: Number,
+    type: Date,
     optional: true,
   },
 
@@ -344,7 +344,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Retest 3
   measureRT3Date: {
-    type: Number,
+    type: Date,
     optional: true,
   },
 
@@ -396,7 +396,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Change
   measureChangeDate: {
-    type: Number,
+    type: Date,
     optional: true,
   },
 
