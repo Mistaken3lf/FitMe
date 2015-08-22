@@ -39,5 +39,10 @@ Meteor.methods({
       whosStats: id,
       createdBy: Meteor.userId(),
     });
+
+    ClientWorkout.insert({
+      whosWorkout: id,
+      createdBy: Meteor.userId(),
+    });
   }
 });
