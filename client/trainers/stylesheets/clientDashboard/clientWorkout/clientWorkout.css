@@ -7,3 +7,7 @@
 .workoutLabels {
   font-weight: bold;
 }
+
+.exerciseSeperator {
+  border: 5px solid #2196f3;
+}
