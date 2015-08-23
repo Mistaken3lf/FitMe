@@ -18,6 +18,11 @@ Schema.UserProfile = new SimpleSchema({
      optional: true
    },
 
+   whosProfile: {
+     type: String,
+     optional: true
+   },
+
    birthday: {
      type: Date,
      optional: true

@@ -31,7 +31,8 @@ Meteor.methods({
         'userProfile.emergencyContact': emergencyContact,
         'userProfile.bio': bio,
         'userProfile.fitnessGoals': fitnessGoals,
-        'userProfile.createdBy': Meteor.userId()
+        'userProfile.createdBy': Meteor.userId(),
+        'userProfile.whosProfile': id,
       }
     });
 
