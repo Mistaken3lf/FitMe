@@ -8,10 +8,5 @@ Template.clientCardio.onRendered(function() {
 });
 
 Template.clientCardio.helpers({
-  //Helper function to display users in table from subscription
-  'cardioCalculation': function () {
-    //Show all clients and dont show my own information
-    cardioProgramMaxHeartRate = 220 - cardioProgramAge;
-    return Meteor.users.cardioProgramMaxHeartRate;
-  }
+
 });

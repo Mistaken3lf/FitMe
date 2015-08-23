@@ -44,5 +44,10 @@ Meteor.methods({
       whosWorkout: id,
       createdBy: Meteor.userId(),
     });
+
+    ClientCardio.insert({
+      whosCardio: id,
+      createdBy: Meteor.userId(),
+    });
   }
 });

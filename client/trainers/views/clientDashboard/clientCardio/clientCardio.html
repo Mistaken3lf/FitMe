@@ -1,7 +1,7 @@
 <template name="clientCardio">
   <div class="row">
     <div class="col s12 m12 l12">
-      {{#autoForm collection="ClientCardio" id="clientCardioForm" type="method-update" meteormethod=" " doc=currentClientsCardio resetOnSuccess=false autosave=true}}
+      {{#autoForm collection="ClientCardio" id="clientCardioForm" type="method-update" meteormethod="updateClientCardio" doc=currentClientsCardio resetOnSuccess=false autosave=true}}
       <div class="card">
         <div class="card-content">
           <span class="card-title blue-text">CARDIO PROGRAM</span>
@@ -9,51 +9,62 @@
             <div class="col s12 m6 l3">
               <span class="cardioLabel">Age:</span>{{> afQuickField name="cardioProgramAge" type="number" label=false placeholder="Age"}}
               <span class="cardioLabel">Resting Heart Rate:</span>{{> afQuickField name="cardioProgramRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
-              <span class="cardioLabel">Max Heart Rate: </span><input class="noCardioStyleInput center-align" type="number" value="220" readonly=true><div class="mathSymbol"> &#8722; </div>
-                                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioProgramAge" type="number" label=false placeholder="Age"}}<hr><div class="mathSymbol"> &#61; </div>
-                                                               {{> afQuickField class="center-align" name="cardioProgramMaxHeartRate" type="number" label=false readonly=true}}
+              <span class="cardioLabel">Max Heart Rate: </span><input class="noCardioStyleInput center-align" type="number" value="220" readonly=true>
+              <div class="mathSymbol"> &#8722; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioProgramAge" type="number" label=false placeholder="Age"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioProgramMaxHeartRate" type="number" label=false readonly=true}}
             </div>
             <div class="col s12 m3 offset-l1 l3">
-              <span class="cardioLabel">Beginner:  55 - 70% Intenstiy</span>
-              <span class="cardioLabel">Intermediate:  60 - 75% Intenstiy</span>
-              <span class="cardioLabel">Advanced:  65 - 80% Intenstiy</span>
+              <p class="cardioLabel">Beginner:  55 - 70% Intenstiy</p>
+              <p class="cardioLabel">Intermediate:  60 - 75% Intenstiy</p>
+              <p class="cardioLabel">Advanced:  65 - 80% Intenstiy</p>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card">
         <div class="card-content">
           <span class="card-title blue-text">WEEKS 1 - 4</span>
           <div class="row">
             <div class="col s12 m3 l3">
               <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW14StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
-              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}<div class="mathSymbol"><b> &#8722; </b></div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )<div class="mathSymbol"> &#215; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartPercentIntensity" type="number" label=false placeholder="% Intensity"}}<div class="mathSymbol"> &#43; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}<hr><div class="mathSymbol"> &#61; </div>
-                                               {{> afQuickField class="center-align" name="cardioW14StartBPM" type="number" label=false readonly=true}}
-                                               <label class="black-text" for="BPM">Beats Per Minute</label>
+              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}
+              <div class="mathSymbol"><b> &#8722; </b></div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )
+              <div class="mathSymbol"> &#215; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartPercentIntensity" type="number" label=false placeholder="% Intensity"}}
+              <div class="mathSymbol"> &#43; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioW14StartBPM" type="number" label=false readonly=true}}
+              <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
             <div class="col s12 m3 l3">
               <span class="cardioLabel">End Date:</span>{{> afQuickField name="cardioW14EndDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-06-29"}}
-              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}<div class="mathSymbol"><b> &#8722; </b></div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )<div class="mathSymbol"> &#215; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndPercentIntensity" type="number" label=false placeholder="% Intensity"}}<div class="mathSymbol"> &#43; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}<hr><div class="mathSymbol"> &#61; </div>
-                                               {{> afQuickField class="center-align" name="cardioW14EndBPM" type="number" label=false readonly=true}}
-                                               <label class="black-text" for="BPM">Beats Per Minute</label>
+              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}
+              <div class="mathSymbol"><b> &#8722; </b></div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )
+              <div class="mathSymbol"> &#215; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndPercentIntensity" type="number" label=false placeholder="% Intensity"}}
+              <div class="mathSymbol"> &#43; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioW14EndBPM" type="number" label=false readonly=true}}
+              <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
             <div class="col s12 m6 l6">
-              <span class="cardioLabel">Beginner: {{> afQuickField name="cardioProgramAge" type="text" label=false}}</span>
-              <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioProgramAge" type="text" label=false}}</span>
-              <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioProgramAge" type="text" label=false}}</span>
-              <span class="cardioLabel">Type:  {{> afQuickField name="cardioProgramAge" type="text" label=false}}</span>
+              <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW14Beginner" type="text" label=false}}</span>
+              <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW14Intermediate" type="text" label=false}}</span>
+              <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW14Advanced" type="text" label=false}}</span>
+              <span class="cardioLabel">Type:  {{> afQuickField name="cardioW14Type" type="text" label=false}}</span>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card">
         <div class="card-content">
           <span class="card-title blue-text">WEEKS 5 - 8 </span>
@@ -61,21 +72,31 @@
           <div class="row">
             <div class="col s12 m3 l3">
               <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW58StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
-              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}<div class="mathSymbol"><b> &#8722; </b></div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )<div class="mathSymbol"> &#215; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartPercentIntensity" type="number" label=false placeholder="% Intensity"}}<div class="mathSymbol"> &#43; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}<hr><div class="mathSymbol"> &#61; </div>
-                                               {{> afQuickField class="center-align" name="cardioW58StartBPM" type="number" label=false readonly=true}}
-                                               <label class="black-text" for="BPM">Beats Per Minute</label>
+              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}
+              <div class="mathSymbol"><b> &#8722; </b></div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )
+              <div class="mathSymbol"> &#215; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartPercentIntensity" type="number" label=false placeholder="% Intensity"}}
+              <div class="mathSymbol"> &#43; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioW58StartBPM" type="number" label=false readonly=true}}
+              <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
             <div class="col s12 m3 l3">
               <span class="cardioLabel">End Date:</span>{{> afQuickField name="cardioW58EndDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-06-29"}}
-              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}<div class="mathSymbol"><b> &#8722; </b></div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )<div class="mathSymbol"> &#215; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndPercentIntensity" type="number" label=false placeholder="% Intensity"}}<div class="mathSymbol"> &#43; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}<hr><div class="mathSymbol"> &#61; </div>
-                                               {{> afQuickField class="center-align" name="cardioW58EndBPM" type="number" label=false readonly=true}}
-                                               <label class="black-text" for="BPM">Beats Per Minute</label>
+              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}
+              <div class="mathSymbol"><b> &#8722; </b></div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )
+              <div class="mathSymbol"> &#215; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndPercentIntensity" type="number" label=false placeholder="% Intensity"}}
+              <div class="mathSymbol"> &#43; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW58EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioW58EndBPM" type="number" label=false readonly=true}}
+              <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
             <div class="col s12 m6 l6">
               <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW58Beginner" type="text" label=false}}</span>
@@ -86,7 +107,6 @@
           </div>
         </div>
       </div>
-
       <div class="card">
         <div class="card-content">
           <span class="card-title blue-text">WEEKS 9 - 12 </span>
@@ -94,21 +114,31 @@
           <div class="row">
             <div class="col s12 m3 l3">
               <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW912StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
-              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}<div class="mathSymbol"><b> &#8722; </b></div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )<div class="mathSymbol"> &#215; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartPercentIntensity" type="number" label=false placeholder="% Intensity"}}<div class="mathSymbol"> &#43; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}<hr><div class="mathSymbol"> &#61; </div>
-                                               {{> afQuickField class="center-align" name="cardioW912StartBPM" type="number" label=false readonly=true}}
-                                               <label class="black-text" for="BPM">Beats Per Minute</label>
+              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}
+              <div class="mathSymbol"><b> &#8722; </b></div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )
+              <div class="mathSymbol"> &#215; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartPercentIntensity" type="number" label=false placeholder="% Intensity"}}
+              <div class="mathSymbol"> &#43; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912StartRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioW912StartBPM" type="number" label=false readonly=true}}
+              <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
             <div class="col s12 m3 l3">
               <span class="cardioLabel">End Date:</span>{{> afQuickField name="cardioW912EndDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-06-29"}}
-              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}<div class="mathSymbol"><b> &#8722; </b></div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )<div class="mathSymbol"> &#215; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndPercentIntensity" type="number" label=false placeholder="% Intensity"}}<div class="mathSymbol"> &#43; </div>
-                                               {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}<hr><div class="mathSymbol"> &#61; </div>
-                                               {{> afQuickField class="center-align" name="cardioW912EndBPM" type="number" label=false readonly=true}}
-                                               <label class="black-text" for="BPM">Beats Per Minute</label>
+              <span class="cardioLabel"></span>( {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndMaxHeartRate" type="number" label=false placeholder="Max Heart Rate"}}
+              <div class="mathSymbol"><b> &#8722; </b></div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}} )
+              <div class="mathSymbol"> &#215; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndPercentIntensity" type="number" label=false placeholder="% Intensity"}}
+              <div class="mathSymbol"> &#43; </div>
+              {{> afQuickField class="noCardioStyleInput center-align" name="cardioW912EndRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
+              <hr>
+              <div class="mathSymbol"> &#61; </div>
+              {{> afQuickField class="center-align" name="cardioW912EndBPM" type="number" label=false readonly=true}}
+              <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
             <div class="col s12 m6 l6">
               <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW912Beginner" type="text" label=false}}</span>

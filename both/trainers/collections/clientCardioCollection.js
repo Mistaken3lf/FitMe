@@ -3,7 +3,7 @@ ClientCardio = new Mongo.Collection("clientCardio");
 var ClientCardioSchema = {};
 
 ClientCardioSchema.cardio = new SimpleSchema({
-  whosStats: {
+  whosCardio: {
     type: String,
   },
 
