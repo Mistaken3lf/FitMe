@@ -59,7 +59,7 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
 
-  statssRT1LeanMass: {
+  statsRT1LeanMass: {
     type: Number,
     optional: true,
   },
@@ -96,7 +96,7 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
 
-  statssRT2LeanMass: {
+  statsRT2LeanMass: {
     type: Number,
     optional: true,
   },
@@ -133,7 +133,7 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
 
-  statssRT3LeanMass: {
+  statsRT3LeanMass: {
     type: Number,
     optional: true,
   },
@@ -170,7 +170,7 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
 
-  statssChangeLeanMass: {
+  statsChangeLeanMass: {
     type: Number,
     optional: true,
   },
