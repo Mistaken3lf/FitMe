@@ -16,13 +16,6 @@
   font-weight: bold;
 }
 
-label {
-  padding-right: 75px;
-  float: right;
-  padding-bottom: 35px;
-  /*margin-bottom: 100px;*/
-}
-
 .noCardioStyleInput {
     border: none !important;
 }
