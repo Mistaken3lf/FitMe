@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col s12 m12 l12">
       {{#autoForm collection="ClientStats" id="clientStatsForm" type="method-update" meteormethod="updateClientsStats" doc=currentClientsStats resetOnSuccess=false autosave=true}}
-      <div class="card">
+      <div class="card z-depth-0">
         <div class="card-content">
           <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
           <div class="row">
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card z-depth-0">
         <div class="card-content">
           <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Measurements{{/with}}</span>
           <div class="row">
@@ -131,7 +131,7 @@
         </div>
       </div>
       <div class="col s12 m6 l6">
-        <div class="card">
+        <div class="card z-depth-0">
           <div class="card-content">
             <span class="card-title blue-text">Body Fat Chart</span>
             <img src="/clientDashboard/clientStats/bodyfatchart.jpg" class="responsive-img">
@@ -139,7 +139,7 @@
         </div>
       </div>
       <div class="col s12 m6 l6">
-        <div class="card">
+        <div class="card z-depth-0">
           <div class="card-content">
             <span class="card-title blue-text">Heart Rate Chart</span>
             <img src="/clientDashboard/clientStats/heartRateChart.png" class="responsive-img">
