@@ -8,13 +8,18 @@
     <div class="dashContainer">
       <div class="row">
         <div class="col s12 m12 l12">
-          <ul class="" data-collapsible="">
-            <li>{{> clientProfile}}</li>
-            <li>{{> clientWorkout}}</li>
-            <li>{{> clientStats}}</li>
-            <li>{{> clientCardio}}</li>
+          <ul class="tabs tabMargin">
+            <li class="tab col s3"><a class="active blue-text" href="#clientProfile">Profile</a></li>
+            <li class="tab col s3"><a class="blue-text" href="#clientStats">Stats</a></li>
+            <li class="tab col s3"><a class="blue-text" href="#clientCardio">Cardio</a></li>
+            <li class="tab col s3"><a class="blue-text" href="#clientWorkout">Workout</a></li>
           </ul>
         </div>
+
+        <div id="clientProfile" class="col s12">{{> clientProfile}}</div>
+        <div id="clientStats" class="col s12">{{> clientStats}}</div>
+        <div id="clientCardio" class="col s12">{{> clientCardio}}</div>
+        <div id="clientWorkout" class="col s12">{{> clientWorkout}}</div>
       </div>
     </div>
   </div>
