@@ -1,11 +1,14 @@
+/* Remove styling from input */
 .noStyleInput {
     border: none !important;
 }
 
+/* Padding for the sessions on left hand side */
 .clientSessionPadding {
   padding-bottom: 20px;
 }
 
+/* Bold headings */
 .boldProfileHeading {
   font-weight: bold;
   font-size: 120%;

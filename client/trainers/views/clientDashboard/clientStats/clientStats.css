@@ -1,7 +1,9 @@
+/* Change heading color to blue */
 .bodyStatsHeading {
   color: #2196f3;
 }
 
+/* Make the stats labels bold */
 .bodyStatsLabel {
   font-weight: bold;
 }

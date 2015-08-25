@@ -1,21 +1,26 @@
+/* Make titles of the card bold */
 .card .card-title {
   font-weight: 500;
 }
 
+/* Change color of the cardio heading to blue */
 .cardioHeading {
   color: #2196f3;
 }
 
+/* Make labels on cardio table bold */
 .cardioLabel {
   font-weight: bold;
 }
 
+/* Placement of math  symbols */
 .mathSymbol {
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: bold;
 }
 
+/* Remove Style from inputs */
 .noCardioStyleInput {
     border: none !important;
 }
