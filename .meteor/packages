@@ -7,7 +7,6 @@
 meteor-platform
 materialize:materialize
 accounts-password
-iron:router
 aldeed:autoform
 aldeed:simple-schema
 aldeed:collection2
@@ -17,3 +16,5 @@ check
 accounts-base
 msavin:mongol
 meteorhacks:fast-render
+kadira:flow-router
+kadira:blaze-layout

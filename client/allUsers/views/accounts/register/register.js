@@ -28,7 +28,7 @@ Template.register.events({
             Materialize.toast(error.reason, 4000, "centerToast")
           } else {
             //Route the newly logged in user home
-            Router.go('/');
+            FlowRouter.go('/');
           }
         });
       }

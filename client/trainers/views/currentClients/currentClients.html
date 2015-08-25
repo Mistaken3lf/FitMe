@@ -8,6 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="col s12">
+          {{#if isReady}}
           <h3>Current Clients</h3>
           <!--Client Table-->
           <table class="striped responsive-table">
@@ -32,6 +33,7 @@
               {{/each}}
             </tbody>
           </table>
+          {{/if}}
           <!--End of client table-->
         </div>
       </div>

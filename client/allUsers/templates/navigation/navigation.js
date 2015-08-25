@@ -6,7 +6,7 @@ Template.navigation.events ({
     event.preventDefault();
 
     //Bring user back to home page after logging out
-    Router.go('/');
+    FlowRouter.go('/');
 
     //Log user out
     Meteor.logout();

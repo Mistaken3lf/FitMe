@@ -12,11 +12,11 @@ Meteor.publish('myClientsProfiles', function (currentClientsId) {
         "userProfile.state": 1,
         "userProfile.zip": 1,
         "userProfile.homePhone": 1,
-        "userProfile.cellPhone": 1,
         "userProfile.workPhone": 1,
         "userProfile.emergencyContact": 1,
         "userProfile.bio": 1,
         "userProfile.fitnessGoals": 1,
+        "userProfile.whosProfile": 1,
       }});
     }
 

@@ -56,7 +56,7 @@ Template.addClient.events({
         bio = $('[name=bio]').val('');
         fitnessGoals = $('[name=fitnessGoals]').val('');
 
-        Router.go("/currentClients");
+        FlowRouter.go("/currentClients");
       }
     });
   }
