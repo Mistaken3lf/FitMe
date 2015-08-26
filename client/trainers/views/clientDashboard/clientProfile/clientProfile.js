@@ -9,8 +9,9 @@ Template.clientProfile.onCreated(function () {
   });
 });
 
-//Run when the profile template is rendered
-Template.clientProfile.onRendered(function () {
+//Rendered function for the profile shell nested in the clientProfile
+//template.
+Template.clientProfileShell.onRendered(function () {
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 225, // Creates a dropdown of 25 years to control year
@@ -20,7 +21,7 @@ Template.clientProfile.onRendered(function () {
 });
 
 //Helper functions for the profile
-Template.clientProfile.helpers({
+Template.clientProfileShell.helpers({
   //Get the current clients profile based on the url param
   currentClient: function () {
     var clientId = FlowRouter.getParam('_id');

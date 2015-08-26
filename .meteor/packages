@@ -15,6 +15,5 @@ alanning:roles
 check
 accounts-base
 msavin:mongol
-meteorhacks:fast-render
 kadira:flow-router
 kadira:blaze-layout
