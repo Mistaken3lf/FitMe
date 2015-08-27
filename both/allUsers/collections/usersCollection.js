@@ -20,7 +20,7 @@ Schema.UserProfile = new SimpleSchema({
 
    whosProfile: {
      type: String,
-     optional: true
+     optional: true,
    },
 
    birthday: {
@@ -52,12 +52,6 @@ Schema.UserProfile = new SimpleSchema({
    },
 
    homePhone: {
-     type: String,
-     regEx: /^[2-9]\d{2}-\d{3}-\d{4}$/,
-     optional: true
-   },
-
-   cellPhone: {
      type: String,
      regEx: /^[2-9]\d{2}-\d{3}-\d{4}$/,
      optional: true
