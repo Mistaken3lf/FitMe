@@ -3,10 +3,6 @@
   margin: auto;
 }
 
-.tabMargin {
-  margin-bottom: 1%;
-}
-
-.tabs .indicator {
-  background-color: #2196f3;
+.accordianMargin {
+  margin-top: 1%;
 }
