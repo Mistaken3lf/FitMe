@@ -15,8 +15,7 @@
 
 /* Placement of math  symbols */
 .mathSymbol {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 12px;
   font-weight: bold;
 }
 
