@@ -23,3 +23,7 @@
 .noCardioStyleInput {
     border: none !important;
 }
+
+.cardioSeperator {
+  border: 2px solid #2196f3;
+}
