@@ -31,4 +31,14 @@ Template.clientCardioShell.helpers({
     //Return current clients cardio to use as the doc for autoform
     return currentClientsCardio;
   },
+
+  maxHeartRate: function() {
+    var clientId = FlowRouter.getParam('_id');
+    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+
+    var maxHeartRate = 220 - currentClientsCardio.cardioProgramAge;
+
+    return maxHeartRate;
+
+  }
 });

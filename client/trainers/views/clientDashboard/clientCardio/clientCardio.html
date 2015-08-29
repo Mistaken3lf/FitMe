@@ -40,13 +40,13 @@
                   <div class="mathSymbol center-align"> &#8722; </div>
                 </div>
                 <div class="col s12 m2 l2">
-                  {{> afQuickField class="center-align" name="cardioProgramAge" type="number" label=false placeholder="Age"}}
+                  {{#with currentClientsCardio}}{{cardioProgramAge}}{{/with}}
                 </div>
                 <div class="col s12 m1 l2">
                   <div class="mathSymbol center-align"> &#61; </div>
                 </div>
                 <div class="col s12 m2 l2">
-                  {{> afQuickField class="center-align" name="cardioProgramMaxHeartRate" type="number" label=false readonly=true}}
+                  {{maxHeartRate}}
                 </div>
               </div>
             </div>
