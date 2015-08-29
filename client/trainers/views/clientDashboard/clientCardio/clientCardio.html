@@ -1,7 +1,18 @@
 <template name="clientCardio">
+  {{#if isInRole 'trainer'}}
+    {{#if Template.subscriptionsReady}}
+      {{> clientCardioShell}}
+    {{else}}
+    <h3>Loading...</h3>
+    {{/if}}
+  {{else}}
+  <h3>Unauthorized</h3>
+  {{/if}}
+</template>
+
+<template name="clientCardioShell">
   <div class="row">
     <div class="col s12 m12 l12">
-      {{#if Template.subscriptionsReady}}
       {{#autoForm collection="ClientCardio" id="clientCardioForm" type="method-update" meteormethod="updateClientCardio" doc=currentClientsCardio resetOnSuccess=false autosave=true}}
       <div class="card z-depth-0">
         <div class="card-content">
@@ -398,9 +409,6 @@
         </div>
       </div>
       {{/autoForm}}
-      {{else}}
-      <p>Loading</p>
-      {{/if}}
     </div>
   </div>
 </template>

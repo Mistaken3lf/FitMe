@@ -11,7 +11,7 @@ Template.clientCardio.onCreated(function () {
 });
 
 //Run when the cardio template is rendered on the page
-Template.clientCardio.onRendered(function () {
+Template.clientCardioShell.onRendered(function () {
   //Pop up date picker
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -22,7 +22,7 @@ Template.clientCardio.onRendered(function () {
 });
 
 //Helper functions for the cardio template
-Template.clientCardio.helpers({
+Template.clientCardioShell.helpers({
   //Find clients cardio based on url param
   currentClientsCardio: function () {
     var clientId = FlowRouter.getParam('_id');
