@@ -20,8 +20,7 @@
                   {{> afQuickField name="cardioProgramRestingHeartRate" type="number" label=false placeholder="Resting Heart Rate"}}
                 </div>
               </div>
-              <fieldset>
-                <legend>Max Heart Rate</legend>
+              <h5>Max Heart Rate</h5>
               <div class="row">
                 <div class="col s12 m1 l1">
                   <input class="noCardioStyleInput center-align" type="number" value="220" readonly=true>
@@ -39,12 +38,17 @@
                   {{> afQuickField class="center-align" name="cardioProgramMaxHeartRate" type="number" label=false readonly=true}}
                 </div>
               </div>
-            </fieldset>
             </div>
             <div class="col s12 m6 l3">
-              <div class="cardioLabel">Beginner:  55 - 70% Intenstiy</div>
-              <div class="cardioLabel">Intermediate:  60 - 75% Intenstiy</div>
-              <div class="cardioLabel">Advanced:  65 - 80% Intenstiy</div>
+              <div class="row">
+                <div class="cardioLabel">Beginner:  55 - 70% Intenstiy</div>
+              </div>
+              <div class="row">
+                <div class="cardioLabel">Intermediate:  60 - 75% Intenstiy</div>
+              </div>
+              <div class="row">
+                <div class="cardioLabel">Advanced:  65 - 80% Intenstiy</div>
+              </div>
             </div>
           </div>
         </div>
@@ -56,11 +60,6 @@
           <div class="row">
             <div class="col s12 m3 l3">
               <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW14StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
-            </div>
-            <div class="col s12 m3 offset-l1 l3">
-              <p class="cardioLabel">MHR = Max Heart Rate</p>
-              <p class="cardioLabel">RHR = Resting Heart Rate</p>
-              <p class="cardioLabel">% I = % Intenstiy</p>
             </div>
           </div>
           <div class="row">
@@ -134,12 +133,36 @@
               <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col s12 m8 l8">
-              <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW14Beginner" type="text" label=false}}</span>
-              <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW14Intermediate" type="text" label=false}}</span>
-              <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW14Advanced" type="text" label=false}}</span>
-              <span class="cardioLabel">Type:  {{> afQuickField name="cardioW14Type" type="text" label=false}}</span>
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW14Beginner" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW14Intermediate" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW14Advanced" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Type:  {{> afQuickField name="cardioW14Type" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m3 l3 offset-l2 align">
+              <div class="row">
+                <span class="cardioLabel">MHR = Max Heart Rate</span>
+              </div>
+              <div class="row">
+                <span class="cardioLabel">RHR = Resting Heart Rate</span>
+              </div>
+              <div class="row">
+                <span class="cardioLabel">% I = % Intenstiy</span>
+              </div>
             </div>
           </div>
         </div>
@@ -152,11 +175,6 @@
           <div class="row">
             <div class="col s12 m3 l3">
               <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW58StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
-            </div>
-            <div class="col s12 m3 offset-l1 l3">
-              <p class="cardioLabel">MHR = Max Heart Rate</p>
-              <p class="cardioLabel">RHR = Resting Heart Rate</p>
-              <p class="cardioLabel">% I = % Intenstiy</p>
             </div>
           </div>
           <div class="row">
@@ -230,12 +248,36 @@
               <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col s12 m8 l8">
-              <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW58Beginner" type="text" label=false}}</span>
-              <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW58Intermediate" type="text" label=false}}</span>
-              <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW58Advanced" type="text" label=false}}</span>
-              <span class="cardioLabel">Type:  {{> afQuickField name="cardioW58Type" type="text" label=false}}</span>
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW58Beginner" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW58Intermediate" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW58Advanced" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Type:  {{> afQuickField name="cardioW58Type" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m3 l3 offset-l2 align">
+              <div class="row">
+                <span class="cardioLabel">MHR = Max Heart Rate</span>
+              </div>
+              <div class="row">
+                <span class="cardioLabel">RHR = Resting Heart Rate</span>
+              </div>
+              <div class="row">
+                <span class="cardioLabel">% I = % Intenstiy</span>
+              </div>
             </div>
           </div>
         </div>
@@ -248,11 +290,6 @@
           <div class="row">
             <div class="col s12 m3 l3">
               <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW912StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
-            </div>
-            <div class="col s12 m3 offset-l1 l3">
-              <p class="cardioLabel">MHR = Max Heart Rate</p>
-              <p class="cardioLabel">RHR = Resting Heart Rate</p>
-              <p class="cardioLabel">% I = % Intenstiy</p>
             </div>
           </div>
           <div class="row">
@@ -326,12 +363,36 @@
               <label class="black-text" for="BPM">Beats Per Minute</label>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col s12 m8 l8">
-              <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW912Beginner" type="text" label=false}}</span>
-              <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW912Intermediate" type="text" label=false}}</span>
-              <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW912Advanced" type="text" label=false}}</span>
-              <span class="cardioLabel">Type:  {{> afQuickField name="cardioW912Type" type="text" label=false}}</span>
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Beginner: {{> afQuickField name="cardioW912Beginner" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Intermediate:  {{> afQuickField name="cardioW912Intermediate" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Advanced:  {{> afQuickField name="cardioW912Advanced" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+                <div class="col s12 m6 l6">
+                  <span class="cardioLabel">Type:  {{> afQuickField name="cardioW912Type" rows=4 style="height: 100%;" label=false}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m3 l3 offset-l2 align">
+              <div class="row">
+                <span class="cardioLabel">MHR = Max Heart Rate</span>
+              </div>
+              <div class="row">
+                <span class="cardioLabel">RHR = Resting Heart Rate</span>
+              </div>
+              <div class="row">
+                <span class="cardioLabel">% I = % Intenstiy</span>
+              </div>
             </div>
           </div>
         </div>
