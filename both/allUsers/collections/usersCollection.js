@@ -30,7 +30,7 @@ Schema.UserProfile = new SimpleSchema({
 
    address: {
      type: String,
-     regEx: /^[a-z0-9A-Z ]{3,40}$/,
+     regEx: /^[a-z0-9A-Z_. ]{3,40}$/,
      optional: true
    },
 
