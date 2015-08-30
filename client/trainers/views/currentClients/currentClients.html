@@ -6,6 +6,7 @@
       <hr class="headerSeperator">
     </div>
     {{#if Template.subscriptionsReady}}
+    {{#if isInRole 'trainer'}}
     <div class="container">
       <div class="row">
         <div class="col s12">
@@ -42,6 +43,9 @@
       </div>
       <!--End of button row-->
     </div>
+    {{else}}
+    <p>Not Authorized</p>
+    {{/if}}
     {{else}}
     <p>Loading...</p>
     {{/if}}
