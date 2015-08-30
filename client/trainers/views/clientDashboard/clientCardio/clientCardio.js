@@ -40,5 +40,33 @@ Template.clientCardioShell.helpers({
 
     return maxHeartRate;
 
+  },
+
+  startBeatsPerMinuteW14: function() {
+    var clientId = FlowRouter.getParam('_id');
+    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+
+    var startIntensityW14 = currentClientsCardio.cardioW14StartPercentIntensity / 100;
+
+    var startBeatsPerMinutePart1 = currentClientsCardio.cardioW14StartMaxHeartRate - currentClientsCardio.cardioW14StartRestingHeartRate;
+    var startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW14;
+    var startBeatsPerMinuteW14 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW14StartRestingHeartRate;
+
+    return startBeatsPerMinuteW14;
+
+  },
+
+  endBeatsPerMinuteW14: function() {
+    var clientId = FlowRouter.getParam('_id');
+    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+
+    var endIntensityW14 = currentClientsCardio.cardioW14EndPercentIntensity / 100;
+
+    var endBeatsPerMinutePart1 = currentClientsCardio.cardioW14EndMaxHeartRate - currentClientsCardio.cardioW14EndRestingHeartRate;
+    var endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW14;
+    var endBeatsPerMinuteW14 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW14EndRestingHeartRate;
+
+    return endBeatsPerMinuteW14;
+
   }
 });
