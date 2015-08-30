@@ -81,25 +81,21 @@ ClientCardioSchema.cardio = new SimpleSchema({
 
   cardioW14Beginner: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW14Intermediate: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW14Advanced: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW14Type: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
   //End Of Cardio Program Weeks 1 - 4
@@ -157,25 +153,21 @@ ClientCardioSchema.cardio = new SimpleSchema({
 
   cardioW58Beginner: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW58Intermediate: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW58Advanced: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW58Type: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
   //End Of Cardio Program Weeks 5 - 8
@@ -233,25 +225,21 @@ ClientCardioSchema.cardio = new SimpleSchema({
 
   cardioW912Beginner: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW912Intermediate: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW912Advanced: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
 
   cardioW912Type: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true,
   },
   //End Of Cardio Program Weeks 9 - 12
