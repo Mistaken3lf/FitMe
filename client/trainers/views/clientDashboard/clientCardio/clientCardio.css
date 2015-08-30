@@ -45,3 +45,12 @@
 .inputAdjust {
   margin-bottom: 0px;
 }
+
+.heartRateHeading {
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.equationPadding {
+  margin-left: 5px;
+}
