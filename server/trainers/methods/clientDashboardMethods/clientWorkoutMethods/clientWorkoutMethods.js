@@ -11,6 +11,5 @@ Meteor.methods({
 
     //Update the clients workout with the new info
     ClientWorkout.update(clientId, updatedWorkout);
-    CalEvents.update({whosCalendar: clientId}, {$set: {workoutDate: updatedWorkout.workoutDate}});
   }
 });
