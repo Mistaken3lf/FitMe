@@ -50,5 +50,10 @@ Meteor.methods({
       whosCardio: id,
       createdBy: Meteor.userId(),
     });
+
+    CalEvents.insert({
+      whosCalendar: id,
+      createdBy: Meteor.userId(),
+    });
   }
 });
