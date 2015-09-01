@@ -1,8 +1,18 @@
 <template name="clientWorkout">
+  {{#if Template.subscriptionsReady}}
+  {{#if isInRole 'trainer'}}
+  {{> clientWorkoutShell}}
+  {{else}}
+  <p>Not Authorized</p>
+  {{/if}}
+  {{else}}
+  <p>Loading...</p>
+  {{/if}}
+</template>
+
+<template name="clientWorkoutShell">
   <div class="row">
     <div class="col s12 m12 l12">
-      {{#if Template.subscriptionsReady}}
-      {{#if isInRole 'trainer'}}
       {{#autoForm collection="ClientWorkout" id="clientWorkoutForm" type="method-update" meteormethod="updateClientsWorkout" doc=currentClientsWorkout resetOnSuccess=false autosave=true}}
       <div class="card z-depth-0">
         <div class="card-content">
@@ -325,12 +335,6 @@
         </div>
       </div>
       {{/autoForm}}
-      {{else}}
-      <p>Not Authorized</p>
-      {{/if}}
-      {{else}}
-      <p>Loading...</p>
-      {{/if}}
     </div>
   </div>
 </template>

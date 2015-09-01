@@ -10,7 +10,7 @@ Template.clientWorkout.onCreated(function () {
 });
 
 //Run when the workout template is rendered
-Template.clientWorkout.onRendered(function () {
+Template.clientWorkoutShell.onRendered(function () {
   //Pop up a datepicker
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -21,7 +21,7 @@ Template.clientWorkout.onRendered(function () {
 });
 
 //Helper functions for the workout template
-Template.clientWorkout.helpers({
+Template.clientWorkoutShell.helpers({
   //Get the current clients workout based on url param
   currentClientsWorkout: function () {
     var clientId = FlowRouter.getParam('_id');
