@@ -1,4 +1,4 @@
-Meteor.publish('trainerCalendarPublication', function () {
+Meteor.publish('trainerSchedule', function () {
   if(this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     return ClientWorkout.find({createdBy: this.userId});
   } else {

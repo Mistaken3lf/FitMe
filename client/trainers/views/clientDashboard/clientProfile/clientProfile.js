@@ -5,7 +5,7 @@ Template.clientProfile.onCreated(function () {
   //Subscribe to the clients profile based on the url param
   self.autorun(function () {
     var clientId = FlowRouter.getParam('_id');
-    self.subscribe("myClientsProfiles", clientId);
+    self.subscribe("currentClientsProfile", clientId);
   });
 });
 

@@ -1,15 +1,15 @@
 //Run when the workout template is created
-Template.trainerCalendar.onCreated(function () {
+Template.trainerSchedule.onCreated(function () {
   var self = this;
 
   //Subscribe to the current clients workout based on url param
   self.autorun(function () {
-    self.subscribe("trainerCalendarPublication");
+    self.subscribe("trainerCalendar");
   });
 });
 
-Template.trainerCalendar.onRendered(function () {
-  $('#trainerCalendar').fullCalendar({
+Template.trainerSchedule.onRendered(function () {
+  $('#trainerSchedule').fullCalendar({
     events: function(start, end, callback) {
       var events = [];
       calendarEvents = ClientWorkout.find();
@@ -25,7 +25,7 @@ Template.trainerCalendar.onRendered(function () {
   });
 });
 
-Template.trainerCalendar.evt = function() {
+Template.trainerSchedule.evt = function() {
   var calendarEvent = ClientWorkout.find({createdBy: Meteor.userId});
   return calendarEvent;
 }
