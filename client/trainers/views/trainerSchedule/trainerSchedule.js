@@ -4,28 +4,29 @@ Template.trainerSchedule.onCreated(function () {
 
   //Subscribe to the current clients workout based on url param
   self.autorun(function () {
-    self.subscribe("trainerCalendar");
+    self.subscribe("trainerSchedule");
   });
 });
 
 Template.trainerSchedule.onRendered(function () {
-  $('#trainerSchedule').fullCalendar({
+  schedule = $('#trainerSchedule').fullCalendar({
     events: function(start, end, callback) {
       var events = [];
-      calendarEvents = ClientWorkout.find();
-      calendarEvents.forEach(function(evt) {
+      var workoutEvents = ClientWorkout.find();
+      workoutEvents.forEach(function(workoutEvent) {
         events.push({
-          id: evt._id,
-          start: evt.workoutDate,
+          title: "Test",
+          start: workoutEvent.workoutDate,
+          end: workoutEvent.workoutdate,
         });
+        callback(events);
       });
-      callback(events);
     },
     editable: true
+  }).data().fullCalendar;
+
+  Meteor.autorun(function() {
+    var workoutEvents = ClientWorkout.find().fetch();
+    $('#trainerSchedule').fullCalendar('refetchEvents');
   });
 });
-
-Template.trainerSchedule.evt = function() {
-  var calendarEvent = ClientWorkout.find({createdBy: Meteor.userId});
-  return calendarEvent;
-}
