@@ -8,25 +8,32 @@ Template.trainerSchedule.onCreated(function () {
   });
 });
 
-Template.trainerSchedule.onRendered(function () {
-  schedule = $('#trainerSchedule').fullCalendar({
-    events: function(start, end, callback) {
-      var events = [];
-      var workoutEvents = ClientWorkout.find();
-      workoutEvents.forEach(function(workoutEvent) {
-        events.push({
-          title: "Test",
-          start: workoutEvent.workoutDate,
-          end: workoutEvent.workoutdate,
-        });
-        callback(events);
-      });
-    },
-    editable: true
-  }).data().fullCalendar;
+Template.trainerSchedule.helpers({
+  events: function() {
+    var fc = $('.fc');
 
-  Meteor.autorun(function() {
-    var workoutEvents = ClientWorkout.find().fetch();
-    $('#trainerSchedule').fullCalendar('refetchEvents');
-  });
+    return function (start, end, tz, callback) {
+      Meteor.subscribe("trainerSchedule", function() {
+        fc.fullCalendar('refetchEvents');
+      });
+
+      var events = ClientWorkout.find().map(function (it) {
+        return {
+          title: "Workout Day",
+          start: it.workoutDate,
+          allDay: true,
+        };
+      });
+      callback(events);
+    };
+  }
+});
+
+Template.trainerSchedule.onRendered(function() {
+  var fc = this.$('.fc');
+
+  this.autorun(function () {
+    ClientWorkout.find();
+    fc.fullCalendar('refetchEvents');
+  })
 });
