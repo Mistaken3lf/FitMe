@@ -17,7 +17,7 @@ Template.trainerSchedule.helpers({
             var events = ClientWorkout.find().map(function(it) {
                 return {
                     title: "Workout Day",
-                    start: it.workoutDate,
+                    start: it.workoutDate.toISOString(),
                     allDay: true,
                 };
             });
