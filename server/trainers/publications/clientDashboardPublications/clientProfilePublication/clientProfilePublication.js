@@ -3,6 +3,7 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
     return Meteor.users.find({roles: 'client', "userProfile.whosProfile": currentClientsId}, {
       fields: {
         username: 1,
+        sessionDate: 1,
         "emails.address": 1,
         "userProfile.firstName": 1,
         "userProfile.lastName": 1,
@@ -17,6 +18,8 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
         "userProfile.bio": 1,
         "userProfile.fitnessGoals": 1,
         "userProfile.whosProfile": 1,
+        "userProfile.sessionsRemaining": 1,
+        "userProfile.paymentDue": 1,
       }});
     }
 

@@ -14,10 +14,10 @@ Template.trainerSchedule.helpers({
             Meteor.subscribe("trainerSchedule", function() {
                 fc.fullCalendar('refetchEvents');
             });
-            var events = ClientWorkout.find().map(function(it) {
+            var events = Meteor.users.find({_id: {$ne: Meteor.userId()}}).map(function(it) {
                 return {
-                    title: "Workout Day",
-                    start: it.workoutDate.toISOString(),
+                    title: it.username,
+                    start: it.sessionDate.toISOString(),
                     allDay: true,
                 };
             });
@@ -29,7 +29,7 @@ Template.trainerSchedule.helpers({
 Template.trainerSchedule.onRendered(function() {
     var fc = this.$('.fc');
     this.autorun(function() {
-        ClientWorkout.find();
+        Meteor.users.find({_id: {$ne: Meteor.userId()}});
         fc.fullCalendar('refetchEvents');
     })
 });

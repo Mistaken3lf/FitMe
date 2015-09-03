@@ -23,6 +23,16 @@ Schema.UserProfile = new SimpleSchema({
      optional: true,
    },
 
+   sessionsRemaining: {
+     type: Number,
+     optional: true,
+   },
+
+   paymentDue: {
+     type: Date,
+     optional: true,
+   },
+
    birthday: {
      type: Date,
      optional: true
@@ -100,6 +110,11 @@ Schema.User = new SimpleSchema({
     userProfile: {
         type: Schema.UserProfile,
         optional: true
+    },
+    
+    sessionDate: {
+      type: Date,
+      optional: true,
     },
 
     services: {
