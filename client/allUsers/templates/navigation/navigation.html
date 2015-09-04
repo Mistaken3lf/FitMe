@@ -15,6 +15,7 @@
           {{#if isInRole 'trainer'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/currentClients">Clients</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/trainerSchedule">Schedule</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
@@ -22,7 +23,8 @@
           {{#if isInRole 'client'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
-            <a class="btn blue white-text waves-effect" id="navPad" href="#">My Workout</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="#">My Workout</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
           {{#unless currentUser}}
@@ -41,6 +43,7 @@
           {{#if isInRole 'trainer'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/currentClients">Clients</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/trainerSchedule">Schedule</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
@@ -48,6 +51,7 @@
           {{#if isInRole 'client'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
             <a class="btn blue white-text waves-effect" id="navPad" href="#">My Workout</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
