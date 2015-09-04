@@ -1,5 +1,7 @@
 Meteor.publish('currentClientsProfile', function (currentClientsId) {
   if(this.userId && Roles.userIsInRole(this.userId, "trainer")) {
+    //Publish a specific clients profile based on the flow router url param
+    //currentClientsId.
     return Meteor.users.find({roles: 'client', "userProfile.whosProfile": currentClientsId}, {
       fields: {
         username: 1,
@@ -23,6 +25,7 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
       }});
     }
 
+    //Not authorized to access clients profile info
     else {
       throw new Meteor.Error("not-authorized");
       return this.ready();

@@ -1,4 +1,6 @@
 Meteor.methods({
+  //Update the clients cardio document with the supplied info on the
+  //dashboard cardio tab.
   updateClientCardio: function (updatedCardio, clientId) {
 
     //Make sure user is logged in

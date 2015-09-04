@@ -1,4 +1,6 @@
 Meteor.methods({
+  //Update the clients workout document with the info supplied
+  //in the dashboard workout tab.
   updateClientsWorkout: function (updatedWorkout, clientId) {
 
     //Make sure user is logged in
