@@ -1,22 +1,11 @@
-//Run when the client stats template is created
+//Run when the my stats template is created
 Template.myStats.onCreated(function () {
   var self = this;
 
-  //Subscribe to the current clients stats based on url param
+  //Subscribe to mystats and myprofile to get info from mongo
   self.autorun(function () {
     self.subscribe("myStats");
     self.subscribe("myProfile");
-  });
-});
-
-//Run when stats template is rendered
-Template.myStats.onRendered(function () {
-  //Pop up date picker
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 225, // Creates a dropdown of 25 years to control year
-    autoclose: true,
-    format: "yyyy-mm-dd",
   });
 });
 
@@ -30,8 +19,7 @@ Template.myStats.helpers({
     return myStats;
   },
 
-  //Get the currrent clients profile info to display their first and
-  //last name
+  //Get the clients profile info to display their name in the card title
   thisUser: function () {
     var thisUser = Meteor.users.findOne({'userProfile.whosProfile': Meteor.userId()});
     return thisUser;
