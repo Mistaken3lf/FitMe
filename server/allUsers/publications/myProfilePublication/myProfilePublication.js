@@ -15,6 +15,7 @@ Meteor.publish('myProfile', function () {
         "userProfile.workPhone": 1,
         "userProfile.emergencyContact": 1,
         "userProfile.bio": 1,
+        "userProfile.whosProfile": 1, 
       }});
     }
 
