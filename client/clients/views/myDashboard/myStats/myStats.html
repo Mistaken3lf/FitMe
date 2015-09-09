@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col s12 m12 l12">
       {{#if Template.subscriptionsReady}}
-      {{#if isInRole 'client'}}
       {{#autoForm collection="ClientStats" id="myStatsForm" doc=myStats}}
       <div class="card z-depth-0">
         <div class="card-content">
@@ -339,9 +338,6 @@
         </div>
       </div>
       {{/autoForm}}
-      {{else}}
-      <p>Not Authorized</p>
-      {{/if}}
       {{else}}
       <p>Loading...</p>
       {{/if}}
