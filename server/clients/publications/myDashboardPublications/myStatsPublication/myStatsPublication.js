@@ -1,7 +1,6 @@
 Meteor.publish('myStats', function () {
   if(this.userId && Roles.userIsInRole(this.userId, "client")) {
-    //Find a specific clients stats based on the currrentClientsId
-    //passed in from flow router.
+    //Find specific clients stats
     return ClientStats.find({whosStats: this.userId});
   }
 

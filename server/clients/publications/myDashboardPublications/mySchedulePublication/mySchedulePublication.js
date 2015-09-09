@@ -1,7 +1,7 @@
 Meteor.publish('mySchedule', function () {
   if(this.userId && Roles.userIsInRole(this.userId, "client")) {
     //Find all clients session meeting days and return them to be
-    //displayed on the trainers calendar
+    //displayed on the clients calendar
     return Meteor.users.find({roles: 'client', "userProfile.whosProfile": this.userId}, {
       fields: {
         username: 1,
