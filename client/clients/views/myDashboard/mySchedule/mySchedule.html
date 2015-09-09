@@ -1,0 +1,11 @@
+<template name="mySchedule">
+  <div class="card-panel white z-depth-2">
+    <div class="container">
+      {{#if Template.subscriptionsReady}}
+      {{> fullcalendar events=events}}
+      {{else}}
+      <p>Loading...</p>
+      {{/if}}
+    </div>
+  </div>
+</template>
