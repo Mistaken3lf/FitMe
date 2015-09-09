@@ -1,14 +1,4 @@
 <template name="myProfile">
-  {{#if Template.subscriptionsReady}}
-  {{> myProfileShell}}
-  {{else}}
-  <p>Loading...</p>
-  {{/if}}
-</template>
-
-<template name="myProfileShell">
-  {{#if currentUser}}
-  {{#autoForm collection="Meteor.users" id="myProfileForm" type="method-update" meteormethod="updateMyProfile" doc=loggedInUser resetOnSuccess=false autosave=true}}
   <div class="row">
       <div class="card z-depth-2">
         <div class="card-content">
@@ -16,7 +6,19 @@
             <img class="responsive-img" id="pageHeader" src="/clientProfile/fitMeMyProfile.png">
             <hr class="headerSeperator">
           </div>
-          <!--<span class="card-title black-text">My Profile</span>-->
+          {{#if Template.subscriptionsReady}}
+          {{> myProfileShell}}
+          {{else}}
+          <p>Loading...</p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+</template>
+
+<template name="myProfileShell">
+  {{#if currentUser}}
+  {{#autoForm collection="Meteor.users" id="myProfileForm" type="method-update" meteormethod="updateMyProfile" doc=loggedInUser resetOnSuccess=false autosave=true}}
           <div class="row">
             <div class="input-field col s12 m6 l6">
               <span class="blue-text boldProfileHeading">Username:</span>{{> afQuickField name="username" readonly=true type="text" label=false}}
@@ -70,9 +72,6 @@
               <span class="blue-text boldProfileHeading">Biography:</span>{{> afQuickField name="userProfile.bio" rows=6 style="height: 100%;" label=false placeholder="Tell us about yourself"}}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   {{/autoForm}}
   {{else}}
   <p>Not Authorized!!!</p>
