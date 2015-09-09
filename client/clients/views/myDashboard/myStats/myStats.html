@@ -1,6 +1,7 @@
 <template name="myStats">
   <div class="row">
     <div class="col s12 m12 l12">
+      {{#if isInRole 'client'}}
       {{#if Template.subscriptionsReady}}
       {{#autoForm collection="ClientStats" id="myStatsForm" doc=myStats}}
       <div class="card z-depth-0">
@@ -340,6 +341,9 @@
       {{/autoForm}}
       {{else}}
       <p>Loading...</p>
+      {{/if}}
+      {{else}}
+      <p>Not Authorized!!!</p>
       {{/if}}
     </div>
   </div>
