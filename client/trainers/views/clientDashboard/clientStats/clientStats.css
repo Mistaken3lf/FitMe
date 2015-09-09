@@ -7,3 +7,7 @@
 .bodyStatsLabel {
   font-weight: bold;
 }
+
+.cardioSeperator {
+  border: 2px solid #2196f3;
+}
