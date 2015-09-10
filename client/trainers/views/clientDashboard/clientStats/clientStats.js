@@ -1,4 +1,3 @@
-//Run when the client stats template is created
 Template.clientStats.onCreated(function () {
   var self = this;
 
@@ -9,18 +8,16 @@ Template.clientStats.onCreated(function () {
   });
 });
 
-//Run when stats template is rendered
 Template.clientStats.onRendered(function () {
-  //Pop up date picker
+  //Pop up date picker when a date field is selected
   $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 225, // Creates a dropdown of 25 years to control year
+    selectMonths: true,
+    selectYears: 225,
     autoclose: true,
     format: "yyyy-mm-dd",
   });
 });
 
-//Helper functions for the stats template
 Template.clientStats.helpers({
   //Get the current clients stats values
   currentClientsStats: function () {

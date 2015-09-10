@@ -1,13 +1,12 @@
 Template.mySchedule.onCreated(function() {
     var self = this;
-    //Subscribe to the trainers schedule
+    //Subscribe to the current clients schedule
     self.autorun(function() {
         self.subscribe("mySchedule");
     });
 });
 
 Template.mySchedule.helpers({
-  //Calendar events
   events: function() {
       var fc = $('.fc');
       return function(start, end, tz, callback) {
@@ -15,8 +14,7 @@ Template.mySchedule.helpers({
               fc.fullCalendar('refetchEvents');
           });
 
-          //Get clients session date set in the dashboard profile for that
-          //client
+          //Get the current workout day for the current client
           var events = Meteor.users.find({}).map(function(it) {
               return {
                 title: "Workout Day",
@@ -24,6 +22,7 @@ Template.mySchedule.helpers({
                 allDay: true,
               };
           });
+          
           callback(events);
       };
   }

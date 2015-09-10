@@ -17,6 +17,8 @@ Meteor.publish('mySchedule', function () {
     //Not authorized to access the trainers schedule publication
     else {
       throw new Meteor.Error("not-authorized");
+
+      //Return ready so flow rotuer is not waiting for nothing
       return this.ready();
     }
 });

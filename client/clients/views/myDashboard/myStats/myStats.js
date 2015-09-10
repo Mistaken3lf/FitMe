@@ -1,4 +1,3 @@
-//Run when the my stats template is created
 Template.myStats.onCreated(function () {
   var self = this;
 
@@ -9,7 +8,6 @@ Template.myStats.onCreated(function () {
   });
 });
 
-//Helper functions for the stats template
 Template.myStats.helpers({
   //Get the current clients stats values
   myStats: function () {

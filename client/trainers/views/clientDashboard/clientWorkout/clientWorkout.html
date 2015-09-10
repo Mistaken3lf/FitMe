@@ -1,12 +1,12 @@
 <template name="clientWorkout">
-  {{#if Template.subscriptionsReady}}
   {{#if isInRole 'trainer'}}
-  {{> clientWorkoutShell}}
+    {{#if Template.subscriptionsReady}}
+      {{> clientWorkoutShell}}
+    {{else}}
+    <p>Loading...</p>
+    {{/if}}
   {{else}}
-  <p>Not Authorized</p>
-  {{/if}}
-  {{else}}
-  <p>Loading...</p>
+  <p>Not Authorized!!!</p>
   {{/if}}
 </template>
 

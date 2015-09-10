@@ -7,7 +7,6 @@ Template.trainerSchedule.onCreated(function() {
 });
 
 Template.trainerSchedule.helpers({
-  //Calendar events
   events: function() {
       var fc = $('.fc');
       return function(start, end, tz, callback) {
@@ -15,8 +14,7 @@ Template.trainerSchedule.helpers({
               fc.fullCalendar('refetchEvents');
           });
 
-          //Get clients session date set in the dashboard profile for that
-          //client
+          //Get all my clients scheduled meeting days
           var events = Meteor.users.find({_id: {$ne: Meteor.userId()}}).map(function(it) {
               return {
                 title: it.username,
@@ -24,6 +22,7 @@ Template.trainerSchedule.helpers({
                 allDay: true,
               };
           });
+          
           callback(events);
       };
   }

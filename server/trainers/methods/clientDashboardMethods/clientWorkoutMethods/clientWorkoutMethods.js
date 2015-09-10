@@ -1,14 +1,14 @@
 Meteor.methods({
-  //Update the clients workout document with the info supplied
-  //in the dashboard workout tab.
+  //Update the clients workout with the clientId passed in from flow router
   updateClientsWorkout: function (updatedWorkout, clientId) {
-
-    //Make sure user is logged in
+    //Make sure the user is logged in and a trainer before performing the
+    //method
     if(!Meteor.userId() &&  Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
 
-    //Make sure data is valid
+    //Check the data on the server against the workout schema
+    //to make sure its valid
     check(updatedWorkout, ClientWorkout.simpleSchema());
 
     //Update the clients workout with the new info

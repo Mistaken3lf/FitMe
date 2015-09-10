@@ -1,7 +1,10 @@
+/******************************************************************************/
 /* Add padding on left so content is not under sidebar */
 header, main, footer {
-    padding-left: 240px;
-  }
+  padding-left: 240px;
+}
+
+/******************************************************************************/
 
 /* Remove padding when on mobile device since sidebar will collapse */
 @media only screen and (max-width : 992px) {
@@ -10,9 +13,13 @@ header, main, footer {
   }
 }
 
+/******************************************************************************/
+
 /* Custom layout container so more of the screen is used */
 .layoutContainer {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
+
+/******************************************************************************/

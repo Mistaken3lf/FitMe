@@ -1,4 +1,5 @@
 Meteor.publish('trainerSchedule', function () {
+  //Make sure the user is logged in and a trainer before publishing
   if(this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Find all clients session meeting days and return them to be
     //displayed on the trainers calendar

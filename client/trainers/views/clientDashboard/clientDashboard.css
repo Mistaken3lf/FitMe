@@ -1,14 +1,22 @@
-/* Shared with clients view of their dashboard */
-
+/******************************************************************************/
+/* Custom container to make it fill more of the screen */
 .dashContainer {
   width: 100%;
   margin: auto;
 }
 
+/******************************************************************************/
+
+/*Add some margin so everything is not pushed up against the tabs */
 .tabMargin {
   margin-bottom: 1%;
 }
 
+/******************************************************************************/
+
+/*Change the color of the tab underlines to blue */
 .tabs .indicator {
   background-color: #2196f3;
 }
+
+/******************************************************************************/

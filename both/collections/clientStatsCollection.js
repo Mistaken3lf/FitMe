@@ -11,6 +11,8 @@ ClientStatsSchema.stats = new SimpleSchema({
     type: String,
   },
 
+////////////////////////////////////////////////////////////////////////////////
+
   //Body Statistics Tnitial test
   statsITDate: {
     type: Date,
@@ -37,6 +39,8 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
   //End Of Body Statistics Initial Test
+
+////////////////////////////////////////////////////////////////////////////////
 
   //Body Statistics Retest 1
   statsRT1Date: {
@@ -75,6 +79,8 @@ ClientStatsSchema.stats = new SimpleSchema({
   },
   //End Of Body Statistics Retest 1
 
+////////////////////////////////////////////////////////////////////////////////
+
   //Body Statistics Retest 2
   statsRT2Date: {
     type: Date,
@@ -111,6 +117,8 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
   //End Of Body Statistics Retest 2
+
+////////////////////////////////////////////////////////////////////////////////
 
   //Body Statistics Retest 3
   statsRT3Date: {
@@ -149,6 +157,8 @@ ClientStatsSchema.stats = new SimpleSchema({
   },
   //End Of Body Statistics Retest 3
 
+////////////////////////////////////////////////////////////////////////////////
+
   //Body Statistics Change
   statsChangeDate: {
     type: Date,
@@ -185,6 +195,8 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
   //End Of Body Statistics Change
+
+////////////////////////////////////////////////////////////////////////////////
 
   //Measurement Initial Test
   measureITDate: {
@@ -238,6 +250,8 @@ ClientStatsSchema.stats = new SimpleSchema({
   },
   //End Of Initial Test Measurements
 
+////////////////////////////////////////////////////////////////////////////////
+
   //Measurements Retest 1
   measureRT1Date: {
     type: Date,
@@ -289,6 +303,8 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
   //End Of Retest 1 Measurements
+
+////////////////////////////////////////////////////////////////////////////////
 
   //Measurements Retest 2
   measureRT2Date: {
@@ -342,6 +358,8 @@ ClientStatsSchema.stats = new SimpleSchema({
   },
   //End Of Retest 2 Measurements
 
+////////////////////////////////////////////////////////////////////////////////
+
   //Measurements Retest 3
   measureRT3Date: {
     type: Date,
@@ -393,6 +411,8 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
   //End Of Retest 3 Measurements
+
+////////////////////////////////////////////////////////////////////////////////
 
   //Measurements Change
   measureChangeDate: {

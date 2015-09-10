@@ -1,12 +1,15 @@
-//Server method that will create a new client user
 Meteor.methods({
+  //Register a new client with any information they enter
+  //when adding a new client
   registerClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
-    //Make sure they are logged in before creating a user
-    if(!Meteor.userId()) {
+    //Make sure the user is a trainer and logged in before
+    //creating a new client
+    if(!Meteor.userId() &&  Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
 
-    //Create the new client
+    //Create the new clients username, password and email since thats
+    //what the default meteor user accounts expects
     id = Accounts.createUser({
       username: username,
       password: password,
@@ -16,6 +19,8 @@ Meteor.methods({
     //Assign client to the client role
     Roles.addUsersToRoles(id, 'client');
 
+    //Update the clients document with any
+    //additional fields supplied
     Meteor.users.update(id, {$set:
       {
         'userProfile.firstName': firstName,
@@ -36,16 +41,19 @@ Meteor.methods({
       }
     });
 
+    //Create a stats document for the client
     ClientStats.insert({
       whosStats: id,
       createdBy: Meteor.userId(),
     });
 
+    //Create a workout document for the client
     ClientWorkout.insert({
       whosWorkout: id,
       createdBy: Meteor.userId(),
     });
 
+    //Create a cardio document for the client
     ClientCardio.insert({
       whosCardio: id,
       createdBy: Meteor.userId(),

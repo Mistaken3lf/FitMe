@@ -1,4 +1,3 @@
-//Run when the cardio template is created
 Template.clientCardio.onCreated(function () {
   var self = this;
 
@@ -10,18 +9,16 @@ Template.clientCardio.onCreated(function () {
   });
 });
 
-//Run when the cardio template is rendered on the page
 Template.clientCardioShell.onRendered(function () {
-  //Pop up date picker
+  //Pop up date picker when a date field is clicked on
   $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 225, // Creates a dropdown of 25 years to control year
+    selectMonths: true,
+    selectYears: 225,
     autoclose: true,
     format: "yyyy-mm-dd",
   });
 });
 
-//Helper functions for the cardio template
 Template.clientCardioShell.helpers({
   //Find clients cardio based on url param
   currentClientsCardio: function () {

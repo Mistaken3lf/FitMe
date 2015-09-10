@@ -1,7 +1,8 @@
 Template.addClient.onRendered(function () {
+  //Pop up a datepicker when a date field is clicked on
   $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 225, // Creates a dropdown of 25 years to control year
+    selectMonths: true,
+    selectYears: 225,
     autoclose: true,
     format: "yyyy-mm-dd",
   });
@@ -56,6 +57,7 @@ Template.addClient.events({
         bio = $('[name=bio]').val('');
         fitnessGoals = $('[name=fitnessGoals]').val('');
 
+        //Go back to my current clients after adding one
         FlowRouter.go("/currentClients");
       }
     });

@@ -1,5 +1,7 @@
 Meteor.publish('myProfile', function () {
+  //If the user is logged in then publish their fields
   if(this.userId) {
+    //Find the logged in user
     return Meteor.users.find({_id: this.userId}, {
       fields: {
         username: 1,
@@ -15,12 +17,15 @@ Meteor.publish('myProfile', function () {
         "userProfile.workPhone": 1,
         "userProfile.emergencyContact": 1,
         "userProfile.bio": 1,
-        "userProfile.whosProfile": 1, 
+        "userProfile.whosProfile": 1,
       }});
     }
 
+    //User is not authorized to access this publication
     else {
       throw new Meteor.Error("not-authorized");
+
+      //Return ready to the router is not waiting for nothing
       return this.ready();
     }
 });

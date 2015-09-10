@@ -90,6 +90,8 @@ Schema.UserProfile = new SimpleSchema({
    },
 });
 
+////////////////////////////////////////////////////////////////////////////////
+
 Schema.User = new SimpleSchema({
   username: {
         type: String,
@@ -111,7 +113,7 @@ Schema.User = new SimpleSchema({
         type: Schema.UserProfile,
         optional: true
     },
-    
+
     sessionDate: {
       type: Date,
       optional: true,

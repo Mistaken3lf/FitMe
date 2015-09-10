@@ -10,14 +10,14 @@ Template.currentClients.onCreated(function () {
 
 Template.currentClients.events({
   'click .deleteButton': function(event) {
+    //Call server function to delete the client clicked on
     Meteor.call("deleteClient", this._id);
   }
 });
 
 Template.currentClients.helpers({
-  //Helper function to display users in table from subscription
   'users': function () {
-    //Show all clients and dont show my own information
+    //Show all of my clients and dont show my own information
     return Meteor.users.find({_id: {$ne: Meteor.userId()}});
   },
 });

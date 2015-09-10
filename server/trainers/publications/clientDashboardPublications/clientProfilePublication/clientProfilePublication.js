@@ -1,4 +1,5 @@
 Meteor.publish('currentClientsProfile', function (currentClientsId) {
+  //Make sure the user is logged in and a trainer before publishing
   if(this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Publish a specific clients profile based on the flow router url param
     //currentClientsId.

@@ -1,4 +1,3 @@
-//Run when the profile template is created.
 Template.clientProfile.onCreated(function () {
   var self = this;
 
@@ -9,18 +8,16 @@ Template.clientProfile.onCreated(function () {
   });
 });
 
-//Rendered function for the profile shell nested in the clientProfile
-//template.
 Template.clientProfileShell.onRendered(function () {
+  //Pop up a datepicker when a date field is selected
   $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 225, // Creates a dropdown of 25 years to control year
+    selectMonths: true,
+    selectYears: 225,
     autoclose: true,
     format: "yyyy-mm-dd",
   });
 });
 
-//Helper functions for the profile
 Template.clientProfileShell.helpers({
   //Get the current clients profile based on the url param
   currentClient: function () {

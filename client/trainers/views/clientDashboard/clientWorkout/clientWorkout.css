@@ -1,3 +1,4 @@
+/******************************************************************************/
 /* Add underline, bold text and increase font size on headings */
 .workoutHeadings {
   text-decoration: underline;
@@ -5,12 +6,18 @@
   font-size: 120%;
 }
 
+/******************************************************************************/
+
 /* Make the workout labels bold */
 .workoutLabels {
   font-weight: bold;
 }
 
+/******************************************************************************/
+
 /* Blue hr line to seperate exercises */
 .exerciseSeperator {
   border: 2px solid #2196f3;
 }
+
+/******************************************************************************/

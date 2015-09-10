@@ -1,6 +1,5 @@
-//Server method that will create a trainer and assign
-//them a trainer role
 Meteor.methods({
+  //Register a new trainer in MongoDB
   registerTrainer: function (firstName, lastName, username, password, email) {
     //Create the new trainer
     trainerId = Accounts.createUser({
@@ -9,6 +8,8 @@ Meteor.methods({
       email: email,
     });
 
+    //Update the trainers first and last name since they are not default
+    //Meteor.user fields
     Meteor.users.update({}, {$set:
       {
         'userProfile.firstName': firstName,
