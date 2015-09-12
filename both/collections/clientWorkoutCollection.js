@@ -32,6 +32,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex1set1wt: {
     type: Number,
     optional: true,
@@ -42,6 +43,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex1set2wt: {
     type: Number,
     optional: true,
@@ -52,6 +54,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex1set3wt: {
     type: Number,
     optional: true,
@@ -62,6 +65,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex1set4wt: {
     type: Number,
     optional: true,
@@ -72,11 +76,22 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex1set5wt: {
     type: Number,
     optional: true,
   },
 
+  //Exercise 1 comments
+  ex1TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex1ClientComments: {
+    type: String,
+    optional: true,
+  },
 ////////////////////////////////////////////////////////////////////////////////
   //Exercise #2
   ExName2: {
@@ -90,6 +105,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex2set1wt: {
     type: Number,
     optional: true,
@@ -100,6 +116,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex2set2wt: {
     type: Number,
     optional: true,
@@ -110,6 +127,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex2set3wt: {
     type: Number,
     optional: true,
@@ -120,6 +138,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex2set4wt: {
     type: Number,
     optional: true,
@@ -130,8 +149,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex2set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 2 comments
+  ex2TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex2ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -149,6 +180,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex3set1wt: {
     type: Number,
     optional: true,
@@ -159,6 +191,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex3set2wt: {
     type: Number,
     optional: true,
@@ -169,6 +202,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex3set3wt: {
     type: Number,
     optional: true,
@@ -179,6 +213,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex3set4wt: {
     type: Number,
     optional: true,
@@ -189,8 +224,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex3set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 3 comments
+  ex3TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex3ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -208,6 +255,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex4set1wt: {
     type: Number,
     optional: true,
@@ -218,6 +266,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex4set2wt: {
     type: Number,
     optional: true,
@@ -228,6 +277,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex4set3wt: {
     type: Number,
     optional: true,
@@ -238,6 +288,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex4set4wt: {
     type: Number,
     optional: true,
@@ -248,8 +299,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex4set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 4 comments
+  ex4TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex4ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -267,6 +330,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex5set1wt: {
     type: Number,
     optional: true,
@@ -277,6 +341,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex5set2wt: {
     type: Number,
     optional: true,
@@ -287,6 +352,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex5set3wt: {
     type: Number,
     optional: true,
@@ -297,6 +363,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex5set4wt: {
     type: Number,
     optional: true,
@@ -307,8 +374,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex5set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 5 comments
+  ex5TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex5ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -326,6 +405,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex6set1wt: {
     type: Number,
     optional: true,
@@ -336,6 +416,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex6set2wt: {
     type: Number,
     optional: true,
@@ -346,6 +427,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex6set3wt: {
     type: Number,
     optional: true,
@@ -356,6 +438,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex6set4wt: {
     type: Number,
     optional: true,
@@ -366,8 +449,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex6set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 6 comments
+  ex6TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex6ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -385,6 +480,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex7set1wt: {
     type: Number,
     optional: true,
@@ -395,6 +491,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex7set2wt: {
     type: Number,
     optional: true,
@@ -405,6 +502,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex7set3wt: {
     type: Number,
     optional: true,
@@ -415,6 +513,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex7set4wt: {
     type: Number,
     optional: true,
@@ -425,8 +524,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex7set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 7 comments
+  ex7TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex7ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -444,6 +555,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex8set1wt: {
     type: Number,
     optional: true,
@@ -454,6 +566,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex8set2wt: {
     type: Number,
     optional: true,
@@ -464,6 +577,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex8set3wt: {
     type: Number,
     optional: true,
@@ -474,6 +588,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex8set4wt: {
     type: Number,
     optional: true,
@@ -484,8 +599,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex8set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 8 comments
+  ex8TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex8ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -503,6 +630,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex9set1wt: {
     type: Number,
     optional: true,
@@ -513,6 +641,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex9set2wt: {
     type: Number,
     optional: true,
@@ -523,6 +652,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex9set3wt: {
     type: Number,
     optional: true,
@@ -533,6 +663,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex9set4wt: {
     type: Number,
     optional: true,
@@ -543,8 +674,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex9set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 9 comments
+  ex9TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex9ClientComments: {
+    type: String,
     optional: true,
   },
 
@@ -562,6 +705,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex10set1wt: {
     type: Number,
     optional: true,
@@ -572,6 +716,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex10set2wt: {
     type: Number,
     optional: true,
@@ -582,6 +727,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex10set3wt: {
     type: Number,
     optional: true,
@@ -592,6 +738,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex10set4wt: {
     type: Number,
     optional: true,
@@ -602,8 +749,20 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: Number,
     optional: true,
   },
+
   ex10set5wt: {
     type: Number,
+    optional: true,
+  },
+
+  //Exercise 10 comments
+  ex10TrainerComments: {
+    type: String,
+    optional: true,
+  },
+
+  ex10ClientComments: {
+    type: String,
     optional: true,
   },
 });
