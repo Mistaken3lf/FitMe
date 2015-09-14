@@ -10,17 +10,17 @@ Template.changePassword.events({
     var newPasswordConfirmation = $('[name=newPasswordConfirmation]').val();
 
     if(newPassword != newPasswordConfirmation) {
-      Materialize.toast("Passwords dont match", 4000, "centerToast");;
+      Materialize.toast("Passwords dont match", 4000, "centerToast");
       return false;
     }
 
     Accounts.changePassword(currentPassword, newPassword, function(error) {
-      //Invalid login
+      //Invalid passwords
       if(error) {
-        //Pop up a toast to show login errors
+        //Pop up a toast to show change password errors
         Materialize.toast(error.reason, 4000, "centerToast")
       } else {
-        //Go home since user is logged in now
+        //Go home since the user has now changed their password
         FlowRouter.go('/');
       }
     });
