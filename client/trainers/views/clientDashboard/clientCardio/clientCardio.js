@@ -1,15 +1,18 @@
-Template.clientCardio.onCreated(function () {
+////////////////////////////////////////////////////////////////////////////////
+Template.clientCardio.onCreated(function() {
   var self = this;
 
   //Subscribe to the current clients cardio publication when
   //the cardio template is created
-  self.autorun(function () {
+  self.autorun(function() {
     var clientId = FlowRouter.getParam('_id');
     self.subscribe("currentClientsCardio", clientId);
   });
 });
 
-Template.clientCardioShell.onRendered(function () {
+////////////////////////////////////////////////////////////////////////////////
+
+Template.clientCardioShell.onRendered(function() {
   //Pop up date picker when a date field is clicked on
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -19,11 +22,15 @@ Template.clientCardioShell.onRendered(function () {
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////
+
 Template.clientCardioShell.helpers({
   //Find clients cardio based on url param
-  currentClientsCardio: function () {
+  currentClientsCardio: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     //Return current clients cardio to use as the doc for autoform
     return currentClientsCardio;
@@ -32,19 +39,22 @@ Template.clientCardioShell.helpers({
   //calculate clients max heart rate
   maxHeartRate: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     //Formula for max heart rate
     var maxHeartRate = 220 - currentClientsCardio.cardioProgramAge;
 
     return maxHeartRate;
-
   },
 
   //Week 1-4 starting heart rate
   startBeatsPerMinuteW14: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     var startIntensityW14 = currentClientsCardio.cardioW14StartPercentIntensity / 100;
 
@@ -53,13 +63,14 @@ Template.clientCardioShell.helpers({
     var startBeatsPerMinuteW14 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW14StartRestingHeartRate;
 
     return startBeatsPerMinuteW14;
-
   },
 
   //Week 1-4 ending heart rate
   endBeatsPerMinuteW14: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     var endIntensityW14 = currentClientsCardio.cardioW14EndPercentIntensity / 100;
 
@@ -68,12 +79,13 @@ Template.clientCardioShell.helpers({
     var endBeatsPerMinuteW14 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW14EndRestingHeartRate;
 
     return endBeatsPerMinuteW14;
-
   },
 
   startBeatsPerMinuteW58: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     var startIntensityW58 = currentClientsCardio.cardioW58StartPercentIntensity / 100;
 
@@ -82,12 +94,13 @@ Template.clientCardioShell.helpers({
     var startBeatsPerMinuteW58 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW58StartRestingHeartRate;
 
     return startBeatsPerMinuteW58;
-
   },
 
   endBeatsPerMinuteW58: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     var endIntensityW58 = currentClientsCardio.cardioW58EndPercentIntensity / 100;
 
@@ -96,12 +109,13 @@ Template.clientCardioShell.helpers({
     var endBeatsPerMinuteW58 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW58EndRestingHeartRate;
 
     return endBeatsPerMinuteW58;
-
   },
 
   startBeatsPerMinuteW912: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     var startIntensityW912 = currentClientsCardio.cardioW912StartPercentIntensity / 100;
 
@@ -110,12 +124,13 @@ Template.clientCardioShell.helpers({
     var startBeatsPerMinuteW912 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW912StartRestingHeartRate;
 
     return startBeatsPerMinuteW912;
-
   },
 
   endBeatsPerMinuteW912: function() {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({whosCardio: clientId});
+    var currentClientsCardio = ClientCardio.findOne({
+      whosCardio: clientId
+    });
 
     var endIntensityW912 = currentClientsCardio.cardioW912EndPercentIntensity / 100;
 
@@ -124,6 +139,7 @@ Template.clientCardioShell.helpers({
     var endBeatsPerMinuteW912 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW912EndRestingHeartRate;
 
     return endBeatsPerMinuteW912;
-
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////

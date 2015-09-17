@@ -1,13 +1,13 @@
 <template name="mySchedule">
-    <div class="dashContainer">
-      {{#if isInRole 'client'}}
-        {{#if Template.subscriptionsReady}}
-          {{> fullcalendar events=events}}
-        {{else}}
-        <p>Loading...</p>
-        {{/if}}
-      {{else}}
-      <p>Not Authorized!!!</p>
-      {{/if}}
-    </div>
+  <div class="dashContainer">
+    {{#if isInRole 'client'}}
+    {{#if Template.subscriptionsReady}}
+    {{> fullcalendar events=events}}
+    {{else}}
+    <p>Loading...</p>
+    {{/if}}
+    {{else}}
+    <p>Not Authorized!!!</p>
+    {{/if}}
+  </div>
 </template>

@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////////////////////////////////
 Template.myProfile.onCreated(function () {
   var self = this;
 
@@ -6,6 +7,8 @@ Template.myProfile.onCreated(function () {
     self.subscribe("myProfile");
   });
 });
+
+////////////////////////////////////////////////////////////////////////////////
 
 Template.myProfileShell.onRendered(function () {
   //Pop up a datepicker if a date field is clicked on
@@ -17,6 +20,8 @@ Template.myProfileShell.onRendered(function () {
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////
+
 Template.myProfileShell.helpers({
   //Get the currently logged in user to be used to display their
   //profile on the myProfile template
@@ -25,3 +30,5 @@ Template.myProfileShell.helpers({
     return loggedInUser;
   },
 });
+
+////////////////////////////////////////////////////////////////////////////////

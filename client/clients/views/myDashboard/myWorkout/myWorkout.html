@@ -1,15 +1,14 @@
 <template name="myWorkout">
   {{#if isInRole 'client'}}
-    {{#if Template.subscriptionsReady}}
-      {{> myWorkoutShell}}
-    {{else}}
-    <p>Loading...</p>
-    {{/if}}
+  {{#if Template.subscriptionsReady}}
+  {{> myWorkoutShell}}
+  {{else}}
+  <p>Loading...</p>
+  {{/if}}
   {{else}}
   <p>Not Authorized!!!</p>
   {{/if}}
 </template>
-
 <template name="myWorkoutShell">
   <div class="row">
     <div class="col s12 m12 l12">

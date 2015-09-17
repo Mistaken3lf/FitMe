@@ -1,9 +1,12 @@
-Meteor.publish('myStats', function () {
+////////////////////////////////////////////////////////////////////////////////
+Meteor.publish('myStats', function() {
   //Make sure the user is a client and logged in before publishing
   //their stats
-  if(this.userId && Roles.userIsInRole(this.userId, "client")) {
+  if (this.userId && Roles.userIsInRole(this.userId, "client")) {
     //Find the logged in clients stats
-    return ClientStats.find({whosStats: this.userId});
+    return ClientStats.find({
+      whosStats: this.userId
+    });
   }
 
   //Not authorized to access clients stats
@@ -12,5 +15,6 @@ Meteor.publish('myStats', function () {
 
     //Return ready so flow router is not waiting for nothing
     return this.ready();
-    }
+  }
 });
+////////////////////////////////////////////////////////////////////////////////

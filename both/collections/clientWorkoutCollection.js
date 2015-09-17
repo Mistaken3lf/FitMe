@@ -18,13 +18,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #1
   ExName1: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 1 set 1 rep and weight
@@ -92,12 +92,12 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: String,
     optional: true,
   },
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
   //Exercise #2
   ExName2: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 2 set 1 rep and weight
@@ -166,13 +166,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #3
   ExName3: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 3 set 1 rep and weight
@@ -241,13 +241,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #4
   ExName4: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 4 set 1 rep and weight
@@ -316,13 +316,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #5
   ExName5: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 5 set 1 rep and weight
@@ -391,13 +391,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #6
   ExName6: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 6 set 1 rep and weight
@@ -466,13 +466,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #7
   ExName7: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 7 set 1 rep and weight
@@ -541,13 +541,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #8
   ExName8: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 8 set 1 rep and weight
@@ -616,13 +616,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #9
   ExName9: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 9 set 1 rep and weight
@@ -691,13 +691,13 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #10
   ExName10: {
-      type: String,
-      regEx: /^[a-zA-Z0-9 ]{2,25}$/,
-      optional: true
+    type: String,
+    regEx: /^[a-zA-Z0-9 ]{2,25}$/,
+    optional: true
   },
 
   // Exercise 3 set 1 rep and weight

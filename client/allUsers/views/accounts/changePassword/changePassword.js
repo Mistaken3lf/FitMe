@@ -1,6 +1,7 @@
+////////////////////////////////////////////////////////////////////////////////
 Template.changePassword.events({
   //Capture password change event
-  'submit form': function(event){
+  'submit form': function(event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -9,14 +10,14 @@ Template.changePassword.events({
     var newPassword = $('[name=newPassword]').val();
     var newPasswordConfirmation = $('[name=newPasswordConfirmation]').val();
 
-    if(newPassword != newPasswordConfirmation) {
+    if (newPassword != newPasswordConfirmation) {
       Materialize.toast("Passwords dont match", 4000, "centerToast");
       return false;
     }
 
     Accounts.changePassword(currentPassword, newPassword, function(error) {
       //Invalid passwords
-      if(error) {
+      if (error) {
         //Pop up a toast to show change password errors
         Materialize.toast(error.reason, 4000, "centerToast")
       } else {
@@ -24,6 +25,6 @@ Template.changePassword.events({
         FlowRouter.go('/');
       }
     });
-
   }
 });
+////////////////////////////////////////////////////////////////////////////////

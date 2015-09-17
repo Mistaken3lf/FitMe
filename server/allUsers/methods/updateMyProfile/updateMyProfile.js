@@ -1,9 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////
 Meteor.methods({
   //Update the currently logged in users profile
-  updateMyProfile: function (myUpdatedProfile, myId) {
+  updateMyProfile: function(myUpdatedProfile, myId) {
     //Make sure user is logged in before letting them update
     //a profile
-    if(!Meteor.userId()) {
+    if (!Meteor.userId()) {
       throw new Meteor.Error("not-authorized");
     }
 
@@ -15,3 +16,4 @@ Meteor.methods({
     Meteor.users.update(myId, myUpdatedProfile);
   }
 });
+////////////////////////////////////////////////////////////////////////////////

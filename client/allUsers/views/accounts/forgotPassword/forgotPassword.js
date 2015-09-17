@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////////////////////////////////
 //Check if the password is being resetPassword
 if (Accounts._resetPasswordToken) {
   //Go to the reset page if its being reset
@@ -6,6 +7,8 @@ if (Accounts._resetPasswordToken) {
   //Set the reset session variable to the url token sent
   Session.set('resetPassword', Accounts._resetPasswordToken);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 Template.forgotPassword.events({
   //Capture forgot password event
@@ -29,6 +32,8 @@ Template.forgotPassword.events({
   }
 });
 
+////////////////////////////////////////////////////////////////////////////////
+
 Template.resetPassword.helpers({
   //Get the resetPassword session variable to check
   //if its been set in the template
@@ -36,6 +41,8 @@ Template.resetPassword.helpers({
     return Session.get('resetPassword');
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////
 
 Template.resetPassword.events({
   'submit form': function(event) {
@@ -64,3 +71,5 @@ Template.resetPassword.events({
     });
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////

@@ -1,9 +1,13 @@
-Meteor.publish('currentClientsProfile', function (currentClientsId) {
+////////////////////////////////////////////////////////////////////////////////
+Meteor.publish('currentClientsProfile', function(currentClientsId) {
   //Make sure the user is logged in and a trainer before publishing
-  if(this.userId && Roles.userIsInRole(this.userId, "trainer")) {
+  if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Publish a specific clients profile based on the flow router url param
     //currentClientsId.
-    return Meteor.users.find({roles: 'client', "userProfile.whosProfile": currentClientsId}, {
+    return Meteor.users.find({
+      roles: 'client',
+      "userProfile.whosProfile": currentClientsId
+    }, {
       fields: {
         username: 1,
         sessionDate: 1,
@@ -23,12 +27,14 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
         "userProfile.whosProfile": 1,
         "userProfile.sessionsRemaining": 1,
         "userProfile.paymentDue": 1,
-      }});
-    }
+      }
+    });
+  }
 
-    //Not authorized to access clients profile info
-    else {
-      throw new Meteor.Error("not-authorized");
-      return this.ready();
-    }
+  //Not authorized to access clients profile info
+  else {
+    throw new Meteor.Error("not-authorized");
+    return this.ready();
+  }
 });
+////////////////////////////////////////////////////////////////////////////////

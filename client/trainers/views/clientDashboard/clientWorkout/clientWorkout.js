@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////////////////////////////////
 Template.clientWorkout.onCreated(function () {
   var self = this;
 
@@ -7,6 +8,8 @@ Template.clientWorkout.onCreated(function () {
     self.subscribe("currentClientsWorkout", clientId);
   });
 });
+
+////////////////////////////////////////////////////////////////////////////////
 
 Template.clientWorkoutShell.onRendered(function () {
   //Pop up a datepicker when a date field is clicked
@@ -18,6 +21,8 @@ Template.clientWorkoutShell.onRendered(function () {
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////
+
 Template.clientWorkoutShell.helpers({
   //Get the current clients workout based on url param
   currentClientsWorkout: function () {
@@ -26,3 +31,5 @@ Template.clientWorkoutShell.helpers({
     return currentClientsWorkout;
   },
 });
+
+////////////////////////////////////////////////////////////////////////////////

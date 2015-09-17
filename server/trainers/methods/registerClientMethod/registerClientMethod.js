@@ -1,10 +1,11 @@
+////////////////////////////////////////////////////////////////////////////////
 Meteor.methods({
   //Register a new client with any information they enter
   //when adding a new client
-  registerClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
+  registerClient: function(username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
     //Make sure the user is a trainer and logged in before
     //creating a new client
-    if(!Meteor.userId() &&  Roles.userIsInRole(this.userId, "trainer")) {
+    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
 
@@ -21,8 +22,8 @@ Meteor.methods({
 
     //Update the clients document with any
     //additional fields supplied
-    Meteor.users.update(id, {$set:
-      {
+    Meteor.users.update(id, {
+      $set: {
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
         'userProfile.birthday': birthday,
@@ -60,3 +61,4 @@ Meteor.methods({
     });
   }
 });
+////////////////////////////////////////////////////////////////////////////////

@@ -22,12 +22,13 @@
 
 /******************************************************************************/
 
+/* Hide the overflow on desktop */
 .tabs {
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-/********* MOBILE DEVICES *************************************************/
+/************************MOBILE DEVICES****************************************/
 
 @media(max-width:768px) {
   .tabs {
@@ -40,6 +41,12 @@
   .profileTab {
     margin-left: 0px;
     margin-right: 40px;
+    position: relative;
+  }
+
+  .scheduleTab {
+    margin-left: 0px;
+    margin-right: 0px;
     position: relative;
   }
 
@@ -70,5 +77,5 @@
     margin-bottom: 8px;
     display: none;
   }
-
 }
+/******************************************************************************/

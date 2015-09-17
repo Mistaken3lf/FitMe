@@ -1,10 +1,11 @@
+////////////////////////////////////////////////////////////////////////////////
 Meteor.methods({
   //Update a clients cardio with the clientId passed in from
   //flow router
-  updateClientCardio: function (updatedCardio, clientId) {
+  updateClientCardio: function(updatedCardio, clientId) {
     //Make sure the user is a trainer and logged in before performing
     //the method
-    if(!Meteor.userId() &&  Roles.userIsInRole(this.userId, "trainer")) {
+    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
 
@@ -16,3 +17,4 @@ Meteor.methods({
     ClientCardio.update(clientId, updatedCardio);
   }
 });
+////////////////////////////////////////////////////////////////////////////////

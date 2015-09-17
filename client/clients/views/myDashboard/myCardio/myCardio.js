@@ -1,16 +1,21 @@
-Template.myCardio.onCreated(function () {
+////////////////////////////////////////////////////////////////////////////////
+Template.myCardio.onCreated(function() {
   var self = this;
 
   //Subscribe to my cardio
-  self.autorun(function () {
+  self.autorun(function() {
     self.subscribe("myCardio");
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////
+
 Template.myCardioShell.helpers({
   //Find my cardio
-  myCardio: function () {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+  myCardio: function() {
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     //Return myCardio for autform doc
     return myCardio;
@@ -18,18 +23,21 @@ Template.myCardioShell.helpers({
 
   //Calculate my max heart rate
   maxHeartRate: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     //Formula for max heart rate
     var maxHeartRate = 220 - myCardio.cardioProgramAge;
 
     return maxHeartRate;
-
   },
 
   //Week 1-4 starting heart rate
   startBeatsPerMinuteW14: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     var startIntensityW14 = myCardio.cardioW14StartPercentIntensity / 100;
 
@@ -38,12 +46,13 @@ Template.myCardioShell.helpers({
     var startBeatsPerMinuteW14 = startBeatsPerMinutePart2 + myCardio.cardioW14StartRestingHeartRate;
 
     return startBeatsPerMinuteW14;
-
   },
 
   //Week 1-4 ending heart rate
   endBeatsPerMinuteW14: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     var endIntensityW14 = myCardio.cardioW14EndPercentIntensity / 100;
 
@@ -52,11 +61,12 @@ Template.myCardioShell.helpers({
     var endBeatsPerMinuteW14 = endBeatsPerMinutePart2 + myCardio.cardioW14EndRestingHeartRate;
 
     return endBeatsPerMinuteW14;
-
   },
 
   startBeatsPerMinuteW58: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     var startIntensityW58 = myCardio.cardioW58StartPercentIntensity / 100;
 
@@ -65,11 +75,12 @@ Template.myCardioShell.helpers({
     var startBeatsPerMinuteW58 = startBeatsPerMinutePart2 + myCardio.cardioW58StartRestingHeartRate;
 
     return startBeatsPerMinuteW58;
-
   },
 
   endBeatsPerMinuteW58: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     var endIntensityW58 = myCardio.cardioW58EndPercentIntensity / 100;
 
@@ -78,11 +89,12 @@ Template.myCardioShell.helpers({
     var endBeatsPerMinuteW58 = endBeatsPerMinutePart2 + myCardio.cardioW58EndRestingHeartRate;
 
     return endBeatsPerMinuteW58;
-
   },
 
   startBeatsPerMinuteW912: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     var startIntensityW912 = myCardio.cardioW912StartPercentIntensity / 100;
 
@@ -91,11 +103,12 @@ Template.myCardioShell.helpers({
     var startBeatsPerMinuteW912 = startBeatsPerMinutePart2 + myCardio.cardioW912StartRestingHeartRate;
 
     return startBeatsPerMinuteW912;
-
   },
 
   endBeatsPerMinuteW912: function() {
-    var myCardio = ClientCardio.findOne({whosCardio: Meteor.userId()});
+    var myCardio = ClientCardio.findOne({
+      whosCardio: Meteor.userId()
+    });
 
     var endIntensityW912 = myCardio.cardioW912EndPercentIntensity / 100;
 
@@ -104,6 +117,7 @@ Template.myCardioShell.helpers({
     var endBeatsPerMinuteW912 = endBeatsPerMinutePart2 + myCardio.cardioW912EndRestingHeartRate;
 
     return endBeatsPerMinuteW912;
-
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////

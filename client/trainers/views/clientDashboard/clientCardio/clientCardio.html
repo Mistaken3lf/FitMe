@@ -1,15 +1,14 @@
 <template name="clientCardio">
   {{#if isInRole 'trainer'}}
-    {{#if Template.subscriptionsReady}}
-      {{> clientCardioShell}}
-    {{else}}
-    <p>Loading...</p>
-    {{/if}}
+  {{#if Template.subscriptionsReady}}
+  {{> clientCardioShell}}
+  {{else}}
+  <p>Loading...</p>
+  {{/if}}
   {{else}}
   <p>Not Authorized!!!</p>
   {{/if}}
 </template>
-
 <template name="clientCardioShell">
   <div class="row">
     <div class="col s12 m12 l12">
