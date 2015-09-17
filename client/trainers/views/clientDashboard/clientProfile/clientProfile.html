@@ -16,29 +16,6 @@
       <div class="card z-depth-0">
         <div class="card-content">
           <div class="row">
-            <div class="grey lighten-5 col s12 m12 l12 z-depth-1">
-              <div class="col s12 m2 l3">
-                <img src="../dashboard/profile/profilePicture.jpg" class="responsive-img profilePic">
-                <h5 class="center blue-text"><b>{{#with currentClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</b></h5>
-              </div>
-              <div class="col s12 m12 l9">
-                <h5 class="center-align blue-text clientSessionPadding"><b><u>CLIENT SESSIONS LOG</u></b></h5>
-              </div>
-              <div class="col s12 m4 l3">
-                <h6 class="center blue-text clientSessionPadding"><b>Sessions Remaining</b></h6>
-                {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" type="number" label=false}}
-              </div>
-              <div class="col s12 m4 l3">
-                <h6 class="center blue-text clientSessionPadding"><b>Payment Due</b></h6>
-                {{> afQuickField name="userProfile.paymentDue" type="date" class="datepicker center-align" label=false}}
-              </div>
-              <div class="col s12 m4 l3">
-                <h6 class="center blue-text clientSessionPadding"><b>Next Session</b></h6>
-                {{> afQuickField name="sessionDate" type="date" class="datepicker center-align" label=false}}
-              </div>
-            </div>
-          </div>
-          <div class="row">
             <div class="input-field col s12 m6 l6">
               <span class="blue-text boldProfileHeading">Username:</span>{{> afQuickField name="username" readonly=true type="text" label=false}}
             </div>
