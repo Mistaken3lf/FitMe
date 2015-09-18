@@ -52,7 +52,7 @@ Template.clientStats.helpers({
       whosStats: clientId
     });
 
-    var bodyWeightChange = currentClient.statsRT1BodyWeight - currentClient.statsRT3BodyWeight;
+    var bodyWeightChange = currentClient.statsRT3BodyWeight - currentClient.statsRT1BodyWeight;
 
     return bodyWeightChange;
   },

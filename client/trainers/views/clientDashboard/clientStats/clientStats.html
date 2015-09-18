@@ -4,9 +4,10 @@
       {{#if isInRole 'trainer'}}
       {{#if Template.subscriptionsReady}}
       {{#autoForm collection="ClientStats" id="clientStatsForm" type="method-update" meteormethod="updateClientsStats" doc=currentClientsStats resetOnSuccess=false autosave=true}}
-      <div class="card z-depth-0">
+      <div class="card grey lighten-4 z-depth-1">
+        <h5 class="center-align black-text clientSessionPadding"><b>STATS CARD</b></h5>
         <div class="card-content">
-          <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
+          <span class="card-title black-text">{{#with currentClient}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
           <div class="row">
             <div class="col s12 m4 l3">
               <h5 class="bodyStatsHeading">Initial Test</h5>
