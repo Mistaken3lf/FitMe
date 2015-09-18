@@ -1,5 +1,5 @@
 <template name="mySchedule">
-  <div class="dashContainer">
+  <div class="container">
     {{#if isInRole 'client'}}
     {{#if Template.subscriptionsReady}}
     {{> fullcalendar events=events}}
