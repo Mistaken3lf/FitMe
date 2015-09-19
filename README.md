@@ -1,3 +1,3 @@
 # FitMe
 
--Workout management web app
+-Workout Management Web App
