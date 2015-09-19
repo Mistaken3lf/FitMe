@@ -1,8 +1,8 @@
 <template name="clientStats">
   <div class="row">
     <div class="col s12 m12 l12">
-      {{#if isInRole 'trainer'}}
       {{#if Template.subscriptionsReady}}
+      {{#if isInRole 'trainer'}}
       {{#autoForm collection="ClientStats" id="clientStatsForm" type="method-update" meteormethod="updateClientsStats" doc=currentClientsStats resetOnSuccess=false autosave=true}}
       <div class="card grey lighten-4 z-depth-1">
         <h5 class="center-align black-text clientSessionPadding"><b>STATS CARD</b></h5>
@@ -340,10 +340,10 @@
       </div>
       {{/autoForm}}
       {{else}}
-      <p>Loading...</p>
+      <p>Not Authorized!!!</p>
       {{/if}}
       {{else}}
-      <p>Not Authorized!!!</p>
+      <p>Loading...</p>
       {{/if}}
     </div>
   </div>

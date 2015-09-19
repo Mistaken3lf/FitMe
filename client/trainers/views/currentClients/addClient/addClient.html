@@ -7,6 +7,7 @@
     <div class="layoutContainer">
       <div class="row">
         <div class="col s12 m12 l12">
+          {{#if isInRole 'trainer'}}
           {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" doc=this id="clientForm"}}
           <div class="card">
             <div class="card-content">
@@ -75,6 +76,9 @@
           <br>
           <button class="btn blue waves-effect" type="submit">Create Client</button>
           {{/autoForm}}
+          {{else}}
+          <p>Not Authorized!!!</p>
+          {{/if}}
         </div>
       </div>
     </div>

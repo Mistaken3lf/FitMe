@@ -6,7 +6,11 @@
     </div>
     <div class="container">
       {{#if Template.subscriptionsReady}}
+      {{#if isInRole 'trainer'}}
       {{> fullcalendar events=events}}
+      {{else}}
+      <p>Not Authorized!!!</p>
+      {{/if}}
       {{else}}
       <p>Loading...</p>
       {{/if}}
