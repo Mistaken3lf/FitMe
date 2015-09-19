@@ -1,74 +1,58 @@
 /******************************************************************************/
-/* Change color of the cardio heading to blue */
-.clientCardioHeading {
-  color: #2196f3;
-}
-
-/******************************************************************************/
-
 /* Make labels on cardio table bold */
-.clientCardioLabel {
+.cardioLabel {
   font-weight: bold;
 }
 
 /******************************************************************************/
 
 /* Placement of math  symbols */
-.clientMathSymbolsCP {
+.mathSymbolsCP {
   margin-top: 1px;
   font-weight: bold;
 }
 
 /******************************************************************************/
 
-/* Placement of math  symbols */
-.clientMathSymbolsW112 {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/******************************************************************************/
-
-.clientInputAlign {
+/*Line up the inputs*/
+.inputAlign {
   padding-bottom: 5px;
 }
 
 /******************************************************************************/
 
 /* Remove Style from inputs */
-.clientNoCardioStyleInput {
+.noCardioStyleInput {
     border: none !important;
 }
 
 /******************************************************************************/
 
-.clientAlign {
-  margin-top: 60px;;
+/*Line up the 3 beginner, intermediate, and advanced table*/
+.align {
+  margin-top: 60px;
 }
 
 /******************************************************************************/
 
-.clientInputAdjust {
+/*Remove bottom margin from input*/
+.inputAdjust {
   margin-bottom: 0px;
 }
 
 /******************************************************************************/
 
-.clientHeartRateHeading {
+/*Padding for the clients heartrate*/
+.heartRateHeading {
   font-weight: bold;
   margin-left: 15px;
 }
 
 /******************************************************************************/
 
-.clientEquationPadding {
+/*Padding for the equations so nothing gets smashed*/
+.equationPadding {
   margin-left: 5px;
-}
-
-/******************************************************************************/
-
-.myAlign {
-  margin-top: 100px;
 }
 
 /******************************************************************************/
