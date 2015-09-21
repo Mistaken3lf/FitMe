@@ -18,7 +18,16 @@
 <template name="myProfileShell">
   {{#if currentUser}}
   {{#autoForm collection="Meteor.users" id="myProfileForm" type="method-update" meteormethod="updateMyProfile" doc=loggedInUser resetOnSuccess=false autosave=true}}
-  <div class="row">
+<div class="row">
+  <div class="card white z-depth-1">
+    <div class="col s12 m12 l12">
+        <div class="col s12 m12 l12">
+          <div class="card white z-depth-0">
+            <div class="card-title center-align black-text profileGradient myProfileHeader">MY PROFILE CARD</div>
+          </div>
+        </div>
+  <div class="card-content">
+    <div class="row">
     <div class="input-field col s12 m6 l6">
       <span class="blue-text myBoldProfileHeading">Username:</span>{{> afQuickField name="username" readonly=true type="text" label=false}}
     </div>
@@ -71,6 +80,10 @@
       <span class="blue-text myBoldProfileHeading">Biography:</span>{{> afQuickField name="userProfile.bio" rows=6 style="height: 100%;" label=false placeholder="Tell us about yourself"}}
     </div>
   </div>
+</div>
+</div>
+</div>
+</div>
   {{/autoForm}}
   {{else}}
   <p>Not Authorized!!!</p>

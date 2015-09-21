@@ -64,7 +64,7 @@ Template.clientStats.helpers({
       whosStats: clientId
     });
 
-    var bodyFatPercentChange = currentClient.statsRT1BodyFatPercent - currentClient.statsRT3BodyFatPercent;
+    var bodyFatPercentChange = currentClient.statsRT3BodyFatPercent - currentClient.statsRT1BodyFatPercent;
 
     return bodyFatPercentChange;
   },
@@ -76,7 +76,7 @@ Template.clientStats.helpers({
       whosStats: clientId
     });
 
-    var changeInPounds = currentClient.statsRT1BodyFatLbs - currentClient.statsRT3BodyFatLbs;
+    var changeInPounds = currentClient.statsRT3BodyFatLbs - currentClient.statsRT1BodyFatLbs;
 
     return changeInPounds;
   },
@@ -88,7 +88,7 @@ Template.clientStats.helpers({
       whosStats: clientId
     });
 
-    var leanMass = currentClient.statsRT1LeanMass - currentClient.statsRT3LeanMass;
+    var leanMass = currentClient.statsRT3LeanMass - currentClient.statsRT1LeanMass;
 
     return leanMass;
   },
@@ -100,7 +100,7 @@ Template.clientStats.helpers({
       whosStats: clientId
     });
 
-    var fatLost = currentClient.statsRT1BodyFatLost - currentClient.statsRT3BodyFatLost;
+    var fatLost = currentClient.statsRT3BodyFatLost - currentClient.statsRT1BodyFatLost;
 
     return fatLost;
   },
@@ -112,7 +112,7 @@ Template.clientStats.helpers({
       whosStats: clientId
     });
 
-    var muscleGained = currentClient.statsRT1LeanMuscleGain - currentClient.statsRT3LeanMuscleGain;
+    var muscleGained = currentClient.statsRT3LeanMuscleGain - currentClient.statsRT1LeanMuscleGain;
 
     return muscleGained;
   },

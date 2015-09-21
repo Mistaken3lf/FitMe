@@ -13,17 +13,23 @@
   <div class="row">
     <div class="col s12 m12 l12">
       {{#autoForm collection="ClientWorkout" id="clientWorkoutForm" type="method-update" meteormethod="updateClientsWorkout" doc=currentClientsWorkout resetOnSuccess=false autosave=true}}
-      <div class="card z-depth-0">
+      <div class="card grey lighten-4 z-depth-1">
+        <div class="col s12 m12 l12">
+          <div class="card white z-depth-1 gradient">
+            <div class="card-title center-align black-text workoutGradient">WORKOUT CARD</div>
+          </div>
+      </div>
         <div class="card-content">
-          <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Workout Card{{/with}}</span>
           <div class="row">
             <div class="col s12 m3 l3">
-              <span class="blue-text workoutHeadings">Date:</span>{{> afQuickField name="workoutDate" type="date" label=false class="datepicker"}}
+              <span class="black-text workoutHeadings">Date:</span>{{> afQuickField name="workoutDate" type="date" label=false class="datepicker"}}
             </div>
           </div>
-          <div class="row">
+          <div class="card white z-depth-1 workoutSpacing">
+          <div class="col s12 m12 l12">
+            <div class="row">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName1" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName1" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -53,16 +59,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex1TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex1TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex1ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex1ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
-          <hr class="exerciseSeperator">
+        </div>
+        </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName2" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName2" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -92,15 +101,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex2TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex2TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex2ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex2ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span  class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName3" type="text" label=false}}
+              <span  class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName3" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -130,15 +143,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex3TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex3TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex3ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex3ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span  class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName4" type="text" label=false}}
+              <span  class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName4" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -168,15 +185,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex4TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex4TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex4ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex4ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName5" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName5" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -206,15 +227,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex5TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex5TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex5ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex5ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span  class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName6" type="text" label=false}}
+              <span  class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName6" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -244,15 +269,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex6TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex6TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex6ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex6ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName7" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName7" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -282,15 +311,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex7TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex7TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex7ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex7ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName8" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName8" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -320,15 +353,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex8TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex8TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex8ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex8ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName9" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName9" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -358,15 +395,19 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex9TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex9TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex9ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex9ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
+        </div>
+      </div>
           <div class="row">
+            <div class="card white z-depth-1 workoutSpacing">
+            <div class="col s12 m12 l12">
             <div class="col s12 m2 l2">
-              <span class="blue-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName10" type="text" label=false}}
+              <span class="black-text workoutHeadings">Exercise:</span>{{> afQuickField name="ExName10" type="text" label=false}}
             </div>
             <div class="col s12 m2 l2">
               <h5 class="blue-text workoutHeadings">SET 1</h5>
@@ -396,13 +437,15 @@
           </div>
           <div class="row">
             <div class="col s12 m6 l6">
-              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex10TrainerComments" rows=6 style="height: 100%;" label=false placeholder="Trainers Comments"}}
+              <span class="blue-text">Trainers Comments:</span>{{> afQuickField name="ex10TrainerComments" rows=4 style="height: 100%;" label=false placeholder="Trainers Comments"}}
             </div>
             <div class="col s12 m6 l6">
-              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex10ClientComments" rows=6 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
+              <span class="blue-text">Clients Comments:</span>{{> afQuickField name="ex10ClientComments" rows=4 style="height: 100%;" readonly=true label=false placeholder="Clients Comments"}}
             </div>
           </div>
         </div>
+      </div>
+      </div>
       </div>
       {{/autoForm}}
     </div>
