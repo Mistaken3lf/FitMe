@@ -1,6 +1,6 @@
-Template.navigation.events ({
-    //Capture clicking logout button
-  'click .logout': function(event) {
+Template.navigation.events({
+  //Capture clicking logout button
+  'click .logout': function (event) {
 
     //Prevent default action
     event.preventDefault();
