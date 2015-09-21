@@ -1,38 +1,37 @@
 <template name="mySession">
-    {{#if Template.subscriptionsReady}}
-    {{#if isInRole 'client'}}
-    {{#autoForm collection="Meteor.users" id="mySessionForm" doc=thisClient}}
-    <div class="row">
-      <div class="card white z-depth-1">
-        <div class="col s12 m3 l3">
-          <img src="/dashboard/profile/profilePicture.jpg" class="profilePic responsive-img">
-          <div class="card-title center-align blue-text"><b>{{#with thisClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</b></div>
-        </div>
-        <div class="col s12 m9 l9">
-          <div class="card white z-depth-0">
-            <div class="card-title center-align black-text profileGradient">SESSION LOG</div>
-          </div>
-        </div>
-        <div class="col s12 m3 l3">
-          <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
-          {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" type="number" label=false}}
-        </div>
-        <div class="col s12 m3 l3">
-          <h6 class="center-align blue-text"><b>Payment Due</b></h6>
-          {{> afQuickField name="userProfile.paymentDue" type="date" class="datepicker center-align" label=false}}
-        </div>
-        <div class="col s12 m3 l3">
-          <h6 class="center-align blue-text"><b>Next Session</b></h6>
-          {{> afQuickField name="sessionDate" type="date" class="datepicker center-align" label=false}}
+  {{#if Template.subscriptionsReady}}
+  {{#if isInRole 'client'}}
+  {{#autoForm collection="Meteor.users" id="mySessionForm" doc=thisClient}}
+  <div class="row">
+    <div class="card white z-depth-1">
+      <div class="col s12 m3 l3">
+        <img src="/dashboard/profile/profilePicture.jpg" class="profilePic responsive-img">
+        <div class="card-title center-align blue-text"><b>{{#with thisClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</b></div>
+      </div>
+      <div class="col s12 m9 l9">
+        <div class="card white z-depth-0">
+          <div class="card-title center-align black-text profileGradient">SESSION LOG</div>
         </div>
       </div>
+      <div class="col s12 m3 l3">
+        <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
+        {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" readonly=true label=false}}
+      </div>
+      <div class="col s12 m3 l3">
+        <h6 class="center-align blue-text"><b>Payment Due</b></h6>
+        {{> afQuickField name="userProfile.paymentDue" readonly=true class="center-align" label=false}}
+      </div>
+      <div class="col s12 m3 l3">
+        <h6 class="center-align blue-text"><b>Next Session</b></h6>
+        {{> afQuickField name="sessionDate" readonly=true class="center-align" label=false}}
+      </div>
     </div>
-    {{/autoForm}}
-    {{else}}
-    <p>Not Authorized!!!</p>
-    {{/if}}
-    {{else}}
-    <p>Loading...</p>
-    {{/if}}
-
+  </div>
+  {{/autoForm}}
+  {{else}}
+  <p>Not Authorized!!!</p>
+  {{/if}}
+  {{else}}
+  <p>Loading...</p>
+  {{/if}}
 </template>
