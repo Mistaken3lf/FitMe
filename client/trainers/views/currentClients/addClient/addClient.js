@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-Template.addClient.onRendered(function() {
+Template.addClient.onRendered(function () {
   //Pop up a datepicker when a date field is clicked on
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -13,7 +13,7 @@ Template.addClient.onRendered(function() {
 
 Template.addClient.events({
   //Capture create client form submission
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -36,7 +36,7 @@ Template.addClient.events({
     var fitnessGoals = $('[name=fitnessGoals]').val();
 
     //Call server method createClient with provided info
-    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function(error) {
+    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function (error) {
       //Create client failed
       if (error) {
         //Popup a toast to display reason for error

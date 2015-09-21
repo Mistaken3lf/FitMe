@@ -26,7 +26,7 @@ Template.myProfileShell.helpers({
   //Get the currently logged in user to be used to display their
   //profile on the myProfile template
   loggedInUser: function () {
-    var loggedInUser = Meteor.users.findOne({_id: Meteor.userId()});
+    var loggedInUser = Meteor.users.findOne({ _id: Meteor.userId() });
     return loggedInUser;
   },
 });

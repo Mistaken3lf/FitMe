@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
-Template.clientCardio.onCreated(function() {
+Template.clientCardio.onCreated(function () {
   var self = this;
 
   //Subscribe to the current clients cardio publication when
   //the cardio template is created
-  self.autorun(function() {
+  self.autorun(function () {
     var clientId = FlowRouter.getParam('_id');
     self.subscribe("currentClientsCardio", clientId);
   });
@@ -12,7 +12,7 @@ Template.clientCardio.onCreated(function() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Template.clientCardioShell.onRendered(function() {
+Template.clientCardioShell.onRendered(function () {
   //Pop up date picker when a date field is clicked on
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -26,7 +26,7 @@ Template.clientCardioShell.onRendered(function() {
 
 Template.clientCardioShell.helpers({
   //Find clients cardio based on url param
-  currentClientsCardio: function() {
+  currentClientsCardio: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -37,7 +37,7 @@ Template.clientCardioShell.helpers({
   },
 
   //calculate clients max heart rate
-  maxHeartRate: function() {
+  maxHeartRate: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -50,7 +50,7 @@ Template.clientCardioShell.helpers({
   },
 
   //Week 1-4 starting heart rate
-  startBeatsPerMinuteW14: function() {
+  startBeatsPerMinuteW14: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -66,7 +66,7 @@ Template.clientCardioShell.helpers({
   },
 
   //Week 1-4 ending heart rate
-  endBeatsPerMinuteW14: function() {
+  endBeatsPerMinuteW14: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -81,7 +81,7 @@ Template.clientCardioShell.helpers({
     return endBeatsPerMinuteW14;
   },
 
-  startBeatsPerMinuteW58: function() {
+  startBeatsPerMinuteW58: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -96,7 +96,7 @@ Template.clientCardioShell.helpers({
     return startBeatsPerMinuteW58;
   },
 
-  endBeatsPerMinuteW58: function() {
+  endBeatsPerMinuteW58: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -111,7 +111,7 @@ Template.clientCardioShell.helpers({
     return endBeatsPerMinuteW58;
   },
 
-  startBeatsPerMinuteW912: function() {
+  startBeatsPerMinuteW912: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
@@ -126,7 +126,7 @@ Template.clientCardioShell.helpers({
     return startBeatsPerMinuteW912;
   },
 
-  endBeatsPerMinuteW912: function() {
+  endBeatsPerMinuteW912: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId

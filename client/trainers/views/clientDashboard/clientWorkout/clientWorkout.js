@@ -27,7 +27,7 @@ Template.clientWorkoutShell.helpers({
   //Get the current clients workout based on url param
   currentClientsWorkout: function () {
     var clientId = FlowRouter.getParam('_id');
-    var currentClientsWorkout = ClientWorkout.findOne({whosWorkout: clientId});
+    var currentClientsWorkout = ClientWorkout.findOne({ whosWorkout: clientId });
     return currentClientsWorkout;
   },
 });

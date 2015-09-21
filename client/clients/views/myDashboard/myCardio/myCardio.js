@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-Template.myCardio.onCreated(function() {
+Template.myCardio.onCreated(function () {
   var self = this;
 
   //Subscribe to my cardio
-  self.autorun(function() {
+  self.autorun(function () {
     self.subscribe("myCardio");
   });
 });
@@ -12,7 +12,7 @@ Template.myCardio.onCreated(function() {
 
 Template.myCardioShell.helpers({
   //Find my cardio
-  myCardio: function() {
+  myCardio: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -22,7 +22,7 @@ Template.myCardioShell.helpers({
   },
 
   //Calculate my max heart rate
-  maxHeartRate: function() {
+  maxHeartRate: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -34,7 +34,7 @@ Template.myCardioShell.helpers({
   },
 
   //Week 1-4 starting heart rate
-  startBeatsPerMinuteW14: function() {
+  startBeatsPerMinuteW14: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -49,7 +49,7 @@ Template.myCardioShell.helpers({
   },
 
   //Week 1-4 ending heart rate
-  endBeatsPerMinuteW14: function() {
+  endBeatsPerMinuteW14: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -63,7 +63,7 @@ Template.myCardioShell.helpers({
     return endBeatsPerMinuteW14;
   },
 
-  startBeatsPerMinuteW58: function() {
+  startBeatsPerMinuteW58: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -77,7 +77,7 @@ Template.myCardioShell.helpers({
     return startBeatsPerMinuteW58;
   },
 
-  endBeatsPerMinuteW58: function() {
+  endBeatsPerMinuteW58: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -91,7 +91,7 @@ Template.myCardioShell.helpers({
     return endBeatsPerMinuteW58;
   },
 
-  startBeatsPerMinuteW912: function() {
+  startBeatsPerMinuteW912: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });
@@ -105,7 +105,7 @@ Template.myCardioShell.helpers({
     return startBeatsPerMinuteW912;
   },
 
-  endBeatsPerMinuteW912: function() {
+  endBeatsPerMinuteW912: function () {
     var myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
     });

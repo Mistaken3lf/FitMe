@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 Template.register.events({
   //Capture register form submit
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -13,7 +13,7 @@ Template.register.events({
     var email = $('[name=email]').val();
 
     //Call server method to register the trainer
-    Meteor.call("registerTrainer", firstName, lastName, username, password, email, function(error) {
+    Meteor.call("registerTrainer", firstName, lastName, username, password, email, function (error) {
 
       //Error registering trainer
       if (error) {
@@ -21,7 +21,7 @@ Template.register.events({
         Materialize.toast(error.reason, 4000, "centerToast")
       } else {
         //Login user with provided credentials
-        Meteor.loginWithPassword(username, password, function(error) {
+        Meteor.loginWithPassword(username, password, function (error) {
 
           //Failed to login
           if (error) {
