@@ -10,7 +10,7 @@ Meteor.publish('currentClients', function() {
     }, {
       fields: {
         username: 1,
-        "emails.address": 1,
+        sessionDate: 1,
         "userProfile.firstName": 1,
         "userProfile.lastName": 1,
       }

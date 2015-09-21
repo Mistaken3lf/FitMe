@@ -21,6 +21,9 @@ Meteor.publish('myProfile', function() {
         "userProfile.emergencyContact": 1,
         "userProfile.bio": 1,
         "userProfile.whosProfile": 1,
+        sessionDate: 1,
+        "userProfile.sessionsRemaining": 1,
+        "userProfile.paymentDue": 1,
       }
     });
   }
