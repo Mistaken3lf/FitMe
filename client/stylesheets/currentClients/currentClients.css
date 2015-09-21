@@ -6,6 +6,29 @@
 
 /******************************************************************************/
 
+/* Gradient header background for the card */
+.currentClientsGradient {
+  height: 50px;
+  background-image:
+  linear-gradient(
+      to right,
+      #2196f3,
+      #2196f3 0%,
+      #f5f5f5 50%,
+      #f5f5f5 60%,
+      #2196f3 90%
+    );
+}
+
+/******************************************************************************/
+
+/*Add spacing below the table*/
+.spacing {
+  padding-bottom: 12px;
+}
+
+/******************************************************************************/
+
 /*Push button all the way to the left on small screens*/
 @media only screen and (max-width : 992px) {
   .deleteButton {

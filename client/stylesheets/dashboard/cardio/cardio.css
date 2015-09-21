@@ -16,7 +16,7 @@
 
 /*Line up the inputs*/
 .inputAlign {
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 /******************************************************************************/
@@ -56,3 +56,24 @@
 }
 
 /******************************************************************************/
+
+/* Gradient header background for the card */
+.cardioGradient {
+  height: 50px;
+  background-image:
+  linear-gradient(
+      to right,
+      #2196f3,
+      #2196f3 0%,
+      #f5f5f5 50%,
+      #f5f5f5 60%,
+      #2196f3 90%
+    );
+}
+
+/*********************************************************************/
+
+/*Add padding to top of card*/
+.cardioSpacing {
+  padding-top: 8px;
+}

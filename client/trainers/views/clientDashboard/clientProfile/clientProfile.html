@@ -11,39 +11,48 @@
 </template>
 <template name="clientProfileShell">
   {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=currentClient resetOnSuccess=false autosave=true}}
-  <div class="row">
-    <div class="card grey lighten-4 z-depth-1">
-      <div class="col s12 m2 l3">
-        <img src="/dashboard/profile/profilePicture.jpg" class="profilePic responsive-img">
-        <div class="card-title center-align blue-text">{{#with currentClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</div>
+    <div class="row">
+      <div class="card white z-depth-1">
+      <div class="col s12 m3 l3">
+            <img src="/dashboard/profile/profilePicture.jpg" class="profilePic responsive-img">
+            <div class="card-title center-align blue-text"><b>{{#with currentClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</b></div>
       </div>
-      <div class="col s12 m10 l9">
-        <h5 class="center-align black-text clientSessionPadding"><b>CLIENT SESSIONS LOG</b></h5>
+      <div class="col s12 m9 l9">
+        <div class="card white z-depth-0">
+        <div class="card-title center-align black-text profileGradient">CLIENT SESSIONS LOG</div>
+      </div>
       </div>
       <div class="col s12 m3 l3">
-        <h6 class="center-align blue-text clientSessionPadding"><b>Sessions Remaining</b></h6>
+        <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
         {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" type="number" label=false}}
       </div>
       <div class="col s12 m3 l3">
-        <h6 class="center-align blue-text clientSessionPadding"><b>Payment Due</b></h6>
+        <h6 class="center-align blue-text"><b>Payment Due</b></h6>
         {{> afQuickField name="userProfile.paymentDue" type="date" class="datepicker center-align" label=false}}
       </div>
       <div class="col s12 m3 l3">
-        <h6 class="center-align blue-text clientSessionPadding"><b>Next Session</b></h6>
+        <h6 class="center-align blue-text"><b>Next Session</b></h6>
         {{> afQuickField name="sessionDate" type="date" class="datepicker center-align" label=false}}
       </div>
+
     </div>
   </div>
+
   <div class="row">
-    <div class="card grey lighten-4 z-depth-1">
+    <div class="card white z-depth-1">
       <div class="col s12 m12 l12">
-        <div class="col s12 m10 l12">
-          <h5 class="center-align black-text clientSessionPadding"><b>PROFILE CARD</b></h5>
+        <div class="col s12 m12 l12">
+          <div class="card white z-depth-0">
+            <div class="card-title center-align black-text profileGradient">PROFILE CARD</div>
+          </div>
         </div>
         <div class="card-content">
           <div class="row">
             <div class="input-field col s12 m6 l6">
               <span class="blue-text boldProfileHeading">Username:</span>{{> afQuickField name="username" readonly=true type="text" label=false}}
+            </div>
+            <div class="input-field col s12 m6 l6">
+              <span class="blue-text boldProfileHeading">Email:</span>{{> afQuickField name="emails.0.address" readonly=true type="text" label=false}}
             </div>
           </div>
           <div class="row">
@@ -86,11 +95,6 @@
           </div>
           <div class="row">
             <div class="input-field col s12 m6 l6">
-              <span class="blue-text boldProfileHeading">Email:</span>{{> afQuickField name="emails.0.address" readonly=true type="text" label=false}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12 m6 l6">
               <span class="blue-text boldProfileHeading">Biography:</span>{{> afQuickField name="userProfile.bio" rows=6 style="height: 100%;" label=false placeholder="Tell us about yourself."}}
             </div>
             <div class="input-field col s12 m6 l6">
@@ -98,8 +102,8 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
+</div>
   {{/autoForm}}
 </template>
