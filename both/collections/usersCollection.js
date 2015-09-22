@@ -57,7 +57,7 @@ Schema.UserProfile = new SimpleSchema({
 
   zip: {
     type: String,
-    regEx: SimpleSchema.RegEx.ZipCode,
+    regEx: /^[0-9]{5}$/,
     optional: true
   },
 

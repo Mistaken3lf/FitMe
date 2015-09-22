@@ -21,14 +21,14 @@
 /******************************************************************************/
 
 /* push login form down 5% from top */
-#changePasswordForm {
+#passwordForgotForm {
   margin-top: 5%;
 }
 
 /******************************************************************************/
 
 /* push login form down 5% from top */
-#resetPasswordForm {
+#passwordChangeForm {
   margin-top: 5%;
 }
 
