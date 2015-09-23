@@ -22,130 +22,128 @@
         <div class="card-content">
           <span class="card-title blue-text">{{#with thisUser}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
           <div class="card white z-depth-1 spacing">
-            <div class="col s12 m12 l12">
-              <div class="row">
-                <div class="col s12 m4 l3">
-                  <h5 class="bodyStatsHeading">Initial Test</h5>
-                  <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsITDate" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
-                </div>
+            <div class="row">
+              <div class="col s12 m4 l3">
+                <h5 class="bodyStatsHeading">Initial Test</h5>
+                <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsITDate" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
               </div>
-              <div class="row">
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsITBodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsITBodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsITBodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsITLeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsITBodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
               </div>
-              <div class="row">
-                <div class="col s12 m4 l3">
-                  <h5 class="bodyStatsHeading">Retest 1</h5>
-                  <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsRT1Date" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
-                </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsITBodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
               </div>
-              <div class="row">
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT1BodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT1BodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT1BodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT1LeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT1BodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT1LeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsITBodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
               </div>
-              <div class="row">
-                <div class="col s12 m4 l3">
-                  <h5 class="bodyStatsHeading">Retest 2</h5>
-                  <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsRT2Date" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
-                </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsITLeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
               </div>
-              <div class="row">
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT2BodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT2BodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT2BodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT2LeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT2BodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT2LeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4 l3">
+                <h5 class="bodyStatsHeading">Retest 1</h5>
+                <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsRT1Date" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
               </div>
-              <div class="row">
-                <div class="col s12 m4 l3">
-                  <h5 class="bodyStatsHeading">Retest 3</h5>
-                  <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsRT3Date" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
-                </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT1BodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
               </div>
-              <div class="row">
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT3BodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT3BodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT3BodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT3LeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT3BodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT3LeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT1BodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
               </div>
-              <div class="row">
-                <div class="col s12 m4 l3">
-                  <h5 class="bodyStatsHeading">Change</h5>
-                  <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsChangeDate" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
-                </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT1BodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
               </div>
-              <div class="row">
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsChangeBodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsChangeBodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsChangeBodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsChangeLeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsChangeBodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
-                <div class="col s12 m2 l2">
-                  <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsChangeLeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
-                </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT1LeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT1BodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT1LeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4 l3">
+                <h5 class="bodyStatsHeading">Retest 2</h5>
+                <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsRT2Date" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT2BodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT2BodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT2BodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT2LeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT2BodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT2LeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4 l3">
+                <h5 class="bodyStatsHeading">Retest 3</h5>
+                <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsRT3Date" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT3BodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT3BodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT3BodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT3LeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT3BodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT3LeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4 l3">
+                <h5 class="bodyStatsHeading">Change</h5>
+                <span class="bodyStatsLabel">Date:</span>{{> afQuickField name="statsChangeDate" type="date" class="datepicker" readonly=true label=false placeholder="Ex. 1990-05-29"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsChangeBodyWeight" type="number" readonly=true label=false placeholder="Ex. 150"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsChangeBodyFatPercent" type="number" readonly=true label=false placeholder="Ex. 8"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsChangeBodyFatLbs" type="number" readonly=true label=false placeholder="Ex. 15"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsChangeLeanMass" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsChangeBodyFatLost" type="number" readonly=true label=false placeholder="Ex. 100"}}
+              </div>
+              <div class="col s12 m2 l2">
+                <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsChangeLeanMuscleGain" type="number" readonly=true label=false placeholder="Ex. 100"}}
               </div>
             </div>
           </div>

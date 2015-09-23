@@ -11,7 +11,7 @@ Template.clientStats.onCreated(function () {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Template.clientStats.onRendered(function () {
+Template.clientStatsShell.onRendered(function () {
   //Pop up date picker when a date field is selected
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -23,7 +23,7 @@ Template.clientStats.onRendered(function () {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Template.clientStats.helpers({
+Template.clientStatsShell.helpers({
   //Get the current clients stats values
   currentClientsStats: function () {
     var clientId = FlowRouter.getParam('_id');

@@ -11,7 +11,7 @@ Template.myStats.onCreated(function () {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Template.myStats.helpers({
+Template.myStatsShell.helpers({
   //Get the current clients stats values
   myStats: function () {
     var myStats = ClientStats.findOne({
