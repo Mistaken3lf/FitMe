@@ -11,7 +11,7 @@ Meteor.methods({
 
     //Update the trainers first and last name since they are not default
     //Meteor.user fields
-    Meteor.users.update({}, {
+    Meteor.users.update(trainerId, {
       $set: {
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
