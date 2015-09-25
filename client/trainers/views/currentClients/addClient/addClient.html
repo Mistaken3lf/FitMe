@@ -9,13 +9,14 @@
         <div class="col s12 m12 l12">
           {{#if isInRole 'trainer'}}
           {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" doc=this id="clientForm"}}
-          <div class="card">
+          <div class="card z-depth-1 grey lighten-4">
             <div class="col s12 m12 l12">
-              <div class="card white z-depth-1 currentClientsGradient">
-                <div class="card-title center-align black-text currentClientsGradient">REGISTER CLIENT</div>
+              <div class="card z-depth-1">
+                <div class="card-title center-align black-text cardioGradient">REGISTER CLIENT CARD</div>
               </div>
             </div>
-            <div class="card-content">
+            <div class="col s12 m12 l12">
+            <div class="card">
               <div class="row">
                 <div class="input-field col s12 m6 l6">
                   <span class="blue-text boldProfileHeading">Username:</span>{{> afQuickField name="username" type="text" label=false}}
@@ -76,9 +77,12 @@
                 </div>
               </div>
             </div>
+
           </div>
-          <br>
-          <button class="btn blue waves-effect" type="submit">Create Client</button>
+          <div class="row">
+          <button class="btn blue waves-effect createClient" type="submit">Create Client</button>
+        </div>
+        </div>
           {{/autoForm}}
           {{else}}
           <p>Not Authorized!!!</p>
