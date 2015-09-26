@@ -24,8 +24,8 @@ aldeed:collection2
 gildaspk:autoform-materialize
 alanning:roles
 accounts-base
-msavin:mongol
 kadira:flow-router
 kadira:blaze-layout
 email
 materialize:materialize@=0.97.0
+msavin:mongol
