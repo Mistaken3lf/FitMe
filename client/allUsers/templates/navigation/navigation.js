@@ -13,7 +13,23 @@ Template.navigation.events({
   }
 });
 
-Template.navigation.onRendered(function () {
+Template.adminNav.onRendered(function () {
+  //Make mobile sidebar on left side collapsible
+  $('.button-collapse').sideNav({
+    edge: 'left',
+    closeOnClick: true
+  });
+});
+
+Template.trainerNav.onRendered(function () {
+  //Make mobile sidebar on left side collapsible
+  $('.button-collapse').sideNav({
+    edge: 'left',
+    closeOnClick: true
+  });
+});
+
+Template.clientNav.onRendered(function () {
   //Make mobile sidebar on left side collapsible
   $('.button-collapse').sideNav({
     edge: 'left',

@@ -47,3 +47,15 @@
 }
 
 /******************************************************************************/
+
+/* Create blue hr line in sidebbar below logo */
+.navSeperatorAdmin {
+  border: 5px solid #000000;
+}
+
+/******************************************************************************/
+
+/* Create grey background for logo */
+.logoContainerAdmin {
+  background-color: #000000;
+}
