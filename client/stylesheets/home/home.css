@@ -1,18 +1,3 @@
-
-nav ul a,
-nav .brand-logo {
-  color: white;
-}
-
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #26a69a;
-}
-
-
 @media only screen and (max-width : 600px) {
   #index-banner .section {
     top: 0;
