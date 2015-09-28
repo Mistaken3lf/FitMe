@@ -15,6 +15,7 @@ Meteor.methods({
       $set: {
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
+        clientLimit: 0,
       }
     });
 
