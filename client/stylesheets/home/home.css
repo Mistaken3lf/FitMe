@@ -1,1 +1,46 @@
-/*Remove Me*/
+
+nav ul a,
+nav .brand-logo {
+  color: white;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+  padding-left: 0px;
+
+}
+
+.footer-logo{
+  height: 90px;
+  width: 50px;
+  padding-top: 10px;
+
+}
+
+.logo-img{
+  height: 400px;
+  width: 400px;
+
+}
