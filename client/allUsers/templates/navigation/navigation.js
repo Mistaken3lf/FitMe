@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////////////////////////////////
 Template.navigation.events({
   //Capture clicking logout button
   'click .logout': function (event) {
@@ -12,6 +13,7 @@ Template.navigation.events({
     Meteor.logout();
   }
 });
+////////////////////////////////////////////////////////////////////////////////
 
 Template.navigation.onRendered(function () {
   //Make mobile sidebar on left side collapsible
@@ -20,3 +22,5 @@ Template.navigation.onRendered(function () {
     closeOnClick: true
   });
 });
+
+////////////////////////////////////////////////////////////////////////////////
