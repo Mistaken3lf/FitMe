@@ -8,6 +8,8 @@ Meteor.methods({
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
+    
+    Meteor.users.update({_id: this.userId}, {$inc: {clientLimit: -1}});
 
     //Delete the client clicked on
     Meteor.users.remove(clientId);

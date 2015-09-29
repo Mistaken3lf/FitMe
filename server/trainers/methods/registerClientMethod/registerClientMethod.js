@@ -2,13 +2,19 @@
 Meteor.methods({
   //Register a new client with any information they enter
   //when adding a new client
-  registerClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
+  registerClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) { 
     //Make sure the user is a trainer and logged in before
     //creating a new client
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
-
+    
+    var currentTrainer = Meteor.users.findOne({_id: this.userId});
+    
+    if(currentTrainer.clientLimit >= 5) {
+      return 1;
+    }
+ 
     //Create the new clients username, password and email since thats
     //what the default meteor user accounts expects
     id = Accounts.createUser({
@@ -41,6 +47,8 @@ Meteor.methods({
         'userProfile.whosProfile': id,
       }
     });
+
+    Meteor.users.update({ _id: this.userId }, { $inc: { clientLimit: 1 } });
 
     //Create a stats document for the client
     ClientStats.insert({
