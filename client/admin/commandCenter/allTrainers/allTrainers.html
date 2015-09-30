@@ -1,0 +1,46 @@
+<template name="allTrainers">
+  {{#if Template.subscriptionsReady}}
+  {{#if isInRole 'admin'}}
+  <div class="card green">
+    <div class="col s12 m12 l12">
+      <div class="card">
+        <div class="col s12 m12 l12">
+          <div class="card z-depth-1">
+            <div class="card-title center-align white-text allTrainersHeader">CURRENT TRAINERS</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <table class="striped responsive-table">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each trainer}}
+                  <tr>
+                    <td>{{username}}</td>
+                    <td>{{userProfile.firstName}}</td>
+                    <td>{{userProfile.lastName}}</td>
+                    <td><button class="btn-floating red waves-effect removeTrainer"><i class="material-icons">remove</i></button></td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <p class="green-text">Not Authorized!!!</p>
+  {{/if}}
+  
+  {{else}}
+  <p class="green-text">Loading...</p>
+  {{/if}}
+</template>

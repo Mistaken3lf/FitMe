@@ -1,0 +1,28 @@
+////////////////////////////////////////////////////////////////////////////////
+Template.allTrainers.onCreated(function () {
+  var self = this;
+
+  //Subscribe to all trainers
+  self.autorun(function () {
+    self.subscribe("allTrainers");
+  });
+});
+
+////////////////////////////////////////////////////////////////////////////////
+
+Template.allTrainers.helpers({
+  trainer: function () {
+    return Meteor.users.find({ roles: "trainer" });
+  }
+});
+
+////////////////////////////////////////////////////////////////////////////////
+
+Template.allTrainers.events({
+  'click .removeTrainer': function (event) {
+    //Call server function to delete the client clicked on
+    Meteor.call("removeTrainer", this._id);
+  }
+});
+
+////////////////////////////////////////////////////////////////////////////////

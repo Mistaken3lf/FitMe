@@ -8,10 +8,10 @@ Meteor.methods({
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
-    
-    var currentTrainer = Meteor.users.findOne({_id: this.userId});
-    
-    if(currentTrainer.clientLimit >= 5) {
+
+    var currentTrainer = Meteor.users.findOne({ _id: this.userId });
+
+    if (currentTrainer.clientLimit >= 5) {
       return 1;
     }
  
