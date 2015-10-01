@@ -18,7 +18,7 @@ caching-html-compiler@1.0.2
 callback-hook@1.0.4
 check@1.0.6
 coffeescript@1.0.10
-cosmos:browserify@0.7.2
+cosmos:browserify@0.7.4
 dburles:mongo-collection-instances@0.3.4
 ddp@1.2.2
 ddp-client@1.2.1
@@ -51,7 +51,7 @@ logging@1.0.8
 materialize:materialize@0.97.0
 meteor@1.1.9
 meteor-base@1.0.1
-meteortoys:toykit@1.0.1
+meteortoys:toykit@1.0.2
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1
