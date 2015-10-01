@@ -5,11 +5,22 @@
 
   <main>
     <div class="layoutContainer">
-      <!--Dynamic layout based on what template is active -->
-      {{> Template.dynamic template=main}}
+      {{#if isInRole 'admin'}}
+        {{> Template.dynamic template=adminContent}}
+      {{/if}}
+      {{#if isInRole 'trainer'}}
+        {{> Template.dynamic template=trainerContent}}
+      {{/if}}
+      {{#if isInRole 'client'}}
+        {{> Template.dynamic template=clientContent}}
+      {{/if}}
+      {{#if currentUser}}
+        {{> Template.dynamic template=allUserContent}}
+      {{else}}
+      {{> Template.dynamic template=allUserContent}}
+      {{/if}}
     </div>
   </main>
-
   <footer>
   </footer>
 </template>

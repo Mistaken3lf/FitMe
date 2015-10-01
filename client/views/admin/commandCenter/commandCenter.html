@@ -1,7 +1,6 @@
 <template name="commandCenter">
   <div class="card-panel black z-depth-2">
     <div class="row">
-      {{#if Template.subscriptionsReady}}
       <div class="col s12 m4 l4">
         <h5 class="green-text center">TOTAL TRAINERS: {{totalTrainers}}</h5>
       </div>
@@ -11,9 +10,6 @@
       <div class="col s12 m4 l4">
         <h5 class="green-text center">TOTAL USERS: {{totalUsers}}</h5>
       </div>
-      {{else}}
-      <p class="green-text">Loading...</p>
-      {{/if}}
     </div>
     <h1 class="green-text center">Command Center</h1>
     <div class="dashContainer">
@@ -27,7 +23,7 @@
           </ul>
         </div>
         <div id="trainers" class="col s12">{{> allTrainers}}</div>
-        <div id="clients" class="col s12">Test 2</div>
+        <div id="clients" class="col s12">{{> allClients}}</div>
         <div id="test3" class="col s12">Test 3</div>
         <div id="test4" class="col s12">Test 4</div>
       </div>

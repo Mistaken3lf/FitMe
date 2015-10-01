@@ -1,10 +1,6 @@
 <template name="clientProfile">
   {{#if Template.subscriptionsReady}}
-  {{#if isInRole 'trainer'}}
   {{> clientProfileShell}}
-  {{else}}
-  <p>Not Authorized!!!</p>
-  {{/if}}
   {{else}}
   <p>Loading...</p>
   {{/if}}
