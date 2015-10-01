@@ -1,3 +1,7 @@
 .allTrainersHeader {
 	background-color: black;
 }
+
+#createTrainerAdminForm {
+	margin-top: 5%;
+}
