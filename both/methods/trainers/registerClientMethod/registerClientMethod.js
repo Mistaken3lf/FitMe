@@ -12,7 +12,7 @@ Meteor.methods({
     var currentTrainer = Meteor.users.findOne({ _id: this.userId });
 
     if (currentTrainer.clientLimit >= 5) {
-      return 1;
+      return "Client Limit Reached";
     }
  
     //Create the new clients username, password and email since thats

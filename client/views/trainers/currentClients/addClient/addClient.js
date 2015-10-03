@@ -10,7 +10,6 @@ Template.addClient.onRendered(function () {
 });
 
 ////////////////////////////////////////////////////////////////////////////////
-
 Template.addClient.events({
   //Capture create client form submission
   'submit form': function (event) {
@@ -36,11 +35,11 @@ Template.addClient.events({
     var fitnessGoals = $('[name=fitnessGoals]').val();
     
     //Call server method createClient with provided info
-    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function (error) {
+    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function (error, result) {
       //Create client failed
       if (error) {
         //Popup a toast to display reason for error
-        Materialize.toast(error.reason, 4000, "centerToast")
+        Materialize.toast(error.reason, 4000, "centerToast");
       } else {
         //Empty out all form inputs
         username = $('[name=username]').val('');
@@ -62,6 +61,7 @@ Template.addClient.events({
 
         //Go back to my current clients after adding one
         FlowRouter.go("/currentClients");
+        Materialize.toast(result, 4000, "centerToast");
       }
     });
   }
