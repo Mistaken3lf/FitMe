@@ -2,24 +2,45 @@
   <div class="card-panel black z-depth-2">
     <div class="row">
       <div class="col s12 m4 l4">
-        <h5 class="green-text center">TOTAL TRAINERS: {{totalTrainers}}</h5>
+        <h5 class="green-text center-align">TOTAL TRAINERS: {{totalTrainers}}</h5>
       </div>
       <div class="col s12 m4 l4">
-        <h5 class="green-text center">TOTAL CLIENTS: {{totalClients}}</h5>
+        <h5 class="green-text center-align">TOTAL CLIENTS: {{totalClients}}</h5>
       </div>
       <div class="col s12 m4 l4">
-        <h5 class="green-text center">TOTAL USERS: {{totalUsers}}</h5>
+        <h5 class="green-text center-align">TOTAL USERS: {{totalUsers}}</h5>
       </div>
     </div>
-    <h1 class="green-text center">Command Center</h1>
+    <div class="row">
+      <div class="col s4 m12 l1 offset-l1">
+        <img class="responsive-img center-align light1" src="/commandCenter/yell_bl.gif">
+      </div>
+      <div class="col s4 m12 l1">
+        <img class="responsive-img center-align light1" src="/commandCenter/yell_bl.gif">
+      </div>
+      <div class="col s4 m12 l1">
+        <img class="responsive-img center-align light1" src="/commandCenter/yell_bl.gif">
+      </div>
+      <div class="col s3 m12 l1 offset-l4">
+        <img class="responsive-img center-align light2" src="/commandCenter/yell_bl.gif">
+      </div>
+      <div class="col s3 m12 l1">
+        <img class="responsive-img center-align light2" src="/commandCenter/yell_bl.gif">
+      </div>
+      <div class="col s3 m12 l1">
+        <img class="responsive-img center-align light2" src="/commandCenter/yell_bl.gif">
+      </div>
+    </div>
+
+        <h1 class="green-text center-align command"><b>COMMAND CENTER</b></h1>
     <div class="dashContainer">
       <div class="row">
         <div class="col s12">
           <ul class="tabs black">
-            <li class="tab col s3"><a class="white-text" href="#trainers">Current Trainers</a></li>
-            <li class="tab col s3"><a class="white-text" href="#clients">Current Clients</a></li>
-            <li class="tab col s3"><a class="white-text" href="#test3">Payments</a></li>
-            <li class="tab col s3"><a class="white-text" href="#test4">Renewals</a></li>
+            <li class="tab col s3"><a class="white-text currentTrainers" href="#trainers">Current Trainers</a></li>
+            <li class="tab col s3"><a class="white-text currentClients" href="#clients">Current Clients</a></li>
+            <li class="tab col s3"><a class="white-text payments" href="#test3">Payments</a></li>
+            <li class="tab col s3"><a class="white-text renewals" href="#test4">Renewals</a></li>
           </ul>
         </div>
         <div id="trainers" class="col s12">{{> allTrainers}}</div>
