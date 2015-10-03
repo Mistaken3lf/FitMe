@@ -1,10 +1,6 @@
 <template name="clientCardio">
   {{#if Template.subscriptionsReady}}
-  {{#if isInRole 'trainer'}}
   {{> clientCardioShell}}
-  {{else}}
-  <p>Not Authorized!!!</p>
-  {{/if}}
   {{else}}
   <p>Loading...</p>
   {{/if}}

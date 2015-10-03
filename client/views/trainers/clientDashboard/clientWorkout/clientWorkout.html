@@ -1,10 +1,6 @@
 <template name="clientWorkout">
   {{#if Template.subscriptionsReady}}
-  {{#if isInRole 'trainer'}}
   {{> clientWorkoutShell}}
-  {{else}}
-  <p>Not Authorized!!!</p>
-  {{/if}}
   {{else}}
   <p>Loading...</p>
   {{/if}}

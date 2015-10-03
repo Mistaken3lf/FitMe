@@ -11,6 +11,7 @@ Template.allTrainers.onCreated(function () {
 ////////////////////////////////////////////////////////////////////////////////
 
 Template.allTrainers.helpers({
+  //Find all trainers we are subscribed to
   trainer: function () {
     return Meteor.users.find({ roles: "trainer" });
   }
@@ -20,7 +21,7 @@ Template.allTrainers.helpers({
 
 Template.allTrainers.events({
   'click .removeTrainer': function (event) {
-    //Call server function to delete the client clicked on
+    //Call server function to delete the trainer clicked on
     Meteor.call("removeTrainer", this._id);
   }
 });
