@@ -19,6 +19,8 @@ Template.clientProfileShell.onRendered(function () {
     autoclose: true,
     format: "yyyy-mm-dd",
   });
+  
+  $('#datetimepicker').datetimepicker();
 });
 
 ////////////////////////////////////////////////////////////////////////////////

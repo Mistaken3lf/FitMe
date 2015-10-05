@@ -118,7 +118,7 @@ Schema.User = new SimpleSchema({
     type: Date,
     optional: true,
   },
-  
+
   clientLimit: {
     type: Number,
     optional: true,

@@ -28,3 +28,5 @@ kadira:flow-router
 kadira:blaze-layout
 email
 materialize:materialize@=0.97.0
+drewy:datetimepicker
+msavin:mongol
