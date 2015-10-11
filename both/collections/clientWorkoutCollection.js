@@ -18,8 +18,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Exercise #1
   ExName1: {
     type: String,
@@ -92,7 +90,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: String,
     optional: true,
   },
-  ////////////////////////////////////////////////////////////////////////////////
+
   //Exercise #2
   ExName2: {
     type: String,
@@ -165,8 +163,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: String,
     optional: true,
   },
-
-  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #3
   ExName3: {
@@ -241,8 +237,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Exercise #4
   ExName4: {
     type: String,
@@ -315,8 +309,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: String,
     optional: true,
   },
-
-  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #5
   ExName5: {
@@ -391,8 +383,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Exercise #6
   ExName6: {
     type: String,
@@ -465,8 +455,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: String,
     optional: true,
   },
-
-  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #7
   ExName7: {
@@ -541,8 +529,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Exercise #8
   ExName8: {
     type: String,
@@ -616,8 +602,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     optional: true,
   },
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Exercise #9
   ExName9: {
     type: String,
@@ -690,8 +674,6 @@ ClientWorkoutSchema.workout = new SimpleSchema({
     type: String,
     optional: true,
   },
-
-  ////////////////////////////////////////////////////////////////////////////////
 
   //Exercise #10
   ExName10: {

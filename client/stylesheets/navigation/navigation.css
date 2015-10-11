@@ -1,5 +1,5 @@
-/******************************************************************************/
 /* Optimize side bar logo */
+
 .sidebarLogo {
   display: block;
   width: auto;
@@ -8,23 +8,20 @@
   transform: translateY(-5%);
 }
 
-/******************************************************************************/
-
 /* Create grey background for logo */
+
 .logoContainer {
   background-color: #9e9e9e;
 }
 
-/******************************************************************************/
-
 /* Create blue hr line in sidebbar below logo */
+
 .navSeperator {
   border: 5px solid #2196f3;
 }
 
-/******************************************************************************/
-
 /* Add padding between links so they are seperated nicely */
+
 #navPad {
   width: 90%;
   margin: auto auto 10px auto;
@@ -32,18 +29,14 @@
   border-color: #9e9e9e;
 }
 
-/******************************************************************************/
-
 /* Align brand text as far left as possible */
+
 .nav-wrapper {
   margin-left: 10px;
 }
 
-/******************************************************************************/
-
 /* Display username below sidebar logo */
+
 #usernameText {
   margin-top: -15px;
 }
-
-/******************************************************************************/

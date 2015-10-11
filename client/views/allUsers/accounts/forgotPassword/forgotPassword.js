@@ -1,4 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
 //Check if the password is being resetPassword
 if (Accounts._resetPasswordToken) {
   //Go to the reset page if its being reset
@@ -8,11 +7,11 @@ if (Accounts._resetPasswordToken) {
   Session.set('resetPassword', Accounts._resetPasswordToken);
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 Template.forgotPassword.events({
   //Capture forgot password event
-  'submit form': function (event) {
+  'submit form': function(event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -20,11 +19,12 @@ Template.forgotPassword.events({
     var email = $('[name=email]').val();
 
     //Send email to user with link to reset password
-    Accounts.forgotPassword({ email: email }, function (error) {
+    Accounts.forgotPassword({
+      email: email
+    }, function(error) {
       if (error) {
         Materialize.toast("Email does not exist", 4000, "centerToast");
-      }
-      else {
+      } else {
         Materialize.toast("Email has been sent", 4000, "centerToast");
         FlowRouter.go("/login");
       }
@@ -32,20 +32,20 @@ Template.forgotPassword.events({
   }
 });
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 Template.resetPassword.helpers({
   //Get the resetPassword session variable to check
   //if its been set in the template
-  resetPassword: function () {
+  resetPassword: function() {
     return Session.get('resetPassword');
   }
 });
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 Template.resetPassword.events({
-  'submit form': function (event) {
+  'submit form': function(event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -60,7 +60,7 @@ Template.resetPassword.events({
     }
 
     //Reset the users password
-    Accounts.resetPassword(Session.get('resetPassword'), newPassword, function (error) {
+    Accounts.resetPassword(Session.get('resetPassword'), newPassword, function(error) {
       if (error) {
         Materialize.toast(error, 4000, "centerToast");
       } else {
@@ -71,5 +71,3 @@ Template.resetPassword.events({
     });
   }
 });
-
-////////////////////////////////////////////////////////////////////////////////

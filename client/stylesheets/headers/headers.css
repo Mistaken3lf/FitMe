@@ -1,5 +1,5 @@
-/******************************************************************************/
 /* Optimize header images for pages */
+
 #pageHeader {
   height: 150px;
   margin-left: auto;
@@ -7,11 +7,8 @@
   display: block;
 }
 
-/******************************************************************************/
-
 /*Create blue hr line for bottom of header image */
+
 .headerSeperator {
   border: 2px solid #2196f3;
 }
-
-/******************************************************************************/

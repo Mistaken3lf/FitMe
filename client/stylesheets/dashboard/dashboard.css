@@ -1,5 +1,8 @@
-/***********************ALL USERS**********************************************/
+/* All Users */
+
+
 /* Custom container to make it fill more of the screen */
+
 .dashContainer {
   width: 100%;
   margin: auto;
@@ -7,22 +10,25 @@
 }
 
 /*Add some margin so everything is not pushed up against the tabs */
+
 .tabMargin {
   margin-bottom: 1%;
 }
 
 /*Change the color of the tab underlines to blue */
+
 .tabs .indicator {
   background-color: #2196f3;
 }
 
 /* Hide the overflow on desktop */
+
 .tabs {
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-/************************TRAINER MOBILE****************************************/
+/* Trainer mobile */
 
 @media (max-width:768px) {
   .profileTab {
@@ -30,26 +36,23 @@
     margin-right: 20px;
     position: relative;
   }
-
   .statsTab {
     margin-left: 30px;
     margin-right: 30px;
     position: relative;
   }
-
   .cardioTab {
     margin-left: 60px;
     margin-right: 60px;
     position: relative;
   }
-
   .workoutTab {
     margin-left: 95px;
     position: relative;
   }
 }
 
-/************************CLIENT MOBILE*****************************************/
+/* Client Mobile */
 
 @media (max-width:768px) {
   .myScheduleTab {
@@ -57,18 +60,15 @@
     margin-right: 20px;
     position: relative;
   }
-
   .myWorkoutTab {
     margin-left: 115px;
     position: relative;
   }
-
   .myCardioTab {
     margin-left: 80px;
     margin-right: 80px;
     position: relative;
   }
-
   .myStatsTab {
     margin-left: 50px;
     margin-right: 50px;
@@ -83,7 +83,6 @@
     margin-bottom: 8px;
     display: none;
   }
-
   .tabs {
     overflow-x: scroll;
     overflow-y: hidden;

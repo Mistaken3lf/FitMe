@@ -1,7 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
 Template.addTrainerAdmin.events({
   //Capture create trainer form event
-  'submit form': function (event) {
+  'submit form': function(event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -13,7 +12,7 @@ Template.addTrainerAdmin.events({
     var email = $('[name=email]').val();
 
     //Call server method to create the trainer
-    Meteor.call("createTrainer", firstName, lastName, username, password, email, function (error) {
+    Meteor.call("createTrainer", firstName, lastName, username, password, email, function(error) {
 
       //Error creating trainer
       if (error) {
@@ -26,4 +25,3 @@ Template.addTrainerAdmin.events({
     });
   }
 });
-////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
 Template.login.events({
   //Capture login form submission
-  'submit form': function (event) {
+  'submit form': function(event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -10,7 +9,7 @@ Template.login.events({
     var password = $('[name=password]').val();
 
     //Log user in with userrname and password
-    Meteor.loginWithPassword(username, password, function (error) {
+    Meteor.loginWithPassword(username, password, function(error) {
 
       //Invalid login
       if (error) {
@@ -23,5 +22,3 @@ Template.login.events({
     });
   }
 });
-
-////////////////////////////////////////////////////////////////////////////////

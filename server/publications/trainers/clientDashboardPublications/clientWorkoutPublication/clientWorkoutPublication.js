@@ -1,5 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-Meteor.publish('currentClientsWorkout', function (currentClientsId) {
+Meteor.publish('currentClientsWorkout', function(currentClientsId) {
   //Make sure the user is logged in and a trainer before publishing
   if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Find a specific clients workout based on currentClientsId passed
@@ -15,4 +14,3 @@ Meteor.publish('currentClientsWorkout', function (currentClientsId) {
     return this.ready();
   }
 });
-////////////////////////////////////////////////////////////////////////////////
