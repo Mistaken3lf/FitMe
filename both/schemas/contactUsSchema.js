@@ -14,7 +14,6 @@ ContactUsSchema.contact = new SimpleSchema({
   phoneNumber: {
     type: String,
     regEx: /^[2-9]\d{2}-\d{3}-\d{4}$/,
-    optional: true
   },
 
   email: {
