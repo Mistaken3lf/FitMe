@@ -1,5 +1,5 @@
 Meteor.methods({
-  sendFeedbackEmail: function(fromWho, message) {
+  contactUs: function(firstName, lastName, phoneNumber, email, message) {
     //Allow other methods to execute without waiting
     //for the email to send.
     this.unblock();
@@ -7,7 +7,7 @@ Meteor.methods({
     //Send the actual email to us
     Email.send({
       to: "Mistaken3lf@gmail.com",
-      from: fromWho,
+      from: email,
       subject: "Feedback",
       text: message
     });

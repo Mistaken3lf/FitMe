@@ -8,15 +8,24 @@ Template.home.events({
     event.preventDefault();
 
     //Get who send the message and the actual message
-    var fromWho = $('[name=fromWho]').val();
-    var message = $('[name=contactMessage]').val();
+    var firstName = $('[name=firstName]').val();
+    var lastName = $('[name=lastName]').val();
+    var phoneNumber = $('[name=phoneNumber]').val();
+    var email = $('[name=email]').val();
+    var message = $('[name=message]').val();
 
     //Call the send feedback method to send us information.
-    Meteor.call("sendFeedbackEmail", fromWho, message, function(error) {
+    Meteor.call("contactUs", firstName, lastName, phoneNumber, email, message, function(error) {
       if (error) {
         Materialize.toast(error.reason, 4000, "centerToast")
       }
       else {
+        Materialize.toast("Message sent", 4000, "centerToast")
+        firstName = $('[name=firstName]').val('');
+        lastName = $('[name=lastName]').val('');
+        phoneNumber = $('[name=phoneNumber]').val('');
+        email = $('[name=email]').val('');
+        message = $('[name=message]').val('');
         FlowRouter.go("/");
       }
     });
