@@ -7,14 +7,10 @@ Template.commandCenter.onCreated(function() {
   });
 });
 
-
-
 Template.commandCenter.onRendered(function() {
   //Activate the command center tabs
   $('ul.tabs').tabs();
 });
-
-
 
 Template.commandCenter.helpers({
   totalTrainers: function() {

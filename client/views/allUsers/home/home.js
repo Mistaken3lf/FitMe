@@ -15,7 +15,8 @@ Template.home.events({
     Meteor.call("sendFeedbackEmail", fromWho, message, function(error) {
       if (error) {
         Materialize.toast(error.reason, 4000, "centerToast")
-      } else {
+      }
+      else {
         FlowRouter.go("/");
       }
     });
