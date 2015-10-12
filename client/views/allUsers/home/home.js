@@ -3,8 +3,6 @@ Template.home.onRendered(function() {
   $('input#input_text, textarea#textarea1').characterCounter();
 });
 
-
-
 Template.home.events({
   'submit form': function(event) {
     event.preventDefault();
