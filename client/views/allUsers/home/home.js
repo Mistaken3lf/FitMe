@@ -1,10 +1,10 @@
-Template.home.onRendered(function() {
+Template.home.onRendered(function () {
   //Add a counter to the contact text area.
   $('input#input_text, textarea#textarea1').characterCounter();
 });
 
 Template.home.events({
-  'submit form': function(event) {
+  'submit form': function (event) {
     event.preventDefault();
 
     //Get who send the message and the actual message
@@ -15,11 +15,10 @@ Template.home.events({
     var message = $('[name=message]').val();
 
     //Call the send feedback method to send us information.
-    Meteor.call("contactUs", firstName, lastName, phoneNumber, email, message, function(error) {
+    Meteor.call("contactUs", firstName, lastName, phoneNumber, email, message, function (error) {
       if (error) {
         Materialize.toast(error.reason, 4000, "centerToast")
-      }
-      else {
+      } else {
         Materialize.toast("Message sent", 4000, "centerToast")
         firstName = $('[name=firstName]').val('');
         lastName = $('[name=lastName]').val('');
