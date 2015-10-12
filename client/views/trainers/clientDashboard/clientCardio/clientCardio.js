@@ -9,8 +9,6 @@ Template.clientCardio.onCreated(function() {
   });
 });
 
-
-
 Template.clientCardioShell.onRendered(function() {
   //Pop up date picker when a date field is clicked on
   $('.datepicker').pickadate({
@@ -20,8 +18,6 @@ Template.clientCardioShell.onRendered(function() {
     format: "yyyy-mm-dd",
   });
 });
-
-
 
 Template.clientCardioShell.helpers({
   //Find clients cardio based on url param

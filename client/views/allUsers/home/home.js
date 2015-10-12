@@ -3,8 +3,6 @@ Template.home.onRendered(function() {
   $('input#input_text, textarea#textarea1').characterCounter();
 });
 
-
-
 Template.home.events({
   'submit form': function(event) {
     event.preventDefault();
@@ -17,7 +15,8 @@ Template.home.events({
     Meteor.call("sendFeedbackEmail", fromWho, message, function(error) {
       if (error) {
         Materialize.toast(error.reason, 4000, "centerToast")
-      } else {
+      }
+      else {
         FlowRouter.go("/");
       }
     });
