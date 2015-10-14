@@ -23,5 +23,9 @@ Template.allTrainers.events({
   'click .removeTrainer': function(event) {
     //Call server function to delete the trainer clicked on
     Meteor.call("removeTrainer", this._id);
+  },
+
+  'click .suspendUser': function(event) {
+    Meteor.call("suspendUser", this._id);
   }
 });

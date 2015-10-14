@@ -15,6 +15,7 @@ Meteor.methods({
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
         clientLimit: 0,
+        userStatus: "active",
       }
     });
 

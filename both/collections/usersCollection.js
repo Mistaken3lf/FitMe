@@ -122,6 +122,11 @@ Schema.User = new SimpleSchema({
     optional: true,
   },
 
+  userStatus: {
+    type: String,
+    optional: true,
+  },
+
   services: {
     type: Schema.Services,
     blackbox: true,

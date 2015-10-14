@@ -10,6 +10,7 @@ Meteor.publish('allTrainers', function() {
         "emails.address": 1,
         "userProfile.firstName": 1,
         "userProfile.lastName": 1,
+        userStatus: 1,
       }
     });
   }

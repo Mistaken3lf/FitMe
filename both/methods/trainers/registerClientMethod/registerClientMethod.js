@@ -46,6 +46,7 @@ Meteor.methods({
         'userProfile.fitnessGoals': fitnessGoals,
         'userProfile.createdBy': Meteor.userId(),
         'userProfile.whosProfile': id,
+        userStatus: "active",
       }
     });
 

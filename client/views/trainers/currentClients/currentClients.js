@@ -13,6 +13,10 @@ Template.currentClients.events({
   'click .deleteButton': function(event) {
     //Call server function to delete the client clicked on
     Meteor.call("deleteClient", this._id);
+  },
+
+  'click .suspendUser': function(event) {
+    Meteor.call("suspendUser", this._id);
   }
 });
 

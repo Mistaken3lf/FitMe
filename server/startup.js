@@ -13,6 +13,7 @@ Meteor.startup(function() {
 
     Meteor.users.update(admin, {
       $set: {
+        userStatus: "active",
         'userProfile.firstName': "Admin",
         'userProfile.lastName': "Admin",
       }
