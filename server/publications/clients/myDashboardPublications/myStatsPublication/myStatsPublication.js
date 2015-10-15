@@ -1,5 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-Meteor.publish('myStats', function () {
+Meteor.publish('myStats', function() {
   //Make sure the user is a client and logged in before publishing
   //their stats
   if (this.userId && Roles.userIsInRole(this.userId, "client")) {
@@ -17,4 +16,3 @@ Meteor.publish('myStats', function () {
     return this.ready();
   }
 });
-////////////////////////////////////////////////////////////////////////////////

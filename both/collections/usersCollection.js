@@ -90,8 +90,6 @@ Schema.UserProfile = new SimpleSchema({
   },
 });
 
-////////////////////////////////////////////////////////////////////////////////
-
 Schema.User = new SimpleSchema({
   username: {
     type: String,
@@ -121,6 +119,11 @@ Schema.User = new SimpleSchema({
 
   clientLimit: {
     type: Number,
+    optional: true,
+  },
+
+  userStatus: {
+    type: String,
     optional: true,
   },
 

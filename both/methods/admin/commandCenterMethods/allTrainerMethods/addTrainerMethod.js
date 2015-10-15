@@ -1,12 +1,11 @@
-////////////////////////////////////////////////////////////////////////////////
 Meteor.methods({
   //Create a new trainer for the admin
-  createTrainer: function (firstName, lastName, username, password, email) {
+  createTrainer: function(firstName, lastName, username, password, email) {
     //Make sure user is an admin and logged in before allowing the add
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "admin")) {
       throw new Meteor.Error("not-authorized");
     }
-    
+
     //Create the new trainer
     newTrainerId = Accounts.createUser({
       username: username,
@@ -21,6 +20,7 @@ Meteor.methods({
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
         clientLimit: 0,
+        userStatus: "active",
       }
     });
 
@@ -28,4 +28,3 @@ Meteor.methods({
     Roles.addUsersToRoles(newTrainerId, 'trainer');
   }
 });
-////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
 Template.changePassword.events({
   //Capture password change event
-  'submit form': function (event) {
+  'submit form': function(event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -15,7 +14,7 @@ Template.changePassword.events({
       return false;
     }
 
-    Accounts.changePassword(currentPassword, newPassword, function (error) {
+    Accounts.changePassword(currentPassword, newPassword, function(error) {
       //Invalid passwords
       if (error) {
         //Pop up a toast to show change password errors
@@ -27,4 +26,3 @@ Template.changePassword.events({
     });
   }
 });
-////////////////////////////////////////////////////////////////////////////////

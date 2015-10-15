@@ -1,77 +1,53 @@
-/******************************************************************************/
-
 /* Remove styling from input */
+
 .noStyleInput {
-    border: none !important;
+  border: none !important;
 }
 
-/******************************************************************************/
-
 /* Padding for the sessions on left hand side */
+
 .clientSessionPadding {
   padding-bottom: 20px;
 }
 
-/******************************************************************************/
-
 /* Bold headings */
+
 .boldProfileHeading {
   font-weight: bold;
   font-size: 120%;
 }
 
-/******************************************************************************/
-
 /* Padding for profile picture */
+
 .profilePic {
   padding-top: 15px;
 }
 
-/******************************************************************************/
-
 /* Blue underline to seperate the sessions and profile */
+
 .blueSeperator {
   border: 2px solid #2196f3;
 }
 
-/******************************************************************************/
-
 /* Gradient header background for the card */
+
 .profileGradient {
   height: 50px;
-  background-image:
-  linear-gradient(
-      to right,
-      #2196f3,
-      #2196f3 0%,
-      #f5f5f5 50%,
-      #f5f5f5 60%,
-      #2196f3 90%
-    );
+  background-image: linear-gradient( to right, #2196f3, #2196f3 0%, #f5f5f5 50%, #f5f5f5 60%, #2196f3 90%);
 }
 
 /* Another possible gradient header background for the card */
+
 .gradient2 {
   height: 50px;
   background-color: red;
-  background-image:
-  linear-gradient(
-      to right,
-      #FFFFFF,
-      #FFFFFF 0%,
-      #2196f3 50%,
-      #2196f3 50%,
-      #FFFFFF 80%
-    );
+  background-image: linear-gradient( to right, #FFFFFF, #FFFFFF 0%, #2196f3 50%, #2196f3 50%, #FFFFFF 80%);
 }
 
-/******************************************************************************/
-
 /* Setting the card title size and positioning */
+
 .card .card-title {
   padding-top: 8px;
   padding-bottom: 8px;
   font-size: 24px;
 }
-
-/******************************************************************************/

@@ -1,7 +1,6 @@
-////////////////////////////////////////////////////////////////////////////////
 Meteor.methods({
   //Register a new trainer in MongoDB
-  registerTrainer: function (firstName, lastName, username, password, email) {
+  registerTrainer: function(firstName, lastName, username, password, email) {
     //Create the new trainer
     trainerId = Accounts.createUser({
       username: username,
@@ -16,6 +15,7 @@ Meteor.methods({
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
         clientLimit: 0,
+        userStatus: "active",
       }
     });
 
@@ -23,4 +23,3 @@ Meteor.methods({
     Roles.addUsersToRoles(trainerId, 'trainer');
   }
 });
-////////////////////////////////////////////////////////////////////////////////

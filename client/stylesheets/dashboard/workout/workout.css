@@ -1,44 +1,32 @@
-/*********************************************************************/
 /* Add underline, bold text and increase font size on headings */
+
 .workoutHeadings {
   text-decoration: underline;
   font-weight: bold;
   font-size: 120%;
 }
 
-/*********************************************************************/
-
 /* Make the workout labels bold */
+
 .workoutLabels {
   font-weight: bold;
 }
 
-/*********************************************************************/
-
 /* Blue underline to seperate the sessions and profile */
+
 .exerciseSeperator {
   border: 1px solid #2196f3;
 }
 
-/*********************************************************************/
-
 /* Gradient header background for the card */
+
 .workoutGradient {
   height: 50px;
-  background-image:
-  linear-gradient(
-      to right,
-      #2196f3,
-      #2196f3 0%,
-      #f5f5f5 50%,
-      #f5f5f5 60%,
-      #2196f3 90%
-    );
+  background-image: linear-gradient( to right, #2196f3, #2196f3 0%, #f5f5f5 50%, #f5f5f5 60%, #2196f3 90%);
 }
 
-/*********************************************************************/
-
 /*Add padding to top of card*/
+
 .workoutSpacing {
   padding-top: 8px;
 }

@@ -1,5 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-Meteor.publish('currentClients', function () {
+Meteor.publish('currentClients', function() {
   //Make sure the user is a trainer and logged in before publishing
   if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Find all clients that the logged in user has created and that belongs
@@ -8,13 +7,14 @@ Meteor.publish('currentClients', function () {
       roles: 'client',
       "userProfile.createdBy": this.userId
     }, {
-        fields: {
-          username: 1,
-          sessionDate: 1,
-          "userProfile.firstName": 1,
-          "userProfile.lastName": 1,
-        }
-      });
+      fields: {
+        username: 1,
+        sessionDate: 1,
+        "userProfile.firstName": 1,
+        "userProfile.lastName": 1,
+        userStatus: 1,
+      }
+    });
   }
 
   //Not authorized to access trainers clients
@@ -23,4 +23,3 @@ Meteor.publish('currentClients', function () {
     return this.ready();
   }
 });
-////////////////////////////////////////////////////////////////////////////////

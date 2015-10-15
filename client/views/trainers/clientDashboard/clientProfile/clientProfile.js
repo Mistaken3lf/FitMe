@@ -1,17 +1,16 @@
-////////////////////////////////////////////////////////////////////////////////
-Template.clientProfile.onCreated(function () {
+Template.clientProfile.onCreated(function() {
   var self = this;
 
   //Subscribe to the clients profile based on the url param
-  self.autorun(function () {
+  self.autorun(function() {
     var clientId = FlowRouter.getParam('_id');
     self.subscribe("currentClientsProfile", clientId);
   });
 });
 
-////////////////////////////////////////////////////////////////////////////////
 
-Template.clientProfileShell.onRendered(function () {
+
+Template.clientProfileShell.onRendered(function() {
   //Pop up a datepicker when a date field is selected
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -19,15 +18,15 @@ Template.clientProfileShell.onRendered(function () {
     autoclose: true,
     format: "yyyy-mm-dd",
   });
-  
+
   $('#datetimepicker').datetimepicker();
 });
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 Template.clientProfileShell.helpers({
   //Get the current clients profile based on the url param
-  currentClient: function () {
+  currentClient: function() {
     var clientId = FlowRouter.getParam('_id');
     var currentClient = Meteor.users.findOne({
       'userProfile.whosProfile': clientId
@@ -35,5 +34,3 @@ Template.clientProfileShell.helpers({
     return currentClient;
   },
 });
-
-////////////////////////////////////////////////////////////////////////////////
