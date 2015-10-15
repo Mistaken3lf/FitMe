@@ -40,13 +40,13 @@
                     220
                   </div>
                   <div class="col s1 m1 l1">
-                    <div class="mathSymbolsCP center-align"> &#8722; </div>
+                    <div class="mathSymbolsCProg center-align"> &#8722; </div>
                   </div>
                   <div class="col s12 m2 l2">
                     {{#with currentClientsCardio}}{{cardioProgramAge}}{{/with}}
                   </div>
                   <div class="col s1 m1 l1">
-                    <div class="mathSymbolsCP center-align"> &#61; </div>
+                    <div class="mathSymbolsCProg center-align"> &#61; </div>
                   </div>
                   <div class="col s12 m2 l2">
                     <b>{{maxHeartRate}}</b>
@@ -75,6 +75,7 @@
                 <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW14StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
               </div>
             </div>
+                <h6 class="bpmEquation">(MHR - RHR) x %I <br>+ RHR <br>= BPM</h6><br><br>
             <div class="row">
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ( </div>
@@ -107,11 +108,12 @@
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#61; </div>
               </div>
-              <div class="col s12 m2 l2">
+              <div class="col s12 m2 l2 bpmSmacing">
                 <b>{{startBeatsPerMinuteW14}}</b>
                 <label class="clientLabelAdjust black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
+            <br>
             <div class="row">
               <div class="col s12 m3 l3">
                 <span class="cardioLabel">End Date:</span>{{> afQuickField name="cardioW14EndDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
@@ -123,31 +125,35 @@
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndMaxHeartRate" type="number" label=false placeholder="MHR"}}
+                <label class="black-text" for="BPM">Max HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#8722; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ) &nbsp;&nbsp;&nbsp;&nbsp; &#215;</div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndPercentIntensity" type="number" label=false placeholder="% I"}}
+                <label class="black-text" for="BPM">% Intensity</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#43; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#61; </div>
               </div>
-              <div class="col s12 m2 l2">
+              <div class="col s12 m2 l2 bpmSmacing">
                 <b>{{endBeatsPerMinuteW14}}</b>
-                <label class="labelAdjust black-text" for="BPM">Beats Per Minute</label>
+                <label class="black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <br>
