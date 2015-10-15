@@ -59,7 +59,13 @@ Template.addClient.events({
 
         //Go back to my current clients after adding one
         FlowRouter.go("/currentClients");
-        Bert.alert(result, 'danger', 'growl-top-right');
+
+        if (result) {
+          Bert.alert(result, 'danger', 'growl-top-right');
+
+        } else {
+          Bert.alert("Client added :)", 'success', 'growl-top-right');
+        }
       }
     });
   }
