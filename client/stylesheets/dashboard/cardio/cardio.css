@@ -6,6 +6,11 @@
 
 /* Placement of math  symbols */
 
+.mathSymbolsCProg {
+  margin-top: 1px;
+  font-weight: bold;
+}
+
 .mathSymbolsCP {
   margin-top: 1px;
   font-weight: bold;
@@ -39,13 +44,13 @@
 
 .heartRateHeading {
   font-weight: bold;
-  margin-left: 15px;
+  margin-left: 12px;
 }
 
 /*Padding for the equations so nothing gets smashed*/
 
 .equationPadding {
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 /* Gradient header background for the card */
@@ -59,4 +64,27 @@
 
 .cardioSpacing {
   padding-top: 8px;
+}
+
+.bpmEquation {
+  display: none;
+}
+
+/* Trainer mobile */
+
+@media (max-width:768px) {
+
+  .mathSymbolsCP {
+    display: none;
+  }
+
+  .bpmEquation {
+    display: inline;
+    font-size: 13px;
+  }
+
+  .bpmSmacing {
+    margin-top: 25px;
+  }
+
 }
