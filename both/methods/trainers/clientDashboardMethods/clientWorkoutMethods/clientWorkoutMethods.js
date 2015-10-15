@@ -1,6 +1,6 @@
 Meteor.methods({
   //Update the clients workout with the clientId passed in from flow router
-  updateClientsWorkout: function(updatedWorkout, clientId) {
+  updateClientsWorkout: function (updatedWorkout, clientId) {
     //Make sure the user is logged in and a trainer before performing the
     //method
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {

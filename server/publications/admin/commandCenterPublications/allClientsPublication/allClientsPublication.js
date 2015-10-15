@@ -1,4 +1,4 @@
-Meteor.publish('allClients', function() {
+Meteor.publish('allClients', function () {
   //If the user is an admin and logged in
   if (this.userId && Roles.userIsInRole(this.userId, "admin")) {
     //Find all my clients

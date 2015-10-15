@@ -15,9 +15,9 @@ Template.home.events({
     //Call the send feedback method to send us information.
     Meteor.call("contactUs", firstName, lastName, phoneNumber, email, message, function (error) {
       if (error) {
-        Materialize.toast(error.reason, 4000, "centerToast")
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
-        Materialize.toast("Message sent", 4000, "centerToast")
+        Bert.alert("Email successfully sent", 'success', 'growl-top-right');
         firstName = $('[name=firstName]').val('');
         lastName = $('[name=lastName]').val('');
         phoneNumber = $('[name=phoneNumber]').val('');

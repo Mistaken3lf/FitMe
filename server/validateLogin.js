@@ -1,6 +1,6 @@
 Accounts.validateLoginAttempt(function (loginAttempt) {
 
-  if(!loginAttempt.allowed) {
+  if (!loginAttempt.allowed) {
     throw new Meteor.Error(403, "Invalid login credentials");
   }
   //Find the user logging in

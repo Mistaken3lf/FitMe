@@ -1,6 +1,6 @@
 Meteor.methods({
   //Register a new trainer in MongoDB
-  registerTrainer: function(firstName, lastName, username, password, email) {
+  registerTrainer: function (firstName, lastName, username, password, email) {
     //Create the new trainer
     trainerId = Accounts.createUser({
       username: username,

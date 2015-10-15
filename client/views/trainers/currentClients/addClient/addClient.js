@@ -1,4 +1,4 @@
-Template.addClient.onRendered(function() {
+Template.addClient.onRendered(function () {
   //Pop up a datepicker when a date field is clicked on
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -8,10 +8,9 @@ Template.addClient.onRendered(function() {
   });
 });
 
-
 Template.addClient.events({
   //Capture create client form submission
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -34,11 +33,11 @@ Template.addClient.events({
     var fitnessGoals = $('[name=fitnessGoals]').val();
 
     //Call server method createClient with provided info
-    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function(error, result) {
+    Meteor.call("registerClient", username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals, function (error, result) {
       //Create client failed
       if (error) {
         //Popup a toast to display reason for error
-        Materialize.toast(error.reason, 4000, "centerToast");
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Empty out all form inputs
         username = $('[name=username]').val('');
@@ -60,7 +59,7 @@ Template.addClient.events({
 
         //Go back to my current clients after adding one
         FlowRouter.go("/currentClients");
-        Materialize.toast(result, 4000, "centerToast");
+        Bert.alert(result, 'danger', 'growl-top-right');
       }
     });
   }

@@ -1,4 +1,4 @@
-Meteor.publish('myProfile', function() {
+Meteor.publish('myProfile', function () {
   //If the user is logged in then publish their fields
   if (this.userId) {
     //Find the logged in user

@@ -1,4 +1,4 @@
-Meteor.publish('currentClientsCardio', function(currentClientsId) {
+Meteor.publish('currentClientsCardio', function (currentClientsId) {
   //Make sure the user is a trainer and logged in before publishing
   if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Find a specific clients cardio based on the url param

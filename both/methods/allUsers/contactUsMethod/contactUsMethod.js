@@ -1,5 +1,5 @@
 Meteor.methods({
-  contactUs: function(firstName, lastName, phoneNumber, email, message) {
+  contactUs: function (firstName, lastName, phoneNumber, email, message) {
     //Allow other methods to execute without waiting
     //for the email to send.
     this.unblock();
