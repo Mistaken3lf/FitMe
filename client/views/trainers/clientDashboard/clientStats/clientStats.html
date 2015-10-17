@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col s12 m12 l12">
         {{#autoForm collection="ClientStats" id="clientStatsForm" type="method-update" meteormethod="updateClientsStats" doc=currentClientsStats resetOnSuccess=false autosave=true}}
-        <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
+        <span class="card-title black-text">{{#with currentClient}} {{userProfile.firstName}}'s Body Statistics{{/with}}</span>
         <div class="card white z-depth-1">
           <div class="row">
             <div class="col s12 m4 l3">
@@ -24,16 +24,16 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsITBodyWeight" type="number" label=false placeholder="Ex. 150"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsITBodyFatPercent" type="number" label=false placeholder="Ex. 8"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m4 l3">
               <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsITBodyFatLbs" type="number" label=false placeholder="Ex. 15"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m4 l3">
               <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsITLeanMass" type="number" label=false placeholder="Ex. 100"}}
             </div>
           </div>
@@ -44,23 +44,25 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l3">
               <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT1BodyWeight" type="number" label=false placeholder="Ex. 150"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l3">
               <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT1BodyFatPercent" type="number" label=false placeholder="Ex. 8"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l4">
               <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT1BodyFatLbs" type="number" label=false placeholder="Ex. 15"}}
             </div>
-            <div class="col s12 m2 l2">
+          </div>
+          <div class="row">
+            <div class="col s12 m3 l3">
               <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT1LeanMass" type="number" label=false placeholder="Ex. 100"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l3">
               <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT1BodyFatLost" type="number" label=false placeholder="Ex. 100"}}
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT1LeanMuscleGain" type="number" label=false placeholder="Ex. 100"}}
+            <div class="col s12 m3 l4">
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain</span>{{> afQuickField name="statsRT1LeanMuscleGain" type="number" label=false placeholder="Ex. 100"}}
             </div>
           </div>
           <div class="row">
@@ -70,23 +72,25 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l3">
               <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT2BodyWeight" type="number" label=false placeholder="Ex. 150"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l3">
               <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT2BodyFatPercent" type="number" label=false placeholder="Ex. 8"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m3 l4">
               <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT2BodyFatLbs" type="number" label=false placeholder="Ex. 15"}}
             </div>
-            <div class="col s12 m2 l2">
+          </div>
+          <div class="row">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT2LeanMass" type="number" label=false placeholder="Ex. 100"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT2BodyFatLost" type="number" label=false placeholder="Ex. 100"}}
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT2LeanMuscleGain" type="number" label=false placeholder="Ex. 100"}}
+            <div class="col s12 m2 l4">
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain</span>{{> afQuickField name="statsRT2LeanMuscleGain" type="number" label=false placeholder="Ex. 100"}}
             </div>
           </div>
           <div class="row">
@@ -96,23 +100,25 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Body Weight:</span>{{> afQuickField name="statsRT3BodyWeight" type="number" label=false placeholder="Ex. 150"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Body Fat %:</span>{{> afQuickField name="statsRT3BodyFatPercent" type="number" label=false placeholder="Ex. 8"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l4">
               <span class="bodyStatsLabel">Lbs. Body Fat:</span>{{> afQuickField name="statsRT3BodyFatLbs" type="number" label=false placeholder="Ex. 15"}}
             </div>
-            <div class="col s12 m2 l2">
+          </div>
+          <div class="row">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Lbs. Lean Mass:</span>{{> afQuickField name="statsRT3LeanMass" type="number" label=false placeholder="Ex. 100"}}
             </div>
-            <div class="col s12 m2 l2">
+            <div class="col s12 m2 l3">
               <span class="bodyStatsLabel">Lbs. BF Lost:</span>{{> afQuickField name="statsRT3BodyFatLost" type="number" label=false placeholder="Ex. 100"}}
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span>{{> afQuickField name="statsRT3LeanMuscleGain" type="number" label=false placeholder="Ex. 100"}}
+            <div class="col s12 m2 l4">
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain</span>{{> afQuickField name="statsRT3LeanMuscleGain" type="number" label=false placeholder="Ex. 100"}}
             </div>
           </div>
           <div class="row">
@@ -122,27 +128,29 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Body Weight:</span><br><br>{{bodyWeightChange}}
+            <div class="col s12 m2 l3">
+              <span class="bodyStatsLabel">Body Weight:</span><br><br>{{bodyWeightChange}}<br>
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Body Fat %:</span><br><br>{{bodyFatPercentChange}}
+            <div class="col s12 m2 l3">
+              <span class="bodyStatsLabel">Body Fat %:</span><br><br>{{bodyFatPercentChange}}<br>
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. Body Fat:</span><br><br>{{changeInPounds}}
+            <div class="col s12 m2 l3">
+              <span class="bodyStatsLabel">Lbs. Body Fat:</span><br><br>{{changeInPounds}}<br>
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. Lean Mass:</span><br><br>{{leanMass}}
+          </div>
+          <div class="row">
+            <div class="col s12 m2 l3">
+              <span class="bodyStatsLabel">Lbs. Lean Mass:</span><br><br>{{leanMass}}<br>
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. BF Lost:</span><br><br>{{fatLost}}
+            <div class="col s12 m2 l3">
+              <span class="bodyStatsLabel">Lbs. BF Lost:</span><br><br>{{fatLost}}<br>
             </div>
-            <div class="col s12 m2 l2">
-              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span><br><br>{{muscleGained}}
+            <div class="col s12 m2 l4">
+              <span class="bodyStatsLabel">Lbs. Lean Muscle Gain:</span><br><br>{{muscleGained}}<br>
             </div>
           </div>
         </div>
-        <span class="card-title blue-text">{{#with currentClient}} {{userProfile.firstName}}'s Measurements{{/with}}</span>
+        <span class="card-title black-text">{{#with currentClient}} {{userProfile.firstName}}'s Measurements{{/with}}</span>
         <div class="card white z-depth-1 spacing">
           <div class="col s12 m12 l12">
             <div class="row">
