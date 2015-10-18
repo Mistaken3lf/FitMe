@@ -114,8 +114,6 @@
                     <p class="center-align">Technical Support</p>
                   </div>
                   <div class="divider"></div>
-                  <br>
-                  <a class="btn-floating btn-medium waves-effect waves-light white center-align"><i class="material-icons blue-text">add</i></a>
                 </div>
               </div>
             </div>
@@ -135,8 +133,6 @@
                     <p class="center-align">Technical Support</p>
                   </div>
                   <div class="divider"></div>
-                  <br>
-                  <a class="btn-floating btn-medium waves-effect waves-light blue center-align"><i class="material-icons white-text">add</i></a>
                 </div>
               </div>
             </div>
@@ -156,8 +152,6 @@
                     <p class="center-align">Technical Support</p>
                   </div>
                   <div class="divider"></div>
-                  <br>
-                  <a class="btn-floating btn-medium waves-effect waves-light white center-align"><i class="material-icons blue-text">add</i></a>
                 </div>
               </div>
             </div>
@@ -193,38 +187,37 @@
         <br>
       </div>
       {{#autoForm schema="ContactUsSchema.contact" id="contactForm" type="normal" resetonsuccess=true}}
-        <div class="row">
-          <div class="input-field col s12 m4 l4">
-            First Name:{{> afQuickField name="firstName" label=false}}
-          </div>
-
-          <div class="input-field col s12 m4 l4">
-            Last Name:{{> afQuickField name="lastName" label=false}}
-          </div>
-
-          <div class="input-field col s12 m4 l4">
-            Phone Number:{{> afQuickField name="phoneNumber" label=false}}
-          </div>
+      <div class="row">
+        <div class="input-field col s12 m4 l4">
+          First Name:{{> afQuickField name="firstName" label=false}}
         </div>
 
-        <div class="row">
-          <div class="input-field col s12 m6 l6">
-            Email:{{> afQuickField name="email" label=false}}
-          </div>
+        <div class="input-field col s12 m4 l4">
+          Last Name:{{> afQuickField name="lastName" label=false}}
         </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            Message:{{> afQuickField name="message" label=false rows=6 style="height: 100%;"}}
-          </div>
+        <div class="input-field col s12 m4 l4">
+          Phone Number:{{> afQuickField name="phoneNumber" label=false}}
         </div>
+      </div>
 
-        <button class="btn waves-effect waves-light blue" type="submit">Send
-          <i class="material-icons right">send</i>
-        </button>
-        <br>
-        <br>
-      {{/autoForm}}
+      <div class="row">
+        <div class="input-field col s12 m6 l6">
+          Email:{{> afQuickField name="email" label=false}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          Message:{{> afQuickField name="message" label=false rows=6 style="height: 100%;"}}
+        </div>
+      </div>
+
+      <button class="btn waves-effect waves-light blue" type="submit">Send
+        <i class="material-icons right">send</i>
+      </button>
+      <br>
+      <br> {{/autoForm}}
     </section>
     <!--       Footer       -->
     <footer class="page-footer grey">
