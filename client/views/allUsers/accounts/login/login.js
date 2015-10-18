@@ -13,8 +13,8 @@ Template.login.events({
 
       //Invalid login
       if (error) {
-        //Pop up a toast to show login errors
-        Materialize.toast(error.reason, 4000, "centerToast")
+        //Pop up an alert to show login failed
+        Bert.alert(error.reason, 'danger', 'growl-top-right' );
       } else {
         //Go home since user is logged in now
         FlowRouter.go('/');

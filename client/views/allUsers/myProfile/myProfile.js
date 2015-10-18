@@ -1,15 +1,13 @@
-Template.myProfile.onCreated(function() {
+Template.myProfile.onCreated(function () {
   var self = this;
 
-  self.autorun(function() {
+  self.autorun(function () {
     //Subscribe to my profile info
     self.subscribe("myProfile");
   });
 });
 
-
-
-Template.myProfileShell.onRendered(function() {
+Template.myProfileShell.onRendered(function () {
   //Pop up a datepicker if a date field is clicked on
   $('.datepicker').pickadate({
     selectMonths: true,
@@ -19,12 +17,10 @@ Template.myProfileShell.onRendered(function() {
   });
 });
 
-
-
 Template.myProfileShell.helpers({
   //Get the currently logged in user to be used to display their
   //profile on the myProfile template
-  loggedInUser: function() {
+  loggedInUser: function () {
     return Meteor.user();
   },
 });

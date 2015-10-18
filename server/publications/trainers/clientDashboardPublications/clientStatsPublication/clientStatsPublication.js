@@ -1,4 +1,4 @@
-Meteor.publish('currentClientsStats', function(currentClientsId) {
+Meteor.publish('currentClientsStats', function (currentClientsId) {
   //Make sure the user is logged in and a trainer before publishing
   if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
     //Find a specific clients stats based on the currrentClientsId

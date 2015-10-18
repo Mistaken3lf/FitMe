@@ -1,6 +1,6 @@
 Meteor.methods({
   //Create a new trainer for the admin
-  createTrainer: function(firstName, lastName, username, password, email) {
+  createTrainer: function (firstName, lastName, username, password, email) {
     //Make sure user is an admin and logged in before allowing the add
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "admin")) {
       throw new Meteor.Error("not-authorized");
@@ -19,7 +19,7 @@ Meteor.methods({
       $set: {
         'userProfile.firstName': firstName,
         'userProfile.lastName': lastName,
-        clientLimit: 0,
+        clientLimit: 1,
         userStatus: "active",
       }
     });

@@ -1,6 +1,6 @@
 Template.addTrainerAdmin.events({
   //Capture create trainer form event
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -12,12 +12,12 @@ Template.addTrainerAdmin.events({
     var email = $('[name=email]').val();
 
     //Call server method to create the trainer
-    Meteor.call("createTrainer", firstName, lastName, username, password, email, function(error) {
+    Meteor.call("createTrainer", firstName, lastName, username, password, email, function (error) {
 
       //Error creating trainer
       if (error) {
-        //Pop up a toast to show the error
-        Materialize.toast(error.reason, 4000, "centerToast")
+        //Pop up an alert to show the error
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Route back to the command center
         FlowRouter.go('/commandCenter');

@@ -1,4 +1,4 @@
-Meteor.publish('myCardio', function() {
+Meteor.publish('myCardio', function () {
   //Make sure the user is a client and logged in before publishing
   //their cardio
   if (this.userId && Roles.userIsInRole(this.userId, "client")) {

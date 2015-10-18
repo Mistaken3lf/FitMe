@@ -7,11 +7,9 @@ if (Accounts._resetPasswordToken) {
   Session.set('resetPassword', Accounts._resetPasswordToken);
 }
 
-
-
 Template.forgotPassword.events({
   //Capture forgot password event
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -21,31 +19,27 @@ Template.forgotPassword.events({
     //Send email to user with link to reset password
     Accounts.forgotPassword({
       email: email
-    }, function(error) {
+    }, function (error) {
       if (error) {
-        Materialize.toast("Email does not exist", 4000, "centerToast");
+        Bert.alert("Invalid Email!!!", 'danger', 'growl-top-right');
       } else {
-        Materialize.toast("Email has been sent", 4000, "centerToast");
+        Bert.alert("Email has been sent", 'success', 'growl-top-right');
         FlowRouter.go("/login");
       }
     });
   }
 });
 
-
-
 Template.resetPassword.helpers({
   //Get the resetPassword session variable to check
   //if its been set in the template
-  resetPassword: function() {
+  resetPassword: function () {
     return Session.get('resetPassword');
   }
 });
 
-
-
 Template.resetPassword.events({
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -55,16 +49,16 @@ Template.resetPassword.events({
 
     //Make sure the passwords match
     if (newPassword != newPasswordConfirmation) {
-      Materialize.toast("Passwords dont match", 4000, "centerToast");
+      Bert.alert("Passwords don't match", 'danger', 'growl-top-right');
       return false;
     }
 
     //Reset the users password
-    Accounts.resetPassword(Session.get('resetPassword'), newPassword, function(error) {
+    Accounts.resetPassword(Session.get('resetPassword'), newPassword, function (error) {
       if (error) {
         Materialize.toast(error, 4000, "centerToast");
       } else {
-        Materialize.toast("Password has been changed", 4000, "centerToast");
+        Bert.alert("Password successfully changed", 'success', 'growl-top-right');
         Session.set('resetPassword', null);
         FlowRouter.go("/");
       }

@@ -1,6 +1,6 @@
 Template.register.events({
   //Capture register form submit
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -12,20 +12,20 @@ Template.register.events({
     var email = $('[name=email]').val();
 
     //Call server method to register the trainer
-    Meteor.call("registerTrainer", firstName, lastName, username, password, email, function(error) {
+    Meteor.call("registerTrainer", firstName, lastName, username, password, email, function (error) {
 
       //Error registering trainer
       if (error) {
-        //Pop up a toast to show the error
-        Materialize.toast(error.reason, 4000, "centerToast")
+        //Pop up an alert to show the error
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Login user with provided credentials
-        Meteor.loginWithPassword(username, password, function(error) {
+        Meteor.loginWithPassword(username, password, function (error) {
 
           //Failed to login
           if (error) {
-            //Pop up a toast to show reason for failed login
-            Materialize.toast(error.reason, 4000, "centerToast")
+            //Pop up an alert to show the reason for failed login
+            Bert.alert(error.reason, 'danger', 'growl-top-right');
           } else {
             //Route the newly logged in user home
             FlowRouter.go('/');
