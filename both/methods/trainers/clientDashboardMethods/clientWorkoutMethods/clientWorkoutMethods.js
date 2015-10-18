@@ -13,5 +13,5 @@ Meteor.methods({
 
     //Update the clients workout with the new info
     ClientWorkout.update(clientId, updatedWorkout);
-  }
+  },
 });

@@ -25,5 +25,5 @@ Template.clientWorkoutShell.helpers({
       whosWorkout: clientId
     });
     return currentClientsWorkout;
-  },
+  }
 });
