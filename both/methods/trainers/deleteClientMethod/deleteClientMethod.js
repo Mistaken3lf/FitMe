@@ -8,15 +8,6 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    //Subtract one from the trainers client limit since they are removing a client
-    Meteor.users.update({
-      _id: this.userId
-    }, {
-      $inc: {
-        clientLimit: -1
-      }
-    });
-
     //Remove cardio of the client being deleted
     ClientCardio.remove({
       whosCardio: clientId
