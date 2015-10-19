@@ -8,9 +8,6 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    //Check client data against server schema
-    check(clientData, RegisterSchema.register);
-
     //Get the current trainer so we can check the client limit
     var currentTrainer = Meteor.users.findOne({
       _id: this.userId
