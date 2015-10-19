@@ -1,5 +1,8 @@
 Meteor.methods({
-  contactUs: function (firstName, lastName, phoneNumber, email, message) {
+  contactUs: function (contactUsData) {
+
+    check(contactUsData, ContactUsSchema.contact)
+
     //Allow other methods to execute without waiting
     //for the email to send.
     this.unblock();
@@ -7,9 +10,9 @@ Meteor.methods({
     //Send the actual email to us
     Email.send({
       to: "info@divelop.io",
-      from: email,
+      from: contactUsData.email,
       subject: "Feedback",
-      text: message
+      text: contactUsData.message
     });
   }
 });

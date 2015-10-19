@@ -5,6 +5,8 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
+    check(clientId, String);
+
     //Remove trainer clicked on
     Meteor.users.remove(clientId);
   }
