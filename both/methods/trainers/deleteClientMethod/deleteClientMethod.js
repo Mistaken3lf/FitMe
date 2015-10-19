@@ -8,6 +8,9 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
+    //Check id against server
+    check(clientId, String);
+
     //Remove cardio of the client being deleted
     ClientCardio.remove({
       whosCardio: clientId

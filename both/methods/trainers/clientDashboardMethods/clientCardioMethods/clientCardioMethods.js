@@ -12,6 +12,9 @@ Meteor.methods({
     //sure it is valid
     check(updatedCardio, ClientCardio.simpleSchema());
 
+    //Check id against server
+    check(clientId, String);
+
     //Update the clients cardio with the new info
     ClientCardio.update(clientId, updatedCardio);
   }

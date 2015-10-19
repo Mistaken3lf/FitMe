@@ -5,6 +5,9 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
+    //Check the trainer id against the server
+    check(trainerId, String);
+
     //Remove cardio associated with the trainer being deleted
     ClientCardio.remove({
       createdBy: trainerId

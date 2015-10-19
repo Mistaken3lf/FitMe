@@ -1,6 +1,9 @@
 Meteor.publish('currentClientsWorkout', function (currentClientsId) {
   //Make sure the user is logged in and a trainer before publishing
   if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
+    //Check the id against the server to make sure its valid
+    check(currentClientsId, String);
+
     //Find a specific clients workout based on currentClientsId passed
     //in from flow router.
     return ClientWorkout.find({

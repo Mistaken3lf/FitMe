@@ -1,17 +1,22 @@
 Meteor.methods({
   //Register a new client with any information they enter
   //when adding a new client
-  registerClient: function (username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, cellPhone, workPhone, emergencyContact, bio, fitnessGoals) {
+  registerClient: function (clientData) {
     //Make sure the user is a trainer and logged in before
     //creating a new client
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
 
+    //Check client data against server schema
+    check(clientData, RegisterSchema.register);
+
+    //Get the current trainer so we can check the client limit
     var currentTrainer = Meteor.users.findOne({
       _id: this.userId
     });
 
+    //Get the count of total clients they have
     var currentClientCount = Meteor.users.find({
       "userProfile.createdBy": this.userId
     }).count();
@@ -20,9 +25,9 @@ Meteor.methods({
       //Create the new clients username, password and email since thats
       //what the default meteor user accounts expects
       id = Accounts.createUser({
-        username: username,
-        password: password,
-        email: email,
+        username: clientData.username,
+        password: clientData.password,
+        email: clientData.email,
       });
 
       //Assign client to the client role
@@ -32,19 +37,19 @@ Meteor.methods({
       //additional fields supplied
       Meteor.users.update(id, {
         $set: {
-          'userProfile.firstName': firstName,
-          'userProfile.lastName': lastName,
-          'userProfile.birthday': birthday,
-          'userProfile.address': address,
-          'userProfile.city': city,
-          'userProfile.state': state,
-          'userProfile.zip': zip,
-          'userProfile.homePhone': homePhone,
-          'userProfile.cellPhone': cellPhone,
-          'userProfile.workPhone': workPhone,
-          'userProfile.emergencyContact': emergencyContact,
-          'userProfile.bio': bio,
-          'userProfile.fitnessGoals': fitnessGoals,
+          'userProfile.firstName': clientData.firstName,
+          'userProfile.lastName': clientData.lastName,
+          'userProfile.birthday': clientData.birthday,
+          'userProfile.address': clientData.address,
+          'userProfile.city': clientData.city,
+          'userProfile.state': clientData.state,
+          'userProfile.zip': clientData.zip,
+          'userProfile.homePhone': clientData.homePhone,
+          'userProfile.cellPhone': clientData.cellPhone,
+          'userProfile.workPhone': clientData.workPhone,
+          'userProfile.emergencyContact': clientData.emergencyContact,
+          'userProfile.bio': clientData.bio,
+          'userProfile.fitnessGoals': clientData.fitnessGoals,
           'userProfile.createdBy': Meteor.userId(),
           'userProfile.whosProfile': id,
           userStatus: "active",

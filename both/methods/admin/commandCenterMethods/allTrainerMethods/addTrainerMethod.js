@@ -6,6 +6,7 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
+    //Prevent them hackers!!!
     check(newTrainerData, RegisterSchema.register);
 
     //Create the new trainer

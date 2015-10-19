@@ -1,6 +1,6 @@
 Meteor.methods({
   contactUs: function (contactUsData) {
-
+    //Server side check to make sure the contact data is valid
     check(contactUsData, ContactUsSchema.contact)
 
     //Allow other methods to execute without waiting
