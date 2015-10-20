@@ -21,7 +21,7 @@ Template.currentClients.events({
       type: "warning",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, remove user!!!",
+      confirmButtonText: "Yes, remove user!",
       closeOnConfirm: false
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;

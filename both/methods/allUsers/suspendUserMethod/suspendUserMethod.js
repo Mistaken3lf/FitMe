@@ -8,6 +8,9 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
+    //Check id against server
+    check(clientId, String);
+
     var user = Meteor.users.findOne(clientId);
 
     if (Roles.userIsInRole(this.userId, "admin")) {

@@ -4,12 +4,12 @@
     {{#if Template.subscriptionsReady}}
     <div class="card z-depth-1 grey lighten-4">
       <div class="col s12 m12 l12">
-        <div class="card white z-depth-0">
+        <div class="card">
           <div class="blue card-title center-align white-text">CURRENT CLIENTS</div>
         </div>
       </div>
       <div class="row">
-        <div class="col s12">
+        <div class="col s12 m12 l12">
           <div class="card white z-depth-1 spacing">
             <div class="col s12 m12 l12">
               <!--Client Table-->
@@ -33,7 +33,7 @@
                     <td>{{userProfile.firstName}}</td>
                     <td>{{userProfile.lastName}}</td>
                     <td>{{userStatus}}</td>
-                    <td><button class="btn-floating green waves-effect suspendUser"><i class="material-icons">remove</i></button></td>
+                    <td><button class="btn-floating amber waves-effect suspendUser"><i class="material-icons">https</i></button></td>
                     <td><button class="btn-floating red waves-effect deleteButton"><i class="material-icons">remove</i></button></td>
                   </tr>
                   {{/each}}

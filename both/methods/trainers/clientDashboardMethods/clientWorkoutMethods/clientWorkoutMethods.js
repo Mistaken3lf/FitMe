@@ -11,7 +11,10 @@ Meteor.methods({
     //to make sure its valid
     check(updatedWorkout, ClientWorkout.simpleSchema());
 
+    //Check id against server
+    check(clientId, String);
+
     //Update the clients workout with the new info
     ClientWorkout.update(clientId, updatedWorkout);
-  }
+  },
 });

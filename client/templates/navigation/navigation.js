@@ -1,7 +1,6 @@
-
 Template.navigation.events({
   //Capture clicking logout button
-  'click .logout': function(event) {
+  'click .logout': function (event) {
 
     //Prevent default action
     event.preventDefault();
@@ -14,8 +13,7 @@ Template.navigation.events({
   }
 });
 
-
-Template.navigation.onRendered(function() {
+Template.navigation.onRendered(function () {
   //Make mobile sidebar on left side collapsible
   $('.button-collapse').sideNav({
     edge: 'left',
@@ -23,4 +21,8 @@ Template.navigation.onRendered(function() {
   });
 });
 
-
+Template.navigation.helpers({
+  versionNumber: function () {
+    return "15.10.1";
+  }
+})

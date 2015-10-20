@@ -1,20 +1,23 @@
 Meteor.methods({
   //Register a new trainer in MongoDB
-  registerTrainer: function (firstName, lastName, username, password, email) {
+  registerTrainer: function (newTrainerData) {
+    //Check the form data aginst the server
+    check(newTrainerData, RegisterSchema.register);
+
     //Create the new trainer
     trainerId = Accounts.createUser({
-      username: username,
-      password: password,
-      email: email,
+      username: newTrainerData.username,
+      password: newTrainerData.password,
+      email: newTrainerData.email,
     });
 
     //Update the trainers first and last name since they are not default
     //Meteor.user fields
     Meteor.users.update(trainerId, {
       $set: {
-        'userProfile.firstName': firstName,
-        'userProfile.lastName': lastName,
-        clientLimit: 0,
+        'userProfile.firstName': newTrainerData.firstName,
+        'userProfile.lastName': newTrainerData.lastName,
+        clientLimit: 1,
         userStatus: "active",
       }
     });

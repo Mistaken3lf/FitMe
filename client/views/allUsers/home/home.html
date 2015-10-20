@@ -11,7 +11,7 @@
         </div>
         <br>
         <br>
-        <div class="row center">
+        <div class="row center-align">
           <h5 class="header col s12 light white-text">TRAINING | DEDICATION | RESULTS</h5>
         </div>
         <br>
@@ -87,7 +87,7 @@
       <div class="container">
         <br>
         <br>
-        <h1 class="header center blue-text">Pricing</h1>
+        <h1 class="header center blue-text">Plans</h1>
         <div class="row center">
           <h5 class="header col s12 light">We offer three different packages to fit your needs.</h5>
         </div>
@@ -104,18 +104,15 @@
                 <div class="center-align card-content white-text">
                   <div class="divider"></div>
                   <div class="section">
-                    <h5 class="center-align">Monthly</h5>
+                    <h5 class="center-align">15 Clients</h5>
                   </div>
                   <div class="divider"></div>
                   <div class="section">
-                    <p class="center-align">$6.99</p>
-                    <p class="center-align">Up to 50 Users</p>
-                    <p class="center-align">Unlimited Workouts</p>
+                    <p class="center-align">$10/Month</p>
+                    <p class="center-align">Unlimited Client Data</p>
                     <p class="center-align">Technical Support</p>
                   </div>
                   <div class="divider"></div>
-                  <br>
-                  <a class="btn-floating btn-medium waves-effect waves-light white center-align"><i class="material-icons blue-text">add</i></a>
                 </div>
               </div>
             </div>
@@ -125,18 +122,15 @@
                 <div class="center-align card-content blue-text">
                   <div class="divider"></div>
                   <div class="section">
-                    <h5 class="center-align">Quarterly</h5>
+                    <h5 class="center-align">30 Clients</h5>
                   </div>
                   <div class="divider"></div>
                   <div class="section">
-                    <p class="center-align">$19.99</p>
-                    <p class="center-align">Up to 50 Users</p>
-                    <p class="center-align">Unlimited Workouts</p>
+                    <p class="center-align">$20/Month</p>
+                    <p class="center-align">Unlimited Client Data</p>
                     <p class="center-align">Technical Support</p>
                   </div>
                   <div class="divider"></div>
-                  <br>
-                  <a class="btn-floating btn-medium waves-effect waves-light blue center-align"><i class="material-icons white-text">add</i></a>
                 </div>
               </div>
             </div>
@@ -146,18 +140,15 @@
                 <div class="center-align card-content white-text">
                   <div class="divider"></div>
                   <div class="section">
-                    <h5 class="center-align">Yearly</h5>
+                    <h5 class="center-align">60 Clients</h5>
                   </div>
                   <div class="divider"></div>
                   <div class="section">
-                    <p class="center-align">$69.99</p>
-                    <p class="center-align">Up to 50 Users</p>
-                    <p class="center-align">Unlimited Workouts</p>
+                    <p class="center-align">$35/Month</p>
+                    <p class="center-align">Unlimited Client Data</p>
                     <p class="center-align">Technical Support</p>
                   </div>
                   <div class="divider"></div>
-                  <br>
-                  <a class="btn-floating btn-medium waves-effect waves-light white center-align"><i class="material-icons blue-text">add</i></a>
                 </div>
               </div>
             </div>
@@ -172,7 +163,7 @@
         <h3 class="header center white-text">We Paved The Way</h3>
         <div class="divider blue"></div>
         <div class="divider blue"></div>
-        <div class="row center">
+        <div class="row center box">
           <h5 class="header col s12 light white-text">Let us help you provide the best training experience ever.</h5>
           <p class="dark white-text">The road to success has never looked so clear.</p>
         </div>
@@ -193,37 +184,37 @@
         <br>
       </div>
       {{#autoForm schema="ContactUsSchema.contact" id="contactForm" type="normal" resetonsuccess=true}}
-        <div class="row">
-          <div class="input-field col s12 m4 l4">
-            First Name:{{> afQuickField name="firstName" label=false}}
-          </div>
-
-          <div class="input-field col s12 m4 l4">
-            Last Name:{{> afQuickField name="lastName" label=false}}
-          </div>
-
-          <div class="input-field col s12 m4 l4">
-            Phone Number:{{> afQuickField name="phoneNumber" label=false}}
-          </div>
+      <div class="row">
+        <div class="input-field col s12 m4 l4">
+          First Name:{{> afQuickField name="firstName" label=false}}
         </div>
 
-        <div class="row">
-          <div class="input-field col s12 m6 l6">
-            Email:{{> afQuickField name="email" label=false}}
-          </div>
+        <div class="input-field col s12 m4 l4">
+          Last Name:{{> afQuickField name="lastName" label=false}}
         </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            Message:{{> afQuickField name="message" label=false rows=6 style="height: 100%;"}}
-          </div>
+        <div class="input-field col s12 m4 l4">
+          Phone Number:{{> afQuickField name="phoneNumber" label=false}}
         </div>
+      </div>
 
-        <button class="btn waves-effect waves-light blue" type="submit">Send
-          <i class="material-icons right">send</i>
-        </button>
-        <br>
-        <br>
+      <div class="row">
+        <div class="input-field col s12 m6 l6">
+          Email:{{> afQuickField name="email" label=false}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          Message:{{> afQuickField name="message" label=false rows=6 style="height: 100%;"}}
+        </div>
+      </div>
+
+      <button class="btn waves-effect waves-light blue" type="submit">Send
+        <i class="material-icons right">send</i>
+      </button>
+      <br>
+      <br>
       {{/autoForm}}
     </section>
     <!--       Footer       -->

@@ -5,14 +5,17 @@ Template.register.events({
     event.preventDefault();
 
     //Get the first and last name, username, password and email from form
-    var firstName = $('[name=firstName]').val();
-    var lastName = $('[name=lastName]').val();
-    var username = $('[name=username]').val();
-    var password = $('[name=password]').val();
-    var email = $('[name=email]').val();
+    var newTrainerData = {
+      //Get who send the message and the actual message
+      firstName: $('[name=firstName]').val(),
+      lastName: $('[name=lastName]').val(),
+      username: $('[name=username]').val(),
+      password: $('[name=password]').val(),
+      email: $('[name=email]').val(),
+    };
 
     //Call server method to register the trainer
-    Meteor.call("registerTrainer", firstName, lastName, username, password, email, function (error) {
+    Meteor.call("registerTrainer", newTrainerData, function (error) {
 
       //Error registering trainer
       if (error) {
@@ -20,7 +23,7 @@ Template.register.events({
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Login user with provided credentials
-        Meteor.loginWithPassword(username, password, function (error) {
+        Meteor.loginWithPassword(newTrainerData.username, newTrainerData.password, function (error) {
 
           //Failed to login
           if (error) {
