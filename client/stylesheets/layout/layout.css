@@ -1,7 +1,7 @@
 /* Add padding on left so content is not under sidebar */
 
 header, main, footer {
-  padding-left: 240px;
+  padding-left: 200px;
 }
 
 /* Remove padding when on mobile device since sidebar will collapse */
