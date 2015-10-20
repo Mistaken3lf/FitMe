@@ -38,8 +38,6 @@ ClientStatsSchema.stats = new SimpleSchema({
   },
   //End Of Body Statistics Initial Test
 
-
-
   //Body Statistics Retest 1
   statsRT1Date: {
     type: Date,
@@ -76,8 +74,6 @@ ClientStatsSchema.stats = new SimpleSchema({
     optional: true,
   },
   //End Of Body Statistics Retest 1
-
-
 
   //Body Statistics Retest 2
   statsRT2Date: {
