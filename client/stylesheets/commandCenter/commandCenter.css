@@ -1,0 +1,62 @@
+.allTrainersHeader {
+  background-color: black;
+}
+.allClientsHeader {
+  background-color: black;
+}
+#createTrainerAdminForm {
+  margin-top: 5%;
+}
+
+/* Hide the overflow on desktop */
+
+.tabs {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.light1 {
+  padding-left: 25px;
+}
+.light2 {
+  padding-left: 15px;
+}
+
+/* Trainer mobile */
+
+@media (max-width:768px) {
+  .command {
+    font-size: 48px;
+  }
+  .light1 {
+    padding-left: 15px;
+  }
+  .light2 {
+    padding-left: 20px;
+    display: none;
+  }
+  .currentTrainers {
+    margin-left: 0px;
+    margin-right: 20px;
+    position: relative;
+  }
+  .currentClients {
+    margin-left: 120px;
+    margin-right: 120px;
+    position: relative;
+  }
+  .payments {
+    margin-left: 230px;
+    margin-right: 230px;
+    position: relative;
+  }
+  .renewals {
+    margin-left: 285px;
+    position: relative;
+  }
+  .tabs {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    height: 80px;
+  }
+}

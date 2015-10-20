@@ -1,0 +1,84 @@
+<template name="navigation">
+  <div class="navbar-fixed">
+    <nav class="blue">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo left">FitMe</a>
+        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <!--Mobile sidebar menu-->
+        <ul class="side-nav" id="mobile-menu">
+          <div class="logoContainer">
+            <a href="/"><img class="sidebarLogo" src="/navigation/fitMeSidebar.png"></a>
+            <br>
+            <hr class="navSeperator">
+          </div>
+          {{#if isInRole 'admin'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/commandCenter">Command Center</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
+          {{#if isInRole 'trainer'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/currentClients">Clients</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
+          {{#if isInRole 'client'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="myDashboard">Dashboard</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
+          {{#unless currentUser}}
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/login">Login</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/register">Register</a>
+          {{/unless}}
+        </ul>
+        <!--End of mobile menu-->
+        <ul class="side-nav fixed" id="desktop-menu">
+          <div class="logoContainer">
+            <a href="/"><img class="sidebarLogo" src="/navigation/fitMeSidebar.png"></a>
+            <br>
+            <hr class="navSeperator">
+          </div>
+          {{#if isInRole 'admin'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/commandCenter">Command Center</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
+          {{#if isInRole 'trainer'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/currentClients">Clients</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
+          {{#if isInRole 'client'}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myDashboard">Dashboard</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
+          {{#unless currentUser}}
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/login">Login</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/register">Register</a>
+          {{/unless}}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</template>

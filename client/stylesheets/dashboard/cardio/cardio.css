@@ -1,79 +1,62 @@
-/******************************************************************************/
 /* Make labels on cardio table bold */
+
 .cardioLabel {
   font-weight: bold;
 }
 
-/******************************************************************************/
-
 /* Placement of math  symbols */
+
 .mathSymbolsCP {
   margin-top: 1px;
   font-weight: bold;
 }
 
-/******************************************************************************/
-
 /*Line up the inputs*/
+
 .inputAlign {
   padding-bottom: 15px;
 }
 
-/******************************************************************************/
-
 /* Remove Style from inputs */
+
 .noCardioStyleInput {
-    border: none !important;
+  border: none !important;
 }
 
-/******************************************************************************/
-
 /*Line up the 3 beginner, intermediate, and advanced table*/
+
 .align {
   margin-top: 60px;
 }
 
-/******************************************************************************/
-
 /*Remove bottom margin from input*/
+
 .inputAdjust {
   margin-bottom: 0px;
 }
 
-/******************************************************************************/
-
 /*Padding for the clients heartrate*/
+
 .heartRateHeading {
   font-weight: bold;
   margin-left: 15px;
 }
 
-/******************************************************************************/
-
 /*Padding for the equations so nothing gets smashed*/
+
 .equationPadding {
   margin-left: 5px;
 }
 
-/******************************************************************************/
-
 /* Gradient header background for the card */
+
 .cardioGradient {
   height: 50px;
-  background-image:
-  linear-gradient(
-      to right,
-      #2196f3,
-      #2196f3 0%,
-      #f5f5f5 50%,
-      #f5f5f5 60%,
-      #2196f3 90%
-    );
+  background-image: linear-gradient( to right, #2196f3, #2196f3 0%, #f5f5f5 50%, #f5f5f5 60%, #2196f3 90%);
 }
 
-/*********************************************************************/
-
 /*Add padding to top of card*/
+
 .cardioSpacing {
   padding-top: 8px;
 }

@@ -11,8 +11,6 @@ ClientCardioSchema.cardio = new SimpleSchema({
     type: String,
   },
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Cardio Program Basics
   cardioProgramAge: {
     type: Number,
@@ -29,8 +27,6 @@ ClientCardioSchema.cardio = new SimpleSchema({
     optional: true,
   },
   //End Of Cardio Program Basics
-
-  ////////////////////////////////////////////////////////////////////////////////
 
   //Cardio Program Weeks 1 - 4
   cardioW14StartDate: {
@@ -104,8 +100,6 @@ ClientCardioSchema.cardio = new SimpleSchema({
   },
   //End Of Cardio Program Weeks 1 - 4
 
-  ////////////////////////////////////////////////////////////////////////////////
-
   //Cardio Program Weeks 5 - 8
   cardioW58StartDate: {
     type: Date,
@@ -177,8 +171,6 @@ ClientCardioSchema.cardio = new SimpleSchema({
     optional: true,
   },
   //End Of Cardio Program Weeks 5 - 8
-
-  ////////////////////////////////////////////////////////////////////////////////
 
   //Cardio Program Weeks 9 - 12
   cardioW912StartDate: {
