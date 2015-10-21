@@ -4,28 +4,7 @@
   </header>
   <main>
     <div class="layoutContainer">
-      {{#if isInRole 'admin'}}
-      {{> Template.dynamic template=adminContent}}
-      {{> Template.dynamic template=allUserContent}}
-      {{else}}
-      {{#if isInRole 'trainer'}}
-      {{> Template.dynamic template=trainerContent}}
-      {{> Template.dynamic template=allUserContent}}
-      {{else}}
-      {{#if isInRole 'client'}}
-      {{> Template.dynamic template=clientContent}}
-      {{> Template.dynamic template=allUserContent}}
-      {{else}}
-      {{#if isLoggingIn}}
-      <p>Loading...</p>
-      {{/if}}
-      {{/if}}
-      {{/if}}
-      {{/if}}
-
-      {{#unless currentUser}}
-      {{> Template.dynamic template=allUserContent}}
-      {{/unless}}
+      {{> Template.dynamic template=main}}
     </div>
   </main>
   <footer>

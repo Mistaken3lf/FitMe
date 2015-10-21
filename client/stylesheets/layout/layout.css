@@ -15,7 +15,7 @@ header, main, footer {
 /* Custom layout container so more of the screen is used */
 
 .layoutContainer {
-  width: 98%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }

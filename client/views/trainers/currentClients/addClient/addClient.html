@@ -1,5 +1,5 @@
 <template name="addClient">
-  <div class="card-panel white z-depth-2">
+  {{#if isInRole 'trainer'}}
     <div class="row">
       <img class="responsive-img" id="pageHeader" src="/currentClients/fitMeClientManagement.png">
       <hr class="headerSeperator">
@@ -86,5 +86,11 @@
         </div>
       </div>
     </div>
-  </div>
+  {{else}}
+  {{#if isLoggingIn}}
+  <p>Loading</p>
+  {{else}}
+  <p>Not authorized!!!</p>
+  {{/if}}
+  {{/if}}
 </template>

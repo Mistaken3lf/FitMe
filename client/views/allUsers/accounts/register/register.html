@@ -1,7 +1,7 @@
 <template name="register">
   <div class="row">
     <div class="col s12 m8 offset-m2 l6 offset-l3" id="registrationForm">
-      <div class="card-panel white z-depth-2">
+      <div class="card-panel grey lighten-4 z-depth-2">
         <h2 class="blue-text">Register</h2>
         {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" id="registerForm" type="normal" doc=someDoc}}
           {{> afQuickField name="username"}}
@@ -9,7 +9,7 @@
           {{> afQuickField name="email"}}
           {{> afQuickField name="firstName"}}
           {{> afQuickField name="lastName"}}
-          <button type="submit" class="btn blue waves-effect">Register</button>
+          <button type="submit" class="btn blue white-text waves-effect">Register</button>
         {{/autoForm}}
       </div>
     </div>

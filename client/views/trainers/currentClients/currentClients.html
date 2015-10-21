@@ -1,11 +1,12 @@
 <template name="currentClients">
-  <!--White panel to use as a background-->
-  <div class="card-panel white z-depth-2">
+  <div class="row">
+  <div class="col s12 m12 l12">
+    {{#if isInRole 'trainer'}}
     {{#if Template.subscriptionsReady}}
     <div class="card z-depth-1 grey lighten-4">
       <div class="col s12 m12 l12">
         <div class="card">
-          <div class="blue card-title center-align white-text">CURRENT CLIENTS</div>
+          <div class="grey darken-2 card-title center-align white-text">CURRENT CLIENTS</div>
         </div>
       </div>
       <div class="row">
@@ -47,8 +48,18 @@
       <a href="/addClient" class="btn-floating btn-large waves-effect blue right addClientButton"><i class="material-icons">add</i></a>
     </div>
     {{else}}
-    <p>Loading...</p>
+    {{#if isLoggingIn}}
+    <p>loading...</p>
+    {{else}}
+    <p>loading</p>
+    {{/if}}
+    {{/if}}
+    {{else}}
+    {{#if isLoggingIn}}
+    <p>loading...</p>
+    {{/if}}
+    <p>Not Authorized...</p>
     {{/if}}
   </div>
-  <!--End of white panel-->
+  </div>
 </template>
