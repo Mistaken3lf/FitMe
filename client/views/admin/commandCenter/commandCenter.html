@@ -60,9 +60,9 @@
   </div>
   {{else}}
   {{#if isLoggingIn}}
-  <p>Loading</p>
+  {{> loading}}
   {{else}}
-  <p>Not authorized</p>
+  {{> notAuthorized}}
   {{/if}}
   {{/if}}
 </template>

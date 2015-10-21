@@ -1,20 +1,20 @@
 <template name="addClient">
   {{#if isInRole 'trainer'}}
+  <div class="row">
+    <img class="responsive-img" id="pageHeader" src="/currentClients/fitMeClientManagement.png">
+    <hr class="headerSeperator">
+  </div>
+  <div class="layoutContainer">
     <div class="row">
-      <img class="responsive-img" id="pageHeader" src="/currentClients/fitMeClientManagement.png">
-      <hr class="headerSeperator">
-    </div>
-    <div class="layoutContainer">
-      <div class="row">
-        <div class="col s12 m12 l12">
-          {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" id="addClientForm"}}
-          <div class="card z-depth-1 grey lighten-4">
-            <div class="col s12 m12 l12">
-              <div class="card z-depth-1">
-                <div class="card-title blue center-align white-text">REGISTER CLIENT CARD</div>
-              </div>
+      <div class="col s12 m12 l12">
+        {{#autoForm collection="Meteor.users" schema="RegisterSchema.register" id="addClientForm"}}
+        <div class="card z-depth-1 grey lighten-4">
+          <div class="col s12 m12 l12">
+            <div class="card z-depth-1">
+              <div class="card-title blue center-align white-text">REGISTER CLIENT CARD</div>
             </div>
-            <div class="col s12 m12 l12">
+          </div>
+          <div class="col s12 m12 l12">
             <div class="card">
               <div class="row">
                 <div class="input-field col s12 m6 l6">
@@ -76,21 +76,20 @@
                 </div>
               </div>
             </div>
-
           </div>
           <div class="row">
-          <button class="btn blue waves-effect createClient" type="submit">Create Client</button>
+            <button class="btn blue waves-effect createClient" type="submit">Create Client</button>
+          </div>
         </div>
-        </div>
-          {{/autoForm}}
-        </div>
+        {{/autoForm}}
       </div>
     </div>
+  </div>
   {{else}}
   {{#if isLoggingIn}}
-  <p>Loading</p>
+  {{> loading}}
   {{else}}
-  <p>Not authorized!!!</p>
+  {{> notAuthorized}}
   {{/if}}
   {{/if}}
 </template>

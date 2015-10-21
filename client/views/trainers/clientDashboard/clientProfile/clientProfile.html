@@ -1,6 +1,8 @@
 <template name="clientProfile">
   {{#if Template.subscriptionsReady}}
   {{> clientProfileShell}}
+  {{else}}
+  {{> loading}}
   {{/if}}
 </template>
 <template name="clientProfileShell">

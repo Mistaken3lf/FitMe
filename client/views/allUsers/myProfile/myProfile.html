@@ -5,13 +5,13 @@
       {{#if Template.subscriptionsReady}}
       {{> myProfileShell}}
       {{else}}
-      <p>Loading...</p>
+      {{> loading}}
       {{/if}}
       {{else}}
       {{#if isLoggingIn}}
-      <p>Loading...</p>
+      {{> loading}}
       {{else}}
-      <p>Not Authorized!!!</p>
+      {{> notAuthorized}}
       {{/if}}
       {{/if}}
     </div>
