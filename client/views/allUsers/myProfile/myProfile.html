@@ -2,16 +2,9 @@
   <div class="row">
     <div class="col s12 m12 l12">
       {{#if currentUser}}
-      {{#if Template.subscriptionsReady}}
       {{> myProfileShell}}
-      {{else}}
-      {{> loading}}
-      {{/if}}
-      {{else}}
       {{#if isLoggingIn}}
       {{> loading}}
-      {{else}}
-      {{> notAuthorized}}
       {{/if}}
       {{/if}}
     </div>

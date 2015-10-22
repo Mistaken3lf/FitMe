@@ -1,4 +1,4 @@
-Template.commandCenter.onCreated(function() {
+Template.commandCenter.onCreated(function () {
   var self = this;
 
   //Subscribe to all trainers
@@ -9,7 +9,7 @@ Template.commandCenter.onCreated(function() {
 });
 
 Template.commandCenter.helpers({
-  totalTrainers: function() {
+  totalTrainers: function () {
     totalTrainers = Meteor.users.find({
       roles: 'trainer'
     }).count();
@@ -17,7 +17,7 @@ Template.commandCenter.helpers({
     return totalTrainers;
   },
 
-  totalClients: function() {
+  totalClients: function () {
     totalClients = Meteor.users.find({
       roles: 'client'
     }).count();
@@ -25,7 +25,7 @@ Template.commandCenter.helpers({
     return totalClients;
   },
 
-  totalUsers: function() {
+  totalUsers: function () {
     totalUsers = Meteor.users.find({
       _id: {
         $ne: Meteor.userId()
@@ -43,7 +43,7 @@ Template.commandCenter.helpers({
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function() {
+  isLoggingIn: function () {
     return Meteor.loggingIn();
   },
 });

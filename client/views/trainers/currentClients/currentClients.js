@@ -37,6 +37,10 @@ Template.currentClients.events({
 
   'click .suspendUser': function (event) {
     Meteor.call("suspendUser", this._id);
+  },
+
+  'click #clickedClient': function (event) {
+    FlowRouter.go("/clientDashboard/" + this._id);
   }
 });
 
@@ -51,7 +55,7 @@ Template.currentClients.helpers({
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function() {
+  isLoggingIn: function () {
     return Meteor.loggingIn();
   }
 });
