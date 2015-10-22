@@ -1,18 +1,15 @@
 Meteor.methods({
-  contactUs: function (contactUsData) {
-    //Server side check to make sure the contact data is valid
-    check(contactUsData, ContactUsSchema.contact)
-
+  contactUs: function (firstName, lastName, phoneNumber, email, message) {
     //Allow other methods to execute without waiting
     //for the email to send.
     this.unblock();
 
     //Send the actual email to us
     Email.send({
-      to: "info@divelop.io",
-      from: contactUsData.email,
+      to: "mistaken3lf@gmail.com",
+      from: email,
       subject: "Feedback",
-      text: contactUsData.message
+      text: message
     });
   }
 });
