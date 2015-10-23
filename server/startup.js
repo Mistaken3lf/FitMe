@@ -1,6 +1,6 @@
 Meteor.startup(function () {
   //Setup email enviroment variable to use our mailgun SMTP server
-  process.env.MAIL_URL = 'smtp://postmaster%40mistaken3lf.meteor.com:e4f504ee1b19376fe0c147820ce4847e@smtp.mailgun.org:587';
+  process.env.MAIL_URL = 'smtp://postmaster%40www.gofitme.com:dc7d425fe443a8c606649f6b36836f5a@smtp.mailgun.org:587';
 
   //Create the admin user with default admin username and password, change
   //the password after created!!!!!

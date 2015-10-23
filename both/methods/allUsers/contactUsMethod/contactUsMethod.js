@@ -6,7 +6,7 @@ Meteor.methods({
 
     //Send the actual email to us
     Email.send({
-      to: "info@divelop.io",
+      to: "mistaken3lf@gmail.com",
       from: email,
       subject: "Feedback",
       text: message
