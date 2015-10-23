@@ -17,7 +17,7 @@ Meteor.methods({
       $set: {
         'userProfile.firstName': newTrainerData.firstName,
         'userProfile.lastName': newTrainerData.lastName,
-        clientLimit: 1,
+        clientLimit: 50,
         userStatus: "active",
       }
     });

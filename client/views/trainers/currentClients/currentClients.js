@@ -39,19 +39,41 @@ Template.currentClients.events({
     Meteor.call("suspendUser", this._id);
   },
 
-  'click #clickedClient': function (event) {
-    FlowRouter.go("/clientDashboard/" + this._id);
+  'click .reactive-table tbody tr': function (event) {
+    event.preventDefault();
+    var client = this;
+    if (event.target.className == "clickedClient blue-text") {
+      $(event.target).text("loading");
+      FlowRouter.go("/clientDashboard/" + client._id);
+    }
   }
 });
 
 Template.currentClients.helpers({
-  'users': function () {
+  currentClients: function () {
     //Show all of my clients and dont show my own information
     return Meteor.users.find({
       _id: {
         $ne: Meteor.userId()
       }
     });
+  },
+
+  clientFields: function () {
+    return [{
+      key: 'username',
+      label: 'username',
+      cellClass: 'clickedClient blue-text'
+    }, {
+      key: 'userProfile.firstName',
+      label: 'First Name'
+    }, {
+      key: 'userProfile.lastName',
+      label: 'Last Name'
+    }, {
+      key: 'userStatus',
+      label: 'User Status'
+    }]
   },
 
   //Check if the user is currently logging in
