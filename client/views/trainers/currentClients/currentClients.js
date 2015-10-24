@@ -35,16 +35,15 @@ Template.currentClients.events({
     });
   },
 
-  'click .suspendUser': function (event) {
-    Meteor.call("suspendUser", this._id);
-  },
-
   'click .reactive-table tbody tr': function (event) {
     event.preventDefault();
     var client = this;
     if (event.target.className == "clickedClient blue-text") {
-      $(event.target).text("loading");
       FlowRouter.go("/clientDashboard/" + client._id);
+    }
+    
+    if (event.target.className == "suspendClient green-text") {
+      Meteor.call("suspendUser", client._id);
     }
   }
 });
@@ -72,7 +71,8 @@ Template.currentClients.helpers({
       label: 'Last Name'
     }, {
       key: 'userStatus',
-      label: 'User Status'
+      label: 'User Status',
+      cellClass: 'suspendClient green-text'
     }]
   },
 

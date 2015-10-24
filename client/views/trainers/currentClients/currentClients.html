@@ -12,9 +12,7 @@
           <div class="col s12 m12 l12">
             <div class="card white z-depth-1 spacing">
               <div class="col s12 m12 l12">
-                {{#if Template.subscriptionsReady}}
-                {{> reactiveTable collection=currentClients fields=clientFields}}
-                {{/if}}
+                {{> reactiveTable class="highlight responsive-table" collection=currentClients fields=clientFields}}
               </div>
             </div>
           </div>

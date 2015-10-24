@@ -28,3 +28,9 @@ Template.home.events({
     });
   }
 });
+
+Template.home.helpers({
+  isLoggingIn: function () {
+    return Meteor.loggingIn();
+  }
+})
