@@ -1,7 +1,6 @@
 <template name="currentClients">
-  <!--White panel to use as a background-->
-  <div class="card-panel white z-depth-2">
-    {{#if Template.subscriptionsReady}}
+  <div class="row">
+  <div class="col s12">
     <div class="card z-depth-1 grey lighten-4">
       <div class="col s12 m12 l12">
         <div class="card">
@@ -13,11 +12,10 @@
           <div class="card white z-depth-1 spacing">
             <div class="col s12 m12 l12">
               <!--Client Table-->
-              <table class="striped responsive-table">
+              <table class="responsive-table">
                 <thead>
                   <tr>
                     <th>Username</th>
-                    <th>Next Session</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Status</th>
@@ -29,7 +27,6 @@
                   {{#each users}}
                   <tr>
                     <td><a href="/clientDashboard/{{_id}}">{{username}}</a></td>
-                    <td>{{sessionDate}}</td>
                     <td>{{userProfile.firstName}}</td>
                     <td>{{userProfile.lastName}}</td>
                     <td>{{userStatus}}</td>
@@ -46,9 +43,6 @@
       </div>
       <a href="/addClient" class="btn-floating btn-large waves-effect blue right addClientButton"><i class="material-icons">add</i></a>
     </div>
-    {{else}}
-    <p>Loading...</p>
-    {{/if}}
-  </div>
-  <!--End of white panel-->
+    </div>
+    </div>
 </template>
