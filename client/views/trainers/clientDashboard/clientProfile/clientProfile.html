@@ -3,6 +3,7 @@
 </template>
 <template name="clientProfileShell">
   <div class="card grey lighten-4">
+    {{#if Template.subscriptionsReady}}
     {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=currentClient resetOnSuccess=false autosave=true}}
     <div class="col s12 m12 l12">
       <div class="card white z-depth-1">
@@ -63,12 +64,15 @@
           <div class="input-field col s12 m6 l6">
             <span class="blue-text myBoldProfileHeading">Biography:</span>{{> afQuickField name="userProfile.bio" class="materialize-textarea" rows=6 style="height: 100%;" label=false placeholder="Tell us about yourself"}}
           </div>
-           <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l6">
             <span class="blue-text myBoldProfileHeading">Fitness Goals:</span>{{> afQuickField name="userProfile.fitnessGoals" class="materialize-textarea" rows=6 style="height: 100%;" label=false placeholder="What do you want to accomplish"}}
           </div>
         </div>
       </div>
     </div>
     {{/autoForm}}
-    </div>
+    {{else}}
+    {{> loading}}
+    {{/if}}
+  </div>
 </template>

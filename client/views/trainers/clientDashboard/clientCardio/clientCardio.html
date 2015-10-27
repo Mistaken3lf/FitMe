@@ -10,6 +10,7 @@
     </div>
     <div class="row">
       <div class="col s12 m12 l12">
+        {{#if Template.subscriptionsReady}}
         {{#autoForm collection="ClientCardio" id="clientCardioForm" type="method-update" meteormethod="updateClientCardio" doc=currentClientsCardio resetOnSuccess=false autosave=true}}
         <div class="card z-depth-1">
           <div class="card-content">
@@ -436,6 +437,9 @@
           </div>
         </div>
         {{/autoForm}}
+        {{else}}
+        {{> loading}}
+        {{/if}}
       </div>
     </div>
   </div>

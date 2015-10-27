@@ -3,16 +3,12 @@
   <div class="card z-depth-1 grey lighten-4">
     <div class="col s12 m12 l12">
       <div class="card white z-depth-0">
-        <div class="blue card-title center-align white-text">SESSION LOG</div>
+        <div class="blue card-title center-align white-text">MY SCHEDULE</div>
       </div>
     </div>
     <div class="row">
       <div class="col s12">
         <div class="card">
-          <div class="col s12 m3 l3">
-            <img src="/dashboard/profile/profilePicture.jpg" class="profilePic responsive-img">
-            <div class="card-title center-align blue-text"><b>{{#with thisClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</b></div>
-          </div>
           <div class="col s12 m3 l3">
             <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
             {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" readonly=true label=false}}
@@ -21,13 +17,22 @@
             <h6 class="center-align blue-text"><b>Payment Due</b></h6>
             {{> afQuickField name="userProfile.paymentDue" readonly=true class="center-align" label=false}}
           </div>
-          <div class="col s12 m3 l3">
-            <h6 class="center-align blue-text"><b>Next Session</b></h6>
-            {{> afQuickField name="sessionDate" type="text" readonly=true class="center-align" label=false}}
-          </div>
         </div>
       </div>
     </div>
+    <div class="row">
+        <div class="card white z-depth-1">
+          <div class="col s12">
+            <h4>Monday:</h4>
+            <h4>Tuesday:</h4>
+            <h4>Wednesday:</h4>
+            <h4>Thursday:</h4>
+            <h4>Friday:</h4>
+            <h4>Saturday:</h4>
+            <h4>Sunday:</h4>
+          </div>
+        </div>
+      </div>
   </div>
   {{/autoForm}}
 </template>

@@ -1,9 +1,4 @@
-Template.home.onRendered(function () {
-  //Add a counter to the contact text area.
-  $('input#input_text, textarea#textarea1').characterCounter();
-});
-
-Template.home.events({
+Template.trainerHome.events({
   'submit form': function (event) {
     event.preventDefault();
     //Get who send the message and the actual message
@@ -26,10 +21,40 @@ Template.home.events({
         FlowRouter.go("/");
       }
     });
-  }
+  },
+
+  "click .monthly": function (event) {
+    Meteor.call("updateClientCount", function (error) {
+      if (error) {
+        Bert.alert(error.reason, "danger", "growl-top-right");
+      } else {
+        Bert.alert("Thank you for choosing FitMe :)", "success", "growl-top-right");
+      }
+    });
+  },
+
+  "click .sixMonth": function (event) {
+    Meteor.call("updateClientCount", function (error) {
+      if (error) {
+        Bert.alert(error.reason, "danger", "growl-top-right");
+      } else {
+        Bert.alert("Thank you for choosing FitMe :)", "success", "growl-top-right");
+      }
+    });
+  },
+
+  "click .yearly": function (event) {
+    Meteor.call("updateClientCount", function (error) {
+      if (error) {
+        Bert.alert(error.reason, "danger", "growl-top-right");
+      } else {
+        Bert.alert("Thank you for choosing FitMe :)", "success", "growl-top-right");
+      }
+    });
+  },
 });
 
-Template.home.helpers({
+Template.trainerHome.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   }

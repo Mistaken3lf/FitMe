@@ -5,27 +5,26 @@
     <hr class="headerSeperator">
   </div>
   <div class="dashContainer">
-  <div class="row">
-    <div class="col s12">
-      <div class="row center">
-        <button class="btn grey clickedButton" id="clientProfile">Profile</button>
-        <button class="btn grey clickedButton" id="clientSchedule">Schedule</button>
-        <button class="btn grey clickedButton" id="clientStats">Stats</button>
-        <button class="btn grey clickedButton" id="clientCardio">Cardio</button>
-        <button class="btn grey clickedButton" id="clientWorkout">Workout</button>
-      </div>
-      {{#if activeTemplate}}
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <button class="btn blue clickedButton col s12 m2 l2" id="clientProfile">Profile</button>
+          <button class="btn blue clickedButton col s12 m2 l2" id="clientSchedule">Schedule</button>
+          <button class="btn blue clickedButton col s12 m2 l2" id="clientStats">Stats</button>
+          <button class="btn blue clickedButton col s12 m2 l2" id="clientCardio">Cardio</button>
+          <button class="btn blue clickedButton col s12 m2 l2" id="clientWorkout">Workout</button>
+        </div>
+        {{#if activeTemplate}}
         {{> Template.dynamic template=activeTemplate}}
-      {{else}}
-      {{> clientProfile}}
-      {{/if}}
+        {{else}}
+        {{> clientProfile}}
+        {{/if}}
+      </div>
     </div>
-  </div>
   </div>
   {{else}}
   {{#if isLoggingIn}}
   {{> loading}}
   {{/if}}
   {{/if}}
-  <!--End of white panel-->
 </template>
