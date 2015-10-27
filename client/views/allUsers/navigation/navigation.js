@@ -24,6 +24,6 @@ Template.navigation.onRendered(function () {
 
 Template.navigation.helpers({
   versionNumber: function () {
-    return "15.10.1";
+    return "15.10.2";
   }
 })
