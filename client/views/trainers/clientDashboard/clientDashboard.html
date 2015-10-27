@@ -7,28 +7,18 @@
   <div class="dashContainer">
   <div class="row">
     <div class="col s12">
-      <ul class="collapsible" data-collapsible="expandable">
-        <li>
-          <div class="collapsible-header active"><i class="material-icons">perm_identity</i>Profile</div>
-          <div class="collapsible-body grey lighten-4">{{> clientProfile}}</div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">query_builder</i>Schedule</div>
-          <div class="collapsible-body grey lighten-4">{{> clientSchedule}}</div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">grade</i>Stats</div>
-          <div class="collapsible-body grey lighten-4">{{> clientStats}}</div>
-          </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">toc</i>Cardio</div>
-          <div class="collapsible-body grey lighten-4">{{> clientCardio}}</div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">view_agenda</i>Workout</div>
-          <div class="collapsible-body grey lighten-4">{{> clientWorkout}}</div>
-        </li>
-      </ul>
+      <div class="row center">
+        <button class="btn grey clickedButton" id="clientProfile">Profile</button>
+        <button class="btn grey clickedButton" id="clientSchedule">Schedule</button>
+        <button class="btn grey clickedButton" id="clientStats">Stats</button>
+        <button class="btn grey clickedButton" id="clientCardio">Cardio</button>
+        <button class="btn grey clickedButton" id="clientWorkout">Workout</button>
+      </div>
+      {{#if activeTemplate}}
+        {{> Template.dynamic template=activeTemplate}}
+      {{else}}
+      {{> clientProfile}}
+      {{/if}}
     </div>
   </div>
   </div>

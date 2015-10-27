@@ -2,7 +2,7 @@
   {{> clientProfileShell}}
 </template>
 <template name="clientProfileShell">
-  <div class="row">
+  <div class="card grey lighten-4">
     {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=currentClient resetOnSuccess=false autosave=true}}
     <div class="col s12 m12 l12">
       <div class="card white z-depth-1">
