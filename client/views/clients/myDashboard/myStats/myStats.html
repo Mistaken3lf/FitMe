@@ -1,5 +1,9 @@
 <template name="myStats">
+  {{#if Template.subscriptionsReady}}
   {{> myStatsShell}}
+  {{else}}
+  {{> loading}}
+  {{/if}}
 </template>
 <template name="myStatsShell">
   <div class="card z-depth-1 grey lighten-4">

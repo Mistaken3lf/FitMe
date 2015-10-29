@@ -13,8 +13,7 @@ Template.addTrainerAdmin.events({
       password: $('[name=password]').val(),
       email: $('[name=email]').val(),
     };
-
-
+    
     //Call server method to create the trainer
     Meteor.call("createTrainer", newTrainerData, function (error) {
 

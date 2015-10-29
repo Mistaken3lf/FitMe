@@ -1,9 +1,8 @@
 <template name="clientProfile">
-  {{> clientProfileShell}}
+  {{#if Template.subscriptionsReady}} {{> clientProfileShell}} {{else}} {{> loading}} {{/if}}
 </template>
 <template name="clientProfileShell">
   <div class="card grey lighten-4">
-    {{#if Template.subscriptionsReady}}
     {{#autoForm collection="Meteor.users" id="clientProfileForm" type="method-update" meteormethod="updateClientsProfile" doc=currentClient resetOnSuccess=false autosave=true}}
     <div class="col s12 m12 l12">
       <div class="card white z-depth-1">
@@ -27,7 +26,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12 m6 l6">
-            <span class="blue-text myBoldProfileHeading">Birthday:</span>{{> afQuickField name="userProfile.birthday" type="date" label=false class="datepicker" placeholder="Ex. 1990-05-29"}}
+            <span class="blue-text myBoldProfileHeading">Birthday:</span>{{> afQuickField name="userProfile.birthday" label=false id="datetimepicker" placeholder="Ex. 1990-05-29"}}
           </div>
         </div>
         <div class="row">
@@ -71,8 +70,5 @@
       </div>
     </div>
     {{/autoForm}}
-    {{else}}
-    {{> loading}}
-    {{/if}}
   </div>
 </template>

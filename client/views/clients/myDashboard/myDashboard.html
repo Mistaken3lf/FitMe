@@ -8,10 +8,18 @@
     <div class="row">
       <div class="col s12">
         <div class="row">
-          <button class="btn blue clickedButton col s12 m2 l2" id="mySession">My Schedule</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="myStats">Stats</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="myCardio">Cardio</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="myWorkout">Workout</button>
+          <div class="col s12 m3 l3">
+            <button class="btn blue myClickedButton" id="mySession">My Schedule</button>
+          </div>
+          <div class="col s12 m3 l3">
+            <button class="btn blue myClickedButton" id="myStats">Stats</button>
+          </div>
+          <div class="col s12 m3 l3">
+            <button class="btn blue myClickedButton" id="myCardio">Cardio</button>
+          </div>
+          <div class="col s12 m3 l3">
+            <button class="btn blue myClickedButton" id="myWorkout">Workout</button>
+          </div>
         </div>
         {{#if activeTemplate}}
         {{> Template.dynamic template=activeTemplate}}

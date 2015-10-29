@@ -9,24 +9,53 @@ Template.clientSchedule.onCreated(function () {
 });
 
 Template.clientScheduleShell.onRendered(function () {
-  //Pop up a datepicker when a date field is selected
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
+  $('#mondaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
   });
 
-  $('#datetimepicker').datetimepicker();
+  $('#tuesdaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
+  });
+
+  $('#wednesdaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
+  });
+
+  $('#thursdaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
+  });
+
+  $('#fridaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
+  });
+
+  $('#saturdaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
+  });
+
+  $('#sundaysSchedule').datetimepicker({
+    datepicker: false,
+    format: "H:mm"
+  });
 });
 
 Template.clientScheduleShell.helpers({
   //Get the current clients profile based on the url param
-  currentClient: function () {
+  curClient: function () {
     var clientId = FlowRouter.getParam('_id');
-    var currentClient = Meteor.users.findOne({
+    var curClient = Meteor.users.findOne({
       'userProfile.whosProfile': clientId
     });
-    return currentClient;
+    return curClient;
   },
+
+  todaysDate: function () {
+    return new Date().toDateString();
+  }
 });

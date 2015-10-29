@@ -7,13 +7,6 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    //Check the data against the stats schema on the server to
-    //make sure its valid
-    check(updatedStats, ClientStats.simpleSchema());
-
-    //Check id against server
-    check(clientId, String);
-
     //Update the clients profile with the new info
     ClientStats.update(clientId, updatedStats);
   }

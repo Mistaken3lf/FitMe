@@ -34,7 +34,7 @@ Schema.UserProfile = new SimpleSchema({
   },
 
   birthday: {
-    type: Date,
+    type: String,
     optional: true
   },
 
@@ -88,6 +88,41 @@ Schema.UserProfile = new SimpleSchema({
     type: String,
     optional: true
   },
+
+  mondaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  tuesdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  wednesdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  thursdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  fridaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  saturdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  sundaysSchedule: {
+    type: String,
+    optional: true
+  }
 });
 
 Schema.User = new SimpleSchema({

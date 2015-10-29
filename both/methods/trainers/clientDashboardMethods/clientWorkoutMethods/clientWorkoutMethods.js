@@ -7,13 +7,6 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    //Check the data on the server against the workout schema
-    //to make sure its valid
-    check(updatedWorkout, ClientWorkout.simpleSchema());
-
-    //Check id against server
-    check(clientId, String);
-
     //Update the clients workout with the new info
     ClientWorkout.update(clientId, updatedWorkout);
   },

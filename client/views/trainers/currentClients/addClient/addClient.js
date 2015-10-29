@@ -57,7 +57,7 @@ Template.addClient.events({
 
 Template.addClient.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function() {
+  isLoggingIn: function () {
     return Meteor.loggingIn();
   }
 });

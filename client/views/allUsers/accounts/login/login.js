@@ -1,6 +1,6 @@
 Template.login.events({
   //Capture login form submission
-  'submit form': function(event) {
+  'submit form': function (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -9,12 +9,12 @@ Template.login.events({
     var password = $('[name=password]').val();
 
     //Log user in with userrname and password
-    Meteor.loginWithPassword(username, password, function(error) {
+    Meteor.loginWithPassword(username, password, function (error) {
 
       //Invalid login
       if (error) {
         //Pop up an alert to show login failed
-        Bert.alert(error.reason, 'danger', 'growl-top-right' );
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Go home since user is logged in now
         FlowRouter.go('/');

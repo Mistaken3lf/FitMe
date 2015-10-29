@@ -14,4 +14,8 @@ Template.mySession.helpers({
       _id: Meteor.userId()
     });
   },
+  
+  todaysDate: function () {
+    return new Date().toDateString();
+  }
 });

@@ -29,6 +29,13 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
         "userProfile.whosProfile": 1,
         "userProfile.sessionsRemaining": 1,
         "userProfile.paymentDue": 1,
+        "userProfile.mondaysSchedule": 1,
+        "userProfile.tuesdaysSchedule": 1,
+        "userProfile.wednesdaysSchedule": 1,
+        "userProfile.thursdaysSchedule": 1,
+        "userProfile.fridaysSchedule": 1,
+        "userProfile.saturdaysSchedule": 1,
+        "userProfile.sundaysSchedule": 1,
       }
     });
   }

@@ -1,6 +1,4 @@
 Meteor.methods({
-  //Register a new client with any information they enter
-  //when adding a new client
   registerClient: function (clientData) {
     //Make sure the user is a trainer and logged in before
     //creating a new client

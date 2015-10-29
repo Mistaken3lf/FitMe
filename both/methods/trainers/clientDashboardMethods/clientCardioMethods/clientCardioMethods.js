@@ -8,13 +8,6 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    //Check data against the server cardio schema to make
-    //sure it is valid
-    check(updatedCardio, ClientCardio.simpleSchema());
-
-    //Check id against server
-    check(clientId, String);
-
     //Update the clients cardio with the new info
     ClientCardio.update(clientId, updatedCardio);
   }

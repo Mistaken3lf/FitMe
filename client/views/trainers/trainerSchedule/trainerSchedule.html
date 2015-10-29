@@ -1,0 +1,49 @@
+<template name="trainerSchedule">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card grey lighten-4">
+        <div class="col s12 m12 l12">
+          <div class="card white z-depth-1">
+            <div class="blue card-title center-align white-text">MY SCHEDULE CARD</div>
+          </div>
+        </div>
+        <div class="col s12 m12 l12">
+          <div class="row">
+            <div class="card white z-depth-1">
+              <div class="col s12 m4 l4">
+                <h4>Monday</h4>
+                {{#each mondaysSchedule}}
+                <li>{{userProfile.mondaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+                <h4>Tuesday</h4>
+                {{#each tuesdaysSchedule}}
+                <li>{{userProfile.tuesdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+                <h4>Wednesday</h4>
+                {{#each wednesdaysSchedule}}
+                <li>{{userProfile.wednesdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+                <h4>Thursday</h4>
+                {{#each thursdaysSchedule}}
+                <li>{{userProfile.thursdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+                <h4>Friday</h4>
+                {{#each fridaysSchedule}}
+                <li>{{userProfile.fridaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+                <h4>Saturday</h4>
+                {{#each saturdaysSchedule}}
+                <li>{{userProfile.saturdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+                <h4>Sunday</h4>
+                {{#each sundaysSchedule}}
+                <li>{{userProfile.sundaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

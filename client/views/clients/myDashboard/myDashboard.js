@@ -5,14 +5,14 @@ Template.myDashboard.helpers({
   },
   
   activeTemplate: function () {
-    return Session.get("clickedButton");
+    return Session.get("myClickedButton");
   }
 });
 
 Template.myDashboard.events({
-  "click .clickedButton": function (event) {
+  "click .myClickedButton": function (event) {
     var clickedButton = event.target.id;
-    Session.set("clickedButton", clickedButton);
+    Session.set("myClickedButton", clickedButton);
     console.log(clickedButton);
   }
 });

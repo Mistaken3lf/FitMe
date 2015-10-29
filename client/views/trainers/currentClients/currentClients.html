@@ -10,6 +10,7 @@
         <div class="row">
           <div class="col s12 m12 l12">
             <div class="card white z-depth-1 spacing">
+              {{#if Template.subscriptionsReady}}
               <div class="col s12 m12 l12">
                 <!--Client Table-->
                 <table class="responsive-table">
@@ -38,6 +39,9 @@
                 </table>
                 <!--End of client table-->
               </div>
+              {{else}}
+              {{> loading}}
+              {{/if}}
             </div>
           </div>
         </div>

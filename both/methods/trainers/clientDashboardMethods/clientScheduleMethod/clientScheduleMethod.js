@@ -1,8 +1,5 @@
 Meteor.methods({
-  //Update the clients profile with the clientId passed in from
-  //flow router
-  updateClientsProfile: function (updatedProfile, clientId) {
-
+  updateClientSchedule: function (updatedSchedule, clientId) {
     //Make sure user is logged in and a trainer before performing
     //the method
     if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
@@ -10,6 +7,6 @@ Meteor.methods({
     }
 
     //Update the clients profile with the new info
-    Meteor.users.update(clientId, updatedProfile);
+    Meteor.users.update(clientId, updatedSchedule);
   }
 });

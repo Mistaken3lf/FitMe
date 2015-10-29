@@ -2,17 +2,28 @@
   {{#if isInRole 'trainer'}}
   <div class="row">
     <img class="responsive-img" id="pageHeader" src="/dashboard/fitMeClientDashboard.png">
+    <h5 class="center blue-text">{{#with myClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</h5>
     <hr class="headerSeperator">
   </div>
   <div class="dashContainer">
     <div class="row">
-      <div class="col s12">
+      <div class="col s12 m12 l12">
         <div class="row">
-          <button class="btn blue clickedButton col s12 m2 l2" id="clientProfile">Profile</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="clientSchedule">Schedule</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="clientStats">Stats</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="clientCardio">Cardio</button>
-          <button class="btn blue clickedButton col s12 m2 l2" id="clientWorkout">Workout</button>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientProfile">Profile</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientSchedule">Schedule</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientStats">Stats</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientCardio">Cardio</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientWorkout">Workout</button>
+          </div>
         </div>
         {{#if activeTemplate}}
         {{> Template.dynamic template=activeTemplate}}
