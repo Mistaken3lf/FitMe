@@ -348,3 +348,27 @@ header, main, footer {
 }
 
 /**********************CLIENTS STYLES******************************************/
+
+/**********************PRINTER FRIENDLY STYLES*********************************/
+
+@media print {
+  header, main, footer {
+  padding-left: 0px;
+}
+  
+  .navbar-fixed {
+    display: none;
+  }
+  
+  .clickedButton {
+    display: none;
+  }
+  
+  #pageHeader {
+    display: none;
+  }
+  
+  hr {
+    display: none;
+  }
+}
