@@ -1,9 +1,5 @@
 Meteor.methods({
   contactUs: function (firstName, lastName, phoneNumber, email, message) {
-    if(!Meteor.userId()) {
-      throw new Meteor.error("Not Authorized");
-    }
-    
     //Allow other methods to execute without waiting
     //for the email to send.
     this.unblock();
