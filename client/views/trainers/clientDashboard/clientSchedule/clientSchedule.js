@@ -9,6 +9,12 @@ Template.clientSchedule.onCreated(function () {
 });
 
 Template.clientScheduleShell.onRendered(function () {
+  $('#paymentDue').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date()
+  });
+  
   $('#mondaysSchedule').datetimepicker({
     datepicker: false,
     format: "H:mm"

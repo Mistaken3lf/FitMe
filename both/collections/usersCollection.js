@@ -29,7 +29,7 @@ Schema.UserProfile = new SimpleSchema({
   },
 
   paymentDue: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
