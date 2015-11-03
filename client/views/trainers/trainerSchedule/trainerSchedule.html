@@ -9,41 +9,111 @@
           </div>
         </div>
         <div class="col s12 m12 l12">
-          <div class="row">
-            <div class="card white z-depth-1">
-              <div class="col s12 m4 l4">
-                {{#if Template.subscriptionsReady}}
-                <h4>Monday</h4>
-                {{#each mondaysSchedule}}
-                <li>{{userProfile.mondaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                <h4>Tuesday</h4>
-                {{#each tuesdaysSchedule}}
-                <li>{{userProfile.tuesdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                <h4>Wednesday</h4>
-                {{#each wednesdaysSchedule}}
-                <li>{{userProfile.wednesdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                <h4>Thursday</h4>
-                {{#each thursdaysSchedule}}
-                <li>{{userProfile.thursdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                <h4>Friday</h4>
-                {{#each fridaysSchedule}}
-                <li>{{userProfile.fridaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                <h4>Saturday</h4>
-                {{#each saturdaysSchedule}}
-                <li>{{userProfile.saturdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                <h4>Sunday</h4>
-                {{#each sundaysSchedule}}
-                <li>{{userProfile.sundaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
-                {{/each}}
-                {{else}}
-                {{> loading}}
-                {{/if}}
+          <div class="card white z-depth-1">
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Monday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each mondaysSchedule}}
+                    <li>{{userProfile.mondaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Tuesday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each tuesdaysSchedule}}
+                    <li>{{userProfile.tuesdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Wednesday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each wednesdaysSchedule}}
+                    <li>{{userProfile.wednesdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Thursday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each thursdaysSchedule}}
+                    <li>{{userProfile.thursdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Friday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each fridaysSchedule}}
+                    <li>{{userProfile.fridaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Saturday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each saturdaysSchedule}}
+                    <li>{{userProfile.saturdaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <div class="card grey lighten-4">
+                  <div class="col s12 m12 l12">
+                    <h4 class="center">Sunday</h4>
+                    {{#if Template.subscriptionsReady}}
+                    {{#each sundaysSchedule}}
+                    <li>{{userProfile.sundaysSchedule}} {{userProfile.firstName}} {{userProfile.lastName}}</li>
+                    {{/each}}
+                    {{else}}
+                    <p>Loading...</p>
+                    {{/if}}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
