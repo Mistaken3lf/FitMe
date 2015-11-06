@@ -3,7 +3,6 @@ Template.commandCenter.onCreated(function () {
 
   //Subscribe to all trainers
   self.autorun(function () {
-    self.subscribe("allTrainers");
     self.subscribe("allUsers");
   });
 });
