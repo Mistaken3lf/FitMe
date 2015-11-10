@@ -83,7 +83,7 @@ footer.page-footer {
 /* Add padding on left so content is not under sidebar */
 
 header, main, footer {
-  padding-left: 210px;
+  padding-left: 220px;
 }
 
 /* Remove padding when on mobile device since sidebar will collapse */
@@ -147,7 +147,7 @@ header, main, footer {
 }
 
 #desktop-menu {
-  width: 210px;
+  width: 220px;
 }
 
 /**********************TRAINERS STYLES*****************************************/
