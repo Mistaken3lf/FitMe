@@ -49,4 +49,6 @@ Template.currentClients.helpers({
       }
     });
   },
+  
+  trainersIndex: () => UsersIndex
 });

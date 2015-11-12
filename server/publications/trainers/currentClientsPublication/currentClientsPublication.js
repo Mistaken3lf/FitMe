@@ -5,7 +5,7 @@ Meteor.publish('currentClients', function () {
     //to them.
     return Meteor.users.find({
       roles: 'client',
-      "userProfile.createdBy": this.userId
+      "userProfile.createdBy": this.userId,
     }, {
       fields: {
         username: 1,

@@ -171,3 +171,9 @@ Schema.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema.User);
+
+UsersIndex = new EasySearch.Index({
+  collection: Meteor.users,
+  fields: ['username', 'userProfile.firstName', 'userProfile.lastName'],
+  engine: new EasySearch.Minimongo(),
+});
