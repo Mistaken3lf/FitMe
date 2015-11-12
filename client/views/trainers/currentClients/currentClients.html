@@ -31,7 +31,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      {{#EasySearch.Each index=trainersIndex }}
+                      {{#each users }}
                       <tr>
                         <td><a href="/clientDashboard/{{_id}}">{{username}}</a></td>
                         <td>{{userProfile.firstName}}</td>
@@ -40,7 +40,7 @@
                         <td><button class="btn-floating amber waves-effect suspendUser"><i class="material-icons">https</i></button></td>
                         <td><button class="btn-floating red waves-effect deleteButton"><i class="material-icons">remove</i></button></td>
                       </tr>
-                      {{/EasySearch.Each}}
+                      {{/each}}
                     </tbody>
                   </table>
                   <!--End of client table-->

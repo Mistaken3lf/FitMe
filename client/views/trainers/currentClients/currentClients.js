@@ -50,5 +50,7 @@ Template.currentClients.helpers({
     });
   },
   
-  trainersIndex: () => UsersIndex
+  trainersIndex: function () {
+    return UsersIndex;
+  }
 });
