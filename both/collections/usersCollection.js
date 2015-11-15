@@ -172,8 +172,21 @@ Schema.User = new SimpleSchema({
 
 Meteor.users.attachSchema(Schema.User);
 
+//Create index to search based on the current clients publication
+//and dont select the currently logged in user
 UsersIndex = new EasySearch.Index({
   collection: Meteor.users,
   fields: ['username', 'userProfile.firstName', 'userProfile.lastName'],
-  engine: new EasySearch.Minimongo()
+  engine: new EasySearch.Minimongo({
+    selector: function (searchObject, options, aggregation) {
+      var selector = this.defaultConfiguration().selector(searchObject, options, aggregation);
+
+      var userId = options.search.userId;
+      selector._id = {
+        $ne: userId
+      };
+      
+      return selector;
+    }
+  })
 });

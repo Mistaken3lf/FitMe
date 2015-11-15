@@ -41,12 +41,13 @@ Template.currentClients.events({
 });
 
 Template.currentClients.helpers({
-  'users': function () {
-    //Show all of my clients and dont show my own information
-    return Meteor.users.find({
-      _id: {
-        $ne: Meteor.userId()
-      }
-    });
+  trainersIndex: function () {
+    return UsersIndex;
   },
+  
+  clientSearchAttributes: function () {
+    return {
+      placeholder: "Search For A Client"
+    }
+  }
 });

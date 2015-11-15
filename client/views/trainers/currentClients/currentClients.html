@@ -11,6 +11,11 @@
           <div class="col s12 m12 l12">
             <div class="card white z-depth-1 spacing">
               <div class="row">
+                <div class="col s12 m4 l4">
+                  {{> EasySearch.Input index=trainersIndex attributes=clientSearchAttributes}}
+                </div>
+              </div>
+              <div class="row">
               {{#if Template.subscriptionsReady}}
               <div class="col s12 m12 l12">
                 <!--Client Table-->
@@ -26,7 +31,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {{#each users}}
+                    {{#EasySearch.Each index=trainersIndex}}
                     <tr>
                       <td><a href="/clientDashboard/{{_id}}">{{username}}</a></td>
                       <td>{{userProfile.firstName}}</td>
@@ -35,7 +40,7 @@
                       <td><button class="btn-floating amber waves-effect suspendUser"><i class="material-icons">https</i></button></td>
                       <td><button class="btn-floating red waves-effect deleteButton"><i class="material-icons">remove</i></button></td>
                     </tr>
-                    {{/each}}
+                    {{/EasySearch.Each}}
                   </tbody>
                 </table>
                 <!--End of client table-->
