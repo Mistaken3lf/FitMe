@@ -49,8 +49,4 @@ Template.currentClients.helpers({
       }
     });
   },
-  
-  trainersIndex: function () {
-    return UsersIndex;
-  }
 });
