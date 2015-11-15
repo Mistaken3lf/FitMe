@@ -12,42 +12,50 @@ Template.clientScheduleShell.onRendered(function () {
   $('#paymentDue').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
-    startDate: new Date()
+    startDate: new Date(),
+    scrollInput: false
   });
   
   $('#mondaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 
   $('#tuesdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 
   $('#wednesdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 
   $('#thursdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 
   $('#fridaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 
   $('#saturdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 
   $('#sundaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm"
+    format: "H:mm",
+    scrollInput: false
   });
 });
 
