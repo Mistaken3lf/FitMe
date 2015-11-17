@@ -20,9 +20,10 @@ browser-policy-framing@1.0.6
 caching-compiler@1.0.0
 caching-html-compiler@1.0.2
 callback-hook@1.0.4
+charpeni:materialize-clockpicker@0.0.1
 check@1.1.0
 coffeescript@1.0.11
-cosmos:browserify@0.9.0
+cosmos:browserify@0.9.1
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -31,7 +32,7 @@ ddp-server@1.2.2
 deps@1.0.9
 diff-sequence@1.0.1
 drewy:datetimepicker@1.0.3
-easy:search@2.0.0
+easy:search@2.0.4
 easysearch:components@2.0.4
 easysearch:core@2.0.3
 ecmascript@0.1.6
