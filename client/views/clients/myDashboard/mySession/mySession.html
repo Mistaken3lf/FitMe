@@ -1,60 +1,117 @@
 <template name="mySession">
+  {{#if Template.subscriptionsReady}}
+  {{> mySessionShell}}
+  {{else}}
+  {{> loading}}
+  {{/if}}
+</template>
+<template name="mySessionShell">
+  {{#autoForm collection="Meteor.users" id="mySessionForm" doc=thisClient resetOnSuccess=false}}
   <div class="card grey lighten-4">
     <div class="row">
       <div class="col s12 m12 l12">
         <div class="card white z-depth-1">
-          <div class="blue card-title center-align white-text">MY SCHEDULE CARD</div>
+          <div class="blue card-title center-align white-text">SCHEDULE CARD</div>
         </div>
       </div>
       <div class="col s12 m12 l12">
-        {{#if Template.subscriptionsReady}}
-        {{#autoForm collection="Meteor.users" id="myScheduleForm" doc=thisClient resetOnSuccess=false autosave=true}}
-        <div class="row">
-          <div class="card white z-depth-1">
+        <div class="card white z-depth-1">
+          <div class="row">
+            <div class="col s12 m4 l4">
+              <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
+              {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" readonly=true type="number" label=false}}
+            </div>
+            <div class="col s12 m4 l4">
+              <h6 class="center-align blue-text"><b>Payment Due</b></h6>
+              {{> afQuickField name="userProfile.paymentDue" id="paymentDue" class="center-align" readonly=true label=false}}
+            </div>
+            <div class="col s12 m4 l4 center">
+              <h6 class="center-align blue-text"><b>Today's Date</b></h6>
+              <br>
+              <span>{{todaysDate}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card white">
             <div class="row">
-              <div class="col s12 m4 l4">
-                <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
-                {{> afQuickField name="userProfile.sessionsRemaining" class="center-align" readonly=true label=false}}
-              </div>
-              <div class="col s12 m4 l4">
-                <h6 class="center-align blue-text"><b>Payment Due</b></h6>
-                {{> afQuickField name="userProfile.paymentDue" readonly=true class="center-align" label=false}}
-              </div>
-              <div class="col s12 m4 l4 center">
-                <h6 class="center-align blue-text"><b>Today's Date</b></h6>
-                <br>
-                <span>{{todaysDate}}</span>
+              <div class="col s12 m12 l12">
+                <h4 class="center">Monday</h4>
+                {{> afQuickField name="userProfile.mondaysSchedule" id="mondaysSchedule" readonly=true label=false}}
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="card white z-depth-1">
+        <div class="col s12 m6 l6">
+          <div class="card white">
             <div class="row">
-              <div class="col s12 m4 l4">
-                <h4>Monday:</h4>
-                {{> afQuickField name="userProfile.mondaysSchedule" readonly=true label=false}}
-                <h4>Tuesday:</h4>
-                {{> afQuickField name="userProfile.tuesdaysSchedule" readonly=true label=false}}
-                <h4>Wednesday:</h4>
-                {{> afQuickField name="userProfile.wednesdaysSchedule" readonly=true label=false}}
-                <h4>Thursday:</h4>
-                {{> afQuickField name="userProfile.thursdaysSchedule" readonly=true label=false}}
-                <h4>Friday:</h4>
-                {{> afQuickField name="userProfile.fridaysSchedule" readonly=true label=false}}
-                <h4>Saturday:</h4>
-                {{> afQuickField name="userProfile.saturdaysSchedule" readonly=true label=false}}
-                <h4>Sunday:</h4>
-                {{> afQuickField name="userProfile.sundaysSchedule" readonly=true label=false}}
+              <div class="col s12 m12 l12">
+                <h4 class="center">Tuesday</h4>
+                {{> afQuickField name="userProfile.tuesdaysSchedule" id="tuesdaysSchedule" readonly=true label=false}}
               </div>
             </div>
           </div>
         </div>
-        {{/autoForm}}
-        {{else}}
-        {{> loading}}
-        {{/if}}
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Wednesday</h4>
+                {{> afQuickField name="userProfile.wednesdaysSchedule" id="wednesdaysSchedule" readonly=true label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Thursday</h4>
+                {{> afQuickField name="userProfile.thursdaysSchedule" id="thursdaysSchedule" readonly=true label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Friday</h4>
+                {{> afQuickField name="userProfile.fridaysSchedule" id="fridaysSchedule" readonly=true label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Saturday</h4>
+                {{> afQuickField name="userProfile.saturdaysSchedule" id="saturdaysSchedule" readonly=true label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Sunday</h4>
+                {{> afQuickField name="userProfile.sundaysSchedule" id="sundaysSchedule" readonly=true label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  {{/autoForm}}
 </template>

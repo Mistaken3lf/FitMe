@@ -7,7 +7,7 @@ Template.mySession.onCreated(function () {
   });
 });
 
-Template.mySession.helpers({
+Template.mySessionShell.helpers({
   //Return the current client
   thisClient: function () {
     return Meteor.users.findOne({
