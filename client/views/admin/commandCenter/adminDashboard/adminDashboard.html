@@ -1,0 +1,38 @@
+<template name="adminDashboard">
+  {{#if isInRole "admin"}} 
+  <div class="row">
+  <div class="col s12 l12 m12">
+  <div class="card black">
+    <div class="row">
+      <div class="row">
+        <h1 class="center green-text">ADMIN DASHBOARD</h1>
+        <h5 class="center green-text">{{#with currentTrainer}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</h5>
+      </div>
+      <div class="dashContainer">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="row">
+              <div class="col s12 m2 l2">
+                <button class="btn green white-text adminClickedButton" id="trainersProfile">Profile</button>
+              </div>
+              <div class="col s12 m2 l2">
+                <button class="btn green white-text adminClickedButton" id="trainersClients">Clients</button>
+              </div>
+              <div class="col s12 m2 l2">
+                <button class="btn green white-text adminClickedButton" id="accountDetails">Account</button>
+              </div>
+            </div>
+            {{#if activeTemplate}} 
+            {{> Template.dynamic template=activeTemplate}} 
+            {{else}}
+            {{> trainersProfile}} 
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  {{/if}}
+</template>

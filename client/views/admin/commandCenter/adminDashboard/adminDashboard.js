@@ -14,6 +14,23 @@ Template.adminDashboard.helpers({
     var currentTrainer = Meteor.users.findOne({
       _id: trainerId
     });
+
     return currentTrainer;
+  },
+  
+  //Check if the user is currently logging in
+  isLoggingIn: function () {
+    return Meteor.loggingIn();
+  },
+  
+  activeTemplate: function () {
+    return Session.get("adminClickedButton");
   }
-})
+});
+
+Template.adminDashboard.events({
+  "click .adminClickedButton": function (event) {
+    var clickedButton = event.target.id;
+    Session.set("adminClickedButton", clickedButton);
+  }
+});

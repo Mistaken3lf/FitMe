@@ -32,6 +32,5 @@ Template.clientDashboard.events({
   "click .clickedButton": function (event) {
     var clickedButton = event.target.id;
     Session.set("clickedButton", clickedButton);
-    console.log(clickedButton);
   }
 });
