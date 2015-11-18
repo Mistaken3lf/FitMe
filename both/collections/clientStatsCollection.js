@@ -13,7 +13,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Body Statistics Tnitial test
   statsITDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -40,7 +40,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Body Statistics Retest 1
   statsRT1Date: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -77,7 +77,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Body Statistics Retest 2
   statsRT2Date: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -114,7 +114,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Body Statistics Retest 3
   statsRT3Date: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -151,7 +151,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Body Statistics Change
   statsChangeDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -188,7 +188,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurement Initial Test
   measureITDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -240,7 +240,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Retest 1
   measureRT1Date: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -292,7 +292,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Retest 2
   measureRT2Date: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -344,7 +344,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Retest 3
   measureRT3Date: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -396,7 +396,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 
   //Measurements Change
   measureChangeDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 

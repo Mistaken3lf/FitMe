@@ -14,7 +14,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
 
   //Workout scheduled date
   workoutDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 

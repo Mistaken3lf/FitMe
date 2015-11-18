@@ -10,11 +10,46 @@ Template.clientCardio.onCreated(function () {
 
 Template.clientCardioShell.onRendered(function () {
   //Pop up date picker when a date field is clicked on
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
+  $('#week1to4Start').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#week1to4End').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#week5to8Start').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#week5to8End').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#week9to12Start').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#week9to12End').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
   });
 });
 

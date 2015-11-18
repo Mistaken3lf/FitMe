@@ -9,10 +9,11 @@ Template.clientProfile.onCreated(function () {
 });
 
 Template.clientProfileShell.onRendered(function () {
-  $('#datetimepicker').datetimepicker({
+  $('#clientBirthday').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
-    startDate: new Date()
+    startDate: new Date(),
+    scrollInput: false
   });
 });
 

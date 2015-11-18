@@ -9,11 +9,11 @@ Template.clientWorkout.onCreated(function () {
 
 Template.clientWorkoutShell.onRendered(function () {
   //Pop up a datepicker when a date field is clicked
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
+  $('#workoutDate').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
   });
 });
 

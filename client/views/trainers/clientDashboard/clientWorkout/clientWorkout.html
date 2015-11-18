@@ -17,7 +17,7 @@
         {{#autoForm collection="ClientWorkout" id="clientWorkoutForm" type="method-update" meteormethod="updateClientsWorkout" doc=currentClientsWorkout resetOnSuccess=false autosave=true}}
         <div class="row">
           <div class="col s12 m3 l3">
-            <span class="black-text workoutHeadings">Date:</span>{{> afQuickField name="workoutDate" type="date" label=false class="datepicker"}}
+            <span class="black-text workoutHeadings">Date:</span>{{> afQuickField name="workoutDate" label=false id="workoutDate"}}
           </div>
         </div>
         <div class="card white z-depth-1 workoutSpacing">

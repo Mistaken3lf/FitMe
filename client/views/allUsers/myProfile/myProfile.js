@@ -9,11 +9,11 @@ Template.myProfile.onCreated(function () {
 
 Template.myProfileShell.onRendered(function () {
   //Pop up a datepicker if a date field is clicked on
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
+  $('#birthday').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
   });
 });
 

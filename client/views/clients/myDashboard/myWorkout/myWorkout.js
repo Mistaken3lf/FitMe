@@ -6,16 +6,6 @@ Template.myWorkout.onCreated(function () {
   });
 });
 
-Template.myWorkoutShell.onRendered(function () {
-  //Pop up date picker when a date field is selected
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
-  });
-});
-
 Template.myWorkoutShell.helpers({
   //Find my workout in MongoDB
   myWorkout: function () {

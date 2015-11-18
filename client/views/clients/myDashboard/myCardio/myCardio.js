@@ -7,16 +7,6 @@ Template.myCardio.onCreated(function () {
   });
 });
 
-Template.myCardioShell.onRendered(function () {
-  //Pop up date picker when a date field is selected
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
-  });
-});
-
 Template.myCardioShell.helpers({
   //Find my cardio
   myCardio: function () {

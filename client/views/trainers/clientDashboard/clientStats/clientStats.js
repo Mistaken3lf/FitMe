@@ -10,11 +10,74 @@ Template.clientStats.onCreated(function () {
 
 Template.clientStatsShell.onRendered(function () {
   //Pop up date picker when a date field is selected
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
+  $('#statsITDate').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#statsRT1Date').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#statsRT2Date').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#statsRT3Date').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#measureITDate').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#statsChangeDate').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#measureRT1Date').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#measureRT2Date').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#measureRT3Date').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
+  });
+  
+  $('#measureChangeDate').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
   });
 });
 
