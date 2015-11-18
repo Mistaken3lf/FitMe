@@ -18,43 +18,43 @@ Template.clientScheduleShell.onRendered(function () {
   
   $('#mondaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 
   $('#tuesdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 
   $('#wednesdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 
   $('#thursdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 
   $('#fridaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 
   $('#saturdaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 
   $('#sundaysSchedule').datetimepicker({
     datepicker: false,
-    format: "H:mm",
+    format: "h:mm a",
     scrollInput: false
   });
 });
