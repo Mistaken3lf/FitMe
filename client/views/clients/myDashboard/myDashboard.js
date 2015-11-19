@@ -4,6 +4,7 @@ Template.myDashboard.helpers({
     return Meteor.loggingIn();
   },
   
+  //Get the active template clicked on
   activeTemplate: function () {
     return Session.get("myClickedButton");
   }
@@ -11,6 +12,7 @@ Template.myDashboard.helpers({
 
 Template.myDashboard.events({
   "click .myClickedButton": function (event) {
+    //Set the active template to load on the dashboard for the client
     var clickedButton = event.target.id;
     Session.set("myClickedButton", clickedButton);
     console.log(clickedButton);

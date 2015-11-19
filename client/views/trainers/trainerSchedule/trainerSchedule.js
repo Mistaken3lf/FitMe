@@ -8,6 +8,7 @@ Template.trainerSchedule.onCreated(function () {
 });
 
 Template.trainerSchedule.helpers({
+  //Get trainers schedule for monday
   mondaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.mondaysSchedule': {
@@ -26,7 +27,8 @@ Template.trainerSchedule.helpers({
 
     });
   },
-
+  
+  //Get trainers schedule for tuesday
   tuesdaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.tuesdaysSchedule': {
@@ -44,7 +46,8 @@ Template.trainerSchedule.helpers({
       }
     });
   },
-
+  
+  //Get trainers schedule for wednesday
   wednesdaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.wednesdaysSchedule': {
@@ -62,7 +65,8 @@ Template.trainerSchedule.helpers({
       }
     });
   },
-
+  
+  //Get trainers schedule for thursday
   thursdaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.thursdaysSchedule': {
@@ -80,7 +84,8 @@ Template.trainerSchedule.helpers({
       }
     });
   },
-
+  
+  //Get trainers schedule for friday
   fridaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.fridaysSchedule': {
@@ -98,7 +103,8 @@ Template.trainerSchedule.helpers({
       }
     });
   },
-
+  
+  //Get trainers schedule for saturday
   saturdaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.saturdaysSchedule': {
@@ -116,7 +122,8 @@ Template.trainerSchedule.helpers({
       }
     });
   },
-
+  
+  //Get trainers schedule for sunday
   sundaysSchedule: function () {
     return Meteor.users.find({
       'userProfile.sundaysSchedule': {

@@ -1,6 +1,6 @@
 Meteor.publish('currentTrainer', function (currentTrainerId) {
   //Make sure the user is logged in and a admin before publishing
-  if (this.userId && Roles.userIsInRole(this.userId, "admin")) {
+  if (Roles.userIsInRole(this.userId, "admin")) {
     //Find a specific trainer based on the flow router
     //param passed in as currentTrainerId
     return Meteor.users.find({

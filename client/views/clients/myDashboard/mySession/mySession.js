@@ -15,6 +15,7 @@ Template.mySessionShell.helpers({
     });
   },
   
+  //Get todays date
   todaysDate: function () {
     return new Date().toDateString();
   }

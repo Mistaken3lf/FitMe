@@ -1,6 +1,6 @@
 Meteor.publish('myWorkout', function () {
   //Make sure the user is logged in and a client before publishing
-  if (this.userId && Roles.userIsInRole(this.userId, "client")) {
+  if (Roles.userIsInRole(this.userId, "client")) {
     //Find my workout in MongoDB
     return ClientWorkout.find({
       whosWorkout: this.userId

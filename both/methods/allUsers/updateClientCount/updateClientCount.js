@@ -1,6 +1,6 @@
 Meteor.methods({
   updateClientCount: function () {
-    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
+    if (Roles.userIsInRole(this.userId, "trainer") || Roles.userIsInRole("admin")) {
       throw new Meteor.Error("not-authorized");
     }
 

@@ -68,7 +68,8 @@ Template.clientScheduleShell.helpers({
     });
     return curClient;
   },
-
+  
+  //Get todays current date
   todaysDate: function () {
     return new Date().toDateString();
   }

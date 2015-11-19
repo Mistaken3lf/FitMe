@@ -16,35 +16,35 @@ Template.clientCardioShell.onRendered(function () {
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   $('#week1to4End').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   $('#week5to8Start').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   $('#week5to8End').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   $('#week9to12Start').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   $('#week9to12End').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",

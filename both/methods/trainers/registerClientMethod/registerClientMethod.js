@@ -2,7 +2,7 @@ Meteor.methods({
   registerClient: function (clientData) {
     //Make sure the user is a trainer and logged in before
     //creating a new client
-    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
+    if (!Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
 

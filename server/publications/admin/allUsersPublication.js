@@ -1,6 +1,6 @@
 Meteor.publish('allUsers', function () {
   //If the user is an admin and logged in
-  if (this.userId && Roles.userIsInRole(this.userId, "admin")) {
+  if (Roles.userIsInRole(this.userId, "admin")) {
     //Find all my users
     return Meteor.users.find();
   }

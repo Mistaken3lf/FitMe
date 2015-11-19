@@ -9,12 +9,15 @@ Template.currentClients.onCreated(function () {
 
 Template.currentClients.events({
   'click .deleteButton': function (event) {
+    //Find client to delete
     var curUser = Meteor.users.findOne({
       _id: this._id
     });
-
+    
+    //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
-
+    
+    //Sweet alert to confirm deletion of client
     swal({
       title: "Are you sure?",
       text: "You will not be able to recover" + " " + curUser.username,
@@ -36,16 +39,19 @@ Template.currentClients.events({
   },
 
   'click .suspendUser': function (event) {
+    //Suspend client clicked on
     Meteor.call("suspendUser", this._id);
   }
 });
 
 Template.currentClients.helpers({
+  //Get all clients for easy search
   trainersIndex: function () {
     return UsersIndex;
   },
   
   clientSearchAttributes: function () {
+    //Placeholder for easy search to search my clients
     return {
       placeholder: "Search For A Client"
     }

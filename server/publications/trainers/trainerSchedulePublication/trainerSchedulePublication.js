@@ -1,5 +1,5 @@
 Meteor.publish('trainerSchedule', function () {
-  if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
+  if (Roles.userIsInRole(this.userId, "trainer")) {
     return Meteor.users.find({
       roles: 'client',
       "userProfile.createdBy": this.userId,

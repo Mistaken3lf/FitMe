@@ -1,13 +1,14 @@
 Template.commandCenter.onCreated(function () {
   var self = this;
 
-  //Subscribe to all trainers
+  //Subscribe to all current users
   self.autorun(function () {
     self.subscribe("allUsers");
   });
 });
 
 Template.commandCenter.helpers({
+  //Total number of trainers 
   totalTrainers: function () {
     totalTrainers = Meteor.users.find({
       roles: 'trainer'
@@ -15,7 +16,8 @@ Template.commandCenter.helpers({
 
     return totalTrainers;
   },
-
+  
+  //Total number of clients
   totalClients: function () {
     totalClients = Meteor.users.find({
       roles: 'client'
@@ -23,7 +25,8 @@ Template.commandCenter.helpers({
 
     return totalClients;
   },
-
+  
+  //Total user count
   totalUsers: function () {
     totalUsers = Meteor.users.find({
       _id: {
@@ -49,12 +52,15 @@ Template.commandCenter.helpers({
 
 Template.commandCenter.events({
   'click .removeTrainer': function (event) {
+    //Find the trainer to remove
     var curUser = Meteor.users.findOne({
       _id: this._id
     });
-
+    
+    //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
-
+    
+    //Sweet alert to confirm the deletion of the trainer
     swal({
       title: "Are you sure?",
       text: "You will not be able to recover" + " " + curUser.username,
@@ -75,6 +81,7 @@ Template.commandCenter.events({
   },
 
   'click .suspendUser': function (event) {
+    //Suspend the trainer clicked on
     Meteor.call("suspendUser", this._id);
   }
 });
