@@ -183,7 +183,11 @@ UsersIndex = new EasySearch.Index({
 
       var userId = options.search.userId;
       selector._id = {
-        $ne: userId
+        $ne: userId,
+      };
+      
+      selector.roles = {
+        $ne: "trainer",
       };
       
       return selector;
