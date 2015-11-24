@@ -100,53 +100,38 @@
         <!--   Pricing Section   -->
         <div class="row">
           <div class="col s12 m4 l4">
-            <div class="card blue darken-1 z-depth-1">
+            <div class="card blue hoverable darken-1 z-depth-1">
               <div class="center-align card-content white-text">
                 <div class="divider"></div>
                 <div class="section">
-                  <h5 class="center-align">MONTHLY</h5>
+                  <h5 class="center-align">15 Clients</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$15/Month</p>
-                  <p class="center-align">50 Clients</p>
+                  <p class="center-align">$10/Month</p>
+                  <p class="center-align">Unlimited Client Data</p>
                   <p class="center-align">Technical Support</p>
                 </div>
                 <div class="divider"></div>
                 <br>
-<<<<<<< HEAD
                 <a class="btn-floating btn-medium waves-effect waves-light white center-align monthly" a href="https://mkt.com/fitme"><i class="material-icons blue-text">add</i></a>
-=======
-                <script src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=NAAF3RQDYMBAE " async="async"
-                    data-amount="20.00"
-                    data-name="Monthly"
-                    data-button="subscribe"
-                    data-period="M"
-                    data-callback="http://www.gofitme.com"
-                ></script>
-                <a class="btn-floating btn-medium waves-effect waves-light white center-align monthly"><i class="material-icons blue-text">add</i></a>
->>>>>>> 93c82a0f4fb8f6215ca00aa8ac9643fef1b11f02
               </div>
             </div>
           </div>
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 93c82a0f4fb8f6215ca00aa8ac9643fef1b11f02
           <!--   Second Card   -->
           <div class="col s12 m4 l4">
-            <div class="card white darken-1 z-depth-5">
+            <div class="card white hoverable darken-1 z-depth-5">
               <div class="center-align card-content blue-text">
                 <div class="divider"></div>
                 <div class="section">
-                  <h5 class="center-align">6 MONTH</h5>
+                  <h5 class="center-align">30 Clients</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$100</p>
-                  <p class="center-align">50 Clients</p>
+                  <p class="center-align">$20/Month</p>
+                  <p class="center-align">Unlimited Client Data</p>
                   <p class="center-align">Technical Support</p>
                 </div>
                 <div class="divider"></div>
@@ -157,16 +142,16 @@
           </div>
           <!--   Third Card   -->
           <div class="col s12 m4 l4">
-            <div class="card blue darken-1 z-depth-1">
+            <div class="card blue hoverable darken-1 z-depth-1">
               <div class="center-align card-content white-text">
                 <div class="divider"></div>
                 <div class="section">
-                  <h5 class="center-align">YEARLY</h5>
+                  <h5 class="center-align">60 Clients</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$200</p>
-                  <p class="center-align">50 Clients</p>
+                  <p class="center-align">$35/Month</p>
+                  <p class="center-align">Unlimited Client Data</p>
                   <p class="center-align">Technical Support</p>
                 </div>
                 <div class="divider"></div>
@@ -179,19 +164,41 @@
       </div>
     </div>
   </section>
-  <!--   Contact Section   -->
-  <section name="contact" class="" style="background-image: url('/home/background4-1.jpg');">
-    <div class="container">
-      <br>
-      <h3 class="header center white-text">We Paved The Way</h3>
-      <div class="divider blue"></div>
-      <div class="divider blue"></div>
-      <div class="row center box">
-        <h5 class="header col s12 light white-text">Let us help you provide the best training experience ever.</h5>
-        <p class="dark white-text">The road to success has never looked so clear.</p>
-      </div>
-      <br>
-    </div>
+  <!--   Slider Section    -->
+  <section id="slider">
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="/home/slider3.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>The Update Corner</h3>
+          <h5 class="light white-text">Here's what is new for trainers and clients.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/home/slider2.jpg"> <!-- change image for every update added -->
+        <div class="caption right-align">
+          <h3>Workout Calender</h3>
+          <h5 class="light grey-text text-lighten-3">Trainers can now edit client calenders</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/home/slider4.jpg"> <!-- cange image for every update added -->
+        <div class="caption right-align">
+          <h3>Cardio Tracking</h3>
+          <h5 class="light grey-text text-lighten-3">You do the running, we do the tracking!</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/home/slider.jpg"> <!-- change image for every update added -->
+        <div class="caption center-align">
+          <h3>Put Update tagline HERE</h3>
+          <h5 class="light grey-text text-lighten-3">Place small description here</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
   </section>
   <!--   contact Section   -->
   <section id="about">
@@ -231,12 +238,26 @@
           </div>
         </div>
         <button class="btn waves-effect waves-light blue" type="submit">Send
-          <i class="material-icons right">send</i>
+        <i class="material-icons right">send</i>
         </button>
         <br>
         <br>
         {{/autoForm}}
       </div>
+    </div>
+  </section>
+  <!--   Banner Section   -->
+  <section name="contact" class="" style="background-image: url('/home/background4-1.jpg');">
+    <div class="container">
+      <br>
+      <h3 class="header center white-text">We Paved The Way</h3>
+      <div class="divider blue"></div>
+      <div class="divider blue"></div>
+      <div class="row center box">
+        <h5 class="header col s12 light white-text">Let us help you provide the best training experience ever.</h5>
+        <p class="dark white-text">The road to success has never looked so clear.</p>
+      </div>
+      <br>
     </div>
   </section>
   <!--       Footer       -->
