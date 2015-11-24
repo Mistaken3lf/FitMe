@@ -92,6 +92,15 @@ header, main, footer {
   header, main, footer {
     padding-left: 0;
   }
+
+  .clickedButton {
+    width: 100%;
+  }
+
+  .dashButtons {
+    margin: auto;
+    padding-bottom: 12px;
+  }
 }
 
 /* Custom layout container so more of the screen is used */
@@ -148,6 +157,15 @@ header, main, footer {
 
 #desktop-menu {
   width: 220px;
+}
+
+.dash {
+  margin-left: 12%;
+}
+
+.dashButtons {
+  margin: auto 100px;
+  padding: auto;
 }
 
 /**********************TRAINERS STYLES*****************************************/
@@ -355,19 +373,19 @@ header, main, footer {
   header, main, footer {
   padding-left: 0px;
 }
-  
+
   .navbar-fixed {
     display: none;
   }
-  
+
   .clickedButton {
     display: none;
   }
-  
+
   #pageHeader {
     display: none;
   }
-  
+
   hr {
     display: none;
   }
