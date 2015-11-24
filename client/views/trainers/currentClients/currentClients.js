@@ -35,13 +35,21 @@ Template.currentClients.events({
     });
   },
 
-  'click .suspendUser': function (event) {
-    Meteor.call("suspendUser", this._id);
+  'click .reactive-table tbody tr': function (event) {
+    event.preventDefault();
+    var client = this;
+    if (event.target.className == "clickedClient blue-text") {
+      FlowRouter.go("/clientDashboard/" + client._id);
+    }
+    
+    if (event.target.className == "suspendClient green-text") {
+      Meteor.call("suspendUser", client._id);
+    }
   }
 });
 
 Template.currentClients.helpers({
-  'users': function () {
+  currentClients: function () {
     //Show all of my clients and dont show my own information
     return Meteor.users.find({
       _id: {
@@ -49,4 +57,27 @@ Template.currentClients.helpers({
       }
     });
   },
+
+  clientFields: function () {
+    return [{
+      key: 'username',
+      label: 'username',
+      cellClass: 'clickedClient blue-text'
+    }, {
+      key: 'userProfile.firstName',
+      label: 'First Name'
+    }, {
+      key: 'userProfile.lastName',
+      label: 'Last Name'
+    }, {
+      key: 'userStatus',
+      label: 'User Status',
+      cellClass: 'suspendClient green-text'
+    }]
+  },
+
+  //Check if the user is currently logging in
+  isLoggingIn: function () {
+    return Meteor.loggingIn();
+  }
 });

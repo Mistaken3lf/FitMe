@@ -16,6 +16,7 @@ Template.navigation.events({
 Template.navigation.onRendered(function () {
   //Make mobile sidebar on left side collapsible
   $('.button-collapse').sideNav({
+    menuWidth: 200,
     edge: 'left',
     closeOnClick: true
   });

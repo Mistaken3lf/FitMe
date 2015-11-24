@@ -1,9 +1,5 @@
 <template name="clientCardio">
-  {{#if Template.subscriptionsReady}}
   {{> clientCardioShell}}
-  {{else}}
-  <p>Loading...</p>
-  {{/if}}
 </template>
 <template name="clientCardioShell">
   <div class="card z-depth-1 grey lighten-4">
@@ -75,7 +71,8 @@
                 <span class="cardioLabel">Start Date:</span>{{> afQuickField name="cardioW14StartDate" type="date" class="datepicker" label=false placeholder="Ex. 1990-05-29"}}
               </div>
             </div>
-                <h6 class="bpmEquation">(MHR - RHR) x %I <br>+ RHR <br>= BPM</h6><br><br>
+            <h6 class="bpmEquation">(MHR - RHR) x %I <br>+ RHR <br>= BPM</h6>
+            <br><br>
             <div class="row">
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ( </div>

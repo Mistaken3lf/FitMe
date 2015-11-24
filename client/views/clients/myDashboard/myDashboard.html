@@ -1,26 +1,29 @@
 <template name="myDashboard">
-  <!--White panel to use as a background-->
-  <div class="card-panel white z-depth-2">
+  {{#if isInRole 'client'}}
+  <div class="row">
+    <img class="responsive-img" id="pageHeader" src="/dashboard/fitMeMyDashboard.png">
+    <hr class="headerSeperator">
+  </div>
+  <div class="dashContainer">
     <div class="row">
-      <img class="responsive-img" id="pageHeader" src="/dashboard/fitMeMyDashboard.png">
-      <hr class="headerSeperator">
-    </div>
-    <div class="dashContainer">
-      <div class="row">
-        <div class="col s12">
-          <ul class="tabs tabMargin">
-            <li class="tab col s3 m3 l3"><a class="blue-text myScheduleTab" href="#session">My Sessions</a></li>
-            <li class="tab col s3 m3 l3"><a class="blue-text myStatsTab" href="#stats">Stats</a></li>
-            <li class="tab col s3 m3 l3"><a class="blue-text myCardioTab" href="#cardio">Cardio</a></li>
-            <li class="tab col s3 m3 l3"><a class="blue-text myWorkoutTab" href="#workout">Workout</a></li>
-          </ul>
-        </div>
-        <div id="session" class="col s12 m12 l12">{{> mySession}}</div>
-        <div id="stats" class="col s12">{{> myStats}}</div>
-        <div id="cardio" class="col s12">{{> myCardio}}</div>
-        <div id="workout" class="col s12">{{> myWorkout}}</div>
+      <div class="col s12">
+        <ul class="tabs tabMargin">
+          <li class="tab col s3 m3 l3"><a class="blue-text myScheduleTab" href="#session">My Sessions</a></li>
+          <li class="tab col s3 m3 l3"><a class="blue-text myStatsTab" href="#stats">Stats</a></li>
+          <li class="tab col s3 m3 l3"><a class="blue-text myCardioTab" href="#cardio">Cardio</a></li>
+          <li class="tab col s3 m3 l3"><a class="blue-text myWorkoutTab" href="#workout">Workout</a></li>
+        </ul>
       </div>
+      <div id="session" class="col s12 m12 l12">{{> mySession}}</div>
+      <div id="stats" class="col s12">{{> myStats}}</div>
+      <div id="cardio" class="col s12">{{> myCardio}}</div>
+      <div id="workout" class="col s12">{{> myWorkout}}</div>
     </div>
   </div>
+  {{else}}
+  {{#if isLoggingIn}}
+  {{> loading}}
+  {{/if}}
+  {{/if}}
   <!--End of white panel-->
 </template>

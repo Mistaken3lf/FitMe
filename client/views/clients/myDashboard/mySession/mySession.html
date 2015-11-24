@@ -1,5 +1,4 @@
 <template name="mySession">
-  {{#if Template.subscriptionsReady}}
   {{#autoForm collection="Meteor.users" id="mySessionForm" doc=thisClient}}
   <div class="card z-depth-1 grey lighten-4">
     <div class="col s12 m12 l12">
@@ -31,7 +30,4 @@
     </div>
   </div>
   {{/autoForm}}
-  {{else}}
-  <p>Loading...</p>
-  {{/if}}
 </template>

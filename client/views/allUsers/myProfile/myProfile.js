@@ -23,4 +23,9 @@ Template.myProfileShell.helpers({
   loggedInUser: function () {
     return Meteor.user();
   },
+
+  //Check if the user is currently logging in
+  isLoggingIn: function() {
+    return Meteor.loggingIn();
+  }
 });
