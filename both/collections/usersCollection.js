@@ -29,12 +29,12 @@ Schema.UserProfile = new SimpleSchema({
   },
 
   paymentDue: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
   birthday: {
-    type: Date,
+    type: String,
     optional: true
   },
 
@@ -88,6 +88,41 @@ Schema.UserProfile = new SimpleSchema({
     type: String,
     optional: true
   },
+
+  mondaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  tuesdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  wednesdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  thursdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  fridaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  saturdaysSchedule: {
+    type: String,
+    optional: true
+  },
+
+  sundaysSchedule: {
+    type: String,
+    optional: true
+  }
 });
 
 Schema.User = new SimpleSchema({
@@ -110,11 +145,6 @@ Schema.User = new SimpleSchema({
   userProfile: {
     type: Schema.UserProfile,
     optional: true
-  },
-
-  sessionDate: {
-    type: Date,
-    optional: true,
   },
 
   clientLimit: {
@@ -141,3 +171,26 @@ Schema.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema.User);
+
+//Create index to search based on the current clients publication
+//and dont select the currently logged in user
+UsersIndex = new EasySearch.Index({
+  collection: Meteor.users,
+  fields: ['username', 'userProfile.firstName', 'userProfile.lastName'],
+  engine: new EasySearch.Minimongo({
+    selector: function (searchObject, options, aggregation) {
+      var selector = this.defaultConfiguration().selector(searchObject, options, aggregation);
+
+      var userId = options.search.userId;
+      selector._id = {
+        $ne: userId,
+      };
+      
+      selector.roles = {
+        $ne: "trainer",
+      };
+      
+      return selector;
+    }
+  })
+});

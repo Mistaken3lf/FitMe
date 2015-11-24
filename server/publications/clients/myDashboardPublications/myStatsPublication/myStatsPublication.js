@@ -1,7 +1,7 @@
 Meteor.publish('myStats', function () {
   //Make sure the user is a client and logged in before publishing
   //their stats
-  if (this.userId && Roles.userIsInRole(this.userId, "client")) {
+  if (Roles.userIsInRole(this.userId, "client")) {
     //Find the logged in clients stats
     return ClientStats.find({
       whosStats: this.userId

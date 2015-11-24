@@ -14,7 +14,6 @@ Template.addTrainerAdmin.events({
       email: $('[name=email]').val(),
     };
 
-
     //Call server method to create the trainer
     Meteor.call("createTrainer", newTrainerData, function (error) {
 
@@ -32,7 +31,7 @@ Template.addTrainerAdmin.events({
 
 Template.addTrainerAdmin.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function() {
+  isLoggingIn: function () {
     return Meteor.loggingIn();
   }
 });

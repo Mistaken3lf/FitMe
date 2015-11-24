@@ -1,0 +1,72 @@
+<template name="trainersProfile">
+  {{#if isInRole "admin"}}
+  <div class="card white">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        {{#autoForm collection="Meteor.users" id="trainersProfileForm" type="method-update" meteormethod="updateTrainersProfile" doc=currentTrainer resetOnSuccess=false autosave=true}}
+        <div class="card white">
+          <div class="black card-title center-align white-text">TRAINER'S PROFILE</div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class="input-field col s12 m6 l6">
+                <span class="black-text myBoldProfileHeading">Username:</span>{{> afQuickField name="username" readonly=true type="text" label=false}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m6 l6">
+                <span class="black-text myBoldProfileHeading">First Name:</span>{{> afQuickField name="userProfile.firstName" type="text" label=false}}
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <span class="black-text myBoldProfileHeading">Last Name:</span>{{> afQuickField name="userProfile.lastName" type="text" label=false}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m6 l6">
+                <span class="black-text myBoldProfileHeading">Birthday:</span>{{> afQuickField name="userProfile.birthday" label=false id="birthday" placeholder="Ex. 1990-05-29"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m3 l3">
+                <span class="black-text myBoldProfileHeading">Address:</span>{{> afQuickField name="userProfile.address" label=false placeholder="1234 FitMe Dr."}}
+              </div>
+              <div class="input-field col s12 m3 l3">
+                <span class="black-text myBoldProfileHeading">City:</span>{{> afQuickField name="userProfile.city" label=false placeholder="FitWorld"}}
+              </div>
+              <div class="input-field col s12 m3 l3">
+                <span class="black-text myBoldProfileHeading">State:</span>{{> afQuickField name="userProfile.state" label=false placeholder="OH"}}
+              </div>
+              <div class="input-field col s12 m3 l3">
+                <span class="black-text myBoldProfileHeading">Zip:</span>{{> afQuickField name="userProfile.zip" label=false placeholder="12345"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m4 l4">
+                <span class="black-text myBoldProfileHeading">Home Phone:</span>{{> afQuickField name="userProfile.homePhone" label=false placeholder="Ex. 123-456-7890"}}
+              </div>
+              <div class="input-field col s12 m4 l4">
+                <span class="black-text myBoldProfileHeading">Work Phone:</span>{{> afQuickField name="userProfile.workPhone" label=false placeholder="Ex. 123-456-7890"}}
+              </div>
+              <div class="input-field col s12 m4 l4">
+                <span class="black-text myBoldProfileHeading">Emergency Contact #:</span>{{> afQuickField name="userProfile.emergencyContact" label=false placeholder="Ex. 123-456-7890"}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m6 l6">
+                <span class="black-text myBoldProfileHeading">Email:</span>{{> afQuickField name="emails.0.address" readonly=true type="text" label=false}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m6 l6">
+                <span class="black-text myBoldProfileHeading">Biography:</span>{{> afQuickField name="userProfile.bio" class="materialize-textarea" rows=6 style="height: 100%;" label=false placeholder="Tell us about yourself"}}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</template>

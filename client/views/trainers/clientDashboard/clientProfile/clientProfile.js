@@ -9,15 +9,12 @@ Template.clientProfile.onCreated(function () {
 });
 
 Template.clientProfileShell.onRendered(function () {
-  //Pop up a datepicker when a date field is selected
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 225,
-    autoclose: true,
-    format: "yyyy-mm-dd",
+  $('#clientBirthday').datetimepicker({
+    timepicker: false,
+    format: "MM/DD/YYYY",
+    startDate: new Date(),
+    scrollInput: false
   });
-
-  $('#datetimepicker').datetimepicker();
 });
 
 Template.clientProfileShell.helpers({
@@ -27,6 +24,7 @@ Template.clientProfileShell.helpers({
     var currentClient = Meteor.users.findOne({
       'userProfile.whosProfile': clientId
     });
+
     return currentClient;
   },
 });

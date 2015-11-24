@@ -3,16 +3,9 @@ Meteor.methods({
   //flow router
   updateClientsStats: function (updatedStats, clientId) {
     //Make sure user is logged in and a trainer before performing the method
-    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
+    if (!Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
-
-    //Check the data against the stats schema on the server to
-    //make sure its valid
-    check(updatedStats, ClientStats.simpleSchema());
-
-    //Check id against server
-    check(clientId, String);
 
     //Update the clients profile with the new info
     ClientStats.update(clientId, updatedStats);

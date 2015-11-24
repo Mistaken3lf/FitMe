@@ -1,6 +1,6 @@
 Meteor.publish('currentClientsProfile', function (currentClientsId) {
   //Make sure the user is logged in and a trainer before publishing
-  if (this.userId && Roles.userIsInRole(this.userId, "trainer")) {
+  if (Roles.userIsInRole(this.userId, "trainer")) {
     //Check that the id is valid against the server
     check(currentClientsId, String);
 
@@ -29,6 +29,13 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
         "userProfile.whosProfile": 1,
         "userProfile.sessionsRemaining": 1,
         "userProfile.paymentDue": 1,
+        "userProfile.mondaysSchedule": 1,
+        "userProfile.tuesdaysSchedule": 1,
+        "userProfile.wednesdaysSchedule": 1,
+        "userProfile.thursdaysSchedule": 1,
+        "userProfile.fridaysSchedule": 1,
+        "userProfile.saturdaysSchedule": 1,
+        "userProfile.sundaysSchedule": 1,
       }
     });
   }

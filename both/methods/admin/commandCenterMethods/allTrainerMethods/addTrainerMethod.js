@@ -2,12 +2,9 @@ Meteor.methods({
   //Create a new trainer for the admin
   createTrainer: function (newTrainerData) {
     //Make sure user is an admin and logged in before allowing the add
-    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "admin")) {
+    if (!Roles.userIsInRole(this.userId, "admin")) {
       throw new Meteor.Error("not-authorized");
     }
-
-    //Prevent them hackers!!!
-    check(newTrainerData, RegisterSchema.register);
 
     //Create the new trainer
     newTrainerId = Accounts.createUser({

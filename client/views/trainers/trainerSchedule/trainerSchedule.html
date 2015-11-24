@@ -1,0 +1,139 @@
+<template name="trainerSchedule">
+  {{#if isInRole 'trainer'}}
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card grey lighten-4">
+        <div class="col s12 m12 l12">
+          <div class="card white z-depth-1">
+            <div class="blue card-title center-align white-text">MY SCHEDULE CARD</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Monday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each mondaysSchedule}}
+                  <li>{{userProfile.mondaysSchedule}} <a href="/clientDashboard/{{_id}}">{{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Tuesday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each tuesdaysSchedule}}
+                  <li>{{userProfile.tuesdaysSchedule}} <a href="clientDashboard/{{_id}}"> {{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Wednesday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each wednesdaysSchedule}}
+                  <li>{{userProfile.wednesdaysSchedule}} <a href="clientDashboard/{{_id}}">{{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Thursday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each thursdaysSchedule}}
+                  <li>{{userProfile.thursdaysSchedule}} <a href="clientDashboard/{{_id}}">{{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Friday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each fridaysSchedule}}
+                  <li>{{userProfile.fridaysSchedule}} <a href="clientDashboard/{{_id}}">{{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Saturday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each saturdaysSchedule}}
+                  <li>{{userProfile.saturdaysSchedule}} <a href="clientDashboard/{{_id}}">{{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <div class="card white">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <h4 class="center">Sunday</h4>
+                  {{#if Template.subscriptionsReady}}
+                  {{#each sundaysSchedule}}
+                  <li>{{userProfile.sundaysSchedule}} <a href="clientDashboard/{{_id}}">{{userProfile.firstName}} {{userProfile.lastName}}</a></li>
+                  {{/each}}
+                  {{else}}
+                  <p>Loading...</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  {{#if isLoggingIn}}
+  {{> loading}}
+  {{/if}}
+  {{/if}}
+</template>

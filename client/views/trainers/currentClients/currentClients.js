@@ -9,12 +9,15 @@ Template.currentClients.onCreated(function () {
 
 Template.currentClients.events({
   'click .deleteButton': function (event) {
+    //Find client to delete
     var curUser = Meteor.users.findOne({
       _id: this._id
     });
-
+    
+    //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
-
+    
+    //Sweet alert to confirm deletion of client
     swal({
       title: "Are you sure?",
       text: "You will not be able to recover" + " " + curUser.username,
@@ -35,49 +38,22 @@ Template.currentClients.events({
     });
   },
 
-  'click .reactive-table tbody tr': function (event) {
-    event.preventDefault();
-    var client = this;
-    if (event.target.className == "clickedClient blue-text") {
-      FlowRouter.go("/clientDashboard/" + client._id);
-    }
-    
-    if (event.target.className == "suspendClient green-text") {
-      Meteor.call("suspendUser", client._id);
-    }
+  'click .suspendUser': function (event) {
+    //Suspend client clicked on
+    Meteor.call("suspendUser", this._id);
   }
 });
 
 Template.currentClients.helpers({
-  currentClients: function () {
-    //Show all of my clients and dont show my own information
-    return Meteor.users.find({
-      _id: {
-        $ne: Meteor.userId()
-      }
-    });
+  //Get all clients for easy search
+  trainersIndex: function () {
+    return UsersIndex;
   },
-
-  clientFields: function () {
-    return [{
-      key: 'username',
-      label: 'username',
-      cellClass: 'clickedClient blue-text'
-    }, {
-      key: 'userProfile.firstName',
-      label: 'First Name'
-    }, {
-      key: 'userProfile.lastName',
-      label: 'Last Name'
-    }, {
-      key: 'userStatus',
-      label: 'User Status',
-      cellClass: 'suspendClient green-text'
-    }]
-  },
-
-  //Check if the user is currently logging in
-  isLoggingIn: function () {
-    return Meteor.loggingIn();
+  
+  clientSearchAttributes: function () {
+    //Placeholder for easy search to search my clients
+    return {
+      placeholder: "Search For A Client"
+    }
   }
 });

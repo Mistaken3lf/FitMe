@@ -3,16 +3,9 @@ Meteor.methods({
   updateClientsWorkout: function (updatedWorkout, clientId) {
     //Make sure the user is logged in and a trainer before performing the
     //method
-    if (!Meteor.userId() && Roles.userIsInRole(this.userId, "trainer")) {
+    if (!Roles.userIsInRole(this.userId, "trainer")) {
       throw new Meteor.Error("not-authorized");
     }
-
-    //Check the data on the server against the workout schema
-    //to make sure its valid
-    check(updatedWorkout, ClientWorkout.simpleSchema());
-
-    //Check id against server
-    check(clientId, String);
 
     //Update the clients workout with the new info
     ClientWorkout.update(clientId, updatedWorkout);

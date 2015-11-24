@@ -1,7 +1,7 @@
 Meteor.publish('myCardio', function () {
   //Make sure the user is a client and logged in before publishing
   //their cardio
-  if (this.userId && Roles.userIsInRole(this.userId, "client")) {
+  if (Roles.userIsInRole(this.userId, "client")) {
     //Find the logged in clients cardio
     return ClientCardio.find({
       whosCardio: this.userId

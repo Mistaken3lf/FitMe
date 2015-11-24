@@ -30,7 +30,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
 
   //Cardio Program Weeks 1 - 4
   cardioW14StartDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -55,7 +55,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
   },
 
   cardioW14EndDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -102,7 +102,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
 
   //Cardio Program Weeks 5 - 8
   cardioW58StartDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -127,7 +127,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
   },
 
   cardioW58EndDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -174,7 +174,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
 
   //Cardio Program Weeks 9 - 12
   cardioW912StartDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 
@@ -199,7 +199,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
   },
 
   cardioW912EndDate: {
-    type: Date,
+    type: String,
     optional: true,
   },
 

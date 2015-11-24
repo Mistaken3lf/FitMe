@@ -2,22 +2,35 @@
   {{#if isInRole 'trainer'}}
   <div class="row">
     <img class="responsive-img" id="pageHeader" src="/dashboard/fitMeClientDashboard.png">
+    <h5 class="center blue-text">{{#with myClient}}{{userProfile.firstName}} {{userProfile.lastName}}{{/with}}</h5>
     <hr class="headerSeperator">
   </div>
   <div class="dashContainer">
     <div class="row">
-      <div class="col s12">
-        <ul class="tabs tabMargin">
-          <li class="tab col s3 m3 l3"><a class="blue-text profileTab" href="#profile">Profile</a></li>
-          <li class="tab col s3 m3 l3"><a class="blue-text statsTab" href="#stats">Stats</a></li>
-          <li class="tab col s3 m3 l3"><a class="blue-text cardioTab" href="#cardio">Cardio</a></li>
-          <li class="tab col s3 m3 l3"><a class="blue-text workoutTab" href="#workout">Workout</a></li>
-        </ul>
+      <div class="col s12 m12 l12">
+        <div class="row">
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientProfile">Profile</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientSchedule">Schedule</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientStats">Stats</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientCardio">Cardio</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue clickedButton" id="clientWorkout">Workout</button>
+          </div>
+        </div>
+        {{#if activeTemplate}}
+        {{> Template.dynamic template=activeTemplate}}
+        {{else}}
+        {{> clientProfile}}
+        {{/if}}
       </div>
-      <div id="profile" class="col s12 m12 l12">{{> clientProfile}}</div>
-      <div id="stats" class="col s12">{{> clientStats}}</div>
-      <div id="cardio" class="col s12">{{> clientCardio}}</div>
-      <div id="workout" class="col s12">{{> clientWorkout}}</div>
     </div>
   </div>
   {{else}}
@@ -25,5 +38,4 @@
   {{> loading}}
   {{/if}}
   {{/if}}
-  <!--End of white panel-->
 </template>
