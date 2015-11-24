@@ -21,37 +21,7 @@ Template.trainerHome.events({
         FlowRouter.go("/");
       }
     });
-  },
-
-  "click .monthly": function (event) {
-    Meteor.call("updateClientCount", function (error) {
-      if (error) {
-        Bert.alert(error.reason, "danger", "growl-top-right");
-      } else {
-        Bert.alert("Thank you for choosing FitMe :)", "success", "growl-top-right");
-      }
-    });
-  },
-
-  "click .sixMonth": function (event) {
-    Meteor.call("updateClientCount", function (error) {
-      if (error) {
-        Bert.alert(error.reason, "danger", "growl-top-right");
-      } else {
-        Bert.alert("Thank you for choosing FitMe :)", "success", "growl-top-right");
-      }
-    });
-  },
-
-  "click .yearly": function (event) {
-    Meteor.call("updateClientCount", function (error) {
-      if (error) {
-        Bert.alert(error.reason, "danger", "growl-top-right");
-      } else {
-        Bert.alert("Thank you for choosing FitMe :)", "success", "growl-top-right");
-      }
-    });
-  },
+  }
 });
 
 Template.trainerHome.helpers({
