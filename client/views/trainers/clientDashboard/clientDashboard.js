@@ -23,7 +23,7 @@ Template.clientDashboard.helpers({
   myClient: function () {
     var clientId = FlowRouter.getParam('_id');
     var myClient = Meteor.users.findOne({
-      'userProfile.whosProfile': clientId
+      whosProfile: clientId
     });
     return myClient;
   },

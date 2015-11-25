@@ -1,17 +1,19 @@
 Meteor.publish('trainersClients', function (currentTrainerId) {
-  //Make sure the user is logged in and a admin before publishing
+  //Make sure trainers id is valid
+  check(currentTrainerId, String);
+  
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find a specific trainer based on the flow router
     //param passed in as currentTrainerId
     return Meteor.users.find({
       roles: 'client',
-      "userProfile.createdBy": currentTrainerId,
+      createdBy: currentTrainerId,
     }, {
       fields: {
         username: 1,
         sessionDate: 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1,
+        firstName: 1,
+        lastName: 1,
         userStatus: 1,
       }
     });

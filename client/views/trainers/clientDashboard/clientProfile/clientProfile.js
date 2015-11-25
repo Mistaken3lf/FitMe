@@ -22,7 +22,7 @@ Template.clientProfileShell.helpers({
   currentClient: function () {
     var clientId = FlowRouter.getParam('_id');
     var currentClient = Meteor.users.findOne({
-      'userProfile.whosProfile': clientId
+      whosProfile: clientId
     });
 
     return currentClient;

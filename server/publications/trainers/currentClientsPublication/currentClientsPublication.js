@@ -1,17 +1,16 @@
 Meteor.publish('currentClients', function () {
-  //Make sure the user is a trainer and logged in before publishing
   if (Roles.userIsInRole(this.userId, "trainer")) {
     //Find all clients that the logged in user has created and that belongs
     //to them.
     return Meteor.users.find({
       roles: 'client',
-      "userProfile.createdBy": this.userId,
+      createdBy: this.userId,
     }, {
       fields: {
         username: 1,
         sessionDate: 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1,
+        firstName: 1,
+        lastName: 1,
         userStatus: 1,
       }
     });

@@ -2,20 +2,20 @@ Meteor.publish('trainerSchedule', function () {
   if (Roles.userIsInRole(this.userId, "trainer")) {
     return Meteor.users.find({
       roles: 'client',
-      "userProfile.createdBy": this.userId,
+      createdBy: this.userId,
     }, {
       fields: {
         username: 1,
         sessionDate: 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1,
-        "userProfile.mondaysSchedule": 1,
-        "userProfile.tuesdaysSchedule": 1,
-        "userProfile.wednesdaysSchedule": 1,
-        "userProfile.thursdaysSchedule": 1,
-        "userProfile.fridaysSchedule": 1,
-        "userProfile.saturdaysSchedule": 1,
-        "userProfile.sundaysSchedule": 1,
+        firstName: 1,
+        lastName: 1,
+        mondaysSchedule: 1,
+        tuesdaysSchedule: 1,
+        wednesdaysSchedule: 1,
+        thursdaysSchedule: 1,
+        fridaysSchedule: 1,
+        saturdaysSchedule: 1,
+        sundaysSchedule: 1,
         userStatus: 1,
       }
     });

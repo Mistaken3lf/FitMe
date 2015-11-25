@@ -1,4 +1,7 @@
 Meteor.publish('trainersProfile', function (trainerId) {
+  //Make sure trainers id is real
+  check(trainerId, String);
+  
   //If the user is logged in then publish their fields
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find the logged in user
@@ -8,28 +11,27 @@ Meteor.publish('trainersProfile', function (trainerId) {
       fields: {
         username: 1,
         "emails.address": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1,
-        "userProfile.birthday": 1,
-        "userProfile.address": 1,
-        "userProfile.city": 1,
-        "userProfile.state": 1,
-        "userProfile.zip": 1,
-        "userProfile.homePhone": 1,
-        "userProfile.workPhone": 1,
-        "userProfile.emergencyContact": 1,
-        "userProfile.bio": 1,
-        "userProfile.whosProfile": 1,
-        sessionDate: 1,
-        "userProfile.sessionsRemaining": 1,
-        "userProfile.paymentDue": 1,
-        "userProfile.mondaysSchedule": 1,
-        "userProfile.tuesdaysSchedule": 1,
-        "userProfile.wednesdaysSchedule": 1,
-        "userProfile.thursdaysSchedule": 1,
-        "userProfile.fridaysSchedule": 1,
-        "userProfile.saturdaysSchedule": 1,
-        "userProfile.sundaysSchedule": 1,
+        firstName: 1,
+        lastName: 1,
+        birthday: 1,
+        address: 1,
+        city: 1,
+        state: 1,
+        zip: 1,
+        homePhone: 1,
+        workPhone: 1,
+        emergencyContact: 1,
+        bio: 1,
+        whosProfile: 1,
+        sessionsRemaining: 1,
+        paymentDue: 1,
+        mondaysSchedule: 1,
+        tuesdaysSchedule: 1,
+        wednesdaysSchedule: 1,
+        thursdaysSchedule: 1,
+        fridaysSchedule: 1,
+        saturdaysSchedule: 1,
+        sundaysSchedule: 1,
       }
     });
   }

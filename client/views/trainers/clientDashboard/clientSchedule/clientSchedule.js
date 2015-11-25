@@ -64,7 +64,7 @@ Template.clientScheduleShell.helpers({
   curClient: function () {
     var clientId = FlowRouter.getParam('_id');
     var curClient = Meteor.users.findOne({
-      'userProfile.whosProfile': clientId
+      whosProfile: clientId
     });
     return curClient;
   },

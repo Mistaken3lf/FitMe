@@ -1,41 +1,40 @@
 Meteor.publish('currentClientsProfile', function (currentClientsId) {
-  //Make sure the user is logged in and a trainer before publishing
-  if (Roles.userIsInRole(this.userId, "trainer")) {
-    //Check that the id is valid against the server
-    check(currentClientsId, String);
+  //Check that the id is valid against the server
+  check(currentClientsId, String);
 
+  if (Roles.userIsInRole(this.userId, "trainer")) {
     //Publish a specific clients profile based on the flow router url param
     //currentClientsId.
     return Meteor.users.find({
       roles: 'client',
-      "userProfile.whosProfile": currentClientsId
+      whosProfile: currentClientsId
     }, {
       fields: {
         username: 1,
         sessionDate: 1,
         "emails.address": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1,
-        "userProfile.birthday": 1,
-        "userProfile.address": 1,
-        "userProfile.city": 1,
-        "userProfile.state": 1,
-        "userProfile.zip": 1,
-        "userProfile.homePhone": 1,
-        "userProfile.workPhone": 1,
-        "userProfile.emergencyContact": 1,
-        "userProfile.bio": 1,
-        "userProfile.fitnessGoals": 1,
-        "userProfile.whosProfile": 1,
-        "userProfile.sessionsRemaining": 1,
-        "userProfile.paymentDue": 1,
-        "userProfile.mondaysSchedule": 1,
-        "userProfile.tuesdaysSchedule": 1,
-        "userProfile.wednesdaysSchedule": 1,
-        "userProfile.thursdaysSchedule": 1,
-        "userProfile.fridaysSchedule": 1,
-        "userProfile.saturdaysSchedule": 1,
-        "userProfile.sundaysSchedule": 1,
+        firstName: 1,
+        lastName: 1,
+        birthday: 1,
+        address: 1,
+        city: 1,
+        state: 1,
+        zip: 1,
+        homePhone: 1,
+        workPhone: 1,
+        emergencyContact: 1,
+        bio: 1,
+        fitnessGoals: 1,
+        whosProfile: 1,
+        sessionsRemaining: 1,
+        paymentDue: 1,
+        mondaysSchedule: 1,
+        tuesdaysSchedule: 1,
+        wednesdaysSchedule: 1,
+        thursdaysSchedule: 1,
+        fridaysSchedule: 1,
+        saturdaysSchedule: 1,
+        sundaysSchedule: 1,
       }
     });
   }

@@ -9,135 +9,135 @@ Template.trainerSchedule.onCreated(function () {
 
 Template.trainerSchedule.helpers({
   //Get trainers schedule for monday
-  mondaysSchedule: function () {
+  thisMondaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.mondaysSchedule': {
+      mondaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.mondaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        mondaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.mondaysSchedule": 1
+        mondaysSchedule: 1
       }
 
     });
   },
-  
+
   //Get trainers schedule for tuesday
-  tuesdaysSchedule: function () {
+  thisTuesdaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.tuesdaysSchedule': {
+      tuesdaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.tuesdaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        tuesdaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.tuesdaysSchedule": 1
+        tuesdaysSchedule: 1
       }
     });
   },
-  
+
   //Get trainers schedule for wednesday
-  wednesdaysSchedule: function () {
+  thisWednesdaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.wednesdaysSchedule': {
+      wednesdaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.wednesdaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        wednesdaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.wednesdaysSchedule": 1
+        wednesdaysSchedule: 1
       }
     });
   },
-  
+
   //Get trainers schedule for thursday
-  thursdaysSchedule: function () {
+  thisThursdaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.thursdaysSchedule': {
+      thursdaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.thursdaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        thursdaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.thursdaysSchedule": 1
+        thursdaysSchedule: 1
       }
     });
   },
-  
+
   //Get trainers schedule for friday
-  fridaysSchedule: function () {
+  thisFridaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.fridaysSchedule': {
+      fridaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.fridaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        fridaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.fridaysSchedule": 1
+        fridaysSchedule: 1
       }
     });
   },
-  
+
   //Get trainers schedule for saturday
-  saturdaysSchedule: function () {
+  thisSaturdaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.saturdaysSchedule': {
+      saturdaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.saturdaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        saturdaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.saturdaysSchedule": 1
+        saturdaysSchedule: 1
       }
     });
   },
-  
+
   //Get trainers schedule for sunday
-  sundaysSchedule: function () {
+  thisSundaysSchedule: function () {
     return Meteor.users.find({
-      'userProfile.sundaysSchedule': {
+      sundaysSchedule: {
         $exists: true
       }
     }, {
       fields: {
         username: 1,
-        "userProfile.sundaysSchedule": 1,
-        "userProfile.firstName": 1,
-        "userProfile.lastName": 1
+        sundaysSchedule: 1,
+        firstName: 1,
+        lastName: 1
       },
       sort: {
-        "userProfile.sundaysSchedule": 1
+        sundaysSchedule: 1
       }
     });
   },

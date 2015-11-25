@@ -1,5 +1,7 @@
 Meteor.publish('currentClientsStats', function (currentClientsId) {
-  //Make sure the user is logged in and a trainer before publishing
+  //Check that the id is valid against the server
+  check(currentClientsId, String);
+
   if (Roles.userIsInRole(this.userId, "trainer")) {
     //Check that the id is valid against the server
     check(currentClientsId, String);
