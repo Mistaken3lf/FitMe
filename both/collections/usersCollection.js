@@ -12,12 +12,12 @@ Schema.User = new SimpleSchema({
     // but if you use only accounts-password, then it can be required
     optional: false
   },
-  
+
   "emails.$.address": {
     type: String,
     regEx: SimpleSchema.RegEx.Email
   },
-  
+
   firstName: {
     type: String,
     regEx: /^[a-zA-Z-]{2,25}$/,
@@ -28,26 +28,6 @@ Schema.User = new SimpleSchema({
     type: String,
     regEx: /^[a-zA-Z]{2,25}$/,
     optional: true
-  },
-
-  createdBy: {
-    type: String,
-    optional: true
-  },
-
-  whosProfile: {
-    type: String,
-    optional: true,
-  },
-
-  sessionsRemaining: {
-    type: Number,
-    optional: true,
-  },
-
-  paymentDue: {
-    type: String,
-    optional: true,
   },
 
   birthday: {
@@ -141,14 +121,60 @@ Schema.User = new SimpleSchema({
     optional: true
   },
 
+  userStatus: {
+    type: String,
+    optional: true,
+  },
+
+  createdBy: {
+    type: String,
+    optional: true
+  },
+
+  whosProfile: {
+    type: String,
+    optional: true,
+  },
+
+  sessionsRemaining: {
+    type: Number,
+    optional: true,
+  },
+
+  paymentDue: {
+    type: String,
+    optional: true,
+  },
+
+  planType: {
+    type: String,
+    optional: true,
+  },
+
+  datePurchased: {
+    type: String,
+    optional: true,
+  },
+
+  expiresOn: {
+    type: String,
+    optional: true,
+  },
+
   clientLimit: {
     type: Number,
     optional: true,
   },
 
-  userStatus: {
+  lastLogin: {
     type: String,
     optional: true,
+  },
+
+  status: {
+    type: Object,
+    optional: true,
+    blackbox: true
   },
 
   services: {
@@ -179,11 +205,11 @@ UsersIndex = new EasySearch.Index({
       selector._id = {
         $ne: userId,
       };
-      
+
       selector.roles = {
         $ne: "trainer",
       };
-      
+
       return selector;
     }
   })

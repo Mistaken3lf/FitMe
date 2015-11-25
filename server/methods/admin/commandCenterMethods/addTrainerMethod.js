@@ -17,6 +17,7 @@ Meteor.methods({
           lastName: newTrainerData.lastName,
           clientLimit: 1,
           userStatus: "active",
+          planType: "Free",
         }
       });
 

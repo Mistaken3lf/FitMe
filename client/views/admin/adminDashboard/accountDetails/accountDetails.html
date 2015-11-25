@@ -1,0 +1,75 @@
+<template name="accountDetails">
+   <div class="card white">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card">
+          <div class="black card-title center-align white-text">ACCOUNT SETTINGS</div>
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="row">
+              {{#if Template.subscriptionsReady}}
+              <div class="col s12 m12 l12">
+                <!--ACCOUNT TABLE-->
+                <table class="responsive-table">
+                  <thead>
+                    <tr>
+                      <th>Plan Type</th>
+                      <th>Date Purchased</th>
+                      <th>Expires</th>
+                      <th>Client Limit</th>
+                      <th>Last Login</th>
+                      <th>Email Inactive</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{accountSetting.planType}}</td>
+                      <td>{{accountSetting.datePurchased}}</td>
+                      <td>{{accountSetting.expiresOn}}</td>
+                      <td>{{accountSetting.clientLimit}}</td>
+                      <td>{{formatDate accountSetting.status.lastLogin.date}}</td>
+                      <td>
+                        <button class="btn-floating amber waves-effect emailInactive"><i class="material-icons">https</i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!--End of account table-->
+              </div>
+              {{else}} 
+              {{> loading}} 
+              {{/if}}
+            </div>
+            <br><br>
+            <h3 class="center">PLANS</h3>
+            <div class="row center">
+              <div class="col s12 m4 l4">
+                <button class="btn green waves-effect monthlyPlan">Monthly Plan</button>
+              </div>
+              <div class="col s12 m4 l4">
+                <button class="btn green waves-effect sixMonthPlan">Six Month Plan</button>
+              </div>
+              <div class="col s12 m4 l4">
+                <button class="btn green waves-effect yearlyPlan">Yearly Plan</button>
+              </div>
+            </div>
+            <br><br>
+            <h3 class="center">EXTRAS</h3>
+            <div class="row center">
+              <div class="col s12 m4 l4">
+                <button class="btn green waves-effect fiveAdditionalClients">5 Additional Clients</button>
+              </div>
+              <div class="col s12 m4 l4">
+                <button class="btn green waves-effect tenAdditionalClients">10 Additional Clients</button>
+              </div>
+              <div class="col s12 m4 l4">
+                <button class="btn green waves-effect twentyAdditionalClients">20 Additional Clients</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
