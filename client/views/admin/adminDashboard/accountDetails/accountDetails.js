@@ -119,4 +119,15 @@ Template.accountDetails.events({
       }
     });
   },
+  
+  'click .emailInactive': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("sendInactiveEmail", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("Warning Email Sent", 'success', 'growl-top-right');
+      }
+    });
+  }
 });
