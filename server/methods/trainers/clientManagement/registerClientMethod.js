@@ -10,7 +10,7 @@ Meteor.methods({
 
       //Get the count of total clients they have
       var currentClientCount = Meteor.users.find({
-        "userProfile.createdBy": this.userId
+        createdBy: this.userId
       }).count();
 
       if (currentTrainer.clientLimit > currentClientCount) {
