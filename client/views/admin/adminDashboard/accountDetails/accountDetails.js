@@ -15,7 +15,7 @@ Template.accountDetails.helpers({
       _id: trainerId
     });
   },
-  
+
   formatDate: function (loginDate) {
     return loginDate.toDateString();
   }
@@ -31,5 +31,60 @@ Template.accountDetails.events({
         Bert.alert("Monthly Plan Started", 'success', 'growl-top-right');
       }
     });
-  }
+  },
+
+  'click .sixMonthPlan': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("sixMonthPlan", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("Six Month Plan Started", 'success', 'growl-top-right');
+      }
+    });
+  },
+  
+  'click .yearlyPlan': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("yearlyPlan", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("Yearly Plan Started", 'success', 'growl-top-right');
+      }
+    });
+  },
+  
+  'click .fiveAdditionalClients': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("fiveAdditionalClients", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("5 Additional Clients Added", 'success', 'growl-top-right');
+      }
+    });
+  },
+  
+  'click .tenAdditionalClients': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("tenAdditionalClients", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("10 Additional Clients Added", 'success', 'growl-top-right');
+      }
+    });
+  },
+  
+  'click .twentyAdditionalClients': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("twentyAdditionalClients", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("20 Additional Clients Added", 'success', 'growl-top-right');
+      }
+    });
+  },
 });
