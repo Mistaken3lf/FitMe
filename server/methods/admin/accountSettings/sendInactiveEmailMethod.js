@@ -2,7 +2,7 @@ Meteor.methods({
   sendInactiveEmail: function (trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       var trainer = Meteor.users.findOne({_id: trainerId})
-      var emailAddr = trainer.emails.address;
+      var emailAddr = trainer.emails[0].address;
       
       this.unblock();
       
