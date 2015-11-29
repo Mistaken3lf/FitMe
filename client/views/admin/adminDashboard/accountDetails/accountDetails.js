@@ -90,36 +90,32 @@ Template.accountDetails.events({
 
   'click .resetAccount': function (event) {
     var trainerId = FlowRouter.getParam('_id');
-    Meteor.call("resetAccount", trainerId, function (error) {
-      if (error) {
-        Bert.alert(error.reason, 'danger', 'growl-top-right');
-      } else {
-        //Needed for sweet alerts
-        var previousWindowKeyDown = window.onkeydown;
 
-        //Sweet alert to confirm deletion of client
-        swal({
-          title: "Are you sure?",
-          text: "All Clients WILL Be Deleted!!!",
-          type: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#DD6B55",
-          confirmButtonText: "Yes, reset account!",
-          closeOnConfirm: false
-        }, function (isConfirm) {
-          window.onkeydown = previousWindowKeyDown;
-          if (isConfirm) {
-            swal('Reset!', 'Account has been reset.', 'success');
-            //Call server function to delete the client clicked on
-            Meteor.call("removeAllClients", trainerId);
-          } else {
-            swal('Cancelled', 'Account is safe now :)', 'error');
-          }
-        });
+    //Needed for sweet alerts
+    var previousWindowKeyDown = window.onkeydown;
+
+    //Sweet alert to confirm deletion of client
+    swal({
+      title: "Are you sure?",
+      text: "All Clients WILL Be Deleted!!!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, reset account!",
+      closeOnConfirm: false
+    }, function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+      if (isConfirm) {
+        swal('Reset!', 'Account has been reset.', 'success');
+        //Call server function to delete the client clicked on
+        Meteor.call("resetAccount", trainerId);
+      } else {
+        swal('Cancelled', 'Account is safe now :)', 'error');
       }
     });
+
   },
-  
+
   'click .emailInactive': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("sendInactiveEmail", trainerId, function (error) {
