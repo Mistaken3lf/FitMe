@@ -37,9 +37,12 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Monday</h4>
-                {{> afQuickField name="mondaysSchedule" id="mondaysSchedule" label=false}}
+              <h4 class="center">Monday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="mondaysScheduleStart" id="mondaysScheduleStart" label=false}}
+              </div>
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="mondaysScheduleEnd" id="mondaysScheduleEnd" label=false}}
               </div>
             </div>
           </div>
@@ -47,31 +50,12 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Tuesday</h4>
-                {{> afQuickField name="tuesdaysSchedule" id="tuesdaysSchedule" label=false}}
+              <h4 class="center">Tuesday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="tuesdaysScheduleStart" id="tuesdaysScheduleStart" label=false}}
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Wednesday</h4>
-                {{> afQuickField name="wednesdaysSchedule" id="wednesdaysSchedule" label=false}}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Thursday</h4>
-                {{> afQuickField name="thursdaysSchedule" id="thursdaysSchedule" label=false}}
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="tuesdaysScheduleEnd" id="tuesdaysScheduleEnd" label=false}}
               </div>
             </div>
           </div>
@@ -81,9 +65,12 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Friday</h4>
-                {{> afQuickField name="fridaysSchedule" id="fridaysSchedule" label=false}}
+              <h4 class="center">Wednesday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="wednesdaysScheduleStart" id="wednesdaysScheduleStart" label=false}}
+              </div>
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="wednesdaysScheduleEnd" id="wednesdaysScheduleEnd" label=false}}
               </div>
             </div>
           </div>
@@ -91,9 +78,12 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Saturday</h4>
-                {{> afQuickField name="saturdaysSchedule" id="saturdaysSchedule" label=false}}
+              <h4 class="center">Thursday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="thursdaysScheduleStart" id="thursdaysScheduleStart" label=false}}
+              </div>
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="thursdaysScheduleEnd" id="thursdaysScheduleEnd" label=false}}
               </div>
             </div>
           </div>
@@ -103,9 +93,40 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <div class="col s12 m12 l12">
-                <h4 class="center">Sunday</h4>
-                {{> afQuickField name="sundaysSchedule" id="sundaysSchedule" label=false}}
+              <h4 class="center">Friday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="fridaysScheduleStart" id="fridaysScheduleStart" label=false}}
+              </div>
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="fridaysScheduleEnd" id="fridaysScheduleEnd" label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <h4 class="center">Saturday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="saturdaysScheduleStart" id="saturdaysScheduleStart" label=false}}
+              </div>
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="saturdaysScheduleEnd" id="saturdaysScheduleEnd" label=false}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <h4 class="center">Sunday</h4>
+              <div class="col s12 m6 l6">
+                Start: {{> afQuickField name="sundaysScheduleStart" id="sundaysScheduleStart" label=false}}
+              </div>
+              <div class="col s12 m6 l6">
+                End: {{> afQuickField name="sundaysScheduleEnd" id="sundaysScheduleEnd" label=false}}
               </div>
             </div>
           </div>

@@ -86,37 +86,72 @@ Schema.User = new SimpleSchema({
     optional: true
   },
 
-  mondaysSchedule: {
+  mondaysScheduleStart: {
     type: String,
     optional: true
   },
 
-  tuesdaysSchedule: {
+  tuesdaysScheduleStart: {
     type: String,
     optional: true
   },
 
-  wednesdaysSchedule: {
+  wednesdaysScheduleStart: {
     type: String,
     optional: true
   },
 
-  thursdaysSchedule: {
+  thursdaysScheduleStart: {
     type: String,
     optional: true
   },
 
-  fridaysSchedule: {
+  fridaysScheduleStart: {
     type: String,
     optional: true
   },
 
-  saturdaysSchedule: {
+  saturdaysScheduleStart: {
     type: String,
     optional: true
   },
 
-  sundaysSchedule: {
+  sundaysScheduleStart: {
+    type: String,
+    optional: true
+  },
+  
+   mondaysScheduleEnd: {
+    type: String,
+    optional: true
+  },
+
+  tuesdaysScheduleEnd: {
+    type: String,
+    optional: true
+  },
+
+  wednesdaysScheduleEnd: {
+    type: String,
+    optional: true
+  },
+
+  thursdaysScheduleEnd: {
+    type: String,
+    optional: true
+  },
+
+  fridaysScheduleEnd: {
+    type: String,
+    optional: true
+  },
+
+  saturdaysScheduleEnd: {
+    type: String,
+    optional: true
+  },
+
+  sundaysScheduleEnd: {
     type: String,
     optional: true
   },
