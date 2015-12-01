@@ -50,6 +50,11 @@ Template.currentClients.helpers({
     return UsersIndex;
   },
   
+  //Check if the user is currently logging in
+  isLoggingIn: function () {
+    return Meteor.loggingIn();
+  },
+  
   clientSearchAttributes: function () {
     //Placeholder for easy search to search my clients
     return {

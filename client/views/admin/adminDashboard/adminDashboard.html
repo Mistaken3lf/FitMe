@@ -38,5 +38,11 @@
       </div>
     </div>
   </div>
+  {{else}}
+  {{#if isLoggingIn}}
+  {{> loading}}
+  {{else}}
+  {{> notAuthorized}}
+  {{/if}}
   {{/if}}
 </template>
