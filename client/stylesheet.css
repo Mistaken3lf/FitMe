@@ -159,13 +159,51 @@ header, main, footer {
   width: 220px;
 }
 
-.dash {
-  margin-left: 12%;
+.dashButtonProfile {
+
+  margin-top: 20px;
+  padding: auto;
 }
 
-.dashButtons {
-  margin: auto 100px;
+.dashButtonSchedule {
+margin-left: 6%;
+margin-top: 20px;
+padding: auto;
+}
+
+.dashButtonStats {
+  margin-left: 6%;
   padding: auto;
+  margin-top: 20px;
+}
+
+.dashButtonCardio {
+  margin-left: 6%;
+  padding: auto;
+  margin-top: 20px;
+}
+
+.dashButtonWorkout {
+  margin-left: 6%;
+  padding: auto;
+  margin-top: 20px;
+}
+
+/* Padding for profile picture */
+
+.profilePic {
+  padding: 30px 0px 30px 0px;
+  width: 100px;
+  height: 200px;
+}
+
+.blueLine {
+  padding: 45px 0px 0px 0px;
+}
+
+.dashboardText {
+  font-size: 32px;
+  padding: 40px 0px 0px 0px;
 }
 
 /**********************TRAINERS STYLES*****************************************/
@@ -275,6 +313,11 @@ header, main, footer {
     display: none;
   }
 
+  .mathSymbolsEqual {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
   .bpmEquation {
     display: inline;
     font-size: 13px;
@@ -282,6 +325,45 @@ header, main, footer {
 
   .bpmSmacing {
     margin-top: 25px;
+  }
+
+  .blueLine {
+    display: none;
+  }
+
+  .dashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .dashButtons {
+    margin: auto;
+    padding: auto;
+  }
+
+  .dashButtonProfile {
+    margin: auto;
+    padding: auto;
+  }
+
+  .dashButtonSchedule {
+    margin: auto;
+    padding: auto;
+  }
+
+  .dashButtonStats {
+    margin: auto;
+    padding: auto;
+  }
+
+  .dashButtonCardio {
+    margin: auto;
+    padding: auto;
+  }
+
+  .dashButtonWorkout {
+    margin: auto;
+    padding: auto;
   }
 
 }
@@ -309,7 +391,11 @@ header, main, footer {
 
 .profilePic {
   padding-top: 15px;
+  padding-bottom: 5px;
+  width: auto;
+  height: auto;
 }
+
 
 /* Blue underline to seperate the sessions and profile */
 
@@ -380,6 +466,25 @@ header, main, footer {
 
   .clickedButton {
     display: none;
+  }
+
+  .profilePic {
+    display: none;
+    /*
+    margin: auto auto;
+    padding: 30px 0px 0px 0px;
+    width: 300px;
+    height: 300px;
+    */
+  }
+
+  .blueLine {
+    display: none;
+  }
+
+  .dashboardText {
+    font-size: 32px;
+    padding: 40px 0px 0px 0px;
   }
 
   #pageHeader {

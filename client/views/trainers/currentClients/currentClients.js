@@ -13,10 +13,10 @@ Template.currentClients.events({
     var curUser = Meteor.users.findOne({
       _id: this._id
     });
-    
+
     //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
-    
+
     //Sweet alert to confirm deletion of client
     swal({
       title: "Are you sure?",
@@ -24,16 +24,16 @@ Template.currentClients.events({
       type: "warning",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, remove user!",
+      confirmButtonText: "Yes, remove user",
       closeOnConfirm: false
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        swal('Deleted!', 'Client has been deleted.', 'success');
+        swal('Deleted!', 'Client has been deleted', 'success');
         //Call server function to delete the client clicked on
         Meteor.call("deleteClient", curUser._id);
       } else {
-        swal('Cancelled', 'Your client is safe now :)', 'error');
+        swal('Cancelled', 'Your client is safe now', 'error');
       }
     });
   },
@@ -49,7 +49,7 @@ Template.currentClients.helpers({
   trainersIndex: function () {
     return UsersIndex;
   },
-  
+
   clientSearchAttributes: function () {
     //Placeholder for easy search to search my clients
     return {

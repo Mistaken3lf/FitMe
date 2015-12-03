@@ -48,7 +48,7 @@ Template.addClient.events({
           Bert.alert(result, 'danger', 'growl-top-right');
 
         } else {
-          Bert.alert("Client Added :)", 'success', 'growl-top-right');
+          Bert.alert("Client Added", 'success', 'growl-top-right');
         }
       }
     });
