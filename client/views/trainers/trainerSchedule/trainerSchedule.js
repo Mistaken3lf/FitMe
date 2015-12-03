@@ -8,6 +8,16 @@ Template.trainerSchedule.onCreated(function () {
 });
 
 Template.trainerSchedule.helpers({
+  startOfWeek: function () {
+    let startDay = moment().startOf("week").format("ddd. MMM Do");
+    return startDay;
+  },
+  
+  endOfWeek: function () {
+    let endDay = moment().endOf("week").format("ddd. MMM Do");
+    return endDay;
+  },
+  
   //Get trainers schedule for monday
   thisMondaysSchedule: function () {
     return Meteor.users.find({

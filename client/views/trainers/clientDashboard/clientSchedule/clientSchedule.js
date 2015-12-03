@@ -114,5 +114,15 @@ Template.clientScheduleShell.helpers({
   //Get todays current date
   todaysDate: function () {
     return new Date().toDateString();
+  },
+  
+  startOfWeek: function () {
+    let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
+    return startOfWeek;
+  },
+  
+  endOfWeek: function () {
+    let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
+    return endOfWeek;
   }
 });
