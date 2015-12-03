@@ -97,6 +97,14 @@ header, main, footer {
     width: 100%;
   }
 
+  .myClickedButton {
+    width: 100%;
+  }
+
+  .adminClickedButton {
+    width: 100%;
+  }
+
   .dashButtons {
     margin: auto;
     padding-bottom: 12px;
@@ -159,34 +167,79 @@ header, main, footer {
   width: 220px;
 }
 
-.dashButtonProfile {
-
+.trainerDashButtonProfile {
   margin-top: 20px;
   padding: auto;
 }
 
-.dashButtonSchedule {
+.trainerDashButtonSchedule {
 margin-left: 6%;
 margin-top: 20px;
 padding: auto;
 }
 
-.dashButtonStats {
+.trainerDashButtonStats {
   margin-left: 6%;
-  padding: auto;
   margin-top: 20px;
+  padding: auto;
 }
 
-.dashButtonCardio {
+.trainerDashButtonCardio {
   margin-left: 6%;
-  padding: auto;
   margin-top: 20px;
+  padding: auto;
 }
 
-.dashButtonWorkout {
+.trainerDashButtonWorkout {
   margin-left: 6%;
-  padding: auto;
   margin-top: 20px;
+  padding: auto;
+}
+
+.clientDashButtonMySchedule {
+  margin-top: 20px;
+  padding: auto;
+}
+
+.clientDashButtonStats {
+margin-left: 6%;
+margin-top: 20px;
+padding: auto;
+}
+
+.clientDashButtonCardio {
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
+}
+
+.clientDashButtonWorkout {
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
+}
+
+.clientDashButtonMyTrainer {
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
+}
+
+.adminDashButtonProfile {
+  margin-top: 20px;
+  padding: auto;
+}
+
+.adminDashButtonClients {
+margin-left: 6%;
+margin-top: 20px;
+padding: auto;
+}
+
+.adminDashButtonAccount {
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
 }
 
 /* Padding for profile picture */
@@ -194,16 +247,38 @@ padding: auto;
 .profilePic {
   padding: 30px 0px 30px 0px;
   width: 100px;
-  height: 200px;
+  height: 200 px;
 }
 
 .blueLine {
   padding: 45px 0px 0px 0px;
 }
 
-.dashboardText {
+.trainerViewDashNameText {
   font-size: 32px;
   padding: 40px 0px 0px 0px;
+}
+
+.trainerViewDashboardText {
+  font-size: 30px;
+  padding: 0px 0px 0px 0px;
+}
+
+.clientViewDashboardText {
+  font-size: 32px;
+  padding: 40px 0px 0px 0px;
+  margin-right: 100px;
+}
+
+.trainerSchedule {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.workoutDescription {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 /**********************TRAINERS STYLES*****************************************/
@@ -244,6 +319,11 @@ padding: auto;
 
 .cardioLabel {
   font-weight: bold;
+}
+
+.cardioLabelMHR {
+  font-weight: bold;
+  margin-left: 12px;
 }
 
 /* Placement of math  symbols */
@@ -331,40 +411,125 @@ padding: auto;
     display: none;
   }
 
-  .dashboardText {
+  .trainerViewDashNameText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
   }
 
-  .dashButtons {
-    margin: auto;
-    padding: auto;
+  .trainerViewDashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
   }
 
-  .dashButtonProfile {
-    margin: auto;
-    padding: auto;
+  .clientViewDashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+    margin-right: 0px;
   }
 
-  .dashButtonSchedule {
+  .trainerDashButtonProfile {
     margin: auto;
     padding: auto;
+    margin-bottom: 3px;
   }
 
-  .dashButtonStats {
+  .trainerDashButtonSchedule {
     margin: auto;
     padding: auto;
+    margin-bottom: 3px;
   }
 
-  .dashButtonCardio {
+  .trainerDashButtonStats {
     margin: auto;
     padding: auto;
+    margin-bottom: 3px;
   }
 
-  .dashButtonWorkout {
+  .trainerDashButtonCardio {
     margin: auto;
     padding: auto;
+    margin-bottom: 3px;
   }
+
+  .trainerDashButtonWorkout {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .clientDashButtonMySchedule {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .clientDashButtonStats {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .clientDashButtonCardio {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .clientDashButtonWorkout {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .clientDashButtonMyTrainer {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .adminDashButtonProfile {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .adminDashButtonClients {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .adminDashButtonAccount {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .monthlyPlan {
+    margin-bottom: 3px;
+  }
+
+  .sixMonthPlan {
+    margin-bottom: 3px;
+  }
+
+  .yearlyPlan {
+    margin-bottom: 3px;
+  }
+
+  .fiveAdditionalClients {
+    margin-bottom: 3px;
+  }
+
+  .tenAdditionalClients {
+    margin-bottom: 3px;
+  }
+
+
+  .twentyAdditionalClients {
+    margin-bottom: 3px;
+  }
+
 
 }
 
@@ -465,6 +630,14 @@ padding: auto;
   }
 
   .clickedButton {
+    display: none;
+  }
+
+  .myClickedButton {
+    display: none;
+  }
+
+  .adminClickedButton {
     display: none;
   }
 

@@ -34,7 +34,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <span class="myHeartRateHeading">Max Heart Rate</span>
+                  <h6 class="cardioLabelMHR">Max Heart Rate:</h6>
                 </div>
                 <div class="row equationPadding">
                   <div class="col s12 m1 l1">
@@ -54,6 +54,14 @@
                   </div>
                 </div>
               </div>
+                <div class="col s12 m6 l3">
+                  <div class="card white">
+                    <div class="card-content">
+                      <img src="/dashboard/cardio/fitMeCardioLevels.png" class="responsive-img">
+                    </div>
+                  </div>
+                </div>
+                <!--
               <div class="col s12 m6 l3 myAlign">
                 <div class="row">
                   <div class="cardioLabel">Beginner:  55 - 70% Intenstiy</div>
@@ -65,6 +73,7 @@
                   <div class="cardioLabel">Advanced:  65 - 80% Intenstiy</div>
                 </div>
               </div>
+            -->
             </div>
           </div>
         </div>
@@ -110,7 +119,7 @@
               </div>
               <div class="col s12 m2 l2">
                 <b>{{startBeatsPerMinuteW14}}</b>
-                <label class="black-text center-align" for="BPM">Beats Per Minute</label>
+                <label class="cardioLabel black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <div class="row">
@@ -131,25 +140,28 @@
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ) &nbsp;&nbsp;&nbsp;&nbsp; &#215;</div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndPercentIntensity" type="number" label=false placeholder="% I"}}
+                <label class="black-text" for="BPM">% Intensity</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#43; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW14EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsEqual center-align"> &#61; </div>
               </div>
               <div class="col s12 m2 l2">
                 <b>{{endBeatsPerMinuteW14}}</b>
-                <label class="black-text" for="BPM">Beats Per Minute</label>
+                <label class="cardioLabel black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <br>
@@ -172,6 +184,14 @@
                   </div>
                 </div>
               </div>
+              <div class="col s12 m6 l3 offset-l1">
+                <div class="card white">
+                  <div class="card-content">
+                    <img src="/dashboard/cardio/fitMeCardioKey.png" class="responsive-img">
+                  </div>
+                </div>
+              </div>
+<!--
               <div class="col s12 m3 l3 offset-l2 align">
                 <div class="row">
                   <span class="cardioLabel">MHR = Max Heart Rate</span>
@@ -183,6 +203,7 @@
                   <span class="cardioLabel">% I = % Intenstiy</span>
                 </div>
               </div>
+            -->
             </div>
           </div>
         </div>
@@ -201,31 +222,35 @@
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58StartMaxHeartRate" type="number" label=false placeholder="MHR"}}
+                <label class="black-text" for="BPM">Max HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#8722; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58StartRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ) &nbsp;&nbsp;&nbsp;&nbsp; &#215;</div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58StartPercentIntensity" type="number" label=false placeholder="% I"}}
+                <label class="black-text" for="BPM">% Intensity</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#43; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58StartRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
-                <div class="mathSymbolsCP center-align"> &#61; </div>
+                <div class="mathSymbolsEqual center-align"> &#61; </div>
               </div>
               <div class="col s12 m2 l2">
                 <b>{{startBeatsPerMinuteW58}}</b>
-                <label class="labelAdjust black-text" for="BPM">Beats Per Minute</label>
+                <label class="cardioLabel black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <div class="row">
@@ -239,31 +264,35 @@
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58EndMaxHeartRate" type="number" label=false placeholder="MHR"}}
+                <label class="black-text" for="BPM">Max HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#8722; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ) &nbsp;&nbsp;&nbsp;&nbsp; &#215;</div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58EndPercentIntensity" type="number" label=false placeholder="% I"}}
+                <label class="black-text" for="BPM">% Intensity</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#43; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW58EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
-                <div class="mathSymbolsCP center-align"> &#61; </div>
+                <div class="mathSymbolsEqual center-align"> &#61; </div>
               </div>
               <div class="col s12 m2 l2">
                 <b>{{endBeatsPerMinuteW58}}</b>
-                <label class="black-text" for="BPM">Beats Per Minute</label>
+                <label class="cardioLabel black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <br>
@@ -286,6 +315,14 @@
                   </div>
                 </div>
               </div>
+              <div class="col s12 m6 l3 offset-l1">
+                <div class="card white">
+                  <div class="card-content">
+                    <img src="/dashboard/cardio/fitMeCardioKey.png" class="responsive-img">
+                  </div>
+                </div>
+              </div>
+              <!--
               <div class="col s12 m3 l3 offset-l2 myAlign">
                 <div class="row">
                   <span class="cardioLabel">MHR = Max Heart Rate</span>
@@ -297,6 +334,7 @@
                   <span class="cardioLabel">% I = % Intenstiy</span>
                 </div>
               </div>
+            -->
             </div>
           </div>
         </div>
@@ -315,31 +353,35 @@
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912StartMaxHeartRate" type="number" label=false placeholder="MHR"}}
+                <label class="black-text" for="BPM">Max HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#8722; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912StartRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ) &nbsp;&nbsp;&nbsp;&nbsp; &#215;</div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912StartPercentIntensity" type="number" label=false placeholder="% I"}}
+                <label class="black-text" for="BPM">% Intensity</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#43; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912StartRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
-                <div class="mathSymbolsCP center-align"> &#61; </div>
+                <div class="mathSymbolsEqual center-align"> &#61; </div>
               </div>
               <div class="col s12 m2 l2">
                 <b>{{startBeatsPerMinuteW912}}</b>
-                <label class="labelAdjust black-text" for="BPM">Beats Per Minute</label>
+                <label class="cardioLabel black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <div class="row">
@@ -353,31 +395,35 @@
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912EndMaxHeartRate" type="number" label=false placeholder="MHR"}}
+                <label class="black-text" for="BPM">Max HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#8722; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> ) &nbsp;&nbsp;&nbsp;&nbsp; &#215;</div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912EndPercentIntensity" type="number" label=false placeholder="% I"}}
+                <label class="black-text" for="BPM">% Intensity</label>
               </div>
               <div class="col s1 m1 l1">
                 <div class="mathSymbolsCP center-align"> &#43; </div>
               </div>
               <div class="col s12 m2 l1">
                 {{> afQuickField class="center-align" name="cardioW912EndRestingHeartRate" type="number" label=false placeholder="RHR"}}
+                <label class="black-text" for="BPM">Resting HR</label>
               </div>
               <div class="col s1 m1 l1">
-                <div class="mathSymbolsCP center-align"> &#61; </div>
+                <div class="mathSymbolsEqual center-align"> &#61; </div>
               </div>
               <div class="col s12 m2 l2">
                 <b>{{endBeatsPerMinuteW912}}</b>
-                <label class="black-text" for="BPM">Beats Per Minute</label>
+                <label class="cardioLabel black-text" for="BPM">Beats Per Minute</label>
               </div>
             </div>
             <br>
@@ -400,6 +446,14 @@
                   </div>
                 </div>
               </div>
+              <div class="col s12 m6 l3 offset-l1">
+                <div class="card white">
+                  <div class="card-content">
+                    <img src="/dashboard/cardio/fitMeCardioKey.png" class="responsive-img">
+                  </div>
+                </div>
+              </div>
+              <!--
               <div class="col s12 m3 l3 offset-l2 align">
                 <div class="row">
                   <span class="cardioLabel">MHR = Max Heart Rate</span>
@@ -411,6 +465,7 @@
                   <span class="cardioLabel">% I = % Intenstiy</span>
                 </div>
               </div>
+            -->
             </div>
           </div>
         </div>
