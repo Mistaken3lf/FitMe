@@ -37,6 +37,7 @@ Meteor.publish('myProfile', function () {
         fridaysScheduleEnd: 1,
         saturdaysScheduleEnd: 1,
         sundaysScheduleEnd: 1,
+        createdBy: 1
       }
     });
   }
