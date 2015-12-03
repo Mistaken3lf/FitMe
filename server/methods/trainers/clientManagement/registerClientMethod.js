@@ -66,7 +66,7 @@ Meteor.methods({
           createdBy: Meteor.userId(),
         });
       } else {
-        return "Client limit reached :(";
+        return "Client Limit Reached";
       }
     } else {
       throw new Meteor.Error("not-authorized");

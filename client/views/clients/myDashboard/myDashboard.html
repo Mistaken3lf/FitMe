@@ -1,27 +1,26 @@
 <template name="myDashboard">
   {{#if isInRole 'client'}}
   <div class="row">
-    <img class="responsive-img" id="pageHeader" src="/dashboard/fitMeMyDashboard.png">
-    <hr class="headerSeperator">
+    <div class="col s12 m2 l3 offset-l3">
+      <img class="responsive-img profilePic" src="/dashboard/profile/profilePicture.jpg">
+    </div>
+    <div class="col s12 m2 l1">
+      <img class="responsive-img blueLine" src="/dashboard/profile/blueLine.jpg">
+    </div>
+    <div class="col s12 m2 l3">
+    <h5 class="center blue-text clientViewDashboardText">MY DASHBOARD</h5>
+  </div>
   </div>
   <div class="dashContainer">
     <div class="row">
       <div class="col s12">
         <div class="row">
-          <div class="col s12 m3 l3">
-            <button class="btn blue myClickedButton" id="mySession">My Schedule</button>
-          </div>
-          <div class="col s12 m2 l2">
-            <button class="btn blue myClickedButton" id="myStats">Stats</button>
-          </div>
-          <div class="col s12 m3 l3">
-            <button class="btn blue myClickedButton" id="myCardio">Cardio</button>
-          </div>
-          <div class="col s12 m2 l2">
-            <button class="btn blue myClickedButton" id="myWorkout">Workout</button>
-          </div>
-          <div class="col s12 m2 l2">
-            <button class="btn blue myClickedButton" id="myTrainer">My Trainer</button>
+          <div class="col s12 m3 l12 center">
+            <button class="btn blue myClickedButton clientDashButtonMySchedule" id="mySession">My Schedule</button>
+            <button class="btn blue myClickedButton clientDashButtonStats" id="myStats">Stats</button>
+            <button class="btn blue myClickedButton clientDashButtonCardio" id="myCardio">Cardio</button>
+            <button class="btn blue myClickedButton clientDashButtonWorkout" id="myWorkout">Workout</button>
+            <button class="btn blue myClickedButton clientDashButtonMyTrainer" id="myTrainer">My Trainer</button>
           </div>
         </div>
         {{#if activeTemplate}}
