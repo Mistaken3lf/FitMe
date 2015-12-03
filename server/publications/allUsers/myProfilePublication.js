@@ -23,13 +23,21 @@ Meteor.publish('myProfile', function () {
         sessionDate: 1,
         sessionsRemaining: 1,
         paymentDue: 1,
-        mondaysSchedule: 1,
-        tuesdaysSchedule: 1,
-        wednesdaysSchedule: 1,
-        thursdaysSchedule: 1,
-        fridaysSchedule: 1,
-        saturdaysSchedule: 1,
-        sundaysSchedule: 1,
+        mondaysScheduleStart: 1,
+        tuesdaysScheduleStart: 1,
+        wednesdaysScheduleStart: 1,
+        thursdaysScheduleStart: 1,
+        fridaysScheduleStart: 1,
+        saturdaysScheduleStart: 1,
+        sundaysScheduleStart: 1,
+        mondaysScheduleEnd: 1,
+        tuesdaysScheduleEnd: 1,
+        wednesdaysScheduleEnd: 1,
+        thursdaysScheduleEnd: 1,
+        fridaysScheduleEnd: 1,
+        saturdaysScheduleEnd: 1,
+        sundaysScheduleEnd: 1,
+        createdBy: 1
       }
     });
   }

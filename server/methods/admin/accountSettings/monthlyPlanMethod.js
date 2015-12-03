@@ -1,16 +1,17 @@
 Meteor.methods({
   monthlyPlan: function (trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
-      let today = new Date();
-      
+      let today = moment().format("MM/DD/YYYY");
+      let expires = moment().add(1, "months").endOf('month').format("MM/DD/YYYY");
+
       Meteor.users.update({
         _id: trainerId
       }, {
         $set: {
           clientLimit: 50,
           planType: "Monthly",
-          datePurchased: today.toDateString(),
-          expiresOn: today.toDateString()
+          datePurchased: today,
+          expiresOn: expires
         }
       });
     } else {

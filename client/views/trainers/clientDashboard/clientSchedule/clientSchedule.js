@@ -16,43 +16,85 @@ Template.clientScheduleShell.onRendered(function () {
     scrollInput: false
   });
   
-  $('#mondaysSchedule').datetimepicker({
+  $('#mondaysScheduleStart').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
   });
 
-  $('#tuesdaysSchedule').datetimepicker({
+  $('#tuesdaysScheduleStart').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
   });
 
-  $('#wednesdaysSchedule').datetimepicker({
+  $('#wednesdaysScheduleStart').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
   });
 
-  $('#thursdaysSchedule').datetimepicker({
+  $('#thursdaysScheduleStart').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
   });
 
-  $('#fridaysSchedule').datetimepicker({
+  $('#fridaysScheduleStart').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
   });
 
-  $('#saturdaysSchedule').datetimepicker({
+  $('#saturdaysScheduleStart').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
   });
 
-  $('#sundaysSchedule').datetimepicker({
+  $('#sundaysScheduleStart').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+  
+  $('#mondaysScheduleEnd').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+
+  $('#tuesdaysScheduleEnd').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+
+  $('#wednesdaysScheduleEnd').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+
+  $('#thursdaysScheduleEnd').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+
+  $('#fridaysScheduleEnd').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+
+  $('#saturdaysScheduleEnd').datetimepicker({
+    datepicker: false,
+    format: "h:mm a",
+    scrollInput: false
+  });
+
+  $('#sundaysScheduleEnd').datetimepicker({
     datepicker: false,
     format: "h:mm a",
     scrollInput: false
@@ -72,5 +114,15 @@ Template.clientScheduleShell.helpers({
   //Get todays current date
   todaysDate: function () {
     return new Date().toDateString();
+  },
+  
+  startOfWeek: function () {
+    let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
+    return startOfWeek;
+  },
+  
+  endOfWeek: function () {
+    let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
+    return endOfWeek;
   }
 });

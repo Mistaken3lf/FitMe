@@ -11,14 +11,17 @@
           <div class="col s12 m3 l3">
             <button class="btn blue myClickedButton" id="mySession">My Schedule</button>
           </div>
-          <div class="col s12 m3 l3">
+          <div class="col s12 m2 l2">
             <button class="btn blue myClickedButton" id="myStats">Stats</button>
           </div>
           <div class="col s12 m3 l3">
             <button class="btn blue myClickedButton" id="myCardio">Cardio</button>
           </div>
-          <div class="col s12 m3 l3">
+          <div class="col s12 m2 l2">
             <button class="btn blue myClickedButton" id="myWorkout">Workout</button>
+          </div>
+          <div class="col s12 m2 l2">
+            <button class="btn blue myClickedButton" id="myTrainer">My Trainer</button>
           </div>
         </div>
         {{#if activeTemplate}}
@@ -32,6 +35,8 @@
   {{else}}
   {{#if isLoggingIn}}
   {{> loading}}
+  {{else}}
+  {{> notAuthorized}}
   {{/if}}
   {{/if}}
 </template>

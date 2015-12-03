@@ -2,12 +2,7 @@
   <div class="row">
     <div class="col s12 m12 l12">
       {{#if Template.subscriptionsReady}}
-      {{#if currentUser}}
       {{> myProfileShell}}
-      {{#if isLoggingIn}}
-      {{> loading}}
-      {{/if}}
-      {{/if}}
       {{else}}
       {{> loading}}
       {{/if}}
@@ -15,6 +10,7 @@
   </div>
 </template>
 <template name="myProfileShell">
+  {{#if currentUser}}
   {{#autoForm collection="Meteor.users" id="myProfileForm" type="method-update" meteormethod="updateMyProfile" doc=loggedInUser resetOnSuccess=false autosave=true}}
   <div class="card z-depth-3 grey lighten-4">
     <div class="col s12 m12 l12">
@@ -105,4 +101,8 @@
     </div>
   </div>
   {{/autoForm}}
+</template>
+  {{else}}
+  {{> notAuthorized}}
+  {{/if}}
 </template>

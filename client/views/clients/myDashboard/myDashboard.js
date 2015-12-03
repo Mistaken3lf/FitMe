@@ -15,6 +15,5 @@ Template.myDashboard.events({
     //Set the active template to load on the dashboard for the client
     var clickedButton = event.target.id;
     Session.set("myClickedButton", clickedButton);
-    console.log(clickedButton);
   }
 });

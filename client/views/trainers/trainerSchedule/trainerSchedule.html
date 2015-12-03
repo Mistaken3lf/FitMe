@@ -9,6 +9,9 @@
           </div>
         </div>
         <div class="row">
+          <h5 class="center">Week Of: {{startOfWeek}} - {{endOfWeek}}</h5>
+        </div>
+        <div class="row">
           <div class="col s12 m6 l6">
             <div class="card white">
               <div class="row">
@@ -16,7 +19,7 @@
                   <h4 class="center">Monday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisMondaysSchedule}}
-                  <li>{{mondaysSchedule}} <a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}}</a></li>
+                  <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{mondaysScheduleStart}} <b>End:</b> {{mondaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -32,7 +35,7 @@
                   <h4 class="center">Tuesday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisTuesdaysSchedule}}
-                  <li>{{tuesdaysSchedule}} <a href="clientDashboard/{{_id}}"> {{firstName}} {{lastName}}</a></li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{tuesdaysScheduleStart}} <b>End:</b> {{tuesdaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -50,7 +53,7 @@
                   <h4 class="center">Wednesday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisWednesdaysSchedule}}
-                  <li>{{wednesdaysSchedule}} <a href="clientDashboard/{{_id}}">{{firstName}} {{lastName}}</a></li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{wednesdaysScheduleStart}} <b>End:</b> {{wednesdaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -66,7 +69,7 @@
                   <h4 class="center">Thursday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisThursdaysSchedule}}
-                  <li>{{thursdaysSchedule}} <a href="clientDashboard/{{_id}}">{{firstName}} {{lastName}}</a></li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{thursdaysScheduleStart}} <b>End:</b> {{thursdaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -84,7 +87,7 @@
                   <h4 class="center">Friday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisFridaysSchedule}}
-                  <li>{{fridaysSchedule}} <a href="clientDashboard/{{_id}}">{{firstName}} {{lastName}}</a></li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{fridaysScheduleStart}} <b>End:</b> {{fridaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -100,7 +103,7 @@
                   <h4 class="center">Saturday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisSaturdaysSchedule}}
-                  <li>{{saturdaysSchedule}} <a href="clientDashboard/{{_id}}">{{firstName}} {{lastName}}</a></li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{saturdayScheduleStart}} <b>End:</b> {{saturdaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -118,7 +121,7 @@
                   <h4 class="center">Sunday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisSundaysSchedule}}
-                  <li>{{sundaysSchedule}} <a href="clientDashboard/{{_id}}">{{firstName}} {{lastName}}</a></li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{sundaysScheduleStart}} <b>End:</b> {{sundaysScheduleEnd}}</li>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -134,6 +137,8 @@
   {{else}}
   {{#if isLoggingIn}}
   {{> loading}}
+  {{else}}
+  {{> notAuthorized}}
   {{/if}}
   {{/if}}
 </template>
