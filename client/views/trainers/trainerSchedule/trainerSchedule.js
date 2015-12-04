@@ -11,28 +11,56 @@ Template.trainerSchedule.events({
   "click .removeFromMonday": function () {
     Meteor.call("resetMondaysSchedule", this._id);
   },
+  
+  "click .removeFromMondayMobile": function () {
+    Meteor.call("resetMondaysSchedule", this._id);
+  },
 
   "click .removeFromTuesday": function () {
+    Meteor.call("resetTuesdaysSchedule", this._id);
+  },
+  
+  "click .removeFromTuesdayMobile": function () {
     Meteor.call("resetTuesdaysSchedule", this._id);
   },
 
   "click .removeFromWednesday": function () {
     Meteor.call("resetWednesdaysSchedule", this._id);
   },
+  
+  "click .removeFromWednesdayMobile": function () {
+    Meteor.call("resetWednesdaysSchedule", this._id);
+  },
 
   "click .removeFromThursday": function () {
+    Meteor.call("resetThursdaysSchedule", this._id);
+  },
+  
+  "click .removeFromThursdayMobile": function () {
     Meteor.call("resetThursdaysSchedule", this._id);
   },
 
   "click .removeFromFriday": function () {
     Meteor.call("resetFridaysSchedule", this._id);
   },
+  
+  "click .removeFromFridayMobile": function () {
+    Meteor.call("resetFridaysSchedule", this._id);
+  },
 
   "click .removeFromSaturday": function () {
     Meteor.call("resetSaturdaysSchedule", this._id);
   },
+  
+  "click .removeFromSaturdayMobile": function () {
+    Meteor.call("resetSaturdaysSchedule", this._id);
+  },
 
   "click .removeFromSunday": function () {
+    Meteor.call("resetSundaysSchedule", this._id);
+  },
+  
+  "click .removeFromSundayMobile": function () {
     Meteor.call("resetSundaysSchedule", this._id);
   }
 });
@@ -85,7 +113,7 @@ Template.trainerSchedule.helpers({
         lastName: 1
       },
       sort: {
-        tuesdaysScheduleStart: -1
+        tuesdaysScheduleStart: 1
       }
     });
   },
@@ -105,7 +133,7 @@ Template.trainerSchedule.helpers({
         lastName: 1
       },
       sort: {
-        wednesdaysScheduleStart: -1
+        wednesdaysScheduleStart: 1
       }
     });
   },
@@ -125,7 +153,7 @@ Template.trainerSchedule.helpers({
         lastName: 1
       },
       sort: {
-        thursdaysScheduleStart: -1
+        thursdaysScheduleStart: 1
       }
     });
   },
@@ -145,7 +173,7 @@ Template.trainerSchedule.helpers({
         lastName: 1
       },
       sort: {
-        fridaysScheduleStart: -1
+        fridaysScheduleStart: 1
       }
     });
   },
@@ -165,7 +193,7 @@ Template.trainerSchedule.helpers({
         lastName: 1
       },
       sort: {
-        saturdaysScheduleStart: -1
+        saturdaysScheduleStart: 1
       }
     });
   },
@@ -185,7 +213,7 @@ Template.trainerSchedule.helpers({
         lastName: 1
       },
       sort: {
-        sundaysScheduleStart: -1
+        sundaysScheduleStart: 1
       }
     });
   },

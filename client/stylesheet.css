@@ -242,6 +242,7 @@ padding: auto;
   padding: auto;
 }
 
+
 /* Padding for profile picture */
 
 .profilePic {
@@ -275,10 +276,74 @@ padding: auto;
   padding-right: 15px;
 }
 
+.workoutStartTime {
+  display: inline;
+}
+
+.workoutEndTime {
+  display: inline;
+}
+
 .workoutDescription {
   margin-top: 0px;
   margin-bottom: 15px;
   font-weight: bold;
+}
+
+.removeFromMonday {
+  display: inline;
+}
+
+.removeFromMondayMobile {
+  display: none;
+}
+
+.removeFromTuesday {
+  display: inline;
+}
+
+.removeFromTuesdayMobile {
+  display: none;
+}
+
+.removeFromWednesday {
+  display: inline;
+}
+
+.removeFromWednesdayMobile {
+  display: none;
+}
+
+.removeFromThursday {
+  display: inline;
+}
+
+.removeFromThursdayMobile {
+  display: none;
+}
+
+.removeFromFriday {
+  display: inline;
+}
+
+.removeFromFridayMobile {
+  display: none;
+}
+
+.removeFromSaturday {
+  display: inline;
+}
+
+.removeFromSaturdayMobile {
+  display: none;
+}
+
+.removeFromSunday {
+  display: inline;
+}
+
+.removeFromSundayMobile {
+  display: none;
 }
 
 /**********************TRAINERS STYLES*****************************************/
@@ -529,6 +594,74 @@ padding: auto;
   .twentyAdditionalClients {
     margin-bottom: 3px;
   }
+  
+  .workoutStartTime {
+  display: block;
+}
+
+.workoutEndTime {
+  display: inline;
+}
+
+.removeFromMonday {
+  display: none;
+}
+
+.removeFromMondayMobile {
+  display: inline;
+}
+
+.removeFromTuesday {
+  display: none;
+}
+
+.removeFromTuesdayMobile {
+  display: inline;
+}
+
+.removeFromWednesday {
+  display: none;
+}
+
+.removeFromWednesdayMobile {
+  display: inline;
+}
+
+.removeFromThursday {
+  display: none;
+}
+
+.removeFromThursdayMobile {
+  display: inline;
+}
+
+.removeFromFriday {
+  display: none;
+}
+
+.removeFromFridayMobile {
+  display: inline;
+}
+
+.removeFromSaturday {
+  display: none;
+}
+
+.removeFromSaturdayMobile {
+  display: inline;
+}
+
+.removeFromSunday {
+  display: none;
+}
+
+.removeFromSundayMobile {
+  display: inline;
+}
+
+
+
+
 
 
 }
