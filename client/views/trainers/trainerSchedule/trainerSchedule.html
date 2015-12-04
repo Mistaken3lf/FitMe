@@ -19,8 +19,8 @@
                   <h4 class="center">Monday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisMondaysSchedule}}
-                  <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{mondaysScheduleStart}} <b>End:</b> {{mondaysScheduleEnd}}</li>
-                  <h6 class="workoutDescription">Workout Description: </h6>
+                  <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{mondaysScheduleStart}} <b>End:</b> {{mondaysScheduleEnd}} <span class="removeFromMonday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{mondayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -36,7 +36,8 @@
                   <h4 class="center">Tuesday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisTuesdaysSchedule}}
-                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{tuesdaysScheduleStart}} <b>End:</b> {{tuesdaysScheduleEnd}}</li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{tuesdaysScheduleStart}} <b>End:</b> {{tuesdaysScheduleEnd}}<span class="removeFromTuesday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{tuesdayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -54,7 +55,8 @@
                   <h4 class="center">Wednesday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisWednesdaysSchedule}}
-                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{wednesdaysScheduleStart}} <b>End:</b> {{wednesdaysScheduleEnd}}</li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{wednesdaysScheduleStart}} <b>End:</b> {{wednesdaysScheduleEnd}}<span class="removeFromWednesday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{wednesdayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -70,7 +72,8 @@
                   <h4 class="center">Thursday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisThursdaysSchedule}}
-                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{thursdaysScheduleStart}} <b>End:</b> {{thursdaysScheduleEnd}}</li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{thursdaysScheduleStart}} <b>End:</b> {{thursdaysScheduleEnd}}<span class="removeFromThursday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{thursdayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -88,7 +91,8 @@
                   <h4 class="center">Friday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisFridaysSchedule}}
-                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{fridaysScheduleStart}} <b>End:</b> {{fridaysScheduleEnd}}</li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{fridaysScheduleStart}} <b>End:</b> {{fridaysScheduleEnd}}<span class="removeFromFriday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{fridayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -104,7 +108,8 @@
                   <h4 class="center">Saturday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisSaturdaysSchedule}}
-                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{saturdayScheduleStart}} <b>End:</b> {{saturdaysScheduleEnd}}</li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{saturdayScheduleStart}} <b>End:</b> {{saturdaysScheduleEnd}}<span class="removeFromSaturday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{saturdayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -122,7 +127,8 @@
                   <h4 class="center">Sunday</h4>
                   {{#if Template.subscriptionsReady}}
                   {{#each thisSundaysSchedule}}
-                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{sundaysScheduleStart}} <b>End:</b> {{sundaysScheduleEnd}}</li>
+                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><b>Start:</b> {{sundaysScheduleStart}} <b>End:</b> {{sundaysScheduleEnd}}<span class="removeFromSunday">[x]</span></li>
+                  <div class="workoutDescription">Notes: {{sundayDescription}}</div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>

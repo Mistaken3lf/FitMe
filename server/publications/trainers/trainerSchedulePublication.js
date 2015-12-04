@@ -24,6 +24,13 @@ Meteor.publish('trainerSchedule', function () {
         saturdaysScheduleEnd: 1,
         sundaysScheduleEnd: 1,
         userStatus: 1,
+        mondayDescription: 1,
+        tuesdayDescription: 1,
+        wednesdayDescription: 1,
+        thursdayDescription: 1,
+        fridayDescription: 1,
+        saturdayDescription: 1,
+        sundayDescription: 1
       }
     });
   }

@@ -155,6 +155,41 @@ Schema.User = new SimpleSchema({
     type: String,
     optional: true
   },
+  
+  mondayDescription: {
+    type: String,
+    optional: true
+  },
+  
+  tuesdayDescription: {
+    type: String,
+    optional: true
+  },
+  
+  wednesdayDescription: {
+    type: String,
+    optional: true
+  },
+  
+  thursdayDescription: {
+    type: String,
+    optional: true
+  },
+  
+  fridayDescription: {
+    type: String,
+    optional: true
+  },
+  
+  saturdayDescription: {
+    type: String,
+    optional: true
+  },
+  
+  sundayDescription: {
+    type: String,
+    optional: true
+  },
 
   userStatus: {
     type: String,
