@@ -6,7 +6,6 @@ Meteor.methods({
     if (Meteor.userId()) {
       //Update the users new profile
       Meteor.users.update(myId, myUpdatedProfile);
-      
     } else {
       throw new Meteor.Error("not-authorized");
     }

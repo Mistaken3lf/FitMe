@@ -3,23 +3,29 @@ Meteor.methods({
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      //Remove cardio of the client being deleted
-      ClientCardio.remove({
-        whosCardio: clientId
+      let thisClient = Meteor.users.findOne({
+        _id: clientId
       });
 
-      //Remove stats of the client being deleted
-      ClientStats.remove({
-        whosStats: clientId
-      });
+      if (thisClient.createdBy == this.userId) {
+        //Remove cardio of the client being deleted
+        ClientCardio.remove({
+          whosCardio: clientId
+        });
 
-      //Remove workout of client being deleted
-      ClientWorkout.remove({
-        whosWorkout: clientId
-      });
+        //Remove stats of the client being deleted
+        ClientStats.remove({
+          whosStats: clientId
+        });
 
-      //Delete the client clicked on
-      Meteor.users.remove(clientId);
+        //Remove workout of client being deleted
+        ClientWorkout.remove({
+          whosWorkout: clientId
+        });
+
+        //Delete the client clicked on
+        Meteor.users.remove(clientId);
+      }
     } else {
       throw new Meteor.Error("not-authorized");
     }
