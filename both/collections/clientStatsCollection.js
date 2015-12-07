@@ -447,4 +447,18 @@ ClientStatsSchema.stats = new SimpleSchema({
   //End Of Retest 3 Measurements
 });
 
+//Attach schema to ClientStats
 ClientStats.attachSchema(ClientStatsSchema.stats);
+
+//Dont allow any client side inserts, updates, or removes
+ClientStats.deny({
+  insert() {
+      return true
+    },
+    update() {
+      return true
+    },
+    remove() {
+      return true
+    },
+});

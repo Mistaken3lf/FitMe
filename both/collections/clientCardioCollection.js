@@ -245,4 +245,18 @@ ClientCardioSchema.cardio = new SimpleSchema({
   //End Of Cardio Program Weeks 9 - 12
 });
 
+//Attach schema to ClientCardio
 ClientCardio.attachSchema(ClientCardioSchema.cardio);
+
+//Dont allow any client side inserts, updates, or removes
+ClientCardio.deny({
+  insert() {
+      return true
+    },
+    update() {
+      return true
+    },
+    remove() {
+      return true
+    },
+});

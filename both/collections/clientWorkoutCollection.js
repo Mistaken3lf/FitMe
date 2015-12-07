@@ -749,4 +749,18 @@ ClientWorkoutSchema.workout = new SimpleSchema({
   },
 });
 
+//Attach schema to ClientWorkout
 ClientWorkout.attachSchema(ClientWorkoutSchema.workout);
+
+//Dont allow any client side inserts, updates, or removes
+ClientWorkout.deny({
+  insert() {
+      return true
+    },
+    update() {
+      return true
+    },
+    remove() {
+      return true
+    },
+});

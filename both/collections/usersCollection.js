@@ -262,6 +262,19 @@ Schema.User = new SimpleSchema({
 
 Meteor.users.attachSchema(Schema.User);
 
+//Dont allow any client side inserts, updates, or removes
+Meteor.users.deny({
+  insert() {
+      return true
+    },
+    update() {
+      return true
+    },
+    remove() {
+      return true
+    },
+});
+
 //Create index to search based on the current clients publication
 //and dont select the currently logged in user
 UsersIndex = new EasySearch.Index({
