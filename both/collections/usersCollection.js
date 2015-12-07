@@ -310,6 +310,10 @@ CurrentTrainersIndex = new EasySearch.Index({
         $ne: userId,
       };
       
+      selector.roles = {
+        $ne: "client",
+      };
+      
       return selector;
     }
   })
