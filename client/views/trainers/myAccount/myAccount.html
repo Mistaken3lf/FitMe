@@ -1,0 +1,75 @@
+<template name="myAccount">
+  {{#if isInRole "trainer"}}
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card z-depth-3 grey lighten-4">
+        <div class="col s12 m12 l12">
+          <div class="card white">
+            <div class="blue card-title center-align white-text">MY ACCOUNT</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="card">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <div class="row">
+                    {{#if Template.subscriptionsReady}}
+                    <div class="col s12 m12 l12">
+                      <!--ACCOUNT TABLE-->
+                      <table class="responsive-table">
+                        <thead>
+                          <tr>
+                            <th>Plan Type</th>
+                            <th>Date Purchased</th>
+                            <th>Expires</th>
+                            <th>Client Limit</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{myAccount.planType}}</td>
+                            <td>{{myAccount.datePurchased}}</td>
+                            <td>{{myAccount.expiresOn}}</td>
+                            <td>{{myAccount.clientLimit}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!--End of account table-->
+                    </div>
+                    {{else}} 
+                    {{> loading}}
+                    {{/if}}
+                  </div>
+                  <br>
+                  <br>
+                  <h3 class="center green-text">Change Password</h3>
+                  <div class="row center">
+                    <div class="col s12 m4 l4 offset-l4">
+                      <a href="/changePassword" class="btn green waves-effect">CHANGE PASSWORD</a>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <h3 class="center red-text">DANGER ZONE!!!</h3>
+                  <div class="row center">
+                    <div class="col s12 m4 l4 offset-l4">
+                      <button class="btn red waves-effect deleteAccount">DELETE ACCOUNT!!!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}} 
+  {{#if isLoggingIn}}
+  {{> loading}}
+  {{else}}
+  {{> notAuthorized}} 
+  {{/if}}
+  {{/if}}
+</template>
