@@ -120,8 +120,8 @@ Schema.User = new SimpleSchema({
     type: String,
     optional: true
   },
-  
-   mondaysScheduleEnd: {
+
+  mondaysScheduleEnd: {
     type: String,
     optional: true
   },
@@ -155,37 +155,37 @@ Schema.User = new SimpleSchema({
     type: String,
     optional: true
   },
-  
+
   mondayDescription: {
     type: String,
     optional: true
   },
-  
+
   tuesdayDescription: {
     type: String,
     optional: true
   },
-  
+
   wednesdayDescription: {
     type: String,
     optional: true
   },
-  
+
   thursdayDescription: {
     type: String,
     optional: true
   },
-  
+
   fridayDescription: {
     type: String,
     optional: true
   },
-  
+
   saturdayDescription: {
     type: String,
     optional: true
   },
-  
+
   sundayDescription: {
     type: String,
     optional: true
@@ -279,7 +279,7 @@ Meteor.users.deny({
 //and dont select the currently logged in user
 UsersIndex = new EasySearch.Index({
   collection: Meteor.users,
-  fields: ['username', 'userProfile.firstName', 'userProfile.lastName'],
+  fields: ['username', 'firstName', 'lastName', 'userStatus'],
   engine: new EasySearch.Minimongo({
     selector: function (searchObject, options, aggregation) {
       var selector = this.defaultConfiguration().selector(searchObject, options, aggregation);
@@ -293,6 +293,23 @@ UsersIndex = new EasySearch.Index({
         $ne: "trainer",
       };
 
+      return selector;
+    }
+  })
+});
+
+CurrentTrainersIndex = new EasySearch.Index({
+  collection: Meteor.users,
+  fields: ['username', 'firstName', 'lastName', 'userStatus'],
+  engine: new EasySearch.Minimongo({
+    selector: function (searchObject, options, aggregation) {
+      var selector = this.defaultConfiguration().selector(searchObject, options, aggregation);
+
+      var userId = options.search.userId;
+      selector._id = {
+        $ne: userId,
+      };
+      
       return selector;
     }
   })

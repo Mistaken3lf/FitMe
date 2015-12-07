@@ -48,6 +48,19 @@ Template.commandCenter.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   },
+  
+  //Return all a trainer clients so we can search them
+  //with easy search
+  currentTrainersIndex: function () {
+    return CurrentTrainersIndex;
+  },
+
+  currentTrainersAttributes: function () {
+    //Placeholder for easy search
+    return {
+      placeholder: "Search For A Trainer"
+    }
+  }
 });
 
 Template.commandCenter.events({
