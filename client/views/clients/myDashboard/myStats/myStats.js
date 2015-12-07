@@ -21,7 +21,7 @@ Template.myStatsShell.helpers({
   //Get the clients profile info to display their name in the card title
   thisUser: function () {
     var thisUser = Meteor.users.findOne({
-      'userProfile.whosProfile': Meteor.userId()
+      whosProfile: Meteor.userId()
     });
     return thisUser;
   },
