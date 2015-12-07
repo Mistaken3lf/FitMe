@@ -20,8 +20,11 @@
 
 <template name="mainHome">
   <!--   Header Section   -->
-  <section id="top" class="responsive-img" style="background-image: url('/home/bg-workout.jpg');">
-    <div class="container">
+  <section id="parallax-top">
+    <div class="parallax-container">
+      <div class="parallax"><img src="/home/bg-workout.jpg"></div>
+      <br>
+      <br>
       <br>
       <br>
       <br>
@@ -29,14 +32,14 @@
         <img class="responsive-img logo-img" src="/home/FitMe-text-logo3.png">
       </div>
       <br>
-      <br>
       <div class="row center-align">
         <h5 class="header col s12 light white-text">TRAINING | DEDICATION | RESULTS</h5>
+        <br><br><br>
+      <h5 class="header col s12 light white-text">Sign up for FREE today! The first client is on us.</h5>
       </div>
-      <br>
-      <br>
     </div>
   </section>
+
   <!--   About Section   -->
   <section id="about">
     <div class="container">
@@ -79,9 +82,11 @@
       </div>
     </div>
   </section>
-  <!--   Mid Picture Section   -->
-  <section id="mid" style="background-image: url('/home/background2.jpg');">
-    <div class="container center-align">
+
+<!--   Mid Picture Section   -->
+  <section id="parallax-mid">
+    <div class="parallax-container center-align">
+      <div class="parallax"><img src="/home/keyboard-lax.jpg"></div>
       <br>
       <br>
       <br>
@@ -101,6 +106,59 @@
       <br>
     </div>
   </section>
+  
+  <!--   Preview Section   -->
+  <section id="about">
+    <div class="container">
+      <br>
+      <br>
+      <h1 class="header center blue-text">What's Inside?</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Preview the app and see what FitMe can offer you!</h5>
+      </div>
+      <div class="divider blue"></div>
+      <br>
+      <br>
+    </div>
+  </section>
+  <!--   Slider Section    -->
+  <section id="slider">
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="/home/slider3.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>CLIENT LIST</h3>
+          <h5 class="dark white-text">View and Manage your clients.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/home/slider2.jpg"> <!-- change image for every update added -->
+        <div class="caption right-align">
+          <h3>Workout Schedule</h3>
+          <h5 class="light white-text">Never miss a session.</h5>
+          <h5 class="light grey-text text-lighten-3">Track times and days for each client.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/home/slider4.jpg"> <!-- cange image for every update added -->
+        <div class="caption left-align">
+          <h3>Cardio Tracking</h3>
+          <h5 class="light white-text">You do the running, we do the tracking!</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/home/slider.jpg"> <!-- change image for every update added -->
+        <div class="caption right-align">
+          <h3>WORKOUT</h3>
+          <h5 class="dark white-text">Create and assign your own.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  </section>
+
   <!--   Testimonial Section   -->
   <section id="about">
     <div class="container">
@@ -174,43 +232,49 @@
     </div>
   </section>
 
-  <!--   Contact Section   -->
-  <section name="contact" class="" style="background-image: url('/home/background4-1.jpg');">
-    <div class="container">
-      <br>
-      <h3 class="header center white-text">We Paved The Way</h3>
-      <div class="divider blue"></div>
-      <div class="divider blue"></div>
-      <div class="row center box">
-        <h5 class="header col s12 light white-text">Let us help you provide the best training experience ever.</h5>
-        <p class="dark white-text">The road to success has never looked so clear.</p>
+  <!--   Last Picture Section   -->
+    <section id="parallax-mid">
+      <div class="parallax-container center-align">
+        <div class="parallax"><img src="/home/background4.jpg"></div>
+        <br><br><br><br><br><br><br>
+        <h3 class="header center white-text">We Paved The Way</h3>
+        <div class="container">
+        <div class="divider blue"></div>
+        <div class="divider blue"></div>
       </div>
-      <br>
-    </div>
-  </section>
-    <!--       Footer       -->
-    <footer class="page-footer grey">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <p class="grey-text text-lighten-4"> &lt;div&gt;elop provides the FitMe Web site as a service to the public and users of the application.</p>
-          </div>
-          <div class="footer-copyright">
-            <div class="container center">
-            ©2015 <img class="responsive-img footer-logo" src="/home/FitMe-text-logo3.png"> All rights reserved
-            <a class="orange-text right" href="http://www.divelop.io" target="_blank">A product of &lt;div&gt;elop LLC</a>
-            </div>
-
-          <div class="col l4 offset-l2 s12">
-            <h5 class="blue-text bold">Links</h5>
-            <div class="divider blue"></div>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Terms</a></li>
-            </ul>
-          </div>
+        <div class="row center box">
+          <h5 class="header col s12 light white-text">Let us help you provide the best training experience ever.</h5>
+          <p class="dark white-text">The road to success has never looked so clear.</p>
         </div>
+        <br>
+      </div>
+    </section>
+
+    <!--       Footer       -->
+   <footer class="page-footer grey">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">FitMe</h5>
+          <p class="grey-text text-lighten-4"> &lt;div&gt;elop provides the FitMe Web site as a service to the public and users of the application.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="blue-text bold">Links</h5>
+          <div class="divider blue"></div>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Recent Updates</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center">
+        ©2015
+        <img class="responsive-img footer-logo" src="/home/FitMe-text-logo3.png"> All rights reserved
+        <a class="orange-text right" href="http://www.divelop.io"><b>A product of &lt;div&gt;elop LLC</b></a>
       </div>
     </div>
   </footer>
 </template>
+

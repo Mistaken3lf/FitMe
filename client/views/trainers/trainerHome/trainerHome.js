@@ -1,3 +1,12 @@
+Template.trainerHome.onRendered(function () {
+  //Initialization for the update slider
+  $('.slider').slider({
+    full_width: true
+  });
+
+  $('.parallax').parallax();
+});
+
 Template.trainerHome.events({
   'submit form': function (event) {
     event.preventDefault();
