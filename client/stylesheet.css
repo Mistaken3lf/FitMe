@@ -167,6 +167,18 @@ header, main, footer {
   width: 220px;
 }
 
+.trainerAccountButtonChange {
+  margin-left: 20%;
+  margin-top: 20px;
+  padding: auto;
+}
+
+.trainerAccountButtonRenew {
+  margin-left: 20%;
+  margin-top: 20px;
+  padding: auto;
+}
+
 .trainerDashButtonProfile {
   margin-top: 20px;
   padding: auto;
