@@ -92,7 +92,7 @@ Template.trainerSchedule.helpers({
         mondayDescription: 1
       },
       sort: {
-        mondaysScheduleStart: -1
+        mondaysScheduleStart: 1
       }
 
     });

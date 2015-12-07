@@ -15,88 +15,102 @@ Template.clientScheduleShell.onRendered(function () {
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   $('#mondaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#tuesdaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#wednesdaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#thursdaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#fridaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#saturdaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#sundaysScheduleStart').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
-  
+
   $('#mondaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#tuesdaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#wednesdaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#thursdaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#fridaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#saturdaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 
   $('#sundaysScheduleEnd').datetimepicker({
     datepicker: false,
-    format: "h:mm a",
+    formatTime: 'HH:mm',
+    format: 'HH:mm',
     scrollInput: false
   });
 });
@@ -110,17 +124,17 @@ Template.clientScheduleShell.helpers({
     });
     return curClient;
   },
-  
+
   //Get todays current date
   todaysDate: function () {
     return new Date().toDateString();
   },
-  
+
   startOfWeek: function () {
     let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
     return startOfWeek;
   },
-  
+
   endOfWeek: function () {
     let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
     return endOfWeek;
