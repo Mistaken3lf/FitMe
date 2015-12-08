@@ -14,7 +14,6 @@ Meteor.publish('trainersAccount', function (currentTrainerId) {
         datePurchased: 1,
         expiresOn: 1,
         clientLimit: 1,
-        lastLogin: 1,
         "status.lastLogin": 1,
       }
     });

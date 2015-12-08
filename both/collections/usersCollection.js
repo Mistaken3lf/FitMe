@@ -235,12 +235,7 @@ Schema.User = new SimpleSchema({
     type: Number,
     optional: true,
   },
-
-  lastLogin: {
-    type: String,
-    optional: true,
-  },
-
+  
   status: {
     type: Object,
     optional: true,

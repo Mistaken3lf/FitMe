@@ -8,6 +8,9 @@ Meteor.methods({
         password: newTrainerData.password,
         email: newTrainerData.email,
       });
+      
+      let today = moment().format("MM/DD/YYYY");
+      let expires = moment().add(12, "months").format("MM/DD/YYYY");
 
       //Update the trainers first and last name since they are not default
       //Meteor.user fields
@@ -18,6 +21,8 @@ Meteor.methods({
           clientLimit: 1,
           userStatus: "active",
           planType: "Free",
+          datePurchased: today,
+          expiresOn: expires
         }
       });
 
