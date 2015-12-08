@@ -4,8 +4,14 @@ Meteor.methods({
     //Make sure the user is logged in and a trainer before performing the
     //method
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      //Update the clients workout with the new info
-      ClientWorkout.update(clientId, updatedWorkout);
+      let clientsWorkout = ClientWorkout.findOne({
+        createdBy: this.userId
+      });
+
+      if (clientsWorkout.createdBy == this.userId) {
+        //Update the clients workout with the new info
+        ClientWorkout.update(clientId, updatedWorkout);
+      }
     } else {
       throw new Meteor.Error("not-authorized");
     }
