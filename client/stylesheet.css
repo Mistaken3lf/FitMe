@@ -183,9 +183,9 @@ header, main, footer {
 }
 
 .trainerDashButtonSchedule {
-margin-left: 6%;
-margin-top: 20px;
-padding: auto;
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
 }
 
 .trainerDashButtonStats {
@@ -212,9 +212,9 @@ padding: auto;
 }
 
 .clientDashButtonStats {
-margin-left: 6%;
-margin-top: 20px;
-padding: auto;
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
 }
 
 .clientDashButtonCardio {
@@ -382,6 +382,52 @@ padding: auto;
   padding-bottom: 12px;
 }
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .trainerViewDashNameText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .trainerViewDashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .clientViewDashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+    margin-right: 0px;
+  }
+
+  .trainerDashButtonProfile {
+    margin-top: 20px;
+    padding: auto;
+  }
+
+  .trainerDashButtonSchedule {
+    margin-left: 6%;
+    margin-top: 20px;
+    padding: auto;
+  }
+
+  .trainerDashButtonStats {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .trainerDashButtonCardio {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+
+  .trainerDashButtonWorkout {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 3px;
+  }
+}
 /*Push button all the way to the left on small screens*/
 
 @media only screen and (max-width: 992px) {
@@ -485,7 +531,7 @@ padding: auto;
   .blueLine {
     display: none;
   }
-
+/*
   .trainerViewDashNameText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
@@ -531,7 +577,7 @@ padding: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
+*/
   .clientDashButtonMySchedule {
     margin: auto;
     padding: auto;
