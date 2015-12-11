@@ -4,16 +4,32 @@ Meteor.methods({
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(1, "months").format("MM/DD/YYYY");
 
-      Meteor.users.update({
+      let curTrainer = Meteor.users.findOne({
         _id: trainerId
-      }, {
-        $set: {
-          clientLimit: 50,
-          planType: "Monthly",
-          datePurchased: today,
-          expiresOn: expires
-        }
       });
+
+      if (curTrainer.clientLimit > 50) {
+        Meteor.users.update({
+          _id: trainerId
+        }, {
+          $set: {
+            planType: "Monthly",
+            datePurchased: today,
+            expiresOn: expires
+          }
+        });
+      } else {
+        Meteor.users.update({
+          _id: trainerId
+        }, {
+          $set: {
+            clientLimit: 50,
+            planType: "Monthly",
+            datePurchased: today,
+            expiresOn: expires
+          }
+        });
+      }
     } else {
       throw new Meteor.Error("not-authorized");
     }
