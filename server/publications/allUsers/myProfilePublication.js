@@ -19,6 +19,7 @@ Meteor.publish('myProfile', function () {
         workPhone: 1,
         emergencyContact: 1,
         bio: 1,
+        fitnessGoals: 1,
         whosProfile: 1,
         sessionDate: 1,
         sessionsRemaining: 1,
