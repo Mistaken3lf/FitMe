@@ -21,6 +21,14 @@
                   {{#each thisMondaysSchedule}}
                   <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromMondayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{mondaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{mondaysScheduleEnd}} <span class="removeFromMonday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{mondayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{mondayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -38,6 +46,14 @@
                   {{#each thisTuesdaysSchedule}}
                    <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromTuesdayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{tuesdaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{tuesdaysScheduleEnd}} <span class="removeFromTuesday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{tuesdayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{tuesdayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -57,6 +73,14 @@
                   {{#each thisWednesdaysSchedule}}
                    <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromWednesdayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{wednesdaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{wednesdaysScheduleEnd}} <span class="removeFromWednesday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{wednesdayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{wednesdayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -74,6 +98,14 @@
                   {{#each thisThursdaysSchedule}}
                    <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromThursdayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{thursdaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{thursdaysScheduleEnd}} <span class="removeFromThursday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{thursdayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{thursdayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -93,6 +125,14 @@
                   {{#each thisFridaysSchedule}}
                    <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromFridayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{fridaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{fridaysScheduleEnd}} <span class="removeFromFriday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{fridayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{fridayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -110,6 +150,14 @@
                   {{#each thisSaturdaysSchedule}}
                    <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromSaturdayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{saturdaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{saturdaysScheduleEnd}} <span class="removeFromSaturday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{saturdayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{saturdayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>
@@ -129,6 +177,14 @@
                   {{#each thisSundaysSchedule}}
                    <li><a href="/clientDashboard/{{_id}}">{{firstName}} {{lastName}} </a><span class="removeFromSundayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {{sundaysScheduleStart}}</h6> <h6 class="workoutEndTime"><b>End:</b> {{sundaysScheduleEnd}} <span class="removeFromSunday">[x]</span></h6></li>
                   <div class="workoutDescription">Notes: {{sundayDescription}}</div>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" disabled checked="{{sundayStatus}}">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
                   {{/each}}
                   {{else}}
                   <p>Loading...</p>

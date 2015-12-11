@@ -190,6 +190,41 @@ Schema.User = new SimpleSchema({
     type: String,
     optional: true
   },
+  
+  mondayStatus: {
+    type: Boolean,
+    optional: true
+  },
+  
+  tuesdayStatus: {
+    type: Boolean,
+    optional: true
+  },
+  
+  wednesdayStatus: {
+    type: Boolean,
+    optional: true
+  },
+  
+  thursdayStatus: {
+    type: Boolean,
+    optional: true
+  },
+  
+  fridayStatus: {
+    type: Boolean,
+    optional: true
+  },
+  
+  saturdayStatus: {
+    type: Boolean,
+    optional: true
+  },
+  
+  sundayStatus: {
+    type: Boolean,
+    optional: true
+  },
 
   userStatus: {
     type: String,

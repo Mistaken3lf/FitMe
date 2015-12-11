@@ -30,7 +30,14 @@ Meteor.publish('trainerSchedule', function () {
         thursdayDescription: 1,
         fridayDescription: 1,
         saturdayDescription: 1,
-        sundayDescription: 1
+        sundayDescription: 1,
+        mondayStatus: 1,
+        tuesdayStatus: 1,
+        wednesdayStatus: 1,
+        thursdayStatus: 1,
+        fridayStatus: 1,
+        saturdayStatus: 1,
+        sundayStatus: 1
       }
     });
   }

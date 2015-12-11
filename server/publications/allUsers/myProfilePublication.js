@@ -44,6 +44,7 @@ Meteor.publish('myProfile', function () {
         fridayDescription: 1,
         saturdayDescription: 1,
         sundayDescription: 1,
+        mondayStatus: 1,
         createdBy: 1,
         planType: 1,
         datePurchased: 1,
