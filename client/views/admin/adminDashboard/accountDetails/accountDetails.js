@@ -125,5 +125,16 @@ Template.accountDetails.events({
         Bert.alert("Warning Email Sent", 'success', 'growl-top-right');
       }
     });
+  },
+  
+  'click .twoMonthPromo': function (event) {
+    var trainerId = FlowRouter.getParam('_id');
+    Meteor.call("twoMonthPromo", trainerId, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("2 Month Promo Started", 'success', 'growl-top-right');
+      }
+    });
   }
 });
