@@ -217,7 +217,7 @@ Template.trainerSchedule.helpers({
         sundaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        sundayStaus: 1
+        sundayStatus: 1
       },
       sort: {
         sundaysScheduleStart: 1
