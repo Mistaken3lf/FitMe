@@ -1,4 +1,4 @@
-Template.home.onRendered(function () {
+Template.mainHome.onRendered(function () {
   //Initialization for the update slider
   $('.slider').slider({
     full_width: true
