@@ -34,7 +34,7 @@ Template.mySessionShell.helpers({
     let mondayStatus = Meteor.users.findOne({
       _id: Meteor.userId()
     });
-    
+
     return mondayStatus.mondayStatus;
   }
 });
@@ -43,27 +43,27 @@ Template.mySessionShell.events({
   'change #mondayStatus': function (event) {
     Meteor.call("mondayStatus", event.target.checked);
   },
-  
+
   'change #tuesdayStatus': function (event) {
     Meteor.call("tuesdayStatus", event.target.checked);
   },
-  
+
   'change #wednesdayStatus': function (event) {
     Meteor.call("wednesdayStatus", event.target.checked);
   },
-  
+
   'change #thursdayStatus': function (event) {
     Meteor.call("thursdayStatus", event.target.checked);
   },
-  
+
   'change #fridayStatus': function (event) {
     Meteor.call("fridayStatus", event.target.checked);
   },
-  
+
   'change #saturdayStatus': function (event) {
     Meteor.call("saturdayStatus", event.target.checked);
   },
-  
+
   'change #sundayStatus': function (event) {
     Meteor.call("sundayStatus", event.target.checked);
   }

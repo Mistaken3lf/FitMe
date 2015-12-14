@@ -1,10 +1,8 @@
 Template.myTrainer.onCreated(function () {
-  var self = this;
-
-  self.autorun(function () {
+  this.autorun(() => {
     //Subscribe to my profile info and my trainers profile
-    self.subscribe("myTrainer");
-    self.subscribe("myProfile");
+    this.subscribe("myTrainer");
+    this.subscribe("myProfile");
   });
 });
 
