@@ -16,7 +16,7 @@ Template.commandCenter.helpers({
 
     return totalTrainers;
   },
-  
+
   //Total number of clients
   totalClients: function () {
     totalClients = Meteor.users.find({
@@ -25,7 +25,7 @@ Template.commandCenter.helpers({
 
     return totalClients;
   },
-  
+
   //Total user count
   totalUsers: function () {
     totalUsers = Meteor.users.find({
@@ -48,7 +48,7 @@ Template.commandCenter.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   },
-  
+
   //Return all a trainer clients so we can search them
   //with easy search
   currentTrainersIndex: function () {
@@ -69,10 +69,10 @@ Template.commandCenter.events({
     var curUser = Meteor.users.findOne({
       _id: this._id
     });
-    
+
     //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
-    
+
     //Sweet alert to confirm the deletion of the trainer
     swal({
       title: "Are you sure?",
@@ -96,5 +96,15 @@ Template.commandCenter.events({
   'click .suspendUser': function (event) {
     //Suspend the trainer clicked on
     Meteor.call("suspendUser", this._id);
+  },
+
+  'click .paymentDueSoon': function (event) {
+    Meteor.call("paymentDueSoon", this.expiresOn, this._id, function (error) {
+      if (error) {
+        Bert.alert(error.reason, 'danger', 'growl-top-right');
+      } else {
+        Bert.alert("Payment warning sent!!!", 'success', 'growl-top-right');
+      }
+    });
   }
 });
