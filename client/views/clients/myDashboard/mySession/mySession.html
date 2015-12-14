@@ -8,199 +8,202 @@
 <template name="mySessionShell">
   {{#autoForm collection="Meteor.users" id="mySessionForm" doc=thisClient resetOnSuccess=false}}
   <div class="card grey lighten-4">
+    <div class="col s12 m12 l12">
+      <div class="card white z-depth-1">
+        <div class="blue card-title center-align white-text">SCHEDULE CARD</div>
+      </div>
+    </div>
+    <div class="row">
+      <h5 class="center"><b>WEEK OF: </b><br> {{startOfWeek}} - {{endOfWeek}}</h5>
+    </div>
+    <div class="col s12 m12 l12">
+      <div class="card white z-depth-1">
+        <div class="row">
+          <div class="col s12 m4 l4">
+            <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
+            {{> afQuickField name="sessionsRemaining" class="center-align" readonly=true type="number" label=false}}
+          </div>
+          <div class="col s12 m4 l4">
+            <h6 class="center-align blue-text"><b>Payment Due</b></h6>
+            {{> afQuickField name="paymentDue" id="paymentDue" class="center-align" readonly=true label=false}}
+          </div>
+          <div class="col s12 m4 l4 center">
+            <h6 class="center-align blue-text"><b>Today's Date</b></h6>
+            <br>
+            <span>{{todaysDate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col s12 m12 l12">
-        <div class="card white z-depth-1">
-          <div class="blue card-title center-align white-text">SCHEDULE CARD</div>
-        </div>
+        <h5 class="red-text">* You Must Confirm Your Scheduled Appointment</h5>
       </div>
-      <div class="row">
-        <h5 class="center"><b>WEEK OF: </b><br> {{startOfWeek}} - {{endOfWeek}}</h5>
-      </div>
-      <div class="col s12 m12 l12">
-        <div class="card white z-depth-1">
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <div class="card white">
           <div class="row">
-            <div class="col s12 m4 l4">
-              <h6 class="center-align blue-text"><b>Sessions Remaining</b></h6>
-              {{> afQuickField name="sessionsRemaining" class="center-align" readonly=true type="number" label=false}}
+            <h4 class="center">Monday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="mondaysScheduleStart" id="mondaysScheduleStart" readonly=true label=false}}
             </div>
-            <div class="col s12 m4 l4">
-              <h6 class="center-align blue-text"><b>Payment Due</b></h6>
-              {{> afQuickField name="paymentDue" id="paymentDue" class="center-align" readonly=true label=false}}
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="mondaysScheduleEnd" id="mondaysScheduleEnd" readonly=true label=false}}
             </div>
-            <div class="col s12 m4 l4 center">
-              <h6 class="center-align blue-text"><b>Today's Date</b></h6>
-              <br>
-              <span>{{todaysDate}}</span>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="mondayDescription" readonly=true label=false}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="mondayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="mondayStatus"}}
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Monday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="mondaysScheduleStart" id="mondaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="mondaysScheduleEnd" id="mondaysScheduleEnd" readonly=true label=false}}
-              </div>
+      <div class="col s12 m6 l6">
+        <div class="card white">
+          <div class="row">
+            <h4 class="center">Tuesday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="tuesdaysScheduleStart" id="tuesdaysScheduleStart" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="mondayDescription" readonly=true label=false}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="mondayStatus" type="switch" label=false id="mondayStatus"}}
-              </div>
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="tuesdaysScheduleEnd" id="tuesdaysScheduleEnd" readonly=true label=false}}
             </div>
           </div>
-        </div>
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Tuesday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="tuesdaysScheduleStart" id="tuesdaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="tuesdaysScheduleEnd" id="tuesdaysScheduleEnd" readonly=true label=false}}
-              </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="tuesdayDescription" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="tuesdayDescription" readonly=true label=false}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="tuesdayStatus" type="switch" label=false id="tuesdayStatus"}}
-              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="tuesdayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="tuesdayStatus"}}
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Wednesday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="wednesdaysScheduleStart" id="wednesdaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="wednesdaysScheduleEnd" id="wednesdaysScheduleEnd" readonly=true label=false}}
-              </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <div class="card white">
+          <div class="row">
+            <h4 class="center">Wednesday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="wednesdaysScheduleStart" id="wednesdaysScheduleStart" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="wednesdayDescription" readonly=true label=false}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="wednesdayStatus" type="switch" label=false id="wednesdayStatus"}}
-              </div>
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="wednesdaysScheduleEnd" id="wednesdaysScheduleEnd" readonly=true label=false}}
             </div>
           </div>
-        </div>
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Thursday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="thursdaysScheduleStart" id="thursdaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="thursdaysScheduleEnd" id="thursdaysScheduleEnd" readonly=true label=false}}
-              </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="wednesdayDescription" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="thursdayDescription" readonly=true label=false}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="thursdayStatus" type="switch" label=false id="thursdayStatus"}}
-              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="wednesdayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="wednesdayStatus"}}
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Friday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="fridaysScheduleStart" id="fridaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="fridaysScheduleEnd" id="fridaysScheduleEnd" readonly=true label=false}}
-              </div>
+      <div class="col s12 m6 l6">
+        <div class="card white">
+          <div class="row">
+            <h4 class="center">Thursday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="thursdaysScheduleStart" id="thursdaysScheduleStart" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="fridayDescription" readonly=true label=false}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="fridayStatus" type="switch" label=false id="fridayStatus"}}
-              </div>
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="thursdaysScheduleEnd" id="thursdaysScheduleEnd" readonly=true label=false}}
             </div>
           </div>
-        </div>
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Saturday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="saturdaysScheduleStart" id="saturdaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="saturdaysScheduleEnd" id="saturdaysScheduleEnd" readonly=true label=false}}
-              </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="thursdayDescription" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="saturdayDescription" readonly=true label=false}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="saturdayStatus" type="switch" label=false id="saturdayStatus"}}
-              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="thursdayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="thursdayStatus"}}
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Sunday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="sundaysScheduleStart" id="sundaysScheduleStart" readonly=true label=false}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="sundaysScheduleEnd" id="sundaysScheduleEnd" readonly=true label=false}}
-              </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <div class="card white">
+          <div class="row">
+            <h4 class="center">Friday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="fridaysScheduleStart" id="fridaysScheduleStart" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="sundayDescription" readonly=true label=false}}
-              </div>
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="fridaysScheduleEnd" id="fridaysScheduleEnd" readonly=true label=false}}
             </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Status: {{> afQuickField name="sundayStatus" type="switch" label=false id="sundayStatus"}}
-              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="fridayDescription" readonly=true label=false}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="fridayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="fridayStatus"}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l6">
+        <div class="card white">
+          <div class="row">
+            <h4 class="center">Saturday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="saturdaysScheduleStart" id="saturdaysScheduleStart" readonly=true label=false}}
+            </div>
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="saturdaysScheduleEnd" id="saturdaysScheduleEnd" readonly=true label=false}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="saturdayDescription" readonly=true label=false}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="saturdayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="saturdayStatus"}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <div class="card white">
+          <div class="row">
+            <h4 class="center">Sunday</h4>
+            <div class="col s12 m6 l6">
+              Start: {{> afQuickField name="sundaysScheduleStart" id="sundaysScheduleStart" readonly=true label=false}}
+            </div>
+            <div class="col s12 m6 l6">
+              End: {{> afQuickField name="sundaysScheduleEnd" id="sundaysScheduleEnd" readonly=true label=false}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Description: {{> afQuickField name="sundayDescription" readonly=true label=false}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l12">
+              Status: {{> afQuickField name="sundayStatus" type="switch" trueLabel="Go" falseLabel="No Go" label=false id="sundayStatus"}}
             </div>
           </div>
         </div>
