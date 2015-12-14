@@ -3,7 +3,7 @@ Meteor.methods({
     if (Meteor.userId()) {
       //Send the actual email to us
       Email.send({
-        to: "mistaken3lf@gmail.com",
+        to: "info@divelop.io",
         from: email,
         subject: "Feedback",
         text: message
