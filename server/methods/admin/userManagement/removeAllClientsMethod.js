@@ -1,5 +1,5 @@
 Meteor.methods({
-  removeAllClients: function (trainerId) {
+  removeAllClients(trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Remove clients associated with the current trainer
       Meteor.users.remove({

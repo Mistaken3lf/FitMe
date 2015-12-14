@@ -1,5 +1,5 @@
 Meteor.methods({
-  monthlyPlan: function (trainerId) {
+  monthlyPlan(trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(1, "months").format("MM/DD/YYYY");

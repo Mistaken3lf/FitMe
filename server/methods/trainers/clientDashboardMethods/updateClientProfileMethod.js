@@ -1,7 +1,7 @@
 Meteor.methods({
   //Update the clients profile with the clientId passed in from
   //flow router
-  updateClientsProfile: function (updatedProfile, clientId) {
+  updateClientsProfile(updatedProfile, clientId) {
 
     //Make sure user is logged in and a trainer before performing
     //the method

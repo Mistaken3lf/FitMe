@@ -1,5 +1,5 @@
 Meteor.methods({
-  resetSundaysSchedule: function (sundaysItem) {
+  resetSundaysSchedule(sundaysItem) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
 
       Meteor.users.update({

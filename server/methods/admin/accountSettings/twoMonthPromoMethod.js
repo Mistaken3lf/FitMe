@@ -1,5 +1,5 @@
 Meteor.methods({
-  twoMonthPromo: function (trainerId) {
+  twoMonthPromo(trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(2, "months").format("MM/DD/YYYY");

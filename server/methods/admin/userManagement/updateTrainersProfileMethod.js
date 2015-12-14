@@ -1,5 +1,5 @@
 Meteor.methods({
-  updateTrainersProfile: function (updatedProfile, trainerId) {
+  updateTrainersProfile(updatedProfile, trainerId) {
     //ADMIN ONLY!!!
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Update the trainers profile

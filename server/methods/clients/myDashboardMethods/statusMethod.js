@@ -1,5 +1,5 @@
 Meteor.methods({
-  mondayStatus: function (status) {
+  mondayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId
@@ -13,7 +13,7 @@ Meteor.methods({
     }
   },
   
-  tuesdayStatus: function (status) {
+  tuesdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId
@@ -27,7 +27,7 @@ Meteor.methods({
     }
   },
   
-  wednesdayStatus: function (status) {
+  wednesdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId
@@ -41,7 +41,7 @@ Meteor.methods({
     }
   },
   
-  thursdayStatus: function (status) {
+  thursdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId
@@ -55,7 +55,7 @@ Meteor.methods({
     }
   },
   
-  fridayStatus: function (status) {
+  fridayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId
@@ -69,7 +69,7 @@ Meteor.methods({
     }
   },
   
-  saturdayStatus: function (status) {
+  saturdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId
@@ -83,7 +83,7 @@ Meteor.methods({
     }
   },
   
-  sundayStatus: function (status) {
+  sundayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
       Meteor.users.update({
         _id: this.userId

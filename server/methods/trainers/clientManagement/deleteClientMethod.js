@@ -1,5 +1,5 @@
 Meteor.methods({
-  deleteClient: function (clientId) {
+  deleteClient(clientId) {
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, "trainer")) {

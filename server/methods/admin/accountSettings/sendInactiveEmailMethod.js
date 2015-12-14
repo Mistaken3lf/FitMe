@@ -1,5 +1,5 @@
 Meteor.methods({
-  sendInactiveEmail: function (trainerId) {
+  sendInactiveEmail(trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       var trainer = Meteor.users.findOne({_id: trainerId})
       var emailAddr = trainer.emails[0].address;

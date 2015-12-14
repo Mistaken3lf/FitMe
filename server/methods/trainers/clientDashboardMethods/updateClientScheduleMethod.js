@@ -1,5 +1,5 @@
 Meteor.methods({
-  updateClientSchedule: function (updatedSchedule, clientId) {
+  updateClientSchedule(updatedSchedule, clientId) {
     //Make sure user is logged in and a trainer before performing
     //the method
     if (Roles.userIsInRole(this.userId, "trainer")) {

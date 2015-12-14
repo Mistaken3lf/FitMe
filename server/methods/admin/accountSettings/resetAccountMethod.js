@@ -1,5 +1,5 @@
 Meteor.methods({
-  resetAccount: function (trainerId) {
+  resetAccount(trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = new Date();
 

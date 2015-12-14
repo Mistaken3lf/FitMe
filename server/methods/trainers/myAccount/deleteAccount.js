@@ -1,5 +1,5 @@
 Meteor.methods({
-  deleteAccount: function () {
+  deleteAccount() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       //Remove cardio of the client being deleted
       ClientCardio.remove({

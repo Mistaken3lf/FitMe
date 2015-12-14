@@ -1,5 +1,5 @@
 Meteor.methods({
-  registerClient: function (clientData) {
+  registerClient(clientData) {
     //Make sure the user is a trainer and logged in before
     //creating a new client
     if (Roles.userIsInRole(this.userId, "trainer")) {

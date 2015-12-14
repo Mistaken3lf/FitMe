@@ -1,5 +1,5 @@
 Meteor.methods({
-  createTrainer: function (newTrainerData) {
+  createTrainer(newTrainerData) {
     //Make sure user is an admin and logged in before allowing the add
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Create the new trainer

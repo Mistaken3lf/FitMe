@@ -1,5 +1,5 @@
 Meteor.methods({
-  tenAdditionalClients: function (trainerId) {
+  tenAdditionalClients(trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       Meteor.users.update({
         _id: trainerId

@@ -1,5 +1,7 @@
 Meteor.methods({
-  contactUs: function (firstName, lastName, phoneNumber, email, message) {
+  contactUs(firstName, lastName, phoneNumber, email, message) {
+    this.unblock();
+    
     if (Meteor.userId()) {
       //Send the actual email to us
       Email.send({
