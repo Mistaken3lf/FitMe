@@ -12,6 +12,7 @@ Meteor.publish('currentClients', function () {
         firstName: 1,
         lastName: 1,
         userStatus: 1,
+        createdBy: 1
       }
     });
   }

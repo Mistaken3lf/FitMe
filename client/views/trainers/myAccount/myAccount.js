@@ -4,6 +4,7 @@ Template.myAccount.onCreated(function () {
   //Subscribe all the trainers current clients
   self.autorun(function () {
     self.subscribe("myProfile");
+    self.subscribe("currentClients");
   });
 });
 
@@ -17,10 +18,16 @@ Template.myAccount.helpers({
   formatDate: function (loginDate) {
     return loginDate.toDateString();
   },
-  
+
   //Check if the user is currently logging in
   isLoggingIn: function () {
     return Meteor.loggingIn();
+  },
+
+  totalClients: function () {
+    return Meteor.users.find({
+      createdBy: Meteor.userId()
+    }).count();
   }
 });
 
