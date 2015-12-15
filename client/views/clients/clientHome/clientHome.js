@@ -1,3 +1,8 @@
+Template.clientHome.onRendered(function () {
+  //Initialization for the parallax images
+  $('.parallax').parallax();
+});
+
 Template.clientHome.events({
   'submit form': function (event) {
     event.preventDefault();
