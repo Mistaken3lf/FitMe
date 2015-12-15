@@ -5,7 +5,7 @@ Meteor.methods({
     if (Meteor.userId()) {
       //Send the actual email to us
       Email.send({
-        to: "info@divelop.io",
+        to: "info@gofitme.com",
         from: email,
         subject: "Feedback",
         text: message
