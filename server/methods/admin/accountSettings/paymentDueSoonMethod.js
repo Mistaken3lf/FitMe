@@ -9,9 +9,9 @@ Meteor.methods({
       //Send the actual email to us
       Email.send({
         to: emailAddr,
-        from: "info@divelop.io",
-        subject: "FitMe -- Payment Due",
-        text: "Your account will be expiring on " + expiresOn + " please provide payment to prevent your account from being suspended"
+        from: "sales@gofitme.com",
+        subject: "FitMe -- Renew Your Account",
+        text: "Hello " + trainer.firstName + "," <br> "We wanted to inform you that your account will be expiring on " + expiresOn + ". Please provide payment to prevent your account from being suspended"
       });
 
     } else {
