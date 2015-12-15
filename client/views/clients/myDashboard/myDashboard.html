@@ -1,21 +1,22 @@
 <template name="myDashboard">
   {{#if isInRole 'client'}}
   <div class="row">
-    <div class="col s12 m2 l3 offset-l3">
+    <div class="col s12 m12 l3 offset-l3">
       <img class="responsive-img profilePic" src="/dashboard/profile/profilePicture.jpg">
     </div>
-    <div class="col s12 m2 l1">
+    <div class="col s12 m12 l1">
       <img class="responsive-img blueLine" src="/dashboard/profile/blueLine.jpg">
     </div>
-    <div class="col s12 m2 l3">
-    <h5 class="center blue-text clientViewDashboardText">MY DASHBOARD</h5>
+    <div class="col s12 m12 l3">
+    <h5 class="center blue-text clientViewDashNameText">MY </h5>
+    <h5 class="center blue-text clientViewDashboardText">DASHBOARD</h5>
   </div>
   </div>
   <div class="dashContainer">
     <div class="row">
       <div class="col s12">
         <div class="row">
-          <div class="col s12 m3 l12 center">
+          <div class="col s12 m12 l12 center">
             <button class="btn blue myClickedButton clientDashButtonMySchedule" id="mySession">My Schedule</button>
             <button class="btn blue myClickedButton clientDashButtonStats" id="myStats">Stats</button>
             <button class="btn blue myClickedButton clientDashButtonCardio" id="myCardio">Cardio</button>

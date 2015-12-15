@@ -1,20 +1,27 @@
 /**********************ADMIN STYLES********************************************/
+
 .allTrainersHeader {
   background-color: black;
 }
+
 .allClientsHeader {
   background-color: black;
 }
+
 #createTrainerAdminForm {
   margin-top: 5%;
 }
 
+
 /**********************ALL USERS STYLES****************************************/
+
+
 /* push login form down 5% from top */
 
 #userLoginForm {
   margin-top: 5%;
 }
+
 
 /* push registration form down 5% from top */
 
@@ -22,11 +29,13 @@
   margin-top: 5%;
 }
 
+
 /* Color the error toast popup in red when errors occur */
 
 .centerToast {
   background-color: #f44336;
 }
+
 
 /* push login form down 5% from top */
 
@@ -34,11 +43,13 @@
   margin-top: 5%;
 }
 
+
 /* push login form down 5% from top */
 
 #passwordChangeForm {
   margin-top: 5%;
 }
+
 
 /* Optimize header images for pages */
 
@@ -65,31 +76,40 @@
     top: 0;
   }
 }
+
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
+
 footer.page-footer {
   margin: 0;
   padding-left: 0px;
 }
+
 .footer-logo {
   height: 90px;
   width: 50px;
   padding-top: 10px;
 }
+
 .logo-img {
   height: 400px;
   width: 400px;
 }
 
+
 /* Add padding on left so content is not under sidebar */
 
-header, main, footer {
+header,
+main,
+footer {
   padding-left: 220px;
 }
+
 
 /* Remove padding when on mobile device since sidebar will collapse */
 
@@ -97,28 +117,24 @@ header, main, footer {
   header, main, footer {
     padding-left: 0;
   }
-
   .clickedButton {
     width: 100%;
   }
-
   .myClickedButton {
     width: 100%;
   }
-
   .adminClickedButton {
     width: 100%;
   }
-
   .dashButtons {
     margin: auto;
     padding-bottom: 12px;
   }
-  
   .navbar-fixed {
-  display: block;
+    display: block;
+  }
 }
-}
+
 
 /* Custom layout container so more of the screen is used */
 
@@ -128,6 +144,7 @@ header, main, footer {
   margin-right: auto;
 }
 
+
 /* Bold headings */
 
 .myBoldProfileHeading {
@@ -135,26 +152,35 @@ header, main, footer {
   font-size: 120%;
 }
 
+
 /* Optimize side bar logo */
+
 .sidebarLogo {
   display: block;
   width: auto;
-  height: 140px;
+  height: 130px;
   margin: auto;
+  padding-top: 8px;
   transform: translateY(-5%);
 }
 
+
 /* Create grey background for logo */
+
 .logoContainer {
   background-color: #ffffff;
 }
 
+
 /* Create blue hr line in sidebbar below logo */
+
 .navSeperator {
   border: 5px solid #2196f3;
 }
 
+
 /* Add padding between links so they are seperated nicely */
+
 #navPad {
   width: 90%;
   margin: auto auto 10px auto;
@@ -162,12 +188,16 @@ header, main, footer {
   -webkit-border-radius: 15px;
 }
 
+
 /* Align brand text as far left as possible */
+
 .nav-wrapper {
   margin-left: 10px;
 }
 
+
 /* Display username below sidebar logo */
+
 #usernameText {
   margin-top: -15px;
 }
@@ -175,7 +205,6 @@ header, main, footer {
 #desktop-menu {
   width: 220px;
 }
-
 
 .trainerDashButtonProfile {
   margin-top: 20px;
@@ -241,9 +270,9 @@ header, main, footer {
 }
 
 .adminDashButtonClients {
-margin-left: 6%;
-margin-top: 20px;
-padding: auto;
+  margin-left: 6%;
+  margin-top: 20px;
+  padding: auto;
 }
 
 .adminDashButtonAccount {
@@ -275,10 +304,14 @@ padding: auto;
   padding: 0px 0px 0px 0px;
 }
 
-.clientViewDashboardText {
+.clientViewDashNameText {
   font-size: 32px;
   padding: 40px 0px 0px 0px;
-  margin-right: 100px;
+}
+
+.clientViewDashboardText {
+  font-size: 32px;
+  padding: 0px 0px 0px 0px;
 }
 
 .trainerSchedule {
@@ -356,12 +389,16 @@ padding: auto;
   display: none;
 }
 
+
 /**********************TRAINERS STYLES*****************************************/
+
+
 /*Center delete button on large screens*/
 
 .deleteButton {
   margin-left: 15px;
 }
+
 
 /*Center delete button on large screens*/
 
@@ -370,11 +407,13 @@ padding: auto;
   margin-right: 5px;
 }
 
+
 /*Center delete button on large screens*/
 
 .createClient {
   margin-left: 10px;
 }
+
 
 /*Add spacing below the table*/
 
@@ -382,52 +421,136 @@ padding: auto;
   padding-bottom: 12px;
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  
+  .profilePic {
+    padding: 30px 0px 30px 0px;
+    width: 100px;
+    height: 200 px;
+    margin: auto;
+    display: block;
+  }
   .trainerViewDashNameText {
     font-size: 30px;
-    padding: 0px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
   }
-
   .trainerViewDashboardText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
   }
-
+  .clientViewDashNameText {
+    font-size: 30px;
+    padding: 20px 0px 0px 0px;
+  }
   .clientViewDashboardText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
-    margin-right: 0px;
   }
-
   .trainerDashButtonProfile {
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 5px;
     padding: auto;
   }
-
   .trainerDashButtonSchedule {
-    margin-left: 6%;
-    margin-top: 20px;
+    margin-left: 0;
+    margin-top: 0px;
+    margin-bottom: 5px;
     padding: auto;
   }
-
   .trainerDashButtonStats {
     margin: auto;
     padding: auto;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
-
   .trainerDashButtonCardio {
     margin: auto;
     padding: auto;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
-
   .trainerDashButtonWorkout {
     margin: auto;
     padding: auto;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+  }
+  
+  .clientDashButtonMySchedule {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding: auto;
+  }
+
+  .clientDashButtonStats {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 5px;
+  }
+
+  .clientDashButtonCardio {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 5px;
+  }
+
+  .clientDashButtonWorkout {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 5px;
+  }
+
+  .clientDashButtonMyTrainer {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 5px;
+  }
+  
+  .adminDashButtonProfile {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding: auto;
+  }
+
+  .adminDashButtonClients {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 5px;
+  }
+
+  .adminDashButtonAccount {
+    margin: auto;
+    padding: auto;
+    margin-bottom: 5px;
   }
 }
+
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) {
+  
+  .blueLine {
+    padding: 45px 0px 0px 0px;
+    display: none;
+  }
+
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+
+  .profilePic {
+    padding: 30px 0px 30px 0px;
+    width: 100px;
+    height: 200 px;
+    margin: auto;
+    display: block;
+  }
+  
+  .clientViewDashNameText {
+    font-size: 30px;
+    padding: 20px 0px 0px 0px;
+  }
+  .clientViewDashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
+  }
+}
+
 /*Push button all the way to the left on small screens*/
 
 @media only screen and (max-width: 992px) {
@@ -435,6 +558,7 @@ padding: auto;
     margin-left: auto;
   }
 }
+
 
 /* Make labels on cardio table bold */
 
@@ -446,6 +570,7 @@ padding: auto;
   font-weight: bold;
   margin-left: 12px;
 }
+
 
 /* Placement of math  symbols */
 
@@ -459,11 +584,13 @@ padding: auto;
   font-weight: bold;
 }
 
+
 /*Line up the inputs*/
 
 .inputAlign {
   padding-bottom: 15px;
 }
+
 
 /* Remove Style from inputs */
 
@@ -471,17 +598,20 @@ padding: auto;
   border: none !important;
 }
 
+
 /*Line up the 3 beginner, intermediate, and advanced table*/
 
 .align {
   margin-top: 60px;
 }
 
+
 /*Remove bottom margin from input*/
 
 .inputAdjust {
   margin-bottom: 0px;
 }
+
 
 /*Padding for the clients heartrate*/
 
@@ -490,11 +620,13 @@ padding: auto;
   margin-left: 12px;
 }
 
+
 /*Padding for the equations so nothing gets smashed*/
 
 .equationPadding {
   margin-left: 3px;
 }
+
 
 /*Add padding to top of card*/
 
@@ -506,32 +638,28 @@ padding: auto;
   display: none;
 }
 
+
 /* Trainer mobile */
 
 @media (max-width:768px) {
-
   .mathSymbolsCP {
     display: none;
   }
-
   .mathSymbolsEqual {
     padding-top: 10px;
     padding-bottom: 5px;
   }
-
   .bpmEquation {
     display: inline;
     font-size: 13px;
   }
-
   .bpmSmacing {
     margin-top: 25px;
   }
-
   .blueLine {
     display: none;
   }
-/*
+  
   .trainerViewDashNameText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
@@ -542,10 +670,15 @@ padding: auto;
     padding: 0px 0px 0px 0px;
   }
 
-  .clientViewDashboardText {
+  .clientViewDashNameText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
     margin-right: 0px;
+  }
+  
+  .clientViewDashboardText {
+    font-size: 30px;
+    padding: 0px 0px 0px 0px;
   }
 
   .trainerDashButtonProfile {
@@ -577,150 +710,118 @@ padding: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-*/
+
   .clientDashButtonMySchedule {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .clientDashButtonStats {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .clientDashButtonCardio {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .clientDashButtonWorkout {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .clientDashButtonMyTrainer {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
+  .command {
+    font-size: 48px;
+  }
   .adminDashButtonProfile {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .adminDashButtonClients {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .adminDashButtonAccount {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .monthlyPlan {
     margin-bottom: 3px;
   }
-
   .sixMonthPlan {
     margin-bottom: 3px;
   }
-
   .yearlyPlan {
     margin-bottom: 3px;
   }
-
   .fiveAdditionalClients {
     margin-bottom: 3px;
   }
-
   .tenAdditionalClients {
     margin-bottom: 3px;
   }
-
-
   .twentyAdditionalClients {
     margin-bottom: 3px;
   }
-  
   .workoutStartTime {
-  display: block;
+    display: block;
+  }
+  .workoutEndTime {
+    display: inline;
+  }
+  .removeFromMonday {
+    display: none;
+  }
+  .removeFromMondayMobile {
+    display: inline;
+  }
+  .removeFromTuesday {
+    display: none;
+  }
+  .removeFromTuesdayMobile {
+    display: inline;
+  }
+  .removeFromWednesday {
+    display: none;
+  }
+  .removeFromWednesdayMobile {
+    display: inline;
+  }
+  .removeFromThursday {
+    display: none;
+  }
+  .removeFromThursdayMobile {
+    display: inline;
+  }
+  .removeFromFriday {
+    display: none;
+  }
+  .removeFromFridayMobile {
+    display: inline;
+  }
+  .removeFromSaturday {
+    display: none;
+  }
+  .removeFromSaturdayMobile {
+    display: inline;
+  }
+  .removeFromSunday {
+    display: none;
+  }
+  .removeFromSundayMobile {
+    display: inline;
+  }
 }
 
-.workoutEndTime {
-  display: inline;
-}
-
-.removeFromMonday {
-  display: none;
-}
-
-.removeFromMondayMobile {
-  display: inline;
-}
-
-.removeFromTuesday {
-  display: none;
-}
-
-.removeFromTuesdayMobile {
-  display: inline;
-}
-
-.removeFromWednesday {
-  display: none;
-}
-
-.removeFromWednesdayMobile {
-  display: inline;
-}
-
-.removeFromThursday {
-  display: none;
-}
-
-.removeFromThursdayMobile {
-  display: inline;
-}
-
-.removeFromFriday {
-  display: none;
-}
-
-.removeFromFridayMobile {
-  display: inline;
-}
-
-.removeFromSaturday {
-  display: none;
-}
-
-.removeFromSaturdayMobile {
-  display: inline;
-}
-
-.removeFromSunday {
-  display: none;
-}
-
-.removeFromSundayMobile {
-  display: inline;
-}
-
-
-
-
-
-
-}
 
 /* Remove styling from input */
 
@@ -728,11 +829,13 @@ padding: auto;
   border: none !important;
 }
 
+
 /* Padding for the sessions on left hand side */
 
 .clientSessionPadding {
   padding-bottom: 20px;
 }
+
 
 /* Bold headings */
 
@@ -740,6 +843,7 @@ padding: auto;
   font-weight: bold;
   font-size: 120%;
 }
+
 
 /* Padding for profile picture */
 
@@ -757,6 +861,7 @@ padding: auto;
   border: 2px solid #2196f3;
 }
 
+
 /* Setting the card title size and positioning */
 
 .card .card-title {
@@ -765,17 +870,20 @@ padding: auto;
   font-size: 24px;
 }
 
+
 /* Change heading color to blue */
 
 .bodyStatsHeading {
   color: #2196f3;
 }
 
+
 /* Make the stats labels bold */
 
 .bodyStatsLabel {
   font-weight: bold;
 }
+
 
 /* Add underline, bold text and increase font size on headings */
 
@@ -785,17 +893,20 @@ padding: auto;
   font-size: 120%;
 }
 
+
 /* Make the workout labels bold */
 
 .workoutLabels {
   font-weight: bold;
 }
 
+
 /*Add padding to top of card*/
 
 .workoutSpacing {
   padding-top: 8px;
 }
+
 
 /* Custom container to make it fill more of the screen */
 
@@ -805,31 +916,28 @@ padding: auto;
   overflow: hidden;
 }
 
+
 /**********************CLIENTS STYLES******************************************/
+
 
 /**********************PRINTER FRIENDLY STYLES*********************************/
 
 @media print {
   header, main, footer {
-  padding-left: 0px;
-}
-
+    padding-left: 0px;
+  }
   .navbar-fixed {
     display: none;
   }
-
   .clickedButton {
     display: none;
   }
-
   .myClickedButton {
     display: none;
   }
-
   .adminClickedButton {
     display: none;
   }
-
   .profilePic {
     display: none;
     /*
@@ -839,20 +947,16 @@ padding: auto;
     height: 300px;
     */
   }
-
   .blueLine {
     display: none;
   }
-
   .dashboardText {
     font-size: 32px;
     padding: 40px 0px 0px 0px;
   }
-
   #pageHeader {
     display: none;
   }
-
   hr {
     display: none;
   }

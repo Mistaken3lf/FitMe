@@ -1,19 +1,19 @@
 <template name="clientDashboard">
   {{#if isInRole 'trainer'}}
   <div class="row">
-    <div class="col s12 m2 l3 offset-l3">
+    <div class="col s12 m12 l3 offset-l3">
       <img class="responsive-img profilePic" src="/dashboard/profile/profilePicture.jpg">
     </div>
-    <div class="col s12 m2 l1">
+    <div class="col s12 m12 l1">
       <img class="responsive-img blueLine" src="/dashboard/profile/blueLine.jpg">
     </div>
-    <div class="col s12 m2 l3">
+    <div class="col s12 m12 l3">
     <h5 class="center blue-text trainerViewDashNameText"><b>{{#with myClient}}{{firstName}} {{lastName}}{{/with}}</b></h5>
     <h5 class="center blue-text trainerViewDashboardText">DASHBOARD</h5>
   </div>
   </div>
   <div class="row">
-    <div class="col s12 m2 l12 center">
+    <div class="col s12 m12 l12 center">
       <button class="btn blue clickedButton trainerDashButtonProfile" id="clientProfile">Profile</button>
       <button class="btn blue clickedButton trainerDashButtonSchedule" id="clientSchedule">Schedule</button>
       <button class="btn blue clickedButton trainerDashButtonStats" id="clientStats">Stats</button>
