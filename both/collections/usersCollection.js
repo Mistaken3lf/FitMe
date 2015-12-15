@@ -43,7 +43,6 @@ Schema.User = new SimpleSchema({
 
   city: {
     type: String,
-    regEx: /^[a-zA-Z ]{0,150}$/,
     optional: true
   },
 
