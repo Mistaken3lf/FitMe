@@ -121,7 +121,8 @@ Template.trainerSchedule.helpers({
         tuesdaysScheduleStart: 1,
         tuesdaysScheduleEnd: 1,
         firstName: 1,
-        lastName: 1
+        lastName: 1,
+        tuesdayDescription: 1
       },
       sort: {
         tuesdaysScheduleStart: 1
@@ -147,7 +148,8 @@ Template.trainerSchedule.helpers({
         wednesdaysScheduleStart: 1,
         wednesdaysScheduleEnd: 1,
         firstName: 1,
-        lastName: 1
+        lastName: 1,
+        wednesdayDescription: 1
       },
       sort: {
         wednesdaysScheduleStart: 1
@@ -172,7 +174,8 @@ Template.trainerSchedule.helpers({
         thursdaysScheduleStart: 1,
         thursdaysScheduleEnd: 1,
         firstName: 1,
-        lastName: 1
+        lastName: 1,
+        thursdayDescription: 1
       },
       sort: {
         thursdaysScheduleStart: 1
@@ -198,7 +201,8 @@ Template.trainerSchedule.helpers({
         fridaysScheduleStart: 1,
         fridaysScheduleEnd: 1,
         firstName: 1,
-        lastName: 1
+        lastName: 1,
+        fridayDescription: 1
       },
       sort: {
         fridaysScheduleStart: 1
@@ -224,7 +228,8 @@ Template.trainerSchedule.helpers({
         saturdaysScheduleStart: 1,
         saturdaysScheduleEnd: 1,
         firstName: 1,
-        lastName: 1
+        lastName: 1,
+        saturdayDescription: 1
       },
       sort: {
         saturdaysScheduleStart: 1
@@ -250,7 +255,8 @@ Template.trainerSchedule.helpers({
         sundaysScheduleStart: 1,
         sundaysScheduleEnd: 1,
         firstName: 1,
-        lastName: 1
+        lastName: 1,
+        sundayDescription: 1
       },
       sort: {
         sundaysScheduleStart: 1
