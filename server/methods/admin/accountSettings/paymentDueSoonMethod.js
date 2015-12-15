@@ -11,7 +11,7 @@ Meteor.methods({
         to: emailAddr,
         from: "sales@gofitme.com",
         subject: "FitMe -- Renew Your Account",
-        text: "Hello " + trainer.firstName + "," + "We wanted to inform you that your account will be expiring on " + expiresOn + ". Please provide payment to prevent your account from being suspended"
+        text: "Hello " + trainer.firstName + " " +  trainer.lastName + ',\n' + "We wanted to inform you that your account will be expiring on " + expiresOn + ". " + "Don't forget to renew your account by visiting mkt.com/fitme. If you fail to renew, your account may be suspended until you renew it.\n\n" + "Keep training hard\n\n" + "The FitMe Team" 
       });
 
     } else {

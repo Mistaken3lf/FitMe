@@ -11,7 +11,7 @@ Meteor.methods({
         to: emailAddr,
         from: "info@divelop.io",
         subject: "FitMe -- Inactive Account",
-        text: "Your account has been inactive for a while, this is a warning that your account will be deleted soon."
+        text: "Hello " + trainer.firstName + " " + trainer.lastName + ",\n\n" + "We have noticed that you have not logged into your account recently. Feel free to log back in... we are waiting for you. If your account continues to be inactive for much longer, it may be suspended or deleted.\n\n" + "Keep Training Hard\n\n" + "The FitMe Team"
       });
 
     } else {
