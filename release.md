@@ -1,1 +1,0 @@
-#Current Version: 15.12.4
