@@ -15,6 +15,7 @@ Meteor.publish('trainersClients', function (currentTrainerId) {
         firstName: 1,
         lastName: 1,
         userStatus: 1,
+        createdBy: 1
       }
     });
   }

@@ -5,6 +5,7 @@ Template.accountDetails.onCreated(function () {
   self.autorun(function () {
     var trainerId = FlowRouter.getParam('_id');
     self.subscribe("trainersAccount", trainerId);
+    self.subscribe("trainersClients", trainerId);
   });
 });
 
@@ -18,6 +19,15 @@ Template.accountDetails.helpers({
 
   formatDate: function (loginDate) {
     return loginDate.toDateString();
+  },
+  
+  totalClients: function () {
+    var trainerId = FlowRouter.getParam('_id');
+    let totalClients =  Meteor.users.find({
+      createdBy: trainerId
+    }).count();
+    
+    return totalClients;
   }
 });
 
