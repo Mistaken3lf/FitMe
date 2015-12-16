@@ -36,23 +36,23 @@
         {{#autoForm schema="ContactUsSchema.contact" id="contactForm" type="normal" resetonsuccess=true}}
         <div class="row">
           <div class="input-field col s12 m4 l4">
-            First Name:{{> afQuickField name="firstName" label=false}}
+            First Name:{{> afQuickField name="firstName" label=false placeholder="John"}}
           </div>
           <div class="input-field col s12 m4 l4">
-            Last Name:{{> afQuickField name="lastName" label=false}}
+            Last Name:{{> afQuickField name="lastName" label=false placeholder="Smith"}}
           </div>
           <div class="input-field col s12 m4 l4">
-            Phone Number:{{> afQuickField name="phoneNumber" label=false}}
+            Phone Number:{{> afQuickField name="phoneNumber" label=false placeholder="Ex. 123-456-7890"}}
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m6 l6">
-            Email:{{> afQuickField name="email" label=false}}
+            Email:{{> afQuickField name="email" label=false placeholder="email@address.com"}}
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            Message:{{> afQuickField name="message" class="materialize-textarea" label=false rows=6 style="height: 100%;"}}
+            Message:{{> afQuickField name="message" class="materialize-textarea" label=false rows=6 placeholder="Enter your message." style="height: 100%;"}}
           </div>
         </div>
         <button class="btn waves-effect waves-light blue" type="submit">Send
