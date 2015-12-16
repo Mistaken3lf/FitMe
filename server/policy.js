@@ -3,6 +3,8 @@ BrowserPolicy.content.disallowInlineScripts();
 BrowserPolicy.content.disallowEval();
 BrowserPolicy.content.allowInlineStyles();
 BrowserPolicy.content.allowFontDataUrl();
+BrowserPolicy.content.allowOriginForAll("https://js.stripe.com/")
+BrowserPolicy.content.allowOriginForAll("https://checkout.stripe.com/")
 
 var trusted = [
   '*.google-analytics.com',
