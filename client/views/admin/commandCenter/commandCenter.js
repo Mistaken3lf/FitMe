@@ -80,7 +80,7 @@ Template.commandCenter.events({
       type: "warning",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, remove user!!!",
+      confirmButtonText: "Yes, remove user!",
       closeOnConfirm: false
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
@@ -88,7 +88,7 @@ Template.commandCenter.events({
         swal('Deleted!', 'User has been deleted.', 'success');
         Meteor.call("removeTrainer", curUser._id);
       } else {
-        swal('Cancelled', 'Your user is safe now :)', 'error');
+        swal('Cancelled', 'Your user is safe now.', 'error');
       }
     });
   },
@@ -103,7 +103,7 @@ Template.commandCenter.events({
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
-        Bert.alert("Payment warning sent!!!", 'success', 'growl-top-right');
+        Bert.alert("Payment warning sent", 'success', 'growl-top-right');
       }
     });
   }

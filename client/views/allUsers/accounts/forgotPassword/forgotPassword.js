@@ -21,7 +21,7 @@ Template.forgotPassword.events({
       email: email
     }, function (error) {
       if (error) {
-        Bert.alert("Invalid Email!!!", 'danger', 'growl-top-right');
+        Bert.alert("Invalid Email!", 'danger', 'growl-top-right');
       } else {
         Bert.alert("Email has been sent", 'success', 'growl-top-right');
         FlowRouter.go("/login");
@@ -49,7 +49,7 @@ Template.resetPassword.events({
 
     //Make sure the passwords match
     if (newPassword != newPasswordConfirmation) {
-      Bert.alert("Passwords don't match", 'danger', 'growl-top-right');
+      Bert.alert("Passwords do not match", 'danger', 'growl-top-right');
       return false;
     }
 

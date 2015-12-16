@@ -109,11 +109,12 @@
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$20/Month</p>
+                  <p class="center-align">$20</p>
                   <p class="center-align">50 Clients</p>
                   <p class="center-align">Technical Support</p>
                 </div>
                 <div class="divider"></div>
+                <br>
               </div>
             </div>
           </div>
@@ -168,7 +169,7 @@
   <!--   Last Picture Section   -->
   <section id="parallax-mid">
     <div class="parallax-container center-align">
-      <div class="parallax"><img src="/home/background4-1.jpg"></div>
+      <div class="parallax"><img src="/home/background4.jpg"></div>
       <br>
       <br>
       <br>
@@ -207,23 +208,23 @@
         {{#autoForm schema="ContactUsSchema.contact" id="contactForm" type="normal" resetonsuccess=true}}
         <div class="row">
           <div class="input-field col s12 m4 l4">
-            First Name:{{> afQuickField name="firstName" label=false}}
+            First Name:{{> afQuickField name="firstName" label=false placeholder="John"}}
           </div>
           <div class="input-field col s12 m4 l4">
-            Last Name:{{> afQuickField name="lastName" label=false}}
+            Last Name:{{> afQuickField name="lastName" label=false placeholder="Smith"}}
           </div>
           <div class="input-field col s12 m4 l4">
-            Phone Number:{{> afQuickField name="phoneNumber" label=false}}
+            Phone Number:{{> afQuickField name="phoneNumber" label=false placeholder="Ex. 123-456-7890"}}
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m6 l6">
-            Email:{{> afQuickField name="email" label=false}}
+            Email:{{> afQuickField name="email" label=false placeholder="email@address.com"}}
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            Message:{{> afQuickField name="message" class="materialize-textarea" label=false rows=6 style="height: 100%;"}}
+            Message:{{> afQuickField name="message" class="materialize-textarea" label=false rows=6 placeholder="Enter your message." style="height: 100%;"}}
           </div>
         </div>
         <button class="btn waves-effect waves-light blue" type="submit">Send
@@ -244,8 +245,8 @@
           <p class="grey-text text-lighten-4"> &lt;div&gt;elop provides the FitMe Web site as a service to the public and users of the application.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="blue-text bold">Follow Us</h5>
-          <div class="divider blue"></div>
+          <h5 class="white-text bold">Follow Us</h5>
+          <div class="divider white"></div>
           <ul>
             <li><a href="https://www.instagram.com/go_fitme/" target="_blank"><img class="responsive-img icon-IG" src="/home/IG-icon40.png"></a>
             <a href="https://www.facebook.com/gofitme/?fref=ts" target="_blank"><img class="responsive-img icon-IG" src="/home/FB-icon40.png"></a>
@@ -258,10 +259,10 @@
     <div class="footer-copyright">
       <div class="container">
         <div class="row">
-          <div class="col s12 m6 l6">
+          <div class="col s12 m6 l12">
             ©2015
-            <img class="responsive-img footer-logo" src="/home/FitMe-text-logo3.png"> All rights reserved
-            <a class="orange-text right" href="http://www.divelop.io"><b>&lt;div&gt;elop LLC</b></a>
+            <img class="responsive-img footer-logo" src="/home/FitMe-text-logo3.png"> All rights reserved.
+            <a class="orange-text text-accent-2 right" href="http://www.divelop.io"><b>&lt;div&gt;elop LLC</b></a>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ Template.changePassword.events({
     var newPasswordConfirmation = $('[name=newPasswordConfirmation]').val();
 
     if (newPassword != newPasswordConfirmation) {
-      Bert.alert("Passwords dont match", 'danger', 'growl-top-right');
+      Bert.alert("Passwords do not match", 'danger', 'growl-top-right');
       return false;
     }
 

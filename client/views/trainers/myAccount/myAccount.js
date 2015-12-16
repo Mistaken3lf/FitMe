@@ -39,7 +39,7 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Are you sure?",
-      text: "Your account and all clients will be removed!!!",
+      text: "Your account and all clients will be removed!",
       type: "warning",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
@@ -53,7 +53,7 @@ Template.myAccount.events({
         Meteor.call("deleteAccount");
         FlowRouter.go("/");
       } else {
-        swal('Cancelled', 'Account is safe now :)', 'error');
+        swal('Cancelled', 'Account is safe now.', 'error');
       }
     });
 
