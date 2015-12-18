@@ -1,3 +1,6 @@
+let planType = "";
+let dollarAmount = 0
+
 Template.myAccount.onCreated(function () {
   var self = this;
 
@@ -5,6 +8,50 @@ Template.myAccount.onCreated(function () {
   self.autorun(function () {
     self.subscribe("myProfile");
     self.subscribe("currentClients");
+  });
+
+  let template = Template.instance();
+
+  let currentTrainer = Meteor.users.findOne({
+    _id: Meteor.userId()
+  });
+
+  template.processing = new ReactiveVar(false);
+
+  template.checkout = StripeCheckout.configure({
+    key: Meteor.settings.public.stripe,
+    locale: 'auto',
+    token(token) {
+      charge = {
+        amount: dollarAmount,
+        currency: 'usd',
+        source: token.id,
+        description: planType,
+        receipt_email: token.email
+      };
+
+      Meteor.call('processPayment', charge, (error, response) => {
+        if (error) {
+          template.processing.set(false);
+          Bert.alert(error.reason, 'danger');
+        } else {
+          if (planType == "One Month") {
+            Meteor.call('monthlyPlan', Meteor.userId());
+          }
+
+          if (planType == "Six Month") {
+            Meteor.call("sixMonthPlan", Meteor.userId());
+          }
+
+          if (planType == "One Year") {
+            Meteor.call("yearlyPlan", Meteor.userId());
+          }
+        }
+      });
+    },
+    closed() {
+      template.processing.set(false);
+    }
   });
 });
 
@@ -28,6 +75,10 @@ Template.myAccount.helpers({
     return Meteor.users.find({
       createdBy: Meteor.userId()
     }).count();
+  },
+  
+  processing() {
+    return Template.instance().processing.get();
   }
 });
 
@@ -56,6 +107,41 @@ Template.myAccount.events({
         swal('Cancelled', 'Account is safe now.', 'error');
       }
     });
+  },
 
+  'click .oneMonth' (event, template) {
+    template.checkout.open({
+      name: 'One Month',
+      description: "1 Month Of Usage",
+      amount: 2000,
+      bitcoin: false
+    });
+
+    planType = "One Month";
+    dollarAmount = 2000;
+  },
+
+  'click .sixMonth' (event, template) {
+    template.checkout.open({
+      name: 'Six Month',
+      description: "Six Month's Of Access",
+      amount: 11000,
+      bitcoin: false
+    });
+
+    planType = "Six Month";
+    dollarAmount = 11000;
+  },
+
+  'click .oneYear' (event, template) {
+    template.checkout.open({
+      name: 'One Year',
+      description: "1 Year Of Access",
+      amount: 21000,
+      bitcoin: false
+    });
+
+    planType = "One Year";
+    dollarAmount = 21000;
   }
 });

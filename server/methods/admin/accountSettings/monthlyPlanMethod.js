@@ -1,6 +1,6 @@
 Meteor.methods({
   monthlyPlan(trainerId) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
+    if (Roles.userIsInRole(this.userId, "admin") || Roles.userIsInRole(this.userId, "trainer")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(1, "months").format("MM/DD/YYYY");
 
@@ -13,7 +13,7 @@ Meteor.methods({
           _id: trainerId
         }, {
           $set: {
-            planType: "Monthly",
+            planType: "One Month",
             datePurchased: today,
             expiresOn: expires
           }
@@ -24,7 +24,7 @@ Meteor.methods({
         }, {
           $set: {
             clientLimit: 50,
-            planType: "Monthly",
+            planType: "One Month",
             datePurchased: today,
             expiresOn: expires
           }

@@ -1,6 +1,6 @@
 Meteor.methods({
   sixMonthPlan(trainerId) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
+    if (Roles.userIsInRole(this.userId, "admin") || Roles.userIsInRole(this.userId, "trainer")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(6, "months").format("MM/DD/YYYY");
       

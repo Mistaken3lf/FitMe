@@ -5,6 +5,7 @@ BrowserPolicy.content.allowInlineStyles();
 BrowserPolicy.content.allowFontDataUrl();
 BrowserPolicy.content.allowOriginForAll("https://js.stripe.com/")
 BrowserPolicy.content.allowOriginForAll("https://checkout.stripe.com/")
+BrowserPolicy.content.allowOriginForAll("https://q.stripe.com/")
 
 var trusted = [
   '*.google-analytics.com',
