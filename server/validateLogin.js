@@ -11,8 +11,8 @@ Accounts.validateLoginAttempt(function (loginAttempt) {
 
   //Check if their user status is suspended and give them an error
   //so they cant login if they are suspended
-  if (thisUser.userStatus == "suspended") {
-    throw new Meteor.Error(403, "User account is inactive");
+  if ((thisUser.userStatus == "suspended") && (Roles.userIsInRole(thisUser._id, "client"))) {
+    throw new Meteor.Error(403, "User account is inactive, please make payment to your trainer");
   }
 
   return true;

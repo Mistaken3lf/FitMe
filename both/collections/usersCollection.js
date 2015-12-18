@@ -275,6 +275,11 @@ Schema.User = new SimpleSchema({
     optional: true,
     blackbox: true
   },
+  
+  hasPaid: {
+    type: Boolean,
+    optional: true
+  },
 
   services: {
     type: Schema.Services,

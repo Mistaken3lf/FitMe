@@ -22,7 +22,8 @@ Meteor.methods({
           userStatus: "active",
           planType: "Free",
           datePurchased: today,
-          expiresOn: expires
+          expiresOn: expires,
+          hasPaid: false
         }
       });
 

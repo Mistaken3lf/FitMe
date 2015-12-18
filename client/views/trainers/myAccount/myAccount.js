@@ -27,7 +27,7 @@ Template.myAccount.onCreated(function () {
         currency: 'usd',
         source: token.id,
         description: planType,
-        receipt_email: token.email
+        receipt_email: currentTrainer.emails[0].address
       };
 
       Meteor.call('processPayment', charge, (error, response) => {
@@ -36,15 +36,18 @@ Template.myAccount.onCreated(function () {
           Bert.alert(error.reason, 'danger');
         } else {
           if (planType == "One Month") {
-            Meteor.call('monthlyPlan', Meteor.userId());
+            Bert.alert('Thank You For Choosing FitMe', 'success');
+            Meteor.call('oneMonthPlanTrainer', Meteor.userId());
           }
 
           if (planType == "Six Month") {
-            Meteor.call("sixMonthPlan", Meteor.userId());
+            Bert.alert('Thank You For Choosing FitMe', 'success');
+            Meteor.call("sixMonthPlanTrainer", Meteor.userId());
           }
 
           if (planType == "One Year") {
-            Meteor.call("yearlyPlan", Meteor.userId());
+            Bert.alert('Thank You For Choosing FitMe', 'success');
+            Meteor.call("oneYearPlanTrainer", Meteor.userId());
           }
         }
       });
@@ -76,9 +79,31 @@ Template.myAccount.helpers({
       createdBy: Meteor.userId()
     }).count();
   },
-  
+
   processing() {
     return Template.instance().processing.get();
+  },
+
+  paidAccount() {
+    let thisTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
+    if (thisTrainer.hasPaid) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  isSuspended() {
+    let thisTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
+    if (thisTrainer.userStatus == "suspended") {
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 
@@ -110,38 +135,143 @@ Template.myAccount.events({
   },
 
   'click .oneMonth' (event, template) {
-    template.checkout.open({
-      name: 'One Month',
-      description: "1 Month Of Usage",
-      amount: 2000,
-      bitcoin: false
+    let currentTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
     });
 
-    planType = "One Month";
-    dollarAmount = 2000;
+    //Needed for sweet alerts
+    var previousWindowKeyDown = window.onkeydown;
+
+    //Sweet alert to confirm deletion of client
+    swal({
+      title: "Terms and Conditions?",
+      text: "You will be prompted for payment provided by stripe all payments are handled through them securely over https",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, continue!",
+      closeOnConfirm: true
+    }, function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+      if (isConfirm) {
+        template.checkout.open({
+          email: currentTrainer.emails[0].address,
+          name: 'One Month',
+          description: "1 Month Of Access",
+          amount: 2000,
+          bitcoin: false
+        });
+
+        planType = "One Month";
+        dollarAmount = 2000;
+
+      } else {
+        swal('Cancelled', 'You Will Not Be Charged.', 'error');
+      }
+    });
   },
 
   'click .sixMonth' (event, template) {
-    template.checkout.open({
-      name: 'Six Month',
-      description: "Six Month's Of Access",
-      amount: 11000,
-      bitcoin: false
+    let currentTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
     });
 
-    planType = "Six Month";
-    dollarAmount = 11000;
+    //Needed for sweet alerts
+    var previousWindowKeyDown = window.onkeydown;
+
+    //Sweet alert to confirm deletion of client
+    swal({
+      title: "Terms and Conditions?",
+      text: "You will be prompted for payment provided by stripe all payments are handled through them securely over https",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, continue!",
+      closeOnConfirm: true
+    }, function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+      if (isConfirm) {
+        template.checkout.open({
+          email: currentTrainer.emails[0].address,
+          name: 'Six Month',
+          description: "Six Month's Of Access",
+          amount: 11000,
+          bitcoin: false
+        });
+
+        planType = "Six Month";
+        dollarAmount = 11000;
+
+      } else {
+        swal('Cancelled', 'You Will Not Be Charged.', 'error');
+      }
+    });
   },
 
   'click .oneYear' (event, template) {
-    template.checkout.open({
-      name: 'One Year',
-      description: "1 Year Of Access",
-      amount: 21000,
-      bitcoin: false
+    let currentTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
     });
 
-    planType = "One Year";
-    dollarAmount = 21000;
-  }
+    //Needed for sweet alerts
+    var previousWindowKeyDown = window.onkeydown;
+
+    //Sweet alert to confirm deletion of client
+    swal({
+      title: "Terms and Conditions?",
+      text: "You will be prompted for payment provided by stripe all payments are handled through them securely over https",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, continue!",
+      closeOnConfirm: true
+    }, function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+      if (isConfirm) {
+        template.checkout.open({
+          email: currentTrainer.emails[0].address,
+          name: 'One Year',
+          description: "1 Year Of Access",
+          amount: 21000,
+          bitcoin: false
+        });
+
+        planType = "One Year";
+        dollarAmount = 21000;
+
+      } else {
+        swal('Cancelled', 'You Will Not Be Charged.', 'error');
+      }
+    });
+  },
+
+  'click .free': function (event) {
+    let currentTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
+
+    //Needed for sweet alerts
+    var previousWindowKeyDown = window.onkeydown;
+
+    //Sweet alert to confirm deletion of client
+    swal({
+      title: "Reset Your Account To Free?",
+      text: "You will lose all your current clients and your client limit will be dropped to 1",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, continue!",
+      closeOnConfirm: true
+    }, function (isConfirm) {
+      window.onkeydown = previousWindowKeyDown;
+      if (isConfirm) {
+        Meteor.call("freeAccountTrainer", Meteor.userId());
+        Bert.alert('Thank You For Choosing FitMe', 'success');
+      } else {
+        swal('Cancelled', 'Your account will not be reset.', 'error');
+      }
+    });
+  },
+
+
 });

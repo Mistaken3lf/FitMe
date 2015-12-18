@@ -14,7 +14,8 @@ Meteor.methods({
           _id: user._id
         }, {
           $set: {
-            userStatus: "suspended"
+            userStatus: "suspended",
+            hasPaid: false
           }
         });
 
@@ -22,7 +23,8 @@ Meteor.methods({
           createdBy: user._id
         }, {
           $set: {
-            userStatus: "suspended"
+            userStatus: "suspended",
+            hasPaid: false
           }
         }, {
           multi: true
@@ -32,7 +34,7 @@ Meteor.methods({
           _id: user._id
         }, {
           $set: {
-            userStatus: "active"
+            userStatus: "active",
           }
         });
 
@@ -40,7 +42,7 @@ Meteor.methods({
           createdBy: user._id
         }, {
           $set: {
-            userStatus: "active"
+            userStatus: "active",
           }
         }, {
           multi: true

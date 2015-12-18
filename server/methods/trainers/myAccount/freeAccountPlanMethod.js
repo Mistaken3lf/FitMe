@@ -1,8 +1,8 @@
 Meteor.methods({
-  resetAccount(trainerId) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
+  freeAccountTrainer(trainerId) {
+    if (Roles.userIsInRole(this.userId, "trainer")) {
       let today = moment().format("MM/DD/YYYY");
-      let expires = moment().add(1, "months").format("MM/DD/YYYY");
+      let expires = moment().add(2, "weeks").format("MM/DD/YYYY");
 
       Meteor.users.update({
         _id: trainerId
@@ -12,7 +12,8 @@ Meteor.methods({
           planType: "Free",
           datePurchased: today,
           expiresOn: expires,
-          hasPaid: false
+          hasPaid: false,
+          userStatus: "active"
         }
       });
 

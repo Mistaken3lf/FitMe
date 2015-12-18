@@ -15,7 +15,8 @@ Meteor.methods({
           $set: {
             planType: "Six Month",
             datePurchased: today,
-            expiresOn: expires
+            expiresOn: expires,
+            hasPaid: true
           }
         });
       } else {
@@ -26,7 +27,8 @@ Meteor.methods({
             clientLimit: 50,
             planType: "Six Month",
             datePurchased: today,
-            expiresOn: expires
+            expiresOn: expires,
+            hasPaid: true
           }
         });
       }

@@ -22,6 +22,16 @@
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
           {{#if isInRole 'trainer'}}
+          {{#if isSuspended}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <div>
+            <h6 class="center-align blue-text">Build: v{{versionNumber}}</h6>
+          </div>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myAccount">My Account</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{else}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <div>
             <h6 class="center-align blue-text">Build: v{{versionNumber}}</h6>
@@ -32,6 +42,7 @@
           <a class="btn blue white-text waves-effect" id="navPad" href="/currentClients">My Clients</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/trainerSchedule">Schedule</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
           {{/if}}
           {{#if isInRole 'client'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
@@ -70,7 +81,17 @@
           <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
           {{/if}}
-          {{#if isInRole 'trainer'}}
+          {{#if suspendedTrainer}}
+          <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
+          <div>
+            <h6 class="center-align blue-text">Build: v{{versionNumber}}</h6>
+          </div>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
+          <a class="btn blue white-text waves-effect" id="navPad" href="/myAccount">My Account</a>
+          <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{else}}
+          {{#if validTrainer}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
           <div>
             <h6 class="center-align blue-text">Build: v{{versionNumber}}</h6>
@@ -81,6 +102,7 @@
           <a class="btn blue white-text waves-effect" id="navPad" href="/currentClients">My Clients</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/trainerSchedule">Schedule</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          {{/if}}
           {{/if}}
           {{#if isInRole 'client'}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>

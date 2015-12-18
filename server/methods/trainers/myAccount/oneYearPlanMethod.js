@@ -1,8 +1,8 @@
 Meteor.methods({
-  twoMonthPromo(trainerId) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
+  oneYearPlanTrainer(trainerId) {
+    if (Roles.userIsInRole(this.userId, "trainer")) {
       let today = moment().format("MM/DD/YYYY");
-      let expires = moment().add(2, "months").format("MM/DD/YYYY");
+      let expires = moment().add(12, "months").format("MM/DD/YYYY");
       
       let curTrainer = Meteor.users.findOne({
         _id: trainerId
@@ -13,9 +13,10 @@ Meteor.methods({
           _id: trainerId
         }, {
           $set: {
-            planType: "2 Month Promo",
+            planType: "One Year",
             datePurchased: today,
-            expiresOn: expires
+            expiresOn: expires,
+            userStatus: "active"
           }
         });
       } else {
@@ -24,9 +25,10 @@ Meteor.methods({
         }, {
           $set: {
             clientLimit: 50,
-            planType: "2 Month Promo",
+            planType: "One Year",
             datePurchased: today,
-            expiresOn: expires
+            expiresOn: expires,
+            userStatus: "active"
           }
         });
       }
