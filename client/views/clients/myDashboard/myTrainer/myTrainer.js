@@ -7,6 +7,7 @@ Template.myTrainer.onCreated(function () {
 });
 
 Template.myTrainer.helpers({
+  //Find my trainer
   myTrainer: function () {
     let currentClient = Meteor.users.findOne({
       _id: Meteor.userId()

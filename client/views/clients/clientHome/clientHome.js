@@ -17,7 +17,10 @@ Template.clientHome.events({
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
+        //Show success message to let them know the email sent
         Bert.alert("Email successfully sent", 'success', 'growl-top-right');
+        
+        //Reset the form values to blank
         firstName = $('[name=firstName]').val('');
         lastName = $('[name=lastName]').val('');
         phoneNumber = $('[name=phoneNumber]').val('');

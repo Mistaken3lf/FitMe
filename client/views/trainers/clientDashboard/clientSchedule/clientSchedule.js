@@ -9,13 +9,16 @@ Template.clientSchedule.onCreated(function () {
 });
 
 Template.clientScheduleShell.onRendered(function () {
+  //Datepicker for when the next payment is due
   $('#paymentDue').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
     startDate: new Date(),
     scrollInput: false
   });
-
+  
+  //Each of the following timepickers is for the schedule
+  //of the clients start and end times for monday through sunday
   $('#mondaysScheduleStart').datetimepicker({
     datepicker: false,
     formatTime: 'HH:mm',
@@ -129,12 +132,14 @@ Template.clientScheduleShell.helpers({
   todaysDate: function () {
     return new Date().toDateString();
   },
-
+  
+  //Get the start day of the week
   startOfWeek: function () {
     let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
     return startOfWeek;
   },
-
+  
+  //Get the end day of the week
   endOfWeek: function () {
     let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
     return endOfWeek;

@@ -3,11 +3,13 @@ Template.trainerHome.onRendered(function () {
   $('.slider').slider({
     full_width: true
   });
-
+  
+  //Initialize the parallax
   $('.parallax').parallax();
 });
 
 Template.trainerHome.events({
+  //Contact us email
   'submit form': function (event) {
     event.preventDefault();
     //Get who send the message and the actual message
@@ -34,6 +36,7 @@ Template.trainerHome.events({
 });
 
 Template.trainerHome.helpers({
+  //Check if the user is logging in 
   isLoggingIn: function () {
     return Meteor.loggingIn();
   }

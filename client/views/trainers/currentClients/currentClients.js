@@ -51,7 +51,9 @@ Template.currentClients.events({
       }
     });
   },
-
+  
+  //Prevent the trainer from viewing the dashboard if they
+  //are suspended otherwise direct them to the dashboard
   'click .username': function (event) {
     let thisTrainer = Meteor.users.findOne({
       _id: Meteor.userId()

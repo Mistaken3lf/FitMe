@@ -1,3 +1,5 @@
+//Set plan type and dollar amount based on what
+//plan they click
 let planType = "";
 let dollarAmount = 0
 
@@ -11,13 +13,15 @@ Template.myAccount.onCreated(function () {
   });
 
   let template = Template.instance();
-
+  
+  //Find the current trainer
   let currentTrainer = Meteor.users.findOne({
     _id: Meteor.userId()
   });
 
   template.processing = new ReactiveVar(false);
-
+  
+  //Charge the trainer with stripe
   template.checkout = StripeCheckout.configure({
     key: Meteor.settings.public.stripe,
     locale: 'auto',
@@ -29,22 +33,26 @@ Template.myAccount.onCreated(function () {
         description: planType,
         receipt_email: currentTrainer.emails.address
       };
-
+      
+      //Process their payment
       Meteor.call('processPayment', charge, (error, response) => {
         if (error) {
           template.processing.set(false);
           Bert.alert(error.reason, 'danger');
         } else {
+          //One month plan
           if (planType == "One Month") {
             Bert.alert('Thank You For Choosing FitMe', 'success');
             Meteor.call('oneMonthPlanTrainer', Meteor.userId());
           }
-
+          
+          //Six month plan
           if (planType == "Six Month") {
             Bert.alert('Thank You For Choosing FitMe', 'success');
             Meteor.call("sixMonthPlanTrainer", Meteor.userId());
           }
-
+          
+          //One year plan
           if (planType == "One Year") {
             Bert.alert('Thank You For Choosing FitMe', 'success');
             Meteor.call("oneYearPlanTrainer", Meteor.userId());
@@ -59,12 +67,14 @@ Template.myAccount.onCreated(function () {
 });
 
 Template.myAccount.helpers({
+  //Find trainers account
   myAccount: function () {
     return Meteor.users.findOne({
       _id: Meteor.userId()
     });
   },
-
+  
+  //Format the last login date
   formatDate: function (loginDate) {
     return loginDate.toDateString();
   },
@@ -73,7 +83,8 @@ Template.myAccount.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   },
-
+  
+  //Get count of total clients this trainer has
   totalClients: function () {
     return Meteor.users.find({
       createdBy: Meteor.userId()
@@ -83,7 +94,8 @@ Template.myAccount.helpers({
   processing() {
     return Template.instance().processing.get();
   },
-
+  
+  //Does the trainer have a paid account
   paidAccount() {
     let thisTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
@@ -94,7 +106,8 @@ Template.myAccount.helpers({
       return false;
     }
   },
-
+  
+  //Is the trainer suspended?
   isSuspended() {
     let thisTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
@@ -108,6 +121,7 @@ Template.myAccount.helpers({
 });
 
 Template.myAccount.events({
+  //Delete the trainers account
   "click .deleteAccount": function (event) {
     //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
@@ -133,7 +147,8 @@ Template.myAccount.events({
       }
     });
   },
-
+  
+  //Buy the one month plan
   'click .oneMonth' (event, template) {
     let currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
@@ -170,7 +185,8 @@ Template.myAccount.events({
       }
     });
   },
-
+  
+  //Buy the six month plan
   'click .sixMonth' (event, template) {
     let currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
@@ -207,7 +223,8 @@ Template.myAccount.events({
       }
     });
   },
-
+  
+  //Buy the one year plan
   'click .oneYear' (event, template) {
     let currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
@@ -244,12 +261,15 @@ Template.myAccount.events({
       }
     });
   },
-
+  
+  //Switch to the free account
   'click .free': function (event) {
     let currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
     
+    //Check if the trainer is already in a paid plan and let
+    //them know they are already in a plan
     if (currentTrainer.hasPaid == true) {
       //Needed for sweet alerts
       var previousWindowKeyDown = window.onkeydown;

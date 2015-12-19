@@ -8,6 +8,8 @@ Template.trainerSchedule.onCreated(function () {
 });
 
 Template.trainerSchedule.events({
+  //Events to remove an item from the schedule for monday through sunday
+  //on desktop and mobile
   "click .removeFromMonday": function () {
     Meteor.call("resetMondaysSchedule", this._id, function (error) {
       if (error) {
@@ -122,11 +124,13 @@ Template.trainerSchedule.events({
 });
 
 Template.trainerSchedule.helpers({
+  //Get the start day of the week
   startOfWeek: function () {
     let startDay = moment().startOf("week").format("ddd. MMM Do");
     return startDay;
   },
-
+  
+  //Get the end day of the week
   endOfWeek: function () {
     let endDay = moment().endOf("week").format("ddd. MMM Do");
     return endDay;

@@ -19,23 +19,17 @@ Template.mySessionShell.helpers({
   todaysDate: function () {
     return new Date().toDateString();
   },
-
+  
+  //Get starting date of week
   startOfWeek: function () {
     let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
     return startOfWeek;
   },
-
+  
+  //Get ending day of week
   endOfWeek: function () {
     let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
     return endOfWeek;
-  },
-
-  mondayStatus: function () {
-    let mondayStatus = Meteor.users.findOne({
-      _id: Meteor.userId()
-    });
-
-    return mondayStatus.mondayStatus;
   }
 });
 

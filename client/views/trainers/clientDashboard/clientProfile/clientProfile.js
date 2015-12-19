@@ -9,6 +9,7 @@ Template.clientProfile.onCreated(function () {
 });
 
 Template.clientProfileShell.onRendered(function () {
+  //Popup date picker to select clients birthday
   $('#clientBirthday').datetimepicker({
     timepicker: false,
     format: "MM/DD/YYYY",
