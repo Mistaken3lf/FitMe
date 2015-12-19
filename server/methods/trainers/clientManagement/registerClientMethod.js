@@ -7,6 +7,10 @@ Meteor.methods({
       var currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
+      
+      if(currentTrainer.userStatus == "suspended") {
+        return "Sorry, your account is suspended";
+      }
 
       //Get the count of total clients they have
       var currentClientCount = Meteor.users.find({

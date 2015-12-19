@@ -2,6 +2,14 @@ Meteor.methods({
   //Update a clients cardio with the clientId passed in from
   //flow router
   updateClientCardio(updatedCardio, clientId) {
+    let currentTrainer = Meteor.users.findOne({
+      _id: this.userId
+    });
+    
+    if (currentTrainer.userStatus == "suspended") {
+      throw new Meteor.Error("Your account is suspended");
+    }
+    
     //Make sure the user is a trainer and logged in before performing
     //the method
     if (Roles.userIsInRole(this.userId, "trainer")) {

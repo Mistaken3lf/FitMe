@@ -16,7 +16,8 @@ Meteor.methods({
             planType: "Six Month",
             datePurchased: today,
             expiresOn: expires,
-            userStatus: "active"
+            userStatus: "active",
+            hasPaid: true
           }
         });
       } else {
@@ -28,7 +29,8 @@ Meteor.methods({
             planType: "Six Month",
             datePurchased: today,
             expiresOn: expires,
-            userStatus: "active"
+            userStatus: "active",
+            hasPaid: true
           }
         });
       }

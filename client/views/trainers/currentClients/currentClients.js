@@ -4,6 +4,7 @@ Template.currentClients.onCreated(function () {
   //Subscribe to the clients profile based on the url param
   self.autorun(function () {
     self.subscribe("currentClients");
+    self.subscribe("myProfile");
   });
 });
 
@@ -31,7 +32,11 @@ Template.currentClients.events({
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted', 'success');
         //Call server function to delete the client clicked on
-        Meteor.call("deleteClient", curUser._id);
+        Meteor.call("deleteClient", curUser._id, function (error, result) {
+          if (error) {
+            Bert.alert("Sorry, you account has been suspended", 'danger', 'growl-top-right');
+          }
+        });
       } else {
         swal('Cancelled', 'Your client is safe now', 'error');
       }
@@ -40,7 +45,27 @@ Template.currentClients.events({
 
   'click .suspendUser': function (event) {
     //Suspend client clicked on
-    Meteor.call("suspendUser", this._id);
+    Meteor.call("suspendUser", this._id, function (error, result) {
+      if (error) {
+        Bert.alert('Sorry, your account is suspended', "danger", 'growl-top-right');
+      }
+    });
+  },
+
+  'click .username': function (event) {
+    let thisTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
+    }, {
+      fields: {
+        userStatus: 1
+      }
+    });
+
+    if (thisTrainer.userStatus == "suspended") {
+      Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+    } else {
+      FlowRouter.go("/clientDashboard/" + this._id);
+    }
   }
 });
 
@@ -54,7 +79,7 @@ Template.currentClients.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   },
-  
+
   clientSearchAttributes: function () {
     //Placeholder for easy search to search my clients
     return {

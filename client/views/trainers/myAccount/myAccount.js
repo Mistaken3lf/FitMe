@@ -27,7 +27,7 @@ Template.myAccount.onCreated(function () {
         currency: 'usd',
         source: token.id,
         description: planType,
-        receipt_email: currentTrainer.emails[0].address
+        receipt_email: currentTrainer.emails.address
       };
 
       Meteor.call('processPayment', charge, (error, response) => {
@@ -249,29 +249,51 @@ Template.myAccount.events({
     let currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
+    
+    if (currentTrainer.hasPaid == true) {
+      //Needed for sweet alerts
+      var previousWindowKeyDown = window.onkeydown;
 
-    //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+      //Sweet alert to confirm deletion of client
+      swal({
+        title: "Are You Sure?",
+        text: "You are currently enrolled in a plan and you will lose all your current clients and your client limit will be dropped to 1",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, continue!",
+        closeOnConfirm: true
+      }, function (isConfirm) {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          Meteor.call("freeAccountTrainer", Meteor.userId());
+          Bert.alert('Thank You For Choosing FitMe', 'success');
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
+    } else {
+      //Needed for sweet alerts
+      var previousWindowKeyDown = window.onkeydown;
 
-    //Sweet alert to confirm deletion of client
-    swal({
-      title: "Reset Your Account To Free?",
-      text: "You will lose all your current clients and your client limit will be dropped to 1",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, continue!",
-      closeOnConfirm: true
-    }, function (isConfirm) {
-      window.onkeydown = previousWindowKeyDown;
-      if (isConfirm) {
-        Meteor.call("freeAccountTrainer", Meteor.userId());
-        Bert.alert('Thank You For Choosing FitMe', 'success');
-      } else {
-        swal('Cancelled', 'Your account will not be reset.', 'error');
-      }
-    });
-  },
-
-
+      //Sweet alert to confirm deletion of client
+      swal({
+        title: "Reset Your Account To Free?",
+        text: "You will lose all your current clients and your client limit will be dropped to 1",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, continue!",
+        closeOnConfirm: true
+      }, function (isConfirm) {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          Meteor.call("freeAccountTrainer", Meteor.userId());
+          Bert.alert('Thank You For Choosing FitMe', 'success');
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
+    }
+  }
 });

@@ -7,6 +7,14 @@ Meteor.methods({
     if (Roles.userIsInRole(this.userId, 'client')) {
       throw new Meteor.Error("not-authorized");
     } else {
+      let currentTrainer = Meteor.users.findOne({
+        _id: this.userId
+      });
+
+      if (currentTrainer.userStatus == "suspended") {
+        throw new Meteor.Error("Your account has been suspended");
+      }
+
       let user = Meteor.users.findOne(clientId);
 
       if (user.userStatus == "active") {
@@ -14,8 +22,7 @@ Meteor.methods({
           _id: user._id
         }, {
           $set: {
-            userStatus: "suspended",
-            hasPaid: false
+            userStatus: "suspended"
           }
         });
 
@@ -23,8 +30,7 @@ Meteor.methods({
           createdBy: user._id
         }, {
           $set: {
-            userStatus: "suspended",
-            hasPaid: false
+            userStatus: "suspended"
           }
         }, {
           multi: true
@@ -34,7 +40,7 @@ Meteor.methods({
           _id: user._id
         }, {
           $set: {
-            userStatus: "active",
+            userStatus: "active"
           }
         });
 
@@ -42,7 +48,7 @@ Meteor.methods({
           createdBy: user._id
         }, {
           $set: {
-            userStatus: "active",
+            userStatus: "active"
           }
         }, {
           multi: true

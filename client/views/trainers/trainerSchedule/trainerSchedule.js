@@ -9,59 +9,115 @@ Template.trainerSchedule.onCreated(function () {
 
 Template.trainerSchedule.events({
   "click .removeFromMonday": function () {
-    Meteor.call("resetMondaysSchedule", this._id);
+    Meteor.call("resetMondaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromMondayMobile": function () {
-    Meteor.call("resetMondaysSchedule", this._id);
+    Meteor.call("resetMondaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromTuesday": function () {
-    Meteor.call("resetTuesdaysSchedule", this._id);
+    Meteor.call("resetTuesdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromTuesdayMobile": function () {
-    Meteor.call("resetTuesdaysSchedule", this._id);
+    Meteor.call("resetTuesdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromWednesday": function () {
-    Meteor.call("resetWednesdaysSchedule", this._id);
+    Meteor.call("resetWednesdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromWednesdayMobile": function () {
-    Meteor.call("resetWednesdaysSchedule", this._id);
+    Meteor.call("resetWednesdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromThursday": function () {
-    Meteor.call("resetThursdaysSchedule", this._id);
+    Meteor.call("resetThursdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromThursdayMobile": function () {
-    Meteor.call("resetThursdaysSchedule", this._id);
+    Meteor.call("resetThursdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromFriday": function () {
-    Meteor.call("resetFridaysSchedule", this._id);
+    Meteor.call("resetFridaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromFridayMobile": function () {
-    Meteor.call("resetFridaysSchedule", this._id);
+    Meteor.call("resetFridaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromSaturday": function () {
-    Meteor.call("resetSaturdaysSchedule", this._id);
+    Meteor.call("resetSaturdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromSaturdayMobile": function () {
-    Meteor.call("resetSaturdaysSchedule", this._id);
+    Meteor.call("resetSaturdaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromSunday": function () {
-    Meteor.call("resetSundaysSchedule", this._id);
+    Meteor.call("resetSundaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   },
 
   "click .removeFromSundayMobile": function () {
-    Meteor.call("resetSundaysSchedule", this._id);
+    Meteor.call("resetSundaysSchedule", this._id, function (error) {
+      if (error) {
+        Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      }
+    });
   }
 });
 
@@ -110,11 +166,11 @@ Template.trainerSchedule.helpers({
       tuesdaysScheduleStart: {
         $exists: true
       },
-      
+
       tuesdaysScheduleEnd: {
         $exists: true
       }
-      
+
     }, {
       fields: {
         username: 1,
@@ -134,11 +190,11 @@ Template.trainerSchedule.helpers({
   thisWednesdaysSchedule: function () {
     return Meteor.users.find({
       wednesdayStatus: true,
-      
+
       wednesdaysScheduleStart: {
         $exists: true
       },
-      
+
       wednesdaysScheduleEnd: {
         $exists: true
       }
@@ -187,11 +243,11 @@ Template.trainerSchedule.helpers({
   thisFridaysSchedule: function () {
     return Meteor.users.find({
       fridayStatus: true,
-      
+
       fridaysScheduleStart: {
         $exists: true
       },
-      
+
       fridaysScheduleEnd: {
         $exists: true
       }
@@ -214,11 +270,11 @@ Template.trainerSchedule.helpers({
   thisSaturdaysSchedule: function () {
     return Meteor.users.find({
       saturdayStatus: true,
-      
+
       saturdaysScheduleStart: {
         $exists: true
       },
-      
+
       saturdaysScheduleEnd: {
         $exists: true
       }
@@ -241,11 +297,11 @@ Template.trainerSchedule.helpers({
   thisSundaysSchedule: function () {
     return Meteor.users.find({
       sundayStatus: true,
-      
+
       sundaysScheduleStart: {
         $exists: true
       },
-      
+
       sundaysScheduleEnd: {
         $exists: true
       }
@@ -262,10 +318,5 @@ Template.trainerSchedule.helpers({
         sundaysScheduleStart: 1
       }
     });
-  },
-
-  //Check if the user is currently logging in
-  isLoggingIn: function () {
-    return Meteor.loggingIn();
   }
 });
