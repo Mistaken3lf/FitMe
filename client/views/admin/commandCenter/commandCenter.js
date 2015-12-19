@@ -97,7 +97,8 @@ Template.commandCenter.events({
     //Suspend the trainer clicked on
     Meteor.call("suspendUser", this._id);
   },
-
+  
+  //Payment due soon button to send email when their payment is due soon
   'click .paymentDueSoon': function (event) {
     Meteor.call("paymentDueSoon", this.expiresOn, this._id, function (error) {
       if (error) {

@@ -10,17 +10,20 @@ Template.accountDetails.onCreated(function () {
 });
 
 Template.accountDetails.helpers({
+  //Get all the account details
   accountSetting: function () {
     var trainerId = FlowRouter.getParam('_id');
     return Meteor.users.findOne({
       _id: trainerId
     });
   },
-
+  
+  //Format the date they last logged in
   formatDate: function (loginDate) {
     return loginDate.toDateString();
   },
   
+  //Get total number of clients for the trainer
   totalClients: function () {
     var trainerId = FlowRouter.getParam('_id');
     let totalClients =  Meteor.users.find({
@@ -32,6 +35,7 @@ Template.accountDetails.helpers({
 });
 
 Template.accountDetails.events({
+  //Start the one month plan
   'click .monthlyPlan': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("monthlyPlan", trainerId, function (error) {
@@ -42,7 +46,8 @@ Template.accountDetails.events({
       }
     });
   },
-
+  
+  //Start the six month plan
   'click .sixMonthPlan': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("sixMonthPlan", trainerId, function (error) {
@@ -53,7 +58,8 @@ Template.accountDetails.events({
       }
     });
   },
-
+  
+  //Start the yearly plan
   'click .yearlyPlan': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("yearlyPlan", trainerId, function (error) {
@@ -64,7 +70,8 @@ Template.accountDetails.events({
       }
     });
   },
-
+  
+  //Add five additional clients to trainer
   'click .fiveAdditionalClients': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("fiveAdditionalClients", trainerId, function (error) {
@@ -75,7 +82,8 @@ Template.accountDetails.events({
       }
     });
   },
-
+  
+  //Add ten additional clients to trainer
   'click .tenAdditionalClients': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("tenAdditionalClients", trainerId, function (error) {
@@ -86,7 +94,8 @@ Template.accountDetails.events({
       }
     });
   },
-
+  
+  //Add twenty additional clients to trainer
   'click .twentyAdditionalClients': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("twentyAdditionalClients", trainerId, function (error) {
@@ -97,7 +106,8 @@ Template.accountDetails.events({
       }
     });
   },
-
+  
+  //Reset the trainers acccount back to a free account
   'click .resetAccount': function (event) {
     var trainerId = FlowRouter.getParam('_id');
 
@@ -125,7 +135,8 @@ Template.accountDetails.events({
     });
 
   },
-
+  
+  //Send email to trainer if they have not loggged in for a while
   'click .emailInactive': function (event) {
     var trainerId = FlowRouter.getParam('_id');
     Meteor.call("sendInactiveEmail", trainerId, function (error) {
@@ -133,17 +144,6 @@ Template.accountDetails.events({
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         Bert.alert("Warning Email Sent", 'success', 'growl-top-right');
-      }
-    });
-  },
-  
-  'click .twoMonthPromo': function (event) {
-    var trainerId = FlowRouter.getParam('_id');
-    Meteor.call("twoMonthPromo", trainerId, function (error) {
-      if (error) {
-        Bert.alert(error.reason, 'danger', 'growl-top-right');
-      } else {
-        Bert.alert("2 Month Promo Started", 'success', 'growl-top-right');
       }
     });
   }

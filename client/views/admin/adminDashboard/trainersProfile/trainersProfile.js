@@ -22,7 +22,9 @@ Template.trainersProfile.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   },
-
+  
+  //Get the currently logged in trainer to display their
+  //info in the form
   currentTrainer: function () {
     var trainerId = FlowRouter.getParam('_id');
     return Meteor.users.findOne({

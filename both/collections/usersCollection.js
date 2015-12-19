@@ -332,6 +332,7 @@ UsersIndex = new EasySearch.Index({
   })
 });
 
+//Create search index to search all my trainers
 CurrentTrainersIndex = new EasySearch.Index({
   collection: Meteor.users,
   fields: ['username', 'firstName', 'lastName', 'userStatus'],

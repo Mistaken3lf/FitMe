@@ -14,10 +14,10 @@ Template.trainersClients.events({
     var curUser = Meteor.users.findOne({
       _id: this._id
     });
-    
+
     //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
-    
+
     //Popup sweet alert to confirm delete
     swal({
       title: "Are you sure?",
@@ -52,6 +52,7 @@ Template.trainersClients.helpers({
     return UsersIndex;
   },
 
+  //Placeholder for easy search
   trainersClientsAttributes: function () {
     //Placeholder for easy search
     return {
