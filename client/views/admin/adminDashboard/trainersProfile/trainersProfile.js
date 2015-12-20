@@ -7,7 +7,7 @@ Template.trainersProfile.onCreated(function () {
   });
 });
 
-Template.trainersProfile.onRendered(function () {
+Template.trainersProfileShell.onRendered(function () {
   //Pop up a datepicker if a date field is clicked on
   $('#birthday').datetimepicker({
     timepicker: false,
@@ -17,7 +17,7 @@ Template.trainersProfile.onRendered(function () {
   });
 });
 
-Template.trainersProfile.helpers({
+Template.trainersProfileShell.helpers({
   //Check if the user is currently logging in
   isLoggingIn: function () {
     return Meteor.loggingIn();
