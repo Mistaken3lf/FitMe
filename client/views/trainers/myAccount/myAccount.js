@@ -159,7 +159,7 @@ Template.myAccount.events({
 
     //Sweet alert to confirm deletion of client
     swal({
-      title: "Terms and Conditions?",
+      title: "Terms and Conditions",
       text: "You will be prompted for payment provided by stripe all payments are handled through them securely over https",
       type: "warning",
       showCancelButton: true,
@@ -197,7 +197,7 @@ Template.myAccount.events({
 
     //Sweet alert to confirm deletion of client
     swal({
-      title: "Terms and Conditions?",
+      title: "Terms and Conditions",
       text: "You will be prompted for payment provided by stripe all payments are handled through them securely over https",
       type: "warning",
       showCancelButton: true,
@@ -235,7 +235,7 @@ Template.myAccount.events({
 
     //Sweet alert to confirm deletion of client
     swal({
-      title: "Terms and Conditions?",
+      title: "Terms and Conditions",
       text: "You will be prompted for payment provided by stripe all payments are handled through them securely over https",
       type: "warning",
       showCancelButton: true,
