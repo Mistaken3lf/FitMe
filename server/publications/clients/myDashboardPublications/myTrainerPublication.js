@@ -1,5 +1,6 @@
 Meteor.publish('myTrainer', function () {
-  //Find
+  //Find current client so we can find who created them to
+  //show them their trainer
   let currentClient = Meteor.users.findOne({
     _id: this.userId
   });
