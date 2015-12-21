@@ -13,57 +13,61 @@ Template.myAccount.onCreated(function () {
   });
 
   let template = Template.instance();
-  
-  //Find the current trainer
-  let currentTrainer = Meteor.users.findOne({
-    _id: Meteor.userId()
-  });
 
-  template.processing = new ReactiveVar(false);
-  
-  //Charge the trainer with stripe
-  template.checkout = StripeCheckout.configure({
-    key: Meteor.settings.public.stripe,
-    locale: 'auto',
-    token(token) {
-      charge = {
-        amount: dollarAmount,
-        currency: 'usd',
-        source: token.id,
-        description: planType,
-        receipt_email: currentTrainer.emails.address
-      };
-      
-      //Process their payment
-      Meteor.call('processPayment', charge, (error, response) => {
-        if (error) {
-          template.processing.set(false);
-          Bert.alert(error.reason, 'danger');
-        } else {
-          //One month plan
-          if (planType == "One Month") {
-            Bert.alert('Thank You For Choosing FitMe', 'success');
-            Meteor.call('oneMonthPlanTrainer', Meteor.userId());
+  if (!Meteor.loggingIn()) {
+    //Find the current trainer
+    let currentTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
+
+    let email = currentTrainer.emails[0].address;
+
+    template.processing = new ReactiveVar(false);
+
+    //Charge the trainer with stripe
+    template.checkout = StripeCheckout.configure({
+      key: Meteor.settings.public.stripe,
+      locale: 'auto',
+      token(token) {
+        charge = {
+          amount: dollarAmount,
+          currency: 'usd',
+          source: token.id,
+          description: planType,
+          receipt_email: email
+        };
+
+        //Process their payment
+        Meteor.call('processPayment', charge, (error, response) => {
+          if (error) {
+            template.processing.set(false);
+            Bert.alert(error.reason, 'danger');
+          } else {
+            //One month plan
+            if (planType == "One Month") {
+              Bert.alert('Thank You For Choosing FitMe', 'success');
+              Meteor.call('oneMonthPlanTrainer', Meteor.userId());
+            }
+
+            //Six month plan
+            if (planType == "Six Month") {
+              Bert.alert('Thank You For Choosing FitMe', 'success');
+              Meteor.call("sixMonthPlanTrainer", Meteor.userId());
+            }
+
+            //One year plan
+            if (planType == "One Year") {
+              Bert.alert('Thank You For Choosing FitMe', 'success');
+              Meteor.call("oneYearPlanTrainer", Meteor.userId());
+            }
           }
-          
-          //Six month plan
-          if (planType == "Six Month") {
-            Bert.alert('Thank You For Choosing FitMe', 'success');
-            Meteor.call("sixMonthPlanTrainer", Meteor.userId());
-          }
-          
-          //One year plan
-          if (planType == "One Year") {
-            Bert.alert('Thank You For Choosing FitMe', 'success');
-            Meteor.call("oneYearPlanTrainer", Meteor.userId());
-          }
-        }
-      });
-    },
-    closed() {
-      template.processing.set(false);
-    }
-  });
+        });
+      },
+      closed() {
+        template.processing.set(false);
+      }
+    });
+  }
 });
 
 Template.myAccount.helpers({
@@ -73,7 +77,7 @@ Template.myAccount.helpers({
       _id: Meteor.userId()
     });
   },
-  
+
   //Format the last login date
   formatDate: function (loginDate) {
     return loginDate.toDateString();
@@ -83,7 +87,7 @@ Template.myAccount.helpers({
   isLoggingIn: function () {
     return Meteor.loggingIn();
   },
-  
+
   //Get count of total clients this trainer has
   totalClients: function () {
     return Meteor.users.find({
@@ -94,7 +98,7 @@ Template.myAccount.helpers({
   processing() {
     return Template.instance().processing.get();
   },
-  
+
   //Does the trainer have a paid account
   paidAccount() {
     let thisTrainer = Meteor.users.findOne({
@@ -106,7 +110,7 @@ Template.myAccount.helpers({
       return false;
     }
   },
-  
+
   //Is the trainer suspended?
   isSuspended() {
     let thisTrainer = Meteor.users.findOne({
@@ -147,7 +151,7 @@ Template.myAccount.events({
       }
     });
   },
-  
+
   //Buy the one month plan
   'click .oneMonth' (event, template) {
     let currentTrainer = Meteor.users.findOne({
@@ -185,7 +189,7 @@ Template.myAccount.events({
       }
     });
   },
-  
+
   //Buy the six month plan
   'click .sixMonth' (event, template) {
     let currentTrainer = Meteor.users.findOne({
@@ -223,7 +227,7 @@ Template.myAccount.events({
       }
     });
   },
-  
+
   //Buy the one year plan
   'click .oneYear' (event, template) {
     let currentTrainer = Meteor.users.findOne({
@@ -261,13 +265,13 @@ Template.myAccount.events({
       }
     });
   },
-  
+
   //Switch to the free account
   'click .free': function (event) {
     let currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
-    
+
     //Check if the trainer is already in a paid plan and let
     //them know they are already in a plan
     if (currentTrainer.hasPaid == true) {
