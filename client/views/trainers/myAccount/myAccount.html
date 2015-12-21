@@ -47,122 +47,104 @@
                   <br>
                   <div class="row center">
                     <h3 class="blue-text">Plans</h3>
-                   
-                      <div class="section">
-                        <!--   Pricing Section   -->
-                        <div class="row">
-                          <!--   First Card   -->
-                          <div class="col s12 m3 l3">
-                            <div class="card white hoverable darken-1 z-depth-1">
-                              <div class="center-align card-content blue-text">
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <h5 class="center-align">Free</h5>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <p class="center-align">$0.00</p>
-                                  <p class="center-align">1 Client Limit</p>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="divider"></div>
-                                <br>
-                                {{#if isSuspended}}
-                                <a class="btn-floating btn-medium waves-effect waves-light blue center-align free"><i class="material-icons white-text">add</i></a>
-                                {{else}}
-                                {{#unless paidAccount}}
-                                <a class="btn-floating btn-medium waves-effect waves-light blue center-align disabled"><i class="material-icons white-text">add</i></a>
-                                {{else}}
-                                <a class="btn-floating btn-medium waves-effect waves-light blue center-align free"><i class="material-icons white-text">add</i></a>
-                                {{/unless}}
-                                {{/if}}
+
+                    <div class="section">
+                      <!--   Pricing Section   -->
+                      <div class="row">
+                        <!--   First Card   -->
+                        <div class="col s12 m3 l3">
+                          <div class="card white hoverable darken-1 z-depth-1">
+                            <div class="center-align card-content blue-text">
+                              <div class="divider"></div>
+                              <div class="section">
+                                <h5 class="center-align">Free</h5>
                               </div>
+                              <div class="divider"></div>
+                              <div class="section">
+                                <p class="center-align">$0.00</p>
+                                <p class="center-align">1 Client Limit</p>
+                              </div>
+                              <br>
+                              <br>
+                              <div class="divider"></div>
+                              <br> {{#if isSuspended}}
+                              <a class="btn-floating btn-medium waves-effect waves-light blue center-align free"><i class="material-icons white-text">add</i></a> {{else}} {{#unless paidAccount}}
+                              <a class="btn-floating btn-medium waves-effect waves-light blue center-align disabled"><i class="material-icons white-text">add</i></a> {{else}}
+                              <a class="btn-floating btn-medium waves-effect waves-light blue center-align free"><i class="material-icons white-text">add</i></a> {{/unless}} {{/if}}
                             </div>
                           </div>
-                          <div class="col s12 m3 l3">
-                            <div class="card blue hoverable darken-1 z-depth-1">
-                              <div class="center-align card-content white-text">
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <h5 class="center-align">1 Month</h5>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <p class="center-align">$20.00</p>
-                                  <p class="center-align">50 Client Limit</p>
-                                  <p class="center-align">Technical Support</p>
-                                  <p class="center-align">1 Month Of Premium Access</p>
-                                </div>
-                                <div class="divider"></div>
-                                <br>
-                                {{#if isSuspended}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align oneMonth"><i class="material-icons blue-text">add</i></a>
-                                {{else}}
-                                {{#if paidAccount}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a>
-                                {{else}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align oneMonth"><i class="material-icons blue-text">add</i></a>
-                                {{/if}}
-                                {{/if}}
+                        </div>
+                        <div class="col s12 m3 l3">
+                          <div class="card blue hoverable darken-1 z-depth-1">
+                            <div class="center-align card-content white-text">
+                              <div class="divider"></div>
+                              <div class="section">
+                                <h5 class="center-align">1 Month</h5>
                               </div>
+                              <div class="divider"></div>
+                              <div class="section">
+                                <p class="center-align">$20.00</p>
+                                <p class="center-align">50 Client Limit</p>
+                                <p class="center-align">Technical Support</p>
+                                <p class="center-align">1 Month Of Premium Access</p>
+                              </div>
+                              <div class="divider"></div>
+                              <br> {{#if isSuspended}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align oneMonth"><i class="material-icons blue-text">add</i></a> {{else}} {{#if paidAccount}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> {{else}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align oneMonth"><i class="material-icons blue-text">add</i></a> {{/if}} {{/if}}
                             </div>
                           </div>
+                        </div>
 
 
-                          <!--   Second Card   -->
-                          <div class="col s12 m3 l3">
-                            <div class="card white hoverable darken-1 z-depth-1">
-                              <div class="center-align card-content blue-text">
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <h5 class="center-align">6 Month</h5>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <p class="center-align">$60.00</p>
-                                  <p class="center-align">50 Client Limit</p>
-                                  <p class="center-align">Technical Support</p>
-                                  <p class="center-align">6 Months Of Premium Access</p>
-                                </div>
-                                <div class="divider"></div>
-                                <br>
-                                {{#if paidAccount}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a>
-                                {{else}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align sixMonth"><i class="material-icons blue-text">add</i></a>
-                                {{/if}}
+                        <!--   Second Card   -->
+                        <div class="col s12 m3 l3">
+                          <div class="card white hoverable darken-1 z-depth-1">
+                            <div class="center-align card-content blue-text">
+                              <div class="divider"></div>
+                              <div class="section">
+                                <h5 class="center-align">6 Month</h5>
                               </div>
+                              <div class="divider"></div>
+                              <div class="section">
+                                <p class="center-align">$60.00</p>
+                                <p class="center-align">50 Client Limit</p>
+                                <p class="center-align">Technical Support</p>
+                                <p class="center-align">6 Months Of Premium Access</p>
+                              </div>
+                              <div class="divider"></div>
+                              <br> {{#if paidAccount}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> {{else}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align sixMonth"><i class="material-icons blue-text">add</i></a> {{/if}}
                             </div>
                           </div>
-                          <!--   Third Card   -->
-                          <div class="col s12 m3 l3">
-                            <div class="card blue hoverable darken-1 z-depth-1">
-                              <div class="center-align card-content white-text">
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <h5 class="center-align">1 Year</h5>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="section">
-                                  <p class="center-align">$110.00</p>
-                                  <p class="center-align">50 Client Limit</p>
-                                  <p class="center-align">Technical Support</p>
-                                  <p class="center-align">1 Year Of Premium Access</p>
-                                </div>
-                                <div class="divider"></div>
-                                <br>
-                                {{#if paidAccount}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a>
-                                {{else}}
-                                <a class="btn-floating btn-medium waves-effect waves-light white center-align oneYear"><i class="material-icons blue-text">add</i></a>
-                                {{/if}}
+                        </div>
+                        <!--   Third Card   -->
+                        <div class="col s12 m3 l3">
+                          <div class="card blue hoverable darken-1 z-depth-1">
+                            <div class="center-align card-content white-text">
+                              <div class="divider"></div>
+                              <div class="section">
+                                <h5 class="center-align">1 Year</h5>
                               </div>
+                              <div class="divider"></div>
+                              <div class="section">
+                                <p class="center-align">$110.00</p>
+                                <p class="center-align">50 Client Limit</p>
+                                <p class="center-align">Technical Support</p>
+                                <p class="center-align">1 Year Of Premium Access</p>
+                              </div>
+                              <div class="divider"></div>
+                              <br> {{#if paidAccount}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> {{else}}
+                              <a class="btn-floating btn-medium waves-effect waves-light white center-align oneYear"><i class="material-icons blue-text">add</i></a> {{/if}}
                             </div>
                           </div>
                         </div>
                       </div>
-                
+                    </div>
+
                   </div>
                   <br>
                   <br>

@@ -101,18 +101,35 @@
       <div class="section">
         <!--   Pricing Section   -->
         <div class="row">
-          <div class="col s12 m4 l4">
+          <!--   First Card   -->
+          <div class="col s12 m3 l3">
+            <div class="card white hoverable darken-1 z-depth-1">
+              <div class="center-align card-content blue-text">
+                <div class="divider"></div>
+                <div class="section">
+                  <h5 class="center-align">Free</h5>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                  <p class="center-align">$0.00</p>
+                  <p class="center-align">1 Client Limit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m3 l3">
             <div class="card blue hoverable darken-1 z-depth-1">
               <div class="center-align card-content white-text">
                 <div class="divider"></div>
                 <div class="section">
-                  <h5 class="center-align">15 Clients</h5>
+                  <h5 class="center-align">1 Month</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$10/Month</p>
-                  <p class="center-align">Unlimited Client Data</p>
+                  <p class="center-align">$20.00</p>
+                  <p class="center-align">50 Client Limit</p>
                   <p class="center-align">Technical Support</p>
+                  <p class="center-align">1 Month Of Premium Access</p>
                 </div>
               </div>
             </div>
@@ -120,35 +137,37 @@
 
 
           <!--   Second Card   -->
-          <div class="col s12 m4 l4">
-            <div class="card white hoverable darken-1 z-depth-5">
+          <div class="col s12 m3 l3">
+            <div class="card white hoverable darken-1 z-depth-1">
               <div class="center-align card-content blue-text">
                 <div class="divider"></div>
                 <div class="section">
-                  <h5 class="center-align">30 Clients</h5>
+                  <h5 class="center-align">6 Month</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$20/Month</p>
-                  <p class="center-align">Unlimited Client Data</p>
+                  <p class="center-align">$60.00</p>
+                  <p class="center-align">50 Client Limit</p>
                   <p class="center-align">Technical Support</p>
+                  <p class="center-align">6 Months Of Premium Access</p>
                 </div>
               </div>
             </div>
           </div>
           <!--   Third Card   -->
-          <div class="col s12 m4 l4">
+          <div class="col s12 m3 l3">
             <div class="card blue hoverable darken-1 z-depth-1">
               <div class="center-align card-content white-text">
                 <div class="divider"></div>
                 <div class="section">
-                  <h5 class="center-align">60 Clients</h5>
+                  <h5 class="center-align">1 Year</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                  <p class="center-align">$35/Month</p>
-                  <p class="center-align">Unlimited Client Data</p>
+                  <p class="center-align">$110.00</p>
+                  <p class="center-align">50 Client Limit</p>
                   <p class="center-align">Technical Support</p>
+                  <p class="center-align">1 Year Of Premium Access</p>
                 </div>
               </div>
             </div>
@@ -159,6 +178,7 @@
         </div>
       </div>
     </div>
+
   </section>
 
   <!--   Last Picture Section   -->
@@ -243,9 +263,10 @@
           <h5 class="white-text bold">Follow Us</h5>
           <div class="divider white"></div>
           <ul>
-            <li><a href="https://www.instagram.com/go_fitme/" target="_blank"><img class="responsive-img icon-IG" src="/home/IG-icon40.png"></a>
-            <a href="https://www.facebook.com/gofitme/?fref=ts" target="_blank"><img class="responsive-img icon-IG" src="/home/FB-icon40.png"></a>
-            <a href="https://twitter.com/go_fitme" target="_blank"><img class="responsive-img icon-IG" src="/home/TW-icon40.png"></a>
+            <li>
+              <a href="https://www.instagram.com/go_fitme/" target="_blank"><img class="responsive-img icon-IG" src="/home/IG-icon40.png"></a>
+              <a href="https://www.facebook.com/gofitme/?fref=ts" target="_blank"><img class="responsive-img icon-IG" src="/home/FB-icon40.png"></a>
+              <a href="https://twitter.com/go_fitme" target="_blank"><img class="responsive-img icon-IG" src="/home/TW-icon40.png"></a>
             </li>
           </ul>
         </div>
@@ -263,11 +284,11 @@
       </div>
     </div>
   </footer>
-  {{else}}
-  {{#if isLogginIn}}
-  {{> loading}}
-  {{else}}
-  {{> notAuthorized}}
-  {{/if}}
+  {{else}} 
+  {{#if isLoggingIn}} 
+  {{> loading}} 
+  {{else}} 
+  {{> notAuthorized}} 
+  {{/if}} 
   {{/if}}
 </template>
