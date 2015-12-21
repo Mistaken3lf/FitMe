@@ -43,9 +43,9 @@ Template.currentClients.events({
     });
   },
 
-  'click .suspendUser': function (event) {
+  'click .suspendClient': function (event) {
     //Suspend client clicked on
-    Meteor.call("suspendUser", this._id, function (error, result) {
+    Meteor.call("suspendClient", this._id, function (error, result) {
       if (error) {
         Bert.alert('Sorry, your account is suspended', "danger", 'growl-top-right');
       }

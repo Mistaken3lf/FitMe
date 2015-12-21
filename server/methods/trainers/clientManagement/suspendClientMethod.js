@@ -1,12 +1,8 @@
 Meteor.methods({
-  //Delete the client when the delete button on the current clients
-  //page is clicked
-  suspendUser(clientId) {
+  suspendClient(clientId) {
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
-    if (Roles.userIsInRole(this.userId, 'client')) {
-      throw new Meteor.Error("not-authorized");
-    } else {
+    if (Roles.userIsInRole(this.userId, 'trainer')) {
       let currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
@@ -22,38 +18,22 @@ Meteor.methods({
           _id: user._id
         }, {
           $set: {
-            userStatus: "suspended"
+            userStatus: "suspended",
+            previouslySuspended: true
           }
-        });
-
-        Meteor.users.update({
-          createdBy: user._id
-        }, {
-          $set: {
-            userStatus: "suspended"
-          }
-        }, {
-          multi: true
         });
       } else {
         Meteor.users.update({
           _id: user._id
         }, {
           $set: {
-            userStatus: "active"
+            userStatus: "active",
+            previouslySuspended: false
           }
-        });
-
-        Meteor.users.update({
-          createdBy: user._id
-        }, {
-          $set: {
-            userStatus: "active"
-          }
-        }, {
-          multi: true
         });
       }
+    } else {
+      throw new Meteor.Error("Not-Authorized");
     }
   }
 });

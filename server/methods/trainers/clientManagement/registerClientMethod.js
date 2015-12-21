@@ -49,6 +49,7 @@ Meteor.methods({
             createdBy: Meteor.userId(),
             whosProfile: id,
             userStatus: "active",
+            previouslySuspended: false
           }
         });
 

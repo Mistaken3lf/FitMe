@@ -229,6 +229,11 @@ Schema.User = new SimpleSchema({
     type: String,
     optional: true,
   },
+  
+  previouslySuspended: {
+    type: Boolean,
+    optional: true
+  },
 
   createdBy: {
     type: String,

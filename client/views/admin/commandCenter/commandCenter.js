@@ -93,9 +93,9 @@ Template.commandCenter.events({
     });
   },
 
-  'click .suspendUser': function (event) {
+  'click .suspendTrainer': function (event) {
     //Suspend the trainer clicked on
-    Meteor.call("suspendUser", this._id);
+    Meteor.call("suspendTrainer", this._id);
   },
   
   //Payment due soon button to send email when their payment is due soon

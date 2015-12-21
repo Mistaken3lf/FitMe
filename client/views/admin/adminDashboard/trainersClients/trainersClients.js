@@ -39,9 +39,9 @@ Template.trainersClients.events({
     });
   },
 
-  'click .suspendUser': function (event) {
+  'click .suspendClientAdmin': function (event) {
     //Suspend user clicked on
-    Meteor.call("suspendUser", this._id);
+    Meteor.call("suspendClientAdmin", this._id);
   }
 });
 
