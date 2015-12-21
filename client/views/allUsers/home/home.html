@@ -1,24 +1,4 @@
 <template name="home">
-  {{#if isInRole 'admin'}}
-    {{> adminHome}}
-  {{else}}
-  {{#if isInRole 'trainer'}}
-    {{> trainerHome}}
-  {{else}}
-  {{#if isInRole 'client'}}
-    {{> clientHome}}
-  {{else}}
-  {{#if isLoggingIn}}
-    {{> loading}}
-  {{else}}
-  {{> mainHome}}
-  {{/if}}
-  {{/if}}
-  {{/if}}
-  {{/if}}
-</template>
-
-<template name="mainHome">
   <!--   Header Section   -->
   <section id="parallax-top">
     <div class="parallax-container">

@@ -10,14 +10,24 @@ Template.login.events({
 
     //Log user in with userrname and password
     Meteor.loginWithPassword(username, password, function (error) {
-
       //Invalid login
       if (error) {
         //Pop up an alert to show login failed
         Bert.alert(error.reason, 'danger', 'growl-top-right');
-      } else {
-        //Go home since user is logged in now
-        FlowRouter.go('/');
+      } 
+    });
+    
+    Accounts.onLogin(function() {
+      if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+        FlowRouter.go("/adminHome");
+      }
+      
+      if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+        FlowRouter.go("/trainerHome");
+      }
+      
+      if(Roles.userIsInRole(Meteor.userId(), "client")) {
+        FlowRouter.go("/clientHome");
       }
     });
   }

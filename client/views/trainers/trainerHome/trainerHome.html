@@ -1,4 +1,5 @@
 <template name="trainerHome">
+  {{#if isInRole "trainer"}}
   <!--   Header Section   -->
   <section id="parallax-top">
     <div class="parallax-container">
@@ -262,4 +263,11 @@
       </div>
     </div>
   </footer>
+  {{else}}
+  {{#if isLogginIn}}
+  {{> loading}}
+  {{else}}
+  {{> notAuthorized}}
+  {{/if}}
+  {{/if}}
 </template>

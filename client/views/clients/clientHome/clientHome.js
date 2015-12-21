@@ -19,7 +19,7 @@ Template.clientHome.events({
       } else {
         //Show success message to let them know the email sent
         Bert.alert("Email successfully sent", 'success', 'growl-top-right');
-        
+
         //Reset the form values to blank
         firstName = $('[name=firstName]').val('');
         lastName = $('[name=lastName]').val('');
@@ -29,5 +29,12 @@ Template.clientHome.events({
         FlowRouter.go("/");
       }
     });
+  }
+});
+
+Template.clientHome.helpers({
+  //Check if the user is logging in 
+  isLoggingIn: function () {
+    return Meteor.loggingIn();
   }
 });
