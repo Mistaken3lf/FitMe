@@ -27,7 +27,7 @@ accounts-base
 kadira:flow-router
 kadira:blaze-layout
 email
-materialize:materialize@=0.97.0
+materialize:materialize
 themeteorchef:bert
 kevohagan:sweetalert
 browser-policy
