@@ -164,7 +164,7 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through their site.  By clicking Yes, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Yes, you will agree to these terms and will proceed to make your payment with FitMe.",
       type: "warning",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
