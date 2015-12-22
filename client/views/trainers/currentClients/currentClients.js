@@ -15,6 +15,11 @@ Template.currentClients.events({
       _id: this._id
     });
 
+    if (curUser.userStatus == "suspended") {
+      Bert.alert("Sorry, your account has been suspended", "danger", "growl-top-right");
+      return;
+    }
+
     //Needed for sweet alerts
     var previousWindowKeyDown = window.onkeydown;
 
@@ -34,7 +39,7 @@ Template.currentClients.events({
         //Call server function to delete the client clicked on
         Meteor.call("deleteClient", curUser._id, function (error, result) {
           if (error) {
-            Bert.alert("Sorry, you account has been suspended", 'danger', 'growl-top-right');
+            Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
           }
         });
       } else {
@@ -51,7 +56,7 @@ Template.currentClients.events({
       }
     });
   },
-  
+
   //Prevent the trainer from viewing the dashboard if they
   //are suspended otherwise direct them to the dashboard
   'click .username': function (event) {
@@ -67,6 +72,20 @@ Template.currentClients.events({
       Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
     } else {
       FlowRouter.go("/clientDashboard/" + this._id);
+    }
+  },
+
+  "click .addClientButton": function (event) {
+    //Find client to delete
+    let curTrainer = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
+
+    if (curTrainer.userStatus == "suspended") {
+      Bert.alert("Sorry, your account has been suspended", "danger", "growl-top-right");
+      return;
+    } else {
+      FlowRouter.go("/addClient");
     }
   }
 });
