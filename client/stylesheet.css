@@ -111,7 +111,7 @@ footer.page-footer {
 header,
 main,
 footer {
-  padding-left: 220px;
+  padding-left: 210px;
 }
 
 
@@ -187,7 +187,8 @@ footer {
 
 #navPad {
   width: 90%;
-  margin: auto auto 10px auto;
+  margin: auto auto 6px auto;
+  height: 60px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
@@ -207,7 +208,7 @@ footer {
 }
 
 #desktop-menu {
-  width: 220px;
+  width: 210px;
 }
 
 .trainerDashButtonProfile {
