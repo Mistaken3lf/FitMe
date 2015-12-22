@@ -1,0 +1,17 @@
+<template name="trainerGuide">
+  {{#if isInRole 'trainer'}}
+  <div class="row">
+    <img class="responsive-img" id="pageHeader" src="/home/FitMe-text-logo3.png">
+    <hr class="headerSeperator">
+  </div>
+  <div class="row">
+      
+  </div>
+  {{else}}
+  {{#if isLoggingIn}}
+  {{> loading}}
+  {{else}}
+  {{> notAuthorized}}
+  {{/if}}
+  {{/if}}
+</template>
