@@ -41,13 +41,14 @@
                       </table>
                       <!--End of account table-->
                     </div>
-                    {{else}} {{> loading}} {{/if}}
+                    {{else}} 
+                    {{> loading}} 
+                    {{/if}}
                   </div>
                   <br>
                   <br>
                   <div class="row center">
                     <h3 class="blue-text">Plans</h3>
-
                     <div class="section">
                       <!--   Pricing Section   -->
                       <div class="row">
@@ -107,8 +108,6 @@
                             </div>
                           </div>
                         </div>
-
-
                         <!--   Second Card   -->
                         <div class="col s12 m3 l3">
                           <div class="card white hoverable darken-1 z-depth-1">
@@ -169,7 +168,91 @@
                         </div>
                       </div>
                     </div>
-
+                    <div class="row center">
+                      <div class="col s12 m4 offset-m4 l4 offset-l4">
+                        <h3 class="center blue-text">Extras</h3>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12 m4 l4">
+                        <div class="card blue hoverable darken-1 z-depth-1">
+                          <div class="center-align card-content white-text">
+                            <div class="divider"></div>
+                            <div class="section">
+                              <h5 class="center-align">5 Additional Clients</h5>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section">
+                              <p class="center-align">$5</p>
+                              <p class="center-align">Add five additional clients to your client limit</p>
+                            </div>
+                            <div class="divider"></div>
+                            <br>
+                            {{#if isSuspended}}
+                            <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> 
+                            {{else}}
+                            {{#if paidAccount}}
+                            <a class="btn-floating btn-medium waves-effect waves-light white center-align fiveAdditionalClients"><i class="material-icons blue-text">add</i></a> 
+                            {{else}}
+                            <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> 
+                            {{/if}}
+                            {{/if}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col s12 m4 l4">
+                        <div class="card white hoverable darken-1 z-depth-1">
+                          <div class="center-align card-content blue-text">
+                            <div class="divider"></div>
+                            <div class="section">
+                              <h5 class="center-align">10 Additional Clients</h5>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section">
+                              <p class="center-align">$9</p>
+                              <p class="center-align">Add ten additional clients to your client limit</p>
+                            </div>
+                            <div class="divider"></div>
+                            <br>
+                            {{#if isSuspended}}
+                            <a class="btn-floating btn-medium waves-effect waves-light blue center-align disabled"><i class="material-icons white-text">add</i></a> 
+                            {{else}}
+                            {{#if paidAccount}}
+                            <a class="btn-floating btn-medium waves-effect waves-light blue center-align tenAdditionalClients"><i class="material-icons white-text">add</i></a> 
+                            {{else}}
+                            <a class="btn-floating btn-medium waves-effect waves-light blue center-align disabled"><i class="material-icons white-text">add</i></a> 
+                            {{/if}}
+                            {{/if}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col s12 m4 l4">
+                        <div class="card blue hoverable darken-1 z-depth-1">
+                          <div class="center-align card-content white-text">
+                            <div class="divider"></div>
+                            <div class="section">
+                              <h5 class="center-align">20 Additional Clients</h5>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section">
+                              <p class="center-align">$13</p>
+                              <p class="center-align">Add twenty additional clients to your client limit</p>
+                            </div>
+                            <div class="divider"></div>
+                            <br>
+                            {{#if isSuspended}}
+                            <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> 
+                            {{else}}
+                            {{#if paidAccount}}
+                            <a class="btn-floating btn-medium waves-effect waves-light white center-align twentyAdditionalClients"><i class="material-icons blue-text">add</i></a> 
+                            {{else}}
+                            <a class="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i class="material-icons blue-text">add</i></a> 
+                            {{/if}}
+                            {{/if}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <br>
                   <br>
@@ -195,5 +278,11 @@
       </div>
     </div>
   </div>
-  {{else}} {{#if isLoggingIn}} {{> loading}} {{else}} {{> notAuthorized}} {{/if}} {{/if}}
+  {{else}} 
+  {{#if isLoggingIn}} 
+  {{> loading}} 
+  {{else}} 
+  {{> notAuthorized}} 
+  {{/if}} 
+  {{/if}}
 </template>
