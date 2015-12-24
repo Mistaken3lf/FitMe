@@ -15,7 +15,7 @@ Meteor.methods({
       
       //Check if the user has paid and is not in the free plan to prevent 
       //browser console hacking
-      if(curTrainer.hasPaid == true && curTrainer.planType != "Free") {
+      if(curTrainer.hasPaid == true && curTrainer.planType != "Free" && curTrainer.userStatus != "suspended") {
         throw new Meteor.Error("Sorry, you are already in a plan");
       }
 
