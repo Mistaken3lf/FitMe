@@ -6,24 +6,31 @@ SyncedCron.add({
   job: function () {
     let today = moment().format("MM/DD/YYYY");
 
-    //Suspend a trainer if their account is expired
-    Meteor.users.update({
-      expiresOn: today
-    }, {
-      $set: {
-        userStatus: "suspended"
-      }
-    });
-    
-    //Suspend the trainers clients if their trainers account is expired
-    Meteor.users.update({
-      paymentDue: today
-    }, {
-      $set: {
-        userStatus: "suspended",
-      }
-    }, {
-      multi: true
+    let curUser = Meteor.users.find();
+
+    curUser.forEach(function (user) {
+      //Suspend a trainer if their account is expired
+      Meteor.users.update({
+        roles: "trainer",
+        expiresOn: today
+      }, {
+        $set: {
+          userStatus: "suspended"
+        }
+      }, {
+        multi: true
+      });
+
+      Meteor.users.update({
+        createdBy: user._id
+      }, {
+        $set: {
+          userStatus: "suspended",
+        }
+      }, {
+        multi: true
+      });
+
     });
   }
 });
