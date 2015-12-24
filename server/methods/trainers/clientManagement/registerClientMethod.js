@@ -8,10 +8,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      let trainersExpiration = currentTrainer.expiresOn;
+      
       if(currentTrainer.userStatus == "suspended") {
         return "Sorry, your account is suspended";
       }
-
+      
       //Get the count of total clients they have
       var currentClientCount = Meteor.users.find({
         createdBy: this.userId
@@ -49,7 +51,8 @@ Meteor.methods({
             createdBy: Meteor.userId(),
             whosProfile: id,
             userStatus: "active",
-            previouslySuspended: false
+            previouslySuspended: false,
+            myTrainersExpiration: trainersExpiration
           }
         });
 

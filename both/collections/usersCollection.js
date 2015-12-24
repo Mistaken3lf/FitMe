@@ -269,6 +269,11 @@ Schema.User = new SimpleSchema({
     type: String,
     optional: true,
   },
+  
+  myTrainersExpiration: {
+    type: String,
+    optional: true
+  },
 
   clientLimit: {
     type: Number,
