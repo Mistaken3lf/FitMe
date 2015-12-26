@@ -426,8 +426,12 @@ footer {
   padding-bottom: 12px;
 }
 
+.sweet-alert {
+  top: 35%;
+  padding: 10px;
+}
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  
   .profilePic {
     padding: 30px 0px 30px 0px;
     width: 100px;
@@ -477,49 +481,41 @@ footer {
     padding: auto;
     margin-bottom: 5px;
   }
-  
   .clientDashButtonMySchedule {
     margin-top: 0px;
     margin-bottom: 5px;
     padding: auto;
   }
-
   .clientDashButtonStats {
     margin: auto;
     padding: auto;
     margin-bottom: 5px;
   }
-
   .clientDashButtonCardio {
     margin: auto;
     padding: auto;
     margin-bottom: 5px;
   }
-
   .clientDashButtonWorkout {
     margin: auto;
     padding: auto;
     margin-bottom: 5px;
   }
-
   .clientDashButtonMyTrainer {
     margin: auto;
     padding: auto;
     margin-bottom: 5px;
   }
-  
   .adminDashButtonProfile {
     margin-top: 0px;
     margin-bottom: 5px;
     padding: auto;
   }
-
   .adminDashButtonClients {
     margin: auto;
     padding: auto;
     margin-bottom: 5px;
   }
-
   .adminDashButtonAccount {
     margin: auto;
     padding: auto;
@@ -528,16 +524,17 @@ footer {
 }
 
 @media only screen and (min-device-width: 800px) and (max-device-width: 1280px) {
-  
   .blueLine {
     padding: 45px 0px 0px 0px;
     display: none;
   }
-
+  .sweet-alert {
+    top: 50%;
+    padding: 17px;
+  }
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
-
   .profilePic {
     padding: 30px 0px 30px 0px;
     width: 100px;
@@ -545,7 +542,6 @@ footer {
     margin: auto;
     display: block;
   }
-  
   .clientViewDashNameText {
     font-size: 30px;
     padding: 20px 0px 0px 0px;
@@ -555,6 +551,7 @@ footer {
     padding: 0px 0px 0px 0px;
   }
 }
+
 
 /*Push button all the way to the left on small screens*/
 
@@ -664,58 +661,48 @@ footer {
   .blueLine {
     display: none;
   }
-  
   .trainerViewDashNameText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
   }
-
   .trainerViewDashboardText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
   }
-
   .clientViewDashNameText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
     margin-right: 0px;
   }
-  
   .clientViewDashboardText {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
   }
-
   .trainerDashButtonProfile {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .trainerDashButtonSchedule {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .trainerDashButtonStats {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .trainerDashButtonCardio {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .trainerDashButtonWorkout {
     margin: auto;
     padding: auto;
     margin-bottom: 3px;
   }
-
   .clientDashButtonMySchedule {
     margin: auto;
     padding: auto;
@@ -825,7 +812,6 @@ footer {
   .removeFromSundayMobile {
     display: inline;
   }
-
 }
 
 
