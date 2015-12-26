@@ -78,7 +78,7 @@ Template.myAccount.onCreated(function () {
         });
       },
       closed() {
-        template.processing.set(false);
+        template = null
       }
     });
   }
@@ -192,12 +192,12 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: 'One Month',
           description: "1 Month Of Access",
-          amount: 2000,
+          amount: 1500,
           bitcoin: true
         });
 
         planType = "One Month";
-        dollarAmount = 2000;
+        dollarAmount = 1500;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -226,7 +226,7 @@ Template.myAccount.events({
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        teplate.processing.set(true);
+        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'Six Month',
@@ -270,12 +270,12 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: 'One Year',
           description: "1 Year Of Access",
-          amount: 11000,
+          amount: 9900,
           bitcoin: true
         });
 
         planType = "One Year";
-        dollarAmount = 11000;
+        dollarAmount = 9900;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -364,12 +364,12 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: '5 Additional Clients',
           description: "Add five additional clients to your client limit",
-          amount: 500,
+          amount: 200,
           bitcoin: true
         });
 
         planType = "Five Additional Clients";
-        dollarAmount = 500;
+        dollarAmount = 200;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -403,12 +403,12 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: '10 Additional Clients',
           description: "Add ten additional clients to your client limit",
-          amount: 900,
+          amount: 500,
           bitcoin: true
         });
 
         planType = "Ten Additional Clients";
-        dollarAmount = 900;
+        dollarAmount = 500;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -442,12 +442,12 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: '20 Additional Clients',
           description: "Add twenty additional clients to your client limit",
-          amount: 1300,
+          amount: 1200,
           bitcoin: true
         });
 
         planType = "Twenty Additional Clients";
-        dollarAmount = 1300;
+        dollarAmount = 1200;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
