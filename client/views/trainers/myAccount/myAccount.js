@@ -25,6 +25,7 @@ Template.myAccount.onCreated(function () {
     //Charge the trainer with stripe
     template.checkout = StripeCheckout.configure({
       key: Meteor.settings.public.stripe,
+      image: "/navigation/fitMeSidebarLogo.png",
       locale: 'auto',
       token(token) {
         charge = {
