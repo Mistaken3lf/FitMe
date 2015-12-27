@@ -109,10 +109,6 @@ Template.myAccount.helpers({
     }).count();
   },
 
-  processing() {
-    return Template.instance().processing.get();
-  },
-
   //Does the trainer have a paid account
   paidAccount() {
     let thisTrainer = Meteor.users.findOne({
@@ -147,7 +143,7 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Are you sure?",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Yes, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "Your account will be completely removed, all clients, workouts and related data will be removed from FitMe",
       type: "warning",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
@@ -178,8 +174,9 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
       type: "warning",
+      html: true,
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
@@ -187,7 +184,6 @@ Template.myAccount.events({
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'One Month',
@@ -217,16 +213,15 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these terms and will proceed to make your payment with FitMe.",
-      type: "warning",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",      type: "warning",
       showCancelButton: true,
+      html: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'Six Month',
@@ -256,8 +251,9 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
       type: "warning",
+      html: true,
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
@@ -265,7 +261,6 @@ Template.myAccount.events({
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'One Year',
@@ -350,8 +345,9 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
       type: "warning",
+      html: true,
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
@@ -359,7 +355,6 @@ Template.myAccount.events({
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: '5 Additional Clients',
@@ -389,8 +384,9 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
       type: "warning",
+      html: true,
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
@@ -398,7 +394,6 @@ Template.myAccount.events({
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: '10 Additional Clients',
@@ -428,8 +423,9 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these terms and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
       type: "warning",
+      html: true,
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
@@ -437,7 +433,6 @@ Template.myAccount.events({
     }, function (isConfirm) {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        template.processing.set(true);
         template.checkout.open({
           email: currentTrainer.emails[0].address,
           name: '20 Additional Clients',
