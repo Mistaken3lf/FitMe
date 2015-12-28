@@ -1,8 +1,6 @@
 ClientStats = new Mongo.Collection("clientStats");
 
-var ClientStatsSchema = {};
-
-ClientStatsSchema.stats = new SimpleSchema({
+ClientStats.schema = new SimpleSchema({
   whosStats: {
     type: String,
   },
@@ -525,7 +523,7 @@ ClientStatsSchema.stats = new SimpleSchema({
 });
 
 //Attach schema to ClientStats
-ClientStats.attachSchema(ClientStatsSchema.stats);
+ClientStats.attachSchema(ClientStats.schema);
 
 //Dont allow any client side inserts, updates, or removes
 ClientStats.deny({

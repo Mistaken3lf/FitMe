@@ -1,6 +1,4 @@
-ContactUsSchema = {};
-
-ContactUsSchema.contact = new SimpleSchema({
+ContactUsSchema = new SimpleSchema({
   firstName: {
     type: String,
     regEx: /^[a-z0-9A-Z_]{3,15}$/

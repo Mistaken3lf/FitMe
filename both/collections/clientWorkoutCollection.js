@@ -1,8 +1,6 @@
 ClientWorkout = new Mongo.Collection("clientWorkout");
 
-var ClientWorkoutSchema = {};
-
-ClientWorkoutSchema.workout = new SimpleSchema({
+ClientWorkout.schema = new SimpleSchema({
 
   whosWorkout: {
     type: String,
@@ -750,7 +748,7 @@ ClientWorkoutSchema.workout = new SimpleSchema({
 });
 
 //Attach schema to ClientWorkout
-ClientWorkout.attachSchema(ClientWorkoutSchema.workout);
+ClientWorkout.attachSchema(ClientWorkout.schema);
 
 //Dont allow any client side inserts, updates, or removes
 ClientWorkout.deny({

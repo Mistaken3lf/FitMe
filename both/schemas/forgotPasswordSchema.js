@@ -1,6 +1,4 @@
-ForgotPasswordSchema = {};
-
-ForgotPasswordSchema.forgot = new SimpleSchema({
+ForgotPasswordSchema = new SimpleSchema({
   email: {
     type: String,
     regEx: SimpleSchema.RegEx.Email,

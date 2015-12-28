@@ -1,8 +1,6 @@
 ClientCardio = new Mongo.Collection("clientCardio");
 
-var ClientCardioSchema = {};
-
-ClientCardioSchema.cardio = new SimpleSchema({
+ClientCardio.schema = new SimpleSchema({
   whosCardio: {
     type: String,
   },
@@ -283,7 +281,7 @@ ClientCardioSchema.cardio = new SimpleSchema({
 });
 
 //Attach schema to ClientCardio
-ClientCardio.attachSchema(ClientCardioSchema.cardio);
+ClientCardio.attachSchema(ClientCardio.schema);
 
 //Dont allow any client side inserts, updates, or removes
 ClientCardio.deny({

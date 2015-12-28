@@ -1,6 +1,4 @@
-ResetPasswordSchema = {};
-
-ResetPasswordSchema.reset = new SimpleSchema({
+ResetPasswordSchema = new SimpleSchema({
   newPassword: {
     type: String,
     regEx: /^[a-z0-9A-Z_]{3,15}$/

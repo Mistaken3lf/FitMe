@@ -1,6 +1,4 @@
-ChangePasswordSchema = {};
-
-ChangePasswordSchema.change = new SimpleSchema({
+ChangePasswordSchema = new SimpleSchema({
   currentPassword: {
     type: String,
     regEx: /^[a-z0-9A-Z_]{3,15}$/

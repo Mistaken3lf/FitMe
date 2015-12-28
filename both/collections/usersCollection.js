@@ -1,6 +1,4 @@
-var Schema = {};
-
-Schema.User = new SimpleSchema({
+Meteor.users.schema = new SimpleSchema({
   username: {
     type: String,
     regEx: /^[a-z0-9A-Z_]{3,15}$/
@@ -292,7 +290,7 @@ Schema.User = new SimpleSchema({
   },
 
   services: {
-    type: Schema.Services,
+    type: Object,
     blackbox: true,
     optional: true,
   },
@@ -304,7 +302,7 @@ Schema.User = new SimpleSchema({
   }
 });
 
-Meteor.users.attachSchema(Schema.User);
+Meteor.users.attachSchema(Meteor.users.schema);
 
 //Dont allow any client side inserts, updates, or removes
 Meteor.users.deny({
