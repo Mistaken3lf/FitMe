@@ -1,7 +1,9 @@
 <template name="trainerGuide">
   {{#if isInRole 'trainer'}}
-  <div class="row">
-    <img class="responsive-img" id="pageHeader" src="/home/FitMe-text-logo3.png">
+  <div class="row center">
+    <img class="responsive-img" src="/trainerGuide/fitMeGuideHeader.png">
+    <br>
+    <h4 class="blue-text">GUIDE</h4>
     <hr class="guideSeperator">
   </div>
   <div class="row">
@@ -13,7 +15,7 @@
         <p>- Your MY ACCOUNT page will contain all of the valuable information about your account.<br>
            - In the small table at the top, you will be able to see in information regarding the current plan you are in, the date that was purchased, the date the plan expires, the status of your account, the total number of 
              clients that you have, and your current client limit.</p>
-          <img class="responsive-img center" src="/trainerGuide/fitMeGuideMyAccountScre.jpg" width=90% height=90%>
+          <img class="responsive-img center guideScreenshots" src="/trainerGuide/FitMe-Guide-My-Account-Scre.jpg" width=65% height=65%>
       </div>
     </li>
     <li>
@@ -21,7 +23,11 @@
       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
     <li>
-      <div class="collapsible-header blue-text"><b>Payments</b></div>
+      <div class="collapsible-header blue-text"><b>Dashboards</b></div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header blue-text"><b>Scheduling</b></div>
       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
   </ul>
@@ -38,8 +44,10 @@
       <h6 class="blue-text faqAnswer"><b>Your plan can be renewed by clicking on the MY ACCOUNT button on the side navigation and selecting a plan.</b></h6><br>
       <li><h5>How do refunds work?</h5></li>
       <h6 class="blue-text faqAnswer"><b>Your plan can be renewed by clicking on the MY ACCOUNT button on the side navigation and selecting a plan.</b></h6><br>
-      <li><h5>Where can I renew my plan?</h5></li>
-      <h6 class="blue-text faqAnswer"><b>Your plan can be renewed by clicking on the MY ACCOUNT button on the side navigation and selecting a plan.</b></h6>
+      <li><h5>Can I add more clients if I reach the limit?</h5></li>
+      <h6 class="blue-text faqAnswer"><b>You absolutely can!  Just go to the MY ACCOUNT button on the side navigation and you will see section called Extras where you can add addtional clients for a small fee.</b></h6><br>
+      <li><h5>How do I contact FitMe?</h5></li>
+      <h6 class="blue-text faqAnswer"><b>You can reach us by sending an email to info@gofitme.com.</b></h6><br>
       </div>
       </div>
   {{else}}
