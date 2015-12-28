@@ -1,20 +1,20 @@
 Template.changePassword.events({
   //Capture password change event
-  'submit form': function (event) {
+  'submit form' (event) {
     //Prevent default form submission
     event.preventDefault();
 
     //Capture the new and old passwords
-    var currentPassword = $('[name=currentPassword]').val();
-    var newPassword = $('[name=newPassword]').val();
-    var newPasswordConfirmation = $('[name=newPasswordConfirmation]').val();
+    let currentPassword = $('[name=currentPassword]').val();
+    let newPassword = $('[name=newPassword]').val();
+    let newPasswordConfirmation = $('[name=newPasswordConfirmation]').val();
 
     if (newPassword != newPasswordConfirmation) {
       Bert.alert("Passwords do not match", 'danger', 'growl-top-right');
       return false;
     }
 
-    Accounts.changePassword(currentPassword, newPassword, function (error) {
+    Accounts.changePassword(currentPassword, newPassword, (error) => {
       //Invalid passwords
       if (error) {
         //Pop up an alert to show the error

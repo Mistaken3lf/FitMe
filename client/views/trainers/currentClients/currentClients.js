@@ -1,17 +1,15 @@
 Template.currentClients.onCreated(function () {
-  var self = this;
-
   //Subscribe to the clients profile based on the url param
-  self.autorun(function () {
-    self.subscribe("currentClients");
-    self.subscribe("myProfile");
+  this.autorun(() => {
+    this.subscribe("currentClients");
+    this.subscribe("myProfile");
   });
 });
 
 Template.currentClients.events({
-  'click .deleteButton': function (event) {
+  'click .deleteButton' (event) {
     //Find client to delete
-    var curUser = Meteor.users.findOne({
+    const curUser = Meteor.users.findOne({
       _id: this._id
     });
 
@@ -21,7 +19,7 @@ Template.currentClients.events({
     }
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -32,12 +30,12 @@ Template.currentClients.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Yes, remove user",
       closeOnConfirm: false
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted', 'success');
         //Call server function to delete the client clicked on
-        Meteor.call("deleteClient", curUser._id, function (error, result) {
+        Meteor.call("deleteClient", curUser._id, (error, result) => {
           if (error) {
             Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
           }
@@ -48,9 +46,9 @@ Template.currentClients.events({
     });
   },
 
-  'click .suspendClient': function (event) {
+  'click .suspendClient' (event) {
     //Suspend client clicked on
-    Meteor.call("suspendClient", this._id, function (error, result) {
+    Meteor.call("suspendClient", this._id, (error, result) => {
       if (error) {
         Bert.alert('Sorry, your account is suspended', "danger", 'growl-top-right');
       }
@@ -59,8 +57,8 @@ Template.currentClients.events({
 
   //Prevent the trainer from viewing the dashboard if they
   //are suspended otherwise direct them to the dashboard
-  'click .username': function (event) {
-    let thisTrainer = Meteor.users.findOne({
+  'click .username' (event) {
+    const thisTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     }, {
       fields: {
@@ -75,9 +73,9 @@ Template.currentClients.events({
     }
   },
 
-  "click .addClientButton": function (event) {
+  "click .addClientButton" (event) {
     //Find client to delete
-    let curTrainer = Meteor.users.findOne({
+    const curTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
@@ -92,16 +90,16 @@ Template.currentClients.events({
 
 Template.currentClients.helpers({
   //Get all clients for easy search
-  trainersIndex: function () {
+  trainersIndex() {
     return UsersIndex;
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   },
 
-  clientSearchAttributes: function () {
+  clientSearchAttributes() {
     //Placeholder for easy search to search my clients
     return {
       placeholder: "Search For A Client"

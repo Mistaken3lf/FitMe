@@ -8,8 +8,8 @@ Template.myTrainer.onCreated(function () {
 
 Template.myTrainer.helpers({
   //Find my trainer
-  myTrainer: function () {
-    let currentClient = Meteor.users.findOne({
+  myTrainer() {
+    const currentClient = Meteor.users.findOne({
       _id: Meteor.userId()
     });
     
@@ -19,7 +19,7 @@ Template.myTrainer.helpers({
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 });

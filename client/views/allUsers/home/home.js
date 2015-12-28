@@ -1,4 +1,4 @@
-Template.home.onRendered(function () {
+Template.home.onRendered(() => {
   //Initialization for the update slider
   $('.slider').slider({
     full_width: true
@@ -8,7 +8,7 @@ Template.home.onRendered(function () {
 });
 
 Template.home.events({
-  "click .learnMore": function (event) {
+  "click .learnMore" (event) {
     swal({
       title: "Free Account!",
       text: "Here's a custom image.",

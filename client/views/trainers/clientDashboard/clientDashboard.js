@@ -1,38 +1,37 @@
 Template.clientDashboard.onCreated(function () {
-  var self = this;
-
   //Subscribe to the clients profile based on the url param
-  self.autorun(function () {
-    var clientId = FlowRouter.getParam('_id');
-    self.subscribe("currentClientsProfile", clientId);
+  this.autorun(() => {
+    const clientId = FlowRouter.getParam('_id');
+    this.subscribe("currentClientsProfile", clientId);
   });
 });
 
 Template.clientDashboard.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   },
   
   //Get template to load from dashboard
-  activeTemplate: function () {
+  activeTemplate() {
     return Session.get("clickedButton");
   },
   
   //Get the current clients profile based on the url param
-  myClient: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var myClient = Meteor.users.findOne({
+  myClient() {
+    const clientId = FlowRouter.getParam('_id');
+    const myClient = Meteor.users.findOne({
       whosProfile: clientId
     });
+    
     return myClient;
   },
 });
 
 Template.clientDashboard.events({
-  "click .clickedButton": function (event) {
+  "click .clickedButton" (event) {
     //Set the active template based on button clicked on dashboard
-    var clickedButton = event.target.id;
+    let clickedButton = event.target.id;
     Session.set("clickedButton", clickedButton);
   }
 });

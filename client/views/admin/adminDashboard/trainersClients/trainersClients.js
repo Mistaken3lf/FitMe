@@ -7,7 +7,7 @@ Template.trainersClients.onCreated(function () {
 });
 
 Template.trainersClients.events({
-  'click .deleteButton': function (event) {
+  'click .deleteButton' (event) {
     //Find client clicked on
     const curUser = Meteor.users.findOne({
       _id: this._id
@@ -25,7 +25,7 @@ Template.trainersClients.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Yes, remove user!",
       closeOnConfirm: false
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted.', 'success');
@@ -37,7 +37,7 @@ Template.trainersClients.events({
     });
   },
 
-  'click .suspendClientAdmin': function (event) {
+  'click .suspendClientAdmin' (event) {
     //Suspend user clicked on
     Meteor.call("suspendClientAdmin", this._id);
   }

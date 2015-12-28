@@ -1,14 +1,12 @@
 Template.clientSchedule.onCreated(function () {
-  var self = this;
-
   //Subscribe to the clients profile based on the url param
-  self.autorun(function () {
-    var clientId = FlowRouter.getParam('_id');
-    self.subscribe("currentClientsProfile", clientId);
+  this.autorun(() => {
+    const clientId = FlowRouter.getParam('_id');
+    this.subscribe("currentClientsProfile", clientId);
   });
 });
 
-Template.clientScheduleShell.onRendered(function () {
+Template.clientScheduleShell.onRendered(() => {
   //Datepicker for when the next payment is due
   $('#paymentDue').datetimepicker({
     timepicker: false,
@@ -120,27 +118,28 @@ Template.clientScheduleShell.onRendered(function () {
 
 Template.clientScheduleShell.helpers({
   //Get the current clients profile based on the url param
-  curClient: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var curClient = Meteor.users.findOne({
+  curClient() {
+    const clientId = FlowRouter.getParam('_id');
+    const curClient = Meteor.users.findOne({
       whosProfile: clientId
     });
+    
     return curClient;
   },
 
   //Get todays current date
-  todaysDate: function () {
+  todaysDate() {
     return new Date().toDateString();
   },
   
   //Get the start day of the week
-  startOfWeek: function () {
+  startOfWeek() {
     let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
     return startOfWeek;
   },
   
   //Get the end day of the week
-  endOfWeek: function () {
+  endOfWeek() {
     let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
     return endOfWeek;
   }

@@ -16,7 +16,7 @@ Template.myAccount.onCreated(function () {
 
   if (!Meteor.loggingIn()) {
     //Find the current trainer
-    let currentTrainer = Meteor.users.findOne({
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
@@ -77,7 +77,7 @@ Template.myAccount.onCreated(function () {
           }
         });
       },
-      closed() {
+      closed () {
         template = null
       }
     });
@@ -86,24 +86,24 @@ Template.myAccount.onCreated(function () {
 
 Template.myAccount.helpers({
   //Find trainers account
-  myAccount: function () {
+  myAccount() {
     return Meteor.users.findOne({
       _id: Meteor.userId()
     });
   },
 
   //Format the last login date
-  formatDate: function (loginDate) {
+  formatDate(loginDate) {
     return loginDate.toDateString();
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   },
 
   //Get count of total clients this trainer has
-  totalClients: function () {
+  totalClients() {
     return Meteor.users.find({
       createdBy: Meteor.userId()
     }).count();
@@ -111,7 +111,7 @@ Template.myAccount.helpers({
 
   //Does the trainer have a paid account
   paidAccount() {
-    let thisTrainer = Meteor.users.findOne({
+    const thisTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
     if (thisTrainer.hasPaid) {
@@ -123,7 +123,7 @@ Template.myAccount.helpers({
 
   //Is the trainer suspended?
   isSuspended() {
-    let thisTrainer = Meteor.users.findOne({
+    const thisTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
     if (thisTrainer.userStatus == "suspended") {
@@ -136,9 +136,9 @@ Template.myAccount.helpers({
 
 Template.myAccount.events({
   //Delete the trainers account
-  "click .deleteAccount": function (event) {
+  "click .deleteAccount"(event) {
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -149,7 +149,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Yes, delete account!",
       closeOnConfirm: false
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Delete!', 'Your account has been removed.', 'success');
@@ -163,13 +163,13 @@ Template.myAccount.events({
   },
 
   //Buy the one month plan
-  'click .oneMonth' (event, template) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .oneMonth'(event, template) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -181,7 +181,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         template.checkout.open({
@@ -202,13 +202,13 @@ Template.myAccount.events({
   },
 
   //Buy the six month plan
-  'click .sixMonth' (event, template) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .sixMonth'(event, template) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -219,7 +219,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         template.checkout.open({
@@ -240,13 +240,13 @@ Template.myAccount.events({
   },
 
   //Buy the one year plan
-  'click .oneYear' (event, template) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .oneYear'(event, template) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -258,7 +258,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         template.checkout.open({
@@ -279,8 +279,8 @@ Template.myAccount.events({
   },
 
   //Switch to the free account
-  'click .free': function (event) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .free'(event) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
@@ -288,7 +288,7 @@ Template.myAccount.events({
     //them know they are already in a plan
     if (currentTrainer.hasPaid == true) {
       //Needed for sweet alerts
-      var previousWindowKeyDown = window.onkeydown;
+      let previousWindowKeyDown = window.onkeydown;
 
       //Sweet alert to confirm deletion of client
       swal({
@@ -299,7 +299,7 @@ Template.myAccount.events({
         confirmButtonColor: "#DD6B55",
         confirmButtonText: "Yes",
         closeOnConfirm: true
-      }, function (isConfirm) {
+      }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
           Meteor.call("freeAccountTrainer", Meteor.userId());
@@ -310,7 +310,7 @@ Template.myAccount.events({
       });
     } else {
       //Needed for sweet alerts
-      var previousWindowKeyDown = window.onkeydown;
+      let previousWindowKeyDown = window.onkeydown;
 
       //Sweet alert to confirm deletion of client
       swal({
@@ -321,7 +321,7 @@ Template.myAccount.events({
         confirmButtonColor: "#DD6B55",
         confirmButtonText: "Yes, continue!",
         closeOnConfirm: true
-      }, function (isConfirm) {
+      }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
           Meteor.call("freeAccountTrainer", Meteor.userId());
@@ -334,13 +334,13 @@ Template.myAccount.events({
   },
   
   //Purchase 5 additional clients
-  'click .fiveAdditionalClients' (event, template) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .fiveAdditionalClients'(event, template) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -352,7 +352,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         template.checkout.open({
@@ -373,13 +373,13 @@ Template.myAccount.events({
   },
   
     //Purchase 10 additional clients
-  'click .tenAdditionalClients' (event, template) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .tenAdditionalClients'(event, template) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -391,7 +391,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         template.checkout.open({
@@ -412,13 +412,13 @@ Template.myAccount.events({
   },
   
     //Purchase 20 additional clients
-  'click .twentyAdditionalClients' (event, template) {
-    let currentTrainer = Meteor.users.findOne({
+  'click .twentyAdditionalClients'(event, template) {
+    const currentTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm deletion of client
     swal({
@@ -430,7 +430,7 @@ Template.myAccount.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Accept",
       closeOnConfirm: true
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         template.checkout.open({

@@ -30,7 +30,7 @@ Template.adminDashboard.helpers({
 
 Template.adminDashboard.events({
   //Set the clicked on template based on which button is clicked
-  "click .adminClickedButton": function (event) {
+  "click .adminClickedButton" (event) {
     let clickedButton = event.target.id;
     Session.set("adminClickedButton", clickedButton);
   }

@@ -34,9 +34,9 @@ Template.accountDetails.helpers({
 
 Template.accountDetails.events({
   //Start the one month plan
-  'click .monthlyPlan': function (event) {
+  'click .monthlyPlan' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("monthlyPlan", trainerId, function (error) {
+    Meteor.call("monthlyPlan", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -46,9 +46,9 @@ Template.accountDetails.events({
   },
   
   //Start the six month plan
-  'click .sixMonthPlan': function (event) {
+  'click .sixMonthPlan' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("sixMonthPlan", trainerId, function (error) {
+    Meteor.call("sixMonthPlan", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -58,9 +58,9 @@ Template.accountDetails.events({
   },
   
   //Start the yearly plan
-  'click .yearlyPlan': function (event) {
+  'click .yearlyPlan' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("yearlyPlan", trainerId, function (error) {
+    Meteor.call("yearlyPlan", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -70,9 +70,9 @@ Template.accountDetails.events({
   },
   
   //Add five additional clients to trainer
-  'click .fiveAdditionalClients': function (event) {
+  'click .fiveAdditionalClients' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("fiveAdditionalClients", trainerId, function (error) {
+    Meteor.call("fiveAdditionalClients", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -82,9 +82,9 @@ Template.accountDetails.events({
   },
   
   //Add ten additional clients to trainer
-  'click .tenAdditionalClients': function (event) {
+  'click .tenAdditionalClients' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("tenAdditionalClients", trainerId, function (error) {
+    Meteor.call("tenAdditionalClients", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -94,9 +94,9 @@ Template.accountDetails.events({
   },
   
   //Add twenty additional clients to trainer
-  'click .twentyAdditionalClients': function (event) {
+  'click .twentyAdditionalClients' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("twentyAdditionalClients", trainerId, function (error) {
+    Meteor.call("twentyAdditionalClients", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -106,7 +106,7 @@ Template.accountDetails.events({
   },
   
   //Reset the trainers acccount back to a free account
-  'click .resetAccount': function (event) {
+  'click .resetAccount' (event) {
     const trainerId = FlowRouter.getParam('_id');
 
     //Needed for sweet alerts
@@ -121,7 +121,7 @@ Template.accountDetails.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Yes, reset account!",
       closeOnConfirm: false
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Reset!', 'Account has been reset.', 'success');
@@ -135,9 +135,9 @@ Template.accountDetails.events({
   },
   
   //Send email to trainer if they have not loggged in for a while
-  'click .emailInactive': function (event) {
+  'click .emailInactive' (event) {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("sendInactiveEmail", trainerId, function (error) {
+    Meteor.call("sendInactiveEmail", trainerId, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {

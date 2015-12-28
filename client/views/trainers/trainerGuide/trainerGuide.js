@@ -6,7 +6,7 @@ Template.trainerGuide.onRendered(() => {
 
 Template.trainerGuide.helpers({
   //Check if the user is logging in 
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 });

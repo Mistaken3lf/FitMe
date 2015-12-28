@@ -1,19 +1,19 @@
 Template.myDashboard.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   },
   
   //Get the active template clicked on
-  activeTemplate: function () {
+  activeTemplate() {
     return Session.get("myClickedButton");
   }
 });
 
 Template.myDashboard.events({
-  "click .myClickedButton": function (event) {
+  "click .myClickedButton" (event) {
     //Set the active template to load on the dashboard for the client
-    var clickedButton = event.target.id;
+    let clickedButton = event.target.id;
     Session.set("myClickedButton", clickedButton);
   }
 });

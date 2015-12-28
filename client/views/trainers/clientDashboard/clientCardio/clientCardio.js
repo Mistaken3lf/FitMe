@@ -1,14 +1,13 @@
 Template.clientCardio.onCreated(function () {
-  var self = this;
   //Subscribe to the current clients cardio publication when
   //the cardio template is created
-  self.autorun(function () {
-    var clientId = FlowRouter.getParam('_id');
-    self.subscribe("currentClientsCardio", clientId);
+  this.autorun(() => {
+    const clientId = FlowRouter.getParam('_id');
+    this.subscribe("currentClientsCardio", clientId);
   });
 });
 
-Template.clientCardioShell.onRendered(function () {
+Template.clientCardioShell.onRendered(() => {
   //Pop up date picker when a date field is clicked on
   $('#week1to4Start').datetimepicker({
     timepicker: false,
@@ -55,9 +54,9 @@ Template.clientCardioShell.onRendered(function () {
 
 Template.clientCardioShell.helpers({
   //Find clients cardio based on url param
-  currentClientsCardio: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  currentClientsCardio() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
@@ -66,106 +65,100 @@ Template.clientCardioShell.helpers({
   },
 
   //calculate clients max heart rate
-  maxHeartRate: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  maxHeartRate() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
     //Formula for max heart rate
-    var maxHeartRate = 220 - currentClientsCardio.cardioProgramAge;
+    let maxHeartRate = 220 - currentClientsCardio.cardioProgramAge;
 
     return maxHeartRate;
   },
 
   //Week 1-4 starting heart rate
-  startBeatsPerMinuteW14: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  startBeatsPerMinuteW14() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
-    var startIntensityW14 = currentClientsCardio.cardioW14StartPercentIntensity / 100;
-
-    var startBeatsPerMinutePart1 = currentClientsCardio.cardioW14StartMaxHeartRate - currentClientsCardio.cardioW14StartRestingHeartRate;
-    var startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW14;
-    var startBeatsPerMinuteW14 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW14StartRestingHeartRate;
+    let startIntensityW14 = currentClientsCardio.cardioW14StartPercentIntensity / 100;
+    let startBeatsPerMinutePart1 = currentClientsCardio.cardioW14StartMaxHeartRate - currentClientsCardio.cardioW14StartRestingHeartRate;
+    let startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW14;
+    let startBeatsPerMinuteW14 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW14StartRestingHeartRate;
 
     return startBeatsPerMinuteW14;
   },
 
   //Week 1-4 ending heart rate
-  endBeatsPerMinuteW14: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  endBeatsPerMinuteW14() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
-    var endIntensityW14 = currentClientsCardio.cardioW14EndPercentIntensity / 100;
-
-    var endBeatsPerMinutePart1 = currentClientsCardio.cardioW14EndMaxHeartRate - currentClientsCardio.cardioW14EndRestingHeartRate;
-    var endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW14;
-    var endBeatsPerMinuteW14 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW14EndRestingHeartRate;
+    let endIntensityW14 = currentClientsCardio.cardioW14EndPercentIntensity / 100;
+    let endBeatsPerMinutePart1 = currentClientsCardio.cardioW14EndMaxHeartRate - currentClientsCardio.cardioW14EndRestingHeartRate;
+    let endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW14;
+    let endBeatsPerMinuteW14 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW14EndRestingHeartRate;
 
     return endBeatsPerMinuteW14;
   },
 
-  startBeatsPerMinuteW58: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  startBeatsPerMinuteW58() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
-    var startIntensityW58 = currentClientsCardio.cardioW58StartPercentIntensity / 100;
-
-    var startBeatsPerMinutePart1 = currentClientsCardio.cardioW58StartMaxHeartRate - currentClientsCardio.cardioW58StartRestingHeartRate;
-    var startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW58;
-    var startBeatsPerMinuteW58 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW58StartRestingHeartRate;
+    let startIntensityW58 = currentClientsCardio.cardioW58StartPercentIntensity / 100;
+    let startBeatsPerMinutePart1 = currentClientsCardio.cardioW58StartMaxHeartRate - currentClientsCardio.cardioW58StartRestingHeartRate;
+    let startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW58;
+    let startBeatsPerMinuteW58 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW58StartRestingHeartRate;
 
     return startBeatsPerMinuteW58;
   },
 
-  endBeatsPerMinuteW58: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  endBeatsPerMinuteW58() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
-    var endIntensityW58 = currentClientsCardio.cardioW58EndPercentIntensity / 100;
-
-    var endBeatsPerMinutePart1 = currentClientsCardio.cardioW58EndMaxHeartRate - currentClientsCardio.cardioW58EndRestingHeartRate;
-    var endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW58;
-    var endBeatsPerMinuteW58 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW58EndRestingHeartRate;
+    let endIntensityW58 = currentClientsCardio.cardioW58EndPercentIntensity / 100;
+    let endBeatsPerMinutePart1 = currentClientsCardio.cardioW58EndMaxHeartRate - currentClientsCardio.cardioW58EndRestingHeartRate;
+    let endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW58;
+    let endBeatsPerMinuteW58 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW58EndRestingHeartRate;
 
     return endBeatsPerMinuteW58;
   },
 
-  startBeatsPerMinuteW912: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  startBeatsPerMinuteW912() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
-    var startIntensityW912 = currentClientsCardio.cardioW912StartPercentIntensity / 100;
-
-    var startBeatsPerMinutePart1 = currentClientsCardio.cardioW912StartMaxHeartRate - currentClientsCardio.cardioW912StartRestingHeartRate;
-    var startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW912;
-    var startBeatsPerMinuteW912 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW912StartRestingHeartRate;
+    let startIntensityW912 = currentClientsCardio.cardioW912StartPercentIntensity / 100;
+    let startBeatsPerMinutePart1 = currentClientsCardio.cardioW912StartMaxHeartRate - currentClientsCardio.cardioW912StartRestingHeartRate;
+    let startBeatsPerMinutePart2 = startBeatsPerMinutePart1 * startIntensityW912;
+    let startBeatsPerMinuteW912 = startBeatsPerMinutePart2 + currentClientsCardio.cardioW912StartRestingHeartRate;
 
     return startBeatsPerMinuteW912;
   },
 
-  endBeatsPerMinuteW912: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClientsCardio = ClientCardio.findOne({
+  endBeatsPerMinuteW912() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClientsCardio = ClientCardio.findOne({
       whosCardio: clientId
     });
 
-    var endIntensityW912 = currentClientsCardio.cardioW912EndPercentIntensity / 100;
-
-    var endBeatsPerMinutePart1 = currentClientsCardio.cardioW912EndMaxHeartRate - currentClientsCardio.cardioW912EndRestingHeartRate;
-    var endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW912;
-    var endBeatsPerMinuteW912 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW912EndRestingHeartRate;
+    let endIntensityW912 = currentClientsCardio.cardioW912EndPercentIntensity / 100;
+    let endBeatsPerMinutePart1 = currentClientsCardio.cardioW912EndMaxHeartRate - currentClientsCardio.cardioW912EndRestingHeartRate;
+    let endBeatsPerMinutePart2 = endBeatsPerMinutePart1 * endIntensityW912;
+    let endBeatsPerMinuteW912 = endBeatsPerMinutePart2 + currentClientsCardio.cardioW912EndRestingHeartRate;
 
     return endBeatsPerMinuteW912;
   }

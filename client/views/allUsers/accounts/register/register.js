@@ -1,11 +1,11 @@
 Template.register.events({
   //Capture register form submit
-  'submit form': function (event) {
+  'submit form' (event) {
     //Prevent default form submission
     event.preventDefault();
 
     //Get the first and last name, username, password and email from form
-    var newTrainerData = {
+    let newTrainerData = {
       //Get who send the message and the actual message
       firstName: $('[name=firstName]').val(),
       lastName: $('[name=lastName]').val(),
@@ -15,7 +15,7 @@ Template.register.events({
     };
 
     //Call server method to register the trainer
-    Meteor.call("registerTrainer", newTrainerData, function (error) {
+    Meteor.call("registerTrainer", newTrainerData, (error) => {
 
       //Error registering trainer
       if (error) {
@@ -23,7 +23,7 @@ Template.register.events({
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Login user with provided credentials
-        Meteor.loginWithPassword(newTrainerData.username, newTrainerData.password, function (error) {
+        Meteor.loginWithPassword(newTrainerData.username, newTrainerData.password, (error) => {
 
           //Failed to login
           if (error) {

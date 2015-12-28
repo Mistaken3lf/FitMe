@@ -1,4 +1,4 @@
-Template.addClient.onRendered(function () {
+Template.addClient.onRendered(() => {
   //Pop up a datepicker when a date field is clicked on
   $('.datepicker').datetimepicker({
     timepicker: false,
@@ -10,11 +10,11 @@ Template.addClient.onRendered(function () {
 
 Template.addClient.events({
   //Capture create client form submission
-  'submit form': function (event) {
+  'submit form' (event) {
     //Prevent default form submission
     event.preventDefault();
 
-    var clientData = {
+    let clientData = {
       //Get the client data from the form
       username: $('[name=username]').val(),
       password: $('[name=password]').val(),
@@ -35,7 +35,7 @@ Template.addClient.events({
     };
 
     //Call server method createClient with provided info
-    Meteor.call("registerClient", clientData, function (error, result) {
+    Meteor.call("registerClient", clientData, (error, result) => {
       //Create client failed
       if (error) {
         //Popup a toast to display reason for error
@@ -57,7 +57,7 @@ Template.addClient.events({
 
 Template.addClient.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 });

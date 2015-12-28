@@ -1,13 +1,11 @@
 Template.myProfile.onCreated(function () {
-  var self = this;
-
-  self.autorun(function () {
+  this.autorun(() => {
     //Subscribe to my profile info
-    self.subscribe("myProfile");
+    this.subscribe("myProfile");
   });
 });
 
-Template.myProfileShell.onRendered(function () {
+Template.myProfileShell.onRendered(() => {
   //Pop up a datepicker if a date field is clicked on
   $('#birthday').datetimepicker({
     timepicker: false,
@@ -20,12 +18,12 @@ Template.myProfileShell.onRendered(function () {
 Template.myProfileShell.helpers({
   //Get the currently logged in user to be used to display their
   //profile on the myProfile template
-  loggedInUser: function () {
+  loggedInUser() {
     return Meteor.user();
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function() {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 });

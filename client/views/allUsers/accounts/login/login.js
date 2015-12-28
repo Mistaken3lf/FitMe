@@ -1,15 +1,15 @@
 Template.login.events({
   //Capture login form submission
-  'submit form': function (event) {
+  'submit form' (event) {
     //Prevent default form submission
     event.preventDefault();
 
     //Capture username and password from form
-    var username = $('[name=username]').val();
-    var password = $('[name=password]').val();
+    let username = $('[name=username]').val();
+    let password = $('[name=password]').val();
 
     //Log user in with userrname and password
-    Meteor.loginWithPassword(username, password, function (error) {
+    Meteor.loginWithPassword(username, password, (error) => {
       //Invalid login
       if (error) {
         //Pop up an alert to show login failed
@@ -17,7 +17,7 @@ Template.login.events({
       } 
     });
     
-    Accounts.onLogin(function() {
+    Accounts.onLogin(() => {
       if(Roles.userIsInRole(Meteor.userId(), "admin")) {
         FlowRouter.go("/adminHome");
       }

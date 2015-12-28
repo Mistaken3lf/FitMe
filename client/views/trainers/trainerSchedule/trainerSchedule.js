@@ -1,121 +1,119 @@
 Template.trainerSchedule.onCreated(function () {
-  var self = this;
-
   //Subscribe to the clients profile based on the url param
-  self.autorun(function () {
-    self.subscribe("trainerSchedule");
+  this.autorun(() => {
+    this.subscribe("trainerSchedule");
   });
 });
 
 Template.trainerSchedule.events({
   //Events to remove an item from the schedule for monday through sunday
   //on desktop and mobile
-  "click .removeFromMonday": function () {
-    Meteor.call("resetMondaysSchedule", this._id, function (error) {
+  "click .removeFromMonday"() {
+    Meteor.call("resetMondaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromMondayMobile": function () {
-    Meteor.call("resetMondaysSchedule", this._id, function (error) {
+  "click .removeFromMondayMobile"() {
+    Meteor.call("resetMondaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromTuesday": function () {
-    Meteor.call("resetTuesdaysSchedule", this._id, function (error) {
+  "click .removeFromTuesday"() {
+    Meteor.call("resetTuesdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromTuesdayMobile": function () {
-    Meteor.call("resetTuesdaysSchedule", this._id, function (error) {
+  "click .removeFromTuesdayMobile"() {
+    Meteor.call("resetTuesdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromWednesday": function () {
-    Meteor.call("resetWednesdaysSchedule", this._id, function (error) {
+  "click .removeFromWednesday"() {
+    Meteor.call("resetWednesdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromWednesdayMobile": function () {
-    Meteor.call("resetWednesdaysSchedule", this._id, function (error) {
+  "click .removeFromWednesdayMobile"() {
+    Meteor.call("resetWednesdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromThursday": function () {
-    Meteor.call("resetThursdaysSchedule", this._id, function (error) {
+  "click .removeFromThursday"() {
+    Meteor.call("resetThursdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromThursdayMobile": function () {
-    Meteor.call("resetThursdaysSchedule", this._id, function (error) {
+  "click .removeFromThursdayMobile"() {
+    Meteor.call("resetThursdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromFriday": function () {
-    Meteor.call("resetFridaysSchedule", this._id, function (error) {
+  "click .removeFromFriday"() {
+    Meteor.call("resetFridaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromFridayMobile": function () {
-    Meteor.call("resetFridaysSchedule", this._id, function (error) {
+  "click .removeFromFridayMobile"() {
+    Meteor.call("resetFridaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromSaturday": function () {
-    Meteor.call("resetSaturdaysSchedule", this._id, function (error) {
+  "click .removeFromSaturday"() {
+    Meteor.call("resetSaturdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromSaturdayMobile": function () {
-    Meteor.call("resetSaturdaysSchedule", this._id, function (error) {
+  "click .removeFromSaturdayMobile"() {
+    Meteor.call("resetSaturdaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromSunday": function () {
-    Meteor.call("resetSundaysSchedule", this._id, function (error) {
+  "click .removeFromSunday"() {
+    Meteor.call("resetSundaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
     });
   },
 
-  "click .removeFromSundayMobile": function () {
-    Meteor.call("resetSundaysSchedule", this._id, function (error) {
+  "click .removeFromSundayMobile"() {
+    Meteor.call("resetSundaysSchedule", this._id, (error) => {
       if (error) {
         Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
       }
@@ -125,19 +123,19 @@ Template.trainerSchedule.events({
 
 Template.trainerSchedule.helpers({
   //Get the start day of the week
-  startOfWeek: function () {
+  startOfWeek() {
     let startDay = moment().startOf("week").format("ddd. MMM Do");
     return startDay;
   },
   
   //Get the end day of the week
-  endOfWeek: function () {
+  endOfWeek() {
     let endDay = moment().endOf("week").format("ddd. MMM Do");
     return endDay;
   },
 
   //Get trainers schedule for monday
-  thisMondaysSchedule: function () {
+  thisMondaysSchedule() {
     return Meteor.users.find({
       mondayStatus: true,
       mondaysScheduleStart: {
@@ -164,7 +162,7 @@ Template.trainerSchedule.helpers({
   },
 
   //Get trainers schedule for tuesday
-  thisTuesdaysSchedule: function () {
+  thisTuesdaysSchedule() {
     return Meteor.users.find({
       tuesdayStatus: true,
       tuesdaysScheduleStart: {
@@ -191,7 +189,7 @@ Template.trainerSchedule.helpers({
   },
 
   //Get trainers schedule for wednesday
-  thisWednesdaysSchedule: function () {
+  thisWednesdaysSchedule() {
     return Meteor.users.find({
       wednesdayStatus: true,
 
@@ -218,7 +216,7 @@ Template.trainerSchedule.helpers({
   },
 
   //Get trainers schedule for thursday
-  thisThursdaysSchedule: function () {
+  thisThursdaysSchedule() {
     return Meteor.users.find({
       thursdayStatus: true,
       thursdaysScheduleStart: {
@@ -244,7 +242,7 @@ Template.trainerSchedule.helpers({
   },
 
   //Get trainers schedule for friday
-  thisFridaysSchedule: function () {
+  thisFridaysSchedule() {
     return Meteor.users.find({
       fridayStatus: true,
 
@@ -271,7 +269,7 @@ Template.trainerSchedule.helpers({
   },
 
   //Get trainers schedule for saturday
-  thisSaturdaysSchedule: function () {
+  thisSaturdaysSchedule() {
     return Meteor.users.find({
       saturdayStatus: true,
 
@@ -298,7 +296,7 @@ Template.trainerSchedule.helpers({
   },
 
   //Get trainers schedule for sunday
-  thisSundaysSchedule: function () {
+  thisSundaysSchedule() {
     return Meteor.users.find({
       sundayStatus: true,
 

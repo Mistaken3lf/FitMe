@@ -1,14 +1,12 @@
 Template.clientProfile.onCreated(function () {
-  var self = this;
-
   //Subscribe to the clients profile based on the url param
-  self.autorun(function () {
-    var clientId = FlowRouter.getParam('_id');
-    self.subscribe("currentClientsProfile", clientId);
+  this.autorun(() => {
+    const clientId = FlowRouter.getParam('_id');
+    this.subscribe("currentClientsProfile", clientId);
   });
 });
 
-Template.clientProfileShell.onRendered(function () {
+Template.clientProfileShell.onRendered(() => {
   //Popup date picker to select clients birthday
   $('#clientBirthday').datetimepicker({
     timepicker: false,
@@ -20,9 +18,9 @@ Template.clientProfileShell.onRendered(function () {
 
 Template.clientProfileShell.helpers({
   //Get the current clients profile based on the url param
-  currentClient: function () {
-    var clientId = FlowRouter.getParam('_id');
-    var currentClient = Meteor.users.findOne({
+  currentClient() {
+    const clientId = FlowRouter.getParam('_id');
+    const currentClient = Meteor.users.findOne({
       whosProfile: clientId
     });
 

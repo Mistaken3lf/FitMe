@@ -1,25 +1,25 @@
-Template.trainerHome.onRendered(function () {
+Template.trainerHome.onRendered(() => {
   //Initialization for the update slider
   $('.slider').slider({
     full_width: true
   });
-  
+
   //Initialize the parallax
   $('.parallax').parallax();
 });
 
 Template.trainerHome.events({
   //Contact us email
-  'submit form': function (event) {
+  'submit form'(event) {
     event.preventDefault();
     //Get who send the message and the actual message
-    var firstName = $('[name=firstName]').val();
-    var lastName = $('[name=lastName]').val();
-    var phoneNumber = $('[name=phoneNumber]').val();
-    var email = $('[name=email]').val();
-    var message = $('[name=message]').val();
+    let firstName = $('[name=firstName]').val();
+    let lastName = $('[name=lastName]').val();
+    let phoneNumber = $('[name=phoneNumber]').val();
+    let email = $('[name=email]').val();
+    let message = $('[name=message]').val();
     //Call the send feedback method to send us information.
-    Meteor.call("contactUs", firstName, lastName, phoneNumber, email, message, function (error) {
+    Meteor.call("contactUs", firstName, lastName, phoneNumber, email, message, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
@@ -29,7 +29,9 @@ Template.trainerHome.events({
         phoneNumber = $('[name=phoneNumber]').val('');
         email = $('[name=email]').val('');
         message = $('[name=message]').val('');
-        FlowRouter.go("/");
+
+        //Go back to the trainer home
+        FlowRouter.go("/trainerHome");
       }
     });
   }
@@ -37,7 +39,7 @@ Template.trainerHome.events({
 
 Template.trainerHome.helpers({
   //Check if the user is logging in 
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 })

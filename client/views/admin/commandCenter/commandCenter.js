@@ -62,7 +62,7 @@ Template.commandCenter.helpers({
 });
 
 Template.commandCenter.events({
-  'click .removeTrainer': function (event) {
+  'click .removeTrainer' (event) {
     //Find the trainer to remove
     const curUser = Meteor.users.findOne({
       _id: this._id
@@ -80,7 +80,7 @@ Template.commandCenter.events({
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Yes, remove user!",
       closeOnConfirm: false
-    }, function (isConfirm) {
+    }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'User has been deleted.', 'success');
@@ -91,14 +91,14 @@ Template.commandCenter.events({
     });
   },
 
-  'click .suspendTrainer': function (event) {
+  'click .suspendTrainer' (event) {
     //Suspend the trainer clicked on
     Meteor.call("suspendTrainer", this._id);
   },
   
   //Payment due soon button to send email when their payment is due soon
-  'click .paymentDueSoon': function (event) {
-    Meteor.call("paymentDueSoon", this.expiresOn, this._id, function (error) {
+  'click .paymentDueSoon' (event) {
+    Meteor.call("paymentDueSoon", this.expiresOn, this._id, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {

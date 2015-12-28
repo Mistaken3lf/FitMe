@@ -1,6 +1,6 @@
 Template.addTrainerAdmin.events({
   //Capture create trainer form event
-  'submit form': function (event) {
+  'submit form' (event) {
     //Prevent default form submission
     event.preventDefault();
 
@@ -15,7 +15,7 @@ Template.addTrainerAdmin.events({
     };
 
     //Call server method to create the trainer
-    Meteor.call("createTrainer", newTrainerData, function (error) {
+    Meteor.call("createTrainer", newTrainerData, (error) => {
 
       //Error creating trainer
       if (error) {

@@ -5,7 +5,7 @@ Template.trainersProfile.onCreated(function () {
   });
 });
 
-Template.trainersProfileShell.onRendered(function () {
+Template.trainersProfileShell.onRendered(() => {
   //Pop up a datepicker if a date field is clicked on
   $('#birthday').datetimepicker({
     timepicker: false,
