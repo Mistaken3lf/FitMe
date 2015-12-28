@@ -1,22 +1,29 @@
 Meteor.methods({
   paymentDueSoon(expiresOn, trainerId) {
     if (Roles.userIsInRole(this.userId, "admin")) {
-      let trainer = Meteor.users.findOne({_id: trainerId})
+      const trainer = Meteor.users.findOne({
+        _id: trainerId
+      });
+      
+      //Get trainers email address
       let emailAddr = trainer.emails[0].address;
       
-      let fitmeLink = "mkt.com/fitme".italics();
-      let fitmeTeam = "The FitMe Team".bold();
-
-      this.unblock();
+      //Account page link
+      let fitmeLink = "www.gofitme.com/myAccount";
       
+      //Bold the fitme team text
+      let fitmeTeam = "The FitMe Team".bold();
+      
+      //Allow other methods to execute without blocking for email
+      this.unblock();
+
       //Send the actual email to us
       Email.send({
         to: emailAddr,
         from: "sales@gofitme.com",
-        subject: "FitMe -- Renew Your Account",
-        text: "Hello " + trainer.firstName + " " +  trainer.lastName + ',\n\n' + "We wanted to inform you that your account will be expiring on " + expiresOn + ". " +"Don't forget to renew your account by visiting " + fitmeLink + "." + " If you fail to renew, your account may be suspended until you renew it.\n\n\n" + "Keep Training Hard,\n\n" + fitmeTeam 
+        subject: "FitMe -- Account Renewal",
+        text: "Hello " + trainer.firstName + " " + trainer.lastName + ',\n\n' + "We wanted to inform you that your account will be expiring on " + expiresOn + ". " + "To renew your account, visit the following link " + fitmeLink + "." + " If you fail to renew, your account may be suspended until you renew it.\n\n\n" + "Keep Training Hard,\n\n" + fitmeTeam
       });
-
     } else {
       throw new Meteor.error("Not Authorized");
     }
