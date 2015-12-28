@@ -12,6 +12,7 @@ Template.myWorkoutShell.helpers({
     var myWorkout = ClientWorkout.findOne({
       whosWorkout: Meteor.userId()
     });
+    
     return myWorkout;
   },
 });
