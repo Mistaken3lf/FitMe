@@ -1,16 +1,14 @@
 Template.commandCenter.onCreated(function () {
-  var self = this;
-
   //Subscribe to all current users
-  self.autorun(function () {
-    self.subscribe("allUsers");
+  this.autorun(() => {
+    this.subscribe("allUsers");
   });
 });
 
 Template.commandCenter.helpers({
   //Total number of trainers 
-  totalTrainers: function () {
-    totalTrainers = Meteor.users.find({
+  totalTrainers() {
+    let totalTrainers = Meteor.users.find({
       roles: 'trainer'
     }).count();
 
@@ -18,8 +16,8 @@ Template.commandCenter.helpers({
   },
 
   //Total number of clients
-  totalClients: function () {
-    totalClients = Meteor.users.find({
+  totalClients() {
+    let totalClients = Meteor.users.find({
       roles: 'client'
     }).count();
 
@@ -27,8 +25,8 @@ Template.commandCenter.helpers({
   },
 
   //Total user count
-  totalUsers: function () {
-    totalUsers = Meteor.users.find({
+  totalUsers() {
+    let totalUsers = Meteor.users.find({
       _id: {
         $ne: Meteor.userId()
       }
@@ -38,24 +36,24 @@ Template.commandCenter.helpers({
   },
 
   //Find all trainers we are subscribed to
-  trainer: function () {
+  trainer() {
     return Meteor.users.find({
       roles: "trainer"
     });
   },
 
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   },
 
   //Return all a trainer clients so we can search them
   //with easy search
-  currentTrainersIndex: function () {
+  currentTrainersIndex() {
     return CurrentTrainersIndex;
   },
 
-  currentTrainersAttributes: function () {
+  currentTrainersAttributes() {
     //Placeholder for easy search
     return {
       placeholder: "Search For A Trainer"
@@ -66,12 +64,12 @@ Template.commandCenter.helpers({
 Template.commandCenter.events({
   'click .removeTrainer': function (event) {
     //Find the trainer to remove
-    var curUser = Meteor.users.findOne({
+    const curUser = Meteor.users.findOne({
       _id: this._id
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Sweet alert to confirm the deletion of the trainer
     swal({

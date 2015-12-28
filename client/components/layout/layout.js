@@ -1,6 +1,6 @@
 Template.layout.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function() {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 });

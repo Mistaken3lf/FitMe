@@ -1,9 +1,7 @@
 Template.trainersProfile.onCreated(function () {
-  var self = this;
-
-  self.autorun(function () {
-    var trainerId = FlowRouter.getParam('_id');
-    self.subscribe("trainersProfile", trainerId);
+  this.autorun(() => {
+    const trainerId = FlowRouter.getParam('_id');
+    this.subscribe("trainersProfile", trainerId);
   });
 });
 
@@ -19,13 +17,13 @@ Template.trainersProfileShell.onRendered(function () {
 
 Template.trainersProfileShell.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   },
   
   //Get the currently logged in trainer to display their
   //info in the form
-  currentTrainer: function () {
+  currentTrainer() {
     var trainerId = FlowRouter.getParam('_id');
     return Meteor.users.findOne({
       _id: trainerId

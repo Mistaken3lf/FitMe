@@ -1,22 +1,20 @@
 Template.trainersClients.onCreated(function () {
-  var self = this;
-
   //Subscribe all the trainers current clients
-  self.autorun(function () {
-    var trainerId = FlowRouter.getParam('_id');
-    self.subscribe("trainersClients", trainerId);
+  this.autorun(() => {
+    const trainerId = FlowRouter.getParam('_id');
+    this.subscribe("trainersClients", trainerId);
   });
 });
 
 Template.trainersClients.events({
   'click .deleteButton': function (event) {
     //Find client clicked on
-    var curUser = Meteor.users.findOne({
+    const curUser = Meteor.users.findOne({
       _id: this._id
     });
 
     //Needed for sweet alerts
-    var previousWindowKeyDown = window.onkeydown;
+    let previousWindowKeyDown = window.onkeydown;
 
     //Popup sweet alert to confirm delete
     swal({
@@ -48,12 +46,12 @@ Template.trainersClients.events({
 Template.trainersClients.helpers({
   //Return all a trainer clients so we can search them
   //with easy search
-  trainersClientsIndex: function () {
-    return UsersIndex;
+  trainersClientsIndex() {
+      return UsersIndex;
   },
 
   //Placeholder for easy search
-  trainersClientsAttributes: function () {
+  trainersClientsAttributes() {
     //Placeholder for easy search
     return {
       placeholder: "Search For A Client"

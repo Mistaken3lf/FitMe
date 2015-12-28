@@ -5,7 +5,7 @@ Template.addTrainerAdmin.events({
     event.preventDefault();
 
     //Get the first and last name, username, password and email from form
-    var newTrainerData = {
+    let newTrainerData = {
       //Get who send the message and the actual message
       firstName: $('[name=firstName]').val(),
       lastName: $('[name=lastName]').val(),
@@ -31,7 +31,7 @@ Template.addTrainerAdmin.events({
 
 Template.addTrainerAdmin.helpers({
   //Check if the user is currently logging in
-  isLoggingIn: function () {
+  isLoggingIn() {
     return Meteor.loggingIn();
   }
 });
