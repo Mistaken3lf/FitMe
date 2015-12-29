@@ -5,7 +5,7 @@ Meteor.methods({
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'admin')) {
-      let user = Meteor.users.findOne(trainerId);
+      const user = Meteor.users.findOne(trainerId);
 
       if (user.userStatus == "active") {
         Meteor.users.update({

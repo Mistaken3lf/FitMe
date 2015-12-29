@@ -1,6 +1,14 @@
 Meteor.methods({
   mondayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -15,6 +23,14 @@ Meteor.methods({
   
   tuesdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -29,6 +45,14 @@ Meteor.methods({
   
   wednesdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -43,6 +67,14 @@ Meteor.methods({
   
   thursdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -57,6 +89,14 @@ Meteor.methods({
   
   fridayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -71,6 +111,14 @@ Meteor.methods({
   
   saturdayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -85,6 +133,14 @@ Meteor.methods({
   
   sundayStatus(status) {
     if (Roles.userIsInRole(this.userId, "client")) {
+      const thisClient = Meteor.users.findOne({
+        _id: this.userId
+      });
+      
+      if(thisClient.userStatus == "suspended") {
+        throw new Meteor.Error("Sorry, you account is suspended");
+      }
+      
       Meteor.users.update({
         _id: this.userId
       }, {

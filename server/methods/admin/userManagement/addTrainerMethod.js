@@ -3,7 +3,7 @@ Meteor.methods({
     //Make sure user is an admin and logged in before allowing the add
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Create the new trainer
-      newTrainerId = Accounts.createUser({
+      let newTrainerId = Accounts.createUser({
         username: newTrainerData.username,
         password: newTrainerData.password,
         email: newTrainerData.email,

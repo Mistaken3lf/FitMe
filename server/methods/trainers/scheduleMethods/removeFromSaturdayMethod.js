@@ -1,7 +1,7 @@
 Meteor.methods({
   resetSaturdaysSchedule(saturdaysItem) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      let thisTrainer = Meteor.users.findOne({
+      const thisTrainer = Meteor.users.findOne({
         _id: this.userId
       });
 

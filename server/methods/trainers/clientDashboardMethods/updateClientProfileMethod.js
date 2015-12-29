@@ -2,7 +2,7 @@ Meteor.methods({
   //Update the clients profile with the clientId passed in from
   //flow router
   updateClientsProfile(updatedProfile, clientId) {
-    let currentTrainer = Meteor.users.findOne({
+    const currentTrainer = Meteor.users.findOne({
       _id: this.userId
     });
 
@@ -13,7 +13,7 @@ Meteor.methods({
     //Make sure user is logged in and a trainer before performing
     //the method
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      let thisClient = Meteor.users.findOne({
+      const thisClient = Meteor.users.findOne({
         _id: clientId
       });
 

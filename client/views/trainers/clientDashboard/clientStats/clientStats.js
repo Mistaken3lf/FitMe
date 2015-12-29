@@ -172,7 +172,8 @@ Template.clientStatsShell.helpers({
 
     return muscleGained;
   },
-
+  
+  //Calculate neck measurement change
   neckMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -183,7 +184,8 @@ Template.clientStatsShell.helpers({
 
     return neckMeasureChange;
   },
-
+  
+  //Calculate chest measurement change
   chestMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -194,7 +196,8 @@ Template.clientStatsShell.helpers({
 
     return chestMeasureChange;
   },
-
+  
+  //Calculate shoulder measurement change
   shoulderMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -205,7 +208,8 @@ Template.clientStatsShell.helpers({
 
     return shoulderMeasureChange;
   },
-
+  
+  //Calculate waist measurement change
   waistMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -216,7 +220,8 @@ Template.clientStatsShell.helpers({
 
     return waistMeasureChange;
   },
-
+  
+  //Calculate hip measurement change
   hipsMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -227,7 +232,8 @@ Template.clientStatsShell.helpers({
 
     return hipsMeasureChange;
   },
-
+  
+  //Calculate thigh measurement change
   thighMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -238,7 +244,8 @@ Template.clientStatsShell.helpers({
 
     return thighMeasureChange;
   },
-
+  
+  //Calculate calf measurement change
   calfMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -249,7 +256,8 @@ Template.clientStatsShell.helpers({
 
     return calfMeasureChange;
   },
-
+  
+  //Calculate bicep measurement change
   bicepMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({
@@ -260,7 +268,8 @@ Template.clientStatsShell.helpers({
 
     return bicepMeasureChange;
   },
-
+  
+  //Calculate forearm measurement change
   forearmMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
     const currentClient = ClientStats.findOne({

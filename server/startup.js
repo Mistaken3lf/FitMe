@@ -5,7 +5,7 @@ Meteor.startup(function () {
   //Create the admin user with default admin username and password, change
   //the password after created!!!!!
   if (Meteor.users.find().count() === 0) {
-    admin = Accounts.createUser({
+    let admin = Accounts.createUser({
       username: "admin",
       password: "admin",
       email: "bigt371@gmail.com",

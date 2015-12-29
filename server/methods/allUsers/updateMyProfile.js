@@ -4,7 +4,7 @@ Meteor.methods({
     //Make sure user is logged in before letting them update
     //a profile
     if (Meteor.userId()) {
-      let currentUser = Meteor.users.findOne({
+      const currentUser = Meteor.users.findOne({
         _id: myId
       });
 

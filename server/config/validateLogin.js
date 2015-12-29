@@ -1,11 +1,11 @@
-Accounts.validateLoginAttempt(function (loginAttempt) {
+Accounts.validateLoginAttempt((loginAttempt) => {
   //Invalid login
   if (!loginAttempt.allowed) {
     throw new Meteor.Error(403, "Invalid login credentials");
   }
 
   //Find the user logging in
-  var thisUser = Meteor.users.findOne({
+  const thisUser = Meteor.users.findOne({
     _id: loginAttempt.user._id
   });
 

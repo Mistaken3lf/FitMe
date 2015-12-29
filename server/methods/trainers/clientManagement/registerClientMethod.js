@@ -4,7 +4,7 @@ Meteor.methods({
     //creating a new client
     if (Roles.userIsInRole(this.userId, "trainer")) {
       //Get the current trainer so we can check the client limit
-      var currentTrainer = Meteor.users.findOne({
+      const currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
       
@@ -15,14 +15,14 @@ Meteor.methods({
       }
       
       //Get the count of total clients they have
-      var currentClientCount = Meteor.users.find({
+      let currentClientCount = Meteor.users.find({
         createdBy: this.userId
       }).count();
 
       if (currentTrainer.clientLimit > currentClientCount) {
         //Create the new clients username, password and email since thats
         //what the default meteor user accounts expects
-        id = Accounts.createUser({
+        var id = Accounts.createUser({
           username: clientData.username,
           password: clientData.password,
           email: clientData.email,

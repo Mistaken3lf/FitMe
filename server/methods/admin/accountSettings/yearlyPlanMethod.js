@@ -4,7 +4,7 @@ Meteor.methods({
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(12, "months").format("MM/DD/YYYY");
 
-      let curTrainer = Meteor.users.findOne({
+      const curTrainer = Meteor.users.findOne({
         _id: trainerId
       });
 

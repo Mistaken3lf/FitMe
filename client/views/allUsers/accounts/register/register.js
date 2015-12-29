@@ -16,7 +16,6 @@ Template.register.events({
 
     //Call server method to register the trainer
     Meteor.call("registerTrainer", newTrainerData, (error) => {
-
       //Error registering trainer
       if (error) {
         //Pop up an alert to show the error

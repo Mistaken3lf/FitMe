@@ -32,6 +32,7 @@ Template.mySessionShell.helpers({
 });
 
 Template.mySessionShell.events({
+  //Change events for the status of the clients schedule
   'change #mondayStatus' (event) {
     Meteor.call("mondayStatus", event.target.checked);
   },

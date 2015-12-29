@@ -1,7 +1,7 @@
 Meteor.methods({
   twentyAdditionalClientsTrainer(trainerId) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      let curTrainer = Meteor.users.findOne({
+      const curTrainer = Meteor.users.findOne({
         _id: trainerId
       });
 

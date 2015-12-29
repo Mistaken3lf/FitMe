@@ -106,7 +106,8 @@ Template.clientCardioShell.helpers({
 
     return endBeatsPerMinuteW14;
   },
-
+  
+  //Start beats for week 5-8
   startBeatsPerMinuteW58() {
     const clientId = FlowRouter.getParam('_id');
     const currentClientsCardio = ClientCardio.findOne({
@@ -120,7 +121,8 @@ Template.clientCardioShell.helpers({
 
     return startBeatsPerMinuteW58;
   },
-
+  
+  //End beats for week 5-8
   endBeatsPerMinuteW58() {
     const clientId = FlowRouter.getParam('_id');
     const currentClientsCardio = ClientCardio.findOne({
@@ -134,7 +136,8 @@ Template.clientCardioShell.helpers({
 
     return endBeatsPerMinuteW58;
   },
-
+  
+  //Start beats for week 9-12
   startBeatsPerMinuteW912() {
     const clientId = FlowRouter.getParam('_id');
     const currentClientsCardio = ClientCardio.findOne({
@@ -148,7 +151,8 @@ Template.clientCardioShell.helpers({
 
     return startBeatsPerMinuteW912;
   },
-
+  
+  //End beats for week 9-12
   endBeatsPerMinuteW912() {
     const clientId = FlowRouter.getParam('_id');
     const currentClientsCardio = ClientCardio.findOne({

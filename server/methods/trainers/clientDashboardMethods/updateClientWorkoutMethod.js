@@ -4,7 +4,7 @@ Meteor.methods({
     //Make sure the user is logged in and a trainer before performing the
     //method
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      let currentTrainer = Meteor.users.findOne({
+      const currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
 
@@ -12,7 +12,7 @@ Meteor.methods({
         throw new Meteor.Error("Your account is suspended");
       }
       
-      let clientsWorkout = ClientWorkout.findOne({
+      const clientsWorkout = ClientWorkout.findOne({
         createdBy: this.userId
       });
 

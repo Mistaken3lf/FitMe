@@ -24,7 +24,7 @@ Template.trainersProfileShell.helpers({
   //Get the currently logged in trainer to display their
   //info in the form
   currentTrainer() {
-    var trainerId = FlowRouter.getParam('_id');
+    const trainerId = FlowRouter.getParam('_id');
     return Meteor.users.findOne({
       _id: trainerId
     });

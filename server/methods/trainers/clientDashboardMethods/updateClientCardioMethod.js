@@ -2,7 +2,7 @@ Meteor.methods({
   //Update a clients cardio with the clientId passed in from
   //flow router
   updateClientCardio(updatedCardio, clientId) {
-    let currentTrainer = Meteor.users.findOne({
+    const currentTrainer = Meteor.users.findOne({
       _id: this.userId
     });
     
@@ -13,7 +13,7 @@ Meteor.methods({
     //Make sure the user is a trainer and logged in before performing
     //the method
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      let clientsCardio = ClientCardio.findOne({
+      const clientsCardio = ClientCardio.findOne({
         createdBy: this.userId
       });
 

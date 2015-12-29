@@ -10,7 +10,7 @@ Template.trainerHome.onRendered(() => {
 
 Template.trainerHome.events({
   //Contact us email
-  'submit form'(event) {
+  'submit form' (event) {
     event.preventDefault();
     //Get who send the message and the actual message
     let firstName = $('[name=firstName]').val();

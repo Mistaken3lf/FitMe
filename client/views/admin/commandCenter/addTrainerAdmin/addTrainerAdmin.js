@@ -16,7 +16,6 @@ Template.addTrainerAdmin.events({
 
     //Call server method to create the trainer
     Meteor.call("createTrainer", newTrainerData, (error) => {
-
       //Error creating trainer
       if (error) {
         //Pop up an alert to show the error

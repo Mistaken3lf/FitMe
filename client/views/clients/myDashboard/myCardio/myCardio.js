@@ -57,7 +57,8 @@ Template.myCardioShell.helpers({
 
     return endBeatsPerMinuteW14;
   },
-
+  
+  //Week 5-8 Start beats per minute
   startBeatsPerMinuteW58() {
     const myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
@@ -71,7 +72,8 @@ Template.myCardioShell.helpers({
 
     return startBeatsPerMinuteW58;
   },
-
+  
+  //Week 5-8 End beats per minute
   endBeatsPerMinuteW58() {
     const myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
@@ -85,7 +87,8 @@ Template.myCardioShell.helpers({
 
     return endBeatsPerMinuteW58;
   },
-
+  
+  //Start beats for week 9-12
   startBeatsPerMinuteW912() {
     const myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
@@ -99,7 +102,8 @@ Template.myCardioShell.helpers({
 
     return startBeatsPerMinuteW912;
   },
-
+  
+  //End beats for week 9-12
   endBeatsPerMinuteW912() {
     const myCardio = ClientCardio.findOne({
       whosCardio: Meteor.userId()
