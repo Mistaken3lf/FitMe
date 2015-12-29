@@ -152,10 +152,13 @@ Template.myAccount.events({
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        swal('Delete!', 'Your account has been removed.', 'success');
+        swal('Deleted!', 'Your account has been removed.', 'success');
         //Call server function to delete the client clicked on
         Meteor.call("deleteAccount");
         FlowRouter.go("/");
+        
+        //Log user out
+        Meteor.logout();
       } else {
         swal('Cancelled', 'Account is safe now.', 'error');
       }

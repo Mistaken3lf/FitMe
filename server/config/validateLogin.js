@@ -14,6 +14,10 @@ Accounts.validateLoginAttempt((loginAttempt) => {
   if ((thisUser.userStatus == "suspended") && (Roles.userIsInRole(thisUser._id, "client"))) {
     throw new Meteor.Error(403, "User account is inactive, please make payment to your trainer");
   }
+  
+  if(thisUser.userStatus == "deleted") {
+    throw new Meteor.Error(403, "Your account no longer exists");
+  }
 
   return true;
 });
