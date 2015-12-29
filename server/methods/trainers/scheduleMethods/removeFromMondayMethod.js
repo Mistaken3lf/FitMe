@@ -15,7 +15,8 @@ Meteor.methods({
         $set: {
           mondaysScheduleStart: "",
           mondaysScheduleEnd: "",
-          mondayDescription: ""
+          mondayDescription: "",
+          mondayStatus: false
         }
       });
     } else {
