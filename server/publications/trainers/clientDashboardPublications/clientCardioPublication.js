@@ -1,6 +1,12 @@
 Meteor.publish('currentClientsCardio', function (currentClientsId) {
   //Check that the id is valid against the server
-  check(currentClientsId, String);
+  new SimpleSchema({
+        currentClientsId: {
+          type: String
+        }
+      }).validate({
+        currentClientsId
+      });
   
   if (Roles.userIsInRole(this.userId, "trainer")) {
     //Find a specific clients cardio based on the url param

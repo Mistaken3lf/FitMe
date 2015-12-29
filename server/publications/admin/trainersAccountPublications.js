@@ -1,6 +1,12 @@
 Meteor.publish('trainersAccount', function (currentTrainerId) {
   //Check the trainers id to make sure its real
-  check(currentTrainerId, String);
+  new SimpleSchema({
+        currentTrainerId: {
+          type: String
+        }
+      }).validate({
+        currentTrainerId
+      });
 
   //Make sure the user is logged in and a admin before publishing
   if (Roles.userIsInRole(this.userId, "admin")) {

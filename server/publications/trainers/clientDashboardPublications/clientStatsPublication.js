@@ -1,6 +1,12 @@
 Meteor.publish('currentClientsStats', function (currentClientsId) {
   //Check that the id is valid against the server
-  check(currentClientsId, String);
+  new SimpleSchema({
+        currentClientsId: {
+          type: String
+        }
+      }).validate({
+        currentClientsId
+      });
 
   if (Roles.userIsInRole(this.userId, "trainer")) {
     //Check that the id is valid against the server

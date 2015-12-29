@@ -1,7 +1,12 @@
 Meteor.publish('trainersClients', function (currentTrainerId) {
   //Make sure trainers id is valid
-  check(currentTrainerId, String);
-  
+  new SimpleSchema({
+        currentTrainerId: {
+          type: String
+        }
+      }).validate({
+        currentTrainerId
+      });
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find a specific trainer based on the flow router
     //param passed in as currentTrainerId

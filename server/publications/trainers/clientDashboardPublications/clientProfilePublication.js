@@ -1,6 +1,12 @@
 Meteor.publish('currentClientsProfile', function (currentClientsId) {
   //Check that the id is valid against the server
-  check(currentClientsId, String);
+  new SimpleSchema({
+        currentClientsId: {
+          type: String
+        }
+      }).validate({
+        currentClientsId
+      });
 
   if (Roles.userIsInRole(this.userId, "trainer")) {
     //Publish a specific clients profile based on the flow router url param
