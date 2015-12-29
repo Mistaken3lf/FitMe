@@ -213,7 +213,7 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",      type: "warning",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  <br><br> By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",      type: "warning",
       showCancelButton: true,
       html: true,
       confirmButtonColor: "#DD6B55",
@@ -251,7 +251,7 @@ Template.myAccount.events({
     //Sweet alert to confirm deletion of client
     swal({
       title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
+      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  <br><br> By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
       type: "warning",
       html: true,
       showCancelButton: true,
@@ -293,7 +293,7 @@ Template.myAccount.events({
       //Sweet alert to confirm deletion of client
       swal({
         title: "Are You Sure?",
-        text: "You are currently enrolled in a plan and you will lose all your current clients and your client limit will be dropped to 1.",
+        text: "You are currently enrolled in a plan. By switching back to a Free plan, you will lose all your current clients and your client limit will be set back to 1.",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
