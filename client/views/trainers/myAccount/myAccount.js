@@ -45,34 +45,34 @@ Template.myAccount.onCreated(function () {
             //One month plan
             if (planType == "One Month") {
               Bert.alert('Thank You For Choosing FitMe', 'success');
-              Meteor.call('oneMonthPlanTrainer', Meteor.userId());
+              Meteor.call('oneMonthPlanTrainer');
             }
 
             //Six month plan
             if (planType == "Six Month") {
               Bert.alert('Thank You For Choosing FitMe', 'success');
-              Meteor.call("sixMonthPlanTrainer", Meteor.userId());
+              Meteor.call("sixMonthPlanTrainer");
             }
 
             //One year plan
             if (planType == "One Year") {
               Bert.alert('Thank You For Choosing FitMe', 'success');
-              Meteor.call("oneYearPlanTrainer", Meteor.userId());
+              Meteor.call("oneYearPlanTrainer");
             }
             
             if (planType == "Five Additional Clients") {
               Bert.alert("Thank You For Choosing FitMe", "success");
-              Meteor.call("fiveAdditionalClientsTrainer", Meteor.userId());
+              Meteor.call("fiveAdditionalClientsTrainer");
             }
             
             if (planType == "Ten Additional Clients") {
               Bert.alert("Thank You For Choosing FitMe", "success");
-              Meteor.call("tenAdditionalClientsTrainer", Meteor.userId());
+              Meteor.call("tenAdditionalClientsTrainer");
             }
             
             if (planType == "Twenty Additional Clients") {
               Bert.alert("Thank You For Choosing FitMe", "success");
-              Meteor.call("twentyAdditionalClientsTrainer", Meteor.userId());
+              Meteor.call("twentyAdditionalClientsTrainer");
             }
           }
         });
@@ -302,7 +302,7 @@ Template.myAccount.events({
       }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
-          Meteor.call("freeAccountTrainer", Meteor.userId());
+          Meteor.call("freeAccountTrainer");
           Bert.alert('Thank You For Choosing FitMe', 'success');
         } else {
           swal('Cancelled', 'Your account will not be reset.', 'error');
@@ -324,7 +324,7 @@ Template.myAccount.events({
       }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
-          Meteor.call("freeAccountTrainer", Meteor.userId());
+          Meteor.call("freeAccountTrainer");
           Bert.alert('Thank You For Choosing FitMe', 'success');
         } else {
           swal('Cancelled', 'Your account will not be reset.', 'error');

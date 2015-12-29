@@ -1,5 +1,13 @@
 Meteor.methods({
   removeClient(clientId) {
+    new SimpleSchema({
+        clientId: {
+          type: String
+        }
+      }).validate({
+        clientId
+      });
+    
     //Make sure user is an admin and logged in before allowing the remove
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Remove trainer clicked on

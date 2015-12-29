@@ -1,5 +1,13 @@
 Meteor.methods({
   removeTrainer(trainerId) {
+    new SimpleSchema({
+        trainerId: {
+          type: String
+        }
+      }).validate({
+        trainerId
+      });
+    
     //Make sure user is an admin and logged in before allowing the remove
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Remove cardio associated with the trainer being deleted

@@ -1,5 +1,13 @@
 Meteor.methods({
   mondayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+      
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
@@ -22,6 +30,14 @@ Meteor.methods({
   },
   
   tuesdayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+    
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
@@ -44,6 +60,14 @@ Meteor.methods({
   },
   
   wednesdayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+    
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
@@ -66,6 +90,14 @@ Meteor.methods({
   },
   
   thursdayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+    
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
@@ -88,6 +120,14 @@ Meteor.methods({
   },
   
   fridayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+    
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
@@ -110,6 +150,14 @@ Meteor.methods({
   },
   
   saturdayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+    
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
@@ -132,6 +180,14 @@ Meteor.methods({
   },
   
   sundayStatus(status) {
+    new SimpleSchema({
+        status: {
+          type: Boolean
+        }
+      }).validate({
+        status
+      });
+    
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId

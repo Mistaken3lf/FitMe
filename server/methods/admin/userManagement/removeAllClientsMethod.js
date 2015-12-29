@@ -1,5 +1,13 @@
 Meteor.methods({
   removeAllClients(trainerId) {
+    new SimpleSchema({
+        trainerId: {
+          type: String
+        }
+      }).validate({
+        trainerId
+      });
+    
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Remove clients associated with the current trainer
       Meteor.users.remove({

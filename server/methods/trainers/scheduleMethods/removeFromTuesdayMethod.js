@@ -1,5 +1,13 @@
 Meteor.methods({
   resetTuesdaysSchedule(tuesdaysItem) {
+    new SimpleSchema({
+        tuesdaysItem: {
+          type: String
+        }
+      }).validate({
+        tuesdaysItem
+      });
+    
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId

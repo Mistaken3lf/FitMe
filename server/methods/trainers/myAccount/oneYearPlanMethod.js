@@ -1,11 +1,11 @@
 Meteor.methods({
-  oneYearPlanTrainer(trainerId) {
+  oneYearPlanTrainer() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(12, "months").format("MM/DD/YYYY");
 
       const curTrainer = Meteor.users.findOne({
-        _id: trainerId
+        _id: this.userId
       });
       
       //Prevent client side console upgrading plans if they have not paid
@@ -21,7 +21,7 @@ Meteor.methods({
 
       if (curTrainer.clientLimit > 50) {
         Meteor.users.update({
-          _id: trainerId
+          _id: this.userId
         }, {
           $set: {
             planType: "One Year",
@@ -33,7 +33,7 @@ Meteor.methods({
         });
 
         Meteor.users.update({
-          createdBy: trainerId
+          createdBy: this.userId
         }, {
           $set: {
             userStatus: "active"
@@ -44,7 +44,7 @@ Meteor.methods({
 
       } else {
         Meteor.users.update({
-          _id: trainerId
+          _id: this.userId
         }, {
           $set: {
             clientLimit: 50,
@@ -57,7 +57,7 @@ Meteor.methods({
         });
 
         Meteor.users.update({
-          createdBy: trainerId
+          createdBy: this.userId
         }, {
           $set: {
             userStatus: "active"

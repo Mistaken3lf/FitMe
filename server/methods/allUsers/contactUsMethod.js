@@ -1,5 +1,29 @@
 Meteor.methods({
   contactUs(firstName, lastName, phoneNumber, email, message) {
+    new SimpleSchema({
+        firstName: {
+          type: String
+        },
+        
+        lastName: {
+          type: String
+        },
+        
+        phoneNumber: {
+          type: String
+        },
+        
+        email: {
+          type: String
+        },
+        
+        message: {
+          type: String
+        }
+      }).validate({
+        trainerId
+      });
+      
     this.unblock();
     
     if (Meteor.userId()) {

@@ -1,5 +1,13 @@
 Meteor.methods({
   sixMonthPlan(trainerId) {
+    new SimpleSchema({
+        trainerId: {
+          type: String
+        }
+      }).validate({
+        trainerId
+      });
+    
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(6, "months").format("MM/DD/YYYY");

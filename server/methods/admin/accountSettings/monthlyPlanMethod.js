@@ -1,5 +1,13 @@
 Meteor.methods({
   monthlyPlan(trainerId) {
+    new SimpleSchema({
+        trainerId: {
+          type: String
+        }
+      }).validate({
+        trainerId
+      });
+    
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(1, "months").format("MM/DD/YYYY");

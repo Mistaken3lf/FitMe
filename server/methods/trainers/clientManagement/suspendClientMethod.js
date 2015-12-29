@@ -1,5 +1,13 @@
 Meteor.methods({
   suspendClient(clientId) {
+    new SimpleSchema({
+        clientId: {
+          type: String
+        }
+      }).validate({
+        clientId
+      });
+    
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'trainer')) {

@@ -2,6 +2,14 @@ Meteor.methods({
   //Delete the client when the delete button on the current clients
   //page is clicked
   suspendTrainer(trainerId) {
+    new SimpleSchema({
+        trainerId: {
+          type: String
+        }
+      }).validate({
+        trainerId
+      });
+    
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'admin')) {

@@ -1,8 +1,8 @@
 Meteor.methods({
-  tenAdditionalClientsTrainer(trainerId) {
+  tenAdditionalClientsTrainer() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const curTrainer = Meteor.users.findOne({
-        _id: trainerId
+        _id: this.userId
       });
 
       //Prevent client side console upgrading plans if they have not paid
@@ -16,7 +16,7 @@ Meteor.methods({
       }
 
       Meteor.users.update({
-        _id: trainerId
+        _id: this.userId
       }, {
         $inc: {
           clientLimit: 10,
