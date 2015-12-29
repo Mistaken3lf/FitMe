@@ -1,6 +1,6 @@
 Meteor.publish('currentClientsWorkout', function (currentClientsId) {
   //Check the id against the server to make sure its valid
-  cnew SimpleSchema({
+  new SimpleSchema({
         currentClientsId: {
           type: String
         }
