@@ -16,7 +16,7 @@ Accounts.validateLoginAttempt((loginAttempt) => {
   }
   
   if(thisUser.userStatus == "deleted") {
-    throw new Meteor.Error(403, "Your account no longer exists");
+    throw new Meteor.Error(403, "Invalid login credentials");
   }
 
   return true;

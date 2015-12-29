@@ -1,7 +1,7 @@
 SyncedCron.add({
-  name: 'Auto Suspend Trainers (Every 24 Hours)',
+  name: 'Auto Suspend Trainers (Every 36 Hours)',
   schedule(parser) {
-    return parser.text('every 24 hours');
+    return parser.text('every 36 hours');
   },
   job() {
     let today = moment().format("MM/DD/YYYY");

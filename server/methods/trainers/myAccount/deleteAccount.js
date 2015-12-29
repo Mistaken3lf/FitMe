@@ -8,6 +8,16 @@ Meteor.methods({
           userStatus: "deleted"
         }
       });
+      
+      Meteor.users.update({
+          createdBy: this.userId
+        }, {
+          $set: {
+            userStatus: "deleted",
+          }
+        }, {
+          multi: true
+        });
 
     } else {
       throw new Meteor.Error("not-authorized");
