@@ -30,7 +30,7 @@ Template.register.events({
             Bert.alert(error.reason, 'danger', 'growl-top-right');
           } else {
             //Route the newly logged in user home
-            FlowRouter.go('/');
+            FlowRouter.go('/trainerHome');
           }
         });
       }
