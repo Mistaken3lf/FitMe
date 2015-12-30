@@ -144,3 +144,13 @@ Template.clientScheduleShell.helpers({
     return endOfWeek;
   }
 });
+
+Template.clientScheduleShell.events({
+  "click .cancelMonday" (event) {
+    $('[name=mondaysScheduleStart]').val('');
+    $('[name=mondaysScheduleEnd]').val('');
+    $('[name=mondayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelMondaysAppointment", clientId);
+  }
+});
