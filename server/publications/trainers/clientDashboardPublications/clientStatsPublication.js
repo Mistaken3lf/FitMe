@@ -9,9 +9,6 @@ Meteor.publish('currentClientsStats', function (currentClientsId) {
       });
 
   if (Roles.userIsInRole(this.userId, "trainer")) {
-    //Check that the id is valid against the server
-    check(currentClientsId, String);
-
     //Find a specific clients stats based on the currrentClientsId
     //passed in from flow router.
     return ClientStats.find({

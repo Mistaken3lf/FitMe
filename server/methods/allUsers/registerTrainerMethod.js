@@ -9,7 +9,7 @@ Meteor.methods({
     });
 
     let today = moment().format("MM/DD/YYYY");
-    let expires = moment().add(2, "weeks").format("MM/DD/YYYY");
+    let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
 
     //Update the trainers first and last name since they are not default
     //Meteor.user fields
