@@ -122,6 +122,11 @@ Template.trainerSchedule.events({
 });
 
 Template.trainerSchedule.helpers({
+  //Check if the user is logging in 
+  isLoggingIn() {
+    return Meteor.loggingIn();
+  },
+  
   //Get the start day of the week
   startOfWeek() {
     let startDay = moment().startOf("week").format("ddd. MMM Do");
@@ -152,7 +157,8 @@ Template.trainerSchedule.helpers({
         mondaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        mondayDescription: 1
+        mondayDescription: 1,
+        mondayStatus: 1
       },
       sort: {
         mondaysScheduleStart: 1
@@ -180,7 +186,8 @@ Template.trainerSchedule.helpers({
         tuesdaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        tuesdayDescription: 1
+        tuesdayDescription: 1,
+        tuesdayStatus: 1
       },
       sort: {
         tuesdaysScheduleStart: 1
@@ -207,7 +214,8 @@ Template.trainerSchedule.helpers({
         wednesdaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        wednesdayDescription: 1
+        wednesdayDescription: 1,
+        wednesdayStatus: 1
       },
       sort: {
         wednesdaysScheduleStart: 1
@@ -233,7 +241,8 @@ Template.trainerSchedule.helpers({
         thursdaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        thursdayDescription: 1
+        thursdayDescription: 1,
+        thursdayStatus: 1
       },
       sort: {
         thursdaysScheduleStart: 1
@@ -260,7 +269,8 @@ Template.trainerSchedule.helpers({
         fridaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        fridayDescription: 1
+        fridayDescription: 1,
+        fridayStatus: 1
       },
       sort: {
         fridaysScheduleStart: 1
@@ -287,7 +297,8 @@ Template.trainerSchedule.helpers({
         saturdaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        saturdayDescription: 1
+        saturdayDescription: 1,
+        saturdayStatus: 1
       },
       sort: {
         saturdaysScheduleStart: 1
@@ -314,7 +325,8 @@ Template.trainerSchedule.helpers({
         sundaysScheduleEnd: 1,
         firstName: 1,
         lastName: 1,
-        sundayDescription: 1
+        sundayDescription: 1,
+        sundayStatus: 1
       },
       sort: {
         sundaysScheduleStart: 1
