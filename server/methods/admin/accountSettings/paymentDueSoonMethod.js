@@ -24,7 +24,7 @@ Meteor.methods({
       let fitmeLink = "www.gofitme.com/myAccount";
       
       //Bold the fitme team text
-      let fitmeTeam = "The FitMe Team".bold();
+      let fitmeTeam = "The FitMe Team";
       
       //Allow other methods to execute without blocking for email
       this.unblock();

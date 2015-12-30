@@ -17,7 +17,7 @@ Meteor.methods({
       let emailAddr = trainer.emails[0].address;
       
       //Bold the fitme team text
-      let fitmeTeam = "The FitMe Team".bold();
+      let fitmeTeam = "The FitMe Team";
       
       //Allow other methods to execute without blocking
       this.unblock();
