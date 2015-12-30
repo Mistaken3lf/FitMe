@@ -1,4 +1,4 @@
-  <template name="clientSchedule">
+<template name="clientSchedule">
   {{#if Template.subscriptionsReady}}
   {{> clientScheduleShell}}
   {{else}}
@@ -40,23 +40,25 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <h4 class="center">Monday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="mondaysScheduleStart" id="mondaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="mondaysScheduleEnd" id="mondaysScheduleEnd" label=false readonly=true placeholder="End Time"}}
-              </div>
-            </div>
-            <div class="row">
               <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="mondayDescription" label=false placeholder="Workout Description"}}
-              </div>
-            </div>
-            <div class="row center">
-              <div class="col s12 m12 l12">
+                <h4 class="center">Monday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="mondaysScheduleStart" id="mondaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="mondaysScheduleEnd" id="mondaysScheduleEnd" label=false readonly=true placeholder="End Time"}}
+                </div>
                 <div class="row">
-                  <button class="btn red cancelMonday">Cancel Appointment</button>
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="mondayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelMonday">Cancel Appointment</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -65,17 +67,26 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <h4 class="center">Tuesday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="tuesdaysScheduleStart" id="tuesdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="tuesdaysScheduleEnd" id="tuesdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
-              </div>
-            </div>
-            <div class="row">
               <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="tuesdayDescription" label=false placeholder="Workout Description"}}
+                <h4 class="center">Tuesday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="tuesdaysScheduleStart" id="tuesdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="tuesdaysScheduleEnd" id="tuesdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="tuesdayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelTuesday">Cancel Appointment</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -85,17 +96,26 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <h4 class="center">Wednesday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="wednesdaysScheduleStart" id="wednesdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="wednesdaysScheduleEnd" id="wednesdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
-              </div>
-            </div>
-            <div class="row">
               <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="wednesdayDescription" label=false placeholder="Workout Description"}}
+                <h4 class="center">Wednesday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="wednesdaysScheduleStart" id="wednesdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="wednesdaysScheduleEnd" id="wednesdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="wednesdayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelWednesday">Cancel Appointment</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -103,55 +123,26 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
-              <h4 class="center">Thursday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="thursdaysScheduleStart" id="thursdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="thursdaysScheduleEnd" id="thursdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
-              </div>
-            </div>
-            <div class="row">
               <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="thursdayDescription" label=false placeholder="Workout Description"}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Friday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="fridaysScheduleStart" id="fridaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="fridaysScheduleEnd" id="fridaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="fridayDescription" label=false placeholder="Workout Description"}}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6 l6">
-          <div class="card white">
-            <div class="row">
-              <h4 class="center">Saturday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="saturdaysScheduleStart" id="saturdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="saturdaysScheduleEnd" id="saturdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="saturdayDescription" label=false placeholder="Workout Description"}}
+                <h4 class="center">Thursday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="thursdaysScheduleStart" id="thursdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="thursdaysScheduleEnd" id="thursdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="thursdayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelThursday">Cancel Appointment</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -161,6 +152,63 @@
         <div class="col s12 m6 l6">
           <div class="card white">
             <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Friday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="fridaysScheduleStart" id="fridaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="fridaysScheduleEnd" id="fridaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="fridayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelFriday">Cancel Appointment</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h4 class="center">Saturday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="saturdaysScheduleStart" id="saturdaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="saturdaysScheduleEnd" id="saturdaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="saturdayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelSaturday">Cancel Appointment</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card white">
+            <div class="row">
+              <div class="col s12 m12 l12">
               <h4 class="center">Sunday</h4>
               <div class="col s12 m6 l6">
                 Start: {{> afQuickField name="sundaysScheduleStart" id="sundaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
@@ -168,16 +216,24 @@
               <div class="col s12 m6 l6">
                 End: {{> afQuickField name="sundaysScheduleEnd" id="sundaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
               </div>
-            </div>
             <div class="row">
               <div class="col s12 m12 l12">
                 Description: {{> afQuickField name="sundayDescription" label=false placeholder="Workout Description"}}
               </div>
             </div>
+            <div class="row center">
+              <div class="col s12 m12 l12">
+                <div class="row">
+                  <button class="btn red cancelSunday">Cancel Appointment</button>
+                </div>
+              </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   {{/autoForm}}
 </template>
