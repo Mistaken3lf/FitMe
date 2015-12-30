@@ -31,8 +31,8 @@ Meteor.methods({
           mondayStatus: status,
         }
       });
-      
-      if(thisClient.status == true) {
+ 
+      if(thisClient.mondayStatus == false) {
         this.unblock();
         
         //Send the actual email to us

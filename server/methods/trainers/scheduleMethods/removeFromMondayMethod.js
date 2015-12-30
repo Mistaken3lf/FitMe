@@ -42,7 +42,7 @@ Meteor.methods({
         to: clientsEmail,
         from: trainersEmail,
         subject: "FitMe -- Appointment Cancellation",
-        text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "We wanted to inform you that " + thisTrainer.firstName + " " + thisTrainer.lastName + " has cancelled their appointment for monday"
+        text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "We wanted to inform you that, your trainer, " + thisTrainer.firstName + " " + thisTrainer.lastName + " has cancelled their appointment for monday"
       });
       
     } else {
