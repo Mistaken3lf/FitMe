@@ -24,6 +24,6 @@ Template.navigation.onRendered(() => {
 Template.navigation.helpers({
   versionNumber() {
     //Current Project version
-    return "15.12.8";
+    return "1.0";
   }
 });
