@@ -12,12 +12,17 @@ Meteor.methods({
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
       });
+      
+      const trainersClient = Meteor.users.findOne({
+        _id: fridaysItem
+      });
+
 
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
       
-      if(fridaysItem.createdBy != this.userId) {
+      if(trainersClient.createdBy != this.userId) {
         throw new Meteor.Error("Sorry, this is not your client");
       }
 
