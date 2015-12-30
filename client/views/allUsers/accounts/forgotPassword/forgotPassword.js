@@ -60,7 +60,18 @@ Template.resetPassword.events({
       } else {
         Bert.alert("Password successfully changed", 'success', 'growl-top-right');
         Session.set('resetPassword', null);
-        FlowRouter.go("/");
+        
+        if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+          FlowRouter.go("/adminHome");
+        }
+        
+        if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+          FlowRouter.go("/trainerHome");
+        }
+        
+        if(Roles.userIsInRole(Meteor.userId(), "client")) {
+          FlowRouter.go("/clientHome");
+        }
       }
     });
   }
