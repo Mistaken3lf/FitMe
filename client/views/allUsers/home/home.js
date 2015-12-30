@@ -11,7 +11,7 @@ Template.home.events({
   "click .learnMore" (event) {
     swal({
       title: "Free Account!",
-      text: "Here's a custom image.",
+      text: "A free account will allow you to have one week of full access to FitMe with a limit of one client .",
       imageUrl: "navigation/fitMeSidebarLogo.png"
     });
   }
