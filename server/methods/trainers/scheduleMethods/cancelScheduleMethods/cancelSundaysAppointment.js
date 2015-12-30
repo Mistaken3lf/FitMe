@@ -1,5 +1,5 @@
 Meteor.methods({
-  cancelMondaysAppointment(clientId) {
+  cancelSundaysAppointment(clientId) {
     new SimpleSchema({
       clientId: {
         type: String
@@ -23,15 +23,19 @@ Meteor.methods({
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
+      
+      if(trainersClient.createdBy != this.userId) {
+        throw new Meteor.Error("Sorry, this is not your client");
+      }
 
       Meteor.users.update({
         _id: clientId
       }, {
         $set: {
-          mondaysScheduleStart: "",
-          mondaysScheduleEnd: "",
-          mondayDescription: "",
-          mondayStatus: false
+          sundaysScheduleStart: "",
+          sundaysScheduleEnd: "",
+          sundayDescription: "",
+          sundayStatus: false
         }
       });
 
@@ -42,7 +46,7 @@ Meteor.methods({
         to: clientEmail,
         from: trainersEmail,
         subject: "FitMe -- Appointment Cancellation",
-        text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "We wanted to inform you that, your trainer, " + thisTrainer.firstName + " " + thisTrainer.lastName + " has cancelled their appointment for monday"
+        text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "We wanted to inform you that, your trainer, " + thisTrainer.firstName + " " + thisTrainer.lastName + " has cancelled their appointment for sunday"
       });
 
     } else {

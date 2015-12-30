@@ -1,11 +1,11 @@
 Meteor.methods({
-  resetThursdaysSchedule(thursdaysItem) {
+  resetSundaysSchedule(sundaysItem) {
     new SimpleSchema({
-      thursdaysItem: {
+      sundaysItem: {
         type: String
       }
     }).validate({
-      thursdaysItem
+      sundaysItem
     });
 
     if (Roles.userIsInRole(this.userId, "trainer")) {
@@ -16,15 +16,19 @@ Meteor.methods({
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
+      
+      if(sundays.createdBy != this.userId) {
+        throw new Meteor.Error("Sorry, this is not your client");
+      }
 
       Meteor.users.update({
-        _id: thursdaysItem
+        _id: sundaysItem
       }, {
         $set: {
-          thursdaysScheduleStart: "",
-          thursdaysScheduleEnd: "",
-          thursdayDescription: "",
-          thursdayStatus: false
+          sundaysScheduleStart: "",
+          sundaysScheduleEnd: "",
+          sundayDescription: "",
+          sundayStatus: false
         }
       });
 

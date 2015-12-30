@@ -152,5 +152,53 @@ Template.clientScheduleShell.events({
     $('[name=mondayDescription]').val('');
     const clientId = FlowRouter.getParam('_id'); 
     Meteor.call("cancelMondaysAppointment", clientId);
+  },
+  
+  "click .cancelTuesday" (event) {
+    $('[name=tuesdaysScheduleStart]').val('');
+    $('[name=tuesdaysScheduleEnd]').val('');
+    $('[name=tuesdayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelTuesdaysAppointment", clientId);
+  },
+  
+  "click .cancelWednesday" (event) {
+    $('[name=wednesdaysScheduleStart]').val('');
+    $('[name=wednesdaysScheduleEnd]').val('');
+    $('[name=wednesdayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelWednesdaysAppointment", clientId);
+  },
+  
+  "click .cancelThursday" (event) {
+    $('[name=thursdaysScheduleStart]').val('');
+    $('[name=thursdaysScheduleEnd]').val('');
+    $('[name=thursdayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelThursdaysAppointment", clientId);
+  },
+  
+  "click .cancelFriday" (event) {
+    $('[name=fridaysScheduleStart]').val('');
+    $('[name=fridaysScheduleEnd]').val('');
+    $('[name=fridayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelFridaysAppointment", clientId);
+  },
+  
+  "click .cancelSaturday" (event) {
+    $('[name=saturdaysScheduleStart]').val('');
+    $('[name=saturdaysScheduleEnd]').val('');
+    $('[name=saturdayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelSaturdaysAppointment", clientId);
+  },
+  
+  "click .cancelSunday" (event) {
+    $('[name=sundaysScheduleStart]').val('');
+    $('[name=sundaysScheduleEnd]').val('');
+    $('[name=sundayDescription]').val('');
+    const clientId = FlowRouter.getParam('_id'); 
+    Meteor.call("cancelSundaysAppointment", clientId);
   }
 });
