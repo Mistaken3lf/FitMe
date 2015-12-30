@@ -209,31 +209,31 @@
           <div class="card white">
             <div class="row">
               <div class="col s12 m12 l12">
-              <h4 class="center">Sunday</h4>
-              <div class="col s12 m6 l6">
-                Start: {{> afQuickField name="sundaysScheduleStart" id="sundaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
-              </div>
-              <div class="col s12 m6 l6">
-                End: {{> afQuickField name="sundaysScheduleEnd" id="sundaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
-              </div>
-            <div class="row">
-              <div class="col s12 m12 l12">
-                Description: {{> afQuickField name="sundayDescription" label=false placeholder="Workout Description"}}
-              </div>
-            </div>
-            <div class="row center">
-              <div class="col s12 m12 l12">
+                <h4 class="center">Sunday</h4>
+                <div class="col s12 m6 l6">
+                  Start: {{> afQuickField name="sundaysScheduleStart" id="sundaysScheduleStart" readonly=true label=false placeholder="Start Time"}}
+                </div>
+                <div class="col s12 m6 l6">
+                  End: {{> afQuickField name="sundaysScheduleEnd" id="sundaysScheduleEnd" readonly=true label=false placeholder="End Time"}}
+                </div>
                 <div class="row">
-                  <button class="btn red cancelSunday">Cancel Appointment</button>
+                  <div class="col s12 m12 l12">
+                    Description: {{> afQuickField name="sundayDescription" label=false placeholder="Workout Description"}}
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="col s12 m12 l12">
+                    <div class="row">
+                      <button class="btn red cancelSunday">Cancel Appointment</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
   {{/autoForm}}
 </template>

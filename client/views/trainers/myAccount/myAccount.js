@@ -156,12 +156,12 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: 'One Month',
           description: "1 Month Of Access",
-          amount: 1500,
+          amount: 100,
           bitcoin: true
         });
 
         planType = "One Month";
-        dollarAmount = 1500;
+        dollarAmount = 100;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
