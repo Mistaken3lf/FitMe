@@ -21,7 +21,17 @@ Template.changePassword.events({
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
         //Go home since the user has now changed their password
-        FlowRouter.go('/');
+        if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+          FlowRouter.go("/adminHome");
+        }
+        
+        if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+          FlowRouter.go("/trainerHome");
+        }
+        
+        if(Roles.userIsInRole(Meteor.userId(), "client")) {
+          FlowRouter.go("/clientHome");
+        }
       }
     });
   }
