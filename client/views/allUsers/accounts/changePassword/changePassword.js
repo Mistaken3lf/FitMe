@@ -20,15 +20,17 @@ Template.changePassword.events({
         //Pop up an alert to show the error
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {
-        //Go home since the user has now changed their password
+        //Go to the admin home if they are an admin
         if(Roles.userIsInRole(Meteor.userId(), "admin")) {
           FlowRouter.go("/adminHome");
         }
         
+        //Go to the trainers home if they are a trainer
         if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
           FlowRouter.go("/trainerHome");
         }
         
+        //Go to the clients home if they are a client
         if(Roles.userIsInRole(Meteor.userId(), "client")) {
           FlowRouter.go("/clientHome");
         }

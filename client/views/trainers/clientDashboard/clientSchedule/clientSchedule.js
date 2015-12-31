@@ -146,6 +146,7 @@ Template.clientScheduleShell.helpers({
 });
 
 Template.clientScheduleShell.events({
+  //Cancel mondays schedule with client
   "click .cancelMonday" (event) {
     if (($('[name=mondayDescription]').val() == "") || ($('[name=mondaysScheduleEnd]').val() == "") || ($('[name=mondaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
@@ -158,7 +159,8 @@ Template.clientScheduleShell.events({
       Meteor.call("cancelMondaysAppointment", clientId);
     }
   },
-
+  
+  //Cancel tuesdays schedule with client
   "click .cancelTuesday" (event) {
     if (($('[name=tuesdayDescription]').val() == "") || ($('[name=tuesdaysScheduleEnd]').val() == "") || ($('[name=tuesdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
@@ -171,7 +173,8 @@ Template.clientScheduleShell.events({
       Meteor.call("cancelTuesdaysAppointment", clientId);
     }
   },
-
+  
+  //Cancel wednesdays schedule with client
   "click .cancelWednesday" (event) {
     if (($('[name=wednesdayDescription]').val() == "") || ($('[name=wednesdaysScheduleEnd]').val() == "") || ($('[name=wednesdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
@@ -184,7 +187,8 @@ Template.clientScheduleShell.events({
       Meteor.call("cancelWednesdaysAppointment", clientId);
     }
   },
-
+  
+  //Cancel thursdays schedule with client
   "click .cancelThursday" (event) {
     if (($('[name=thursdayDescription]').val() == "") || ($('[name=thursdaysScheduleEnd]').val() == "") || ($('[name=thursdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
@@ -197,7 +201,8 @@ Template.clientScheduleShell.events({
       Meteor.call("cancelThursdaysAppointment", clientId);
     }
   },
-
+  
+  //Cancel fridays schedule with client
   "click .cancelFriday" (event) {
     if (($('[name=fridayDescription]').val() == "") || ($('[name=fridaysScheduleEnd]').val() == "") || ($('[name=fridaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
@@ -210,7 +215,8 @@ Template.clientScheduleShell.events({
       Meteor.call("cancelFridaysAppointment", clientId);
     }
   },
-
+  
+  //Cancel saturdays schedule with client
   "click .cancelSaturday" (event) {
     if (($('[name=saturdayDescription]').val() == "") || ($('[name=saturdaysScheduleEnd]').val() == "") || ($('[name=saturdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
@@ -223,7 +229,8 @@ Template.clientScheduleShell.events({
       Meteor.call("cancelSaturdaysAppointment", clientId);
     }
   },
-
+  
+  //Cancel sundays scheudle with client
   "click .cancelSunday" (event) {
     if (($('[name=sundayDescription]').val() == "") || ($('[name=sundaysScheduleEnd]').val() == "") || ($('[name=sundaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");

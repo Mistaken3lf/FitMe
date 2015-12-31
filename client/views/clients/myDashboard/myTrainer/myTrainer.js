@@ -13,6 +13,7 @@ Template.myTrainer.helpers({
       _id: Meteor.userId()
     });
     
+    //Create the clients trainer
     return Meteor.users.findOne({
       _id: currentClient.createdBy
     });

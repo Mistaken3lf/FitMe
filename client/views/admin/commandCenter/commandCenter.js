@@ -47,8 +47,7 @@ Template.commandCenter.helpers({
     return Meteor.loggingIn();
   },
 
-  //Return all a trainer clients so we can search them
-  //with easy search
+  //Index of all active trainers
   activeTrainersIndex() {
     return ActiveTrainersIndex;
   },
@@ -60,12 +59,12 @@ Template.commandCenter.helpers({
     }
   },
   
-  //Return all a trainer clients so we can search them
-  //with easy search
+  //Index of all suspended trainers
   suspendedTrainersIndex() {
     return SuspendedTrainersIndex;
   },
-
+  
+  //Placeholder text for easy search
   suspendedTrainersAttributes() {
     //Placeholder for easy search
     return {
@@ -73,12 +72,12 @@ Template.commandCenter.helpers({
     }
   },
   
-  //Return all a trainer clients so we can search them
-  //with easy search
+  //Index of all deleted trainers
   deletedTrainersIndex() {
     return DeletedTrainersIndex;
   },
-
+  
+  //Placeholder text of deleted trainers
   deletedTrainersAttributes() {
     //Placeholder for easy search
     return {

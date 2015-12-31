@@ -152,6 +152,8 @@ Template.myAccount.events({
 
           }
         });
+        
+        //Open the checkout for one month
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'One Month',
@@ -159,7 +161,8 @@ Template.myAccount.events({
           amount: 1500,
           bitcoin: true
         });
-
+        
+        //Set the plan types for the
         planType = "One Month";
         dollarAmount = 1500;
 
@@ -229,7 +232,8 @@ Template.myAccount.events({
 
           }
         });
-
+        
+        //Open checkout for the 6 month plan
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'Six Month',
@@ -237,7 +241,8 @@ Template.myAccount.events({
           amount: 6000,
           bitcoin: true
         });
-
+        
+        //Set the plan type and dollar amount for 6 month
         planType = "Six Month";
         dollarAmount = 6000;
 
@@ -307,7 +312,8 @@ Template.myAccount.events({
 
           }
         });
-
+        
+        //Open checkout for the one year plan
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'One Year',
@@ -315,7 +321,8 @@ Template.myAccount.events({
           amount: 9900,
           bitcoin: true
         });
-
+        
+        //Set the plan type and dollar amount for one year
         planType = "One Year";
         dollarAmount = 9900;
 
@@ -439,7 +446,8 @@ Template.myAccount.events({
 
           }
         });
-
+        
+        //Open checkout for 5 additional clients
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: '5 Additional Clients',
@@ -447,7 +455,8 @@ Template.myAccount.events({
           amount: 200,
           bitcoin: true
         });
-
+        
+        //Set the plan type and dollar amount for 5 clients
         planType = "Five Additional Clients";
         dollarAmount = 200;
 
@@ -516,7 +525,8 @@ Template.myAccount.events({
 
           }
         });
-
+        
+        //Open checkout for 10 clients
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: '10 Additional Clients',
@@ -524,7 +534,8 @@ Template.myAccount.events({
           amount: 500,
           bitcoin: true
         });
-
+        
+        //Set plan type for 10 clients and dollar amount
         planType = "Ten Additional Clients";
         dollarAmount = 500;
 
@@ -593,6 +604,8 @@ Template.myAccount.events({
 
           }
         });
+        
+        //Open checkout for 20 additional clients
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: '20 Additional Clients',
@@ -600,7 +613,8 @@ Template.myAccount.events({
           amount: 1200,
           bitcoin: true
         });
-
+        
+        //Set plan type and dollar amount for 20 additional clients
         planType = "Twenty Additional Clients";
         dollarAmount = 1200;
 

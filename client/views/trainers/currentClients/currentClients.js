@@ -12,7 +12,8 @@ Template.currentClients.events({
     const curUser = Meteor.users.findOne({
       _id: this._id
     });
-
+    
+    //Check if the user is suspended
     if (curUser.userStatus == "suspended") {
       Bert.alert("Sorry, your account has been suspended", "danger", "growl-top-right");
       return;
@@ -65,7 +66,8 @@ Template.currentClients.events({
         userStatus: 1
       }
     });
-
+    
+    //Dont let user click on a client if they are suspended
     if (thisTrainer.userStatus == "suspended") {
       Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
     } else {
@@ -78,7 +80,8 @@ Template.currentClients.events({
     const curTrainer = Meteor.users.findOne({
       _id: Meteor.userId()
     });
-
+    
+    //Dont let trainer add clients if they are suspended
     if (curTrainer.userStatus == "suspended") {
       Bert.alert("Sorry, your account has been suspended", "danger", "growl-top-right");
       return;
