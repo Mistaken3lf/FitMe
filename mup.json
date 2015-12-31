@@ -36,6 +36,7 @@
   "env": {
     "ROOT_URL": "http://www.gofitme.com",
     "MONGO_URL": "mongodb://Mistaken3lf:Volunteer25@c164.candidate.54.mongolayer.com:10164,candidate.54.mongolayer.com:10164,candidate.53.mongolayer.com:10432/FitMe?replicaSet=set-56142a98bc286c980a000276",
+    "MONGO_OPLOG_URL": "mongodb://fitme:diveloper@candidate.15.mongolayer.com:10164/local?authSource=FitMe"
     "MAIL_URL": "smtp://postmaster%40www.gofitme.com:dc7d425fe443a8c606649f6b36836f5a@smtp.mailgun.org:587"
   },
   
