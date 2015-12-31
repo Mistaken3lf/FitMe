@@ -152,95 +152,204 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=mondaysScheduleStart]').val('');
-      $('[name=mondaysScheduleEnd]').val('');
-      $('[name=mondayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelMondaysAppointment", clientId);
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+
+      //Sweet alert to confirm deletion of client
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for monday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=mondaysScheduleStart]').val('');
+          $('[name=mondaysScheduleEnd]').val('');
+          $('[name=mondayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelMondaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   },
-  
+
   //Cancel tuesdays schedule with client
   "click .cancelTuesday" (event) {
     if (($('[name=tuesdayDescription]').val() == "") || ($('[name=tuesdaysScheduleEnd]').val() == "") || ($('[name=tuesdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=tuesdaysScheduleStart]').val('');
-      $('[name=tuesdaysScheduleEnd]').val('');
-      $('[name=tuesdayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelTuesdaysAppointment", clientId);
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for tuesday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=tuesdaysScheduleStart]').val('');
+          $('[name=tuesdaysScheduleEnd]').val('');
+          $('[name=tuesdayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelTuesdaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   },
-  
+
   //Cancel wednesdays schedule with client
   "click .cancelWednesday" (event) {
     if (($('[name=wednesdayDescription]').val() == "") || ($('[name=wednesdaysScheduleEnd]').val() == "") || ($('[name=wednesdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=wednesdaysScheduleStart]').val('');
-      $('[name=wednesdaysScheduleEnd]').val('');
-      $('[name=wednesdayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelWednesdaysAppointment", clientId);
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for wednesday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=wednesdaysScheduleStart]').val('');
+          $('[name=wednesdaysScheduleEnd]').val('');
+          $('[name=wednesdayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelWednesdaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   },
-  
+
   //Cancel thursdays schedule with client
   "click .cancelThursday" (event) {
     if (($('[name=thursdayDescription]').val() == "") || ($('[name=thursdaysScheduleEnd]').val() == "") || ($('[name=thursdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=thursdaysScheduleStart]').val('');
-      $('[name=thursdaysScheduleEnd]').val('');
-      $('[name=thursdayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelThursdaysAppointment", clientId);
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for thursday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=thursdaysScheduleStart]').val('');
+          $('[name=thursdaysScheduleEnd]').val('');
+          $('[name=thursdayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelThursdaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   },
-  
+
   //Cancel fridays schedule with client
   "click .cancelFriday" (event) {
     if (($('[name=fridayDescription]').val() == "") || ($('[name=fridaysScheduleEnd]').val() == "") || ($('[name=fridaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=fridaysScheduleStart]').val('');
-      $('[name=fridaysScheduleEnd]').val('');
-      $('[name=fridayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelFridaysAppointment", clientId);
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for friday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=fridaysScheduleStart]').val('');
+          $('[name=fridaysScheduleEnd]').val('');
+          $('[name=fridayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelFridaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   },
-  
+
   //Cancel saturdays schedule with client
   "click .cancelSaturday" (event) {
     if (($('[name=saturdayDescription]').val() == "") || ($('[name=saturdaysScheduleEnd]').val() == "") || ($('[name=saturdaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=saturdaysScheduleStart]').val('');
-      $('[name=saturdaysScheduleEnd]').val('');
-      $('[name=saturdayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelSaturdaysAppointment", clientId);
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for saturday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=saturdaysScheduleStart]').val('');
+          $('[name=saturdaysScheduleEnd]').val('');
+          $('[name=saturdayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelSaturdaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   },
-  
+
   //Cancel sundays scheudle with client
   "click .cancelSunday" (event) {
     if (($('[name=sundayDescription]').val() == "") || ($('[name=sundaysScheduleEnd]').val() == "") || ($('[name=sundaysScheduleStart]').val() == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
-      $('[name=sundaysScheduleStart]').val('');
-      $('[name=sundaysScheduleEnd]').val('');
-      $('[name=sundayDescription]').val('');
-      const clientId = FlowRouter.getParam('_id');
-      Meteor.call("cancelSundaysAppointment", clientId);
+      swal({
+        title: "Are You Sure?",
+        text: "This will cancel your appointment for sunday and send the client an email letting them know you will not be able to make the appointment",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        closeOnConfirm: true
+      }, (isConfirm) => {
+        window.onkeydown = previousWindowKeyDown;
+        if (isConfirm) {
+          $('[name=sundaysScheduleStart]').val('');
+          $('[name=sundaysScheduleEnd]').val('');
+          $('[name=sundayDescription]').val('');
+          const clientId = FlowRouter.getParam('_id');
+          Meteor.call("cancelSundaysAppointment", clientId);
+        } else {
+          swal('Cancelled', 'Your account will not be reset.', 'error');
+        }
+      });
     }
   }
 });
