@@ -455,6 +455,12 @@ footer {
   padding-right: 20px;
 }
 
+.extraPaddingTerms {
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .termsLogo {
   width: 10%;
   height: 10%;
