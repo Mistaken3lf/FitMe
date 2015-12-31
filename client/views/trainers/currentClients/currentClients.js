@@ -91,7 +91,7 @@ Template.currentClients.events({
 Template.currentClients.helpers({
   //Get all clients for easy search
   trainersIndex() {
-    return UsersIndex;
+    return TrainersClientsIndex;
   },
 
   //Check if the user is currently logging in
