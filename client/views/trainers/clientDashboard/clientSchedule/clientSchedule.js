@@ -14,7 +14,7 @@ Template.clientScheduleShell.onRendered(() => {
     startDate: new Date(),
     scrollInput: false
   });
-  
+
   //Each of the following timepickers is for the schedule
   //of the clients start and end times for monday through sunday
   $('#mondaysScheduleStart').datetimepicker({
@@ -119,86 +119,121 @@ Template.clientScheduleShell.onRendered(() => {
 Template.clientScheduleShell.helpers({
   //Get the current clients profile based on the url param
   curClient() {
-    const clientId = FlowRouter.getParam('_id');
-    const curClient = Meteor.users.findOne({
-      whosProfile: clientId
-    });
-    
-    return curClient;
-  },
+      const clientId = FlowRouter.getParam('_id');
+      const curClient = Meteor.users.findOne({
+        whosProfile: clientId
+      });
 
-  //Get todays current date
-  todaysDate() {
-    return new Date().toDateString();
-  },
-  
-  //Get the start day of the week
-  startOfWeek() {
-    let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
-    return startOfWeek;
-  },
-  
-  //Get the end day of the week
-  endOfWeek() {
-    let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
-    return endOfWeek;
-  }
+      return curClient;
+    },
+
+    //Get todays current date
+    todaysDate() {
+      return new Date().toDateString();
+    },
+
+    //Get the start day of the week
+    startOfWeek() {
+      let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
+      return startOfWeek;
+    },
+
+    //Get the end day of the week
+    endOfWeek() {
+      let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
+      return endOfWeek;
+    }
 });
 
 Template.clientScheduleShell.events({
   "click .cancelMonday" (event) {
-    $('[name=mondaysScheduleStart]').val('');
-    $('[name=mondaysScheduleEnd]').val('');
-    $('[name=mondayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelMondaysAppointment", clientId);
+    if (($('[name=mondayDescription]').val() == "") || ($('[name=mondaysScheduleEnd]').val() == "") || ($('[name=mondaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=mondaysScheduleStart]').val('');
+      $('[name=mondaysScheduleEnd]').val('');
+      $('[name=mondayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelMondaysAppointment", clientId);
+    }
   },
-  
+
   "click .cancelTuesday" (event) {
-    $('[name=tuesdaysScheduleStart]').val('');
-    $('[name=tuesdaysScheduleEnd]').val('');
-    $('[name=tuesdayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelTuesdaysAppointment", clientId);
+    if (($('[name=tuesdayDescription]').val() == "") || ($('[name=tuesdaysScheduleEnd]').val() == "") || ($('[name=tuesdaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=tuesdaysScheduleStart]').val('');
+      $('[name=tuesdaysScheduleEnd]').val('');
+      $('[name=tuesdayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelTuesdaysAppointment", clientId);
+    }
   },
-  
+
   "click .cancelWednesday" (event) {
-    $('[name=wednesdaysScheduleStart]').val('');
-    $('[name=wednesdaysScheduleEnd]').val('');
-    $('[name=wednesdayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelWednesdaysAppointment", clientId);
+    if (($('[name=wednesdayDescription]').val() == "") || ($('[name=wednesdaysScheduleEnd]').val() == "") || ($('[name=wednesdaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=wednesdaysScheduleStart]').val('');
+      $('[name=wednesdaysScheduleEnd]').val('');
+      $('[name=wednesdayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelWednesdaysAppointment", clientId);
+    }
   },
-  
+
   "click .cancelThursday" (event) {
-    $('[name=thursdaysScheduleStart]').val('');
-    $('[name=thursdaysScheduleEnd]').val('');
-    $('[name=thursdayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelThursdaysAppointment", clientId);
+    if (($('[name=thursdayDescription]').val() == "") || ($('[name=thursdaysScheduleEnd]').val() == "") || ($('[name=thursdaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=thursdaysScheduleStart]').val('');
+      $('[name=thursdaysScheduleEnd]').val('');
+      $('[name=thursdayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelThursdaysAppointment", clientId);
+    }
   },
-  
+
   "click .cancelFriday" (event) {
-    $('[name=fridaysScheduleStart]').val('');
-    $('[name=fridaysScheduleEnd]').val('');
-    $('[name=fridayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelFridaysAppointment", clientId);
+    if (($('[name=fridayDescription]').val() == "") || ($('[name=fridaysScheduleEnd]').val() == "") || ($('[name=fridaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=fridaysScheduleStart]').val('');
+      $('[name=fridaysScheduleEnd]').val('');
+      $('[name=fridayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelFridaysAppointment", clientId);
+    }
   },
-  
+
   "click .cancelSaturday" (event) {
-    $('[name=saturdaysScheduleStart]').val('');
-    $('[name=saturdaysScheduleEnd]').val('');
-    $('[name=saturdayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelSaturdaysAppointment", clientId);
+    if (($('[name=saturdayDescription]').val() == "") || ($('[name=saturdaysScheduleEnd]').val() == "") || ($('[name=saturdaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=saturdaysScheduleStart]').val('');
+      $('[name=saturdaysScheduleEnd]').val('');
+      $('[name=saturdayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelSaturdaysAppointment", clientId);
+    }
   },
-  
+
   "click .cancelSunday" (event) {
-    $('[name=sundaysScheduleStart]').val('');
-    $('[name=sundaysScheduleEnd]').val('');
-    $('[name=sundayDescription]').val('');
-    const clientId = FlowRouter.getParam('_id'); 
-    Meteor.call("cancelSundaysAppointment", clientId);
+    if (($('[name=sundayDescription]').val() == "") || ($('[name=sundaysScheduleEnd]').val() == "") || ($('[name=sundaysScheduleStart]').val() == "")) {
+      Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
+      return;
+    } else {
+      $('[name=sundaysScheduleStart]').val('');
+      $('[name=sundaysScheduleEnd]').val('');
+      $('[name=sundayDescription]').val('');
+      const clientId = FlowRouter.getParam('_id');
+      Meteor.call("cancelSundaysAppointment", clientId);
+    }
   }
 });
