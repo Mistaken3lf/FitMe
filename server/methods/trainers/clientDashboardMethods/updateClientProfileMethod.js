@@ -5,7 +5,8 @@ Meteor.methods({
     const currentTrainer = Meteor.users.findOne({
       _id: this.userId
     });
-
+    
+    //Prevent trainer from updating clients profile if they are suspended
     if (currentTrainer.userStatus == "suspended") {
       throw new Meteor.Error("Your account is suspended");
     }

@@ -1,12 +1,12 @@
 Meteor.publish('trainersAccount', function (currentTrainerId) {
   //Check the trainers id to make sure its real
   new SimpleSchema({
-        currentTrainerId: {
-          type: String
-        }
-      }).validate({
-        currentTrainerId
-      });
+    currentTrainerId: {
+      type: String
+    }
+  }).validate({
+    currentTrainerId
+  });
 
   //Make sure the user is logged in and a admin before publishing
   if (Roles.userIsInRole(this.userId, "admin")) {
@@ -23,7 +23,6 @@ Meteor.publish('trainersAccount', function (currentTrainerId) {
         "status.lastLogin": 1,
       }
     });
-
   }
 
   //Not authorized to access trainer data

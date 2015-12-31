@@ -16,18 +16,22 @@ Meteor.methods({
       const trainersClient = Meteor.users.findOne({
         _id: clientId
       });
-
+      
+      //Get the trainers and clients email
       const clientEmail = trainersClient.emails[0].address;
       const trainersEmail = thisTrainer.emails[0].address;
-
+      
+      //Check if the trainer is already suspended
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
       
+      //Make sure the trainer owns this client
       if(trainersClient.createdBy != this.userId) {
         throw new Meteor.Error("Sorry, this is not your client");
       }
-
+      
+      //Reset the fridays schedule
       Meteor.users.update({
         _id: clientId
       }, {

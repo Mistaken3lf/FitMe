@@ -15,8 +15,10 @@ Meteor.methods({
       const curTrainer = Meteor.users.findOne({
         _id: trainerId
       });
-
+      
+      //Check if the trainer has more than 50 client limit already
       if (curTrainer.clientLimit > 50) {
+        //Update trainer to yearly plan
         Meteor.users.update({
           _id: trainerId
         }, {
@@ -28,7 +30,8 @@ Meteor.methods({
             hasPaid: true
           }
         });
-
+        
+        //Update the clients status as well
         Meteor.users.update({
           createdBy: trainerId
         }, {
@@ -40,6 +43,8 @@ Meteor.methods({
         });
 
       } else {
+        //Trainer does not have more than 50 clients so update
+        //them to the 50 limit and rest of the plan details
         Meteor.users.update({
           _id: trainerId
         }, {
@@ -52,7 +57,8 @@ Meteor.methods({
             hasPaid: true
           }
         });
-
+        
+        //Update the clients status to active
         Meteor.users.update({
           createdBy: trainerId
         }, {

@@ -17,17 +17,21 @@ Meteor.methods({
         _id: clientId
       });
 
+      //Get the clients and trainers email
       const clientEmail = trainersClient.emails[0].address;
       const trainersEmail = thisTrainer.emails[0].address;
 
+      //Make sure the trainer is not suspended
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
       
-      if(trainersClient.createdBy != this.userId) {
+      //Make sure the trainer owns the client
+      if (trainersClient.createdBy != this.userId) {
         throw new Meteor.Error("Sorry, this is not your client");
       }
-
+      
+      //Reset sundays schedule
       Meteor.users.update({
         _id: clientId
       }, {

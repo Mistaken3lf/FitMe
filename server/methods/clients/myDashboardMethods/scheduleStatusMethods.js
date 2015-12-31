@@ -13,10 +13,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      //Check if they are suspended and dont let them set status for monday
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update their mondays status
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -43,10 +45,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      //If client is suspended dont let them update their status
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update tuesdays status
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -73,10 +77,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      //Check if the client is suspended and prevent them from updating status
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update wednesdays status
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -103,10 +109,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      //Check if they are suspended and prevent them from updating status
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update thursdays status
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -133,10 +141,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      //Check if the client is suspended and prevent them from changing status
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update fridays status
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -163,10 +173,12 @@ Meteor.methods({
         _id: this.userId
       });
       
+      //Check if the client is suspended and dont let them update status
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update saturdays status
       Meteor.users.update({
         _id: this.userId
       }, {
@@ -193,10 +205,13 @@ Meteor.methods({
         _id: this.userId
       });
       
+      
+      //Check if the client is suspended and dont let them update status
       if(thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
       
+      //Update sundays status
       Meteor.users.update({
         _id: this.userId
       }, {

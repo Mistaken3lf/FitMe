@@ -10,6 +10,7 @@ Meteor.methods({
       
       let trainersExpiration = currentTrainer.expiresOn;
       
+      //Check if the trainer is suspended
       if(currentTrainer.userStatus == "suspended") {
         return "Sorry, your account is suspended";
       }
@@ -18,7 +19,9 @@ Meteor.methods({
       let currentClientCount = Meteor.users.find({
         createdBy: this.userId
       }).count();
-
+      
+      //Make sure the trainers client limit allows for adding more
+      //clients
       if (currentTrainer.clientLimit > currentClientCount) {
         //Create the new clients username, password and email since thats
         //what the default meteor user accounts expects

@@ -3,7 +3,8 @@ Meteor.methods({
     if (Roles.userIsInRole(this.userId, "trainer")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
-
+      
+      //Set the trainers plan to free
       Meteor.users.update({
         _id: this.userId
       }, {

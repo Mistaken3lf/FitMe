@@ -9,6 +9,7 @@ Meteor.methods({
         }
       });
       
+      //Set the users status to deleted but dont actually delete them
       Meteor.users.update({
           createdBy: this.userId
         }, {

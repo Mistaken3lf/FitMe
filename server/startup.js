@@ -10,7 +10,8 @@ Meteor.startup(function () {
       password: "admin",
       email: "bigt371@gmail.com",
     });
-
+    
+    //Set the adminas active and the first and last name
     Meteor.users.update(admin, {
       $set: {
         userStatus: "active",

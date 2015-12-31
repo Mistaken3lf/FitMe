@@ -6,6 +6,7 @@ Meteor.methods({
       _id: this.userId
     });
     
+    //Prevent trainer from making changes if they are suspended
     if (currentTrainer.userStatus == "suspended") {
       throw new Meteor.Error("Your account is suspended");
     }

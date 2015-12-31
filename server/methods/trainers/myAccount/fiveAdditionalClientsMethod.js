@@ -14,7 +14,8 @@ Meteor.methods({
       if(curTrainer.userStatus == "suspended") {
         throw new Meteor.Error("You must activate your account first");
       }
-
+      
+      //Increment the client limit by 5
       Meteor.users.update({
         _id: this.userId
       }, {

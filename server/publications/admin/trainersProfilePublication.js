@@ -1,13 +1,13 @@
 Meteor.publish('trainersProfile', function (trainerId) {
   //Make sure trainers id is real
   new SimpleSchema({
-        trainerId: {
-          type: String
-        }
-      }).validate({
-        trainerId
-      });
-  
+    trainerId: {
+      type: String
+    }
+  }).validate({
+    trainerId
+  });
+
   //If the user is logged in then publish their fields
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find the logged in user

@@ -12,8 +12,10 @@ Meteor.methods({
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'admin')) {
       const user = Meteor.users.findOne(clientId);
-
+      
+      //Check if the user is active already
       if (user.userStatus == "active") {
+        //If they are active suspend them
         Meteor.users.update({
           _id: user._id
         }, {
@@ -23,6 +25,7 @@ Meteor.methods({
           }
         });
       } else {
+        //They are already suspended so set them to active
         Meteor.users.update({
           _id: user._id
         }, {

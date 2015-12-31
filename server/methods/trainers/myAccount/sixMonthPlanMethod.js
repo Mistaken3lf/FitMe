@@ -18,8 +18,10 @@ Meteor.methods({
       if(curTrainer.hasPaid == true && curTrainer.planType != "Free" && curTrainer.userStatus != "suspended") {
         throw new Meteor.Error("Sorry, you are already in a plan");
       }
-
+      
+      //Check if trainer already has more than 50 client limit
       if (curTrainer.clientLimit > 50) {
+        //Update trainer to six month plan
         Meteor.users.update({
           _id: this.userId
         }, {
@@ -31,7 +33,8 @@ Meteor.methods({
             hasPaid: true
           }
         });
-
+        
+        //Update their clients status to active
         Meteor.users.update({
           createdBy: this.userId
         }, {
@@ -43,6 +46,7 @@ Meteor.methods({
         });
 
       } else {
+        //Set trainers plan to standard six month plan with 50 client limit
         Meteor.users.update({
           _id: this.userId
         }, {
@@ -55,7 +59,8 @@ Meteor.methods({
             hasPaid: true
           }
         });
-
+        
+        //Set their clients status to active
         Meteor.users.update({
           createdBy: this.userId
         }, {

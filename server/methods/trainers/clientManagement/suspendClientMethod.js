@@ -21,7 +21,9 @@ Meteor.methods({
 
       const user = Meteor.users.findOne(clientId);
       
+      //Make sure the trainer owns the client
       if (user.createdBy == this.userId) {
+        //If the client is active suspend them
         if (user.userStatus == "active") {
           Meteor.users.update({
             _id: user._id
@@ -32,6 +34,7 @@ Meteor.methods({
             }
           });
         } else {
+          //They are already suspended so make them active
           Meteor.users.update({
             _id: user._id
           }, {

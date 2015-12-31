@@ -23,6 +23,8 @@ Meteor.methods({
         _id: clientId
       });
 
+
+      //Make sure client is actually owned by the trainer
       if (thisClient.createdBy == this.userId) {
         //Remove cardio of the client being deleted
         ClientCardio.remove({

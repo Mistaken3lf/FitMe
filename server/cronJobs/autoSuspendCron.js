@@ -20,7 +20,8 @@ SyncedCron.add({
       }, {
         multi: true
       });
-
+      
+      //Suspend each trainers clients as well
       Meteor.users.update({
         createdBy: user._id
       }, {

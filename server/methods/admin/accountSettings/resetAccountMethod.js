@@ -11,7 +11,8 @@ Meteor.methods({
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
-
+      
+      //Update trainer to the free plan
       Meteor.users.update({
         _id: trainerId
       }, {

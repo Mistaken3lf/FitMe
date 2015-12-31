@@ -11,7 +11,6 @@ Meteor.publish('myCardio', function () {
   //Not authorized to access my cardio
   else {
     throw new Meteor.Error("not-authorized");
-
     //Return ready so flow router is not waiting for nothing
     return this.ready();
   }

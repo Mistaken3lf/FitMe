@@ -9,6 +9,7 @@ Meteor.methods({
       });
     
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Add 20 additional clients to the trainers limit
       Meteor.users.update({
         _id: trainerId
       }, {

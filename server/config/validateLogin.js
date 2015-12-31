@@ -15,6 +15,7 @@ Accounts.validateLoginAttempt((loginAttempt) => {
     throw new Meteor.Error(403, "User account is inactive, please make payment to your trainer");
   }
   
+  //Check if the user has been "deleted" and dont let them login
   if(thisUser.userStatus == "deleted") {
     throw new Meteor.Error(403, "Invalid login credentials");
   }
