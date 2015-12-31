@@ -25,13 +25,13 @@
                     <div class="row">
                       <div class="col s12 m12 l12">
                         <div class="card z-depth-1">
-                          <div class="card-title center-align white-text allTrainersHeader">CURRENT TRAINERS</div>
+                          <div class="card-title center-align white-text allTrainersHeader">ACTIVE TRAINERS</div>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col s12 m6 l4">
-                        {{> EasySearch.Input index=currentTrainersIndex attributes=currentTrainersAttributes}}
+                        {{> EasySearch.Input index=activeTrainersIndex attributes=activeTrainersAttributes}}
                       </div>
                     </div>
                     <div class="row">
@@ -51,7 +51,7 @@
                             </tr>
                           </thead>
                           <tbody>
-                            {{#EasySearch.Each index=currentTrainersIndex}}
+                            {{#EasySearch.Each index=activeTrainersIndex}}
                             <tr>
                               <td><a href="/adminDashboard/{{_id}}">{{username}}</a></td>
                               <td>{{firstName}}</td>
@@ -66,6 +66,110 @@
                             {{/EasySearch.Each}}
                           </tbody>
                         </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card">
+                      <div class="row">
+                        <div class="col s12 m12 l12">
+                          <div class="card z-depth-1">
+                            <div class="card-title center-align white-text allTrainersHeader">SUSPENDED TRAINERS</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12 m6 l4">
+                          {{> EasySearch.Input index=suspendedTrainersIndex attributes=suspendedTrainersAttributes}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12 m12 l12">
+                          <table class="responsive-table">
+                            <thead>
+                              <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Status</th>
+                                <th>Plan Type</th>
+                                <th>Expires On</th>
+                                <th>Suspend</th>
+                                <th>Remove</th>
+                                <th>Payment Warning</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {{#EasySearch.Each index=suspendedTrainersIndex}}
+                              <tr>
+                                <td><a href="/adminDashboard/{{_id}}">{{username}}</a></td>
+                                <td>{{firstName}}</td>
+                                <td>{{lastName}}</td>
+                                <td>{{userStatus}}</td>
+                                <td>{{planType}}</td>
+                                <td>{{expiresOn}}</td>
+                                <td><button class="btn-floating amber waves-effect suspendTrainer"><i class="material-icons">https</i></button></td>
+                                <td><button class="btn-floating red waves-effect removeTrainer"><i class="material-icons">remove</i></button></td>
+                                <td><button class="btn-floating green waves-effect paymentDueSoon"><i class="material-icons">assignment_late</i></button></td>
+                              </tr>
+                              {{/EasySearch.Each}}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div class="card">
+                      <div class="row">
+                        <div class="col s12 m12 l12">
+                          <div class="card z-depth-1">
+                            <div class="card-title center-align white-text allTrainersHeader">DELETED TRAINERS</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12 m6 l4">
+                          {{> EasySearch.Input index=deletedTrainersIndex attributes=deletedTrainersAttributes}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12 m12 l12">
+                          <table class="responsive-table">
+                            <thead>
+                              <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Status</th>
+                                <th>Plan Type</th>
+                                <th>Expires On</th>
+                                <th>Suspend</th>
+                                <th>Remove</th>
+                                <th>Payment Warning</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {{#EasySearch.Each index=deletedTrainersIndex}}
+                              <tr>
+                                <td><a href="/adminDashboard/{{_id}}">{{username}}</a></td>
+                                <td>{{firstName}}</td>
+                                <td>{{lastName}}</td>
+                                <td>{{userStatus}}</td>
+                                <td>{{planType}}</td>
+                                <td>{{expiresOn}}</td>
+                                <td><button class="btn-floating amber waves-effect suspendTrainer"><i class="material-icons">https</i></button></td>
+                                <td><button class="btn-floating red waves-effect removeTrainer"><i class="material-icons">remove</i></button></td>
+                                <td><button class="btn-floating green waves-effect paymentDueSoon"><i class="material-icons">assignment_late</i></button></td>
+                              </tr>
+                              {{/EasySearch.Each}}
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </div>

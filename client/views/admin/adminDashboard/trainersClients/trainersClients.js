@@ -47,7 +47,7 @@ Template.trainersClients.helpers({
   //Return all a trainer clients so we can search them
   //with easy search
   trainersClientsIndex() {
-      return UsersIndex;
+      return TrainersClientsIndex;
   },
 
   //Placeholder for easy search

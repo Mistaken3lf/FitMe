@@ -49,16 +49,42 @@ Template.commandCenter.helpers({
 
   //Return all a trainer clients so we can search them
   //with easy search
-  currentTrainersIndex() {
-    return CurrentTrainersIndex;
+  activeTrainersIndex() {
+    return ActiveTrainersIndex;
   },
 
-  currentTrainersAttributes() {
+  activeTrainersAttributes() {
     //Placeholder for easy search
     return {
       placeholder: "Search For A Trainer"
     }
-  }
+  },
+  
+  //Return all a trainer clients so we can search them
+  //with easy search
+  suspendedTrainersIndex() {
+    return SuspendedTrainersIndex;
+  },
+
+  suspendedTrainersAttributes() {
+    //Placeholder for easy search
+    return {
+      placeholder: "Search For A Trainer"
+    }
+  },
+  
+  //Return all a trainer clients so we can search them
+  //with easy search
+  deletedTrainersIndex() {
+    return DeletedTrainersIndex;
+  },
+
+  deletedTrainersAttributes() {
+    //Placeholder for easy search
+    return {
+      placeholder: "Search For A Trainer"
+    }
+  },
 });
 
 Template.commandCenter.events({
