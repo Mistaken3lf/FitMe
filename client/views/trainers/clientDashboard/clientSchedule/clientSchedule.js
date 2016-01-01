@@ -185,6 +185,9 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+      
       swal({
         title: "Are You Sure?",
         text: "This will cancel your appointment for tuesday and send the client an email letting them know you will not be able to make the appointment",
@@ -214,6 +217,9 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+      
       swal({
         title: "Are You Sure?",
         text: "This will cancel your appointment for wednesday and send the client an email letting them know you will not be able to make the appointment",
@@ -243,6 +249,9 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+      
       swal({
         title: "Are You Sure?",
         text: "This will cancel your appointment for thursday and send the client an email letting them know you will not be able to make the appointment",
@@ -272,6 +281,9 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+      
       swal({
         title: "Are You Sure?",
         text: "This will cancel your appointment for friday and send the client an email letting them know you will not be able to make the appointment",
@@ -301,6 +313,9 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+      
       swal({
         title: "Are You Sure?",
         text: "This will cancel your appointment for saturday and send the client an email letting them know you will not be able to make the appointment",
@@ -330,6 +345,9 @@ Template.clientScheduleShell.events({
       Bert.alert("You must fill in the entire appointment to cancel", "danger", "growl-top-right");
       return;
     } else {
+      //Needed for sweet alerts
+      let previousWindowKeyDown = window.onkeydown;
+      
       swal({
         title: "Are You Sure?",
         text: "This will cancel your appointment for sunday and send the client an email letting them know you will not be able to make the appointment",
