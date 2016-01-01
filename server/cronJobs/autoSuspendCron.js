@@ -1,7 +1,7 @@
 SyncedCron.add({
-  name: 'Auto Suspend Trainers (Every 36 Hours)',
+  name: 'Auto Suspend Trainers (Every Day)',
   schedule(parser) {
-    return parser.text('every 36 hours');
+    return parser.text('at 12:00 am');
   },
   job() {
     let today = moment().format("MM/DD/YYYY");
@@ -12,7 +12,8 @@ SyncedCron.add({
       //Suspend a trainer if their account is expired
       Meteor.users.update({
         roles: "trainer",
-        expiresOn: today
+        expiresOn: today,
+        userStatus: { $ne: "deleted" }
       }, {
         $set: {
           userStatus: "suspended"
@@ -27,6 +28,7 @@ SyncedCron.add({
       }, {
         $set: {
           userStatus: "suspended",
+          previouslySuspended: true
         }
       }, {
         multi: true
