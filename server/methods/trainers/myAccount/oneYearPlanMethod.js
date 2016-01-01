@@ -36,7 +36,8 @@ Meteor.methods({
         
         //Set their clients status to active since they bought a plan
         Meteor.users.update({
-          createdBy: this.userId
+          createdBy: this.userId,
+          previouslySuspended: false
         }, {
           $set: {
             userStatus: "active"
@@ -62,7 +63,8 @@ Meteor.methods({
         
         //Set their clients status to active
         Meteor.users.update({
-          createdBy: this.userId
+          createdBy: this.userId,
+          previouslySuspended: false
         }, {
           $set: {
             userStatus: "active"

@@ -36,7 +36,8 @@ Meteor.methods({
         
         //Update the trainers clients to active as well
         Meteor.users.update({
-          createdBy: trainerId
+          createdBy: trainerId,
+          previouslySuspended: false
         }, {
           $set: {
             userStatus: "active"
@@ -62,7 +63,8 @@ Meteor.methods({
         
         //Update the clients status to active as well
         Meteor.users.update({
-          createdBy: trainerId
+          createdBy: trainerId,
+          previouslySuspended: false
         }, {
           $set: {
             userStatus: "active"

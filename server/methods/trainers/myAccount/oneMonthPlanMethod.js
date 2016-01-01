@@ -62,7 +62,8 @@ Meteor.methods({
         
         //Set their client user status to active
         Meteor.users.update({
-          createdBy: this.userId
+          createdBy: this.userId,
+          previouslySuspended: false
         }, {
           $set: {
             userStatus: "active"

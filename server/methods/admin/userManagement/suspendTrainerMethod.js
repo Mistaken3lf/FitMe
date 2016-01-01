@@ -32,6 +32,7 @@ Meteor.methods({
         }, {
           $set: {
             userStatus: "suspended",
+            previouslySuspended: true
           }
         }, {
           multi: true
