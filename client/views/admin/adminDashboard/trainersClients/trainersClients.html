@@ -44,6 +44,9 @@
                     {{/EasySearch.Each}}
                   </tbody>
                 </table>
+                {{#EasySearch.IfNoResults index=trainersClientsIndex}}
+                  <div>No results found!</div>
+                {{/EasySearch.IfNoResults}}
                 <!--End of client table-->
               </div>
               {{else}} 

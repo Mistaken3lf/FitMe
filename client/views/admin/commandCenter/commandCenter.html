@@ -66,6 +66,9 @@
                             {{/EasySearch.Each}}
                           </tbody>
                         </table>
+                        {{#EasySearch.IfNoResults index=activeTrainersIndex}}
+                          <div>No results found!</div>
+                        {{/EasySearch.IfNoResults}}
                       </div>
                     </div>
                   </div>
@@ -117,6 +120,9 @@
                               {{/EasySearch.Each}}
                             </tbody>
                           </table>
+                          {{#EasySearch.IfNoResults index=suspendedTrainersIndex}}
+                            <div>No results found!</div>
+                          {{/EasySearch.IfNoResults}}
                         </div>
                       </div>
                     </div>
@@ -169,6 +175,9 @@
                               {{/EasySearch.Each}}
                             </tbody>
                           </table>
+                          {{#EasySearch.IfNoResults index=deletedTrainersIndex}}
+                            <div>No results found!</div>
+                          {{/EasySearch.IfNoResults}}
                         </div>
                       </div>
                     </div>
