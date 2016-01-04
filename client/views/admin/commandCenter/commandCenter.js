@@ -59,6 +59,12 @@ Template.commandCenter.helpers({
     }
   },
   
+  activeTrainerLoadMoreButton() {
+    return {
+      class: "btn blue white-text"
+    }
+  },
+  
   //Index of all suspended trainers
   suspendedTrainersIndex() {
     return SuspendedTrainersIndex;

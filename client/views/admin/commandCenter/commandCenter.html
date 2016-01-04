@@ -66,6 +66,7 @@
                             {{/EasySearch.Each}}
                           </tbody>
                         </table>
+                        {{> EasySearch.LoadMore index=activeTrainersIndex attributes=activeTrainerLoadMoreButton count=2}}
                         {{#EasySearch.IfNoResults index=activeTrainersIndex}}
                           <div>No results found!</div>
                         {{/EasySearch.IfNoResults}}
