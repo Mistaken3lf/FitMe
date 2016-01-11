@@ -299,7 +299,7 @@ footer {
 .profilePic {
   padding: 30px 0px 30px 0px;
   width: 100px;
-  height: 200 px;
+  height: 200px;
 }
 
 .blueLine {
@@ -991,12 +991,6 @@ footer {
   }
   .profilePic {
     display: none;
-    /*
-    margin: auto auto;
-    padding: 30px 0px 0px 0px;
-    width: 300px;
-    height: 300px;
-    */
   }
   .blueLine {
     display: none;
