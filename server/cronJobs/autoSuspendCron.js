@@ -3,6 +3,7 @@ SyncedCron.add({
   schedule(parser) {
     return parser.text('at 12:00 am');
   },
+  
   job() {
     let today = moment().format("MM/DD/YYYY");
 
@@ -13,7 +14,9 @@ SyncedCron.add({
       Meteor.users.update({
         roles: "trainer",
         expiresOn: today,
-        userStatus: { $ne: "deleted" }
+        userStatus: {
+          $ne: "deleted"
+        }
       }, {
         $set: {
           userStatus: "suspended"
@@ -21,19 +24,20 @@ SyncedCron.add({
       }, {
         multi: true
       });
-      
-      //Suspend each trainers clients as well
-      Meteor.users.update({
-        createdBy: user._id
-      }, {
-        $set: {
-          userStatus: "suspended",
-          previouslySuspended: true
-        }
-      }, {
-        multi: true
-      });
 
+      if (user.userStatus == "suspended") {
+        //Suspend each trainers clients as well
+        Meteor.users.update({
+          createdBy: user._id
+        }, {
+          $set: {
+            userStatus: "suspended",
+            previouslySuspended: true
+          }
+        }, {
+          multi: true
+        });
+      }
     });
   }
 });
