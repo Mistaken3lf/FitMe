@@ -72,7 +72,6 @@
   display: none;
 }
 
-
 /*Create blue hr line for bottom of header image */
 
 .headerSeperator {
@@ -193,11 +192,14 @@ footer {
 #navPad {
   width: 90%;
   margin: auto auto 6px auto;
-  height: 60px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #e0e0e0;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
-
 
 /* Align brand text as far left as possible */
 
@@ -468,7 +470,6 @@ footer {
   padding-right: 20px;
 }
 
-
 .termsLogo {
   width: 10%;
   height: 10%;
@@ -564,11 +565,9 @@ footer {
     padding: auto;
     margin-bottom: 5px;
   }
-  
   .guideScreenshots {
-  width: 100%;
-}
-
+    width: 100%;
+  }
 }
 
 @media only screen and (min-device-width: 800px) and (max-device-width: 1280px) {
@@ -598,10 +597,9 @@ footer {
     font-size: 30px;
     padding: 0px 0px 0px 0px;
   }
-  
   .guideScreenshots {
-  width: 100%;
-}
+    width: 100%;
+  }
 }
 
 
@@ -864,17 +862,15 @@ footer {
   .removeFromSundayMobile {
     display: inline;
   }
-  
   .guideScreenshots {
     padding-left: 3px;
     padding-right: 3px;
     width: 100%;
-}
-
+  }
   .termsLogo {
     width: 30%;
     height: 30%;
-}
+  }
 }
 
 

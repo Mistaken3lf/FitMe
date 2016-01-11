@@ -2,6 +2,7 @@
   <div class="navbar-fixed">
     <nav class="blue">
       <div class="nav-wrapper">
+        <a href="#" class="brand-logo">FitMe</a>
         <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         <!--Mobile sidebar menu-->
         <ul class="side-nav" id="mobile-menu">
@@ -65,11 +66,13 @@
           <div>
             <h6 class="center-align blue-text">Build: v{{versionNumber}}</h6>
           </div>
+          <div class="verticalAlign">
           <a class="btn blue white-text waves-effect" id="navPad" href="/adminHome">Home</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/commandCenter">Command Center</a>
           <a class="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
           <a class="btn blue white-text waves-effect logout" id="navPad"  href="#!">Logout</a>
+          </div>
           {{/if}}
           {{#if isInRole "trainer"}}
           <h5 class="white-text blue center" id="usernameText">{{currentUser.username}}</h5>
