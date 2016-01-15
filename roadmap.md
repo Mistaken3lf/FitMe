@@ -1,4 +1,3 @@
-----------------------
 # Plans for the future
 ----------------------
 
@@ -23,9 +22,6 @@
 - Once code is fully migrated to react and tested then we can begin to
   add new features and take feedback from our end users.
 
-================================================================================
-
------------------------
 # Possible New Features
 -----------------------
 
