@@ -6,7 +6,7 @@ Template.commandCenter.onCreated(function () {
 });
 
 Template.commandCenter.helpers({
-  //Total number of trainers 
+  //Total number of trainers
   totalTrainers() {
     let totalTrainers = Meteor.users.find({
       roles: 'trainer'
@@ -58,18 +58,18 @@ Template.commandCenter.helpers({
       placeholder: "Search For A Trainer"
     }
   },
-  
+
   activeTrainerLoadMoreButton() {
     return {
       class: "btn blue white-text"
     }
   },
-  
+
   //Index of all suspended trainers
   suspendedTrainersIndex() {
     return SuspendedTrainersIndex;
   },
-  
+
   //Placeholder text for easy search
   suspendedTrainersAttributes() {
     //Placeholder for easy search
@@ -77,12 +77,12 @@ Template.commandCenter.helpers({
       placeholder: "Search For A Trainer"
     }
   },
-  
+
   //Index of all deleted trainers
   deletedTrainersIndex() {
     return DeletedTrainersIndex;
   },
-  
+
   //Placeholder text of deleted trainers
   deletedTrainersAttributes() {
     //Placeholder for easy search
@@ -126,7 +126,7 @@ Template.commandCenter.events({
     //Suspend the trainer clicked on
     Meteor.call("suspendTrainer", this._id);
   },
-  
+
   //Payment due soon button to send email when their payment is due soon
   'click .paymentDueSoon' (event) {
     Meteor.call("paymentDueSoon", this.expiresOn, this._id, (error) => {
