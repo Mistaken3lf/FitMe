@@ -24,7 +24,7 @@ Meteor.methods({
         to: emailAddr,
         from: "support@gofitme.com",
         subject: "FitMe -- Inactive Account",
-        html: "<p>Hello " + trainer.firstName + " " + trainer.lastName + "<br><br>" + "We have noticed that you have not logged into your account recently.  Feel free to log back in... we are waiting for you. If your account continues to be inactive for much longer, it may be suspended or deleted.<br><br><br>" + "Keep Training Hard,<br><br>" + "<strong>The FitMe Team</strong>"
+        html: "<p>Hello " + trainer.firstName + " " + trainer.lastName + ",<br><br>" + "We have noticed that you have not logged into your account recently.  Feel free to log back in... we are waiting for you. If your account continues to be inactive for much longer, it may be suspended or deleted.<br><br><br>" + "Keep Training Hard,<br><br>" + "<strong>The FitMe Team</strong></p>"
       });
 
     } else {
