@@ -7,12 +7,12 @@ Meteor.methods({
       }).validate({
         clientId
       });
-    
+
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'admin')) {
       const user = Meteor.users.findOne(clientId);
-      
+
       //Check if the user is active already
       if (user.userStatus == "active") {
         //If they are active suspend them

@@ -28,11 +28,10 @@ Meteor.methods({
 
         //Set their status since they are suspended
         Meteor.users.update({
-          createdBy: user._id
+          createdBy: user._id,
         }, {
           $set: {
             userStatus: "suspended",
-            previouslySuspended: true
           }
         }, {
           multi: true
@@ -50,11 +49,11 @@ Meteor.methods({
         //Set client to active if they were not previously suspended
         //from their trainer
         Meteor.users.update({
-          createdBy: user._id
+          createdBy: user._id,
+          previouslySuspended: false
         }, {
           $set: {
             userStatus: "active",
-            previouslySuspended: true
           }
         }, {
           multi: true
