@@ -3,7 +3,7 @@ SyncedCron.add({
   schedule(parser) {
     return parser.text('at 12:00 am');
   },
-  
+
   job() {
     let today = moment().format("MM/DD/YYYY");
 
@@ -32,7 +32,6 @@ SyncedCron.add({
         }, {
           $set: {
             userStatus: "suspended",
-            previouslySuspended: true
           }
         }, {
           multi: true
