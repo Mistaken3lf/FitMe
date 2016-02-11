@@ -41,3 +41,5 @@ force-ssl
 percolate:synced-cron
 mdg:validated-method
 react
+react-template-helper
+themeteorchef:jquery-validation
