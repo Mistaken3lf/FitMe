@@ -1,4 +1,4 @@
-Login = React.createClass({
+Login = React.createClass ({
   componentDidMount() {
     $("#loginForm").validate({
       rules: {
@@ -67,13 +67,13 @@ Login = React.createClass({
             <h2 className="blue-text">Sign In</h2>
             <form onSubmit={this.handleSubmit} id="loginForm">
               <div className="row">
-              <input type="text" className="validate" name="username" placeholder="Username" />
+                <input type="text" className="validate" name="username" placeholder="Username" />
               </div>
               <div className="row">
-              <input type="password" className="validate" name="password" placeholder="Password" />
+                <input type="password" className="validate" name="password" placeholder="Password" />
               </div>
               <div className="row">
-              <button className="btn blue">Login</button>
+                <button className="btn blue">Login</button>
               </div>
             </form>
             <p><a href="/forgotPassword">Forgot Password?</a></p>
