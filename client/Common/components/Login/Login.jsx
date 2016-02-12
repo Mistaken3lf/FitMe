@@ -60,23 +60,35 @@ Login = React.createClass ({
   },
 
   render() {
+    styles = {
+      buttonStyle: {
+        width: "100%"
+      }
+    };
+
     return (
       <div className="row">
         <div className="col s12 m8 offset-m2 l6 offset-l3" id="userLoginForm">
           <div className="card-panel grey lighten-4 z-depth-2">
-            <h2 className="blue-text">Sign In</h2>
+            <h2 className="blue-text center">SIGN IN</h2>
             <form onSubmit={this.handleSubmit} id="loginForm">
               <div className="row">
-                <input type="text" className="validate" name="username" placeholder="Username" />
+                <div className="col s12 m12 l12">
+                  <input type="text" className="validate" name="username" placeholder="Username" />
+                </div>
               </div>
               <div className="row">
-                <input type="password" className="validate" name="password" placeholder="Password" />
+                <div className="col s12 m12 l12">
+                  <input type="password" className="validate" name="password" placeholder="Password" />
+                </div>
               </div>
               <div className="row">
-                <button className="btn blue">Login</button>
+                <div className="col s12 m12 l12">
+                  <button className="btn blue waves-effect" style={styles.buttonStyle}>Login</button>
+                  <p><a href="/forgotPassword">Forgot Password?</a></p>
+                </div>
               </div>
             </form>
-            <p><a href="/forgotPassword">Forgot Password?</a></p>
           </div>
         </div>
       </div>
