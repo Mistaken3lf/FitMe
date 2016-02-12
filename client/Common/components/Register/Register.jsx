@@ -86,7 +86,7 @@ Register = React.createClass({
   },
 
   render() {
-    styles = {
+    const styles = {
       buttonWidth: {
         width: "100%"
       }

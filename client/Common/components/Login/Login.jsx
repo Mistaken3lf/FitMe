@@ -60,7 +60,7 @@ Login = React.createClass ({
   },
 
   render() {
-    styles = {
+    const styles = {
       buttonStyle: {
         width: "100%"
       }
