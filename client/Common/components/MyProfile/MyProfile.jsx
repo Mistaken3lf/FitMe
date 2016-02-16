@@ -49,71 +49,71 @@ MyProfile = React.createClass({
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Username:</span>
-                          <input type="text" name="username" placeholder="Username" defaultValue={this.data.userProfile.username} readOnly />
+                          <input type="text" name="username" className="validate" placeholder="Username" defaultValue={this.data.userProfile.username} readOnly />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">First Name:</span>
-                          <input type="text" name="firstName" placeholder="First Name" onChange={this.updateField} defaultValue={this.data.userProfile.firstName} />
+                          <input type="text" name="firstName" className="validate" placeholder="First Name" onChange={this.updateField} defaultValue={this.data.userProfile.firstName} />
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Last Name:</span>
-                          <input type="text" name="lastName" placeholder="Last Name" onChange={this.updateField} defaultValue={this.data.userProfile.lastName} />
+                          <input type="text" name="lastName" className="validate" placeholder="Last Name" onChange={this.updateField} defaultValue={this.data.userProfile.lastName} />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Date Of Birth:</span>
-                          <input type="date" name="birthday" id="birthday" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.data.userProfile.birthday} />
+                          <input type="date" name="birthday" className="validate" id="birthday" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.data.userProfile.birthday} />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m3 l3">
                           <span className="blue-text myBoldProfileHeading">Address:</span>
-                          <input type="text" name="address" placeholder="Address" onChange={this.updateField} defaultValue={this.data.userProfile.address} />
+                          <input type="text" name="address" className="validate" placeholder="Address" onChange={this.updateField} defaultValue={this.data.userProfile.address} />
                         </div>
                         <div className="input-field col s12 m3 l3">
                         <span className="blue-text myBoldProfileHeading">City:</span>
-                        <input type="text" name="city" placeholder="City" onChange={this.updateField} defaultValue={this.data.userProfile.city} />
+                        <input type="text" name="city" className="validate" placeholder="City" onChange={this.updateField} defaultValue={this.data.userProfile.city} />
                         </div>
                         <div className="input-field col s12 m3 l3">
                           <span className="blue-text myBoldProfileHeading">State:</span>
-                          <input type="text" name="state" placeholder="State" onChange={this.updateField} defaultValue={this.data.userProfile.state} />
+                          <input type="text" name="state" className="validate" placeholder="State" onChange={this.updateField} defaultValue={this.data.userProfile.state} />
                         </div>
                         <div className="input-field col s12 m3 l3">
                           <span className="blue-text myBoldProfileHeading">Zip Code</span>
-                          <input type="text" name="zip" placeholder="Zip Code" onChange={this.updateField} defaultValue={this.data.userProfile.zip} />
+                          <input type="text" name="zip" className="validate" placeholder="Zip Code" onChange={this.updateField} defaultValue={this.data.userProfile.zip} />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m4 l4">
                         <span className="blue-text myBoldProfileHeading">Home Phone:</span>
-                          <input type="text" name="homePhone" placeholder="Home Phone" onChange={this.updateField} defaultValue={this.data.userProfile.homePhone} />
+                          <input type="text" name="homePhone" className="validate" placeholder="Home Phone" onChange={this.updateField} defaultValue={this.data.userProfile.homePhone} />
                         </div>
                         <div className="input-field col s12 m4 l4">
                           <span className="blue-text myBoldProfileHeading">Work Phone:</span>
-                          <input type="text" name="workPhone" placeholder="Work Phone" onChange={this.updateField} defaultValue={this.data.userProfile.workPhone} />
+                          <input type="text" name="workPhone" className="validate" placeholder="Work Phone" onChange={this.updateField} defaultValue={this.data.userProfile.workPhone} />
                         </div>
                         <div className="input-field col s12 m4 l4">
                           <span className="blue-text myBoldProfileHeading">Emergency Contact:</span>
-                          <input type="text" name="emergencyContact" placeholder="Emergency Contact" onChange={this.updateField} defaultValue={this.data.userProfile.emergencyContact} />
+                          <input type="text" name="emergencyContact" className="validate" placeholder="Emergency Contact" onChange={this.updateField} defaultValue={this.data.userProfile.emergencyContact} />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Email:</span>
-                          <input type="text" name="email" placeholder="Email" defaultValue={this.data.userProfile.emails[0].address} readOnly />
+                          <input type="text" name="email" className="validate" placeholder="Email" defaultValue={this.data.userProfile.emails[0].address} readOnly />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">About You:</span>
-                          <textarea name="bio" placeholder="About You" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.userProfile.bio}></textarea>
+                          <textarea name="bio" placeholder="About You" className="validate" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.userProfile.bio}></textarea>
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Fitness Goals:</span>
-                          <textarea name="fitnessGoals" placeholder="Fitness Goals" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.userProfile.fitnessGoals}></textarea>
+                          <textarea name="fitnessGoals" className="validate" placeholder="Fitness Goals" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.userProfile.fitnessGoals}></textarea>
                         </div>
                       </div>
                     </div>

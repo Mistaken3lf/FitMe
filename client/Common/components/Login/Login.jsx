@@ -3,8 +3,8 @@ Login = React.createClass ({
     e.preventDefault();
 
     //Capture username and password from form
-    let username = this.refs.username.value;
-    let password = this.refs.password.value;
+    const username = this.refs.username.value;
+    const password = this.refs.password.value;
 
     //Log user in with userrname and password
     Meteor.loginWithPassword(username, password, (error) => {
@@ -45,15 +45,15 @@ Login = React.createClass ({
         <div className="col s12 m8 offset-m2 l6 offset-l3" id="userLoginForm">
           <div className="card-panel grey lighten-4 z-depth-2">
             <h2 className="blue-text center">SIGN IN</h2>
-            <form onSubmit={this.handleSubmit} id="loginForm">
+            <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col s12 m12 l12">
-                  <input type="text" className="validate" ref="username" placeholder="Username" />
+                  <input type="text" className="validate" ref="username" placeholder="Username" required/>
                 </div>
               </div>
               <div className="row">
                 <div className="col s12 m12 l12">
-                  <input type="password" className="validate" ref="password" placeholder="Password" />
+                  <input type="password" className="validate" ref="password" placeholder="Password" required />
                 </div>
               </div>
               <div className="row">

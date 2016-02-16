@@ -1,11 +1,40 @@
-Meteor.methods({
-  //Register a new trainer in MongoDB
-  registerTrainer(newTrainerData) {
+const registerTrainer = new ValidatedMethod({
+  name: "registerTrainer",
+
+  validate: new SimpleSchema({
+    username: {
+      type: String
+    },
+
+    password: {
+      type: String
+    },
+
+    email: {
+      type: String
+    },
+
+    firstName: {
+      type: String
+    },
+
+    lastName: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    username,
+    password,
+    email,
+    firstName,
+    lastName
+  }) {
     //Create the new trainer
     let trainerId = Accounts.createUser({
-      username: newTrainerData.username,
-      password: newTrainerData.password,
-      email: newTrainerData.email,
+      username: username,
+      password: password,
+      email: email,
     });
 
     let today = moment().format("MM/DD/YYYY");
@@ -15,8 +44,8 @@ Meteor.methods({
     //Meteor.user fields
     Meteor.users.update(trainerId, {
       $set: {
-        firstName: newTrainerData.firstName,
-        lastName: newTrainerData.lastName,
+        firstName: firstName,
+        lastName: lastName,
         clientLimit: 1,
         userStatus: "active",
         planType: "Free",

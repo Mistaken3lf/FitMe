@@ -55,17 +55,17 @@ ChangePassword = React.createClass({
               <form onSubmit={this.handleSubmit} id="changePasswordForm">
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" ref="currentPassword" placeholder="Current Password" className="validate" />
+                    <input type="password" ref="currentPassword" placeholder="Current Password" className="validate" required />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" ref="newPassword" placeholder="New Password" className="validate" />
+                    <input type="password" ref="newPassword" placeholder="New Password" className="validate" required />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" className="validate" />
+                    <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" className="validate" required />
                   </div>
                 </div>
                 <div className="row">
