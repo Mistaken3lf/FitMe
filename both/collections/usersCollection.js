@@ -33,7 +33,6 @@ Meteor.users.schema = new SimpleSchema({
 
   address: {
     type: String,
-    regEx: /^[a-z0-9A-Z_. ]{3,40}$/,
     optional: true
   },
 
@@ -49,25 +48,21 @@ Meteor.users.schema = new SimpleSchema({
 
   zip: {
     type: String,
-    regEx: /^[0-9]{5}$/,
     optional: true
   },
 
   homePhone: {
     type: String,
-    regEx: /^[2-9]\d{2}-\d{3}-\d{4}$/,
     optional: true
   },
 
   workPhone: {
     type: String,
-    regEx: /^[2-9]\d{2}-\d{3}-\d{4}$/,
     optional: true
   },
 
   emergencyContact: {
     type: String,
-    regEx: /^[2-9]\d{2}-\d{3}-\d{4}$/,
     optional: true
   },
 
