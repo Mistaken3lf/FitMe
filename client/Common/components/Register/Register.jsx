@@ -46,23 +46,23 @@ Register = React.createClass({
           <form onSubmit={this.handleSubmit} id="registerForm">
             <div className="row">
               <div className="col s12 m6 l6">
-                <input type="text" ref="username" className="validate" placeholder="Username" required />
+                <input type="text" ref="username" className="validate" minLength={2} placeholder="Username" required />
               </div>
               <div className="col s12 m6 l6">
-                <input type="password" ref="password" className="validate" placeholder="Password" required />
+                <input type="password" ref="password" className="validate" minLength={2} placeholder="Password" required />
               </div>
             </div>
             <div className="row">
               <div className="col s12 m12 l12">
-                <input type="email" ref="email" className="validate" placeholder="Email Address" required />
+                <input type="email" ref="email" className="validate" minLength={2} placeholder="Email Address" required />
               </div>
             </div>
             <div className="row">
               <div className="col s12 m6 l6">
-                <input type="text" ref="firstName" className="validate" placeholder="First Name" required />
+                <input type="text" ref="firstName" className="validate" minLength={2} placeholder="First Name" required />
               </div>
               <div className="col s12 m6 l6">
-                <input type="text" ref="lastName" className="validate" placeholder="Last Name" required />
+                <input type="text" ref="lastName" className="validate" minLength={2} placeholder="Last Name" required />
               </div>
             </div>
             <div className="row">

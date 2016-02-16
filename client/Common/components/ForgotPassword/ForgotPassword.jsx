@@ -33,7 +33,7 @@ ForgotPassword = React.createClass({
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col s12 m12 l12">
-                  <input type="email" ref="email" className="validate" placeholder="Email Address" required />
+                  <input type="email" ref="email" className="validate" minLength={2} placeholder="Email Address" required />
                 </div>
               </div>
               <div className="row">

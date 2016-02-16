@@ -56,12 +56,12 @@ ResetPassword = React.createClass({
               <form onSubmit={this.handleSubmit}>
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" ref="newPassword" className="validate" placeholder="New Password" required />
+                    <input type="password" ref="newPassword" className="validate" minLength={2} placeholder="New Password" required />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" ref="newPasswordConfirmation" className="validate" placeholder="Confirm New Password" required />
+                    <input type="password" ref="newPasswordConfirmation" className="validate" minLength={2} placeholder="Confirm New Password" required />
                   </div>
                 </div>
                 <div className="row">

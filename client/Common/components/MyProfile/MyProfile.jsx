@@ -55,11 +55,11 @@ MyProfile = React.createClass({
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">First Name:</span>
-                          <input type="text" name="firstName" className="validate" placeholder="First Name" onChange={this.updateField} defaultValue={this.data.userProfile.firstName} />
+                          <input type="text" name="firstName" className="validate" placeholder="First Name" minLength={2} onChange={this.updateField} defaultValue={this.data.userProfile.firstName} />
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Last Name:</span>
-                          <input type="text" name="lastName" className="validate" placeholder="Last Name" onChange={this.updateField} defaultValue={this.data.userProfile.lastName} />
+                          <input type="text" name="lastName" className="validate" placeholder="Last Name" minLength={2} onChange={this.updateField} defaultValue={this.data.userProfile.lastName} />
                         </div>
                       </div>
                       <div className="row">
