@@ -1,76 +1,42 @@
 ChangePassword = React.createClass({
-  componentDidMount() {
-    $("#changePasswordForm").validate({
-      rules: {
-        currentPassword: {
-          required: true
-        },
-
-        newPassword: {
-          required: true
-        },
-
-        newPasswordConfirmation: {
-          required: true
-        }
-      },
-
-      messages: {
-        currentPassword: {
-          required: "Please Enter Your Current Password"
-        },
-
-        newPassword: {
-          required: "Please Enter Your New Password"
-        },
-
-        newPasswordConfirmation: {
-          required: "Please Confirm Your New Password"
-        }
-      },
-
-      submitHandler() {
-        //Capture the new and old passwords
-        let currentPassword = $('[name=currentPassword]').val();
-        let newPassword = $('[name=newPassword]').val();
-        let newPasswordConfirmation = $('[name=newPasswordConfirmation]').val();
-
-        if (newPassword != newPasswordConfirmation) {
-          Bert.alert("Passwords do not match", 'danger', 'growl-top-right');
-          return false;
-        }
-
-        Accounts.changePassword(currentPassword, newPassword, (error) => {
-          //Invalid passwords
-          if (error) {
-            //Pop up an alert to show the error
-            Bert.alert(error.reason, 'danger', 'growl-top-right');
-          } else {
-            //Go to the admin home if they are an admin
-            if(Roles.userIsInRole(Meteor.userId(), "admin")) {
-              FlowRouter.go("/adminHome");
-              Bert.alert("Password successfully changed", 'success', 'growl-top-right');
-            }
-
-            //Go to the trainers home if they are a trainer
-            if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
-              FlowRouter.go("/trainerHome");
-              Bert.alert("Password successfully changed", 'success', 'growl-top-right');
-            }
-
-            //Go to the clients home if they are a client
-            if(Roles.userIsInRole(Meteor.userId(), "client")) {
-              FlowRouter.go("/clientHome");
-              Bert.alert("Password successfully changed", 'success', 'growl-top-right');
-            }
-          }
-        });
-      }
-    });
-  },
-
   handleSubmit(e) {
     e.preventDefault();
+
+    //Capture the new and old passwords
+    const currentPassword = this.refs.currentPassword.value;
+    const newPassword = this.refs.newPassword.value;
+    const newPasswordConfirmation = this.refs.newPasswordConfirmation.value;
+
+    if (newPassword != newPasswordConfirmation) {
+      Bert.alert("Passwords do not match", 'danger');
+      return false;
+    }
+
+    Accounts.changePassword(currentPassword, newPassword, (error) => {
+      //Invalid passwords
+      if (error) {
+        //Pop up an alert to show the error
+        Bert.alert(error.reason, 'danger');
+      } else {
+        //Go to the admin home if they are an admin
+        if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+          FlowRouter.go("/adminHome");
+          Bert.alert("Password successfully changed", 'success');
+        }
+
+        //Go to the trainers home if they are a trainer
+        if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+          FlowRouter.go("/trainerHome");
+          Bert.alert("Password successfully changed", 'success');
+        }
+
+        //Go to the clients home if they are a client
+        if(Roles.userIsInRole(Meteor.userId(), "client")) {
+          FlowRouter.go("/clientHome");
+          Bert.alert("Password successfully changed", 'success');
+        }
+      }
+    });
   },
 
   render() {
@@ -89,17 +55,17 @@ ChangePassword = React.createClass({
               <form onSubmit={this.handleSubmit} id="changePasswordForm">
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" name="currentPassword" placeholder="Current Password" />
+                    <input type="password" ref="currentPassword" placeholder="Current Password" className="validate" />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" name="newPassword" placeholder="New Password" />
+                    <input type="password" ref="newPassword" placeholder="New Password" className="validate" />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col s12 m12 l12">
-                    <input type="password" name="newPasswordConfirmation" placeholder="Confirm New Password" />
+                    <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" className="validate" />
                   </div>
                 </div>
                 <div className="row">
