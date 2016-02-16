@@ -18,13 +18,11 @@ Meteor.users.schema = new SimpleSchema({
 
   firstName: {
     type: String,
-    regEx: /^[a-zA-Z-]{2,25}$/,
     optional: true
   },
 
   lastName: {
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/,
     optional: true
   },
 
@@ -187,37 +185,37 @@ Meteor.users.schema = new SimpleSchema({
     type: String,
     optional: true
   },
-  
+
   mondayStatus: {
     type: Boolean,
     optional: true
   },
-  
+
   tuesdayStatus: {
     type: Boolean,
     optional: true
   },
-  
+
   wednesdayStatus: {
     type: Boolean,
     optional: true
   },
-  
+
   thursdayStatus: {
     type: Boolean,
     optional: true
   },
-  
+
   fridayStatus: {
     type: Boolean,
     optional: true
   },
-  
+
   saturdayStatus: {
     type: Boolean,
     optional: true
   },
-  
+
   sundayStatus: {
     type: Boolean,
     optional: true
@@ -227,7 +225,7 @@ Meteor.users.schema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  
+
   previouslySuspended: {
     type: Boolean,
     optional: true
@@ -267,7 +265,7 @@ Meteor.users.schema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  
+
   myTrainersExpiration: {
     type: String,
     optional: true
@@ -277,13 +275,13 @@ Meteor.users.schema = new SimpleSchema({
     type: Number,
     optional: true,
   },
-  
+
   status: {
     type: Object,
     optional: true,
     blackbox: true
   },
-  
+
   hasPaid: {
     type: Boolean,
     optional: true
@@ -352,11 +350,11 @@ ActiveTrainersIndex = new EasySearch.Index({
       selector._id = {
         $ne: userId,
       };
-      
+
       selector.roles = {
         $ne: "client",
       };
-      
+
       selector.userStatus = "active";
       return selector;
     }
@@ -375,11 +373,11 @@ SuspendedTrainersIndex = new EasySearch.Index({
       selector._id = {
         $ne: userId,
       };
-      
+
       selector.roles = {
         $ne: "client",
       };
-      
+
       selector.userStatus = "suspended";
       return selector;
     }
@@ -398,11 +396,11 @@ DeletedTrainersIndex = new EasySearch.Index({
       selector._id = {
         $ne: userId,
       };
-      
+
       selector.roles = {
         $ne: "client",
       };
-      
+
       selector.userStatus = "deleted";
       return selector;
     }
