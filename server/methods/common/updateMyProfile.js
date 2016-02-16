@@ -1,6 +1,20 @@
-Meteor.methods({
-  //Update the currently logged in users profile
-  updateMyProfile(fieldName, data) {
+const updateMyProfile = new ValidatedMethod({
+  name: "updateMyProfile",
+
+  validate: new SimpleSchema({
+    fieldName: {
+      type: String
+    },
+
+    data: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    fieldName,
+    data
+  }) {
     //Make sure user is logged in before letting them update
     //a profile
     if (Meteor.userId()) {
@@ -12,9 +26,9 @@ Meteor.methods({
         throw new Meteor.Error("Sorry, you account has been suspended");
       }
 
-      var name = fieldName
-      var value = data;
-      var query = {};
+      let name = fieldName
+      let value = data;
+      let query = {};
       query[name] = value;
 
       //Update the users new profile

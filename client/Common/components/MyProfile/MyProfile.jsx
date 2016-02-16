@@ -1,22 +1,6 @@
 MyProfile = React.createClass({
   mixins: [ReactMeteorData],
 
-  componentDidMount() {
-    $("#myProfileForm").validate({
-      rules: {
-        firstName: {
-          required: true
-        }
-      },
-
-      messages: {
-        firstName: {
-          required: "Required"
-        }
-      }
-    });
-  },
-
   getMeteorData() {
     const handle = Meteor.subscribe("myProfile");
 
@@ -32,7 +16,11 @@ MyProfile = React.createClass({
     const fieldName = e.target.name;
     const data = e.target.value;
 
-    Meteor.call("updateMyProfile", fieldName, data)
+    Meteor.call("updateMyProfile", {fieldName, data}, (error) => {
+      if(error) {
+        Bert.alert(error.reason, "danger");
+      }
+    });
   },
 
   handleSubmit(e) {
@@ -121,11 +109,11 @@ MyProfile = React.createClass({
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">About You:</span>
-                          <input type="text" name="bio" placeholder="About You" onChange={this.updateField} defaultValue={this.data.userProfile.bio} />
+                          <textarea name="bio" placeholder="About You" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.userProfile.bio}></textarea>
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Fitness Goals:</span>
-                          <input type="text" name="fitnessGoals" placeholder="Fitness Goals" onChange={this.updateField} defaultValue={this.data.userProfile.fitnessGoals} />
+                          <textarea name="fitnessGoals" placeholder="Fitness Goals" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.userProfile.fitnessGoals}></textarea>
                         </div>
                       </div>
                     </div>
