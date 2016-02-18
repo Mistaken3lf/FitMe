@@ -1,5 +1,87 @@
-Meteor.methods({
-  registerClient(clientData) {
+const registerClient = new ValidatedMethod({
+  name: "registerClient",
+
+  validate: new SimpleSchema({
+    username: {
+      type: String
+    },
+
+    password: {
+      type: String
+    },
+
+    email: {
+      type: String
+    },
+
+    firstName: {
+      type: String
+    },
+
+    lastName: {
+      type: String
+    },
+
+    birthday: {
+      type: String
+    },
+
+    address: {
+      type: String
+    },
+
+    city: {
+      type: String
+    },
+
+    state: {
+      type: String
+    },
+
+    zip: {
+      type: String
+    },
+
+    homePhone: {
+      type: String
+    },
+
+    workPhone: {
+      type: String
+    },
+
+    emergencyContact: {
+      type: String
+    },
+
+    bio: {
+      type: String
+    },
+
+    fitnessGoals: {
+      type: String
+    }
+
+  }).validator(),
+
+  run({
+    username,
+    password,
+    email,
+    firstName,
+    lastName,
+    birthday,
+    address,
+    city,
+    state,
+    zip,
+    homePhone,
+    workPhone,
+    emergencyContact,
+    bio,
+    fitnessGoals
+  }) {
+
     //Make sure the user is a trainer and logged in before
     //creating a new client
     if (Roles.userIsInRole(this.userId, "trainer")) {
@@ -7,28 +89,28 @@ Meteor.methods({
       const currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
-      
-      let trainersExpiration = currentTrainer.expiresOn;
-      
+
+      const trainersExpiration = currentTrainer.expiresOn;
+
       //Check if the trainer is suspended
       if(currentTrainer.userStatus == "suspended") {
         return "Sorry, your account is suspended";
       }
-      
+
       //Get the count of total clients they have
       let currentClientCount = Meteor.users.find({
         createdBy: this.userId
       }).count();
-      
+
       //Make sure the trainers client limit allows for adding more
       //clients
       if (currentTrainer.clientLimit > currentClientCount) {
         //Create the new clients username, password and email since thats
         //what the default meteor user accounts expects
-        var id = Accounts.createUser({
-          username: clientData.username,
-          password: clientData.password,
-          email: clientData.email,
+        const id = Accounts.createUser({
+          username: username,
+          password: password,
+          email: email,
         });
 
         //Assign client to the client role
@@ -38,19 +120,18 @@ Meteor.methods({
         //additional fields supplied
         Meteor.users.update(id, {
           $set: {
-            firstName: clientData.firstName,
-            lastName: clientData.lastName,
-            birthday: clientData.birthday,
-            address: clientData.address,
-            city: clientData.city,
-            state: clientData.state,
-            zip: clientData.zip,
-            homePhone: clientData.homePhone,
-            cellPhone: clientData.cellPhone,
-            workPhone: clientData.workPhone,
-            emergencyContact: clientData.emergencyContact,
-            bio: clientData.bio,
-            fitnessGoals: clientData.fitnessGoals,
+            firstName: firstName,
+            lastName: lastName,
+            birthday: birthday,
+            address: address,
+            city: city,
+            state: state,
+            zip: zip,
+            homePhone: homePhone,
+            workPhone: workPhone,
+            emergencyContact: emergencyContact,
+            bio: bio,
+            fitnessGoals: fitnessGoals,
             createdBy: Meteor.userId(),
             whosProfile: id,
             userStatus: "active",
@@ -62,19 +143,19 @@ Meteor.methods({
         //Create a stats document for the client
         ClientStats.insert({
           whosStats: id,
-          createdBy: Meteor.userId(),
+          createdBy: this.userId
         });
 
         //Create a workout document for the client
         ClientWorkout.insert({
           whosWorkout: id,
-          createdBy: Meteor.userId(),
+          createdBy: this.userId
         });
 
         //Create a cardio document for the client
         ClientCardio.insert({
           whosCardio: id,
-          createdBy: Meteor.userId(),
+          createdBy: this.userId
         });
       } else {
         return "Client Limit Reached";
