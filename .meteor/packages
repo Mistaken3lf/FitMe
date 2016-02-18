@@ -40,9 +40,6 @@ reactive-var
 force-ssl
 percolate:synced-cron
 mdg:validated-method
-react@=0.14.3
-react-runtime@=0.14.3
-react-runtime-dev@=0.14.3
-react-runtime-prod@=0.14.3
-react-template-helper@=0.2.4
+react
+react-template-helper
 themeteorchef:jquery-validation
