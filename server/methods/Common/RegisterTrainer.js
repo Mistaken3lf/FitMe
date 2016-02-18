@@ -11,15 +11,18 @@ const registerTrainer = new ValidatedMethod({
     },
 
     email: {
-      type: String
+      type: String,
+      regEx: SimpleSchema.RegEx.Email
     },
 
     firstName: {
-      type: String
+      type: String,
+      optional: false
     },
 
     lastName: {
-      type: String
+      type: String,
+      optional: false
     }
   }).validator(),
 

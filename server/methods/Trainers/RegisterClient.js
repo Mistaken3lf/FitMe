@@ -3,23 +3,28 @@ const registerClient = new ValidatedMethod({
 
   validate: new SimpleSchema({
     username: {
-      type: String
+      type: String,
+      min: 2
     },
 
     password: {
-      type: String
+      type: String,
+      min: 2
     },
 
     email: {
-      type: String
+      type: String,
+      regEx: SimpleSchema.RegEx.Email
     },
 
     firstName: {
-      type: String
+      type: String,
+      min: 2
     },
 
     lastName: {
-      type: String
+      type: String,
+      min: 2
     },
 
     birthday: {

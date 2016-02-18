@@ -1,7 +1,7 @@
 Accounts.validateLoginAttempt((loginAttempt) => {
   //Invalid login
   if (!loginAttempt.allowed) {
-    throw new Meteor.Error(403, "Invalid login credentials");
+    return false;
   }
 
   //Find the user logging in
@@ -14,7 +14,7 @@ Accounts.validateLoginAttempt((loginAttempt) => {
   if ((thisUser.userStatus == "suspended") && (Roles.userIsInRole(thisUser._id, "client"))) {
     throw new Meteor.Error(403, "User account is inactive, please make payment to your trainer");
   }
-  
+
   //Check if the user has been "deleted" and dont let them login
   if(thisUser.userStatus == "deleted") {
     throw new Meteor.Error(403, "Invalid login credentials");
