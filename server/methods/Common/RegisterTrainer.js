@@ -3,11 +3,13 @@ const registerTrainer = new ValidatedMethod({
 
   validate: new SimpleSchema({
     username: {
-      type: String
+      type: String,
+      min: 2
     },
 
     password: {
-      type: String
+      type: String,
+      min: 2
     },
 
     email: {
@@ -17,12 +19,12 @@ const registerTrainer = new ValidatedMethod({
 
     firstName: {
       type: String,
-      optional: false
+      min: 2
     },
 
     lastName: {
       type: String,
-      optional: false
+      min: 2
     }
   }).validator(),
 
