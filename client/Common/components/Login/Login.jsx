@@ -6,31 +6,37 @@ Login = React.createClass ({
     const username = this.refs.username.value;
     const password = this.refs.password.value;
 
-    //Log user in with userrname and password
-    Meteor.loginWithPassword(username, password, (error) => {
-      //Invalid login
-      if (error) {
-        //Pop up an alert to show login failed
-        Bert.alert(error.reason, 'danger');
-      }
-    });
+    if(username == "" || username == null) {
+      Bert.alert("Please enter your username", "danger");
+    } else if(password == "" || password == null) {
+      Bert.alert("Please enter your password", "danger");
+    } else {
+      //Log user in with userrname and password
+      Meteor.loginWithPassword(username, password, (error) => {
+        //Invalid login
+        if (error) {
+          //Pop up an alert to show login failed
+          Bert.alert(error.reason, 'danger');
+        }
+      });
 
-    Accounts.onLogin(() => {
-      //Go to the admin home if they are an admin
-      if(Roles.userIsInRole(Meteor.userId(), "admin")) {
-        FlowRouter.go("/adminHome");
-      }
+      Accounts.onLogin(() => {
+        //Go to the admin home if they are an admin
+        if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+          FlowRouter.go("/adminHome");
+        }
 
-      //Go to the trainer home if they are a trainer
-      if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
-        FlowRouter.go("/trainerHome");
-      }
+        //Go to the trainer home if they are a trainer
+        if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+          FlowRouter.go("/trainerHome");
+        }
 
-      //Go to the client home if they are a client
-      if(Roles.userIsInRole(Meteor.userId(), "client")) {
-        FlowRouter.go("/clientHome");
-      }
-    });
+        //Go to the client home if they are a client
+        if(Roles.userIsInRole(Meteor.userId(), "client")) {
+          FlowRouter.go("/clientHome");
+        }
+      });
+    }
   },
 
   render() {
@@ -48,12 +54,12 @@ Login = React.createClass ({
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col s12 m12 l12 input-field">
-                  <input type="text" className="validate" ref="username" minLength={2} placeholder="Username" required/>
+                  <input type="text" className="validate" ref="username" minLength={2} placeholder="Username" />
                 </div>
               </div>
               <div className="row">
                 <div className="col s12 m12 l12 input-field">
-                  <input type="password" className="validate" ref="password" minLength={2} placeholder="Password" required />
+                  <input type="password" className="validate" ref="password" minLength={2} placeholder="Password" />
                 </div>
               </div>
               <div className="row">
