@@ -1,4 +1,8 @@
 TrainerHomeAdvertisement = React.createClass({
+  componentDidMount() {
+    $('.parallax').parallax();
+  },
+
   render() {
     return (
       <section id="parallax-mid">

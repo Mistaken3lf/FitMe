@@ -1,5 +1,15 @@
 TrainerHomeFinalLook = React.createClass({
+  componentDidMount() {
+    $('.parallax').parallax();
+  },
+
   render() {
+    const styles = {
+      backgroundHeader: {
+        backgroundImage: "url('/home/background4.jpg')"
+      }
+    };
+
     return (
       <section id="parallax-mid">
         <div className="parallax-container center-align">

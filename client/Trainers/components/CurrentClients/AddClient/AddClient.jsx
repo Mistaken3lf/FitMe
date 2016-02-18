@@ -2,7 +2,6 @@ AddClient = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
 
-
     //Get the client data from the form
     const username = this.refs.username.value;
     const password = this.refs.password.value;
@@ -20,25 +19,32 @@ AddClient = React.createClass({
     const bio = this.refs.bio.value;
     const fitnessGoals = this.refs.fitnessGoals.value;
 
-
-  //Call server method createClient with provided info
-  Meteor.call("registerClient", { username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, workPhone, emergencyContact, bio, fitnessGoals }, (error, result) => {
-    //Create client failed
-    if (error) {
-      //Popup a toast to display reason for error
-      Bert.alert(error.reason, 'danger');
+    if(firstName == "" || firstName == null) {
+      Bert.alert("Please Enter Your First Name", "danger");
+    } else if(email == "" || email == null) {
+      Bert.alert("Please Enter Your Email", "danger");
+    } else if(lastName == "" || lastName == null) {
+      Bert.alert("Please Enter Your Last Name", "danger");
     } else {
-      //Go back to my current clients after adding one
-      FlowRouter.go("/currentClients");
+      //Call server method createClient with provided info
+      Meteor.call("registerClient", { username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, workPhone, emergencyContact, bio, fitnessGoals }, (error, result) => {
+        //Create client failed
+        if (error) {
+          //Popup a toast to display reason for error
+          Bert.alert(error.reason, 'danger');
+        } else {
+          //Go back to my current clients after adding one
+          FlowRouter.go("/currentClients");
 
-      if (result) {
-        Bert.alert(result, 'danger');
+          if (result) {
+            Bert.alert(result, 'danger');
 
-      } else {
-        Bert.alert("Client Added", 'success');
-      }
+          } else {
+            Bert.alert("Client Added", 'success');
+          }
+        }
+      });
     }
-  });
   },
 
   render() {

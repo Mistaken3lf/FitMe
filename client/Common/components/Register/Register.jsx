@@ -2,33 +2,40 @@ Register = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
 
-    firstName = this.refs.firstName.value;
-    lastName = this.refs.lastName.value;
-    username = this.refs.username.value;
-    password = this.refs.password.value;
-    email = this.refs.email.value;
+    const firstName = this.refs.firstName.value;
+    const lastName = this.refs.lastName.value;
+    const username = this.refs.username.value;
+    const password = this.refs.password.value;
+    const email = this.refs.email.value;
 
-
-    //Call server method to register the trainer
-    Meteor.call("registerTrainer", {username, password, email, firstName, lastName}, (error) => {
-      //Error registering trainer
-      if (error) {
-        //Pop up an alert to show the error
-        Bert.alert(error.reason, 'danger');
-      } else {
-        //Login user with provided credentials
-        Meteor.loginWithPassword(username, password, (error) => {
-          //Failed to login
-          if (error) {
-            //Pop up an alert to show the reason for failed login
-            Bert.alert(error.reason, 'danger');
-          } else {
-            Bert.alert("Welcome To FitMe", "success");
-            FlowRouter.go('/trainerHome');
-          }
-        });
-      }
-    });
+    if(firstName == "" || firstName == null) {
+      Bert.alert("Please Enter Your First Name", "danger");
+    } else if(lastName == "" || lastName == null) {
+      Bert.alert("Please Enter Your Last Name", "danger");
+    } else if(email == "" || email == null) {
+        Bert.alert("Please Enter An Email", "danger")
+    } else {
+      //Call server method to register the trainer
+      Meteor.call("registerTrainer", {username, password, email, firstName, lastName}, (error) => {
+        //Error registering trainer
+        if (error) {
+          //Pop up an alert to show the error
+          Bert.alert(error.reason, 'danger');
+        } else {
+          //Login user with provided credentials
+          Meteor.loginWithPassword(username, password, (error) => {
+            //Failed to login
+            if (error) {
+              //Pop up an alert to show the reason for failed login
+              Bert.alert(error.reason, 'danger');
+            } else {
+              Bert.alert("Welcome To FitMe", "success");
+              FlowRouter.go('/trainerHome');
+            }
+          });
+        }
+      });
+    }
   },
 
   render() {
@@ -46,7 +53,7 @@ Register = React.createClass({
           <form onSubmit={this.handleSubmit} id="registerForm">
             <div className="row">
               <div className="col s12 m6 l6">
-                <input type="text" ref="username" className="validate" minLength={2} placeholder="Username" required />
+                <input type="text" ref="username" className="validate" minLength={2} placeholder="Username" required  />
               </div>
               <div className="col s12 m6 l6">
                 <input type="password" ref="password" className="validate" minLength={2} placeholder="Password" required />
