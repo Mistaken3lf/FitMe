@@ -46,11 +46,11 @@ Register = React.createClass({
     };
 
     return (
-      <div className="row">
+    <div className="row">
       <div className="col s12 m8 offset-m2 l6 offset-l3" id="registrationForm">
         <div className="card-panel grey lighten-4 z-depth-2">
           <h2 className="blue-text center">REGISTER</h2>
-          <form onSubmit={this.handleSubmit} id="registerForm">
+          <form onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="col s12 m6 l6">
                 <input type="text" ref="username" className="validate" minLength={2} placeholder="Username" required  />

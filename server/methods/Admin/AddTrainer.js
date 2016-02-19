@@ -1,14 +1,49 @@
-Meteor.methods({
-  createTrainer(newTrainerData) {
+const CreateTrainer = new ValidatedMethod({
+  name: "createTrainer",
+
+  validate: new SimpleSchema({
+    username: {
+      type: String,
+      min: 2
+    },
+
+    password: {
+      type: String,
+      min: 2
+    },
+
+    email: {
+      type: String,
+      regEx: SimpleSchema.RegEx.Email
+    },
+
+    firstName: {
+      type: String,
+      min: 2
+    },
+
+    lastName: {
+      type: String,
+      min: 2
+    }
+  }).validator(),
+
+  run({
+    username,
+    password,
+    email,
+    firstName,
+    lastName
+  }) {
     //Make sure user is an admin and logged in before allowing the add
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Create the new trainer
       let newTrainerId = Accounts.createUser({
-        username: newTrainerData.username,
-        password: newTrainerData.password,
-        email: newTrainerData.email,
+        username: username,
+        password: password,
+        email: email,
       });
-      
+
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(2, "weeks").format("MM/DD/YYYY");
 
@@ -16,8 +51,8 @@ Meteor.methods({
       //Meteor.user fields
       Meteor.users.update(newTrainerId, {
         $set: {
-          firstName: newTrainerData.firstName,
-          lastName: newTrainerData.lastName,
+          firstName: firstName,
+          lastName: lastName,
           clientLimit: 1,
           userStatus: "active",
           planType: "Free",
