@@ -16,6 +16,11 @@ Meteor.users.schema = new SimpleSchema({
     regEx: SimpleSchema.RegEx.Email
   },
 
+  lastLogin: {
+    type: String,
+    optional: true
+  },
+
   firstName: {
     type: String,
     optional: true
