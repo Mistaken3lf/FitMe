@@ -56,12 +56,12 @@ Login = React.createClass ({
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col s12 m12 l12 input-field">
-                  <input type="text" className="validate" ref="username" minLength={2} placeholder="Username" />
+                  <input type="text" className="validate" ref="username" minLength={2} placeholder="Username" required />
                 </div>
               </div>
               <div className="row">
                 <div className="col s12 m12 l12 input-field">
-                  <input type="password" className="validate" ref="password" minLength={2} placeholder="Password" />
+                  <input type="password" className="validate" ref="password" minLength={2} placeholder="Password" required />
                 </div>
               </div>
               <div className="row">

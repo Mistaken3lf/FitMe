@@ -70,21 +70,21 @@ AddClient = React.createClass({
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text boldProfileHeading">Username:</span>
-                          <input type="text" className="validate" ref="username" placeholder="jsmith" required />
+                          <input type="text" className="validate" ref="username" minLength={2} placeholder="jsmith" required />
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text boldProfileHeading">Password:</span>
-                          <input type="password" className="validate" ref="password" placeholder="secret password" required />
+                          <input type="password" className="validate" ref="password" minLength={2} placeholder="secret password" required />
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text boldProfileHeading">First Name:</span>
-                          <input type="text" className="validate" ref="firstName" placeholder="John" required />
+                          <input type="text" className="validate" ref="firstName" placeholder="John" minLength={2} required />
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text boldProfileHeading">Last Name:</span>
-                          <input type="text" className="validate" ref="lastName" placeholder="Smith" required />
+                          <input type="text" className="validate" ref="lastName" placeholder="Smith" minLength={2} required />
                         </div>
                       </div>
                       <div className="row">
