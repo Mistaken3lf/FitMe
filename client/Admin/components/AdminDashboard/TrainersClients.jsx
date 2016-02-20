@@ -16,7 +16,7 @@ TrainersClients = React.createClass({
 
   suspendClient(id) {
     //Suspend user clicked on
-    Meteor.call("suspendClientAdmin", id);
+    Meteor.call("suspendClientAdmin", {id});
   },
 
   deleteClient(id) {
@@ -42,7 +42,7 @@ TrainersClients = React.createClass({
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted.', 'success');
         //Call server function to delete the client clicked on
-        Meteor.call("removeClient", curUser._id);
+        Meteor.call("removeClient", {id});
       } else {
         swal('Cancelled', 'Your client is safe now :)', 'error');
       }

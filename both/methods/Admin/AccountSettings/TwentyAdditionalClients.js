@@ -1,13 +1,15 @@
-Meteor.methods({
-  twentyAdditionalClients(trainerId) {
-    new SimpleSchema({
-        trainerId: {
-          type: String
-        }
-      }).validate({
-        trainerId
-      });
-    
+const twentyAdditionalClients = new ValidatedMethod({
+  name: "twentyAdditionalClients",
+
+  validate: new SimpleSchema({
+    trainerId: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    trainerId
+  }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Add 20 additional clients to the trainers limit
       Meteor.users.update({
@@ -22,3 +24,4 @@ Meteor.methods({
     }
   }
 });
+

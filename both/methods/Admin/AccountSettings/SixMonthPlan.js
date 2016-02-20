@@ -1,13 +1,15 @@
-Meteor.methods({
-  sixMonthPlan(trainerId) {
-    new SimpleSchema({
-        trainerId: {
-          type: String
-        }
-      }).validate({
-        trainerId
-      });
-    
+const sixMonthPlan = new ValidatedMethod({
+  name: "sixMonthPlan",
+
+  validate: new SimpleSchema({
+    trainerId: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    trainerId
+  }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       let today = moment().format("MM/DD/YYYY");
       let expires = moment().add(6, "months").format("MM/DD/YYYY");
@@ -15,8 +17,8 @@ Meteor.methods({
       const curTrainer = Meteor.users.findOne({
         _id: trainerId
       });
-      
-      //Check if the current trainer already has more than 
+
+      //Check if the current trainer already has more than
       //50 clients limit
       if (curTrainer.clientLimit > 50) {
         Meteor.users.update({
@@ -30,7 +32,7 @@ Meteor.methods({
             hasPaid: true
           }
         });
-        
+
         //Update the trainers clients as well
         Meteor.users.update({
           createdBy: trainerId,
@@ -58,7 +60,7 @@ Meteor.methods({
             hasPaid: true
           }
         });
-        
+
         //Update the trainers clients as well
         Meteor.users.update({
           createdBy: trainerId,

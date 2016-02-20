@@ -1,17 +1,15 @@
-Meteor.methods({
-  paymentDueSoon(expiresOn, trainerId) {
-    new SimpleSchema({
-        trainerId: {
-          type: String
-        },
+const paymentDueSoon = new ValidatedMethod({
+  name: "paymentDueSoon",
 
-        expiresOn: {
-          type: String
-        }
-      }).validate({
-        trainerId, expiresOn
-      });
+  validate: new SimpleSchema({
+    trainerId: {
+      type: String
+    }
+  }).validator(),
 
+  run({
+    trainerId
+  }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       const trainer = Meteor.users.findOne({
         _id: trainerId

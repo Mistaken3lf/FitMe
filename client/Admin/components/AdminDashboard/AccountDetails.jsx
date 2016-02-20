@@ -17,7 +17,7 @@ AccountDetails = React.createClass({
 
   sendWarningEmail() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("sendInactiveEmail", trainerId, (error) => {
+    Meteor.call("sendInactiveEmail", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -28,7 +28,7 @@ AccountDetails = React.createClass({
 
   activateMonthlyPlan() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("monthlyPlan", trainerId, (error) => {
+    Meteor.call("monthlyPlan", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -39,7 +39,7 @@ AccountDetails = React.createClass({
 
   activateSixMonthPlan() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("sixMonthPlan", trainerId, (error) => {
+    Meteor.call("sixMonthPlan", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -50,7 +50,7 @@ AccountDetails = React.createClass({
 
   activateYearlyPlan() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("yearlyPlan", trainerId, (error) => {
+    Meteor.call("yearlyPlan", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -61,7 +61,7 @@ AccountDetails = React.createClass({
 
   addFiveAddidionalClients() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("fiveAdditionalClients", trainerId, (error) => {
+    Meteor.call("fiveAdditionalClients", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -72,7 +72,7 @@ AccountDetails = React.createClass({
 
   addTenAddidionalClients() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("tenAdditionalClients", trainerId, (error) => {
+    Meteor.call("tenAdditionalClients", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -83,7 +83,7 @@ AccountDetails = React.createClass({
 
   addTwentyAddidionalClients() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("twentyAdditionalClients", trainerId, (error) => {
+    Meteor.call("twentyAdditionalClients", {trainerId}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
@@ -112,7 +112,8 @@ AccountDetails = React.createClass({
       if (isConfirm) {
         swal('Reset!', 'Account has been reset.', 'success');
         //Call server function to delete the client clicked on
-        Meteor.call("resetAccount", trainerId);
+        Meteor.call("resetAccount", {trainerId});
+        Bert.alert("Account has been reset", "success");
       } else {
         swal('Cancelled', 'Account is safe now :)', 'error');
       }
