@@ -1,7 +1,7 @@
 ActiveTrainers = React.createClass({
   suspendTrainer(id) {
     //Suspend the trainer clicked on
-    Meteor.call("suspendTrainer", id);
+    Meteor.call("suspendTrainer", {id});
   },
 
   deleteTrainer(id) {
@@ -25,7 +25,7 @@ ActiveTrainers = React.createClass({
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'User has been deleted.', 'success');
-        Meteor.call("removeTrainer", curUser._id);
+        Meteor.call("removeTrainer", {id});
       } else {
         swal('Cancelled', 'Your user is safe now.', 'error');
       }
@@ -33,7 +33,7 @@ ActiveTrainers = React.createClass({
   },
 
   paymentWarning(id, expiresOn) {
-    Meteor.call("paymentDueSoon", expiresOn, id, (error) => {
+    Meteor.call("paymentDueSoon", {expiresOn, id}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'growl-top-right');
       } else {

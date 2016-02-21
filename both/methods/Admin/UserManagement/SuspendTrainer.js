@@ -1,19 +1,19 @@
-Meteor.methods({
-  //Delete the client when the delete button on the current clients
-  //page is clicked
-  suspendTrainer(trainerId) {
-    new SimpleSchema({
-        trainerId: {
-          type: String
-        }
-      }).validate({
-        trainerId
-      });
+const suspendTrainer = new ValidatedMethod({
+  name: "suspendTrainer",
 
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     //Make sure the user is a trainer and logged in before
     //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'admin')) {
-      const user = Meteor.users.findOne(trainerId);
+      const user = Meteor.users.findOne(id);
 
       //Check if the user is active
       if (user.userStatus == "active") {
@@ -59,6 +59,8 @@ Meteor.methods({
           multi: true
         });
       }
+    } else {
+      throw new Meteor.Error("not-authorized");
     }
   }
 });

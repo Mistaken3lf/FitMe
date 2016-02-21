@@ -2,17 +2,22 @@ const paymentDueSoon = new ValidatedMethod({
   name: "paymentDueSoon",
 
   validate: new SimpleSchema({
-    trainerId: {
+    id: {
+      type: String
+    },
+
+    expiresOn: {
       type: String
     }
   }).validator(),
 
   run({
-    trainerId
+    id,
+    expiresOn
   }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
       const trainer = Meteor.users.findOne({
-        _id: trainerId
+        _id: id
       });
 
       //Get trainers email address

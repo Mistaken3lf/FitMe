@@ -1,38 +1,41 @@
-Meteor.methods({
-  removeTrainer(trainerId) {
-    new SimpleSchema({
-        trainerId: {
-          type: String
-        }
-      }).validate({
-        trainerId
-      });
-    
+const removeTrainer = new ValidatedMethod({
+  name: "removeTrainer",
+
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     //Make sure user is an admin and logged in before allowing the remove
     if (Roles.userIsInRole(this.userId, "admin")) {
+
       //Remove cardio associated with the trainer being deleted
       ClientCardio.remove({
-        createdBy: trainerId
+        createdBy: id
       });
 
       //Remove client stats associated with the trainer being deleted
       ClientStats.remove({
-        createdBy: trainerId
+        createdBy: id
       });
 
       //Remove client workouts associated with the trainer being deleted
       ClientWorkout.remove({
-        createdBy: trainerId
+        createdBy: id
       });
 
       //Remove clients associated with the current trainer you are deleting
       Meteor.users.remove({
-        createdBy: trainerId
+        createdBy: id
       });
-      
+
       //Remove trainer clicked on
-      Meteor.users.remove(trainerId);
-      
+      Meteor.users.remove(id);
+
     } else {
       throw new Meteor.Error("not-authorized");
     }
