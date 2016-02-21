@@ -9,7 +9,11 @@ CurrentClients = React.createClass({
       loading: !currentClients.ready() || !clientData.ready(),
       currentClients: Meteor.users.find({
         createdBy: Meteor.userId()
-      }).fetch()
+      }).fetch(),
+
+      currentUser: Meteor.users.findOne({
+        _id: Meteor.userId()
+      })
     }
   },
 
@@ -36,6 +40,10 @@ CurrentClients = React.createClass({
     } else if(Meteor.loggingIn()) {
       return (
         <Loading />
+      );
+    } else if(this.data.currentUser.userStatus == "suspended") {
+      return (
+        <SuspendedAccount />
       );
     } else if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (

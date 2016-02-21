@@ -32,6 +32,10 @@ MyProfile = React.createClass({
       return (
         <Loading />
       );
+    } else if(this.data.userProfile.userStatus == "suspended") {
+      return (
+        <SuspendedAccount />
+      );
     } else if (Meteor.user()) {
       return (
         <div className="row">
