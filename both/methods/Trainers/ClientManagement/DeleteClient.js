@@ -1,15 +1,15 @@
-Meteor.methods({
-  deleteClient(clientId) {
-    new SimpleSchema({
-        clientId: {
-          type: String
-        }
-      }).validate({
-        clientId
-      });
-    
-    //Make sure the user is a trainer and logged in before
-    //allowing the deletion of a client
+const deleteClient = new ValidatedMethod({
+  name: "deleteClient",
+
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const currentTrainer = Meteor.users.findOne({
         _id: this.userId
@@ -18,9 +18,9 @@ Meteor.methods({
       if (currentTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Your account is suspended");
       }
-      
+
       const thisClient = Meteor.users.findOne({
-        _id: clientId
+        _id: id
       });
 
 
@@ -28,24 +28,25 @@ Meteor.methods({
       if (thisClient.createdBy == this.userId) {
         //Remove cardio of the client being deleted
         ClientCardio.remove({
-          whosCardio: clientId
+          whosCardio: id
         });
 
         //Remove stats of the client being deleted
         ClientStats.remove({
-          whosStats: clientId
+          whosStats: id
         });
 
         //Remove workout of client being deleted
         ClientWorkout.remove({
-          whosWorkout: clientId
+          whosWorkout: id
         });
 
         //Delete the client clicked on
-        Meteor.users.remove(clientId);
+        Meteor.users.remove(id);
       }
     } else {
       throw new Meteor.Error("not-authorized");
     }
   }
 });
+

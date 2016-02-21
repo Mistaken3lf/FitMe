@@ -25,7 +25,7 @@ CurrentClients = React.createClass({
 
     //Dont let trainer add clients if they are suspended
     if (curTrainer.userStatus == "suspended") {
-      Bert.alert("Sorry, your account has been suspended", "danger", "growl-top-right");
+      Bert.alert("Sorry, your account has been suspended", "danger");
       return;
     } else {
       FlowRouter.go("/addClient");

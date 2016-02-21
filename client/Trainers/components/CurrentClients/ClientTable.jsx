@@ -10,7 +10,7 @@ ClientTable = React.createClass({
 
     //Dont let user click on a client if they are suspended
     if (thisTrainer.userStatus == "suspended") {
-      Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+      Bert.alert("Sorry, your account has been suspended", 'danger');
     } else {
       FlowRouter.go("/clientDashboard/" + id);
     }
@@ -24,7 +24,7 @@ ClientTable = React.createClass({
 
     //Check if the user is suspended
     if (curUser.userStatus == "suspended") {
-      Bert.alert("Sorry, your account has been suspended", "danger", "growl-top-right");
+      Bert.alert("Sorry, your account has been suspended", "danger");
       return;
     }
 
@@ -45,9 +45,9 @@ ClientTable = React.createClass({
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted', 'success');
         //Call server function to delete the client clicked on
-        Meteor.call("deleteClient", curUser._id, (error, result) => {
+        Meteor.call("deleteClient", {id}, (error, result) => {
           if (error) {
-            Bert.alert("Sorry, your account has been suspended", 'danger', 'growl-top-right');
+            Bert.alert("Sorry, your account has been suspended", 'danger');
           }
         });
       } else {
@@ -58,9 +58,9 @@ ClientTable = React.createClass({
 
   suspendClient(id) {
     //Suspend client clicked on
-    Meteor.call("suspendClient", id, (error, result) => {
+    Meteor.call("suspendClient", {id}, (error, result) => {
       if (error) {
-        Bert.alert('Sorry, your account is suspended', "danger", 'growl-top-right');
+        Bert.alert('Sorry, your account is suspended', "danger");
       }
     });
   },
