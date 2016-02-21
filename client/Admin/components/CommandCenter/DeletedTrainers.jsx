@@ -77,16 +77,16 @@ DeletedTrainers = React.createClass({
                   <tbody>
                     {this.props.deletedTrainers.map((deletedTrainers) => {
                     return (
-                      <tr key={deletedTrainer._id}>
-                        <td><a href="#" onClick={this.trainersDashboard.bind(null, deletedTrainer._id)}>{deletedTrainer.username}</a></td>
-                        <td>{deletedTrainer.firstName}</td>
-                        <td>{deletedTrainer.lastName}</td>
-                        <td>{deletedTrainer.userStatus}</td>
-                        <td>{deletedTrainer.planType}</td>
-                        <td>{deletedTrainer.expiresOn}</td>
-                        <td><button className="btn-floating amber waves-effect" onClick={this.suspendTrainer.bind(null, deletedTrainer._id)}><i className="material-icons">https</i></button></td>
-                        <td><button className="btn-floating red waves-effect" onClick={this.deleteTrainer.bind(null, deletedTrainer._id)}><i className="material-icons">remove</i></button></td>
-                        <td><button className="btn-floating green waves-effect" onClick={this.paymentWarning.bind(null, deletedTrainer._id, deletedTrainer.expiresOn)}><i className="material-icons">assignment_late</i></button></td>
+                      <tr key={deletedTrainers._id}>
+                        <td><a href="#" onClick={this.trainersDashboard.bind(null, deletedTrainers._id)}>{deletedTrainers.username}</a></td>
+                        <td>{deletedTrainers.firstName}</td>
+                        <td>{deletedTrainers.lastName}</td>
+                        <td>{deletedTrainers.userStatus}</td>
+                        <td>{deletedTrainers.planType}</td>
+                        <td>{deletedTrainers.expiresOn}</td>
+                        <td><button className="btn-floating amber waves-effect" onClick={this.suspendTrainer.bind(null, deletedTrainers._id)}><i className="material-icons">https</i></button></td>
+                        <td><button className="btn-floating red waves-effect" onClick={this.deleteTrainer.bind(null, deletedTrainers._id)}><i className="material-icons">remove</i></button></td>
+                        <td><button className="btn-floating green waves-effect" onClick={this.paymentWarning.bind(null, deletedTrainers._id, deletedTrainers.expiresOn)}><i className="material-icons">assignment_late</i></button></td>
                       </tr>
                     );
                     })}
