@@ -1,11 +1,11 @@
 Meteor.methods({
-  resetSaturdaysSchedule(saturdaysItem) {
+  resetSaturdaysSchedule(id) {
     new SimpleSchema({
-      saturdaysItem: {
+      id: {
         type: String
       }
     }).validate({
-      saturdaysItem
+      id
     });
 
     if (Roles.userIsInRole(this.userId, "trainer")) {
@@ -14,30 +14,28 @@ Meteor.methods({
       });
 
       const trainersClient = Meteor.users.findOne({
-        _id: saturdaysItem
+        _id: id
       });
-      
+
       ///Make sure the trainer is not suspended
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
-      
+
       //Make sure the trainer owns the client
-      if (trainersClient.createdBy != this.userId) {
-        throw new Meteor.Error("Sorry, this is not your client");
+      if (trainersClient.createdBy == this.userId) {
+        //Reset saturdays schedule
+        Meteor.users.update({
+          _id: id
+        }, {
+          $set: {
+            saturdaysScheduleStart: "",
+            saturdaysScheduleEnd: "",
+            saturdayDescription: "",
+            saturdayStatus: false
+          }
+        });
       }
-      
-      //Reset saturdays schedule
-      Meteor.users.update({
-        _id: saturdaysItem
-      }, {
-        $set: {
-          saturdaysScheduleStart: "",
-          saturdaysScheduleEnd: "",
-          saturdayDescription: "",
-          saturdayStatus: false
-        }
-      });
 
     } else {
       throw new Meteor.Error("not-authorized");
