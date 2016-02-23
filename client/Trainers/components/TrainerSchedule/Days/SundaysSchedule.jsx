@@ -1,6 +1,6 @@
 SundaysSchedule = React.createClass({
   removeFromSunday(id) {
-    Meteor.call("resetSundaysSchedule", id, (error) => {
+    Meteor.call("resetSundaysSchedule", {id}, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       }

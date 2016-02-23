@@ -1,13 +1,15 @@
-Meteor.methods({
-  resetTuesdaysSchedule(id) {
-    new SimpleSchema({
-      id: {
-        type: String
-      }
-    }).validate({
-      id
-    });
+const ResetTuesdaysSchedule = new ValidatedMethod({
+  name: "resetTuesdaysSchedule",
 
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
@@ -23,7 +25,7 @@ Meteor.methods({
       }
 
       //Make sure the trainer owns the client
-      if (trainersClient.createdBy != this.userId) {
+      if (trainersClient.createdBy == this.userId) {
         //Reset tuesdays schedule
         Meteor.users.update({
           _id: id

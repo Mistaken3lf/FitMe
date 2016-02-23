@@ -1,13 +1,15 @@
-Meteor.methods({
-  resetFridaysSchedule(id) {
-    new SimpleSchema({
-      id: {
-        type: String
-      }
-    }).validate({
-      id
-    });
+const ResetMondaysSchedule = new ValidatedMethod({
+  name: "resetMondaysSchedule",
 
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
@@ -17,22 +19,22 @@ Meteor.methods({
         _id: id
       });
 
-      //Make sure the trainer is not suspended
+      //Make sure trainer is not suspended
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
 
       //Make sure the trainer owns the client
       if (trainersClient.createdBy == this.userId) {
-        //Reset fridays schedule
+        //Reset mondays schedule
         Meteor.users.update({
           _id: id
         }, {
           $set: {
-            fridaysScheduleStart: "",
-            fridaysScheduleEnd: "",
-            fridayDescription: "",
-            fridayStatus: false
+            mondaysScheduleStart: "",
+            mondaysScheduleEnd: "",
+            mondayDescription: "",
+            mondayStatus: false
           }
         });
       }

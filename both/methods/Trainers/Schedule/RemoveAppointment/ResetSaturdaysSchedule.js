@@ -1,13 +1,15 @@
-Meteor.methods({
-  resetSaturdaysSchedule(id) {
-    new SimpleSchema({
-      id: {
-        type: String
-      }
-    }).validate({
-      id
-    });
+const ResetSaturdaysSchedule = new ValidatedMethod({
+  name: "resetSaturdaysSchedule",
 
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId

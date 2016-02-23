@@ -1,13 +1,15 @@
-Meteor.methods({
-  resetThursdaysSchedule(id) {
-    new SimpleSchema({
-      id: {
-        type: String
-      }
-    }).validate({
-      id
-    });
+const ResetFridaysSchedule = new ValidatedMethod({
+  name: "resetFridaysSchedule",
 
+  validate: new SimpleSchema({
+    id: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    id
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
@@ -24,18 +26,19 @@ Meteor.methods({
 
       //Make sure the trainer owns the client
       if (trainersClient.createdBy == this.userId) {
-        //Reset thursdays schedule
+        //Reset fridays schedule
         Meteor.users.update({
           _id: id
         }, {
           $set: {
-            thursdaysScheduleStart: "",
-            thursdaysScheduleEnd: "",
-            thursdayDescription: "",
-            thursdayStatus: false
+            fridaysScheduleStart: "",
+            fridaysScheduleEnd: "",
+            fridayDescription: "",
+            fridayStatus: false
           }
         });
       }
+
     } else {
       throw new Meteor.Error("not-authorized");
     }
