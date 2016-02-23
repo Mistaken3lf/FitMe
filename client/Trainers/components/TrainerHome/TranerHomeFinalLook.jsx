@@ -6,14 +6,14 @@ TrainerHomeFinalLook = React.createClass({
   render() {
     const styles = {
       backgroundHeader: {
-        backgroundImage: "url('/home/background4.jpg')"
+        backgroundImage: "url('/Home/background4.jpg')"
       }
     };
 
     return (
       <section id="parallax-mid">
         <div className="parallax-container center-align">
-          <div className="parallax"><img src="/home/background4.jpg" /></div>
+          <div className="parallax"><img src="/Home/background4.jpg" /></div>
           <br />
           <br />
           <br />

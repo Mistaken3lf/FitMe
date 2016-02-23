@@ -14,7 +14,7 @@ Header = React.createClass({
     return (
       <section id="parallax-top">
         <div className="parallax-container">
-          <div className="parallax"><img src="/home/bg-workout.jpg" /></div>
+          <div className="parallax"><img src="/Home/bg-workout.jpg" /></div>
           <br />
           <br />
           <br />

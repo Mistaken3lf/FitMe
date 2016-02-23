@@ -4,7 +4,7 @@ Meteor.startup(function () {
   if (Meteor.users.find().count() === 0) {
     let admin = Accounts.createUser({
       username: "admin",
-      password: "d1v3lop3r25",
+      password: "d1v3lop3r26",
       email: "bigt371@gmail.com",
     });
 

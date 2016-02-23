@@ -26,7 +26,7 @@ TrainerNavigation = React.createClass({
             <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
             <ul className="side-nav" id="mobile-menu">
               <div className="grey lighten-2">
-                <img className="sidebarLogo" src="/navigation/fitMeSidebarLogo.png" />
+                <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
                 <br />
                 <hr className="navSeperator" />
               </div>
@@ -44,7 +44,7 @@ TrainerNavigation = React.createClass({
             </ul>
             <ul className="side-nav fixed" id="desktop-menu">
               <div className="grey lighten-2">
-                <img className="sidebarLogo" src="/navigation/fitMeSidebarLogo.png" />
+                <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
                 <br />
                 <hr className="navSeperator" />
               </div>

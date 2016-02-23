@@ -2,7 +2,7 @@ TrainerHomeHeader = React.createClass({
   render() {
     const styles = {
       backgroundHeader: {
-        backgroundImage: "url('/home/bg-workout.jpg')"
+        backgroundImage: "url('/Home/bg-workout.jpg')"
       }
     };
 

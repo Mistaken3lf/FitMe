@@ -25,14 +25,14 @@ AppPreview = React.createClass({
           <div className="slider">
             <ul className="slides">
               <li>
-                <img src="/home/slider-clientList.jpg" />
+                <img src="/Home/slider-clientList.jpg" />
                 <div className="caption left-align">
                   <h3>CLIENT LIST</h3>
                   <h5 className="dark white-text">View and Manage your clients.</h5>
                 </div>
               </li>
               <li>
-                <img src="/home/slider-schedule.jpg" />
+                <img src="/Home/slider-schedule.jpg" />
                 <div className="caption right-align">
                   <h3>Workout Schedule</h3>
                   <h5 className="light white-text">Never miss a session.</h5>
@@ -40,14 +40,14 @@ AppPreview = React.createClass({
                 </div>
               </li>
               <li>
-                <img src="/home/slider-cardio.jpg" />
+                <img src="/Home/slider-cardio.jpg" />
                 <div className="caption left-align">
                   <h3>Cardio Tracking</h3>
                   <h5 className="light white-text">You do the running, we do the tracking!</h5>
                 </div>
               </li>
               <li>
-                <img src="/home/slider-workout-1.jpg" />
+                <img src="/Home/slider-workout-1.jpg" />
                 <div className="caption right-align">
                   <h3>WORKOUT</h3>
                   <h5 className="light white-text">If you build it, they will come!</h5>

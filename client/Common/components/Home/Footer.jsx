@@ -24,7 +24,7 @@ Footer = React.createClass({
         <div className="footer-copyright grey">
           <div className="container">
             ©2016
-            <img className="responsive-img footer-logo" src="/home/FitMe-text-logo3.png" /> All rights reserved.
+            <img className="responsive-img footer-logo" src="/Home/FitMe-text-logo3.png" /> All rights reserved.
             <a className="white-text text-accent-2 right" href="http://www.divelop.io"><b>&lt;div&gt;elop LLC</b></a>
           </div>
         </div>
