@@ -14,7 +14,7 @@ TrainerHomeHeader = React.createClass({
             <br />
             <br />
             <div className="col l6 s12 center-align">
-              <img className="responsive-img logo-img" src="/home/FitMe-text-logo3.png" />
+              <img className="responsive-img logo-img" src="/Home/FitMe-text-logo3.png" />
             </div>
             <br />
             <br />
