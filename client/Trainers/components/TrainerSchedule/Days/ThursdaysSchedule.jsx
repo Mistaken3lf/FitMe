@@ -1,16 +1,28 @@
 ThursdaysSchedule = React.createClass({
+  removeFromThursday(id) {
+    Meteor.call("resetThursdaysSchedule", id, (error) => {
+      if (error) {
+        Bert.alert(error.reason, 'danger');
+      }
+    });
+  },
+
+  goToDashboard(id) {
+    FlowRouter.go("/clientDashboard/" + id);
+  },
+
   render() {
     return (
-      <div class="col s12 m6 l6">
-        <div class="card white trainerSchedule">
-          <div class="row">
-            <div class="col s12 m12 l12">
-              <h4 class="center">Thursday</h4>
+      <div className="col s12 m6 l6">
+        <div className="card white trainerSchedule">
+          <div className="row">
+            <div className="col s12 m12 l12">
+              <h4 className="center">Thursday</h4>
               {this.props.thursdaysData.map((thursday) => {
               return (
-                <div>
-                  <li><a href="#">{thursday.firstName} {thursday.lastName} </a><span class="removeFromThursdayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {thursday.thursdaysScheduleStart}</h6> <h6 class="workoutEndTime"><b>End:</b> {thursday.thursdaysScheduleEnd} <span class="removeFromThursday">[x]</span></h6></li>
-                  <div class="workoutDescription">Notes: {thursday.thursdayDescription}</div>
+                <div key={thursday._id}>
+                  <li><a href="#" onClick={this.goToDashboard.bind(null, thursday._id)}>{thursday.firstName} {thursday.lastName} </a><span className="red-text removeFromThursdayMobile" onClick={this.removeFromThursday.bind(null, thursday._id)}>[x]</span><h6 className="workoutStartTime"><b>Start:</b> {thursday.thursdaysScheduleStart}</h6> <h6 className="workoutEndTime"><b>End:</b> {thursday.thursdaysScheduleEnd} <span className="removeFromThursday red-text" onClick={this.removeFromThursday.bind(null, thursday._id)}>[x]</span></h6></li>
+                  <div className="workoutDescription">Notes: {thursday.thursdayDescription}</div>
                 </div>
               );
               })}

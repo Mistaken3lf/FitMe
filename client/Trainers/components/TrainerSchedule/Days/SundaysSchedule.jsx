@@ -1,16 +1,28 @@
 SundaysSchedule = React.createClass({
+  removeFromSunday(id) {
+    Meteor.call("resetSundaysSchedule", id, (error) => {
+      if (error) {
+        Bert.alert(error.reason, 'danger');
+      }
+    });
+  },
+
+  goToDashboard(id) {
+    FlowRouter.go("/clientDashboard/" + id);
+  },
+
   render() {
     return (
-      <div class="col s12 m6 l6">
-        <div class="card white trainerSchedule">
-          <div class="row">
-            <div class="col s12 m12 l12">
-              <h4 class="center">Sunday</h4>
+      <div className="col s12 m6 l6">
+        <div className="card white trainerSchedule">
+          <div className="row">
+            <div className="col s12 m12 l12">
+              <h4 className="center">Sunday</h4>
               {this.props.sundaysData.map((sunday) => {
               return (
-                <div>
-                  <li><a href="#">{sunday.firstName} {sunday.lastName} </a><span class="removeFromSundayMobile">[x]</span><h6 class="workoutStartTime"><b>Start:</b> {sunday.sundaysScheduleStart}</h6> <h6 class="workoutEndTime"><b>End:</b> {sunday.sundaysScheduleEnd} <span class="removeFromSunday">[x]</span></h6></li>
-                  <div class="workoutDescription">Notes: {sunday.sundayDescription}</div>
+                <div key={sunday._id}>
+                  <li><a href="#" onClick={this.goToDashboard.bind(null, sunday._id)}>{sunday.firstName} {sunday.lastName} </a><span className="red-text removeFromSundayMobile" onClick={this.removeFromSunday.bind(null, sunday._id)}>[x]</span><h6 className="workoutStartTime"><b>Start:</b> {sunday.sundaysScheduleStart}</h6> <h6 className="workoutEndTime"><b>End:</b> {sunday.sundaysScheduleEnd} <span className="removeFromSunday red-text" onClick={this.removeFromSunday.bind(null, sunday._id)}>[x]</span></h6></li>
+                  <div className="workoutDescription">Notes: {sunday.sundayDescription}</div>
                 </div>
               );
               })}

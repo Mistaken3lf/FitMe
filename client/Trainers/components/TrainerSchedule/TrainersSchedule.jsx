@@ -190,6 +190,16 @@ TrainersSchedule = React.createClass({
     };
   },
 
+  startOfWeek() {
+    const startDay = moment().startOf("week").format("ddd. MMM Do");
+    return startDay;
+  },
+
+  endOfWeek() {
+    const endDay = moment().endOf("week").format("ddd. MMM Do");
+    return endDay;
+  },
+
   render() {
     if (this.data.loading) {
       return (
@@ -201,30 +211,30 @@ TrainersSchedule = React.createClass({
       );
     } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
-        <div class="row">
-          <div class="col s12 m12 l12">
-            <div class="card grey lighten-4">
-              <div class="col s12 m12 l12">
-                <div class="card white z-depth-1">
-                  <div class="blue card-title center-align white-text">MY SCHEDULE CARD</div>
+        <div className="row">
+          <div className="col s12 m12 l12">
+            <div className="card grey lighten-4">
+              <div className="col s12 m12 l12">
+                <div className="card white z-depth-1">
+                  <div className="blue card-title center-align white-text">MY SCHEDULE CARD</div>
                 </div>
               </div>
-              <div class="row">
-                <h5 class="center"><b>WEEK OF:</b><br /> Start - End</h5>
+              <div className="row">
+                <h5 className="center"><b>WEEK OF:</b><br /> {this.startOfWeek()} - {this.endOfWeek()}</h5>
               </div>
-              <div class="row">
+              <div className="row">
                 <MondaysSchedule mondaysData={this.data.mondaysSchedule} />
                 <TuesdaysSchedule tuesdaysData={this.data.tuesdaysSchedule} />
               </div>
-              <div class="row">
+              <div className="row">
                 <WednesdaysSchedule wednesdaysData={this.data.wednesdaysSchedule} />
                 <ThursdaysSchedule thursdaysData={this.data.thursdaysSchedule} />
               </div>
-              <div class="row">
+              <div className="row">
                 <FridaysSchedule fridaysData={this.data.fridaysSchedule} />
                 <SaturdaysSchedule saturdaysData={this.data.saturdaysSchedule} />
               </div>
-              <div class="row">
+              <div className="row">
                 <SundaysSchedule sundaysData={this.data.sundaysSchedule} />
               </div>
             </div>
