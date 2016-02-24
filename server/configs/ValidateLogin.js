@@ -16,7 +16,7 @@ Accounts.validateLoginAttempt((loginAttempt) => {
   }
 
   //Check if the user has been "deleted" and dont let them login
-  if(thisUser.userStatus == "deleted") {
+  if (thisUser.userStatus == "deleted") {
     throw new Meteor.Error(403, "Invalid Login Credentials");
   }
 
