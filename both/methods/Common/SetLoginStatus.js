@@ -1,5 +1,9 @@
-Meteor.methods({
-  setLoginStatus() {
+const setLoginStatus = new ValidatedMethod({
+  name: "setLoginStatus",
+
+  validate: null,
+
+  run() {
     //Make sure user is logged in before letting them update
     //a profile
     if (Meteor.userId()) {
