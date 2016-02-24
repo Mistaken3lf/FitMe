@@ -1,10 +1,10 @@
 AdminHome = React.createClass({
   render() {
-    if(Meteor.loggingIn()) {
+    if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
-    } else if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <div>
           <AdminHomeHeader />

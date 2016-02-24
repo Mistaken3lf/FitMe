@@ -1,13 +1,13 @@
 AppPreview = React.createClass({
   componentDidMount() {
-    $('.slider').slider({
-      full_width: true
-    });
-  },
+      $('.slider').slider({
+        full_width: true
+      });
+    },
 
-  render() {
-    return (
-      <div>
+    render() {
+      return (
+        <div>
         <section id="about">
           <div className="container">
             <br />
@@ -64,6 +64,6 @@ AppPreview = React.createClass({
         <br />
         <br />
       </div>
-    );
-  }
+      );
+    }
 });

@@ -22,15 +22,15 @@ AdminDashboard = React.createClass({
   },
 
   render() {
-    if(this.data.loading) {
+    if (this.data.loading) {
       return (
         <Loading />
       );
-    } else if(Meteor.loggingIn()) {
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
-    } else if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <div className="row">
           <div className="col s12 m12 l12">

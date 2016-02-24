@@ -52,17 +52,17 @@ MyAccount = React.createClass({
   },
 
   render() {
-    if(Meteor.loggingIn()) {
+    if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
-    } else if(this.data.loading) {
+    } else if (this.data.loading) {
       return (
         <Loading />
       );
-    } else if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
-      <div className="row">
+        <div className="row">
         <div className="col s12 m12 l12">
           <div className="card z-depth-3 grey lighten-4">
             <div className="col s12 m12 l12">

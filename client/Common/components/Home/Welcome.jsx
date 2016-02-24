@@ -1,4 +1,4 @@
-Welcome= React.createClass({
+Welcome = React.createClass({
   render() {
     return (
       <section id="about">

@@ -19,8 +19,10 @@ TrainersProfile = React.createClass({
     const data = e.target.value;
     const trainerId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateTrainersProfile", {fieldName, data, trainerId}, (error) => {
-      if(error) {
+    Meteor.call("updateTrainersProfile", {
+      fieldName, data, trainerId
+    }, (error) => {
+      if (error) {
         Bert.alert(error.reason, "danger");
       }
     });

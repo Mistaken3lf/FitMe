@@ -1,7 +1,7 @@
 ClientHomeFooter = React.createClass({
   render() {
     return (
-       <footer className="page-footer" id="footerColor">
+      <footer className="page-footer" id="footerColor">
         <div className="container">
           <div className="row center">
             <div className="col s12 m6 offset-m3 l6 offset-l3 center">

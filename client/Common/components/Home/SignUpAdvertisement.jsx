@@ -1,11 +1,11 @@
 SignUpAdvertisement = React.createClass({
   componentDidMount() {
-    $('.parallax').parallax();
-  },
+      $('.parallax').parallax();
+    },
 
-  render() {
-    return (
-      <section id="parallax-mid">
+    render() {
+      return (
+        <section id="parallax-mid">
         <div className="parallax-container center-align">
           <div className="parallax"><img src="/Home/keyboard-lax.jpg" /></div>
           <br />
@@ -27,6 +27,6 @@ SignUpAdvertisement = React.createClass({
           <br />
         </div>
       </section>
-    );
-  }
+      );
+    }
 });

@@ -33,21 +33,21 @@ CurrentClients = React.createClass({
   },
 
   render() {
-    if(this.data.loading) {
+    if (this.data.loading) {
       return (
         <Loading />
       );
-    } else if(Meteor.loggingIn()) {
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
-    } else if(this.data.currentUser.userStatus == "suspended") {
+    } else if (this.data.currentUser.userStatus == "suspended") {
       return (
         <SuspendedAccount />
       );
-    } else if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
-       <div className="row">
+        <div className="row">
         <div className="col s12">
           <div className="card z-depth-1 grey lighten-4">
             <div className="col s12 m12 l12">

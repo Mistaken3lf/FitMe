@@ -1,4 +1,4 @@
-Login = React.createClass ({
+Login = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
 

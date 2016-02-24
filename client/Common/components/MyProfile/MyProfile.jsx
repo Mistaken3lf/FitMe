@@ -16,8 +16,10 @@ MyProfile = React.createClass({
     const fieldName = e.target.name;
     const data = e.target.value;
 
-    Meteor.call("updateMyProfile", {fieldName, data}, (error) => {
-      if(error) {
+    Meteor.call("updateMyProfile", {
+      fieldName, data
+    }, (error) => {
+      if (error) {
         Bert.alert(error.reason, "danger");
       }
     });
@@ -32,7 +34,7 @@ MyProfile = React.createClass({
       return (
         <Loading />
       );
-    } else if(this.data.userProfile.userStatus == "suspended") {
+    } else if (this.data.userProfile.userStatus == "suspended") {
       return (
         <SuspendedAccount />
       );
@@ -128,7 +130,7 @@ MyProfile = React.createClass({
           </div>
         </div>
       );
-    } else if(Meteor.loggingIn()) {
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
