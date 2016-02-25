@@ -14,7 +14,7 @@ ClientsMonday = React.createClass({
     });
   },
 
-  cancelAppointment(id) {
+  cancelAppointment() {
     if ((this.refs.mondaysScheduleStart.value == "") || (this.refs.mondaysScheduleEnd.value == "") || (this.refs.mondayDescription.value == "")) {
       Bert.alert("You must fill in the entire appointment to cancel", "danger");
       return;
@@ -38,7 +38,7 @@ ClientsMonday = React.createClass({
           this.refs.mondaysScheduleEnd.value = "";
           this.refs.mondayDescription.value = "";
           const clientId = FlowRouter.getParam('_id');
-          Meteor.call("cancelMondaysAppointment", {id});
+          Meteor.call("cancelMondaysAppointment", {clientId});
         } else {
           swal('Cancelled', 'Your appointment will not be canceled.', 'error');
         }
@@ -124,7 +124,7 @@ ClientsMonday = React.createClass({
               <div className="row center">
                 <div className="col s12 m12 l12">
                   <div className="row">
-                    <button className="btn red waves-effect" onClick={this.cancelAppointment.bind(null, this.props.scheduleData._id)}>Cancel Appointment</button>
+                    <button className="btn red waves-effect" onClick={this.cancelAppointment}>Cancel Appointment</button>
                   </div>
                 </div>
               </div>
