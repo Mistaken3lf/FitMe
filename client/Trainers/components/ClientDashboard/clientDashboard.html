@@ -1,40 +1,5 @@
 <template name="clientDashboard">
-  {{#if isInRole 'trainer'}}
-  <div class="row">
-    <div class="col s12 m12 l3 offset-l3">
-      <img class="responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg">
-    </div>
-    <div class="col s12 m12 l1">
-      <img class="responsive-img blueLine" src="/Dashboard/Profile/blueLine.jpg">
-    </div>
-    <div class="col s12 m12 l3">
-    <h5 class="center blue-text trainerViewDashNameText"><b>{{#with myClient}}{{firstName}} {{lastName}}{{/with}}</b></h5>
-    <h5 class="center blue-text trainerViewDashboardText">DASHBOARD</h5>
+  <div>
+    {{> React component=ClientsDashboard}}
   </div>
-  </div>
-  <div class="row">
-    <div class="col s12 m12 l12 center">
-      <button class="btn blue clickedButton waves-effect trainerDashButtonProfile" id="clientProfile">Profile</button>
-      <button class="btn blue clickedButton waves-effect trainerDashButtonSchedule" id="clientSchedule">Schedule</button>
-      <button class="btn blue clickedButton waves-effect trainerDashButtonStats" id="clientStats">Stats</button>
-      <button class="btn blue clickedButton waves-effect trainerDashButtonCardio" id="clientCardio">Cardio</button>
-      <button class="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkout">Workout</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s12 m12 l12">
-      {{#if activeTemplate}}
-      {{> Template.dynamic template=activeTemplate}}
-      {{else}}
-      {{> clientProfile}}
-      {{/if}}
-    </div>
-  </div>
-  {{else}}
-  {{#if isLoggingIn}}
-  {{> loading}}
-  {{else}}
-  {{> notAuthorized}}
-  {{/if}}
-  {{/if}}
 </template>

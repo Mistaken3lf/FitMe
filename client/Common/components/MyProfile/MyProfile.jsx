@@ -25,10 +25,6 @@ MyProfile = React.createClass({
     });
   },
 
-  handleSubmit(e) {
-    e.preventDefault();
-  },
-
   render() {
     if (this.data.loading) {
       return (
@@ -49,7 +45,7 @@ MyProfile = React.createClass({
                 </div>
               </div>
               <div className="row">
-                <form id="myProfileForm" onSubmit={this.handleSubmit}>
+                <form>
                   <div className="col s12">
                     <div className="card">
                       <div className="row">
