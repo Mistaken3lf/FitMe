@@ -1,13 +1,15 @@
-Meteor.methods({
-  cancelSundaysAppointment(clientId) {
-    new SimpleSchema({
-      clientId: {
-        type: String
-      }
-    }).validate({
-      clientId
-    });
+const CancelSundaysAppointment = new ValidatedMethod({
+  name: "cancelSundaysAppointment",
 
+  validate: new SimpleSchema({
+    clientId: {
+      type: String
+    }
+  }).validator(),
+
+  run({
+    clientId
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
@@ -25,34 +27,31 @@ Meteor.methods({
       if (thisTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
-      
+
       //Make sure the trainer owns the client
-      if (trainersClient.createdBy != this.userId) {
-        throw new Meteor.Error("Sorry, this is not your client");
+      if (trainersClient.createdBy == this.userId) {
+        //Reset sundays schedule
+        Meteor.users.update({
+          _id: clientId
+        }, {
+          $set: {
+            sundaysScheduleStart: "",
+            sundaysScheduleEnd: "",
+            sundayDescription: "",
+            sundayStatus: false
+          }
+        });
+
+        this.unblock();
+
+        //Send the actual email to us
+        Email.send({
+          to: clientEmail,
+          from: trainersEmail,
+          subject: "FitMe -- Appointment Cancellation",
+          text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "I will unfortunately have to cancel our scheduled appointment for Sunday.  I will get in touch with you so we can reschedule your appointment.\n\n\n" + "Thank you for understanding,\n\n\n" + thisTrainer.firstName + " " + thisTrainer.lastName
+        });
       }
-      
-      //Reset sundays schedule
-      Meteor.users.update({
-        _id: clientId
-      }, {
-        $set: {
-          sundaysScheduleStart: "",
-          sundaysScheduleEnd: "",
-          sundayDescription: "",
-          sundayStatus: false
-        }
-      });
-
-      this.unblock();
-
-      //Send the actual email to us
-      Email.send({
-        to: clientEmail,
-        from: trainersEmail,
-        subject: "FitMe -- Appointment Cancellation",
-        text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "I will unfortunately have to cancel our scheduled appointment for Sunday.  I will get in touch with you so we can reschedule your appointment.\n\n\n" + "Thank you for understanding,\n\n\n" + thisTrainer.firstName + " " + thisTrainer.lastName
-      });
-
     } else {
       throw new Meteor.Error("not-authorized");
     }

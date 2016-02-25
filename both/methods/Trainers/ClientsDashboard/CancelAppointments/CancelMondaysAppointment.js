@@ -2,13 +2,13 @@ const CancelMondaysAppointment = new ValidatedMethod({
   name: "cancelMondaysAppointment",
 
   validate: new SimpleSchema({
-    id: {
+    clientId: {
       type: String
     }
   }).validator(),
 
   run({
-    id
+    clientId
   }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
       const thisTrainer = Meteor.users.findOne({
@@ -16,7 +16,7 @@ const CancelMondaysAppointment = new ValidatedMethod({
       });
 
       const trainersClient = Meteor.users.findOne({
-        _id: id
+        _id: clientId
       });
 
       //Get the clients and trainers email
@@ -32,7 +32,7 @@ const CancelMondaysAppointment = new ValidatedMethod({
       if (trainersClient.createdBy == this.userId) {
         //Reset mondays schedule
         Meteor.users.update({
-          _id: id
+          _id: clientId
         }, {
           $set: {
             mondaysScheduleStart: "",
