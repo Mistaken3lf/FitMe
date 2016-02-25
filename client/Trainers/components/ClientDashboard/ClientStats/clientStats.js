@@ -1,84 +1,3 @@
-Template.clientStats.onCreated(function () {
-  //Subscribe to the current clients stats based on url param
-  this.autorun(() => {
-    const clientId = FlowRouter.getParam('_id');
-    this.subscribe("currentClientsStats", clientId);
-  });
-});
-
-Template.clientStatsShell.onRendered(() => {
-  //Pop up date picker when a date field is selected
-  $('#statsITDate').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#statsRT1Date').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#statsRT2Date').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#statsRT3Date').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#measureITDate').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#statsChangeDate').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#measureRT1Date').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#measureRT2Date').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#measureRT3Date').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-  
-  $('#measureChangeDate').datetimepicker({
-    timepicker: false,
-    format: "MM/DD/YYYY",
-    startDate: new Date(),
-    scrollInput: false
-  });
-});
-
 Template.clientStatsShell.helpers({
   //Get the current clients stats values
   currentClientsStats() {
@@ -172,7 +91,7 @@ Template.clientStatsShell.helpers({
 
     return muscleGained;
   },
-  
+
   //Calculate neck measurement change
   neckMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -184,7 +103,7 @@ Template.clientStatsShell.helpers({
 
     return neckMeasureChange;
   },
-  
+
   //Calculate chest measurement change
   chestMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -196,7 +115,7 @@ Template.clientStatsShell.helpers({
 
     return chestMeasureChange;
   },
-  
+
   //Calculate shoulder measurement change
   shoulderMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -208,7 +127,7 @@ Template.clientStatsShell.helpers({
 
     return shoulderMeasureChange;
   },
-  
+
   //Calculate waist measurement change
   waistMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -220,7 +139,7 @@ Template.clientStatsShell.helpers({
 
     return waistMeasureChange;
   },
-  
+
   //Calculate hip measurement change
   hipsMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -232,7 +151,7 @@ Template.clientStatsShell.helpers({
 
     return hipsMeasureChange;
   },
-  
+
   //Calculate thigh measurement change
   thighMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -244,7 +163,7 @@ Template.clientStatsShell.helpers({
 
     return thighMeasureChange;
   },
-  
+
   //Calculate calf measurement change
   calfMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -256,7 +175,7 @@ Template.clientStatsShell.helpers({
 
     return calfMeasureChange;
   },
-  
+
   //Calculate bicep measurement change
   bicepMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -268,7 +187,7 @@ Template.clientStatsShell.helpers({
 
     return bicepMeasureChange;
   },
-  
+
   //Calculate forearm measurement change
   forearmMeasureChange() {
     const clientId = FlowRouter.getParam('_id');
@@ -279,5 +198,9 @@ Template.clientStatsShell.helpers({
     let forearmMeasureChange = currentClient.measureRT3Forearm - currentClient.measureRT1Forearm;
 
     return forearmMeasureChange;
+  },
+
+  ClientsStats() {
+    return ClientsStats;
   }
 });

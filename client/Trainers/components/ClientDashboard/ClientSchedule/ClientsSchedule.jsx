@@ -48,17 +48,17 @@ ClientsSchedule = React.createClass({
             <ScheduleInfo scheduleData={this.data.currentClient}/>
             <div className="row">
               <ClientsMonday scheduleData={this.data.currentClient} />
-              <ClientsMonday scheduleData={this.data.currentClient} />
+              <ClientsTuesday scheduleData={this.data.currentClient} />
             </div>
             <div className="row">
-              <ClientsMonday scheduleData={this.data.currentClient} />
-              <ClientsMonday scheduleData={this.data.currentClient} />
+              <ClientsWednesday scheduleData={this.data.currentClient} />
+              <ClientsThursday scheduleData={this.data.currentClient} />
             </div>
             <div className="row">
               <ClientsFriday scheduleData={this.data.currentClient} />
-              <ClientsMonday scheduleData={this.data.currentClient} />
+              <ClientsSaturday scheduleData={this.data.currentClient} />
             <div className="row">
-              <ClientsMonday scheduleData={this.data.currentClient} />
+              <ClientsSunday scheduleData={this.data.currentClient} />
             </div>
           </div>
         </div>

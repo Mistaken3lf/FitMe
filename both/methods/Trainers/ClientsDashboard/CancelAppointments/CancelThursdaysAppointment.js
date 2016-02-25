@@ -37,7 +37,7 @@ const CancelThursdaysAppointment = new ValidatedMethod({
           $set: {
             thursdaysScheduleStart: "",
             thursdaysScheduleEnd: "",
-            thursdaysDescription: "",
+            thursdayDescription: "",
             thursdaysStatus: false
           }
         });
