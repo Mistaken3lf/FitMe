@@ -17,10 +17,7 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-password
-aldeed:autoform
 aldeed:simple-schema
-aldeed:collection2
-gildaspk:autoform-materialize
 alanning:roles
 accounts-base
 kadira:flow-router
@@ -30,9 +27,7 @@ materialize:materialize
 themeteorchef:bert
 kevohagan:sweetalert
 browser-policy
-matteodem:easy-search
 momentjs:moment
-drewy:datetimepicker
 mrgalaxy:stripe
 reactive-var
 force-ssl
