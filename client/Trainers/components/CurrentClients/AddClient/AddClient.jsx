@@ -53,7 +53,7 @@ AddClient = React.createClass({
         <div>
         <form onSubmit={this.handleSubmit}>
           <div className="row">
-            <img className="responsive-img" id="pageHeader" src="/currentClients/fitMeClientManagement.png" />
+            <img className="responsive-img" id="pageHeader" src="/CurrentClients/fitMeClientManagement.png" />
             <hr className="headerSeperator" />
           </div>
           <div className="layoutContainer">
