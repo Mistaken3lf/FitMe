@@ -7,7 +7,7 @@ ClientsStats = React.createClass({
     const profile = Meteor.subscribe("currentClientsProfile", clientId);
 
     return {
-      loading: !handle.ready(),
+      loading: !handle.ready() || !profile.ready(),
       currentClient: Meteor.users.findOne({
         _id: clientId
       }),
@@ -19,7 +19,11 @@ ClientsStats = React.createClass({
   },
 
   render() {
-    if (Meteor.loggingIn()) {
+    if(this.data.loading) {
+      return (
+        <Loading />
+      );
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
