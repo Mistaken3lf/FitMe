@@ -4,14 +4,18 @@ ClientsStats = React.createClass({
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
     const handle = Meteor.subscribe("currentClientsStats", clientId);
+    const profile = Meteor.subscribe("currentClientsProfile", clientId);
 
     return {
       loading: !handle.ready(),
-
       currentClient: Meteor.users.findOne({
         _id: clientId
       }),
-    };
+
+      clientsStats: ClientStats.find({
+        whosStats: clientId
+      }).fetch()
+    }
   },
 
   render() {
@@ -32,11 +36,12 @@ ClientsStats = React.createClass({
               <div className="col s12 m12 l12">
                 <span className="card-title black-text">{this.data.currentClient.firstName}'s Body Statistics</span>
                 <div className="card white z-depth-1">
-                  <StatsInitialTest />
+                  <StatsInitialTest statsData={this.data.clientsStats} />
                   <StatsRTOne />
                   <StatsRTTwo />
                   <StatsRTThree />
                   <StatsChange />
+                </div>
                 <span className="card-title black-text">{this.data.currentClient.lastName}'s Measurements</span>
                 <div className="card white z-depth-1 spacing">
                   <div className="row">
@@ -55,7 +60,6 @@ ClientsStats = React.createClass({
             </div>
           </div>
         </div>
-      </div>
       );
     } else {
       return (

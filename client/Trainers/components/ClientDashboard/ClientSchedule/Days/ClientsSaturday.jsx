@@ -56,7 +56,7 @@ ClientsSaturday = React.createClass({
               <div className="row">
               <div className="col s12 m6 l6">
                 <label>Start Time: </label>
-                <select className="browser-default" ref="saturdaysScheduleStart" name="saturdaysScheduleStart" value={this.props.scheduleData.saturdaysScheduleStart} onChange={this.updateField}>
+                <select className="browser-default" ref="saturdaysScheduleStart" name="saturdaysScheduleStart" defaultValue={this.props.scheduleData.saturdaysScheduleStart} onChange={this.updateField}>
                   <option value=""></option>
                   <option value="12:00AM">12:00AM</option>
                   <option value="1:00AM">1:00AM</option>
@@ -86,7 +86,7 @@ ClientsSaturday = React.createClass({
               </div>
               <div className="col s12 m6 l6">
                 <label>End Time:</label>
-                <select className="browser-default" ref="saturdaysScheduleEnd" name="saturdaysScheduleEnd" value={this.props.scheduleData.saturdaysScheduleEnd} onChange={this.updateField}>
+                <select className="browser-default" ref="saturdaysScheduleEnd" name="saturdaysScheduleEnd" defaultValue={this.props.scheduleData.saturdaysScheduleEnd} onChange={this.updateField}>
                   <option value=""></option>
                   <option value="12:00AM">12:00AM</option>
                   <option value="1:00AM">1:00AM</option>
@@ -118,7 +118,7 @@ ClientsSaturday = React.createClass({
               <div className="row">
                 <div className="col s12 m12 l12">
                   Description:
-                  <input type="text" ref="saturdayDescription" name="saturdayDescription" placeholder="Workout Description" value={this.props.scheduleData.saturdayDescription} onChange={this.updateField} />
+                  <input type="text" ref="saturdayDescription" name="saturdayDescription" placeholder="Workout Description" defaultValue={this.props.scheduleData.saturdayDescription} onChange={this.updateField} />
                 </div>
               </div>
               <div className="row center">

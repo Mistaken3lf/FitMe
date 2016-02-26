@@ -56,7 +56,7 @@ ClientsWednesday = React.createClass({
               <div className="row">
               <div className="col s12 m6 l6">
                 <label>Start Time: </label>
-                <select className="browser-default" ref="wednesdaysScheduleStart" name="wednesdaysScheduleStart" value={this.props.scheduleData.wednesdaysScheduleStart} onChange={this.updateField}>
+                <select className="browser-default" ref="wednesdaysScheduleStart" name="wednesdaysScheduleStart" defaultValue={this.props.scheduleData.wednesdaysScheduleStart} onChange={this.updateField}>
                   <option value=""></option>
                   <option value="12:00AM">12:00AM</option>
                   <option value="1:00AM">1:00AM</option>
@@ -86,7 +86,7 @@ ClientsWednesday = React.createClass({
               </div>
               <div className="col s12 m6 l6">
                 <label>End Time:</label>
-                <select className="browser-default" ref="wednesdaysScheduleEnd" name="wednesdaysScheduleEnd" value={this.props.scheduleData.wednesdaysScheduleEnd} onChange={this.updateField}>
+                <select className="browser-default" ref="wednesdaysScheduleEnd" name="wednesdaysScheduleEnd" defaultValue={this.props.scheduleData.wednesdaysScheduleEnd} onChange={this.updateField}>
                   <option value=""></option>
                   <option value="12:00AM">12:00AM</option>
                   <option value="1:00AM">1:00AM</option>
@@ -118,7 +118,7 @@ ClientsWednesday = React.createClass({
               <div className="row">
                 <div className="col s12 m12 l12">
                   Description:
-                  <input type="text" ref="wednesdayDescription" name="wednesdayDescription" placeholder="Workout Description" value={this.props.scheduleData.wednesdayDescription} onChange={this.updateField} />
+                  <input type="text" ref="wednesdayDescription" name="wednesdayDescription" placeholder="Workout Description" defaultValue={this.props.scheduleData.wednesdayDescription} onChange={this.updateField} />
                 </div>
               </div>
               <div className="row center">
