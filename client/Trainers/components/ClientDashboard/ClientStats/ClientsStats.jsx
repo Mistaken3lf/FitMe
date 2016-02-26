@@ -4,17 +4,16 @@ ClientsStats = React.createClass({
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
     const handle = Meteor.subscribe("currentClientsStats", clientId);
-    const profile = Meteor.subscribe("currentClientsProfile", clientId);
 
     return {
-      loading: !handle.ready() || !profile.ready(),
+      loading: !handle.ready(),
       currentClient: Meteor.users.findOne({
         _id: clientId
       }),
 
-      clientsStats: ClientStats.find({
+      clientsStats: ClientStats.findOne({
         whosStats: clientId
-      }).fetch()
+      })
     }
   },
 
@@ -40,21 +39,25 @@ ClientsStats = React.createClass({
               <div className="col s12 m12 l12">
                 <span className="card-title black-text">{this.data.currentClient.firstName}'s Body Statistics</span>
                 <div className="card white z-depth-1">
-                  <StatsInitialTest statsData={this.data.clientsStats} />
-                  <StatsRTOne />
-                  <StatsRTTwo />
-                  <StatsRTThree />
-                  <StatsChange />
+                  <div className="row">
+                    <div className="col s12 m12 l12">
+                      <StatsInitialTest statsData={this.data.clientsStats} />
+                      <StatsRTOne statsData={this.data.clientsStats} />
+                      <StatsRTTwo statsData={this.data.clientsStats} />
+                      <StatsRTThree statsData={this.data.clientsStats} />
+                      <StatsChange statsData={this.data.clientsStats} />
+                    </div>
+                  </div>
                 </div>
                 <span className="card-title black-text">{this.data.currentClient.lastName}'s Measurements</span>
                 <div className="card white z-depth-1 spacing">
                   <div className="row">
                     <div className="col s12 m12 l12">
-                      <MeasureInitialTest />
-                      <MeasureRTOne />
-                      <MeasureRTTwo />
-                      <MeasureRTThree />
-                      <MeasureChange />
+                      <MeasureInitialTest statsData={this.data.clientsStats} />
+                      <MeasureRTOne statsData={this.data.clientsStats} />
+                      <MeasureRTTwo statsData={this.data.clientsStats} />
+                      <MeasureRTThree statsData={this.data.clientsStats} />
+                      <MeasureChange statsData={this.data.clientsStats} />
                     </div>
                   </div>
                 </div>

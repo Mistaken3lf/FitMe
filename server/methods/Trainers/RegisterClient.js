@@ -144,6 +144,24 @@ const registerClient = new ValidatedMethod({
             myTrainersExpiration: trainersExpiration
           }
         });
+
+        //Create a stats document for the client
+        ClientStats.insert({
+          whosStats: id,
+          createdBy: this.userId
+        });
+
+        //Create a workout document for the client
+        ClientWorkout.insert({
+          whosWorkout: id,
+          createdBy: this.userId
+        });
+
+        //Create a cardio document for the client
+        ClientCardio.insert({
+          whosCardio: id,
+          createdBy: this.userId
+        });
       } else {
         return "Client Limit Reached";
       }

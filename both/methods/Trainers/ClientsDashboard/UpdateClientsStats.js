@@ -29,23 +29,25 @@ const UpdateClientsStats = new ValidatedMethod({
       throw new Meteor.Error("Your account is suspended");
     }
 
-    //Make sure user is logged in and a trainer before performing the method
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      let name = fieldName
-      let value = data;
-      let query = {};
-      query[name] = value;
-
-      //Update the users new profile
-      ClientStats.update({
-        whosStats: clientId,
-        createdBy: this.userId
-      }, {
-        $set: query
-      }, {
-        upsert: true
+      const thisClient = Meteor.users.findOne({
+        _id: clientId
       });
 
+      if (thisClient.createdBy == this.userId) {
+        let name = fieldName
+        let value = data;
+        let query = {};
+        query[name] = value;
+
+        //Update the users new profile
+        ClientStats.update({
+          whosStats: clientId,
+          createdBy: this.userId
+        }, {
+          $set: query
+        });
+      }
     } else {
       throw new Meteor.Error("not-authorized");
     }
