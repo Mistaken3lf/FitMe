@@ -41,7 +41,7 @@ const UpdateClientsStats = new ValidatedMethod({
         query[name] = value;
 
         //Update the users new profile
-        ClientStats.update({
+        ClientStats.upsert({
           whosStats: clientId,
           createdBy: this.userId
         }, {

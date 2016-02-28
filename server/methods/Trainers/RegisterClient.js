@@ -145,12 +145,6 @@ const registerClient = new ValidatedMethod({
           }
         });
 
-        //Create a stats document for the client
-        ClientStats.insert({
-          whosStats: id,
-          createdBy: this.userId
-        });
-
         //Create a workout document for the client
         ClientWorkout.insert({
           whosWorkout: id,

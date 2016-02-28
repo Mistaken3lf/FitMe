@@ -5,15 +5,18 @@ ClientsStats = React.createClass({
     const clientId = FlowRouter.getParam('_id');
     const handle = Meteor.subscribe("currentClientsStats", clientId);
 
+    const clientsStats = ClientStats.findOne({
+      whosStats: clientId
+    });
+
     return {
       loading: !handle.ready(),
+
       currentClient: Meteor.users.findOne({
         _id: clientId
       }),
 
-      clientsStats: ClientStats.findOne({
-        whosStats: clientId
-      })
+      clientsStats: clientsStats || {}
     }
   },
 
