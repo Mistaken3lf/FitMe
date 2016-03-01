@@ -149,12 +149,6 @@ const registerClient = new ValidatedMethod({
           whosWorkout: id,
           createdBy: this.userId
         });
-
-        //Create a cardio document for the client
-        ClientCardio.insert({
-          whosCardio: id,
-          createdBy: this.userId
-        });
       } else {
         return "Client Limit Reached";
       }
