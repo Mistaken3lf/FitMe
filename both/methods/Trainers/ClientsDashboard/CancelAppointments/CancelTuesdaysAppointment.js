@@ -1,6 +1,7 @@
 const CancelTuesdaysAppointment = new ValidatedMethod({
   name: "cancelTuesdaysAppointment",
 
+  //Validate the clients id
   validate: new SimpleSchema({
     clientId: {
       type: String
@@ -11,10 +12,12 @@ const CancelTuesdaysAppointment = new ValidatedMethod({
     clientId
   }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Find the current trainer
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
       });
 
+      //Find the trainers client
       const trainersClient = Meteor.users.findOne({
         _id: clientId
       });

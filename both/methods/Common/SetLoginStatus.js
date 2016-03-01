@@ -1,23 +1,25 @@
 const setLoginStatus = new ValidatedMethod({
   name: "setLoginStatus",
 
+  //Nothing to validate
   validate: null,
 
   run() {
-    //Make sure user is logged in before letting them update
-    //a profile
     if (Meteor.userId()) {
+      //Find the current user
       const currentUser = Meteor.users.findOne({
         _id: this.userId
       });
 
+      //If they are suspended then deny them
       if (currentUser.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, your account has been suspended");
       }
 
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
 
-      //Update the users new profile
+      //Set the newly logged in date to today
       Meteor.users.update({
         _id: this.userId
       }, {

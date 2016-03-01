@@ -1,6 +1,7 @@
 const ResetFridaysSchedule = new ValidatedMethod({
   name: "resetFridaysSchedule",
 
+  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -11,10 +12,12 @@ const ResetFridaysSchedule = new ValidatedMethod({
     id
   }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Find the current trainer
       const thisTrainer = Meteor.users.findOne({
         _id: this.userId
       });
 
+      //Find the trainers client
       const trainersClient = Meteor.users.findOne({
         _id: id
       });

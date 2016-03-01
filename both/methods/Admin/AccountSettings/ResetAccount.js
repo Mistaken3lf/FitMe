@@ -1,6 +1,7 @@
 const resetAccount = new ValidatedMethod({
   name: "resetAccount",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String
@@ -11,7 +12,10 @@ const resetAccount = new ValidatedMethod({
     trainerId
   }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration back to one week
       let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
 
       //Update trainer to the free plan

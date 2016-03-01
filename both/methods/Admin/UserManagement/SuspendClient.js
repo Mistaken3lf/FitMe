@@ -1,6 +1,7 @@
 const suspendClientAdmin = new ValidatedMethod({
   name: "suspendClientAdmin",
 
+  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -10,9 +11,8 @@ const suspendClientAdmin = new ValidatedMethod({
   run({
     id
   }) {
-    //Make sure the user is a trainer and logged in before
-    //allowing the deletion of a client
     if (Roles.userIsInRole(this.userId, 'admin')) {
+      //Find the client clicked on
       const user = Meteor.users.findOne(id);
 
       //Check if the user is active already

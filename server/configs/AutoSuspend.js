@@ -1,12 +1,15 @@
 SyncedCron.add({
   name: 'Auto Suspend Trainers (Every Day)',
+  //Run every night at midnight
   schedule(parser) {
     return parser.text('at 12:00 am');
   },
 
   job() {
+    //Get todays date
     let today = moment().format("MM/DD/YYYY");
 
+    //Find all the users
     let curUser = Meteor.users.find();
 
     curUser.forEach((user) => {
@@ -40,7 +43,6 @@ SyncedCron.add({
     });
   }
 });
-
 
 // Start Cronjobs
 SyncedCron.start();

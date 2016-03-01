@@ -1,6 +1,7 @@
 const twentyAdditionalClients = new ValidatedMethod({
   name: "twentyAdditionalClients",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String

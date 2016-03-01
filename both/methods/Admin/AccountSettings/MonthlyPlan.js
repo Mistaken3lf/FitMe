@@ -1,6 +1,7 @@
 const monthlyPlan = new ValidatedMethod({
   name: "monthlyPlan",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String
@@ -11,7 +12,10 @@ const monthlyPlan = new ValidatedMethod({
     trainerId
   }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration to one month from now
       let expires = moment().add(1, "months").format("MM/DD/YYYY");
 
       //Find the trainer

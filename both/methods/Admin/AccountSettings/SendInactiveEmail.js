@@ -1,6 +1,7 @@
 const sendInactiveEmail = new ValidatedMethod({
   name: "sendInactiveEmail",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String
@@ -11,6 +12,7 @@ const sendInactiveEmail = new ValidatedMethod({
     trainerId
   }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Find the current trainer
       const trainer = Meteor.users.findOne({
         _id: trainerId
       });

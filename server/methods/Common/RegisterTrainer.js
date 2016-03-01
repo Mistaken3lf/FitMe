@@ -1,6 +1,8 @@
 const registerTrainer = new ValidatedMethod({
   name: "registerTrainer",
 
+  //Validate the trainers username, password,
+  //email, firstname and lastname
   validate: new SimpleSchema({
     username: {
       type: String,
@@ -42,7 +44,10 @@ const registerTrainer = new ValidatedMethod({
       email: email,
     });
 
+    //Get todays date
     let today = moment().format("MM/DD/YYYY");
+
+    //Set expiration to 1 week for free plan
     let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
 
     //Update the trainers first and last name since they are not default

@@ -1,6 +1,7 @@
 const removeTrainer = new ValidatedMethod({
   name: "removeTrainer",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -10,9 +11,7 @@ const removeTrainer = new ValidatedMethod({
   run({
     id
   }) {
-    //Make sure user is an admin and logged in before allowing the remove
     if (Roles.userIsInRole(this.userId, "admin")) {
-
       //Remove cardio associated with the trainer being deleted
       ClientCardio.remove({
         createdBy: id

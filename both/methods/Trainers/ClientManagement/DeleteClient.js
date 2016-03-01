@@ -1,6 +1,7 @@
 const deleteClient = new ValidatedMethod({
   name: "deleteClient",
 
+  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -11,18 +12,20 @@ const deleteClient = new ValidatedMethod({
     id
   }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Find the current trainer
       const currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
 
+      //If they are suspended then deny them
       if (currentTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Your account is suspended");
       }
 
+      //Find the client
       const thisClient = Meteor.users.findOne({
         _id: id
       });
-
 
       //Make sure client is actually owned by the trainer
       if (thisClient.createdBy == this.userId) {

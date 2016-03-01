@@ -1,6 +1,7 @@
 const removeClient = new ValidatedMethod({
   name: "removeClient",
 
+  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -10,7 +11,6 @@ const removeClient = new ValidatedMethod({
   run({
     id
   }) {
-    //Make sure user is an admin and logged in before allowing the remove
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Remove trainer clicked on
       Meteor.users.remove(id);

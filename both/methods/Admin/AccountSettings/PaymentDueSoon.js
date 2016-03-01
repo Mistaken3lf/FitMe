@@ -1,6 +1,7 @@
 const paymentDueSoon = new ValidatedMethod({
   name: "paymentDueSoon",
-
+  
+  //Validate the users id, and expiration date
   validate: new SimpleSchema({
     id: {
       type: String
@@ -16,6 +17,7 @@ const paymentDueSoon = new ValidatedMethod({
     expiresOn
   }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Find the current trainer
       const trainer = Meteor.users.findOne({
         _id: id
       });

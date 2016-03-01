@@ -1,10 +1,12 @@
 const fiveAdditionalClientsTrainer = new ValidatedMethod({
   name: "fiveAdditionalClientsTrainer",
 
+  //Nothing to validate
   validate: null,
 
   run() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Find the current trainer
       const curTrainer = Meteor.users.findOne({
         _id: this.userId
       });

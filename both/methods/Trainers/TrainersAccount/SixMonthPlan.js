@@ -1,13 +1,18 @@
 const sixMonthPlanTrainer = new ValidatedMethod({
   name: "sixMonthPlanTrainer",
 
+  //Nothing to validate
   validate: null,
 
   run() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration to 6 months from today
       let expires = moment().add(6, "months").format("MM/DD/YYYY");
 
+      //Find the current trainer
       const curTrainer = Meteor.users.findOne({
         _id: this.userId
       });

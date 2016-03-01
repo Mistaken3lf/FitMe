@@ -45,7 +45,7 @@ MonthlyPlan = React.createClass({
             };
 
             //Process their payment
-            Meteor.call('processPayment', charge, (error, response) => {
+            Meteor.call('processPayment', {charge}, (error, response) => {
               if (error) {
                 Bert.alert(error.reason, 'danger');
               } else {

@@ -1,3 +1,5 @@
+//Setup some rules to make sure the site is secure from
+//framing, setting inline styles etc
 BrowserPolicy.framing.disallow();
 BrowserPolicy.content.disallowInlineScripts();
 BrowserPolicy.content.disallowEval();

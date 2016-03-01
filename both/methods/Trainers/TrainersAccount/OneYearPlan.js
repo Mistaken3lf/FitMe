@@ -1,13 +1,18 @@
 const oneYearPlanTrainer = new ValidatedMethod({
   name: "oneYearPlanTrainer",
 
+  //Nothing to validate
   validate: null,
 
   run() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration to 12 months from now
       let expires = moment().add(12, "months").format("MM/DD/YYYY");
 
+      //Find the current trainer
       const curTrainer = Meteor.users.findOne({
         _id: this.userId
       });

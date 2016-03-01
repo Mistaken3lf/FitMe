@@ -1,6 +1,8 @@
 const UpdateClientsSchedule = new ValidatedMethod({
   name: "updateClientsSchedule",
 
+  //Validate the field being updated, the actual data,
+  //and the clients id
   validate: new SimpleSchema({
     fieldName: {
       type: String
@@ -20,9 +22,8 @@ const UpdateClientsSchedule = new ValidatedMethod({
     data,
     clientId
   }) {
-    //Make sure user is logged in and a trainer before performing
-    //the method
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Find the current trainer
       const currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
@@ -31,10 +32,13 @@ const UpdateClientsSchedule = new ValidatedMethod({
       if (currentTrainer.userStatus == "suspended") {
         throw new Meteor.Error("Your account is suspended");
       }
+
+      //Find the trainers client
       const thisClient = Meteor.users.findOne({
         _id: clientId
       });
 
+      //Make sure the trainers own the client
       if (thisClient.createdBy == this.userId) {
         let name = fieldName
         let value = data;

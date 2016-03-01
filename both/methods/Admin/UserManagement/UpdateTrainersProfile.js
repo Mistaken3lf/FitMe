@@ -1,6 +1,8 @@
 const updateMyProfile = new ValidatedMethod({
   name: "updateTrainersProfile",
 
+  //Validate the field being updated, the actual data,
+  //and the id of the trainer
   validate: new SimpleSchema({
     fieldName: {
       type: String
@@ -20,8 +22,6 @@ const updateMyProfile = new ValidatedMethod({
     data,
     trainerId
   }) {
-    //Make sure user is logged in before letting them update
-    //a profile
     if (Roles.userIsInRole(this.userId, "admin")) {
       let name = fieldName
       let value = data;

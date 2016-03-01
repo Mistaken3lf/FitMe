@@ -1,6 +1,7 @@
 const yearlyPlan = new ValidatedMethod({
   name: "yearlyPlan",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String
@@ -10,10 +11,14 @@ const yearlyPlan = new ValidatedMethod({
   run({
     trainerId
   }) {
-   if (Roles.userIsInRole(this.userId, "admin")) {
+    if (Roles.userIsInRole(this.userId, "admin")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration to 12 months from now
       let expires = moment().add(12, "months").format("MM/DD/YYYY");
 
+      //Find the current trainer
       const curTrainer = Meteor.users.findOne({
         _id: trainerId
       });

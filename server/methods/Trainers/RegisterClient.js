@@ -1,6 +1,7 @@
 const registerClient = new ValidatedMethod({
   name: "registerClient",
 
+  //Validate all the clients profile info
   validate: new SimpleSchema({
     username: {
       type: String,
@@ -86,15 +87,13 @@ const registerClient = new ValidatedMethod({
     bio,
     fitnessGoals
   }) {
-
-    //Make sure the user is a trainer and logged in before
-    //creating a new client
     if (Roles.userIsInRole(this.userId, "trainer")) {
       //Get the current trainer so we can check the client limit
       const currentTrainer = Meteor.users.findOne({
         _id: this.userId
       });
 
+      //Get trainers plan expiration
       const trainersExpiration = currentTrainer.expiresOn;
 
       //Check if the trainer is suspended

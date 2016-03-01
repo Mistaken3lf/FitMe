@@ -1,11 +1,15 @@
 const freeAccountTrainer = new ValidatedMethod({
   name: "freeAccountTrainer",
 
+  //Nothing to validate
   validate: null,
 
   run() {
     if (Roles.userIsInRole(this.userId, "trainer")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration to 1 week for free plan
       let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
 
       //Set the trainers plan to free

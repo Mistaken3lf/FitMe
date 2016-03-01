@@ -1,6 +1,7 @@
 const fiveAdditionalClients = new ValidatedMethod({
   name: "fiveAdditionalClients",
 
+  //Check trainerId to ensure its valid
   validate: new SimpleSchema({
     trainerId: {
       type: String
@@ -10,9 +11,8 @@ const fiveAdditionalClients = new ValidatedMethod({
   run({
     trainerId
   }) {
-    //Make sure user is an admin and increment the trainers client
-    //by 5
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Add 5 additional clients to trainers limit
       Meteor.users.update({
         _id: trainerId
       }, {

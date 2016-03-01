@@ -1,6 +1,7 @@
 const sixMonthPlan = new ValidatedMethod({
   name: "sixMonthPlan",
 
+  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String
@@ -11,9 +12,13 @@ const sixMonthPlan = new ValidatedMethod({
     trainerId
   }) {
     if (Roles.userIsInRole(this.userId, "admin")) {
+      //Get todays date
       let today = moment().format("MM/DD/YYYY");
+
+      //Set expiration to six months from now
       let expires = moment().add(6, "months").format("MM/DD/YYYY");
 
+      //Find the current trainer
       const curTrainer = Meteor.users.findOne({
         _id: trainerId
       });
