@@ -84,7 +84,6 @@ MyAccount = React.createClass({
                       <br />
                       <div className="row center">
                         <h3 className="blue-text">Plans</h3>
-                        <h5 className="red-text">WE ARE <strike>SLASHING</strike> PRICES -- 29% Off For 29 Days</h5>
                         <div className="section">
                           <div className="row">
                             <FreePlan userStatus={this.data.accountData} />

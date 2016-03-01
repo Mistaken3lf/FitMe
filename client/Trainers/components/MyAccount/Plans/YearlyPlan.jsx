@@ -67,13 +67,13 @@ YearlyPlan = React.createClass({
           email: currentTrainer.emails[0].address,
           name: 'One Year',
           description: "1 Year Of Access",
-          amount: 7029,
+          amount: 9900,
           bitcoin: true
         });
 
         //Set the plan type and dollar amount for one year
         planType = "One Year";
-        dollarAmount = 7029;
+        dollarAmount = 9900;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -93,8 +93,7 @@ YearlyPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $99.00</strike></h6>
-                <h5 className="center-align">$70.29</h5>
+                <h5 className="center-align">$99.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">1 Year Of Premium Access</p>
@@ -118,8 +117,7 @@ YearlyPlan = React.createClass({
                 </div>
                 <div className="divider"></div>
                 <div className="section">
-                  <h6 className="center-align">Actual <strike> $99.00</strike></h6>
-                  <h5 className="center-align">$70.29</h5>
+                  <h5 className="center-align">$99.00</h5>
                   <p className="center-align">50 Client Limit</p>
                   <p className="center-align">Technical Support</p>
                   <p className="center-align">1 Year Of Premium Access</p>
@@ -143,8 +141,7 @@ YearlyPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $99.00</strike></h6>
-                <h5 className="center-align">$70.29</h5>
+                <h5 className="center-align">$99.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">1 Year Of Premium Access</p>

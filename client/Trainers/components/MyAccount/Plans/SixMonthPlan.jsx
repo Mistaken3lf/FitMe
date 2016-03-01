@@ -67,13 +67,13 @@ SixMonthPlan = React.createClass({
           email: currentTrainer.emails[0].address,
           name: 'Six Month',
           description: "Six Months Of Access",
-          amount: 4260,
+          amount: 6000,
           bitcoin: true
         });
 
         //Set the plan type and dollar amount for 6 month
         planType = "Six Month";
-        dollarAmount = 4260;
+        dollarAmount = 6000;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -93,8 +93,7 @@ SixMonthPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $60.00</strike></h6>
-                <h5 className="center-align">$42.60</h5>
+                <h5 className="center-align">$60.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">6 Months Of Premium Access</p>
@@ -117,8 +116,7 @@ SixMonthPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $60.00</strike></h6>
-                <h5 className="center-align">$42.60</h5>
+                <h5 className="center-align">$60.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">6 Months Of Premium Access</p>
@@ -141,8 +139,7 @@ SixMonthPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $60.00</strike></h6>
-                <h5 className="center-align">$42.60</h5>
+                <h5 className="center-align">$60.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">6 Months Of Premium Access</p>

@@ -67,13 +67,13 @@ MonthlyPlan = React.createClass({
           email: currentTrainer.emails[0].address,
           name: 'One Month',
           description: "1 Month Of Access",
-          amount: 1065,
+          amount: 1500,
           bitcoin: true
         });
 
         //Set the plan types for the
         planType = "One Month";
-        dollarAmount = 1065;
+        dollarAmount = 1500;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -93,8 +93,7 @@ MonthlyPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $15.00</strike></h6>
-                <h5 className="center-align">$10.65</h5>
+                <h5 className="center-align">$15.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">1 Month Of Premium Access</p>
@@ -117,8 +116,7 @@ MonthlyPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $15.00</strike></h6>
-                <h5 className="center-align">$10.65</h5>
+                <h5 className="center-align">$15.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">1 Month Of Premium Access</p>
@@ -141,8 +139,7 @@ MonthlyPlan = React.createClass({
               </div>
               <div className="divider"></div>
               <div className="section">
-                <h6 className="center-align">Actual <strike> $15.00</strike></h6>
-                <h5 className="center-align">$10.65</h5>
+                <h5 className="center-align">$15.00</h5>
                 <p className="center-align">50 Client Limit</p>
                 <p className="center-align">Technical Support</p>
                 <p className="center-align">1 Month Of Premium Access</p>
