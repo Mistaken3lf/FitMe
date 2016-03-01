@@ -158,13 +158,13 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: 'One Month',
           description: "1 Month Of Access",
-          amount: 1065,
+          amount: 1500,
           bitcoin: true
         });
 
         //Set the plan types for the
         planType = "One Month";
-        dollarAmount = 1065;
+        dollarAmount = 1500;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -238,13 +238,13 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: 'Six Month',
           description: "Six Months Of Access",
-          amount: 4260,
+          amount: 6000,
           bitcoin: true
         });
 
         //Set the plan type and dollar amount for 6 month
         planType = "Six Month";
-        dollarAmount = 4260;
+        dollarAmount = 6000;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
@@ -318,13 +318,13 @@ Template.myAccount.events({
           email: currentTrainer.emails[0].address,
           name: 'One Year',
           description: "1 Year Of Access",
-          amount: 7029,
+          amount: 9900,
           bitcoin: true
         });
 
         //Set the plan type and dollar amount for one year
         planType = "One Year";
-        dollarAmount = 7029;
+        dollarAmount = 9900;
 
       } else {
         swal('Cancelled', 'You Will Not Be Charged.', 'error');
