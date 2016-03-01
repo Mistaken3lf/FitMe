@@ -23,7 +23,11 @@ ClientsDashboard = React.createClass({
   },
 
   render() {
-    if(Meteor.loggingIn()) {
+    if(this.data.loading) {
+      return (
+        <Loading />
+      );
+    } else if(Meteor.loggingIn()) {
       return (
         <Loading />
       );
@@ -38,7 +42,7 @@ ClientsDashboard = React.createClass({
               <img className="responsive-img blueLine" src="/Dashboard/Profile/blueLine.jpg" />
             </div>
             <div className="col s12 m12 l3">
-            <h5 className="center blue-text trainerViewDashNameText"><b>First Last</b></h5>
+            <h5 className="center blue-text trainerViewDashNameText"><b>{this.data.myClient.firstName} {this.data.myClient.lastName}</b></h5>
             <h5 className="center blue-text trainerViewDashboardText">DASHBOARD</h5>
           </div>
           </div>

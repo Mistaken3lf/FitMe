@@ -1,30 +1,61 @@
-Meteor.methods({
-  //Update a clients cardio with the clientId passed in from
-  //flow router
-  updateClientCardio(updatedCardio, clientId) {
-    const currentTrainer = Meteor.users.findOne({
-      _id: this.userId
-    });
-    
-    //Prevent trainer from making changes if they are suspended
-    if (currentTrainer.userStatus == "suspended") {
-      throw new Meteor.Error("Your account is suspended");
+const UpdateClientsCardio = new ValidatedMethod({
+  name: "updateClientsCardio",
+
+  //Validate the field being updated, the actual data,
+  //and the clients id
+  validate: new SimpleSchema({
+    fieldName: {
+      type: String
+    },
+
+    data: {
+      type: String
+    },
+
+    clientId: {
+      type: String
     }
-    
-    //Make sure the user is a trainer and logged in before performing
-    //the method
+  }).validator(),
+
+  run({
+    fieldName,
+    data,
+    clientId
+  }) {
     if (Roles.userIsInRole(this.userId, "trainer")) {
-      const clientsCardio = ClientCardio.findOne({
-        createdBy: this.userId
+      //Find the current trainer
+      const currentTrainer = Meteor.users.findOne({
+        _id: this.userId
       });
 
-      if (clientsCardio.createdBy == this.userId) {
-        //Update the clients cardio with the new info
-        ClientCardio.update(clientId, updatedCardio);
+      //Prevent trainer from updating clients profile if they are suspended
+      if (currentTrainer.userStatus == "suspended") {
+        throw new Meteor.Error("Your account is suspended");
       }
 
+      //Find the trainers client
+      const thisClient = Meteor.users.findOne({
+        _id: clientId
+      });
+
+      //Make sure the trainer owns the client
+      if (thisClient.createdBy == this.userId) {
+        let name = fieldName
+        let value = data;
+        let query = {};
+        query[name] = value;
+
+        //Update or insert the clients cardio
+        ClientCardio.upsert({
+          whosCardio: clientId,
+          createdBy: this.userId
+        }, {
+          $set: query
+        });
+      }
     } else {
       throw new Meteor.Error("not-authorized");
     }
   }
 });
+
