@@ -16,7 +16,7 @@ trainerRoutes.route('/addClient', {
 trainerRoutes.route('/clientDashboard/:_id', {
   action() {
     ReactLayout.render(Layout, {
-      content: <ClientDashboard />
+      content: <ClientsDashboard />
     });
   },
 });
@@ -34,7 +34,7 @@ trainerRoutes.route('/currentClients', {
 trainerRoutes.route('/trainerSchedule', {
   action() {
     ReactLayout.render(Layout, {
-      content: <TrainerSchedule />
+      content: <TrainersSchedule />
     });
   },
 });
