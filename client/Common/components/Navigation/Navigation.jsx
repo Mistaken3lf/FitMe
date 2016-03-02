@@ -16,12 +16,6 @@ Navigation = React.createClass({
   },
 
   render() {
-    if (Meteor.loggingIn()) {
-      return (
-        <Loading />
-      );
-    }
-
     if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <AdminNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username} />

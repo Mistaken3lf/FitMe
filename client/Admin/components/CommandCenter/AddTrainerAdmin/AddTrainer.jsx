@@ -1,4 +1,4 @@
-AddTrainer = React.createClass({
+AddTrainerAdmin = React.createClass({
   handleSubmit(e) {
     //Prevent default form submission
     e.preventDefault();
