@@ -97,7 +97,7 @@ const registerClient = new ValidatedMethod({
       const trainersExpiration = currentTrainer.expiresOn;
 
       //Check if the trainer is suspended
-      if(currentTrainer.userStatus == "suspended") {
+      if (currentTrainer.userStatus == "suspended") {
         return "Sorry, your account is suspended";
       }
 
@@ -142,12 +142,6 @@ const registerClient = new ValidatedMethod({
             previouslySuspended: false,
             myTrainersExpiration: trainersExpiration
           }
-        });
-
-        //Create a workout document for the client
-        ClientWorkout.insert({
-          whosWorkout: id,
-          createdBy: this.userId
         });
       } else {
         return "Client Limit Reached";
