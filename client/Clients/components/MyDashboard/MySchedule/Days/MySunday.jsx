@@ -35,7 +35,7 @@ MySunday = React.createClass({
                   <div className="switch">
                   <label>
                     No Go
-                    <input type="checkbox" name="sundayStatus" defaultChecked={this.props.scheduleData.sundayStatus} onChange={this.updatesundaysStatus} />
+                    <input type="checkbox" name="sundayStatus" defaultChecked={this.props.scheduleData.sundayStatus} onChange={this.updateSundaysStatus} />
                     <span className="lever"></span>
                     Go
                   </label>

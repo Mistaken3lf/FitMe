@@ -51,7 +51,7 @@ MyProfile = React.createClass({
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Username:</span>
-                          <input type="text" name="username" className="validate" placeholder="Username" defaultValue={this.data.userProfile.username} readOnly />
+                          <input type="text" name="username" placeholder="Username" defaultValue={this.data.userProfile.username} readOnly />
                         </div>
                       </div>
                       <div className="row">
@@ -105,7 +105,7 @@ MyProfile = React.createClass({
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Email:</span>
-                          <input type="text" name="email" className="validate" placeholder="Email" defaultValue={this.data.userProfile.emails[0].address} readOnly />
+                          <input type="email" name="email" placeholder="Email" defaultValue={this.data.userProfile.emails[0].address} readOnly />
                         </div>
                       </div>
                       <div className="row">

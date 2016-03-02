@@ -1,7 +1,7 @@
 MyThursday = React.createClass({
   updateThursdaysStatus(e) {
     const thursdayStatus = e.target.checked;
-    Meteor.call("updatethursdaysStatus", {
+    Meteor.call("updateThursdaysStatus", {
       thursdayStatus
     });
   },
@@ -35,7 +35,7 @@ MyThursday = React.createClass({
                   <div className="switch">
                   <label>
                     No Go
-                    <input type="checkbox" name="thursdayStatus" defaultChecked={this.props.scheduleData.thursdayStatus} onChange={this.updatethursdaysStatus} />
+                    <input type="checkbox" name="thursdayStatus" defaultChecked={this.props.scheduleData.thursdayStatus} onChange={this.updateThursdaysStatus} />
                     <span className="lever"></span>
                     Go
                   </label>
