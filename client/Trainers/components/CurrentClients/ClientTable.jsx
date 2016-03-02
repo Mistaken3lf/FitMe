@@ -82,7 +82,7 @@ ClientTable = React.createClass({
           {this.props.trainersClients.map((client) => {
           return (
             <tr key={client._id}>
-              <td><a onClick={this.clientDashboard.bind(null, client._id)}>{client.username}</a></td>
+              <td><a href="#!" onClick={this.clientDashboard.bind(null, client._id)}>{client.username}</a></td>
               <td>{client.firstName}</td>
               <td>{client.lastName}</td>
               <td>{client.userStatus}</td>
