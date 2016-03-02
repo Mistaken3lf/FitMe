@@ -3,9 +3,14 @@ TrainersSchedule = React.createClass({
 
   getMeteorData() {
     const handle = Meteor.subscribe("trainerSchedule");
+    const myProfile = Meteor.subscribe("myProfile");
 
     return {
-      loading: !handle.ready(),
+      loading: !handle.ready() && !myProfile.ready(),
+
+      currentUser: Meteor.users.findOne({
+        _id: Meteor.userId()
+      }),
 
       //Fetch trainers monday schedule
       mondaysSchedule: Meteor.users.find({
@@ -204,6 +209,10 @@ TrainersSchedule = React.createClass({
     if (this.data.loading) {
       return (
         <Loading />
+      );
+    } else if (this.data.currentUser.userStatus == "suspended") {
+      return (
+        <SuspendedAccount />
       );
     } else if (Meteor.loggingIn()) {
       return (
