@@ -21,7 +21,7 @@ aldeed:simple-schema
 alanning:roles
 accounts-base
 kadira:flow-router
-kadira:blaze-layout
+kadira:react-layout
 email
 materialize:materialize
 themeteorchef:bert
@@ -34,4 +34,3 @@ force-ssl
 percolate:synced-cron
 mdg:validated-method
 react
-react-template-helper
