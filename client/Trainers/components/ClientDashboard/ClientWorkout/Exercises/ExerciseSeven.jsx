@@ -66,7 +66,7 @@ ExerciseSeven = React.createClass({
               </div>
               <div className="col s12 m6 l6">
                 <span className="blue-text">Clients Comments:</span>
-                <textarea name="ex7ClientComments" className="materialize-textarea" defaultValue={this.props.workoutData.ex7ClientComments} onChange={this.updateField} placeholder="Comments or concerns for your trainer"></textarea>
+                <textarea name="ex7ClientComments" className="materialize-textarea" defaultValue={this.props.workoutData.ex7ClientComments} placeholder="Comments or concerns for your trainer" readOnly></textarea>
               </div>
             </div>
           </div>

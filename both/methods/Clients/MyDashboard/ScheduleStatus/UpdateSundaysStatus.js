@@ -1,42 +1,34 @@
-const UpdateMyWorkout = new ValidatedMethod({
-  name: "updateMyWorkout",
+const UpdateSundaysStatus = new ValidatedMethod({
+  name: "updateSundaysStatus",
 
   //Validate the field being updated, the actual data,
   //and the clients id
   validate: new SimpleSchema({
-    fieldName: {
-      type: String
-    },
-
-    data: {
-      type: String
+    sundayStatus: {
+      type: Boolean
     }
   }).validator(),
 
   run({
-    fieldName,
-    data,
+    sundayStatus
   }) {
     if (Roles.userIsInRole(this.userId, "client")) {
       const thisClient = Meteor.users.findOne({
         _id: this.userId
       });
 
+      //Check if the client is suspended and prevent them from changing status
       if (thisClient.userStatus == "suspended") {
         throw new Meteor.Error("Sorry, you account is suspended");
       }
 
-      let name = fieldName
-      let value = data;
-      let query = {};
-      query[name] = value;
-
-      //Update or insert the clients stats
-      ClientWorkout.upsert({
-        whosWorkout: this.userId,
-        createdBy: thisClient.createdBy
+      //Update fridays status
+      Meteor.users.update({
+        _id: this.userId
       }, {
-        $set: query
+        $set: {
+          sundayStatus: sundayStatus,
+        }
       });
     } else {
       throw new Meteor.Error("not-authorized");
