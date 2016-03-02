@@ -6,8 +6,8 @@ const commmonRoutes = FlowRouter.group({
 //HOME PAGE ROUTE
 commmonRoutes.route('/', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "home"
+    ReactLayout.render(Layout, {
+      content: <Home />
     });
   }
 });
@@ -15,8 +15,8 @@ commmonRoutes.route('/', {
 //LOGIN ROUTE
 commmonRoutes.route('/login', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "login"
+    ReactLayout.render(Layout, {
+      content: <Login />
     });
   }
 });
@@ -24,8 +24,8 @@ commmonRoutes.route('/login', {
 //REGISTER ROUTE
 commmonRoutes.route('/register', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "register"
+    ReactLayout.render(Layout, {
+      content: <Register />
     });
   }
 });
@@ -33,8 +33,8 @@ commmonRoutes.route('/register', {
 //MY PROFILE ROUTE
 commmonRoutes.route('/myProfile', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "myProfile"
+    ReactLayout.render(Layout, {
+      content: <MyProfile />
     });
   }
 });
@@ -42,8 +42,8 @@ commmonRoutes.route('/myProfile', {
 //CHANGE PASSWORD ROUTE
 commmonRoutes.route('/changePassword', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "changePassword"
+    ReactLayout.render(Layout, {
+      content: <ChangePassword />
     });
   }
 });
@@ -51,8 +51,8 @@ commmonRoutes.route('/changePassword', {
 //FORGOT PASSWORD ROUTE
 commmonRoutes.route('/forgotPassword', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "forgotPassword"
+    ReactLayout.render(Layout, {
+      content: <ForgotPassword />
     });
   }
 });
@@ -60,8 +60,8 @@ commmonRoutes.route('/forgotPassword', {
 //RESET PASSWORD ROUTE
 commmonRoutes.route('/resetPassword', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "resetPassword"
+    ReactLayout.render(Layout, {
+      content: <ResetPassword />
     });
   }
 });
@@ -69,8 +69,8 @@ commmonRoutes.route('/resetPassword', {
 //TERMS AND CONDITIONS ROUTE
 commmonRoutes.route('/termsAndConditions', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "termsAndConditions"
+    ReactLayout.render(Layout, {
+      content: <TermsAndConditions />
     });
   }
 });
@@ -78,8 +78,8 @@ commmonRoutes.route('/termsAndConditions', {
 //CONTACT PAGE ROUTE
 commmonRoutes.route('/contactPage', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "contactPage"
+    ReactLayout.render(Layout, {
+      content: <ContactPage />
     });
   }
 });
@@ -87,8 +87,8 @@ commmonRoutes.route('/contactPage', {
 //INVALID ROUTE
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('layout', {
-      main: "notFound"
+    ReactLayout.render(Layout, {
+      content: <NotFound />
     });
   }
 };

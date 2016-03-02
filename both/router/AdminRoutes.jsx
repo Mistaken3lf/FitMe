@@ -6,8 +6,8 @@ const adminRoutes = FlowRouter.group({
 //COMMAND CENTER ROUTE
 adminRoutes.route('/commandCenter', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "commandCenter"
+    ReactLayout.render(Layout, {
+      content: <CommandCenter />
     });
   },
 });
@@ -15,8 +15,8 @@ adminRoutes.route('/commandCenter', {
 //ADD NEW TRAINER ROUTE
 adminRoutes.route('/addTrainerAdmin', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "addTrainerAdmin"
+    ReactLayout.render(Layout, {
+      content: <AddTrainerAdmin />
     });
   },
 });
@@ -24,8 +24,8 @@ adminRoutes.route('/addTrainerAdmin', {
 //ADMIN DASHBOARD ROUTE
 adminRoutes.route('/adminDashboard/:_id', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "adminDashboard"
+    ReactLayout.render(Layout, {
+      content: <AdminDashboard />
     });
   },
 });
@@ -33,8 +33,8 @@ adminRoutes.route('/adminDashboard/:_id', {
 //ADMIN HOME ROUTE
 adminRoutes.route('/adminHome', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "adminHome"
+    ReactLayout.render(Layout, {
+      content: <AdminHome />
     });
   },
 });

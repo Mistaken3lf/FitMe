@@ -6,8 +6,8 @@ const trainerRoutes = FlowRouter.group({
 //ADD NEW CLIENT ROUTE
 trainerRoutes.route('/addClient', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "addClient"
+    ReactLayout.render(Layout, {
+      content: <AddClient />
     });
   },
 });
@@ -15,8 +15,8 @@ trainerRoutes.route('/addClient', {
 //CLIENT DASHBOARD ROUTE
 trainerRoutes.route('/clientDashboard/:_id', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "clientDashboard"
+    ReactLayout.render(Layout, {
+      content: <ClientDashboard />
     });
   },
 });
@@ -24,8 +24,8 @@ trainerRoutes.route('/clientDashboard/:_id', {
 //CURRENT CLIENTS ROUTE
 trainerRoutes.route('/currentClients', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "currentClients"
+    ReactLayout.render(Layout, {
+      content: <CurrentClients />
     });
   },
 });
@@ -33,8 +33,8 @@ trainerRoutes.route('/currentClients', {
 //TRAINER SCHEDULE ROUTE
 trainerRoutes.route('/trainerSchedule', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "trainerSchedule"
+    ReactLayout.render(Layout, {
+      content: <TrainerSchedule />
     });
   },
 });
@@ -42,8 +42,8 @@ trainerRoutes.route('/trainerSchedule', {
 //MY ACCOUNT ROUTE
 trainerRoutes.route('/myAccount', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "myAccount"
+    ReactLayout.render(Layout, {
+      content: <MyAccount />
     });
   },
 });
@@ -51,8 +51,8 @@ trainerRoutes.route('/myAccount', {
 //TRAINER GUIDE ROUTE
 trainerRoutes.route('/trainerGuide', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "trainerGuide"
+    ReactLayout.render(Layout, {
+      content: <TrainerGuide />
     });
   },
 });
@@ -60,8 +60,8 @@ trainerRoutes.route('/trainerGuide', {
 //TRAINER HOME ROUTE
 trainerRoutes.route('/trainerHome', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "trainerHome"
+    ReactLayout.render(Layout, {
+      content: <TrainerHome />
     });
   },
 });

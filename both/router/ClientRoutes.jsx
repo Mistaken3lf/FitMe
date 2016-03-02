@@ -6,8 +6,8 @@ const clientRoutes = FlowRouter.group({
 //MY DASHBOARD ROUTE
 clientRoutes.route('/myDashboard', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "myDashboard"
+    ReactLayout.render(Layout, {
+      content: <MyDashboard />
     });
   },
 });
@@ -15,8 +15,8 @@ clientRoutes.route('/myDashboard', {
 //CLIENT HOME ROUTE
 clientRoutes.route('/clientHome', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "clientHome"
+    ReactLayout.render(Layout, {
+      content: <ClientHome />
     });
   },
 });
