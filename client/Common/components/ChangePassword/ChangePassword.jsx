@@ -11,32 +11,40 @@ ChangePassword = React.createClass({
       Bert.alert("Passwords do not match", 'danger');
       return false;
     }
-
-    Accounts.changePassword(currentPassword, newPassword, (error) => {
-      //Invalid passwords
-      if (error) {
-        //Pop up an alert to show the error
-        Bert.alert(error.reason, 'danger');
-      } else {
-        //Go to the admin home if they are an admin
-        if(Roles.userIsInRole(Meteor.userId(), "admin")) {
-          FlowRouter.go("/adminHome");
-          Bert.alert("Password successfully changed", 'success');
+    
+    if(currentPassword == "" || currentPassword == null) {
+      Bert.alert("Please enter your current password", "danger");
+    } else if(newPassword == "" || newPassword == null) {
+      Bert.alert("Please enter your new password", "danger");
+    } else if(newPasswordConfirmation == "" || newPasswordConfirmation == null) {
+      Bert.alert("Please confirm your new password", "danger");
+    } else {
+      Accounts.changePassword(currentPassword, newPassword, (error) => {
+        //Invalid passwords
+        if (error) {
+          //Pop up an alert to show the error
+          Bert.alert(error.reason, 'danger');
+        } else {
+          //Go to the admin home if they are an admin
+          if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+            FlowRouter.go("/adminHome");
+            Bert.alert("Password successfully changed", 'success');
+          }
+  
+          //Go to the trainers home if they are a trainer
+          if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+            FlowRouter.go("/trainerHome");
+            Bert.alert("Password successfully changed", 'success');
+          }
+  
+          //Go to the clients home if they are a client
+          if(Roles.userIsInRole(Meteor.userId(), "client")) {
+            FlowRouter.go("/clientHome");
+            Bert.alert("Password successfully changed", 'success');
+          }
         }
-
-        //Go to the trainers home if they are a trainer
-        if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
-          FlowRouter.go("/trainerHome");
-          Bert.alert("Password successfully changed", 'success');
-        }
-
-        //Go to the clients home if they are a client
-        if(Roles.userIsInRole(Meteor.userId(), "client")) {
-          FlowRouter.go("/clientHome");
-          Bert.alert("Password successfully changed", 'success');
-        }
-      }
-    });
+      });
+    }
   },
 
   render() {

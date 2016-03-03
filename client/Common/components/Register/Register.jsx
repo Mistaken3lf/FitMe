@@ -7,8 +7,12 @@ Register = React.createClass({
     const username = this.refs.username.value;
     const password = this.refs.password.value;
     const email = this.refs.email.value;
-
-    if(firstName == "" || firstName == null) {
+    
+    if(username == "" || username == null) {
+      Bert.alert("Please enter a username", "danger");
+    } else if(password == "" || password == null) {
+      Bert.alert("Please enter a password", "danger");
+    } else if(firstName == "" || firstName == null) {
       Bert.alert("Please Enter Your First Name", "danger");
     } else if(lastName == "" || lastName == null) {
       Bert.alert("Please Enter Your Last Name", "danger");

@@ -18,8 +18,12 @@ AddClient = React.createClass({
     const emergencyContact = this.refs.emergencyContact.value;
     const bio = this.refs.bio.value;
     const fitnessGoals = this.refs.fitnessGoals.value;
-
-    if(firstName == "" || firstName == null) {
+    
+    if(username == "" || username == null) {
+      Bert.alert("Please enter a username", "danger");
+    } else if(password == "" || password == null) {
+      Bert.alert("Please enter a password", "danger");
+    } else if(firstName == "" || firstName == null) {
       Bert.alert("Please Enter Your First Name", "danger");
     } else if(email == "" || email == null) {
       Bert.alert("Please Enter Your Email", "danger");

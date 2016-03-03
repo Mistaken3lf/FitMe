@@ -11,33 +11,39 @@ ResetPassword = React.createClass({
       Bert.alert("Passwords do not match", 'danger');
       return false;
     }
-
-    //Reset the users password
-    Accounts.resetPassword(Session.get('resetPassword'), newPassword, (error) => {
-      if (error) {
-        Bert.alert(error, 'danger');
-      } else {
-        Bert.alert("Password successfully changed", 'success');
-
-        //Unset the reset password token
-        Session.set('resetPassword', null);
-
-        //Go to the admins home if they are an admin
-        if(Roles.userIsInRole(Meteor.userId(), "admin")) {
-          FlowRouter.go("/adminHome");
+    
+    if(newPassword == "" || newPassword == null) {
+      Bert.alert("Please enter a new password", "danger");
+    } else if(newPasswordConfirmation == "" || newPasswordConfirmation == null) {
+      Bert.alert("Please confirm your new password", "danger");
+    } else {
+      //Reset the users password
+      Accounts.resetPassword(Session.get('resetPassword'), newPassword, (error) => {
+        if (error) {
+          Bert.alert(error, 'danger');
+        } else {
+          Bert.alert("Password successfully changed", 'success');
+  
+          //Unset the reset password token
+          Session.set('resetPassword', null);
+  
+          //Go to the admins home if they are an admin
+          if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+            FlowRouter.go("/adminHome");
+          }
+  
+          //Go to the trainer home if they are a trainer
+          if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+            FlowRouter.go("/trainerHome");
+          }
+  
+          //Go to the clients home if they are a client
+          if(Roles.userIsInRole(Meteor.userId(), "client")) {
+            FlowRouter.go("/clientHome");
+          }
         }
-
-        //Go to the trainer home if they are a trainer
-        if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
-          FlowRouter.go("/trainerHome");
-        }
-
-        //Go to the clients home if they are a client
-        if(Roles.userIsInRole(Meteor.userId(), "client")) {
-          FlowRouter.go("/clientHome");
-        }
-      }
-    });
+      });
+    }
   },
 
   render() {

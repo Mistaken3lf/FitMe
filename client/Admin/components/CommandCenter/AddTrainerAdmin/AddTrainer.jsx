@@ -8,8 +8,11 @@ AddTrainerAdmin = React.createClass({
     const email = this.refs.email.value;
     const firstName = this.refs.firstName.value;
     const lastName = this.refs.lastName.value;
-
-    if(firstName == "" || firstName == null) {
+    if(username == "" || username == null) {
+      Bert.alert("Please enter a username", "danger");
+    } else if(password == "" || password == null) {
+      Bert.alert("Please enter a password", "danger");
+    } else if(firstName == "" || firstName == null) {
       Bert.alert("Please Enter Trainer's First Name", "danger");
     } else if(lastName == "" || lastName == null) {
       Bert.alert("Please Enter Trainer's Last Name", "danger");

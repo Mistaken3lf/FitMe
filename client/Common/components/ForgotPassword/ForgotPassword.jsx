@@ -4,18 +4,22 @@ ForgotPassword = React.createClass({
 
     //Capture the users email
     const email = this.refs.email.value;
-
-    //Send email to user with link to reset password
-    Accounts.forgotPassword({
-      email: email
-    }, (error) => {
-      if (error) {
-        Bert.alert("Invalid Email!", 'danger');
-      } else {
-        Bert.alert("Email has been sent", 'success');
-        FlowRouter.go("/login");
-      }
-    });
+    
+    if(email == "" || email == null) {
+      Bert.alert("Please enter your email", "danger");
+    } else {
+      //Send email to user with link to reset password
+      Accounts.forgotPassword({
+        email: email
+      }, (error) => {
+        if (error) {
+          Bert.alert("Invalid Email!", 'danger');
+        } else {
+          Bert.alert("Email has been sent", 'success');
+          FlowRouter.go("/login");
+        }
+      });
+    }
   },
 
   render() {
