@@ -11,7 +11,11 @@ AccountDetails = React.createClass({
 
       trainersAccount: Meteor.users.findOne({
         _id: trainerId
-      })
+      }),
+      
+      clientCount: Meteor.users.find({
+        createdBy: trainerId
+      }).count()
     };
   },
 
@@ -171,7 +175,7 @@ AccountDetails = React.createClass({
                             <td>{this.data.trainersAccount.planType}</td>
                             <td>{this.data.trainersAccount.datePurchased}</td>
                             <td>{this.data.trainersAccount.expiresOn}</td>
-                            <td>{this.data.trainersAccount.totalClients}</td>
+                            <td>{this.data.clientCount}</td>
                             <td>{this.data.trainersAccount.clientLimit}</td>
                             <td>{this.data.trainersAccount.lastLogin}</td>
                             <td>
