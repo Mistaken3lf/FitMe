@@ -33,7 +33,7 @@ AddFiveClients = React.createClass({
         //Charge the trainer with stripe
         let checkout = StripeCheckout.configure({
           key: Meteor.settings.public.stripe,
-          image: "https://www.gofitme.com/navigation/fitMeSidebarLogo.png",
+          image: "https://www.gofitme.com/Navigation/fitMeSidebarLogo.png",
           locale: 'auto',
           token(token) {
             charge = {
