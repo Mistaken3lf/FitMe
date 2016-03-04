@@ -52,7 +52,11 @@ MyAccount = React.createClass({
   },
 
   render() {
-    if (Meteor.loggingIn()) {
+    if(!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+      return (
+        <NotAuthorized />
+      );
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );

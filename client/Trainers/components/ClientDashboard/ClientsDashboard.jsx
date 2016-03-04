@@ -23,7 +23,11 @@ ClientsDashboard = React.createClass({
   },
 
   render() {
-    if(this.data.loading) {
+    if(!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+      return (
+        <NotAuthorized />
+      );
+    } else if(this.data.loading) {
       return (
         <Loading />
       );
