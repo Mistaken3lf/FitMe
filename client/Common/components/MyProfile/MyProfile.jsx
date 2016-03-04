@@ -26,7 +26,11 @@ MyProfile = React.createClass({
   },
 
   render() {
-    if (this.data.loading) {
+    if(!Meteor.user()) {
+      return (
+        <NotAuthorized />
+      );
+    } else if (this.data.loading) {
       return (
         <Loading />
       );
