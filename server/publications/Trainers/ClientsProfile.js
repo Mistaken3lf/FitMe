@@ -54,7 +54,8 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
         thursdayDescription: 1,
         fridayDescription: 1,
         saturdayDescription: 1,
-        sundayDescription: 1
+        sundayDescription: 1,
+        profilePicture: 1
       }
     });
   }

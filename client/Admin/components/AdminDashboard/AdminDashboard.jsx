@@ -22,15 +22,15 @@ AdminDashboard = React.createClass({
   },
 
   render() {
-    if(!Roles.userIsInRole(Meteor.userId(), "admin")) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (!Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <NotAuthorized />
       );
     } else if (this.data.loading) {
-      return (
-        <Loading />
-      );
-    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );

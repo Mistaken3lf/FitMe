@@ -23,33 +23,72 @@ MyDashboard = React.createClass({
     Session.set("myClickedButton", clickedButton);
   },
 
+  updateProfilePic() {
+    let profilePic = this.refs.profilePicture.files;
+    const clientId = FlowRouter.getParam('_id');
+
+    if (profilePic && profilePic[0]) {
+      let fileReader = new FileReader();
+
+      fileReader.onload = (data) => {
+        let picture = data.target.result;
+        Meteor.call("updateProfilePicture", {
+          picture,
+          clientId
+        });
+      }
+
+      fileReader.readAsDataURL(profilePic[0]);
+    }
+  },
+
   render() {
-    if(!Roles.userIsInRole(Meteor.userId(), "client")) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (!Roles.userIsInRole(Meteor.userId(), "client")) {
       return (
         <NotAuthorized />
       );
-    } else if(this.data.loading) {
+    } else if (this.data.loading) {
       return (
         <Loading />
       );
-    } else if(Meteor.loggingIn()) {
-      return (
-        <Loading />
-      );
-    } else if(Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
       return (
         <div>
           <div className="row">
             <div className="col s12 m12 l3 offset-l3">
-              <img className="responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
+              {(() => {
+                if(this.data.currentClient.profilePicture == "" || this.data.currentClient.profilePicture == null) {
+                  return (
+                    <img className="responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
+                  );
+                } else {
+                  return (
+                    <img className="responsive-img profilePic" src={this.data.currentClient.profilePicture} />
+                  );
+                }
+              })()}
             </div>
             <div className="col s12 m12 l1">
               <img className="responsive-img blueLine" src="/Dashboard/Profile/blueLine.jpg" />
             </div>
-            <div className="col s12 m12 l3">
-            <h5 className="center blue-text trainerViewDashNameText"><b>{this.data.currentClient.firstName} {this.data.currentClient.lastName}</b></h5>
-            <h5 className="center blue-text trainerViewDashboardText">DASHBOARD</h5>
-          </div>
+            <div className="col s12 m12 l4">
+              <h5 className="center blue-text trainerViewDashNameText"><b>{this.data.currentClient.firstName} {this.data.currentClient.lastName}</b></h5>
+              <h5 className="center blue-text trainerViewDashboardText">DASHBOARD</h5>
+              <br />
+              <div className="file-field input-field">
+                <div className="btn blue white-text">
+                  <span>Upload</span>
+                  <input type="file" ref="profilePicture" onChange={this.updateProfilePic} />
+                </div>
+                <div className="file-path-wrapper">
+                  <input className="file-path validate" type="text" placeholder="Upload profile picture" />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="row">
             <div className="col s12 m12 l12 center">

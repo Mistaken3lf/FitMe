@@ -26,7 +26,11 @@ MyProfile = React.createClass({
   },
 
   render() {
-    if(!Meteor.user()) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (!Meteor.user()) {
       return (
         <NotAuthorized />
       );
@@ -129,10 +133,6 @@ MyProfile = React.createClass({
             </div>
           </div>
         </div>
-      );
-    } else if (Meteor.loggingIn()) {
-      return (
-        <Loading />
       );
     } else {
       return (

@@ -58,7 +58,8 @@ Meteor.publish('myProfile', function () {
         expiresOn: 1,
         clientLimit: 1,
         hasPaid: 1,
-        userStatus: 1
+        userStatus: 1,
+        profilePicture: 1
       }
     });
   }

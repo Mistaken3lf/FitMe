@@ -7,7 +7,7 @@ CurrentClients = React.createClass({
 
     return {
       loading: !currentClients.ready() || !clientData.ready(),
-      
+
       currentClients: Meteor.users.find({
         createdBy: Meteor.userId()
       }).fetch(),
@@ -34,11 +34,15 @@ CurrentClients = React.createClass({
   },
 
   render() {
-    if (this.data.loading) {
+    if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
-    } else if (Meteor.loggingIn()) {
+    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+      return (
+        <NotAuthorized />
+      );
+    } else if (this.data.loading) {
       return (
         <Loading />
       );

@@ -39,7 +39,11 @@ CommandCenter = React.createClass({
   },
 
   render() {
-    if(!Roles.userIsInRole(Meteor.userId(), "admin")) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (!Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <NotAuthorized />
       );
@@ -77,10 +81,6 @@ CommandCenter = React.createClass({
             </div>
           </div>
         </div>
-      );
-    } else if (Meteor.loggingIn()) {
-      return (
-        <Loading />
       );
     } else {
       return (

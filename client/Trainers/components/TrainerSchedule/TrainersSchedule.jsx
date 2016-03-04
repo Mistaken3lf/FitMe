@@ -206,7 +206,11 @@ TrainersSchedule = React.createClass({
   },
 
   render() {
-    if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
         <NotAuthorized />
       );
@@ -217,10 +221,6 @@ TrainersSchedule = React.createClass({
     } else if (this.data.currentUser.userStatus == "suspended") {
       return (
         <SuspendedAccount />
-      );
-    } else if (Meteor.loggingIn()) {
-      return (
-        <Loading />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
