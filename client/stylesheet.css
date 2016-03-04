@@ -192,13 +192,11 @@ footer {
 #navPad {
   width: 90%;
   margin: auto auto 6px auto;
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #e0e0e0;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
+
 }
 
 /* Align brand text as far left as possible */

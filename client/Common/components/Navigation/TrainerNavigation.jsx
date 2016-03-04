@@ -25,7 +25,7 @@ TrainerNavigation = React.createClass({
             <a href="#" className="brand-logo">FitMe</a>
             <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
             <ul className="side-nav" id="mobile-menu">
-              <div className="grey lighten-2">
+              <div className="white">
                 <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
                 <br />
                 <hr className="navSeperator" />
@@ -43,7 +43,7 @@ TrainerNavigation = React.createClass({
               <a className="btn blue white-text waves-effect logout" id="navPad" onClick={this.logout}  href="#!">Logout</a>
             </ul>
             <ul className="side-nav fixed" id="desktop-menu">
-              <div className="grey lighten-2">
+              <div className="white">
                 <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
                 <br />
                 <hr className="navSeperator" />
