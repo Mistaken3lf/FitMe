@@ -7,6 +7,7 @@ CurrentClients = React.createClass({
 
     return {
       loading: !currentClients.ready() || !clientData.ready(),
+      
       currentClients: Meteor.users.find({
         createdBy: Meteor.userId()
       }).fetch(),

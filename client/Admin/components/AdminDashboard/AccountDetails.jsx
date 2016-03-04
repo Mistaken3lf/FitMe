@@ -12,7 +12,7 @@ AccountDetails = React.createClass({
       trainersAccount: Meteor.users.findOne({
         _id: trainerId
       }),
-      
+
       clientCount: Meteor.users.find({
         createdBy: trainerId
       }).count()
@@ -143,6 +143,10 @@ AccountDetails = React.createClass({
 
   render() {
     if (this.data.loading) {
+      return (
+        <Loading />
+      );
+    } else if(Meteor.loggingIn()) {
       return (
         <Loading />
       );

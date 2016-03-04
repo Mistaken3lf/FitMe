@@ -108,25 +108,25 @@ MonthlyPlan = React.createClass({
     } else if(this.props.userStatus.hasPaid == true) {
         return (
           <div className="col s12 m3 l3">
-          <div className="card blue hoverable darken-1 z-depth-1">
-            <div className="center-align card-content white-text">
-              <div className="divider"></div>
-              <div className="section">
-                <h5 className="center-align">1 Month</h5>
+            <div className="card blue hoverable darken-1 z-depth-1">
+              <div className="center-align card-content white-text">
+                <div className="divider"></div>
+                <div className="section">
+                  <h5 className="center-align">1 Month</h5>
+                </div>
+                <div className="divider"></div>
+                <div className="section">
+                  <h5 className="center-align">$15.00</h5>
+                  <p className="center-align">50 Client Limit</p>
+                  <p className="center-align">Technical Support</p>
+                  <p className="center-align">1 Month Of Premium Access</p>
+                </div>
+                <div className="divider"></div>
+                <br />
+                <a className="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i className="material-icons blue-text">add</i></a>
               </div>
-              <div className="divider"></div>
-              <div className="section">
-                <h5 className="center-align">$15.00</h5>
-                <p className="center-align">50 Client Limit</p>
-                <p className="center-align">Technical Support</p>
-                <p className="center-align">1 Month Of Premium Access</p>
-              </div>
-              <div className="divider"></div>
-              <br />
-              <a className="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i className="material-icons blue-text">add</i></a>
             </div>
           </div>
-        </div>
         );
     } else {
       return (

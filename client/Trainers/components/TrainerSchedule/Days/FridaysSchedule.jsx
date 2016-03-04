@@ -24,7 +24,7 @@ FridaysSchedule = React.createClass({
                   <li><a href="#" onClick={this.goToDashboard.bind(null, friday._id)}>{friday.firstName} {friday.lastName} </a><span className="red-text removeFromFridayMobile" onClick={this.removeFromFriday.bind(null, friday._id)}>[x]</span><h6 className="workoutStartTime"><b>Start:</b> {friday.fridaysScheduleStart}</h6> <h6 className="workoutEndTime"><b>End:</b> {friday.fridaysScheduleEnd} <span className="removeFromFriday red-text" onClick={this.removeFromFriday.bind(null, friday._id)}>[x]</span></h6></li>
                   <div className="workoutDescription">Notes: {friday.fridayDescription}</div>
                 </div>
-              );
+                );
               })}
             </div>
           </div>

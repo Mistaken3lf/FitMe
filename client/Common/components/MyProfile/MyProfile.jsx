@@ -5,7 +5,7 @@ MyProfile = React.createClass({
     const handle = Meteor.subscribe("myProfile");
 
     return {
-      loading: !handle.ready(), // Use handle to show loading state
+      loading: !handle.ready(),
       userProfile: Meteor.users.findOne({
         _id: Meteor.userId()
       })

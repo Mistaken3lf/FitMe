@@ -1,4 +1,4 @@
-const updateMyProfile = new ValidatedMethod({
+const updateTrainersProfile = new ValidatedMethod({
   name: "updateTrainersProfile",
 
   //Validate the field being updated, the actual data,

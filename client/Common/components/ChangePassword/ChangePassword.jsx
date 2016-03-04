@@ -11,12 +11,12 @@ ChangePassword = React.createClass({
       Bert.alert("Passwords do not match", 'danger');
       return false;
     }
-    
-    if(currentPassword == "" || currentPassword == null) {
+
+    if (currentPassword == "" || currentPassword == null) {
       Bert.alert("Please enter your current password", "danger");
-    } else if(newPassword == "" || newPassword == null) {
+    } else if (newPassword == "" || newPassword == null) {
       Bert.alert("Please enter your new password", "danger");
-    } else if(newPasswordConfirmation == "" || newPasswordConfirmation == null) {
+    } else if (newPasswordConfirmation == "" || newPasswordConfirmation == null) {
       Bert.alert("Please confirm your new password", "danger");
     } else {
       Accounts.changePassword(currentPassword, newPassword, (error) => {
@@ -26,19 +26,19 @@ ChangePassword = React.createClass({
           Bert.alert(error.reason, 'danger');
         } else {
           //Go to the admin home if they are an admin
-          if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+          if (Roles.userIsInRole(Meteor.userId(), "admin")) {
             FlowRouter.go("/adminHome");
             Bert.alert("Password successfully changed", 'success');
           }
-  
+
           //Go to the trainers home if they are a trainer
-          if(Roles.userIsInRole(Meteor.userId(), "trainer")) {
+          if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
             FlowRouter.go("/trainerHome");
             Bert.alert("Password successfully changed", 'success');
           }
-  
+
           //Go to the clients home if they are a client
-          if(Roles.userIsInRole(Meteor.userId(), "client")) {
+          if (Roles.userIsInRole(Meteor.userId(), "client")) {
             FlowRouter.go("/clientHome");
             Bert.alert("Password successfully changed", 'success');
           }
@@ -54,41 +54,39 @@ ChangePassword = React.createClass({
       }
     };
 
-    if(Meteor.user()) {
+    if (Meteor.user()) {
       return (
         <div className="row">
-          <div className="col s12 m8 offset-m2 l6 offset-l3" id="passwordChangeForm">
-            <div className="card-panel grey lighten-4 z-depth-2">
-              <h2 className="blue-text center">CHANGE PASSWORD</h2>
-              <form onSubmit={this.handleSubmit} id="changePasswordForm">
-                <div className="row">
-                  <div className="col s12 m12 l12">
-                    <input type="password" ref="currentPassword" placeholder="Current Password" minLength={2} className="validate" required />
-                  </div>
+        <div className="col s12 m8 offset-m2 l6 offset-l3" id="passwordChangeForm">
+          <div className="card-panel grey lighten-4 z-depth-2">
+            <h2 className="blue-text center">CHANGE PASSWORD</h2>
+            <form onSubmit={this.handleSubmit} id="changePasswordForm">
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="password" ref="currentPassword" placeholder="Current Password" minLength={2} className="validate" required />
                 </div>
-                <div className="row">
-                  <div className="col s12 m12 l12">
-                    <input type="password" ref="newPassword" placeholder="New Password" minLength={2} className="validate" required />
-                  </div>
+              </div>
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="password" ref="newPassword" placeholder="New Password" minLength={2} className="validate" required />
                 </div>
-                <div className="row">
-                  <div className="col s12 m12 l12">
-                    <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" minLength={2} className="validate" required />
-                  </div>
+              </div>
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" minLength={2} className="validate" required />
                 </div>
-                <div className="row">
-                  <div className="col s12 m12 l12">
-                    <button type="submit" style={styles.buttonStyle} className="btn blue white-text waves-effect">Change Password</button>
-                  </div>
+              </div>
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <button type="submit" style={styles.buttonStyle} className="btn blue white-text waves-effect">Change Password</button>
                 </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
+      </div>
       );
-    }
-
-    if(Meteor.loggingIn()) {
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
