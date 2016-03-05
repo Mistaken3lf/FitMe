@@ -25,16 +25,14 @@ MyDashboard = React.createClass({
 
   updateProfilePic() {
     let profilePic = this.refs.profilePicture.files;
-    const clientId = FlowRouter.getParam('_id');
 
     if (profilePic && profilePic[0]) {
       let fileReader = new FileReader();
 
       fileReader.onload = (data) => {
         let picture = data.target.result;
-        Meteor.call("updateProfilePicture", {
-          picture,
-          clientId
+        Meteor.call("updateMyProfilePicture", {
+          picture
         });
       }
 

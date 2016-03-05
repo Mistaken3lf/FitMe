@@ -31,7 +31,7 @@ ClientsDashboard = React.createClass({
 
       fileReader.onload = (data) => {
         let picture = data.target.result;
-        Meteor.call("updateProfilePicture", {
+        Meteor.call("updateClientsProfilePicture", {
           picture,
           clientId
         });
