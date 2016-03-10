@@ -61,11 +61,11 @@ MyDashboard = React.createClass({
               {(() => {
                 if(this.data.currentClient.profilePicture == "" || this.data.currentClient.profilePicture == null) {
                   return (
-                    <img className="responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
+                    <img className="circle responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
                   );
                 } else {
                   return (
-                    <img className="responsive-img profilePic" src={this.data.currentClient.profilePicture} />
+                    <img className="circle responsive-img profilePic" src={this.data.currentClient.profilePicture} />
                   );
                 }
               })()}
