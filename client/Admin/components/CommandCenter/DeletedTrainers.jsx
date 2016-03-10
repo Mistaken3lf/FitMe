@@ -1,4 +1,19 @@
 DeletedTrainers = React.createClass({
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    const handle = Meteor.subscribe("deletedTrainers");
+
+    return {
+      loading: !handle.ready(),
+
+      deletedTrainers: Meteor.users.find({
+        roles: "trainer",
+        userStatus: "deleted"
+      }).fetch()
+    }
+  },
+
   suspendTrainer(id) {
     //Suspend the trainer clicked on
     Meteor.call("suspendTrainer", {
@@ -81,7 +96,7 @@ DeletedTrainers = React.createClass({
                   </tr>
                 </thead>
                 <tbody>
-                  {this.props.deletedTrainers.map((deletedTrainers) => {
+                  {this.data.deletedTrainers.map((deletedTrainers) => {
                   return (
                     <tr key={deletedTrainers._id}>
                       <td><a href="#" onClick={this.trainersDashboard.bind(null, deletedTrainers._id)}>{deletedTrainers.username}</a></td>
