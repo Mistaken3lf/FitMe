@@ -2,8 +2,41 @@ CommandCenter = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
+    const handle = Meteor.subscribe("allUsers");
+
     return {
+      loading: !handle.ready(),
+
       clickedButton: Session.get("trainerStatus"),
+
+      activeTrainers: Meteor.users.find({
+        roles: "trainer",
+        userStatus: "active"
+      }).fetch(),
+
+      suspendedTrainers: Meteor.users.find({
+        roles: "trainer",
+        userStatus: "suspended"
+      }).fetch(),
+
+      deletedTrainers: Meteor.users.find({
+        roles: "trainer",
+        userStatus: "deleted"
+      }).fetch(),
+
+      totalTrainers: Meteor.users.find({
+        roles: "trainer"
+      }).count(),
+
+      totalClients: Meteor.users.find({
+        roles: "client"
+      }).count(),
+
+      totalUsers: Meteor.users.find({
+        _id: {
+          $ne: Meteor.userId()
+        }
+      }).count(),
 
       currentUser: Meteor.user()
     };
@@ -23,6 +56,10 @@ CommandCenter = React.createClass({
       return (
         <Loading />
       );
+    } else if(this.data.loading) {
+      return (
+        <Loading />
+      );
     } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <div className="row">
@@ -30,7 +67,7 @@ CommandCenter = React.createClass({
             <div className="card black z-depth-2">
               <div className="row">
                 <div className="col s12 m12 l12">
-                  <UserCounter totalTrainers={this.data.totalTainers} totalClients={this.data.totalClients} totalUser={this.data.totalUsers} />
+                  <UserCounter totalTrainers={this.data.totalTrainers} totalClients={this.data.totalClients} totalUsers={this.data.totalUsers} />
                 </div>
               </div>
               <div className="row">
@@ -48,19 +85,19 @@ CommandCenter = React.createClass({
                       {(() => {
                         if(this.data.clickedButton == "activeTrainers") {
                           return (
-                            <ActiveTrainers />
+                            <ActiveTrainers activeTrainers={this.data.activeTrainers} />
                           );
                         } else if(this.data.clickedButton == "suspendedTrainers") {
                           return (
-                            <SuspendedTrainers />
+                            <SuspendedTrainers suspendedTrainers={this.data.suspendedTrainers} />
                           );
                         } else if(this.data.clickedButton == "deletedTrainers") {
                           return (
-                            <DeletedTrainers />
+                            <DeletedTrainers deletedTrainers={this.data.deletedTrainers} />
                           );
                         } else {
                           return (
-                            <ActiveTrainers />
+                            <ActiveTrainers activeTrainers={this.data.activeTrainers} />
                           );
                         }
                       })()}
@@ -72,10 +109,6 @@ CommandCenter = React.createClass({
             </div>
           </div>
         </div>
-      );
-    } else {
-      return (
-        <NotAuthorized />
       );
     }
   }
