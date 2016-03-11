@@ -1,4 +1,4 @@
-ClientsProfile = React.createClass({
+ClientsDashboard = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
@@ -8,24 +8,37 @@ ClientsProfile = React.createClass({
     return {
       loading: !handle.ready(),
 
-      currentClient: Meteor.users.findOne({
-        whosProfile: clientId
-      })
-    };
+      myClient: Meteor.users.findOne({
+        _id: clientId
+      }),
+
+      clickedButton: Session.get("clickedButton")
+    }
   },
 
-  updateField(e) {
-    const fieldName = e.target.name;
-    const data = e.target.value;
+  handleClick(e) {
+    //Set the active template based on button clicked on dashboard
+    let clickedButton = e.target.id;
+    Session.set("clickedButton", clickedButton);
+  },
+
+  updateProfilePic() {
+    let profilePic = this.refs.profilePicture.files;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsProfile", {
-      fieldName, data, clientId
-    }, (error) => {
-      if (error) {
-        Bert.alert(error.reason, "danger");
+    if (profilePic && profilePic[0]) {
+      let fileReader = new FileReader();
+
+      fileReader.onload = (data) => {
+        let picture = data.target.result;
+        Meteor.call("updateClientsProfilePicture", {
+          picture,
+          clientId
+        });
       }
-    });
+
+      fileReader.readAsDataURL(profilePic[0]);
+    }
   },
 
   render() {
@@ -33,96 +46,87 @@ ClientsProfile = React.createClass({
       return (
         <Loading />
       );
+    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+      return (
+        <NotAuthorized />
+      );
     } else if (this.data.loading) {
       return (
         <Loading />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
-        <div className="row">
-          <div className="card z-depth-3 grey lighten-4">
-            <div className="col s12 m12 l12">
-              <div className="card white">
-                <div className="blue card-title center-align white-text">CLIENT PROFILE CARD</div>
+        <div>
+          <div className="row">
+            <div className="col s12 m12 l3 offset-l3">
+              {(() => {
+                if(this.data.myClient.profilePicture == "" || this.data.myClient.profilePicture == null) {
+                  return (
+                    <img className="circle responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
+                  );
+                } else {
+                  return (
+                    <img className="circle responsive-img profilePic" src={this.data.myClient.profilePicture} />
+                  );
+                }
+              })()}
+            </div>
+            <div className="col s12 m12 l1">
+              <img className="responsive-img blueLine" src="/Dashboard/Profile/blueLine.jpg" />
+            </div>
+            <div className="col s12 m12 l4">
+              <h5 className="center blue-text trainerViewDashNameText"><b>{this.data.myClient.firstName} {this.data.myClient.lastName}</b></h5>
+              <h5 className="center blue-text trainerViewDashboardText">DASHBOARD</h5>
+              <br />
+              <div className="file-field input-field">
+                <div className="btn blue white-text">
+                  <span>Upload</span>
+                  <input type="file" ref="profilePicture" onChange={this.updateProfilePic} />
+                </div>
+                <div className="file-path-wrapper">
+                  <input className="file-path validate" type="text" placeholder="Upload profile picture" />
+                </div>
               </div>
             </div>
-            <div className="row">
-              <form>
-                <div className="col s12">
-                  <div className="card">
-                    <div className="row">
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">Username:</span>
-                        <input type="text" name="username" className="validate" placeholder="Username" defaultValue={this.data.currentClient.username} readOnly />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">First Name:</span>
-                        <input type="text" name="firstName" className="validate" placeholder="First Name" minLength={2} onChange={this.updateField} defaultValue={this.data.currentClient.firstName} required />
-                      </div>
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">Last Name:</span>
-                        <input type="text" name="lastName" className="validate" placeholder="Last Name" minLength={2} onChange={this.updateField} defaultValue={this.data.currentClient.lastName} required />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">Date Of Birth:</span>
-                        <input type="date" name="birthday" className="validate" id="birthday" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.data.currentClient.birthday} />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12 m3 l3">
-                        <span className="blue-text myBoldProfileHeading">Address:</span>
-                        <input type="text" name="address" className="validate" placeholder="Address" onChange={this.updateField} defaultValue={this.data.currentClient.address} />
-                      </div>
-                      <div className="input-field col s12 m3 l3">
-                      <span className="blue-text myBoldProfileHeading">City:</span>
-                      <input type="text" name="city" className="validate" placeholder="City" onChange={this.updateField} defaultValue={this.data.currentClient.city} />
-                      </div>
-                      <div className="input-field col s12 m3 l3">
-                        <span className="blue-text myBoldProfileHeading">State:</span>
-                        <input type="text" name="state" className="validate" placeholder="State" onChange={this.updateField} defaultValue={this.data.currentClient.state} />
-                      </div>
-                      <div className="input-field col s12 m3 l3">
-                        <span className="blue-text myBoldProfileHeading">Zip Code</span>
-                        <input type="text" name="zip" className="validate" placeholder="Zip Code" onChange={this.updateField} defaultValue={this.data.currentClient.zip} />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12 m4 l4">
-                      <span className="blue-text myBoldProfileHeading">Home Phone:</span>
-                        <input type="text" name="homePhone" className="validate" placeholder="Home Phone" onChange={this.updateField} defaultValue={this.data.currentClient.homePhone} />
-                      </div>
-                      <div className="input-field col s12 m4 l4">
-                        <span className="blue-text myBoldProfileHeading">Work Phone:</span>
-                        <input type="text" name="workPhone" className="validate" placeholder="Work Phone" onChange={this.updateField} defaultValue={this.data.currentClient.workPhone} />
-                      </div>
-                      <div className="input-field col s12 m4 l4">
-                        <span className="blue-text myBoldProfileHeading">Emergency Contact:</span>
-                        <input type="text" name="emergencyContact" className="validate" placeholder="Emergency Contact" onChange={this.updateField} defaultValue={this.data.currentClient.emergencyContact} />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">Email:</span>
-                        <input type="text" name="email" className="validate" placeholder="Email" defaultValue={this.data.currentClient.emails[0].address} readOnly />
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">About You:</span>
-                        <textarea name="bio" placeholder="About You" className="validate" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.currentClient.bio}></textarea>
-                      </div>
-                      <div className="input-field col s12 m6 l6">
-                        <span className="blue-text myBoldProfileHeading">Fitness Goals:</span>
-                        <textarea name="fitnessGoals" className="validate" placeholder="Fitness Goals" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.currentClient.fitnessGoals}></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+          </div>
+          <div className="row">
+            <div className="col s12 m12 l12 center">
+              <button className="btn blue clickedButton waves-effect trainerDashButtonProfile" id="clientProfile" onClick={this.handleClick}>Profile</button>
+              <button className="btn blue clickedButton waves-effect trainerDashButtonSchedule" id="clientSchedule" onClick={this.handleClick}>Schedule</button>
+              <button className="btn blue clickedButton waves-effect trainerDashButtonStats" id="clientStats" onClick={this.handleClick}>Stats</button>
+              <button className="btn blue clickedButton waves-effect trainerDashButtonCardio" id="clientCardio" onClick={this.handleClick}>Cardio</button>
+              <button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkout" onClick={this.handleClick}>Workout</button>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s12 m12 l12">
+              {(() => {
+                if(this.data.clickedButton == "clientProfile") {
+                  return (
+                    <ClientsProfile />
+                  );
+                } else if(this.data.clickedButton == "clientSchedule") {
+                  return (
+                    <ClientsSchedule />
+                  );
+                } else if(this.data.clickedButton == "clientStats") {
+                  return (
+                    <ClientsStats />
+                  );
+                } else if(this.data.clickedButton == "clientCardio") {
+                  return (
+                    <ClientsCardio />
+                  );
+                } else if(this.data.clickedButton == "clientWorkout") {
+                  return (
+                    <ClientsWorkout />
+                  );
+                } else {
+                  return (
+                    <ClientsProfile />
+                  );
+                }
+              })()}
             </div>
           </div>
         </div>

@@ -31,7 +31,7 @@ ClientsDashboard = React.createClass({
 
       fileReader.onload = (data) => {
         let picture = data.target.result;
-        Meteor.call("updateProfilePicture", {
+        Meteor.call("updateClientsProfilePicture", {
           picture,
           clientId
         });
@@ -69,7 +69,11 @@ ClientsDashboard = React.createClass({
                 } else {
                   return (
                     <img className="circle responsive-img profilePic" src={this.data.myClient.profilePicture} />
+<<<<<<< HEAD
                   )
+=======
+                  );
+>>>>>>> 5627508afe870a2e7d5fd3c228777f006e5caf78
                 }
               })()}
             </div>

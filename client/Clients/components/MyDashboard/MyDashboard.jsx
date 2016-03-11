@@ -25,16 +25,14 @@ MyDashboard = React.createClass({
 
   updateProfilePic() {
     let profilePic = this.refs.profilePicture.files;
-    const clientId = FlowRouter.getParam('_id');
 
     if (profilePic && profilePic[0]) {
       let fileReader = new FileReader();
 
       fileReader.onload = (data) => {
         let picture = data.target.result;
-        Meteor.call("updateProfilePicture", {
-          picture,
-          clientId
+        Meteor.call("updateMyProfilePicture", {
+          picture
         });
       }
 
@@ -63,11 +61,11 @@ MyDashboard = React.createClass({
               {(() => {
                 if(this.data.currentClient.profilePicture == "" || this.data.currentClient.profilePicture == null) {
                   return (
-                    <img className="responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
+                    <img className="circle responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
                   );
                 } else {
                   return (
-                    <img className="responsive-img profilePic" src={this.data.currentClient.profilePicture} />
+                    <img className="circle responsive-img profilePic" src={this.data.currentClient.profilePicture} />
                   );
                 }
               })()}

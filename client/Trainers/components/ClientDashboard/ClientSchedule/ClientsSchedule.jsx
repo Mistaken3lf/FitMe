@@ -45,7 +45,9 @@ ClientsSchedule = React.createClass({
             <div className="row">
               <h5 className="center"><b>WEEK OF:</b><br /> {this.startOfWeek()} - {this.endOfWeek()}</h5>
             </div>
-            <ScheduleInfo scheduleData={this.data.currentClient}/>
+            <div className="row">
+              <ScheduleInfo scheduleData={this.data.currentClient}/>
+            </div>
             <div className="row">
               <ClientsMonday scheduleData={this.data.currentClient} />
               <ClientsTuesday scheduleData={this.data.currentClient} />

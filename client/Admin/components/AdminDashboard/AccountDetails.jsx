@@ -146,7 +146,7 @@ AccountDetails = React.createClass({
       return (
         <Loading />
       );
-    } else if(Meteor.loggingIn()) {
+    } else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
