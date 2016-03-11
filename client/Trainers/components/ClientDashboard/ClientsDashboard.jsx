@@ -58,7 +58,6 @@ ClientsDashboard = React.createClass({
       return (
         <div>
           <div className="row">
-            <br />
             <div className="circle col s6 m12 l3 offset-s3 offset-l3">
               {(() => {
                 if(this.data.myClient.profilePicture == "" || this.data.myClient.profilePicture == null) {
