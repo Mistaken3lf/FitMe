@@ -57,10 +57,9 @@ ClientsDashboard = React.createClass({
     } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
         <div>
-        
           <div className="row">
-          <br /><br /><br />
-            <div className="circle col s6 m12 l2 offset-s3 offset-l3">
+            <br />
+            <div className="circle col s6 m12 l3 offset-s3 offset-l3">
               {(() => {
                 if(this.data.myClient.profilePicture == "" || this.data.myClient.profilePicture == null) {
                   return (
@@ -69,11 +68,7 @@ ClientsDashboard = React.createClass({
                 } else {
                   return (
                     <img className="circle responsive-img profilePic" src={this.data.myClient.profilePicture} />
-<<<<<<< HEAD
-                  )
-=======
                   );
->>>>>>> 5627508afe870a2e7d5fd3c228777f006e5caf78
                 }
               })()}
             </div>
@@ -95,7 +90,6 @@ ClientsDashboard = React.createClass({
               </div>
             </div>
           </div>
-          
           <div className="row">
             <div className="col s12 m12 l12 center">
               <button className="btn blue clickedButton waves-effect trainerDashButtonProfile" id="clientProfile" onClick={this.handleClick}>Profile</button>
