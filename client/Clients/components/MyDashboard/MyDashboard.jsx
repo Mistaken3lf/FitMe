@@ -57,7 +57,7 @@ MyDashboard = React.createClass({
       return (
         <div>
           <div className="row">
-            <div className="col s12 m12 l3 offset-l3">
+            <div className="col s6 m6 l3 offset-s3 offset-m3 offset-l3">
               {(() => {
                 if(this.data.currentClient.profilePicture == "" || this.data.currentClient.profilePicture == null) {
                   return (
@@ -69,9 +69,6 @@ MyDashboard = React.createClass({
                   );
                 }
               })()}
-            </div>
-            <div className="col s12 m12 l1">
-              <img className="responsive-img blueLine" src="/Dashboard/Profile/blueLine.jpg" />
             </div>
             <div className="col s12 m12 l4">
               <h5 className="center blue-text trainerViewDashNameText"><b>{this.data.currentClient.firstName} {this.data.currentClient.lastName}</b></h5>

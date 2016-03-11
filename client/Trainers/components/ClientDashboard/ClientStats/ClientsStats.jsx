@@ -52,7 +52,7 @@ ClientsStats = React.createClass({
                     </div>
                   </div>
                 </div>
-                <span className="card-title black-text">{this.data.currentClient.lastName}'s Measurements</span>
+                <span className="card-title black-text">{this.data.currentClient.firstName}'s Measurements</span>
                 <div className="card white z-depth-1 spacing">
                   <div className="row">
                     <div className="col s12 m12 l12">
