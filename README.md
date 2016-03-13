@@ -1,8 +1,6 @@
 # Welcome To FitMe
 
-##Setting Up A Free Testing Heroku Server
-
-### Heroku Setup Instructions:
+## Heroku Setup Instructions:
 ` Create the actual app `
 
 Step 1: heroku create yourAppName
@@ -11,7 +9,7 @@ Step 1: heroku create yourAppName
 
 Step 2: heroku buildpacks:set https://github.com/jordansissel/heroku-buildpack-meteor.git
 
-`You must have a credit card on file for heroku for this step to work `
+` You must have a credit card on file for heroku for this step to work `
 
 Step 3: heroku addons:create mongolab:sandbox
 
@@ -32,5 +30,7 @@ Step 6: heroku config:add METEOR_SETTINGS="$(cat settings-development.json)"
 Step 7: git push heroku master
 
 ###Heroku Extras:
+
+` You need to do this if you delete your cloud9 workspace and wish to redeploy!!! `
 
 - To set heroku git remote: heroku git:remote -a yourappname
