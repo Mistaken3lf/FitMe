@@ -29,8 +29,23 @@ Step 6: heroku config:add METEOR_SETTINGS="$(cat settings-development.json)"
 
 Step 7: git push heroku master
 
-###Heroku Extras:
+##### Extras:
 
 ` You need to do this if you delete your cloud9 workspace and wish to redeploy!!! `
 
 - To set heroku git remote: heroku git:remote -a yourappname
+
+###Cloud9 Configuration
+
+####Clone FitMe
+
+- Click on repositories on the left hand side of your cloud9 dashboard
+- Click clone on the FitMe Repo.
+- Your workspace will be created
+- Copy this command into your cloud9 terminal: ` curl https://install.meteor.com/ | sh `
+- Run a ` meteor update ` before your first run
+- To start meteor use ` meteor --port $IP:$PORT --settings settings-development.json `
+
+#####Project Settings
+- Enable soft tabs and set to 2 spaces
+- Enable on save, strip white space
