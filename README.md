@@ -2,7 +2,7 @@
 
 ### Heroku Setup Instructions:
 
-###### Create the actual app
+##### Create the actual app
 Step 1: heroku create yourAppName
 
 ##### This is so heroku can build the meteor app
