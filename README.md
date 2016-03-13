@@ -1,6 +1,6 @@
 # Welcome To FitMe
 
-## Heroku Setup Instructions:
+### Heroku Setup Instructions:
 ` Create the actual app `
 
 Step 1: heroku create yourAppName
