@@ -2,6 +2,10 @@
 
 ### Heroku Setup Instructions:
 
+- Heroku is already installed on cloud9 workspaces. Make sure you have an account on
+heroku and then run ` heroku login ` on your cloud9 terminal and login with
+your account credentials before continuing.
+
 ##### Create the actual app
 Step 1: heroku create yourAppName
 
@@ -27,7 +31,7 @@ Step 7: git push heroku master
 You must do this if you delete your cloud9 workspace and re-clone, this will
 set up the git remote information and allow you to deploy your heroku app!!!
 
-- To set heroku git remote: heroku git:remote -a yourappname
+- To set heroku git remote: ` heroku git:remote -a yourappname `
 
 ### Cloud9 Configuration:
 
