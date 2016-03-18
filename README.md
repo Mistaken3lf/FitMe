@@ -47,3 +47,19 @@ set up the git remote information and allow you to deploy your heroku app!!!
 ##### Project Settings
 - Enable soft tabs and set to 2 spaces
 - Enable on save, strip white space
+-
+
+### GIT How To
+
+- View changes made: `git status` this will show you all the files you have changed
+- Add all changes: `git add .` this will add all files to the commit
+- Commit: `git commit -m "Your commit message here"` this will create a commit
+with all the files that you have added to it. Try to keep your commit messages
+meaningful and go along with the files that you changed. So dont change a bunch
+files and then add them all at once and create one commit. Break it up into
+smaller commits so we know what has changed in that file.
+- Push: `git push origin devel` this will push to the devel branch and be
+viewable on gitub.
+- Pull changes: `git pull origin devel` this will pull in all changes anyone has
+made to the devel branch. Please try to do this before your start changing any
+files to make sure you are running the latest code.
