@@ -22,7 +22,7 @@ Login = React.createClass({
 
       Accounts.onLogin(() => {
         Meteor.call("setLoginStatus");
-
+        
         //Go to the admin home if they are an admin
         if (Roles.userIsInRole(Meteor.userId(), "admin")) {
           FlowRouter.go("/adminHome");
