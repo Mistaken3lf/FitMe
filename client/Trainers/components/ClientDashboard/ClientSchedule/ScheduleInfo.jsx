@@ -7,7 +7,6 @@ ScheduleInfo = React.createClass({
     const fieldName = e.target.name;
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
-    console.log(fieldName);
 
     Meteor.call("updateClientsSchedule", {
       fieldName, data, clientId
