@@ -53,6 +53,10 @@ set up the git remote information and allow you to deploy your heroku app!!!
 
 - View changes made: `git status` this will show you all the files you have changed
 - Add all changes: `git add .` this will add all files to the commit
+- Add individual files: Run `git status` and cloud9 wil highlight the files
+in red. Click on them to add them individually by clicing `git add` in the
+popup window. Then you can create individual commit messages for each file or
+group of files.
 - Commit: `git commit -m "Your commit message here"` this will create a commit
 with all the files that you have added to it. Try to keep your commit messages
 meaningful and go along with the files that you changed. So dont change a bunch
