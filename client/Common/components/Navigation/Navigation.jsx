@@ -15,29 +15,31 @@ Navigation = React.createClass({
     return version;
   },
 
-  render() {
+  renderNav() {
     if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <AdminNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username} />
       );
-    }
-
-    if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
         <TrainerNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username} />
       );
-    }
-
-    if (Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
       return (
         <ClientNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username}  />
       );
-    }
-
-    if (!Meteor.user()) {
+    } else if (!Meteor.user()) {
       return (
         <CommonNavigation versionNumber={this.versionNumber()} />
       );
     }
+  },
+
+  render() {
+    return (
+      <div>
+        {this.renderNav()}
+      </div>
+    );
   }
 });
