@@ -10,5 +10,5 @@ ClientWorkout.deny({
     },
     remove() {
       return true
-    },
+    }
 });

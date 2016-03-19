@@ -8,5 +8,5 @@ Meteor.users.deny({
     },
     remove() {
       return true
-    },
+    }
 });

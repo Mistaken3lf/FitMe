@@ -10,5 +10,5 @@ ClientCardio.deny({
     },
     remove() {
       return true
-    },
+    }
 });

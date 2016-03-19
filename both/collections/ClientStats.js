@@ -10,5 +10,5 @@ ClientStats.deny({
     },
     remove() {
       return true
-    },
+    }
 });
