@@ -47,7 +47,6 @@ set up the git remote information and allow you to deploy your heroku app!!!
 ##### Project Settings
 - Enable soft tabs and set to 2 spaces
 - Enable on save, strip white space
--
 
 ### GIT How To
 
