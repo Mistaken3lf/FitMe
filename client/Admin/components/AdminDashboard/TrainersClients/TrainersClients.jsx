@@ -13,7 +13,7 @@ TrainersClients = React.createClass({
       }).fetch()
     };
   },
-  
+
   render() {
     if (this.data.loading) {
       return (
