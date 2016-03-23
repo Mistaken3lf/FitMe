@@ -9,6 +9,8 @@ WorkoutBuilder = React.createClass({
         </div>
         <WorkoutDetails />
         <CardioRoutine />
+        <WorkoutRoutine />
+        <AddExerciseButton />
       </div>
     );
   }
