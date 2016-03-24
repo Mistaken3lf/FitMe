@@ -1,7 +1,6 @@
 const registerClient = new ValidatedMethod({
   name: "registerClient",
 
-  //Validate all the clients profile info
   validate: new SimpleSchema({
     username: {
       type: String,

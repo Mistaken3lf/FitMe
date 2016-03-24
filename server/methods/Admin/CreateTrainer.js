@@ -1,8 +1,6 @@
 const CreateTrainer = new ValidatedMethod({
   name: "createTrainer",
 
-  //Validate the trainers username, password,
-  //email, firstname and lastname
   validate: new SimpleSchema({
     username: {
       type: String,
@@ -37,7 +35,6 @@ const CreateTrainer = new ValidatedMethod({
     firstName,
     lastName
   }) {
-    //Make sure user is an admin and logged in before allowing the add
     if (Roles.userIsInRole(this.userId, "admin")) {
       //Create the new trainer
       let newTrainerId = Accounts.createUser({

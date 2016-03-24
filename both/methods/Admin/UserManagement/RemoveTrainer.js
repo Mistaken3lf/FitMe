@@ -1,7 +1,6 @@
 const removeTrainer = new ValidatedMethod({
   name: "removeTrainer",
 
-  //Validate the trainers id
   validate: new SimpleSchema({
     id: {
       type: String

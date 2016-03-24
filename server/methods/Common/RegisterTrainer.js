@@ -1,8 +1,6 @@
 const registerTrainer = new ValidatedMethod({
   name: "registerTrainer",
 
-  //Validate the trainers username, password,
-  //email, firstname and lastname
   validate: new SimpleSchema({
     username: {
       type: String,

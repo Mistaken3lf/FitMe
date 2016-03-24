@@ -1,4 +1,3 @@
-//Dont allow any client side inserts, updates, or deletes
 Meteor.users.deny({
   insert() {
       return true

@@ -1,5 +1,4 @@
 Meteor.publish('currentClientsCardio', function (currentClientsId) {
-  //Check that the id is valid against the server
   new SimpleSchema({
     currentClientsId: {
       type: String
@@ -14,10 +13,7 @@ Meteor.publish('currentClientsCardio', function (currentClientsId) {
     return ClientCardio.find({
       whosCardio: currentClientsId
     });
-  }
-
-  //User is not authorized to access clients cardio
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
     return this.ready();
   }

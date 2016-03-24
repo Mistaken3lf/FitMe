@@ -1,5 +1,4 @@
 Meteor.publish('currentClientsProfile', function (currentClientsId) {
-  //Check that the id is valid against the server
   new SimpleSchema({
     currentClientsId: {
       type: String
@@ -58,10 +57,7 @@ Meteor.publish('currentClientsProfile', function (currentClientsId) {
         profilePicture: 1
       }
     });
-  }
-
-  //Not authorized to access clients profile info
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
     return this.ready();
   }

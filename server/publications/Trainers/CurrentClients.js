@@ -15,10 +15,7 @@ Meteor.publish('currentClients', function () {
         createdBy: 1
       }
     });
-  }
-
-  //Not authorized to access trainers clients
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
     return this.ready();
   }

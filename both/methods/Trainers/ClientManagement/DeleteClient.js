@@ -1,7 +1,6 @@
 const deleteClient = new ValidatedMethod({
   name: "deleteClient",
 
-  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -52,4 +51,3 @@ const deleteClient = new ValidatedMethod({
     }
   }
 });
-

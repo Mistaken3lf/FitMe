@@ -84,7 +84,7 @@ commmonRoutes.route('/contactPage', {
   }
 });
 
-//INVALID ROUTE
+//NOT FOUND ROUTE
 FlowRouter.notFound = {
   action() {
     ReactLayout.render(Layout, {

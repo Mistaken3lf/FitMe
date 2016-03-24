@@ -1,7 +1,6 @@
-const ResetSundaysSchedule = new ValidatedMethod({
+const resetSundaysSchedule = new ValidatedMethod({
   name: "resetSundaysSchedule",
 
-  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String

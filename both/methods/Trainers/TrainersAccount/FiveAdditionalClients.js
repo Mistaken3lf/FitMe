@@ -1,7 +1,6 @@
 const fiveAdditionalClientsTrainer = new ValidatedMethod({
   name: "fiveAdditionalClientsTrainer",
 
-  //Nothing to validate
   validate: null,
 
   run() {

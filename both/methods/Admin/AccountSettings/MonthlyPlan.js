@@ -1,7 +1,6 @@
 const monthlyPlan = new ValidatedMethod({
   name: "monthlyPlan",
 
-  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String

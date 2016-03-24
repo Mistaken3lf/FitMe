@@ -1,7 +1,6 @@
 const suspendClient = new ValidatedMethod({
   name: "suspendClient",
 
-  //Validate the clients id
   validate: new SimpleSchema({
     id: {
       type: String
@@ -54,5 +53,3 @@ const suspendClient = new ValidatedMethod({
     }
   }
 });
-
-

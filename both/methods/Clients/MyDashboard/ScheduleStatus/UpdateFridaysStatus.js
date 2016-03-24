@@ -1,8 +1,6 @@
-const UpdateFridaysStatus = new ValidatedMethod({
+const updateFridaysStatus = new ValidatedMethod({
   name: "updateFridaysStatus",
 
-  //Validate the field being updated, the actual data,
-  //and the clients id
   validate: new SimpleSchema({
     fridayStatus: {
       type: Boolean

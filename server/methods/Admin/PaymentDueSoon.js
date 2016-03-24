@@ -1,7 +1,6 @@
 const paymentDueSoon = new ValidatedMethod({
   name: "paymentDueSoon",
-  
-  //Validate the users id, and expiration date
+
   validate: new SimpleSchema({
     id: {
       type: String

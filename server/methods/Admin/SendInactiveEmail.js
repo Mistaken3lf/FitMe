@@ -1,7 +1,6 @@
 const sendInactiveEmail = new ValidatedMethod({
   name: "sendInactiveEmail",
 
-  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String

@@ -1,7 +1,6 @@
 const sixMonthPlanTrainer = new ValidatedMethod({
   name: "sixMonthPlanTrainer",
 
-  //Nothing to validate
   validate: null,
 
   run() {

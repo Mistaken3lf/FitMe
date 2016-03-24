@@ -1,8 +1,6 @@
-const UpdateMyProfilePicture = new ValidatedMethod({
+const updateMyProfilePicture = new ValidatedMethod({
   name: "updateMyProfilePicture",
 
-  //Validate the field being updated, the actual data,
-  //and the clients id
   validate: new SimpleSchema({
     picture: {
       type: String

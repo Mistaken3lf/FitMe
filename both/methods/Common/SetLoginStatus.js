@@ -1,7 +1,6 @@
 const setLoginStatus = new ValidatedMethod({
   name: "setLoginStatus",
 
-  //Nothing to validate
   validate: null,
 
   run() {

@@ -1,8 +1,6 @@
-const UpdateClientsCardio = new ValidatedMethod({
+const updateClientsCardio = new ValidatedMethod({
   name: "updateClientsCardio",
 
-  //Validate the field being updated, the actual data,
-  //and the clients id
   validate: new SimpleSchema({
     fieldName: {
       type: String
@@ -58,4 +56,3 @@ const UpdateClientsCardio = new ValidatedMethod({
     }
   }
 });
-

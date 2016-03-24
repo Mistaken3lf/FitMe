@@ -1,7 +1,6 @@
 const processPayment = new ValidatedMethod({
   name: "processPayment",
 
-  //Nothing to validate
   validate: null,
 
   run({

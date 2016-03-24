@@ -1,8 +1,6 @@
-const UpdateClientsProfile = new ValidatedMethod({
+const updateClientsProfile = new ValidatedMethod({
   name: "updateClientsProfile",
 
-  //Validate the field being updated, the actual data,
-  //and the clients id
   validate: new SimpleSchema({
     fieldName: {
       type: String

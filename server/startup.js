@@ -8,7 +8,7 @@ Meteor.startup(function () {
       email: "bigt371@gmail.com",
     });
 
-    //Set the adminas active and the first and last name
+    //Set the admin active and the first and last name
     Meteor.users.update(admin, {
       $set: {
         userStatus: "active",
@@ -17,7 +17,6 @@ Meteor.startup(function () {
       }
     });
 
-    //Assign client to the client role
     Roles.addUsersToRoles(admin, 'admin');
   }
 });

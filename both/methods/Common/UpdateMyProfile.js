@@ -15,8 +15,6 @@ const updateMyProfile = new ValidatedMethod({
     fieldName,
     data
   }) {
-    //Make sure user is logged in before letting them update
-    //a profile
     if (Meteor.userId()) {
       const currentUser = Meteor.users.findOne({
         _id: this.userId

@@ -1,6 +1,4 @@
 Meteor.publish('myTrainer', function () {
-  //Find current client so we can find who created them to
-  //show them their trainer
   const currentClient = Meteor.users.findOne({
     _id: this.userId
   });
@@ -29,10 +27,7 @@ Meteor.publish('myTrainer', function () {
         fitnessGoals: 1
       }
     });
-  }
-
-  //Not authorized to access clients profile info
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
     return this.ready();
   }

@@ -1,5 +1,4 @@
 Meteor.publish('trainersClients', function (currentTrainerId) {
-  //Make sure trainers id is valid
   new SimpleSchema({
     currentTrainerId: {
       type: String
@@ -24,10 +23,7 @@ Meteor.publish('trainersClients', function (currentTrainerId) {
         createdBy: 1
       }
     });
-  }
-
-  //Not authorized to access trainer data
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
     return this.ready();
   }

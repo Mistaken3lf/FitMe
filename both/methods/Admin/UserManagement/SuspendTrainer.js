@@ -1,7 +1,6 @@
 const suspendTrainer = new ValidatedMethod({
   name: "suspendTrainer",
 
-  //Validate the trainers id
   validate: new SimpleSchema({
     id: {
       type: String

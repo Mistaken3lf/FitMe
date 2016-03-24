@@ -1,7 +1,6 @@
 const freeAccountTrainer = new ValidatedMethod({
   name: "freeAccountTrainer",
 
-  //Nothing to validate
   validate: null,
 
   run() {

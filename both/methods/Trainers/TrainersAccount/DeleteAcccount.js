@@ -1,7 +1,6 @@
 const deleteAccount = new ValidatedMethod({
   name: "deleteAccount",
 
-  //Nothing to validate
   validate: null,
 
   run() {

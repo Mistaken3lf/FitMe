@@ -1,8 +1,8 @@
 SyncedCron.add({
   name: 'Auto Suspend Trainers (Every Day)',
-  //Run every night at midnight
+  //Run every night at 3am
   schedule(parser) {
-    return parser.text('at 12:00 am');
+    return parser.text('at 3:00 am');
   },
 
   job() {

@@ -1,5 +1,4 @@
 Meteor.publish('trainersProfile', function (trainerId) {
-  //Make sure trainers id is real
   new SimpleSchema({
     trainerId: {
       type: String
@@ -8,7 +7,6 @@ Meteor.publish('trainersProfile', function (trainerId) {
     trainerId
   });
 
-  //If the user is logged in then publish their fields
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find the logged in user
     return Meteor.users.find({
@@ -40,13 +38,8 @@ Meteor.publish('trainersProfile', function (trainerId) {
         sundaysSchedule: 1,
       }
     });
-  }
-
-  //User is not authorized to access this publication
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
-
-    //Return ready to the router is not waiting for nothing
     return this.ready();
   }
 });

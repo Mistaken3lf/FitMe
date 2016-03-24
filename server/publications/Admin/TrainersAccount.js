@@ -1,5 +1,4 @@
 Meteor.publish('trainersAccount', function (currentTrainerId) {
-  //Check the trainers id to make sure its real
   new SimpleSchema({
     currentTrainerId: {
       type: String
@@ -8,7 +7,6 @@ Meteor.publish('trainersAccount', function (currentTrainerId) {
     currentTrainerId
   });
 
-  //Make sure the user is logged in and a admin before publishing
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find a specific trainer based on the flow router
     //param passed in as currentTrainerId
@@ -23,10 +21,7 @@ Meteor.publish('trainersAccount', function (currentTrainerId) {
         lastLogin: 1,
       }
     });
-  }
-
-  //Not authorized to access trainer data
-  else {
+  } else {
     throw new Meteor.Error("not-authorized");
     return this.ready();
   }

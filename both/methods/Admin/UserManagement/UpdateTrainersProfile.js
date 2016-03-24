@@ -1,8 +1,6 @@
 const updateTrainersProfile = new ValidatedMethod({
   name: "updateTrainersProfile",
 
-  //Validate the field being updated, the actual data,
-  //and the id of the trainer
   validate: new SimpleSchema({
     fieldName: {
       type: String

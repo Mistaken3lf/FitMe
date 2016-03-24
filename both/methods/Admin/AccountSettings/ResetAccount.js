@@ -1,7 +1,6 @@
 const resetAccount = new ValidatedMethod({
   name: "resetAccount",
 
-  //Validate the trainers id
   validate: new SimpleSchema({
     trainerId: {
       type: String
