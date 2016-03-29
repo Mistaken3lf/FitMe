@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Mistaken3lf/FitMe/issues"
   },
-  "homepage": "https://github.com/Mistaken3lf/FitMe#readme"
+  "homepage": "https://github.com/Mistaken3lf/FitMe#readme",
+  "dependencies": {
+    "react": "^0.14.7"
+  }
 }
