@@ -72,6 +72,7 @@ percolate:synced-cron@1.3.0
 promise@0.6.5
 random@1.0.7
 rate-limit@1.0.2
+react-meteor-data@0.2.7
 reactive-dict@1.1.5
 reactive-var@1.0.7
 reload@1.1.6
@@ -85,9 +86,11 @@ spacebars-compiler@1.0.9
 srp@1.0.6
 standard-minifier-css@1.0.4
 standard-minifier-js@1.0.4
+static-html@1.0.5
 templating@1.1.7
 templating-tools@1.0.2
 themeteorchef:bert@2.1.0
+tmeasday:check-npm-versions@0.2.0
 tracker@1.0.11
 ui@1.0.9
 underscore@1.0.6
