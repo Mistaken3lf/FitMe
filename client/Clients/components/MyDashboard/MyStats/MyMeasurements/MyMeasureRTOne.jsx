@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyMeasureRTOne = React.createClass({
   render() {
     return (

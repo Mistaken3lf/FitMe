@@ -1,3 +1,5 @@
+import React from 'react';
+
 MeasureChange = React.createClass({
   neckMeasureChange() {
     let neckMeasureChange = this.props.statsData.measureRT3Neck - this.props.statsData.measureRT1Neck;

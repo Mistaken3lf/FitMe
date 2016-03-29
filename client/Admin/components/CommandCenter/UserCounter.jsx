@@ -1,3 +1,5 @@
+import React from 'react';
+
 UserCounter = React.createClass({
   render() {
     return (

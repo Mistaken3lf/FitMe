@@ -1,3 +1,5 @@
+import React from 'react';
+
 ClientTable = React.createClass({
   clientDashboard(id) {
     const thisTrainer = Meteor.users.findOne({

@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainerHomeHeader = React.createClass({
   render() {
     const styles = {

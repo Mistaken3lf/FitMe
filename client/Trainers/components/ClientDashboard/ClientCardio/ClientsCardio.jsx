@@ -1,3 +1,5 @@
+import React from 'react';
+
 ClientsCardio = React.createClass({
   mixins: [ReactMeteorData],
 

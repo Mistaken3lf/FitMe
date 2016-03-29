@@ -1,3 +1,5 @@
+import React from 'react';
+
 YearlyPlan = React.createClass({
   oneYear() {
     let planType = "";

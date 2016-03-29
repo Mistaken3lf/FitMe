@@ -1,3 +1,5 @@
+import React from 'react';
+
 SignUpAdvertisement = React.createClass({
   componentDidMount() {
       $('.parallax').parallax();

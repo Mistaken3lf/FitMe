@@ -1,3 +1,5 @@
+import React from 'react';
+
 AccessingSite = React.createClass({
   render() {
     return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 DangerZone = React.createClass({
   deleteTrainersAccount() {
     const trainerId = FlowRouter.getParam('_id');

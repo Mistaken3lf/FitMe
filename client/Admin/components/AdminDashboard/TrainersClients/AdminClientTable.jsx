@@ -1,3 +1,5 @@
+import React from 'react';
+
 AdminClientTable = React.createClass({
   suspendClient(id) {
     //Suspend user clicked on

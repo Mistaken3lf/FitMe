@@ -1,3 +1,5 @@
+import React from 'react';
+
 SuspendedAccount = React.createClass({
   render() {
     return (

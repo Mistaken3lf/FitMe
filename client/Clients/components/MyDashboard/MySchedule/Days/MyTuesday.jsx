@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyTuesday = React.createClass({
   updateTuesdaysStatus(e) {
     const tuesdayStatus = e.target.checked;

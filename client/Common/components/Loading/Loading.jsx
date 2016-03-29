@@ -1,3 +1,5 @@
+import React from 'react';
+
 Loading = React.createClass({
   render() {
     const styles = {

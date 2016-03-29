@@ -1,3 +1,5 @@
+import React from 'react';
+
 MeasureInitialTest = React.createClass({
   updateField(e) {
     const fieldName = e.target.name;

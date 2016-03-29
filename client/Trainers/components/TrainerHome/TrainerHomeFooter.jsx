@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainerHomeFooter = React.createClass({
   render() {
     return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 NotAuthorized = React.createClass({
   render() {
     return (

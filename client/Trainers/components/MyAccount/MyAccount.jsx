@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyAccount = React.createClass({
   mixins: [ReactMeteorData],
 

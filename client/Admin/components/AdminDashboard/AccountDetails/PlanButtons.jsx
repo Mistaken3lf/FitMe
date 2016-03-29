@@ -1,3 +1,5 @@
+import React from 'react';
+
 PlanButtons = React.createClass({
   activateMonthlyPlan() {
     const trainerId = FlowRouter.getParam('_id');

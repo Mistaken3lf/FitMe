@@ -1,3 +1,5 @@
+import React from 'react';
+
 DiscontinuedServices = React.createClass({
   render() {
     return (

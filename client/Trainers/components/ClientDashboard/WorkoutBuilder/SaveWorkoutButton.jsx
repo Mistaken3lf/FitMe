@@ -1,3 +1,5 @@
+import React from 'react';
+
 SaveWorkoutButton = React.createClass({
   render() {
     return (

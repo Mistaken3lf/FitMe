@@ -1,3 +1,5 @@
+import React from 'react';
+
 MySchedule = React.createClass({
   mixins: [ReactMeteorData],
 

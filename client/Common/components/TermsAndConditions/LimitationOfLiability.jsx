@@ -1,3 +1,5 @@
+import React from 'react';
+
 LimitationOfLiability = React.createClass({
   render() {
     return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyWorkoutDate = React.createClass({
   render() {
     return (

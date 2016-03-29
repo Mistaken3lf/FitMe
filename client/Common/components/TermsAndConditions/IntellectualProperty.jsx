@@ -1,3 +1,5 @@
+import React from 'react';
+
 IntellectualProperty = React.createClass({
   render() {
     return (

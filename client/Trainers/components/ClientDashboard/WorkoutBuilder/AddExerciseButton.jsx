@@ -1,3 +1,5 @@
+import React from 'react';
+
 AddExerciseButton = React.createClass({
   render() {
     return (

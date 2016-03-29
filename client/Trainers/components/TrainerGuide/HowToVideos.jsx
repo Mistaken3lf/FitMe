@@ -1,3 +1,5 @@
+import React from 'react';
+
 HowToVideos = React.createClass({
   componentDidMount() {
     $('.collapsible').collapsible({

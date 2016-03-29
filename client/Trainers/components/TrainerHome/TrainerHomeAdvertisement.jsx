@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainerHomeAdvertisement = React.createClass({
   componentDidMount() {
     $('.parallax').parallax();

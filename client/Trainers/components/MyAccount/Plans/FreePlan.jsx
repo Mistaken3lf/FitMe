@@ -1,3 +1,5 @@
+import React from 'react';
+
 FreePlan = React.createClass({
   freePlan() {
     const currentTrainer = Meteor.users.findOne({

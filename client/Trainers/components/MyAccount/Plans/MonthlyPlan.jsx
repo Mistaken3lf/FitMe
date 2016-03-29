@@ -1,3 +1,5 @@
+import React from 'react';
+
 MonthlyPlan = React.createClass({
   monthlyPlan() {
     let planType = "";

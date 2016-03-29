@@ -1,3 +1,5 @@
+import React from 'react';
+
 Week5To8Cardio = React.createClass({
   updateField(e) {
     const fieldName = e.target.name;

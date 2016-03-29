@@ -1,3 +1,5 @@
+import React from 'react';
+
 FrequentQuestions = React.createClass({
   render() {
     return (

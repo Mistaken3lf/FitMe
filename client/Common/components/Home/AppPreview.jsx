@@ -1,3 +1,5 @@
+import React from 'react';
+
 AppPreview = React.createClass({
   componentDidMount() {
       $('.slider').slider({

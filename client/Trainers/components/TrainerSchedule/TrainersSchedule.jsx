@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainersSchedule = React.createClass({
   mixins: [ReactMeteorData],
 

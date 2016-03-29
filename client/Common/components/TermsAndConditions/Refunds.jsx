@@ -1,3 +1,5 @@
+import React from 'react';
+
 Refunds = React.createClass({
   render() {
     return (

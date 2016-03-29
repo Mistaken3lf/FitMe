@@ -1,3 +1,5 @@
+import React from 'react';
+
 AdminHomeHeader = React.createClass({
   render() {
     const styles = {

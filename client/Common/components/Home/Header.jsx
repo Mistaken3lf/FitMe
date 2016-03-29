@@ -1,3 +1,5 @@
+import React from 'react';
+
 Header = React.createClass({
   learnMore() {
       swal({

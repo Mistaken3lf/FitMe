@@ -1,3 +1,5 @@
+import React from 'react';
+
 PrivacyPolicy = React.createClass({
   render() {
     return (

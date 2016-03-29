@@ -1,3 +1,5 @@
+import React from 'react';
+
 AddTrainerAdmin = React.createClass({
   handleSubmit(e) {
     //Prevent default form submission

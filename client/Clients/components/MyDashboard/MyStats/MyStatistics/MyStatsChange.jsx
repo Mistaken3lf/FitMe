@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyStatsChange = React.createClass({
   bodyWeightChange() {
     let bodyWeightChange = this.props.statsData.statsRT3BodyWeight - this.props.statsData.statsRT1BodyWeight;

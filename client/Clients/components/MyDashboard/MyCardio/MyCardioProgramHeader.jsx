@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyCardioProgramHeader = React.createClass({
   maxHeartRate() {
     //Formula for max heart rate

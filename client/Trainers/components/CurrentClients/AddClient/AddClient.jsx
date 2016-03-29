@@ -1,3 +1,5 @@
+import React from 'react';
+
 AddClient = React.createClass({
   handleSubmit(e) {
     e.preventDefault();

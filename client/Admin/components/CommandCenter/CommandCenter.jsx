@@ -1,3 +1,5 @@
+import React from 'react';
+
 CommandCenter = React.createClass({
   mixins: [ReactMeteorData],
 

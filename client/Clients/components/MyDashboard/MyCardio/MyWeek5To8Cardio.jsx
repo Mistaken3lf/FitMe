@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyWeek5To8Cardio = React.createClass({
   startBeatsPerMinuteWeek58() {
     let startIntensityW58 = this.props.cardioData.cardioW58StartPercentIntensity / 100;

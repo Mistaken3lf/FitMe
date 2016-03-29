@@ -1,3 +1,5 @@
+import React from 'react';
+
 HeartRateChart = React.createClass({
   render() {
     return (

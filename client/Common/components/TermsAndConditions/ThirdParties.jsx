@@ -1,3 +1,5 @@
+import React from 'react';
+
 ThirdParties = React.createClass({
   render() {
     return (

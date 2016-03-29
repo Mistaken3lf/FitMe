@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyBodyFatChart = React.createClass({
   render() {
     return (

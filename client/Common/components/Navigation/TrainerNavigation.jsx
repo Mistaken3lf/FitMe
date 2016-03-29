@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainerNavigation = React.createClass({
   componentDidMount() {
     //Make mobile sidebar on left side collapsible

@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyMeasureInitialTest = React.createClass({
   render() {
     return (

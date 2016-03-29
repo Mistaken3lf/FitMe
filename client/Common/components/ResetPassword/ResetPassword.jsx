@@ -1,3 +1,5 @@
+import React from 'react';
+
 ResetPassword = React.createClass({
   handleSubmit(e) {
     e.preventDefault();

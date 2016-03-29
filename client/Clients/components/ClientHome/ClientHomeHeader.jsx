@@ -1,3 +1,5 @@
+import React from 'react';
+
 ClientHomeHeader = React.createClass({
   render() {
     const styles = {

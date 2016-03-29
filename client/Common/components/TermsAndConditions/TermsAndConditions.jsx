@@ -1,3 +1,5 @@
+import React from 'react';
+
 TermsAndConditions = React.createClass({
   render() {
     return (

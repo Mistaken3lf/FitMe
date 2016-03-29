@@ -1,3 +1,5 @@
+import React from 'react';
+
 AdminHomeFooter = React.createClass({
   render() {
     return (

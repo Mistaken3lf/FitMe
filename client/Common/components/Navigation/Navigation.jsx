@@ -1,3 +1,5 @@
+import React from 'react';
+
 Navigation = React.createClass({
   mixins: [ReactMeteorData],
 

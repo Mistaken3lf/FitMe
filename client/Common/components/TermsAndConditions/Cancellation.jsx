@@ -1,3 +1,5 @@
+import React from 'react';
+
 Cancellation = React.createClass({
   render() {
     return (

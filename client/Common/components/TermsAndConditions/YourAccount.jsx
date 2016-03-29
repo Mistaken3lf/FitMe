@@ -1,3 +1,5 @@
+import React from 'react';
+
 YourAccount = React.createClass({
   render() {
     return (

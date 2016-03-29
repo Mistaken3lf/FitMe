@@ -1,3 +1,5 @@
+import React from 'react';
+
 ChangesToTerms = React.createClass({
   render() {
     return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyScheduleInfo = React.createClass({
   todaysDate() {
     return moment().format("ddd. MMM Do");

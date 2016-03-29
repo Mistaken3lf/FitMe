@@ -1,3 +1,5 @@
+import React from 'react';
+
 ChangesToSite = React.createClass({
   render() {
     return (

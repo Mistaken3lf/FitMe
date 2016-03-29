@@ -1,3 +1,5 @@
+import React from 'react';
+
 AdminDashboard = React.createClass({
   mixins: [ReactMeteorData],
 

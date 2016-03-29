@@ -1,3 +1,5 @@
+import React from 'react';
+
 Register = React.createClass({
   handleSubmit(e) {
     e.preventDefault();

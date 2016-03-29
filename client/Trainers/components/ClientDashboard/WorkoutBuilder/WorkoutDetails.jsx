@@ -1,3 +1,5 @@
+import React from 'react';
+
 WorkoutDetails = React.createClass({
   render() {
     return (

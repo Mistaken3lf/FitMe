@@ -1,3 +1,5 @@
+import React from 'react';
+
 Payments = React.createClass({
   render() {
     return (

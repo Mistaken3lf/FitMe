@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyTrainer = React.createClass({
   mixins: [ReactMeteorData],
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 Overview = React.createClass({
   render() {
     return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 WorkoutRoutine = React.createClass({
   render() {
     const styles = {

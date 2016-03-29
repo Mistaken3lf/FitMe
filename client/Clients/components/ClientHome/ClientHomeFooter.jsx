@@ -1,3 +1,5 @@
+import React from 'react';
+
 ClientHomeFooter = React.createClass({
   render() {
     return (

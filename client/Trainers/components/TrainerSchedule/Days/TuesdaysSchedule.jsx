@@ -1,3 +1,5 @@
+import React from 'react';
+
 TuesdaysSchedule = React.createClass({
   removeFromTuesday(id) {
     Meteor.call("resetTuesdaysSchedule", {id}, (error) => {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 AddTwentyClients = React.createClass({
   addTwentyClients() {
     let planType = "";

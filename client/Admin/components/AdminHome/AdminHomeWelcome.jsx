@@ -1,3 +1,5 @@
+import React from 'react';
+
 AdminHomeWelcome = React.createClass({
   render() {
     return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 ExtrasButtons = React.createClass({
   addFiveAddidionalClients() {
     const trainerId = FlowRouter.getParam('_id');

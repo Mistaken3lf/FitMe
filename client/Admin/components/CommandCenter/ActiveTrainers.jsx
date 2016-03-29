@@ -1,3 +1,5 @@
+import React from 'react';
+
 ActiveTrainers = React.createClass({
   suspendTrainer(id) {
     //Suspend the trainer clicked on

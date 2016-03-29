@@ -1,3 +1,5 @@
+import React from 'react';
+
 FinalLook = React.createClass({
   render() {
     return (

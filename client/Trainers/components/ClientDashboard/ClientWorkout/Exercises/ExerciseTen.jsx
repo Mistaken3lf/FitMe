@@ -1,3 +1,5 @@
+import React from 'react';
+
 ExerciseTen = React.createClass({
   updateField(e) {
     const fieldName = e.target.name;

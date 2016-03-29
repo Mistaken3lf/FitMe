@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainerHomeFinalLook = React.createClass({
   componentDidMount() {
     $('.parallax').parallax();

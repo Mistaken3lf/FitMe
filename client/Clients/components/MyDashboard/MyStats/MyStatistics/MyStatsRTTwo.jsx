@@ -1,3 +1,5 @@
+import React from 'react';
+
 MyStatsRTTwo = React.createClass({
   render() {
     return (

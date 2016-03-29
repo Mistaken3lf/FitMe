@@ -1,3 +1,5 @@
+import React from 'react';
+
 ClientHomeWelcome = React.createClass({
   render() {
     return (

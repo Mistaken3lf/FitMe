@@ -1,3 +1,5 @@
+import React from 'react';
+
 AccountTable = React.createClass({
   render() {
     return (

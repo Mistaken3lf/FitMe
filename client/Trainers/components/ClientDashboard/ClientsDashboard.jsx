@@ -1,3 +1,5 @@
+import React from 'react';
+
 ClientsDashboard = React.createClass({
   mixins: [ReactMeteorData],
 

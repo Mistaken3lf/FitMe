@@ -1,3 +1,5 @@
+import React from 'react';
+
 CardioRoutine = React.createClass({
   render() {
     return (

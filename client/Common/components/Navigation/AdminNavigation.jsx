@@ -1,3 +1,5 @@
+import React from 'react';
+
 AdminNavigation = React.createClass({
   componentDidMount() {
     //Make mobile sidebar on left side collapsible

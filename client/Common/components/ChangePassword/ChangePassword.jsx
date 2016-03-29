@@ -1,3 +1,5 @@
+import React from 'react';
+
 ChangePassword = React.createClass({
   handleSubmit(e) {
     e.preventDefault();

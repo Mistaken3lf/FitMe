@@ -1,3 +1,5 @@
+import React from 'react';
+
 TrainerGuide = React.createClass({
   render() {
     if (Meteor.loggingIn()) {
