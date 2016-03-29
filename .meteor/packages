@@ -20,7 +20,6 @@ aldeed:simple-schema
 alanning:roles
 accounts-base
 kadira:flow-router
-kadira:react-layout
 email
 materialize:materialize
 themeteorchef:bert
