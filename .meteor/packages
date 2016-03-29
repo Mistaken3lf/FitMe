@@ -32,3 +32,4 @@ mdg:validated-method
 force-ssl
 react-meteor-data
 static-html
+session
