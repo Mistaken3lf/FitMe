@@ -1,3 +1,5 @@
+import { mount } from 'react-mounter';
+
 //GROUP ADMIN ROUTES
 const adminRoutes = FlowRouter.group({
   name: 'admin',
@@ -6,7 +8,7 @@ const adminRoutes = FlowRouter.group({
 //COMMAND CENTER ROUTE
 adminRoutes.route('/commandCenter', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <CommandCenter />
     });
   },
@@ -15,7 +17,7 @@ adminRoutes.route('/commandCenter', {
 //ADD NEW TRAINER ROUTE
 adminRoutes.route('/addTrainerAdmin', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <AddTrainerAdmin />
     });
   },
@@ -24,7 +26,7 @@ adminRoutes.route('/addTrainerAdmin', {
 //ADMIN DASHBOARD ROUTE
 adminRoutes.route('/adminDashboard/:_id', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <AdminDashboard />
     });
   },
@@ -33,7 +35,7 @@ adminRoutes.route('/adminDashboard/:_id', {
 //ADMIN HOME ROUTE
 adminRoutes.route('/adminHome', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <AdminHome />
     });
   },

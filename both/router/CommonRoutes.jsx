@@ -1,3 +1,5 @@
+import { mount } from 'react-mounter';
+
 //SHARED USER ROUTES
 const commmonRoutes = FlowRouter.group({
   name: 'commonRoutes',
@@ -6,8 +8,8 @@ const commmonRoutes = FlowRouter.group({
 //HOME PAGE ROUTE
 commmonRoutes.route('/', {
   action() {
-    ReactLayout.render(Layout, {
-      content: <Home />
+    mount(Layout, {
+      content: <Home/>,
     });
   }
 });
@@ -15,7 +17,7 @@ commmonRoutes.route('/', {
 //LOGIN ROUTE
 commmonRoutes.route('/login', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <Login />
     });
   }
@@ -24,7 +26,7 @@ commmonRoutes.route('/login', {
 //REGISTER ROUTE
 commmonRoutes.route('/register', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <Register />
     });
   }
@@ -33,7 +35,7 @@ commmonRoutes.route('/register', {
 //MY PROFILE ROUTE
 commmonRoutes.route('/myProfile', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <MyProfile />
     });
   }
@@ -42,7 +44,7 @@ commmonRoutes.route('/myProfile', {
 //CHANGE PASSWORD ROUTE
 commmonRoutes.route('/changePassword', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <ChangePassword />
     });
   }
@@ -51,7 +53,7 @@ commmonRoutes.route('/changePassword', {
 //FORGOT PASSWORD ROUTE
 commmonRoutes.route('/forgotPassword', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <ForgotPassword />
     });
   }
@@ -60,7 +62,7 @@ commmonRoutes.route('/forgotPassword', {
 //RESET PASSWORD ROUTE
 commmonRoutes.route('/resetPassword', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <ResetPassword />
     });
   }
@@ -69,7 +71,7 @@ commmonRoutes.route('/resetPassword', {
 //TERMS AND CONDITIONS ROUTE
 commmonRoutes.route('/termsAndConditions', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <TermsAndConditions />
     });
   }
@@ -78,7 +80,7 @@ commmonRoutes.route('/termsAndConditions', {
 //CONTACT PAGE ROUTE
 commmonRoutes.route('/contactPage', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <ContactPage />
     });
   }
@@ -87,7 +89,7 @@ commmonRoutes.route('/contactPage', {
 //NOT FOUND ROUTE
 FlowRouter.notFound = {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <NotFound />
     });
   }

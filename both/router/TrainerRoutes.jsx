@@ -1,3 +1,5 @@
+import { mount } from 'react-mounter';
+
 //TRAINER ROUTES
 const trainerRoutes = FlowRouter.group({
   name: 'trainer',
@@ -6,7 +8,7 @@ const trainerRoutes = FlowRouter.group({
 //ADD NEW CLIENT ROUTE
 trainerRoutes.route('/addClient', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <AddClient />
     });
   },
@@ -15,7 +17,7 @@ trainerRoutes.route('/addClient', {
 //CLIENT DASHBOARD ROUTE
 trainerRoutes.route('/clientDashboard/:_id', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <ClientsDashboard />
     });
   },
@@ -24,7 +26,7 @@ trainerRoutes.route('/clientDashboard/:_id', {
 //CURRENT CLIENTS ROUTE
 trainerRoutes.route('/currentClients', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <CurrentClients />
     });
   },
@@ -33,7 +35,7 @@ trainerRoutes.route('/currentClients', {
 //TRAINER SCHEDULE ROUTE
 trainerRoutes.route('/trainerSchedule', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <TrainersSchedule />
     });
   },
@@ -42,7 +44,7 @@ trainerRoutes.route('/trainerSchedule', {
 //MY ACCOUNT ROUTE
 trainerRoutes.route('/myAccount', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <MyAccount />
     });
   },
@@ -51,7 +53,7 @@ trainerRoutes.route('/myAccount', {
 //TRAINER GUIDE ROUTE
 trainerRoutes.route('/trainerGuide', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <TrainerGuide />
     });
   },
@@ -60,7 +62,7 @@ trainerRoutes.route('/trainerGuide', {
 //TRAINER HOME ROUTE
 trainerRoutes.route('/trainerHome', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <TrainerHome />
     });
   },

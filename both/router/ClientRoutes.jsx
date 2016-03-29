@@ -1,3 +1,5 @@
+import { mount } from 'react-mounter';
+
 //CLIENT ROUTES
 const clientRoutes = FlowRouter.group({
   name: 'client',
@@ -6,7 +8,7 @@ const clientRoutes = FlowRouter.group({
 //MY DASHBOARD ROUTE
 clientRoutes.route('/myDashboard', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <MyDashboard />
     });
   },
@@ -15,7 +17,7 @@ clientRoutes.route('/myDashboard', {
 //CLIENT HOME ROUTE
 clientRoutes.route('/clientHome', {
   action() {
-    ReactLayout.render(Layout, {
+    mount(Layout, {
       content: <ClientHome />
     });
   },
