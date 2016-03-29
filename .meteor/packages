@@ -30,5 +30,4 @@ momentjs:moment
 mrgalaxy:stripe
 percolate:synced-cron
 mdg:validated-method
-react
 force-ssl
