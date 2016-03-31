@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import CommandCenter from '../containers/commandCenter.js';
 
 //GROUP ADMIN ROUTES
 const adminRoutes = FlowRouter.group({

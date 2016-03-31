@@ -1,56 +1,15 @@
 import React from 'react';
+import UserCounter from './UserCounter.jsx';
+import ActiveTrainers from './ActiveTrainers.jsx';
 
-CommandCenter = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData() {
-    const handle = Meteor.subscribe("allUsers");
-
-    return {
-      loading: !handle.ready(),
-
-      clickedButton: Session.get("trainerStatus"),
-
-      activeTrainers: Meteor.users.find({
-        roles: "trainer",
-        userStatus: "active"
-      }).fetch(),
-
-      suspendedTrainers: Meteor.users.find({
-        roles: "trainer",
-        userStatus: "suspended"
-      }).fetch(),
-
-      deletedTrainers: Meteor.users.find({
-        roles: "trainer",
-        userStatus: "deleted"
-      }).fetch(),
-
-      totalTrainers: Meteor.users.find({
-        roles: "trainer"
-      }).count(),
-
-      totalClients: Meteor.users.find({
-        roles: "client"
-      }).count(),
-
-      totalUsers: Meteor.users.find({
-        _id: {
-          $ne: Meteor.userId()
-        }
-      }).count(),
-
-      currentUser: Meteor.user()
-    };
-  },
-
+export default class CommandCenter extends React.Component {
   handleClick(e) {
     const clickedButton = e.target.id;
     Session.set("trainerStatus", clickedButton);
-  },
+  }
 
   render() {
-    if (!this.data.currentUser) {
+    if (!Meteor.user()) {
       return (
         <Loading />
       );
@@ -58,7 +17,7 @@ CommandCenter = React.createClass({
       return (
         <Loading />
       );
-    } else if(this.data.loading) {
+    } else if(this.props.loading) {
       return (
         <Loading />
       );
@@ -69,7 +28,7 @@ CommandCenter = React.createClass({
             <div className="card black z-depth-2">
               <div className="row">
                 <div className="col s12 m12 l12">
-                  <UserCounter totalTrainers={this.data.totalTrainers} totalClients={this.data.totalClients} totalUsers={this.data.totalUsers} />
+                  <UserCounter totalTrainers={this.props.totalTrainers} totalClients={this.props.totalClients} totalUsers={this.props.totalUsers} />
                 </div>
               </div>
               <div className="row">
@@ -85,21 +44,21 @@ CommandCenter = React.createClass({
                   <div className="card green">
                     <div className="row">
                       {(() => {
-                        if(this.data.clickedButton == "activeTrainers") {
+                        if(this.props.clickedButton == "activeTrainers") {
                           return (
-                            <ActiveTrainers activeTrainers={this.data.activeTrainers} />
+                            <ActiveTrainers activeTrainers={this.props.activeTrainers} />
                           );
-                        } else if(this.data.clickedButton == "suspendedTrainers") {
+                        } else if(this.props.clickedButton == "suspendedTrainers") {
                           return (
-                            <SuspendedTrainers suspendedTrainers={this.data.suspendedTrainers} />
+                            <SuspendedTrainers suspendedTrainers={this.props.suspendedTrainers} />
                           );
-                        } else if(this.data.clickedButton == "deletedTrainers") {
+                        } else if(this.props.clickedButton == "deletedTrainers") {
                           return (
-                            <DeletedTrainers deletedTrainers={this.data.deletedTrainers} />
+                            <DeletedTrainers deletedTrainers={this.props.deletedTrainers} />
                           );
                         } else {
                           return (
-                            <ActiveTrainers activeTrainers={this.data.activeTrainers} />
+                            <ActiveTrainers activeTrainers={this.props.activeTrainers} />
                           );
                         }
                       })()}
@@ -114,4 +73,4 @@ CommandCenter = React.createClass({
       );
     }
   }
-})
+}
