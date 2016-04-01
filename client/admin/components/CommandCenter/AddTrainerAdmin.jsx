@@ -1,6 +1,6 @@
 import React from 'react';
 
-AddTrainerAdmin = React.createClass({
+export default class AddTrainerAdmin extends React.Component {
   handleSubmit(e) {
     //Prevent default form submission
     e.preventDefault();
@@ -33,7 +33,7 @@ AddTrainerAdmin = React.createClass({
         }
       });
     }
-  },
+  }
 
   render() {
     const styles = {
@@ -48,7 +48,7 @@ AddTrainerAdmin = React.createClass({
           <div className="col s12 m8 offset-m2 l6 offset-l3" id="registrationForm">
             <div className="card-panel black lighten-4 z-depth-2">
               <h2 className="green-text center">CREATE TRAINER</h2>
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="row">
                   <div className="col s12 m6 l6">
                     <input type="text" ref="username" className="validate white-text" minLength={2} placeholder="Username" required  />
@@ -90,4 +90,4 @@ AddTrainerAdmin = React.createClass({
       );
     }
   }
-});
+}

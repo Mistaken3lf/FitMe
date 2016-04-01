@@ -1,12 +1,12 @@
 import React from 'react';
 
-DeletedTrainers = React.createClass({
+export default class DeletedTrainers extends React.Component {
   suspendTrainer(id) {
     //Suspend the trainer clicked on
     Meteor.call("suspendTrainer", {
       id
     });
-  },
+  }
 
   deleteTrainer(id) {
     const curUser = Meteor.users.findOne({
@@ -36,7 +36,7 @@ DeletedTrainers = React.createClass({
         swal('Cancelled', 'Your user is safe now.', 'error');
       }
     });
-  },
+  }
 
   paymentWarning(id, expiresOn) {
     Meteor.call("paymentDueSoon", {
@@ -48,11 +48,11 @@ DeletedTrainers = React.createClass({
         Bert.alert("Payment warning sent", 'success');
       }
     });
-  },
+  }
 
   trainersDashboard(id) {
     FlowRouter.go("/adminDashboard/" + id);
-  },
+  }
 
   render() {
     return (
@@ -86,15 +86,15 @@ DeletedTrainers = React.createClass({
                     {this.props.deletedTrainers.map((deletedTrainers) => {
                     return (
                       <tr key={deletedTrainers._id}>
-                        <td><a href="#" onClick={this.trainersDashboard.bind(null, deletedTrainers._id)}>{deletedTrainers.username}</a></td>
+                        <td><a href="#" onClick={this.trainersDashboard.bind(this, deletedTrainers._id)}>{deletedTrainers.username}</a></td>
                         <td>{deletedTrainers.firstName}</td>
                         <td>{deletedTrainers.lastName}</td>
                         <td>{deletedTrainers.userStatus}</td>
                         <td>{deletedTrainers.planType}</td>
                         <td>{deletedTrainers.expiresOn}</td>
-                        <td><button className="btn-floating amber waves-effect" onClick={this.suspendTrainer.bind(null, deletedTrainers._id)}><i className="material-icons">https</i></button></td>
-                        <td><button className="btn-floating red waves-effect" onClick={this.deleteTrainer.bind(null, deletedTrainers._id)}><i className="material-icons">remove</i></button></td>
-                        <td><button className="btn-floating green waves-effect" onClick={this.paymentWarning.bind(null, deletedTrainers._id, deletedTrainers.expiresOn)}><i className="material-icons">assignment_late</i></button></td>
+                        <td><button className="btn-floating amber waves-effect" onClick={this.suspendTrainer.bind(this, deletedTrainers._id)}><i className="material-icons">https</i></button></td>
+                        <td><button className="btn-floating red waves-effect" onClick={this.deleteTrainer.bind(this, deletedTrainers._id)}><i className="material-icons">remove</i></button></td>
+                        <td><button className="btn-floating green waves-effect" onClick={this.paymentWarning.bind(this, deletedTrainers._id, deletedTrainers.expiresOn)}><i className="material-icons">assignment_late</i></button></td>
                       </tr>
                       );
                     })}
@@ -107,4 +107,4 @@ DeletedTrainers = React.createClass({
       </div>
     );
   }
-});
+}

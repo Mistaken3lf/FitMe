@@ -62,7 +62,8 @@ export default class ActiveTrainers extends React.Component {
             <div className="row">
               <div className="col s12 m12 l12">
                 <div className="card z-depth-1">
-                  <div className="card-title center-align white-text allTrainersHeader">ACTIVE TRAINERS</div>
+                  <div className="card-title center-align white-text
+                  allTrainersHeader">ACTIVE TRAINERS</div>
                 </div>
               </div>
             </div>
