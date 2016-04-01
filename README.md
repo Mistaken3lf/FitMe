@@ -10,7 +10,7 @@ your account credentials before continuing.
 Step 1: heroku create yourAppName
 
 ##### This is so heroku can build the meteor app
-Step 2: heroku buildpacks:set https://github.com/jordansissel/heroku-buildpack-meteor.git
+Step 2: heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git
 
 ##### You must have a credit card on file for heroku for this step to work
 Step 3: heroku addons:create mongolab:sandbox
