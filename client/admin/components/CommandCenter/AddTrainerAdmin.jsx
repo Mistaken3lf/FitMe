@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 export default class AddTrainerAdmin extends React.Component {
   handleSubmit(e) {
@@ -26,10 +27,17 @@ export default class AddTrainerAdmin extends React.Component {
         //Error creating trainer
         if (error) {
           //Pop up an alert to show the error
-          Bert.alert(error.reason, 'danger');
+          Alert.error(error.reason, {
+            position: 'top-right',
+            effect: 'jelly'
+          })
         } else {
           //Route back to the command center
           FlowRouter.go('/commandCenter');
+          Alert.success('Trainer added', {
+            position: 'top-right',
+            effect: 'jelly'
+          })
         }
       });
     }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 Layout = React.createClass({
   render() {
@@ -11,6 +12,7 @@ Layout = React.createClass({
           <div className="layoutContainer">
             {this.props.content}
           </div>
+          <Alert stack={{limit: 3}} />
         </main>
       </div>
     );

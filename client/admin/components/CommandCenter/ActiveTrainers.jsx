@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 export default class ActiveTrainers extends React.Component {
   suspendTrainer(id) {
@@ -43,9 +44,15 @@ export default class ActiveTrainers extends React.Component {
       expiresOn, id
     }, (error) => {
       if (error) {
-        Bert.alert(error.reason, 'danger', 'growl-top-right');
+        Alert.error(error.reason, {
+          position: 'top-right',
+          effect: 'jelly'
+        })
       } else {
-        Bert.alert("Payment warning sent", 'success');
+        Alert.success('Payment warning sent', {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   }
