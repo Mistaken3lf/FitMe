@@ -1,7 +1,7 @@
 import React from 'react';
-import AdminHomeHeader from './AdminHomeHeader.jsx';
-import AdminHomeWelcome from './AdminHomeWelcome.jsx';
-import AdminHomeFooter from './AdminHomeFooter.jsx';
+import AdminHomeHeader from './AdminHomeHeader.js';
+import AdminHomeWelcome from './AdminHomeWelcome.js';
+import AdminHomeFooter from './AdminHomeFooter.js';
 
 
 const AdminHome = () => (

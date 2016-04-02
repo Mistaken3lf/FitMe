@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import CommandCenter from '../containers/commandCenter.js';
-import AddTrainerAdmin from '../components/CommandCenter/AddTrainerAdmin.jsx';
-import AdminHome from '../components/AdminHome/AdminHome.jsx';
+import AddTrainerAdmin from '../components/CommandCenter/AddTrainerAdmin.js';
+import AdminHome from '../components/AdminHome/AdminHome.js';
 
 //GROUP ADMIN ROUTES
 const adminRoutes = FlowRouter.group({

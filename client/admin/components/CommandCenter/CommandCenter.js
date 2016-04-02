@@ -1,8 +1,8 @@
 import React from 'react';
-import UserCounter from './UserCounter.jsx';
-import ActiveTrainers from './ActiveTrainers.jsx';
-import DeletedTrainers from './DeletedTrainers.jsx';
-import SuspendedTrainers from './SuspendedTrainers.jsx';
+import UserCounter from './UserCounter.js';
+import ActiveTrainers from './ActiveTrainers.js';
+import DeletedTrainers from './DeletedTrainers.js';
+import SuspendedTrainers from './SuspendedTrainers.js';
 
 export default class CommandCenter extends React.Component {
   handleClick(e) {

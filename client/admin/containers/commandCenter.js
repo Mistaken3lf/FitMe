@@ -1,4 +1,4 @@
-import CommandCenter from '../components/CommandCenter/CommandCenter.jsx';
+import CommandCenter from '../components/CommandCenter/CommandCenter.js';
 import { createContainer } from 'meteor/react-meteor-data';
 
 export default createContainer(() => {
