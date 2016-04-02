@@ -19,7 +19,7 @@ Step 3: heroku addons:create mongolab:sandbox
 Step 4: heroku config:add MONGO_URL=YOUR-MONGOLAB-URL
 
 ##### Give your app a domain
-Step 5: heroku config:add ROOT_URL=yourappname.herokuapp.com
+Step 5: heroku config:add ROOT_URL=http://www.yourappname.herokuapp.com
 
 ##### Configure the settings file for stripe
 Step 6: heroku config:add METEOR_SETTINGS="$(cat settings-development.json)"
