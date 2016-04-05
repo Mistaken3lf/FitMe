@@ -12,7 +12,7 @@ Navigation = React.createClass({
   },
 
   versionNumber() {
-    const version = "1.1.3";
+    const version = "1.1.4";
 
     return version;
   },

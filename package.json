@@ -1,6 +1,6 @@
 {
   "name": "fitme",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Workout management web app for personal trainers",
   "main": "index.js",
   "scripts": {
