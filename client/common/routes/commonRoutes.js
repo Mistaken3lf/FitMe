@@ -61,7 +61,7 @@ commmonRoutes.route('/forgotPassword', {
 });
 
 //RESET PASSWORD ROUTE
-commmonRoutes.route('/resetPassword', {
+commmonRoutes.route('/reset-password:token', {
   action() {
     mount(Layout, {
       content: <ResetPassword />

@@ -18,7 +18,7 @@ ForgotPassword = React.createClass({
           Bert.alert("Invalid Email!", 'danger');
         } else {
           Bert.alert("Email has been sent", 'success');
-          FlowRouter.go("/login");
+          FlowRouter.go("/");
         }
       });
     }
