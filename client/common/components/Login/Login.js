@@ -23,22 +23,26 @@ Login = React.createClass({
       });
 
       Accounts.onLogin(() => {
-        Meteor.call("setLoginStatus");
-        
-        //Go to the admin home if they are an admin
-        if (Roles.userIsInRole(Meteor.userId(), "admin")) {
-          FlowRouter.go("/adminHome");
-        }
+        Meteor.call("setLoginStatus", (error) => {
+          if (error) {
+            Bert.alert(error.reason, 'danger');
+          } else {
+            //Go to the admin home if they are an admin
+            if (Roles.userIsInRole(Meteor.userId(), "admin")) {
+              FlowRouter.go("/adminHome");
+            }
 
-        //Go to the trainer home if they are a trainer
-        if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
-          FlowRouter.go("/trainerHome");
-        }
+            //Go to the trainer home if they are a trainer
+            if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+              FlowRouter.go("/trainerHome");
+            }
 
-        //Go to the client home if they are a client
-        if (Roles.userIsInRole(Meteor.userId(), "client")) {
-          FlowRouter.go("/clientHome");
-        }
+            //Go to the client home if they are a client
+            if (Roles.userIsInRole(Meteor.userId(), "client")) {
+              FlowRouter.go("/clientHome");
+            }
+          }
+        });
       });
     }
   },

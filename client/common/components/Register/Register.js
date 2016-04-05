@@ -37,6 +37,7 @@ Register = React.createClass({
               //Pop up an alert to show the reason for failed login
               Bert.alert(error.reason, 'danger');
             } else {
+              Meteor.call("setLoginStatus");
               Bert.alert("Welcome To FitMe", "success");
               FlowRouter.go('/trainerHome');
             }
