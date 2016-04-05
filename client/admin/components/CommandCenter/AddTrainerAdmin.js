@@ -34,7 +34,7 @@ export default class AddTrainerAdmin extends React.Component {
         } else {
           //Route back to the command center
           FlowRouter.go('/commandCenter');
-          Alert.success('Trainer added', {
+          Alert.success('Trainer has been created', {
             position: 'top-right',
             effect: 'jelly'
           })

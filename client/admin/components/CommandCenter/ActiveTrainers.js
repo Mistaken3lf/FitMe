@@ -47,7 +47,8 @@ export default class ActiveTrainers extends React.Component {
         Alert.error(error.reason, {
           position: 'top-right',
           effect: 'jelly'
-        })
+        });
+
       } else {
         Alert.success('Payment warning sent', {
           position: 'top-right',

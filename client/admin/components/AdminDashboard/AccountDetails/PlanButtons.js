@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 function activateMonthlyPlan() {
   const trainerId = FlowRouter.getParam('_id');
@@ -6,9 +7,15 @@ function activateMonthlyPlan() {
     trainerId
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'danger');
+      Alert.error(error.reason, {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
-      Bert.alert("Monthly Plan Started", 'success');
+      Alert.success("Monthly plan started", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     }
   });
 }
@@ -19,9 +26,15 @@ function activateSixMonthPlan() {
     trainerId
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'danger');
+      Alert.error(error.reason, {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
-      Bert.alert("Six Month Plan Started", 'success');
+      Alert.success("Six month plan started", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     }
   });
 }
@@ -32,9 +45,15 @@ function activateYearlyPlan() {
     trainerId
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'danger');
+      Alert.error(error.reason, {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
-      Bert.alert("Yearly Plan Started", 'success');
+      Alert.success("Yearly plan started", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     }
   });
 }

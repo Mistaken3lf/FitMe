@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 import PlanButtons from './PlanButtons.js';
 import ExtrasButtons from './ExtrasButtons.js';
 import DangerZone from './DangerZone.js';
@@ -10,9 +11,12 @@ export default class AccountDetails extends React.Component {
       trainerId
     }, (error) => {
       if (error) {
-        Bert.alert(error.reason, 'danger');
+        Alert.error(error.reason);
       } else {
-        Bert.alert("Warning Email Sent", 'success');
+        Alert.success("Warning email sent", {
+          position: "top-right",
+          effect: "jelly"
+        });
       }
     });
   }

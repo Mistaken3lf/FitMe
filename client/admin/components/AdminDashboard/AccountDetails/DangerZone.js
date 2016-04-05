@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 function deleteTrainersAccount() {
   const trainerId = FlowRouter.getParam('_id');
@@ -23,7 +24,12 @@ function deleteTrainersAccount() {
       Meteor.call("resetAccount", {
         trainerId
       });
-      Bert.alert("Account has been reset", "success");
+
+      Alert.success("Account has been reset", {
+        position: "top-right",
+        effect: "jelly"
+      });
+
     } else {
       swal('Cancelled', 'Account is safe now :)', 'error');
     }

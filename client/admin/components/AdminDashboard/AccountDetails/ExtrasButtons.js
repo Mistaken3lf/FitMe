@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 function addFiveAddidionalClients() {
   const trainerId = FlowRouter.getParam('_id');
@@ -6,9 +7,15 @@ function addFiveAddidionalClients() {
     trainerId
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'danger');
+      Alert.error(error.reason, {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
-      Bert.alert("5 Additional Clients Added", 'success');
+      Alert.success("5 additional clients added", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     }
   });
 }
@@ -19,9 +26,15 @@ function addTenAddidionalClients() {
     trainerId
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'danger');
+      Alert.error(error.reason, {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
-      Bert.alert("10 Additional Clients Added", 'success');
+      Alert.success("10 additional clients added", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     }
   });
 }
@@ -32,9 +45,15 @@ function addTwentyAddidionalClients() {
     trainerId
   }, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'danger');
+      Alert.error(error.reason, {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
-      Bert.alert("20 Additional Clients Added", 'success');
+      Alert.success("20 additional clients added", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     }
   });
 }
