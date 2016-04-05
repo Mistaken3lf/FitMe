@@ -95,7 +95,7 @@ ClientsDashboard = React.createClass({
               <button className="btn blue clickedButton waves-effect trainerDashButtonStats" id="clientStats" onClick={this.handleClick}>Stats</button>
               <button className="btn blue clickedButton waves-effect trainerDashButtonCardio" id="clientCardio" onClick={this.handleClick}>Cardio</button>
               <button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkout" onClick={this.handleClick}>Workout</button>
-              <button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkoutBuilder" onClick={this.handleClick}>Workout Builder</button>
+              {/*<button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkoutBuilder" onClick={this.handleClick}>Workout Builder</button>*/}
             </div>
           </div>
           <div className="row">
@@ -120,10 +120,6 @@ ClientsDashboard = React.createClass({
                 } else if(this.data.clickedButton == "clientWorkout") {
                   return (
                     <ClientsWorkout />
-                  );
-                } else if (this.data.clickedButton == "clientWorkoutBuilder") {
-                  return (
-                    <WorkoutBuilder />
                   );
                 } else {
                   return (
