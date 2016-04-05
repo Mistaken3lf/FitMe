@@ -1,12 +1,12 @@
 import React from 'react';
 
-AdminClientTable = React.createClass({
+export default class AdminClientTable extends React.Component {
   suspendClient(id) {
     //Suspend user clicked on
     Meteor.call("suspendClientAdmin", {
       id
     });
-  },
+  }
 
   deleteClient(id) {
     //Find client clicked on
@@ -38,8 +38,8 @@ AdminClientTable = React.createClass({
         swal('Cancelled', 'Your client is safe now :)', 'error');
       }
     });
-  },
-  
+  }
+
   render() {
     return (
       <table className="responsive-table">
@@ -62,10 +62,10 @@ AdminClientTable = React.createClass({
               <td>{client.lastName}</td>
               <td>{client.userStatus}</td>
               <td>
-                <button className="btn-floating amber waves-effect" onClick={this.suspendClient.bind(null, client._id)}><i className="material-icons">https</i></button>
+                <button className="btn-floating amber waves-effect" onClick={this.suspendClient.bind(this, client._id)}><i className="material-icons">https</i></button>
               </td>
               <td>
-                <button className="btn-floating red waves-effect" onClick={this.deleteClient.bind(null, client._id)}><i className="material-icons">remove</i></button>
+                <button className="btn-floating red waves-effect" onClick={this.deleteClient.bind(this, client._id)}><i className="material-icons">remove</i></button>
               </td>
             </tr>
             );
@@ -74,4 +74,4 @@ AdminClientTable = React.createClass({
       </table>
     );
   }
-});
+}

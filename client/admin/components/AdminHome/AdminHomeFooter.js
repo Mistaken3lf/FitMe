@@ -25,8 +25,9 @@ const AdminHomeFooter = () => (
       <div className="row">
         <div className="col s12 m6 offset-m3 l6 offset-l3">
           <p className="grey-text text-lighten-4 center-align">
-          &lt;div&gt;elop provides the FitMe Web App as a service to
-          the public and users of the application.</p>
+            &lt;div&gt;elop provides the FitMe Web App as a service to
+            the public and users of the application.
+          </p>
         </div>
       </div>
     </div>
@@ -34,13 +35,15 @@ const AdminHomeFooter = () => (
       <div className="container">
         ©2016
         <img
-        className="responsive-img footer-logo"
-        src="/Home/FitMe-text-logo3.png" />
+          className="responsive-img footer-logo"
+          src="/Home/FitMe-text-logo3.png"
+        />
         All rights reserved.
         <a
-        className="white-text text-accent-2 right"
-        href="http://www.divelop.io"><b>
-        &lt;div&gt;elop LLC</b></a>
+          className="white-text text-accent-2 right"
+          href="http://www.divelop.io"><b>
+          &lt;div&gt;elop LLC</b>
+        </a>
       </div>
     </div>
   </footer>

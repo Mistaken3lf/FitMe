@@ -15,15 +15,15 @@ const AdminHomeHeader = () => (
         <br />
         <div className="col l6 s12 center-align">
           <img
-          className="responsive-img logo-img"
-          src="/Home/FitMe-text-logo3.png"
+            className="responsive-img logo-img"
+            src="/Home/FitMe-text-logo3.png"
           />
         </div>
         <br />
         <br />
         <div className="row center-align">
           <h5 className="header col s12 light white-text">
-          TRAINING | DEDICATION | RESULTS
+            TRAINING | DEDICATION | RESULTS
           </h5>
         </div>
         <br />

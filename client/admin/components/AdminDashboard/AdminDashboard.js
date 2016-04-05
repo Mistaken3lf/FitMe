@@ -1,27 +1,13 @@
 import React from 'react';
+import TrainersProfile from './TrainersProfile/TrainersProfile.js';
+import TrainersClients from './TrainersClients/TrainersClients.js';
+import AccountDetails from './AccountDetails/AccountDetails.js';
 
-AdminDashboard = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData() {
-    const trainerId = FlowRouter.getParam('_id');
-    const handle = Meteor.subscribe("currentTrainer", trainerId);
-
-    return {
-      loading: !handle.ready(),
-
-      currentTrainer: Meteor.users.findOne({
-        _id: trainerId
-      }),
-
-      clickedButton: Session.get("adminClickedButton")
-    };
-  },
-
+export default class AdminDashboard extends React.Component {
   handleClick(e) {
     const clickedButton = e.target.id;
     Session.set("adminClickedButton", clickedButton);
-  },
+  }
 
   render() {
     if (Meteor.loggingIn()) {
@@ -32,7 +18,7 @@ AdminDashboard = React.createClass({
       return (
         <NotAuthorized />
       );
-    } else if (this.data.loading) {
+    } else if (this.props.loading) {
       return (
         <Loading />
       );
@@ -45,7 +31,7 @@ AdminDashboard = React.createClass({
                 <div className="col s12 m12 l12">
                   <h1 className="green-text center-align command"><b>ADMIN DASHBOARD</b></h1>
                   <div className="row">
-                    <h5 className="center green-text">{this.data.currentTrainer.firstName} {this.data.currentTrainer.lastName}</h5>
+                    <h5 className="center green-text">{this.props.currentTrainer.firstName} {this.props.currentTrainer.lastName}</h5>
                   </div>
                   <div className="row">
                     <div className="col s12 m12 l12 center">
@@ -59,21 +45,21 @@ AdminDashboard = React.createClass({
                       <div className="col s12 l12 m12">
                         <div className="row">
                           {(() => {
-                            if(this.data.clickedButton == "trainersProfile") {
+                            if(this.props.clickedButton == "trainersProfile") {
                               return (
-                                <TrainersProfile />
+                                <TrainersProfile trainerData={this.props.currentTrainer}/>
                               );
-                            } else if(this.data.clickedButton == "trainersClients") {
+                            } else if(this.props.clickedButton == "trainersClients") {
                               return (
-                                <TrainersClients />
+                                <TrainersClients trainersClients={this.props.trainersClients}/>
                               );
-                            } else if(this.data.clickedButton == "accountDetails") {
+                            } else if(this.props.clickedButton == "accountDetails") {
                               return (
-                                <AccountDetails />
+                                <AccountDetails accountDetails={this.props.currentTrainer} clientCount={this.props.trainersClientCount}/>
                               );
                             } else {
                               return (
-                                <TrainersProfile />
+                                <TrainersProfile trainerData={this.props.currentTrainer} />
                               );
                             }
                           })()}
@@ -93,4 +79,4 @@ AdminDashboard = React.createClass({
       );
     }
   }
-});
+}
