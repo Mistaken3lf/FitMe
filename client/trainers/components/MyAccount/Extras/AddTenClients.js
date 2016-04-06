@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 AddTenClients = React.createClass({
   addTenClients() {
@@ -47,12 +48,20 @@ AddTenClients = React.createClass({
             };
 
             //Process their payment
-            Meteor.call('processPayment', {charge}, (error, response) => {
+            Meteor.call('processPayment', {
+              charge
+            }, (error, response) => {
               if (error) {
-                Bert.alert(error.reason, 'danger');
+                Alert.error(error.reason, {
+                  position: 'top-right',
+                  effect: 'jelly'
+                });
               } else {
                 if (planType == "Ten Additional Clients") {
-                  Bert.alert("Thank You For Choosing FitMe", "success");
+                  Alert.success("Thank you for choosing FitMe", {
+                    position: 'top-right',
+                    effect: 'jelly'
+                  });
                   Meteor.call("tenAdditionalClientsTrainer");
                 }
               }
@@ -83,7 +92,7 @@ AddTenClients = React.createClass({
   },
 
   render() {
-    if(this.props.userStatus.userStatus == "suspended") {
+    if (this.props.userStatus.userStatus == "suspended") {
       return (
         <div className="col s12 m4 l4">
           <div className="card white hoverable darken-1 z-depth-1">
@@ -104,9 +113,9 @@ AddTenClients = React.createClass({
           </div>
         </div>
       );
-    } else if(this.props.userStatus.hasPaid == true) {
-        return (
-         <div className="col s12 m4 l4">
+    } else if (this.props.userStatus.hasPaid == true) {
+      return (
+        <div className="col s12 m4 l4">
           <div className="card white hoverable darken-1 z-depth-1">
             <div className="center-align card-content blue-text">
               <div className="divider"></div>
@@ -124,7 +133,7 @@ AddTenClients = React.createClass({
             </div>
           </div>
         </div>
-        );
+      );
     } else {
       return (
         <div className="col s12 m4 l4">

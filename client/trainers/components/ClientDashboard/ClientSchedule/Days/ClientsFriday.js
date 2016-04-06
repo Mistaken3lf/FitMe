@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 ClientsFriday = React.createClass({
   updateField(e) {
@@ -10,14 +11,20 @@ ClientsFriday = React.createClass({
       fieldName, data, clientId
     }, (error) => {
       if (error) {
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   },
 
   cancelAppointment() {
     if ((this.refs.fridaysScheduleStart.value == "") || (this.refs.fridaysScheduleEnd.value == "") || (this.refs.fridayDescription.value == "")) {
-      Bert.alert("You must fill in the entire appointment to cancel", "danger");
+      Alert.error("You must fill out the entire appointment to cancel!", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
       return;
     } else {
       //Needed for sweet alerts
@@ -39,7 +46,9 @@ ClientsFriday = React.createClass({
           this.refs.fridaysScheduleEnd.value = "";
           this.refs.fridayDescription.value = "";
           const clientId = FlowRouter.getParam('_id');
-          Meteor.call("cancelFridaysAppointment", {clientId});
+          Meteor.call("cancelFridaysAppointment", {
+            clientId
+          });
         } else {
           swal('Cancelled', 'Your appointment will not be canceled.', 'error');
         }

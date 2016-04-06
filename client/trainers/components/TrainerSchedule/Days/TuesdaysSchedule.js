@@ -1,10 +1,16 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 TuesdaysSchedule = React.createClass({
   removeFromTuesday(id) {
-    Meteor.call("resetTuesdaysSchedule", {id}, (error) => {
+    Meteor.call("resetTuesdaysSchedule", {
+      id
+    }, (error) => {
       if (error) {
-        Bert.alert(error.reason, 'danger');
+        Alert.error(error.reason, {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   },

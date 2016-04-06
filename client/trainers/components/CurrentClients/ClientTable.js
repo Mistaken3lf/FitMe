@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 ClientTable = React.createClass({
   clientDashboard(id) {
@@ -12,7 +13,10 @@ ClientTable = React.createClass({
 
     //Dont let user click on a client if they are suspended
     if (thisTrainer.userStatus == "suspended") {
-      Bert.alert("Sorry, your account has been suspended", 'danger');
+      Alert.error("Sorry, your account has been suspended", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
       FlowRouter.go("/clientDashboard/" + id);
     }
@@ -26,7 +30,10 @@ ClientTable = React.createClass({
 
     //Check if the user is suspended
     if (curUser.userStatus == "suspended") {
-      Bert.alert("Sorry, your account has been suspended", "danger");
+      Alert.error("Sorry, your account has been suspended", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
       return;
     }
 
@@ -47,9 +54,14 @@ ClientTable = React.createClass({
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted', 'success');
         //Call server function to delete the client clicked on
-        Meteor.call("deleteClient", {id}, (error, result) => {
+        Meteor.call("deleteClient", {
+          id
+        }, (error, result) => {
           if (error) {
-            Bert.alert("Sorry, your account has been suspended", 'danger');
+            Alert.error("Sorry, your account has been suspended", {
+              position: 'top-right',
+              effect: 'jelly'
+            });
           }
         });
       } else {
@@ -60,9 +72,14 @@ ClientTable = React.createClass({
 
   suspendClient(id) {
     //Suspend client clicked on
-    Meteor.call("suspendClient", {id}, (error, result) => {
+    Meteor.call("suspendClient", {
+      id
+    }, (error, result) => {
       if (error) {
-        Bert.alert('Sorry, your account is suspended', "danger");
+        Alert.error("Sorry, your account has been suspended", {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   },

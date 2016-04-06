@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 AddFiveClients = React.createClass({
   addFiveClients() {
@@ -47,12 +48,20 @@ AddFiveClients = React.createClass({
             };
 
             //Process their payment
-            Meteor.call('processPayment', {charge}, (error, response) => {
+            Meteor.call('processPayment', {
+              charge
+            }, (error, response) => {
               if (error) {
-                Bert.alert(error.reason, 'danger');
+                Alert.error(error.reason, {
+                  position: 'top-right',
+                  effect: 'jelly'
+                });
               } else {
                 if (planType == "Five Additional Clients") {
-                  Bert.alert("Thank You For Choosing FitMe", "success");
+                  Alert.success("Thank you for choosing FitMe", {
+                    position: 'top-right',
+                    effect: 'jelly'
+                  });
                   Meteor.call("fiveAdditionalClientsTrainer");
                 }
               }
@@ -83,7 +92,7 @@ AddFiveClients = React.createClass({
   },
 
   render() {
-    if(this.props.userStatus.userStatus == "suspended") {
+    if (this.props.userStatus.userStatus == "suspended") {
       return (
         <div className="col s12 m4 l4">
           <div className="card blue hoverable darken-1 z-depth-1">
@@ -104,27 +113,27 @@ AddFiveClients = React.createClass({
           </div>
         </div>
       );
-    } else if(this.props.userStatus.hasPaid == true) {
-        return (
-          <div className="col s12 m4 l4">
-            <div className="card blue hoverable darken-1 z-depth-1">
-              <div className="center-align card-content white-text">
-                <div className="divider"></div>
-                <div className="section">
-                  <h5 className="center-align">5 Additional Clients</h5>
-                </div>
-                <div className="divider"></div>
-                <div className="section">
-                  <h5 className="center-align">$2.00</h5>
-                  <p className="center-align">Add five additional clients to your client limit</p>
-                </div>
-                <div className="divider"></div>
-                <br />
-                <a className="btn-floating btn-medium waves-effect waves-light white center-align" onClick={this.addFiveClients}><i className="material-icons blue-text">add</i></a>
+    } else if (this.props.userStatus.hasPaid == true) {
+      return (
+        <div className="col s12 m4 l4">
+          <div className="card blue hoverable darken-1 z-depth-1">
+            <div className="center-align card-content white-text">
+              <div className="divider"></div>
+              <div className="section">
+                <h5 className="center-align">5 Additional Clients</h5>
               </div>
+              <div className="divider"></div>
+              <div className="section">
+                <h5 className="center-align">$2.00</h5>
+                <p className="center-align">Add five additional clients to your client limit</p>
+              </div>
+              <div className="divider"></div>
+              <br />
+              <a className="btn-floating btn-medium waves-effect waves-light white center-align" onClick={this.addFiveClients}><i className="material-icons blue-text">add</i></a>
             </div>
           </div>
-        );
+        </div>
+      );
     } else {
       return (
         <div className="col s12 m4 l4">

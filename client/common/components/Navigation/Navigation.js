@@ -30,7 +30,7 @@ Navigation = React.createClass({
       return (
         <ClientNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username}  />
       );
-    } else if (!Meteor.user()) {
+    } else {
       return (
         <CommonNavigation versionNumber={this.versionNumber()} />
       );

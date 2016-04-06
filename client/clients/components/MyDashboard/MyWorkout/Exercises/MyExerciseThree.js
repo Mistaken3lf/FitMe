@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 MyExerciseThree = React.createClass({
   updateField(e) {
@@ -9,7 +10,10 @@ MyExerciseThree = React.createClass({
       fieldName, data
     }, (error) => {
       if (error) {
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   },

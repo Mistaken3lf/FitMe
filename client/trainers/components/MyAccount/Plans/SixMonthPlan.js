@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 SixMonthPlan = React.createClass({
   sixMonthPlan() {
@@ -47,13 +48,21 @@ SixMonthPlan = React.createClass({
             };
 
             //Process their payment
-            Meteor.call('processPayment', {charge}, (error, response) => {
+            Meteor.call('processPayment', {
+              charge
+            }, (error, response) => {
               if (error) {
-                Bert.alert(error.reason, 'danger');
+                Alert.error(error.reason, {
+                  position: 'top-right',
+                  effect: 'jelly'
+                });
               } else {
                 //Six month plan
                 if (planType == "Six Month") {
-                  Bert.alert('Thank You For Choosing FitMe', 'success');
+                  Alert.success("Thank you for choosing FitMe", {
+                    position: 'top-right',
+                    effect: 'jelly'
+                  });
                   Meteor.call("sixMonthPlanTrainer");
                 }
               }
@@ -84,7 +93,7 @@ SixMonthPlan = React.createClass({
   },
 
   render() {
-    if(this.props.userStatus.userStatus == "suspended") {
+    if (this.props.userStatus.userStatus == "suspended") {
       return (
         <div className="col s12 m3 l3">
           <div className="card white hoverable darken-1 z-depth-1">
@@ -107,29 +116,29 @@ SixMonthPlan = React.createClass({
           </div>
         </div>
       );
-    } else if(this.props.userStatus.hasPaid == true) {
-        return (
-          <div className="col s12 m3 l3">
-            <div className="card white hoverable darken-1 z-depth-1">
-              <div className="center-align card-content blue-text">
-                <div className="divider"></div>
-                <div className="section">
-                  <h5 className="center-align">6 Month</h5>
-                </div>
-                <div className="divider"></div>
-                <div className="section">
-                  <h5 className="center-align">$60.00</h5>
-                  <p className="center-align">50 Client Limit</p>
-                  <p className="center-align">Technical Support</p>
-                  <p className="center-align">6 Months Of Premium Access</p>
-                </div>
-                <div className="divider"></div>
-                <br />
-                <a className="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i className="material-icons blue-text">add</i></a>
+    } else if (this.props.userStatus.hasPaid == true) {
+      return (
+        <div className="col s12 m3 l3">
+          <div className="card white hoverable darken-1 z-depth-1">
+            <div className="center-align card-content blue-text">
+              <div className="divider"></div>
+              <div className="section">
+                <h5 className="center-align">6 Month</h5>
               </div>
+              <div className="divider"></div>
+              <div className="section">
+                <h5 className="center-align">$60.00</h5>
+                <p className="center-align">50 Client Limit</p>
+                <p className="center-align">Technical Support</p>
+                <p className="center-align">6 Months Of Premium Access</p>
+              </div>
+              <div className="divider"></div>
+              <br />
+              <a className="btn-floating btn-medium waves-effect waves-light white center-align disabled"><i className="material-icons blue-text">add</i></a>
             </div>
           </div>
-        );
+        </div>
+      );
     } else {
       return (
         <div className="col s12 m3 l3">
