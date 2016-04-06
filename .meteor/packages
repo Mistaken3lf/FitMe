@@ -22,7 +22,6 @@ accounts-base
 kadira:flow-router
 email
 materialize:materialize
-themeteorchef:bert
 kevohagan:sweetalert
 browser-policy
 momentjs:moment
