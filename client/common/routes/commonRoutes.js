@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import Home from '../components/Home/Home.js';
 
 //SHARED USER ROUTES
 const commmonRoutes = FlowRouter.group({

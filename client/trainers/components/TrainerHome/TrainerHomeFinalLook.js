@@ -1,9 +1,9 @@
 import React from 'react';
 
-TrainerHomeFinalLook = React.createClass({
+export default class TrainerHomeFinalLook extends React.Component {
   componentDidMount() {
     $('.parallax').parallax();
-  },
+  }
 
   render() {
     const styles = {
@@ -37,4 +37,4 @@ TrainerHomeFinalLook = React.createClass({
       </section>
     );
   }
-});
+}

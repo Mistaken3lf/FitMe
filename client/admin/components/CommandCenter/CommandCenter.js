@@ -11,21 +11,21 @@ export default class CommandCenter extends React.Component {
   }
 
   render() {
-    if (!Meteor.user()) {
+    if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
     } else if (!Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
-        <Loading />
+        <NotAuthorized />
       );
-    } else if(this.props.loading) {
+    } else if (this.props.loading) {
       return (
         <Loading />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
-        <div className="row">
+      <div className="row">
           <div className="col s12 m12 l12">
             <div className="card black z-depth-2">
               <div className="row">

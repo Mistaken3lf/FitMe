@@ -1,4 +1,6 @@
 import React from 'react';
+import MyHeartRateChart from './MyHeartRateChart.js';
+import MyBodyFatChart from './MyBodyFatChart.js';
 
 MyStats = React.createClass({
   mixins: [ReactMeteorData],

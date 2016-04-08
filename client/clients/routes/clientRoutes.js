@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import ClientHome from '../components/ClientHome/ClientHome.js';
 
 //CLIENT ROUTES
 const clientRoutes = FlowRouter.group({

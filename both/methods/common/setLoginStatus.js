@@ -10,11 +10,6 @@ const setLoginStatus = new ValidatedMethod({
         _id: this.userId
       });
 
-      //If they are suspended then deny them
-      if (currentUser.userStatus == "suspended") {
-        throw new Meteor.Error("Sorry, your account has been suspended");
-      }
-
       //Get todays date
       let today = moment().format("MM/DD/YYYY");
 
