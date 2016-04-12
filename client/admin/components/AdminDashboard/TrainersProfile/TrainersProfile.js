@@ -53,7 +53,7 @@ export default class TrainersProfile extends React.Component {
               <div className="row">
                 <div className="input-field col s12 m6 l6">
                   <span className="black-text myBoldProfileHeading">Date Of Birth:</span>
-                  <input type="date" name="birthday" className="validate" id="birthday" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.props.trainerData.birthday} />
+                  <input type="date" name="birthday" className="validate" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.props.trainerData.birthday} />
                 </div>
               </div>
               <div className="row">
