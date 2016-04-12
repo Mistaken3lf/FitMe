@@ -15,17 +15,18 @@ Header = React.createClass({
     render() {
       return (
         <section id="parallax-top">
-        <div className="parallax-container">
-          <div className="parallax"><img src="/Home/bg-workout.jpg" /></div>
+          <div id="hero">
+            <div className="col l6 s12 center-align">
+            <br />
           <br />
           <br />
           <br />
           <br />
           <br />
-          <div className="col l6 s12 center-align">
+          <br />
+          <br />
             <img className="responsive-img logo-img" src="/Home/FitMe-text-logo3.png" />
           </div>
-          <br />
           <div className="row center-align">
             <h5 className="header col s12 light white-text">TRAINING | DEDICATION | RESULTS</h5>
             <br />
@@ -37,7 +38,7 @@ Header = React.createClass({
             <br />
             <button className="waves-effect waves-light btn blue center" onClick={this.learnMore}>Learn More</button>
           </div>
-        </div>
+          </div>
       </section>
       );
     }
