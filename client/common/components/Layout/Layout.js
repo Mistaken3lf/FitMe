@@ -1,20 +1,19 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import Navigation from '../../containers/navigation.js';
 
-Layout = React.createClass({
-  render() {
-    return (
-      <div>
-        <header>
-          <Navigation />
-        </header>
-        <main>
-          <div className="layoutContainer">
-            {this.props.content}
-          </div>
-          <Alert stack={{limit: 3}} />
-        </main>
+const Layout = ({content}) => (
+  <div>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div className="layoutContainer">
+        {content}
       </div>
-    );
-  }
-});
+      <Alert stack={{limit: 3}} />
+    </main>
+  </div>
+);
+
+export default Layout;

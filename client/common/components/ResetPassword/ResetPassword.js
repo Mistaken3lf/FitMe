@@ -1,7 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 
-ResetPassword = React.createClass({
+export default class ResetPassword extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
@@ -62,7 +62,7 @@ ResetPassword = React.createClass({
         }
       });
     }
-  },
+  }
 
   render() {
     const styles = {
@@ -77,7 +77,7 @@ ResetPassword = React.createClass({
           <div className="col s12 m6 offset-m3 l6 offset-l3" id="passwordForgotForm">
             <div className="card-panel grey lighten-4 z-depth-2">
               <h2 className="blue-text center">RESET PASSWORD</h2>
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="row">
                   <div className="col s12 m12 l12">
                     <input type="password" ref="newPassword" className="validate" minLength={2} placeholder="New Password" required />
@@ -100,4 +100,4 @@ ResetPassword = React.createClass({
       );
     }
   }
-});
+}

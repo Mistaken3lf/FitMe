@@ -1,6 +1,16 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import Home from '../components/Home/Home.js';
+import ChangePassword from '../components/ChangePassword/ChangePassword.js';
+import ContactPage from '../components/ContactPage/ContactPage.js';
+import ForgotPassword from '../components/ForgotPassword/ForgotPassword.js';
+import Layout from '../components/Layout/Layout.js';
+import Login from '../components/Login/Login.js';
+import NotFound from '../components/NotFound/NotFound.js';
+import Register from '../components/Register/Register.js';
+import ResetPassword from '../components/ResetPassword/ResetPassword.js';
+import TermsAndConditions from '../components/TermsAndConditions/TermsAndConditions.js';
+import MyProfile from '../containers/myProfile.js';
 
 //SHARED USER ROUTES
 const commmonRoutes = FlowRouter.group({

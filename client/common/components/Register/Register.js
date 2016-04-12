@@ -1,7 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 
-Register = React.createClass({
+export default class Register extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
@@ -66,7 +66,7 @@ Register = React.createClass({
         }
       });
     }
-  },
+  }
 
   render() {
     const styles = {
@@ -80,7 +80,7 @@ Register = React.createClass({
         <div className="col s12 m8 offset-m2 l6 offset-l3" id="registrationForm">
           <div className="card-panel grey lighten-4 z-depth-2">
             <h2 className="blue-text center">REGISTER</h2>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="row">
                 <div className="col s12 m6 l6">
                   <input type="text" ref="username" className="validate" minLength={2} placeholder="Username" required  />
@@ -113,4 +113,4 @@ Register = React.createClass({
       </div>
     );
   }
-});
+}

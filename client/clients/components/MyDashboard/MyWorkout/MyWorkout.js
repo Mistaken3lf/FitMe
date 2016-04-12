@@ -1,4 +1,6 @@
 import React from 'react';
+import Loading from '../../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
 
 MyWorkout = React.createClass({
   mixins: [ReactMeteorData],
@@ -16,7 +18,7 @@ MyWorkout = React.createClass({
       myWorkout: myWorkout || {}
     }
   },
-  
+
   render() {
     if (this.data.loading) {
       return (

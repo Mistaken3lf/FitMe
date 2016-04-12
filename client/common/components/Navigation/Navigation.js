@@ -1,41 +1,35 @@
 import React from 'react';
+import AdminNavigation from './AdminNavigation.js';
+import TrainerNavigation from './TrainerNavigation.js';
+import ClientNavigation from './ClientNavigation.js';
+import CommonNavigation from './CommonNavigation.js';
 
-Navigation = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData() {
-    return {
-      currentUser: Meteor.users.findOne({
-        _id: Meteor.userId()
-      })
-    };
-  },
-
+export default class Navigation extends React.Component {
   versionNumber() {
     const version = "1.1.5";
 
     return version;
-  },
+  }
 
   renderNav() {
     if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
-        <AdminNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username} />
+        <AdminNavigation versionNumber={this.versionNumber()} username={this.props.currentUser.username} />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
-        <TrainerNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username} />
+        <TrainerNavigation versionNumber={this.versionNumber()} username={this.props.currentUser.username} />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
       return (
-        <ClientNavigation versionNumber={this.versionNumber()} username={this.data.currentUser.username}  />
+        <ClientNavigation versionNumber={this.versionNumber()} username={this.props.currentUser.username}  />
       );
     } else {
       return (
         <CommonNavigation versionNumber={this.versionNumber()} />
       );
     }
-  },
+  }
 
   render() {
     return (
@@ -44,4 +38,4 @@ Navigation = React.createClass({
       </div>
     );
   }
-});
+}

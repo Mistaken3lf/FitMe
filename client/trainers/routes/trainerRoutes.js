@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import TrainerHome from '../components/TrainerHome/TrainerHome.js';
+import Layout from '../../common/components/Layout/Layout.js';
 
 //TRAINER ROUTES
 const trainerRoutes = FlowRouter.group({

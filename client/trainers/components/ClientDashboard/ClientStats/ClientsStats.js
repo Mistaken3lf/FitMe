@@ -1,4 +1,6 @@
 import React from 'react';
+import Loading from '../../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
 
 ClientsStats = React.createClass({
   mixins: [ReactMeteorData],

@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import Loading from '../../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
 
 AddClient = React.createClass({
   handleSubmit(e) {

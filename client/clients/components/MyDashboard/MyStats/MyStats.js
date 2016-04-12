@@ -1,6 +1,8 @@
 import React from 'react';
 import MyHeartRateChart from './MyHeartRateChart.js';
 import MyBodyFatChart from './MyBodyFatChart.js';
+import Loading from '../../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
 
 MyStats = React.createClass({
   mixins: [ReactMeteorData],

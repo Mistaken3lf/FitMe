@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import Loading from '../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
 
 export default class AddTrainerAdmin extends React.Component {
   handleSubmit(e) {
@@ -67,7 +69,11 @@ export default class AddTrainerAdmin extends React.Component {
       }
     };
 
-    if (Roles.userIsInRole(Meteor.userId(), "admin")) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <div className="row">
           <div className="col s12 m8 offset-m2 l6 offset-l3" id="registrationForm">
@@ -104,10 +110,6 @@ export default class AddTrainerAdmin extends React.Component {
             </div>
           </div>
         </div>
-      );
-    } else if (Meteor.loggingIn()) {
-      return (
-        <Loading />
       );
     } else {
       return (

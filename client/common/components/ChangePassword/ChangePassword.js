@@ -1,7 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 
-ChangePassword = React.createClass({
+export default class ChangePassword extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
@@ -72,7 +72,7 @@ ChangePassword = React.createClass({
         }
       });
     }
-  },
+  }
 
   render() {
     const styles = {
@@ -87,7 +87,7 @@ ChangePassword = React.createClass({
       <div className="col s12 m8 offset-m2 l6 offset-l3" id="passwordChangeForm">
         <div className="card-panel grey lighten-4 z-depth-2">
           <h2 className="blue-text center">CHANGE PASSWORD</h2>
-          <form onSubmit={this.handleSubmit} id="changePasswordForm">
+          <form onSubmit={this.handleSubmit.bind(this)} id="changePasswordForm">
             <div className="row">
               <div className="col s12 m12 l12">
                 <input type="password" ref="currentPassword" placeholder="Current Password" minLength={2} className="validate" required />
@@ -123,4 +123,4 @@ ChangePassword = React.createClass({
       );
     }
   }
-});
+}
