@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 ExerciseFive = React.createClass({
   updateField(e) {
@@ -10,12 +11,22 @@ ExerciseFive = React.createClass({
       fieldName, data, clientId
     }, (error) => {
       if (error) {
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     return (
       <div className="card white z-depth-1 workoutSpacing">
         <div className="row">
@@ -64,11 +75,11 @@ ExerciseFive = React.createClass({
             <div className="row">
               <div className="col s12 m6 l6">
                 <span className="blue-text">Trainers Comments:</span>
-                <textarea name="ex5TrainerComments" className="materialize-textarea" defaultValue={this.props.workoutData.ex5TrainerComments} onChange={this.updateField} placeholder="Comments or concerns for your client"></textarea>
+                <textarea name="ex5TrainerComments" style={styles.textareaHeight} defaultValue={this.props.workoutData.ex5TrainerComments} onChange={this.updateField} placeholder="Comments or concerns for your client"></textarea>
               </div>
               <div className="col s12 m6 l6">
                 <span className="blue-text">Clients Comments:</span>
-                <textarea name="ex5ClientComments" className="materialize-textarea" defaultValue={this.props.workoutData.ex5ClientComments} placeholder="Comments or concerns for your trainer"readOnly></textarea>
+                <textarea name="ex5ClientComments" style={styles.textareaHeight} defaultValue={this.props.workoutData.ex5ClientComments} placeholder="Comments or concerns for your trainer"readOnly></textarea>
               </div>
             </div>
           </div>

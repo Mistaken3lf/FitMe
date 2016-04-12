@@ -1,15 +1,15 @@
 import React from 'react';
 
-AppPreview = React.createClass({
+export default class AppPreview extends React.Component {
   componentDidMount() {
-      $('.slider').slider({
-        full_width: true
-      });
-    },
+    $('.slider').slider({
+      full_width: true
+    });
+  }
 
-    render() {
-      return (
-        <div>
+  render() {
+    return (
+      <div>
         <section id="about">
           <div className="container">
             <br />
@@ -66,6 +66,6 @@ AppPreview = React.createClass({
         <br />
         <br />
       </div>
-      );
-    }
-});
+    );
+  }
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import Loading from '../../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
 
 MyTrainer = React.createClass({
   mixins: [ReactMeteorData],
@@ -22,6 +24,13 @@ MyTrainer = React.createClass({
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     if(this.data.loading) {
       return (
         <Loading />
@@ -106,11 +115,11 @@ MyTrainer = React.createClass({
                     <div className="row">
                       <div className="input-field col s12 m6 l6">
                         <span className="blue-text myBoldProfileHeading">About You:</span>
-                        <textarea name="bio" placeholder="About You" className="materialize-textarea" rows={6} defaultValue={this.data.myTrainer.bio} readOnly></textarea>
+                        <textarea name="bio" placeholder="About You" style={styles.textareaHeight} defaultValue={this.data.myTrainer.bio} readOnly></textarea>
                       </div>
                       <div className="input-field col s12 m6 l6">
                         <span className="blue-text myBoldProfileHeading">Fitness Goals:</span>
-                        <textarea name="fitnessGoals" placeholder="Fitness Goals" className="materialize-textarea" rows={6} defaultValue={this.data.myTrainer.fitnessGoals} readOnly></textarea>
+                        <textarea name="fitnessGoals" placeholder="Fitness Goals" style={styles.textareaHeight} defaultValue={this.data.myTrainer.fitnessGoals} readOnly></textarea>
                       </div>
                     </div>
                   </div>

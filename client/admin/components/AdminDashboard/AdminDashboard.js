@@ -2,6 +2,8 @@ import React from 'react';
 import TrainersProfile from './TrainersProfile/TrainersProfile.js';
 import TrainersClients from './TrainersClients/TrainersClients.js';
 import AccountDetails from './AccountDetails/AccountDetails.js';
+import Loading from '../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
 
 export default class AdminDashboard extends React.Component {
   handleClick(e) {

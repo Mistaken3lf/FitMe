@@ -1,6 +1,7 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
-ForgotPassword = React.createClass({
+export default class ForgotPassword extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
@@ -8,21 +9,30 @@ ForgotPassword = React.createClass({
     const email = this.refs.email.value;
 
     if (email == "" || email == null) {
-      Bert.alert("Please enter your email", "danger");
+      Alert.error("Please enter your email", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
       //Send email to user with link to reset password
       Accounts.forgotPassword({
         email: email
       }, (error) => {
         if (error) {
-          Bert.alert("Invalid Email!", 'danger');
+          Alert.error(error.reason, {
+            position: 'top-right',
+            effect: 'jelly'
+          });
         } else {
-          Bert.alert("Email has been sent", 'success');
+          Alert.success("Reset password email has been sent", {
+            position: 'top-right',
+            effect: 'jelly'
+          });
           FlowRouter.go("/");
         }
       });
     }
-  },
+  }
 
   render() {
     const styles = {
@@ -33,24 +43,24 @@ ForgotPassword = React.createClass({
 
     return (
       <div className="row">
-      <div className="col s12 m6 offset-m3 l6 offset-l3" id="passwordForgotForm">
-        <div className="card-panel grey lighten-4 z-depth-2">
-          <h2 className="blue-text center">FORGOT PASSWORD</h2>
-          <form onSubmit={this.handleSubmit}>
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <input type="email" ref="email" className="validate" minLength={2} placeholder="Email Address" required />
+        <div className="col s12 m6 offset-m3 l6 offset-l3" id="passwordForgotForm">
+          <div className="card-panel grey lighten-4 z-depth-2">
+            <h2 className="blue-text center">FORGOT PASSWORD</h2>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="email" ref="email" className="validate" minLength={2} placeholder="Email Address" required />
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <button className="btn blue white-text waves-effect" style={styles.buttonStyle}>Reset</button>
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <button className="btn blue white-text waves-effect" style={styles.buttonStyle}>Reset</button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
-});
+}

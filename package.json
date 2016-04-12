@@ -1,7 +1,7 @@
 {
   "name": "fitme",
-  "version": "1.1.4",
-  "description": "Workout management web app for personal trainers",
+  "version": "1.1.5",
+  "description": "Workout management web app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,21 +12,22 @@
   },
   "keywords": [
     "Workout",
+    "Fitness",
     "FitMe",
-    "Trainers",
-    "Exercise"
+    "Exercise",
+    "Trainers"
   ],
-  "author": "Mistaken3lf Madams92 Mcphersonad21",
+  "author": "Mistaken3lf, Madams92, Mcphersonad21",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mistaken3lf/FitMe/issues"
   },
   "homepage": "https://github.com/Mistaken3lf/FitMe#readme",
   "dependencies": {
-    "react": "^0.14.8",
-    "react-addons-pure-render-mixin": "^0.14.8",
-    "react-dom": "^0.14.8",
-    "react-mounter": "^1.1.0",
-    "react-s-alert": "^1.1.0"
+    "react": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-mounter": "^1.2.0",
+    "react-s-alert": "^1.1.1"
   }
 }

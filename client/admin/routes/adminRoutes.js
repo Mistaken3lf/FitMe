@@ -4,6 +4,7 @@ import CommandCenter from '../containers/commandCenter.js';
 import AddTrainerAdmin from '../components/CommandCenter/AddTrainerAdmin.js';
 import AdminHome from '../components/AdminHome/AdminHome.js';
 import AdminDashboard from '../containers/adminDashboard.js';
+import Layout from '../../common/components/Layout/Layout.js';
 
 //GROUP ADMIN ROUTES
 const adminRoutes = FlowRouter.group({

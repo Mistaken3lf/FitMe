@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import Loading from '../../../common/components/Loading/Loading.js';
+import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
 
 export default class AddTrainerAdmin extends React.Component {
   handleSubmit(e) {
@@ -11,19 +13,36 @@ export default class AddTrainerAdmin extends React.Component {
     const email = this.refs.email.value;
     const firstName = this.refs.firstName.value;
     const lastName = this.refs.lastName.value;
-    if(username == "" || username == null) {
-      Bert.alert("Please enter a username", "danger");
-    } else if(password == "" || password == null) {
-      Bert.alert("Please enter a password", "danger");
-    } else if(firstName == "" || firstName == null) {
-      Bert.alert("Please Enter Trainer's First Name", "danger");
-    } else if(lastName == "" || lastName == null) {
-      Bert.alert("Please Enter Trainer's Last Name", "danger");
-    } else if(email == "" || email == null) {
-        Bert.alert("Please Enter Trainer's Email", "danger")
+    if (username == "" || username == null) {
+      Alert.error("Please enter a username", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
+    } else if (password == "" || password == null) {
+      Alert.error("Please enter a password", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
+    } else if (firstName == "" || firstName == null) {
+      Alert.error("Please enter a first name", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
+    } else if (lastName == "" || lastName == null) {
+      Alert.error("Please enter a last name", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
+    } else if (email == "" || email == null) {
+      Alert.error("Please enter an email", {
+        position: 'top-right',
+        effect: 'jelly'
+      });
     } else {
       //Call server method to create the trainer
-      Meteor.call("createTrainer", {username, password, email, firstName, lastName}, (error) => {
+      Meteor.call("createTrainer", {
+        username, password, email, firstName, lastName
+      }, (error) => {
         //Error creating trainer
         if (error) {
           //Pop up an alert to show the error
@@ -50,7 +69,11 @@ export default class AddTrainerAdmin extends React.Component {
       }
     };
 
-    if(Roles.userIsInRole(Meteor.userId(), "admin")) {
+    if (Meteor.loggingIn()) {
+      return (
+        <Loading />
+      );
+    } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
       return (
         <div className="row">
           <div className="col s12 m8 offset-m2 l6 offset-l3" id="registrationForm">
@@ -87,10 +110,6 @@ export default class AddTrainerAdmin extends React.Component {
             </div>
           </div>
         </div>
-      );
-    } else if(Meteor.loggingIn()) {
-      return (
-        <Loading />
       );
     } else {
       return (

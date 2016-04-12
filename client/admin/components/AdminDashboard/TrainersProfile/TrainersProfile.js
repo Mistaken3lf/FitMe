@@ -19,11 +19,14 @@ export default class TrainersProfile extends React.Component {
     });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-  }
-
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     return (
       <div className="card">
         <div className="col s12 m12 l12">
@@ -32,7 +35,7 @@ export default class TrainersProfile extends React.Component {
           </div>
         </div>
         <div className="row">
-          <form id="myProfileForm" onSubmit={this.handleSubmit}>
+          <form>
             <div className="col s12">
               <div className="row">
                 <div className="input-field col s12 m6 l6">
@@ -53,7 +56,7 @@ export default class TrainersProfile extends React.Component {
               <div className="row">
                 <div className="input-field col s12 m6 l6">
                   <span className="black-text myBoldProfileHeading">Date Of Birth:</span>
-                  <input type="date" name="birthday" className="validate" id="birthday" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.props.trainerData.birthday} />
+                  <input type="date" name="birthday" className="validate" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.props.trainerData.birthday} />
                 </div>
               </div>
               <div className="row">
@@ -97,11 +100,11 @@ export default class TrainersProfile extends React.Component {
               <div className="row">
                 <div className="input-field col s12 m6 l6">
                   <span className="black-text myBoldProfileHeading">About You:</span>
-                  <textarea name="bio" placeholder="About You" className="validate" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.props.trainerData.bio}></textarea>
+                  <textarea name="bio" placeholder="About You" style={styles.textareaHeight} onChange={this.updateField} defaultValue={this.props.trainerData.bio}></textarea>
                 </div>
                 <div className="input-field col s12 m6 l6">
                   <span className="black-text myBoldProfileHeading">Fitness Goals:</span>
-                  <textarea name="fitnessGoals" className="validate" placeholder="Fitness Goals" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.props.trainerData.fitnessGoals}></textarea>
+                  <textarea name="fitnessGoals" style={styles.textareaHeight} placeholder="Fitness Goals" onChange={this.updateField} defaultValue={this.props.trainerData.fitnessGoals}></textarea>
                 </div>
               </div>
             </div>

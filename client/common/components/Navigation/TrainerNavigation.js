@@ -1,6 +1,6 @@
 import React from 'react';
 
-TrainerNavigation = React.createClass({
+export default class TrainerNavigation extends React.Component {
   componentDidMount() {
     //Make mobile sidebar on left side collapsible
     $('.button-collapse').sideNav({
@@ -8,7 +8,7 @@ TrainerNavigation = React.createClass({
       edge: 'left',
       closeOnClick: true
     });
-  },
+  }
 
   logout(e) {
     e.preventDefault();
@@ -17,7 +17,7 @@ TrainerNavigation = React.createClass({
 
     //Log user out
     Meteor.logout();
-  },
+  }
 
   render() {
     return (
@@ -67,4 +67,4 @@ TrainerNavigation = React.createClass({
       </div>
     );
   }
-});
+}

@@ -33,8 +33,11 @@ email@1.0.11
 es5-shim@4.5.9
 fastclick@1.0.10
 force-ssl@1.0.10
+<<<<<<< HEAD
 fortawesome:fontawesome@4.5.0
 fourseven:scss@3.4.1
+=======
+>>>>>>> e7c03e13ddb01df88561c82cfdc3a94c1ed741d3
 geojson-utils@1.0.7
 hot-code-push@1.0.3
 html-tools@1.0.8
@@ -68,11 +71,11 @@ npm-bcrypt@0.7.8_2
 npm-mongo@1.4.42
 observe-sequence@1.0.10
 ordered-dict@1.0.6
-percolate:synced-cron@1.3.1
+percolate:synced-cron@1.3.2
 promise@0.6.6
 random@1.0.8
 rate-limit@1.0.3
-react-meteor-data@0.2.7
+react-meteor-data@0.2.8
 reactive-dict@1.1.6
 reactive-var@1.0.8
 reload@1.1.7
@@ -89,8 +92,7 @@ standard-minifier-js@1.0.5
 static-html@1.0.6
 templating@1.1.8
 templating-tools@1.0.3
-themeteorchef:bert@2.1.0
-tmeasday:check-npm-versions@0.2.0
+tmeasday:check-npm-versions@0.3.0
 tracker@1.0.12
 ui@1.0.10
 underscore@1.0.7

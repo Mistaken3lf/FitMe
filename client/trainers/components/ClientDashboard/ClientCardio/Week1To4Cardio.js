@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 Week1To4Cardio = React.createClass({
   updateField(e) {
@@ -10,7 +11,10 @@ Week1To4Cardio = React.createClass({
       fieldName, data, clientId
     }, (error) => {
       if (error) {
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+          position: 'top-right',
+          effect: 'jelly'
+        });
       }
     });
   },
@@ -34,6 +38,13 @@ Week1To4Cardio = React.createClass({
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     return (
       <div className="card z-depth-1">
         <div className="card-content">
@@ -132,21 +143,21 @@ Week1To4Cardio = React.createClass({
               <div className="row">
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Beginner:</span>
-                  <textarea name="cardioW14Beginner" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW14Beginner} onChange={this.updateField} placeholder="Message"></textarea>
+                  <textarea name="cardioW14Beginner" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW14Beginner} onChange={this.updateField} placeholder="Message"></textarea>
                 </div>
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Intermediate:</span>
-                  <textarea name="cardioW14Intermediate" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW14Intermediate} onChange={this.updateField} placeholder="Message"></textarea>
+                  <textarea name="cardioW14Intermediate" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW14Intermediate} onChange={this.updateField} placeholder="Message"></textarea>
                 </div>
               </div>
               <div className="row">
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Advanced:</span>
-                  <textarea name="cardioW14Advanced" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW14Advanced} onChange={this.updateField} placeholder="Message"></textarea>
+                  <textarea name="cardioW14Advanced" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW14Advanced} onChange={this.updateField} placeholder="Message"></textarea>
                 </div>
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Type:</span>
-                  <textarea name="cardioW14Type" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW14Type} onChange={this.updateField} placeholder="Message"></textarea>
+                  <textarea name="cardioW14Type" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW14Type} onChange={this.updateField} placeholder="Message"></textarea>
                 </div>
               </div>
             </div>

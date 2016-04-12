@@ -1,9 +1,9 @@
 import React from 'react';
 
-TrainerHomeAdvertisement = React.createClass({
+export default class TrainerHomeAdvertisement extends React.Component {
   componentDidMount() {
     $('.parallax').parallax();
-  },
+  }
 
   render() {
     return (
@@ -28,4 +28,4 @@ TrainerHomeAdvertisement = React.createClass({
       </section>
     );
   }
-});
+}

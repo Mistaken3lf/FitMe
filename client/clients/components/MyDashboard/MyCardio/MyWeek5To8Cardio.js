@@ -20,6 +20,13 @@ MyWeek5To8Cardio = React.createClass({
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     return (
       <div className="card z-depth-1">
         <div className="card-content">
@@ -118,21 +125,21 @@ MyWeek5To8Cardio = React.createClass({
               <div className="row">
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Beginner:</span>
-                  <textarea name="cardioW58Beginner" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW58Beginner} readOnly placeholder="Message"></textarea>
+                  <textarea name="cardioW58Beginner" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW58Beginner} readOnly placeholder="Message"></textarea>
                 </div>
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Intermediate:</span>
-                  <textarea name="cardioW58Intermediate" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW58Intermediate} readOnly placeholder="Message"></textarea>
+                  <textarea name="cardioW58Intermediate" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW58Intermediate} readOnly placeholder="Message"></textarea>
                 </div>
               </div>
               <div className="row">
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Advanced:</span>
-                  <textarea name="cardioW58Advanced" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW58Advanced} readOnly placeholder="Message"></textarea>
+                  <textarea name="cardioW58Advanced" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW58Advanced} readOnly placeholder="Message"></textarea>
                 </div>
                 <div className="col s12 m6 l6">
                   <span className="cardioLabel">Type:</span>
-                  <textarea name="cardioW58Type" className="materialize-textarea" defaultValue={this.props.cardioData.cardioW58Type} readOnly placeholder="Message"></textarea>
+                  <textarea name="cardioW58Type" style={styles.textareaHeight} defaultValue={this.props.cardioData.cardioW58Type} readOnly placeholder="Message"></textarea>
                 </div>
               </div>
             </div>
