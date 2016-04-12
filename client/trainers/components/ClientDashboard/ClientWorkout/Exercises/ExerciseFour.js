@@ -20,6 +20,13 @@ ExerciseFour = React.createClass({
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     return (
       <div className="card white z-depth-1 workoutSpacing">
         <div className="row">
@@ -68,11 +75,11 @@ ExerciseFour = React.createClass({
             <div className="row">
               <div className="col s12 m6 l6">
                 <span className="blue-text">Trainers Comments:</span>
-                <textarea name="ex4TrainerComments" className="materialize-textarea" defaultValue={this.props.workoutData.ex4TrainerComments} onChange={this.updateField} placeholder="Comments or concerns for your client"></textarea>
+                <textarea name="ex4TrainerComments" style={styles.textareaHeight} defaultValue={this.props.workoutData.ex4TrainerComments} onChange={this.updateField} placeholder="Comments or concerns for your client"></textarea>
               </div>
               <div className="col s12 m6 l6">
                 <span className="blue-text">Clients Comments:</span>
-                <textarea name="ex4ClientComments" className="materialize-textarea" defaultValue={this.props.workoutData.ex4ClientComments} placeholder="Comments or concerns for your trainer" readOnly></textarea>
+                <textarea name="ex4ClientComments" style={styles.textareaHeight} defaultValue={this.props.workoutData.ex4ClientComments} placeholder="Comments or concerns for your trainer" readOnly></textarea>
               </div>
             </div>
           </div>

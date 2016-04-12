@@ -35,6 +35,13 @@ ClientsProfile = React.createClass({
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     if (Meteor.loggingIn()) {
       return (
         <Loading />
@@ -119,11 +126,11 @@ ClientsProfile = React.createClass({
                     <div className="row">
                       <div className="input-field col s12 m6 l6">
                         <span className="blue-text myBoldProfileHeading">About You:</span>
-                        <textarea name="bio" placeholder="About You" className="validate" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.currentClient.bio}></textarea>
+                        <textarea name="bio" style={styles.textareaHeight} placeholder="About You" onChange={this.updateField} defaultValue={this.data.currentClient.bio}></textarea>
                       </div>
                       <div className="input-field col s12 m6 l6">
                         <span className="blue-text myBoldProfileHeading">Fitness Goals:</span>
-                        <textarea name="fitnessGoals" className="validate" placeholder="Fitness Goals" className="materialize-textarea" rows={6} onChange={this.updateField} defaultValue={this.data.currentClient.fitnessGoals}></textarea>
+                        <textarea name="fitnessGoals" style={styles.textareaHeight} placeholder="Fitness Goals" onChange={this.updateField} defaultValue={this.data.currentClient.fitnessGoals}></textarea>
                       </div>
                     </div>
                   </div>
