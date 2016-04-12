@@ -81,6 +81,13 @@ AddClient = React.createClass({
   },
 
   render() {
+    const styles = {
+      textareaHeight: {
+        height: 100,
+        overflowY: "scroll"
+      }
+    };
+
     if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
       return (
         <div>
@@ -167,11 +174,11 @@ AddClient = React.createClass({
                         <div className="row">
                           <div className="input-field col s12 m6 l6">
                             <span className="blue-text boldProfileHeading">Biography:</span>
-                            <textarea type="text" className="materialize-textarea validate" ref="bio" rows={6} placeholder="Tell us about yourself"></textarea>
+                            <textarea type="text" style={styles.textareaHeight} className="materialize-textarea validate" ref="bio" rows={6} placeholder="Tell us about yourself"></textarea>
                           </div>
                           <div className="input-field col s12 m6 l6">
                             <span className="blue-text boldProfileHeading">Fitness Goals</span>
-                            <textarea type="text" className="materialize-textarea validate" ref="fitnessGoals" rows={6} placeholder="What do you want to accomplish?"></textarea>
+                            <textarea type="text" style={styles.textareaHeight} className="materialize-textarea validate" ref="fitnessGoals" rows={6} placeholder="What do you want to accomplish?"></textarea>
                           </div>
                         </div>
                       </div>
