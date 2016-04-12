@@ -1009,3 +1009,13 @@ footer {
     display: none;
   }
 }
+
+/* Custom hero for header image full screen */
+#hero{
+  background-image:url(/Home/header1.png);
+  background-size:cover;
+  position:relative;
+  height:100vh;
+}
+
+
