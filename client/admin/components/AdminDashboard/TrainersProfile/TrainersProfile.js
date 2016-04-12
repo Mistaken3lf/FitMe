@@ -19,10 +19,6 @@ export default class TrainersProfile extends React.Component {
     });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-  }
-
   render() {
     const styles = {
       textareaHeight: {
@@ -39,7 +35,7 @@ export default class TrainersProfile extends React.Component {
           </div>
         </div>
         <div className="row">
-          <form id="myProfileForm" onSubmit={this.handleSubmit}>
+          <form>
             <div className="col s12">
               <div className="row">
                 <div className="input-field col s12 m6 l6">
