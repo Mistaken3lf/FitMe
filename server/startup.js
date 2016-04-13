@@ -1,4 +1,5 @@
 Meteor.startup(function () {
+  process.env.MAIL_URL = 'smtp://mistaken3lf%40gmail.com:Volunteer26@smtp.gmail.com:587';
   //Create the admin user with default admin username and password, change
   //the password after created!!!!!
   if (Meteor.users.find().count() === 0) {
