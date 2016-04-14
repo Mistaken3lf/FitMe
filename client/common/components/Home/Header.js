@@ -34,7 +34,7 @@ const Header = () => (
       <br />
       <br />
       <br />
-      <button className="waves-effect waves-light btn blue center" onClick={this.learnMore}>Learn More</button>
+      <button className="waves-effect waves-light btn blue center" onClick={learnMore}>Learn More</button>
     </div>
     </div>
   </section>
