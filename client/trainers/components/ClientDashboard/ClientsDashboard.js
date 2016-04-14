@@ -50,10 +50,6 @@ ClientsDashboard = React.createClass({
       return (
         <Loading />
       );
-    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
-      return (
-        <NotAuthorized />
-      );
     } else if (this.data.loading) {
       return (
         <Loading />
