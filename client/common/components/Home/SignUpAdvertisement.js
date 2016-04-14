@@ -9,7 +9,7 @@ export default class SignUpAdvertisement extends React.Component {
     return (
       <section id="parallax-mid">
         <div className="parallax-container center-align">
-          <div className="parallax"><img src="/Home/keyboard-lax.jpg" /></div>
+          <div className="parallax"><img src="/Home/coding.jpg" /></div>
           <br />
           <br />
           <br />

@@ -38,17 +38,9 @@ const Welcome = () => (
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-      </section>
-    );
-  }
-  
-});
-=======
       </div>
     </div>
   </section>
 );
 
 export default Welcome;
->>>>>>> e7c03e13ddb01df88561c82cfdc3a94c1ed741d3

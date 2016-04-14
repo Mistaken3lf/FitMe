@@ -72,6 +72,7 @@
   display: none;
 }
 
+
 /*Create blue hr line for bottom of header image */
 
 .headerSeperator {
@@ -196,8 +197,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
 
 /* Align brand text as far left as possible */
 
@@ -1010,12 +1011,13 @@ footer {
   }
 }
 
-/* Custom hero for header image full screen */
-#hero{
-  background-image:url(/Home/header1.png);
-  background-size:cover;
-  position:relative;
-  height:100vh;
-}
 
+/* Custom hero for header image full screen */
+
+#hero {
+  background-image: url(/Home/newHeader.jpg);
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
 

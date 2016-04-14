@@ -9,7 +9,7 @@ export default class TrainerHomeAdvertisement extends React.Component {
     return (
       <section id="parallax-mid">
         <div className="parallax-container center-align">
-          <div className="parallax"><img src="/Home/keyboard-lax.jpg" /></div>
+          <div className="parallax"><img src="/Home/coding.jpg" /></div>
           <br />
           <br />
           <br />
@@ -20,6 +20,9 @@ export default class TrainerHomeAdvertisement extends React.Component {
             <br />
             <h5 className="header col s12 bold white-text"> something looks and how it functions.</h5>
           </div>
+          <br />
+          <br />
+          <a href="/register" className="waves-effect waves-light btn blue center-align"><i className="material-icons right">check</i>Sign Up</a>
           <br />
           <br />
           <br />
