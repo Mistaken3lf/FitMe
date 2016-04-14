@@ -6,7 +6,7 @@ import CommonNavigation from './CommonNavigation.js';
 
 export default class Navigation extends React.Component {
   versionNumber() {
-    const version = "1.1.5";
+    const version = "1.1.6";
 
     return version;
   }
