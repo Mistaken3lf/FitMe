@@ -33,11 +33,6 @@ email@1.0.11
 es5-shim@4.5.9
 fastclick@1.0.10
 force-ssl@1.0.10
-<<<<<<< HEAD
-fortawesome:fontawesome@4.5.0
-fourseven:scss@3.4.1
-=======
->>>>>>> e7c03e13ddb01df88561c82cfdc3a94c1ed741d3
 geojson-utils@1.0.7
 hot-code-push@1.0.3
 html-tools@1.0.8
