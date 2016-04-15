@@ -1,6 +1,7 @@
 import React from 'react';
 import Loading from '../../../common/components/Loading/Loading.js';
 import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
+import SuspendedAccount from '../../../common/components/SuspendedAccount/SuspendedAccount.js';
 
 TrainersSchedule = React.createClass({
   mixins: [ReactMeteorData],

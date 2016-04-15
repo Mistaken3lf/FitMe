@@ -1,7 +1,16 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {FlowRouter} from 'meteor/kadira:flow-router';
+import {Roles} from 'meteor/alanning:roles';
 
 export default class ChangePassword extends React.Component {
+  componentDidMount() {
+    if(!Meteor.user() && !Meteor.loggingIn()) {
+      FlowRouter.go("/notAuthorized");
+      return false;
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -81,46 +90,36 @@ export default class ChangePassword extends React.Component {
       }
     };
 
-    if (Meteor.user()) {
-      return (
-        <div className="row">
-      <div className="col s12 m8 offset-m2 l6 offset-l3" id="passwordChangeForm">
-        <div className="card-panel grey lighten-4 z-depth-2">
-          <h2 className="blue-text center">CHANGE PASSWORD</h2>
-          <form onSubmit={this.handleSubmit.bind(this)} id="changePasswordForm">
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <input type="password" ref="currentPassword" placeholder="Current Password" minLength={2} className="validate" required />
+    return (
+      <div className="row">
+        <div className="col s12 m8 offset-m2 l6 offset-l3" id="passwordChangeForm">
+          <div className="card-panel grey lighten-4 z-depth-2">
+            <h2 className="blue-text center">CHANGE PASSWORD</h2>
+            <form onSubmit={this.handleSubmit.bind(this)} id="changePasswordForm">
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="password" ref="currentPassword" placeholder="Current Password" minLength={2} className="validate" required />
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <input type="password" ref="newPassword" placeholder="New Password" minLength={2} className="validate" required />
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="password" ref="newPassword" placeholder="New Password" minLength={2} className="validate" required />
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" minLength={2} className="validate" required />
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <input type="password" ref="newPasswordConfirmation" placeholder="Confirm New Password" minLength={2} className="validate" required />
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <button type="submit" style={styles.buttonStyle} className="btn blue white-text waves-effect">Change Password</button>
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <button type="submit" style={styles.buttonStyle} className="btn blue white-text waves-effect">Change Password</button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-      );
-    } else if (Meteor.loggingIn()) {
-      return (
-        <Loading />
-      );
-    } else {
-      return (
-        <NotAuthorized />
-      );
-    }
+    );
   }
 }

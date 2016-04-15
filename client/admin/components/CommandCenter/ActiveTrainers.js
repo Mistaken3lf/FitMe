@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {FlowRouter} from 'meteor/kadira:flow-router';
+import swal from 'sweetalert';
 
 export default class ActiveTrainers extends React.Component {
   suspendTrainer(id) {

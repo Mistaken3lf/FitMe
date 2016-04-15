@@ -1,4 +1,6 @@
 import Alert from 'react-s-alert';
+import {Roles} from 'meteor/alanning:roles';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 Accounts.onLogin(() => {
   Meteor.call("setLoginStatus");

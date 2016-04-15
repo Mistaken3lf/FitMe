@@ -1,11 +1,17 @@
 import CommandCenter from '../components/CommandCenter/CommandCenter.js';
-import { createContainer } from 'meteor/react-meteor-data';
+import {createContainer} from 'meteor/react-meteor-data';
 
 export default createContainer(() => {
   const handle = Meteor.subscribe("allUsers");
   const loading = !handle.ready();
 
   let clickedButton = Session.get("trainerStatus");
+
+  const loggingIn = Meteor.loggingIn();
+
+  const currentUser = Meteor.users.findOne({
+    _id: Meteor.userId()
+  });
 
   const activeTrainers = Meteor.users.find({
     roles: "trainer",
@@ -38,6 +44,8 @@ export default createContainer(() => {
 
   return {
     loading,
+    loggingIn,
+    currentUser,
     clickedButton,
     activeTrainers,
     suspendedTrainers,

@@ -1,15 +1,25 @@
 import React from 'react';
+import {Roles} from 'meteor/alanning:roles';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import AdminHomeHeader from './AdminHomeHeader.js';
 import AdminHomeWelcome from './AdminHomeWelcome.js';
 import AdminHomeFooter from './AdminHomeFooter.js';
 
+export default class AdminHome extends React.Component {
+  componentDidMount() {
+    if (!Roles.userIsInRole(Meteor.userId(), "admin") && !Meteor.loggingIn()) {
+      FlowRouter.go("/notAuthorized");
+      return false;
+    }
+  }
 
-const AdminHome = () => (
-  <div>
-    <AdminHomeHeader />
-    <AdminHomeWelcome />
-    <AdminHomeFooter />
-  </div>
-);
-
-export default AdminHome;
+  render() {
+    return (
+      <div>
+        <AdminHomeHeader />
+        <AdminHomeWelcome />
+        <AdminHomeFooter />
+      </div>
+    );
+  }
+}

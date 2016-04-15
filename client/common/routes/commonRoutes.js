@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import Home from '../components/Home/Home.js';
 import ChangePassword from '../components/ChangePassword/ChangePassword.js';
 import ContactPage from '../components/ContactPage/ContactPage.js';
@@ -7,6 +8,7 @@ import ForgotPassword from '../components/ForgotPassword/ForgotPassword.js';
 import Layout from '../components/Layout/Layout.js';
 import Login from '../components/Login/Login.js';
 import NotFound from '../components/NotFound/NotFound.js';
+import NotAuthorized from '../components/NotAuthorized/NotAuthorized.js';
 import Register from '../components/Register/Register.js';
 import ResetPassword from '../components/ResetPassword/ResetPassword.js';
 import TermsAndConditions from '../components/TermsAndConditions/TermsAndConditions.js';
@@ -94,6 +96,14 @@ commmonRoutes.route('/contactPage', {
   action() {
     mount(Layout, {
       content: <ContactPage />
+    });
+  }
+});
+
+commmonRoutes.route('/notAuthorized', {
+  action() {
+    mount(Layout, {
+      content: <NotAuthorized />
     });
   }
 });

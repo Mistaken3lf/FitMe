@@ -1,5 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class ForgotPassword extends React.Component {
   handleSubmit(e) {

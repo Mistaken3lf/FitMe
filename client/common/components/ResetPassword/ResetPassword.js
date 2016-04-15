@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {Roles} from 'meteor/alanning:roles';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class ResetPassword extends React.Component {
   handleSubmit(e) {

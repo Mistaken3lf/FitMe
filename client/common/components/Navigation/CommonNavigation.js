@@ -10,15 +10,6 @@ export default class CommonNavigation extends React.Component {
     });
   }
 
-  logout(e) {
-    e.preventDefault();
-    //Bring user back to home page after logging out
-    FlowRouter.go('/');
-
-    //Log user out
-    Meteor.logout();
-  }
-
   render() {
     return (
       <div className="navbar-fixed">

@@ -9,8 +9,11 @@ export default createContainer(() => {
     _id: Meteor.userId()
   });
 
+  const loggingIn = Meteor.loggingIn();
+
   return {
     loading,
+    loggingIn,
     userProfile
   };
 }, MyProfile);

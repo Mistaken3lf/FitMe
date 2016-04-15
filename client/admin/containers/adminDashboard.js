@@ -1,8 +1,6 @@
+import {createContainer} from 'meteor/react-meteor-data';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import AdminDashboard from '../components/AdminDashboard/AdminDashboard.js';
-import {
-  createContainer
-}
-from 'meteor/react-meteor-data';
 
 export default createContainer(() => {
   const trainerId = FlowRouter.getParam('_id');
@@ -11,13 +9,19 @@ export default createContainer(() => {
 
   const loading = !handle.ready() && !clients.ready();
 
+  const currentUser = Meteor.users.findOne({
+    _id: Meteor.userId()
+  });
+
+  let loggingIn = Meteor.loggingIn();
+
   const currentTrainer = Meteor.users.findOne({
     _id: trainerId
   });
 
   const trainersClientCount = Meteor.users.find({
     createdBy: trainerId
-  }).count()
+  }).count();
 
   const clickedButton = Session.get("adminClickedButton");
 
@@ -36,6 +40,8 @@ export default createContainer(() => {
 
   return {
     loading,
+    currentUser,
+    loggingIn,
     currentTrainer,
     clickedButton,
     trainersClients,

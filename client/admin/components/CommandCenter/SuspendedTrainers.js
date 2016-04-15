@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import swal from 'sweetalert';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class SuspendedTrainers extends React.Component {
   suspendTrainer(id) {
@@ -52,7 +54,7 @@ export default class SuspendedTrainers extends React.Component {
         Alert.success('Payment warning sent', {
           position: 'top-right',
           effect: 'jelly'
-        })
+        });
       }
     });
   }

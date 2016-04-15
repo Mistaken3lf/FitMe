@@ -1,10 +1,17 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import Loading from '../Loading/Loading.js';
-import NotAuthorized from '../NotAuthorized/NotAuthorized.js';
 import SuspendedAccount from '../SuspendedAccount/SuspendedAccount.js';
 
 export default class MyProfile extends React.Component {
+  componentDidMount() {
+    if (!this.props.userProfile && !this.props.loggingIn) {
+      FlowRouter.go("/notAuthorized");
+      return false;
+    }
+  }
+
   updateField(e) {
     const fieldName = e.target.name;
     const data = e.target.value;
@@ -29,15 +36,7 @@ export default class MyProfile extends React.Component {
       }
     };
 
-    if (Meteor.loggingIn()) {
-      return (
-        <Loading />
-      );
-    } else if (!Meteor.user()) {
-      return (
-        <NotAuthorized />
-      );
-    } else if (this.props.loading) {
+    if (this.props.loading) {
       return (
         <Loading />
       );
@@ -45,7 +44,7 @@ export default class MyProfile extends React.Component {
       return (
         <SuspendedAccount />
       );
-    } else if (Meteor.user()) {
+    } else {
       return (
         <div className="row">
           <div className="col s12 m12 l12">
@@ -136,10 +135,6 @@ export default class MyProfile extends React.Component {
             </div>
           </div>
         </div>
-      );
-    } else {
-      return (
-        <NotAuthorized />
       );
     }
   }

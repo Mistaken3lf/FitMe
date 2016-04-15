@@ -1,4 +1,5 @@
 import React from 'react';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class ClientNavigation extends React.Component {
   componentDidMount() {

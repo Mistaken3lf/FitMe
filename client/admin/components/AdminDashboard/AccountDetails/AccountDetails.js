@@ -1,4 +1,5 @@
 import React from 'react';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import Alert from 'react-s-alert';
 import PlanButtons from './PlanButtons.js';
 import ExtrasButtons from './ExtrasButtons.js';

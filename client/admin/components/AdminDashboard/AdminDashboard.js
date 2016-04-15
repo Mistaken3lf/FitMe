@@ -1,30 +1,30 @@
 import React from 'react';
+import {Roles} from 'meteor/alanning:roles';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import TrainersProfile from './TrainersProfile/TrainersProfile.js';
 import TrainersClients from './TrainersClients/TrainersClients.js';
 import AccountDetails from './AccountDetails/AccountDetails.js';
 import Loading from '../../../common/components/Loading/Loading.js';
-import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
 
 export default class AdminDashboard extends React.Component {
+  componentDidMount() {
+    if(!Roles.userIsInRole(Meteor.userId(), "admin") && !this.props.loggingIn) {
+      FlowRouter.go("/notAuthorized");
+      return false;
+    }
+  }
+
   handleClick(e) {
     const clickedButton = e.target.id;
     Session.set("adminClickedButton", clickedButton);
   }
 
   render() {
-    if (Meteor.loggingIn()) {
+    if (this.props.loading || this.props.loggingIn) {
       return (
         <Loading />
       );
-    } else if (!Roles.userIsInRole(Meteor.userId(), "admin")) {
-      return (
-        <NotAuthorized />
-      );
-    } else if (this.props.loading) {
-      return (
-        <Loading />
-      );
-    } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
+    } else {
       return (
         <div className="row">
           <div className="col s12 m12 l12">
@@ -74,10 +74,6 @@ export default class AdminDashboard extends React.Component {
             </div>
           </div>
         </div>
-      );
-    } else {
-      return (
-        <NotAuthorized />
       );
     }
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Roles} from 'meteor/alanning:roles';
 import AdminNavigation from './AdminNavigation.js';
 import TrainerNavigation from './TrainerNavigation.js';
 import ClientNavigation from './ClientNavigation.js';

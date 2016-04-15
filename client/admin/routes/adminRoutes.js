@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import CommandCenter from '../containers/commandCenter.js';
 import AddTrainerAdmin from '../components/CommandCenter/AddTrainerAdmin.js';
 import AdminHome from '../components/AdminHome/AdminHome.js';
