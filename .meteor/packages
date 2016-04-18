@@ -22,7 +22,6 @@ accounts-base
 kadira:flow-router
 email
 materialize:materialize
-kevohagan:sweetalert
 browser-policy
 mrgalaxy:stripe
 percolate:synced-cron

@@ -1,5 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import swal from 'sweetalert';
 
 ClientsThursday = React.createClass({
   updateField(e) {
