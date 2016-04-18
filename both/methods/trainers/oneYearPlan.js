@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const oneYearPlanTrainer = new ValidatedMethod({
   name: "oneYearPlanTrainer",
 

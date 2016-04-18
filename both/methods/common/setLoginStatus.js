@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const setLoginStatus = new ValidatedMethod({
   name: "setLoginStatus",
 

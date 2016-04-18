@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const registerTrainer = new ValidatedMethod({
   name: "registerTrainer",
 

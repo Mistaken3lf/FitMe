@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 MeasureChange = React.createClass({
   neckMeasureChange() {

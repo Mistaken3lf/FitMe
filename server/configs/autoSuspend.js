@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 SyncedCron.add({
   name: 'Auto Suspend Trainers (Every Day)',
   //Run every night at 3am

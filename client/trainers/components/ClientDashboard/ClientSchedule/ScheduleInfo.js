@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 ScheduleInfo = React.createClass({
   todaysDate() {

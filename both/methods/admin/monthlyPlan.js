@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const monthlyPlan = new ValidatedMethod({
   name: "monthlyPlan",
 

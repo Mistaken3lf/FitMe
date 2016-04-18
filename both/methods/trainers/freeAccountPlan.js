@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const freeAccountTrainer = new ValidatedMethod({
   name: "freeAccountTrainer",
 

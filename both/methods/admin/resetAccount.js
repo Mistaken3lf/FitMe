@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const resetAccount = new ValidatedMethod({
   name: "resetAccount",
 
