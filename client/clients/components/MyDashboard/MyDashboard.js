@@ -2,6 +2,7 @@ import React from 'react';
 import {Roles} from 'meteor/alanning:roles';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import MyTrainer from '../../containers/myTrainer.js';
+import MySchedule from '../../containers/mySchedule.js';
 import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class MyDashboard extends React.Component {
