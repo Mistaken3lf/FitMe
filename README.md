@@ -42,7 +42,7 @@ set up the git remote information and allow you to deploy your heroku app!!!
 - Your workspace will be created
 - Copy this command into your cloud9 terminal to instal meteor: ` curl https://install.meteor.com/ | sh `
 - Run a ` meteor update ` before your first run
-- To start meteor use ` meteor --port $IP:$PORT --settings settings-development.json `
+- To start meteor use `npm run meteor`
 
 ##### Project Settings
 - Enable soft tabs and set to 2 spaces
