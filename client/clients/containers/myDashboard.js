@@ -1,21 +1,20 @@
-import {createContainer} from 'meteor/react-meteor-data';
+import {composeWithTracker} from 'react-komposer';
 import MyDashboard from '../components/MyDashboard/MyDashboard.js';
 
-export default createContainer(() => {
-  const handle = Meteor.subscribe("myProfile");
+function composer(props, onData) {
+  if (Meteor.subscribe('myProfile').ready()) {
+    const currentClient = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
 
-  const loading = !handle.ready();
+    let myClickedButton = Session.get("myClickedButton");
 
-  const currentClient = Meteor.users.findOne({
-    _id: Meteor.userId()
-  });
+    const loggingIn = Meteor.loggingIn();
 
-  let myClickedButton = Session.get("myClickedButton");
-
-
-  return {
-    loading,
-    currentClient,
-    myClickedButton
+    onData(null, {
+      currentClient, myClickedButton, loggingIn
+    });
   };
-}, MyDashboard);
+};
+
+export default composeWithTracker(composer)(MyDashboard);

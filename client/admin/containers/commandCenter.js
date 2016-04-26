@@ -1,57 +1,49 @@
+import {composeWithTracker} from 'react-komposer';
 import CommandCenter from '../components/CommandCenter/CommandCenter.js';
-import {createContainer} from 'meteor/react-meteor-data';
 
-export default createContainer(() => {
-  const handle = Meteor.subscribe("allUsers");
-  const loading = !handle.ready();
+function composer(props, onData) {
+  if (Meteor.subscribe('allUsers').ready()) {
+    let clickedButton = Session.get("trainerStatus");
 
-  let clickedButton = Session.get("trainerStatus");
+    const loggingIn = Meteor.loggingIn();
 
-  const loggingIn = Meteor.loggingIn();
+    const currentUser = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
 
-  const currentUser = Meteor.users.findOne({
-    _id: Meteor.userId()
-  });
+    const activeTrainers = Meteor.users.find({
+      roles: "trainer",
+      userStatus: "active"
+    }).fetch();
 
-  const activeTrainers = Meteor.users.find({
-    roles: "trainer",
-    userStatus: "active"
-  }).fetch();
+    const suspendedTrainers = Meteor.users.find({
+      roles: "trainer",
+      userStatus: "suspended"
+    }).fetch();
 
-  const suspendedTrainers = Meteor.users.find({
-    roles: "trainer",
-    userStatus: "suspended"
-  }).fetch();
+    const deletedTrainers = Meteor.users.find({
+      roles: "trainer",
+      userStatus: "deleted"
+    }).fetch();
 
-  const deletedTrainers = Meteor.users.find({
-    roles: "trainer",
-    userStatus: "deleted"
-  }).fetch();
+    const totalTrainers = Meteor.users.find({
+      roles: "trainer"
+    }).count();
 
-  const totalTrainers = Meteor.users.find({
-    roles: "trainer"
-  }).count();
+    const totalClients = Meteor.users.find({
+      roles: "client"
+    }).count();
 
-  const totalClients = Meteor.users.find({
-    roles: "client"
-  }).count();
+    const totalUsers = Meteor.users.find({
+      _id: {
+        $ne: Meteor.userId()
+      }
+    }).count();
 
-  const totalUsers = Meteor.users.find({
-    _id: {
-      $ne: Meteor.userId()
-    }
-  }).count();
+    onData(null, {
+      clickedButton, loggingIn, currentUser, activeTrainers, suspendedTrainers, deletedTrainers, totalTrainers, totalClients, totalUsers
+    });
+  }
+}
 
-  return {
-    loading,
-    loggingIn,
-    currentUser,
-    clickedButton,
-    activeTrainers,
-    suspendedTrainers,
-    deletedTrainers,
-    totalTrainers,
-    totalClients,
-    totalUsers,
-  };
-}, CommandCenter);
+export default composeWithTracker(composer)(CommandCenter);

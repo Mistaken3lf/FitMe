@@ -1,19 +1,18 @@
-import {createContainer} from 'meteor/react-meteor-data';
+import {composeWithTracker} from 'react-komposer';
 import MyProfile from '../components/MyProfile/MyProfile.js';
 
-export default createContainer(() => {
-  const handle = Meteor.subscribe("myProfile");
-  const loading = !handle.ready();
+function composer(props, onData) {
+  if (Meteor.subscribe('myProfile').ready()) {
+    const userProfile = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
 
-  const userProfile = Meteor.users.findOne({
-    _id: Meteor.userId()
-  });
+    const loggingIn = Meteor.loggingIn();
 
-  const loggingIn = Meteor.loggingIn();
-
-  return {
-    loading,
-    loggingIn,
-    userProfile
+    onData(null, {
+      userProfile, loggingIn
+    });
   };
-}, MyProfile);
+};
+
+export default composeWithTracker(composer)(MyProfile);

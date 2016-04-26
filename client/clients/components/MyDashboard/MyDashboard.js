@@ -37,11 +37,7 @@ export default class MyDashboard extends React.Component {
   }
 
   render() {
-    if (Meteor.loggingIn()) {
-      return (
-        <Loading />
-      );
-    } else if (this.props.loading) {
+    if (this.props.loggingIn) {
       return (
         <Loading />
       );

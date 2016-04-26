@@ -1,22 +1,20 @@
-import {createContainer} from 'meteor/react-meteor-data';
+import {composeWithTracker} from 'react-komposer';
 import MyTrainer from '../components/MyDashboard/MyTrainer/MyTrainer.js';
 
-export default createContainer(() => {
-  const handle = Meteor.subscribe("myTrainer");
+function composer(props, onData) {
+  if (Meteor.subscribe('myTrainer').ready()) {
+    const currentClient = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
 
-  const loading = !handle.ready();
+    const myTrainer = Meteor.users.findOne({
+      _id: currentClient.createdBy
+    });
 
-  const currentClient = Meteor.users.findOne({
-    _id: Meteor.userId()
-  });
+    onData(null, {
+      currentClient, myTrainer
+    });
+  }
+}
 
-  const myTrainer = Meteor.users.findOne({
-    _id: currentClient.createdBy
-  });
-
-
-  return {
-    loading,
-    myTrainer
-  };
-}, MyTrainer);
+export default composeWithTracker(composer)(MyTrainer);

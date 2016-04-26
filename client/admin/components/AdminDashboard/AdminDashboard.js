@@ -20,7 +20,7 @@ export default class AdminDashboard extends React.Component {
   }
 
   render() {
-    if (this.props.loading || this.props.loggingIn) {
+    if (this.props.loggingIn) {
       return (
         <Loading />
       );

@@ -1,12 +1,14 @@
-import {createContainer} from 'meteor/react-meteor-data';
+import {composeWithTracker} from 'react-komposer';
 import Navigation from '../components/Navigation/Navigation.js';
 
-export default createContainer(() => {
+function composer(props, onData) {
   const currentUser = Meteor.users.findOne({
     _id: Meteor.userId()
   });
 
-  return {
+  onData(null, {
     currentUser
-  };
-}, Navigation);
+  });
+}
+
+export default composeWithTracker(composer)(Navigation);

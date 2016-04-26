@@ -1,7 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import Loading from '../Loading/Loading.js';
 import SuspendedAccount from '../SuspendedAccount/SuspendedAccount.js';
 
 export default class MyProfile extends React.Component {
@@ -36,11 +35,7 @@ export default class MyProfile extends React.Component {
       }
     };
 
-    if (this.props.loading) {
-      return (
-        <Loading />
-      );
-    } else if (this.props.userProfile.userStatus == "suspended") {
+    if (this.props.userProfile.userStatus == "suspended") {
       return (
         <SuspendedAccount />
       );

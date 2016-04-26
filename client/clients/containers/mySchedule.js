@@ -1,17 +1,16 @@
-import {createContainer} from 'meteor/react-meteor-data';
+import {composeWithTracker} from 'react-komposer';
 import MySchedule from '../components/MyDashboard/MySchedule/MySchedule.js';
 
-export default createContainer(() => {
-  const handle = Meteor.subscribe("myProfile");
+function composer(props, onData) {
+  if (Meteor.subscribe('myProfile').ready()) {
+    const currentClient = Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
 
-  const loading = !handle.ready();
+    onData(null, {
+      currentClient
+    });
+  }
+}
 
-  const currentClient = Meteor.users.findOne({
-    _id: Meteor.userId()
-  });
-
-  return {
-    loading,
-    currentClient
-  };
-}, MySchedule);
+export default composeWithTracker(composer)(MySchedule);
