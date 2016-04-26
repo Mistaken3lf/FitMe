@@ -14,7 +14,7 @@ function composer(props, onData) {
     onData(null, {
       currentClient, myClickedButton, loggingIn
     });
-  };
-};
+  }
+}
 
 export default composeWithTracker(composer)(MyDashboard);

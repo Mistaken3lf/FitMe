@@ -12,7 +12,7 @@ function composer(props, onData) {
     onData(null, {
       userProfile, loggingIn
     });
-  };
-};
+  }
+}
 
 export default composeWithTracker(composer)(MyProfile);

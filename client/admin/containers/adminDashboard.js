@@ -38,7 +38,7 @@ function composer(props, onData) {
     onData(null, {
       currentUser, loggingIn, currentTrainer, trainersClientCount, clickedButton, trainersClients
     });
-  };
-};
+  }
+}
 
 export default composeWithTracker(composer)(AdminDashboard);
