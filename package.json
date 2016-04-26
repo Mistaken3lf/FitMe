@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "meteor": "meteor --port $IP:$PORT --settings settings-development.json"
+    "meteor": "meteor --port $IP:$PORT --settings settings-development.json",
+    "deploy-production": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.gofitme.com"
   },
   "repository": {
     "type": "git",
