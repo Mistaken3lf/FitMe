@@ -21,7 +21,6 @@ alanning:roles
 accounts-base
 kadira:flow-router
 email
-materialize:materialize
 browser-policy
 mrgalaxy:stripe
 percolate:synced-cron
@@ -31,3 +30,4 @@ react-meteor-data
 static-html
 session
 mdg:seo
+materialize:materialize
