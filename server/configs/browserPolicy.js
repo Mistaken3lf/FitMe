@@ -1,4 +1,4 @@
-import BrowserPolicy from 'meteor/browser-policy';
+import { BrowserPolicy } from 'meteor/browser-policy-common';
 
 BrowserPolicy.framing.disallow();
 BrowserPolicy.content.disallowInlineScripts();
