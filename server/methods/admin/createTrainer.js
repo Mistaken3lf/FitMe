@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 const CreateTrainer = new ValidatedMethod({
-  name: "createTrainer",
+  name: 'createTrainer',
 
   validate: new SimpleSchema({
     username: {
@@ -37,39 +37,39 @@ const CreateTrainer = new ValidatedMethod({
     firstName,
     lastName
   }) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
-      //Create the new trainer
+    if (Roles.userIsInRole(this.userId, 'admin')) {
+      // Create the new trainer
       let newTrainerId = Accounts.createUser({
         username: username,
         password: password,
-        email: email,
+        email: email
       });
 
-      //Get todays date
-      let today = moment().format("MM/DD/YYYY");
+      // Get todays date
+      let today = moment().format('MM/DD/YYYY');
 
-      //Set expiration to one week for free plan
-      let expires = moment().add(1, "weeks").format("MM/DD/YYYY");
+      // Set expiration to one week for free plan
+      let expires = moment().add(1, 'weeks').format('MM/DD/YYYY');
 
-      //Update the trainers first and last name since they are not default
-      //Meteor.user fields
+      // Update the trainers first and last name since they are not default
+      // Meteor.user fields
       Meteor.users.update(newTrainerId, {
         $set: {
           firstName: firstName,
           lastName: lastName,
           clientLimit: 1,
-          userStatus: "active",
-          planType: "Free",
+          userStatus: 'active',
+          planType: 'Free',
           datePurchased: today,
           expiresOn: expires,
           hasPaid: false
         }
       });
 
-      //Assign newly created trainer a trainer role
+      // Assign newly created trainer a trainer role
       Roles.addUsersToRoles(newTrainerId, 'trainer');
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
   }
 });
