@@ -108,7 +108,6 @@
     "no-else-return": 2,
     "no-empty": 2,
     "no-empty-character-class": 2,
-    "no-empty-label": 2,
     "no-eq-null": 0,
     "no-eval": 2,
     "no-ex-assign": 2,
@@ -208,7 +207,6 @@
       "after": true
     }],
     "sort-vars": 0,
-    "space-after-keywords": [2, "always"],
     "space-before-blocks": [2, "always"],
     "space-before-function-paren": [2, {
       "anonymous": "always",
@@ -218,7 +216,6 @@
     "space-infix-ops": [2, {
       "int32Hint": false
     }],
-    "space-return-throw-case": 2,
     "space-unary-ops": [2, {
       "words": true,
       "nonwords": false
