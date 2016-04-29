@@ -3,7 +3,11 @@
     "react"
   ],
 
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
 
   "rules": {
     "quotes": ["error", "single"],
