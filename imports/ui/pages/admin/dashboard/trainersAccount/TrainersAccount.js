@@ -5,7 +5,7 @@ import PlanButtons from './PlanButtons.js';
 import ExtrasButtons from './ExtrasButtons.js';
 import DangerZone from './DangerZone.js';
 
-export default class AccountDetails extends React.Component {
+export default class TrainersAccount extends React.Component {
   sendWarningEmail() {
     const trainerId = FlowRouter.getParam('_id');
     Meteor.call("sendInactiveEmail", {

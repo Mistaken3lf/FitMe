@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 
-export default class AdminClientTable extends React.Component {
+export default class ClientTable extends React.Component {
   suspendClient(id) {
     //Suspend user clicked on
     Meteor.call("suspendClientAdmin", {

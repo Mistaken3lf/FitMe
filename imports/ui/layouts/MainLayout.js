@@ -2,7 +2,7 @@ import React from 'react';
 import Alert from 'react-s-alert';
 import Navigation from '../../navigation/containers/navigation.js';
 
-const Layout = ({content}) => (
+const MainLayout = ({content}) => (
   <div>
     <header>
       <Navigation />
@@ -16,4 +16,4 @@ const Layout = ({content}) => (
   </div>
 );
 
-export default Layout;
+export default MainLayout;
