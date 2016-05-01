@@ -1,6 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
-import Navigation from '../../containers/navigation.js';
+import Navigation from '../../navigation/containers/navigation.js';
 
 const Layout = ({content}) => (
   <div>

@@ -1,5 +1,5 @@
 import {composeWithTracker} from 'react-komposer';
-import Navigation from '../components/Navigation/Navigation.js';
+import Navigation from '../components/Navigation.js';
 
 function composer(props, onData) {
   const currentUser = Meteor.users.findOne({

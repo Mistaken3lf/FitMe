@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from '../../../../common/components/Loading/Loading.js';
-import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
+import Loading from '../../ui/loading/components/Loading.js';
+import NotAuthorized from '../../ui/notAuthorized/components/NotAuthorized.js';
 
 MyWorkout = React.createClass({
   mixins: [ReactMeteorData],

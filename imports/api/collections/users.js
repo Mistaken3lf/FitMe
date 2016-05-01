@@ -1,11 +1,11 @@
 Meteor.users.deny({
   insert() {
-      return true
+      return true;
     },
     update() {
-      return true
+      return true;
     },
     remove() {
-      return true
+      return true;
     }
 });
