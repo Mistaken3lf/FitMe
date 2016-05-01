@@ -1,7 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 
-export default class Register extends React.Component {
+export default class Registration extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
