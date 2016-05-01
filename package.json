@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Mistaken3lf/FitMe#readme",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "moment": "^2.13.0",
     "react": "^15.0.2",
     "react-addons-pure-render-mixin": "^15.0.2",
