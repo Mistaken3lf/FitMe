@@ -7,6 +7,26 @@
     "meteor": "meteor --port $IP:$PORT --settings settings-development.json",
     "deploy-production": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.gofitme.com"
   },
+  "eslintConfig": {
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "airbnb"
+    ],
+    "rules": {
+      "quotes": ["error", "single"],
+      "spaced-comment": ["error", "always"]
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mistaken3lf/FitMe.git"
