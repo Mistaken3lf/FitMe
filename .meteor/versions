@@ -46,7 +46,6 @@ launch-screen@1.0.11
 livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
-materialize:materialize@0.97.5
 mdg:seo@1.0.1
 mdg:validated-method@1.1.0
 mdg:validation-error@0.5.1
@@ -89,6 +88,7 @@ templating@1.1.9
 templating-tools@1.0.4
 tmeasday:check-npm-versions@0.3.1
 tracker@1.0.13
+twbs:bootstrap@3.3.6
 ui@1.0.11
 underscore@1.0.8
 url@1.0.9

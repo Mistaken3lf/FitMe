@@ -1,12 +1,6 @@
 import React from 'react';
 
 export default class AppPreview extends React.Component {
-  componentDidMount() {
-    $('.slider').slider({
-      full_width: true
-    });
-  }
-
   render() {
     return (
       <div>

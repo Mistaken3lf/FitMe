@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class SignUpAdvertisement extends React.Component {
-  componentDidMount() {
-    $('.parallax').parallax();
-  }
-
   render() {
     return (
       <section id="parallax-mid">

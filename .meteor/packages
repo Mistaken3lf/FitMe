@@ -30,4 +30,4 @@ react-meteor-data
 static-html
 session
 mdg:seo
-materialize:materialize
+twbs:bootstrap

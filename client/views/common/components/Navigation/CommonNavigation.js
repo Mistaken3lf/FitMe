@@ -1,51 +1,41 @@
 import React from 'react';
 
 export default class CommonNavigation extends React.Component {
-  componentDidMount() {
-    //Make mobile sidebar on left side collapsible
-    $('.button-collapse').sideNav({
-      menuWidth: 210,
-      edge: 'left',
-      closeOnClick: true
-    });
-  }
-
   render() {
     return (
-      <div className="navbar-fixed">
-        <nav className="blue">
-          <div className="nav-wrapper">
-            <a href="#" className="brand-logo">FitMe</a>
-            <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
-            <ul className="side-nav" id="mobile-menu">
-              <div className="white">
-                <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
-                <br />
-                <hr className="navSeperator" />
-              </div>
-              <div>
-                <h6 className="center-align blue-text">Build: v{this.props.versionNumber}</h6>
-              </div>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/login">Login</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/register">Register</a>
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <a className="navbar-brand" href="#">Brand</a>
+          </div>
+
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className="nav navbar-nav">
+              <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
             </ul>
-            <ul className="side-nav fixed" id="desktop-menu">
-              <div className="white">
-                <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
-                <br />
-                <hr className="navSeperator" />
-              </div>
-              <div>
-                <h6 className="center-align blue-text">Build: v{this.props.versionNumber}</h6>
-              </div>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/login">Login</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/register">Register</a>
+            <ul className="nav navbar-nav navbar-right">
+              <li><a href="#">Link</a></li>
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+                <ul className="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     );
   }
 }

@@ -2,15 +2,6 @@ import React from 'react';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class TrainerNavigation extends React.Component {
-  componentDidMount() {
-    //Make mobile sidebar on left side collapsible
-    $('.button-collapse').sideNav({
-      menuWidth: 210,
-      edge: 'left',
-      closeOnClick: true
-    });
-  }
-
   logout(e) {
     e.preventDefault();
     //Bring user back to home page after logging out

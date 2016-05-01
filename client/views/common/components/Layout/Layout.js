@@ -8,7 +8,7 @@ const Layout = ({content}) => (
       <Navigation />
     </header>
     <main>
-      <div className="layoutContainer">
+      <div className="container-fluid">
         {content}
       </div>
       <Alert stack={{limit: 3}} />
