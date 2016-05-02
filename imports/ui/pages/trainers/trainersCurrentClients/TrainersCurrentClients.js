@@ -4,7 +4,7 @@ import Loading from '../../../common/components/Loading/Loading.js';
 import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
 import SuspendedAccount from '../../../common/components/SuspendedAccount/SuspendedAccount.js';
 
-CurrentClients = React.createClass({
+TrainersCurrentClients = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {

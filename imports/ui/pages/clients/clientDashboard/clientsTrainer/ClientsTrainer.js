@@ -2,7 +2,7 @@ import React from 'react';
 import {Roles} from 'meteor/alanning:roles';
 import Loading from '../../../../common/components/Loading/Loading.js';
 
-export default class MyTrainer extends React.Component {
+export default class ClientsTrainer extends React.Component {
   render() {
     const styles = {
       textareaHeight: {

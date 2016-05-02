@@ -6,7 +6,7 @@ import TrainersClients from './TrainersClients/TrainersClients.js';
 import AccountDetails from './AccountDetails/AccountDetails.js';
 import Loading from '../../../common/components/Loading/Loading.js';
 
-export default class Dashboard extends React.Component {
+export default class AdminDashboard extends React.Component {
   componentDidMount() {
     if(!Roles.userIsInRole(Meteor.userId(), "admin") && !this.props.loggingIn) {
       FlowRouter.go("/notAuthorized");

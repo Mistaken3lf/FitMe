@@ -5,7 +5,7 @@ import MyTrainer from '../../containers/myTrainer.js';
 import MySchedule from '../../containers/mySchedule.js';
 import Loading from '../../../common/components/Loading/Loading.js';
 
-export default class MyDashboard extends React.Component {
+export default class ClientDashboard extends React.Component {
   componentDidMount() {
     if (!Roles.userIsInRole(Meteor.userId(), "client") && !Meteor.loggingIn()) {
       FlowRouter.go("/notAuthorized");

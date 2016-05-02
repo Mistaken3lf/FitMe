@@ -3,7 +3,7 @@ import moment from 'moment';
 import Loading from '../../../../common/components/Loading/Loading.js';
 import NotAuthorized from '../../../../common/components/NotAuthorized/NotAuthorized.js';
 
-ClientsSchedule = React.createClass({
+Schedule = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {

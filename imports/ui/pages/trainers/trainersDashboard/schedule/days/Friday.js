@@ -2,7 +2,7 @@ import React from 'react';
 import Alert from 'react-s-alert';
 import swal from 'sweetalert';
 
-ClientsMonday = React.createClass({
+Friday = React.createClass({
   updateField(e) {
     const fieldName = e.target.name;
     const data = e.target.value;
@@ -21,7 +21,7 @@ ClientsMonday = React.createClass({
   },
 
   cancelAppointment() {
-    if ((this.refs.mondaysScheduleStart.value == "") || (this.refs.mondaysScheduleEnd.value == "") || (this.refs.mondayDescription.value == "")) {
+    if ((this.refs.fridaysScheduleStart.value == "") || (this.refs.fridaysScheduleEnd.value == "") || (this.refs.fridayDescription.value == "")) {
       Alert.error("You must fill out the entire appointment to cancel!", {
         position: 'top-right',
         effect: 'jelly'
@@ -34,7 +34,7 @@ ClientsMonday = React.createClass({
       //Sweet alert to confirm deletion of client
       swal({
         title: "Are You Sure?",
-        text: "This will cancel your appointment for monday and send the client an email letting them know you will not be able to make the appointment",
+        text: "This will cancel your appointment for Friday and send the client an email letting them know you will not be able to make the appointment",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -43,11 +43,11 @@ ClientsMonday = React.createClass({
       }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
-          this.refs.mondaysScheduleStart.value = "";
-          this.refs.mondaysScheduleEnd.value = "";
-          this.refs.mondayDescription.value = "";
+          this.refs.fridaysScheduleStart.value = "";
+          this.refs.fridaysScheduleEnd.value = "";
+          this.refs.fridayDescription.value = "";
           const clientId = FlowRouter.getParam('_id');
-          Meteor.call("cancelMondaysAppointment", {
+          Meteor.call("cancelFridaysAppointment", {
             clientId
           });
         } else {
@@ -63,11 +63,11 @@ ClientsMonday = React.createClass({
         <div className="card white">
           <div className="row">
             <div className="col s12 m12 l12">
-              <h4 className="center">Monday</h4>
+              <h4 className="center">Friday</h4>
               <div className="row">
               <div className="col s12 m6 l6">
                 <label>Start Time: </label>
-                <select ref="mondaysScheduleStart" className="browser-default" name="mondaysScheduleStart" defaultValue={this.props.scheduleData.mondaysScheduleStart} onChange={this.updateField}>
+                <select ref="fridaysScheduleStart" className="browser-default" name="fridaysScheduleStart" defaultValue={this.props.scheduleData.fridaysScheduleStart} onChange={this.updateField}>
                   <option value=""></option>
                   <option value="12:00AM">12:00AM</option>
                   <option value="12:15AM">12:15AM</option>
@@ -169,7 +169,7 @@ ClientsMonday = React.createClass({
               </div>
               <div className="col s12 m6 l6">
                 <label>End Time:</label>
-                <select ref="mondaysScheduleEnd" className="browser-default" name="mondaysScheduleEnd" defaultValue={this.props.scheduleData.mondaysScheduleEnd} onChange={this.updateField}>
+                <select ref="fridaysScheduleEnd" className="browser-default" name="fridaysScheduleEnd" defaultValue={this.props.scheduleData.fridaysScheduleEnd} onChange={this.updateField}>
                   <option value=""></option>
                   <option value="12:00AM">12:00AM</option>
                   <option value="12:15AM">12:15AM</option>
@@ -273,7 +273,7 @@ ClientsMonday = React.createClass({
               <div className="row">
                 <div className="col s12 m12 l12">
                   Description:
-                  <input type="text" ref="mondayDescription" name="mondayDescription" placeholder="Workout Description" defaultValue={this.props.scheduleData.mondayDescription} onChange={this.updateField} />
+                  <input type="text" ref="fridayDescription" name="fridayDescription" placeholder="Workout Description" defaultValue={this.props.scheduleData.fridayDescription} onChange={this.updateField} />
                 </div>
               </div>
               <div className="row center">

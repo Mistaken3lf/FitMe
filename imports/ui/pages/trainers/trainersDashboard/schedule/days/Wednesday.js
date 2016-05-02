@@ -2,7 +2,7 @@ import React from 'react';
 import Alert from 'react-s-alert';
 import swal from 'sweetalert';
 
-ClientsWednesday = React.createClass({
+Wednesday = React.createClass({
   updateField(e) {
     const fieldName = e.target.name;
     const data = e.target.value;
