@@ -1,5 +1,6 @@
 import React from 'react';
-import swal from 'sweetalert';
+import '/node_modules/sweetalert/dist/sweetalert.min.js';
+import '/node_modules/sweetalert/dist/sweetalert.css';
 
 export default class ClientTable extends React.Component {
   suspendClient(id) {

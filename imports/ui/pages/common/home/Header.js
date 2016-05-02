@@ -1,5 +1,6 @@
 import React from 'react';
-import swal from 'sweetalert';
+import '/node_modules/sweetalert/dist/sweetalert.min.js';
+import '/node_modules/sweetalert/dist/sweetalert.css';
 
 function learnMore() {
   swal({

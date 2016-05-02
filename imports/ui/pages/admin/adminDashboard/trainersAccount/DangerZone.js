@@ -1,7 +1,8 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import swal from 'sweetalert';
+import '/node_modules/sweetalert/dist/sweetalert.min.js';
+import '/node_modules/sweetalert/dist/sweetalert.css';
 
 function deleteTrainersAccount() {
   const trainerId = FlowRouter.getParam('_id');
