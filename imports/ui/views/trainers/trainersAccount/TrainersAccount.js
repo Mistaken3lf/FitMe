@@ -4,7 +4,7 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 import Loading from '../../../common/components/Loading/Loading.js';
 import NotAuthorized from '../../../common/components/NotAuthorized/NotAuthorized.js';
 
-MyAccount = React.createClass({
+trainersAccount = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {

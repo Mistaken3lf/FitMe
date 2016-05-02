@@ -6,7 +6,7 @@ import TrainerHomePlans from './TrainerHomePlans.js';
 import TrainerHomeFinalLook from './TrainerHomeFinalLook.js';
 import TrainerHomeFooter from './TrainerHomeFooter.js';
 
-const TrainerHome = () => (
+const TrainersHome = () => (
   <div>
     <TrainerHomeHeader />
     <TrainerHomeWelcome />
