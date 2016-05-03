@@ -1,23 +1,27 @@
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
 Meteor.publish('trainer.clientsProfile', function (currentClientsId) {
   new SimpleSchema({
     currentClientsId: {
-      type: String
-    }
+      type: String,
+    },
   }).validate({
-    currentClientsId
+    currentClientsId,
   });
 
-  if (Roles.userIsInRole(this.userId, "trainer")) {
-    //Publish a specific clients profile based on the flow router url param
-    //currentClientsId.
+  if (Roles.userIsInRole(this.userId, 'trainer')) {
+    // Publish a specific clients profile based on the flow router url param
+    // currentClientsId.
     return Meteor.users.find({
       roles: 'client',
-      whosProfile: currentClientsId
+      whosProfile: currentClientsId,
     }, {
       fields: {
         username: 1,
         sessionDate: 1,
-        "emails.address": 1,
+        'emails.address': 1,
         firstName: 1,
         lastName: 1,
         birthday: 1,
@@ -54,11 +58,10 @@ Meteor.publish('trainer.clientsProfile', function (currentClientsId) {
         fridayDescription: 1,
         saturdayDescription: 1,
         sundayDescription: 1,
-        profilePicture: 1
-      }
+        profilePicture: 1,
+      },
     });
   } else {
-    throw new Meteor.Error("not-authorized");
-    return this.ready();
+    throw new Meteor.Error('not-authorized');
   }
 });

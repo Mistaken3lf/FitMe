@@ -1,71 +1,77 @@
-const registerClient = new ValidatedMethod({
-  name: "registerClient",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Accounts } from 'meteor/accounts-base';
+
+export const registerClient = new ValidatedMethod({
+  name: 'registerClient',
 
   validate: new SimpleSchema({
     username: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     password: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     email: {
       type: String,
-      regEx: SimpleSchema.RegEx.Email
+      regEx: SimpleSchema.RegEx.Email,
     },
 
     firstName: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     lastName: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     birthday: {
-      type: String
+      type: String,
     },
 
     address: {
-      type: String
+      type: String,
     },
 
     city: {
-      type: String
+      type: String,
     },
 
     state: {
-      type: String
+      type: String,
     },
 
     zip: {
-      type: String
+      type: String,
     },
 
     homePhone: {
-      type: String
+      type: String,
     },
 
     workPhone: {
-      type: String
+      type: String,
     },
 
     emergencyContact: {
-      type: String
+      type: String,
     },
 
     bio: {
-      type: String
+      type: String,
     },
 
     fitnessGoals: {
-      type: String
-    }
+      type: String,
+    },
 
   }).validator(),
 
@@ -84,43 +90,43 @@ const registerClient = new ValidatedMethod({
     workPhone,
     emergencyContact,
     bio,
-    fitnessGoals
+    fitnessGoals,
   }) {
-    if (Roles.userIsInRole(this.userId, "trainer")) {
-      //Get the current trainer so we can check the client limit
+    if (Roles.userIsInRole(this.userId, 'trainer')) {
+      // Get the current trainer so we can check the client limit
       const currentTrainer = Meteor.users.findOne({
-        _id: this.userId
+        _id: this.userId,
       });
 
-      //Get trainers plan expiration
+      // Get trainers plan expiration
       const trainersExpiration = currentTrainer.expiresOn;
 
-      //Check if the trainer is suspended
-      if (currentTrainer.userStatus == "suspended") {
-        return "Sorry, your account is suspended";
+      // Check if the trainer is suspended
+      if (currentTrainer.userStatus == 'suspended') {
+        return 'Sorry, your account is suspended';
       }
 
-      //Get the count of total clients they have
+      // Get the count of total clients they have
       let currentClientCount = Meteor.users.find({
-        createdBy: this.userId
+        createdBy: this.userId,
       }).count();
 
-      //Make sure the trainers client limit allows for adding more
-      //clients
+      // Make sure the trainers client limit allows for adding more
+      // clients
       if (currentTrainer.clientLimit > currentClientCount) {
-        //Create the new clients username, password and email since thats
-        //what the default meteor user accounts expects
+        // Create the new clients username, password and email since thats
+        // what the default meteor user accounts expects
         const id = Accounts.createUser({
           username: username,
           password: password,
           email: email,
         });
 
-        //Assign client to the client role
+        // Assign client to the client role
         Roles.addUsersToRoles(id, 'client');
 
-        //Update the clients document with any
-        //additional fields supplied
+        // Update the clients document with any
+        // additional fields supplied
         Meteor.users.update(id, {
           $set: {
             firstName: firstName,
@@ -137,16 +143,16 @@ const registerClient = new ValidatedMethod({
             fitnessGoals: fitnessGoals,
             createdBy: Meteor.userId(),
             whosProfile: id,
-            userStatus: "active",
+            userStatus: 'active',
             previouslySuspended: false,
-            myTrainersExpiration: trainersExpiration
-          }
+            myTrainersExpiration: trainersExpiration,
+          },
         });
       } else {
-        return "Client Limit Reached";
+        return 'Client Limit Reached';
       }
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

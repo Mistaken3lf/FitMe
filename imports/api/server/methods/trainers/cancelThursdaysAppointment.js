@@ -1,62 +1,68 @@
-const cancelThursdaysAppointment = new ValidatedMethod({
-  name: "cancelThursdaysAppointment",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Email } from 'meteor/email';
+
+export const cancelThursdaysAppointment = new ValidatedMethod({
+  name: 'cancelThursdaysAppointment',
 
   validate: new SimpleSchema({
     clientId: {
-      type: String
-    }
+      type: String,
+    },
   }).validator(),
 
   run({
-    clientId
+    clientId,
   }) {
-    if (Roles.userIsInRole(this.userId, "trainer")) {
-      //Find the current trainer
+    if (Roles.userIsInRole(this.userId, 'trainer')) {
+      // Find the current trainer
       const thisTrainer = Meteor.users.findOne({
-        _id: this.userId
+        _id: this.userId,
       });
 
-      //Find the trainers client
+      // Find the trainers client
       const trainersClient = Meteor.users.findOne({
-        _id: clientId
+        _id: clientId,
       });
 
-      //Get the clients and trainers email
+      // Get the clients and trainers email
       const clientEmail = trainersClient.emails[0].address;
       const trainersEmail = thisTrainer.emails[0].address;
 
-      //Make sure the trainer is not suspended
-      if (thisTrainer.userStatus == "suspended") {
-        throw new Meteor.Error("Sorry, your account has been suspended");
+      // Make sure the trainer is not suspended
+      if (thisTrainer.userStatus == 'suspended') {
+        throw new Meteor.Error('Sorry, your account has been suspended');
       }
 
-      //Make sure the trainer owns the client
+      // Make sure the trainer owns the client
       if (trainersClient.createdBy == this.userId) {
-        //Reset thursdays schedule
+        // Reset thursdays schedule
         Meteor.users.update({
-          _id: clientId
+          _id: clientId,
         }, {
           $set: {
-            thursdaysScheduleStart: "",
-            thursdaysScheduleEnd: "",
-            thursdayDescription: "",
-            thursdaysStatus: false
-          }
+            thursdaysScheduleStart: '',
+            thursdaysScheduleEnd: '',
+            thursdayDescription: '',
+            thursdaysStatus: false,
+          },
         });
 
         this.unblock();
 
-        //Send the actual email to us
+        // Send the actual email to us
         Email.send({
           to: clientEmail,
           from: trainersEmail,
-          subject: "FitMe -- Appointment Cancellation",
-          text: "Hello " + trainersClient.firstName + " " + trainersClient.lastName + ',\n\n' + "We wanted to inform you that, your trainer, " + thisTrainer.firstName + " " + thisTrainer.lastName + " has cancelled their appointment for Thursday."
+          subject: 'FitMe -- Appointment Cancellation',
+          text: 'Hello ' + trainersClient.firstName + ' ' + trainersClient.lastName + ',\n\n' + 'We wanted to inform you that, your trainer, ' + thisTrainer.firstName + ' ' + thisTrainer.lastName + ' has cancelled their appointment for Thursday.',
         });
 
       }
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

@@ -1,58 +1,64 @@
-const updateClientsCardio = new ValidatedMethod({
-  name: "updateClientsCardio",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { ClientCardio } from '../../../collections/clientCardio.js';
+
+export const updateClientsCardio = new ValidatedMethod({
+  name: 'updateClientsCardio',
 
   validate: new SimpleSchema({
     fieldName: {
-      type: String
+      type: String,
     },
 
     data: {
-      type: String
+      type: String,
     },
 
     clientId: {
-      type: String
-    }
+      type: String,
+    },
   }).validator(),
 
   run({
     fieldName,
     data,
-    clientId
+    clientId,
   }) {
-    if (Roles.userIsInRole(this.userId, "trainer")) {
-      //Find the current trainer
+    if (Roles.userIsInRole(this.userId, 'trainer')) {
+      // Find the current trainer
       const currentTrainer = Meteor.users.findOne({
-        _id: this.userId
+        _id: this.userId,
       });
 
-      //Prevent trainer from updating clients profile if they are suspended
-      if (currentTrainer.userStatus == "suspended") {
-        throw new Meteor.Error("Your account is suspended");
+      // Prevent trainer from updating clients profile if they are suspended
+      if (currentTrainer.userStatus == 'suspended') {
+        throw new Meteor.Error('Your account is suspended');
       }
 
-      //Find the trainers client
+      // Find the trainers client
       const thisClient = Meteor.users.findOne({
-        _id: clientId
+        _id: clientId,
       });
 
-      //Make sure the trainer owns the client
+      // Make sure the trainer owns the client
       if (thisClient.createdBy == this.userId) {
-        let name = fieldName
+        let name = fieldName;
         let value = data;
         let query = {};
         query[name] = value;
 
-        //Update or insert the clients cardio
+        // Update or insert the clients cardio
         ClientCardio.upsert({
           whosCardio: clientId,
-          createdBy: this.userId
+          createdBy: this.userId,
         }, {
-          $set: query
+          $set: query,
         });
       }
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

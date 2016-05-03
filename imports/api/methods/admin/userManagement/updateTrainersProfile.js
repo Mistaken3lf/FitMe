@@ -1,40 +1,45 @@
-const updateTrainersProfile = new ValidatedMethod({
-  name: "updateTrainersProfile",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+export const updateTrainersProfile = new ValidatedMethod({
+  name: 'updateTrainersProfile',
 
   validate: new SimpleSchema({
     fieldName: {
-      type: String
+      type: String,
     },
 
     data: {
-      type: String
+      type: String,
     },
 
     trainerId: {
-      type: String
-    }
+      type: String,
+    },
   }).validator(),
 
   run({
     fieldName,
     data,
-    trainerId
+    trainerId,
   }) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
-      let name = fieldName
+    if (Roles.userIsInRole(this.userId, 'admin')) {
+      let name = fieldName;
       let value = data;
       let query = {};
       query[name] = value;
 
-      //Update the users new profile
+      // Update the users new profile
       Meteor.users.update({
-        _id: trainerId
+        _id: trainerId,
       }, {
-        $set: query
+        $set: query,
       });
 
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

@@ -1,18 +1,21 @@
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
+
 Meteor.publish('clients.trainer', function () {
   const currentClient = Meteor.users.findOne({
-    _id: this.userId
+    _id: this.userId,
   });
 
-  if (Roles.userIsInRole(this.userId, "client")) {
-    //Publish a specific clients profile based on the flow router url param
-    //currentClientsId.
+  if (Roles.userIsInRole(this.userId, 'client')) {
+    // Publish a specific clients profile based on the flow router url param
+    // currentClientsId.
     return Meteor.users.find({
       roles: 'trainer',
-      _id: currentClient.createdBy
+      _id: currentClient.createdBy,
     }, {
       fields: {
         username: 1,
-        "emails.address": 1,
+        'emails.address': 1,
         firstName: 1,
         lastName: 1,
         birthday: 1,
@@ -24,11 +27,10 @@ Meteor.publish('clients.trainer', function () {
         workPhone: 1,
         emergencyContact: 1,
         bio: 1,
-        fitnessGoals: 1
-      }
+        fitnessGoals: 1,
+      },
     });
   } else {
-    throw new Meteor.Error("not-authorized");
-    return this.ready();
+    throw new Meteor.Error('not-authorized');
   }
 });

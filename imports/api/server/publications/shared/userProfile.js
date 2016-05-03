@@ -1,12 +1,14 @@
+import { Meteor } from 'meteor/meteor';
+
 Meteor.publish('shared.profile', function () {
   if (this.userId) {
-    //Find the logged in user
+    // Find the logged in user
     return Meteor.users.find({
-      _id: this.userId
+      _id: this.userId,
     }, {
       fields: {
         username: 1,
-        "emails.address": 1,
+        'emails.address': 1,
         firstName: 1,
         lastName: 1,
         birthday: 1,
@@ -58,10 +60,10 @@ Meteor.publish('shared.profile', function () {
         clientLimit: 1,
         hasPaid: 1,
         userStatus: 1,
-        profilePicture: 1
-      }
+        profilePicture: 1,
+      },
     });
   } else {
-    throw new Meteor.Error("not-authorized");
+    throw new Meteor.Error('not-authorized');
   }
 });

@@ -12,13 +12,24 @@
       "react"
     ],
     "extends": [
+      "airbnb",
       "eslint:recommended",
-      "plugin:react/recommended",
-      "airbnb"
+      "plugin:react/recommended"
     ],
     "rules": {
-      "quotes": ["error", "single"],
-      "spaced-comment": ["error", "always"]
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "spaced-comment": [
+        "error",
+        "always"
+      ],
+      "import/no-unresolved": [
+        2, {
+          "ignore": ["^meteor/"]
+        }
+      ]
     },
     "parserOptions": {
       "sourceType": "module",

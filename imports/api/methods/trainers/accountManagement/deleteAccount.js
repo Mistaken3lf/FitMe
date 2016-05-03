@@ -1,32 +1,36 @@
-const deleteAccount = new ValidatedMethod({
-  name: "deleteAccount",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+
+export const deleteAccount = new ValidatedMethod({
+  name: 'deleteAccount',
 
   validate: null,
 
   run() {
-    if (Roles.userIsInRole(this.userId, "trainer")) {
-      //Set the trainers status to deleted
+    if (Roles.userIsInRole(this.userId, 'trainer')) {
+      // Set the trainers status to deleted
       Meteor.users.update({
-        _id: this.userId
+        _id: this.userId,
       }, {
         $set: {
-          userStatus: "deleted"
-        }
+          userStatus: 'deleted',
+        },
       });
 
-      //Set the trainers clients status to deleted as well
+      // Set the trainers clients status to deleted as well
       Meteor.users.update({
-        createdBy: this.userId
+        createdBy: this.userId,
       }, {
         $set: {
-          userStatus: "deleted",
-        }
+          userStatus: 'deleted',
+        },
       }, {
-        multi: true
+        multi: true,
       });
 
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

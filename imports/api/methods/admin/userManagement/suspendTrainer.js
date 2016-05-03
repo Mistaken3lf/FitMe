@@ -1,65 +1,70 @@
-const suspendTrainer = new ValidatedMethod({
-  name: "suspendTrainer",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+export const suspendTrainer = new ValidatedMethod({
+  name: 'suspendTrainer',
 
   validate: new SimpleSchema({
     id: {
-      type: String
-    }
+      type: String,
+    },
   }).validator(),
 
   run({
-    id
+    id,
   }) {
     if (Roles.userIsInRole(this.userId, 'admin')) {
-      //Find the trainer clicked on
+      // Find the trainer clicked on
       const user = Meteor.users.findOne(id);
 
-      //Check if the user is active
-      if (user.userStatus == "active") {
-        //Suspend the trainer
+      // Check if the user is active
+      if (user.userStatus == 'active') {
+        // Suspend the trainer
         Meteor.users.update({
-          _id: user._id
+          _id: user._id,
         }, {
           $set: {
-            userStatus: "suspended"
-          }
+            userStatus: 'suspended',
+          },
         });
 
-        //Set their status since they are suspended
+        // Set their status since they are suspended
         Meteor.users.update({
           createdBy: user._id,
         }, {
           $set: {
-            userStatus: "suspended",
-          }
+            userStatus: 'suspended',
+          },
         }, {
-          multi: true
+          multi: true,
         });
       } else {
-        //Not suspended so set them active
+        // Not suspended so set them active
         Meteor.users.update({
-          _id: user._id
+          _id: user._id,
         }, {
           $set: {
-            userStatus: "active"
-          }
+            userStatus: 'active',
+          },
         });
 
-        //Set client to active if they were not previously suspended
-        //from their trainer
+        // Set client to active if they were not previously suspended
+        // from their trainer
         Meteor.users.update({
           createdBy: user._id,
-          previouslySuspended: false
+          previouslySuspended: false,
         }, {
           $set: {
-            userStatus: "active",
-          }
+            userStatus: 'active',
+          },
         }, {
-          multi: true
+          multi: true,
         });
       }
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

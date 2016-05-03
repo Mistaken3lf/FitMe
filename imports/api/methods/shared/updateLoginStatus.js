@@ -1,31 +1,28 @@
 import moment from 'moment';
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
 
-const updateLoginStatus = new ValidatedMethod({
-  name: "updateLoginStatus",
+export const updateLoginStatus = new ValidatedMethod({
+  name: 'updateLoginStatus',
 
   validate: null,
 
   run() {
     if (Meteor.userId()) {
-      //Find the current user
-      const currentUser = Meteor.users.findOne({
-        _id: this.userId
-      });
+      // Get todays date
+      let today = moment().format('MM/DD/YYYY');
 
-      //Get todays date
-      let today = moment().format("MM/DD/YYYY");
-
-      //Set the newly logged in date to today
+      // Set the newly logged in date to today
       Meteor.users.update({
-        _id: this.userId
+        _id: this.userId,
       }, {
         $set: {
-          lastLogin: today
-        }
+          lastLogin: today,
+        },
       });
 
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

@@ -1,86 +1,90 @@
 import moment from 'moment';
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-const activateSixMonthPlan = new ValidatedMethod({
-  name: "activateSixMonthPlan",
+export const activateSixMonthPlan = new ValidatedMethod({
+  name: 'activateSixMonthPlan',
 
   validate: new SimpleSchema({
     trainerId: {
-      type: String
-    }
+      type: String,
+    },
   }).validator(),
 
   run({
-    trainerId
+    trainerId,
   }) {
-    if (Roles.userIsInRole(this.userId, "admin")) {
-      //Get todays date
-      let today = moment().format("MM/DD/YYYY");
+    if (Roles.userIsInRole(this.userId, 'admin')) {
+      // Get todays date
+      let today = moment().format('MM/DD/YYYY');
 
-      //Set expiration to six months from now
-      let expires = moment().add(6, "months").format("MM/DD/YYYY");
+      // Set expiration to six months from now
+      let expires = moment().add(6, 'months').format('MM/DD/YYYY');
 
-      //Find the current trainer
+      // Find the current trainer
       const curTrainer = Meteor.users.findOne({
-        _id: trainerId
+        _id: trainerId,
       });
 
-      //Check if the current trainer already has more than
-      //50 clients limit
+      // Check if the current trainer already has more than
+      // 50 clients limit
       if (curTrainer.clientLimit > 50) {
         Meteor.users.update({
-          _id: trainerId
+          _id: trainerId,
         }, {
           $set: {
-            planType: "Six Month",
+            planType: 'Six Month',
             datePurchased: today,
             expiresOn: expires,
-            userStatus: "active",
-            hasPaid: true
-          }
+            userStatus: 'active',
+            hasPaid: true,
+          },
         });
 
-        //Update the trainers clients as well
+        // Update the trainers clients as well
         Meteor.users.update({
           createdBy: trainerId,
-          previouslySuspended: false
+          previouslySuspended: false,
         }, {
           $set: {
-            userStatus: "active"
-          }
+            userStatus: 'active',
+          },
         }, {
-          multi: true
+          multi: true,
         });
 
       } else {
-        //Trainer does not have more than 50 so set their limit
-        //and rest of their plan details
+        // Trainer does not have more than 50 so set their limit
+        // and rest of their plan details
         Meteor.users.update({
-          _id: trainerId
+          _id: trainerId,
         }, {
           $set: {
             clientLimit: 50,
-            planType: "Six Month",
+            planType: 'Six Month',
             datePurchased: today,
             expiresOn: expires,
-            userStatus: "active",
-            hasPaid: true
-          }
+            userStatus: 'active',
+            hasPaid: true,
+          },
         });
 
-        //Update the trainers clients as well
+        // Update the trainers clients as well
         Meteor.users.update({
           createdBy: trainerId,
-          previouslySuspended: false
+          previouslySuspended: false,
         }, {
           $set: {
-            userStatus: "active"
-          }
+            userStatus: 'active',
+          },
         }, {
-          multi: true
+          multi: true,
         });
       }
     } else {
-      throw new Meteor.Error("not-authorized");
+      throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

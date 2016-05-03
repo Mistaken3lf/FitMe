@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 
 Meteor.publish('trainer.currentClients', function () {
@@ -14,11 +15,10 @@ Meteor.publish('trainer.currentClients', function () {
         firstName: 1,
         lastName: 1,
         userStatus: 1,
-        createdBy: 1
-      }
+        createdBy: 1,
+      },
     });
   } else {
     throw new Meteor.Error('not-authorized');
-    return this.ready();
   }
 });

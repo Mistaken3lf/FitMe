@@ -1,6 +1,9 @@
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
+
 Meteor.publish('trainer.schedule', function () {
-  if (Roles.userIsInRole(this.userId, "trainer")) {
-    //Find the trainers master schedule
+  if (Roles.userIsInRole(this.userId, 'trainer')) {
+    // Find the trainers master schedule
     return Meteor.users.find({
       roles: 'client',
       createdBy: this.userId,
@@ -38,11 +41,10 @@ Meteor.publish('trainer.schedule', function () {
         thursdayStatus: 1,
         fridayStatus: 1,
         saturdayStatus: 1,
-        sundayStatus: 1
-      }
+        sundayStatus: 1,
+      },
     });
   } else {
-    throw new Meteor.Error("not-authorized");
-    return this.ready();
+    throw new Meteor.Error('not-authorized');
   }
 });

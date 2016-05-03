@@ -1,33 +1,38 @@
 import moment from 'moment';
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Accounts } from 'meteor/accounts-base';
 
-const CreateTrainer = new ValidatedMethod({
+export const CreateTrainer = new ValidatedMethod({
   name: 'createTrainer',
 
   validate: new SimpleSchema({
     username: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     password: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     email: {
       type: String,
-      regEx: SimpleSchema.RegEx.Email
+      regEx: SimpleSchema.RegEx.Email,
     },
 
     firstName: {
       type: String,
-      min: 2
+      min: 2,
     },
 
     lastName: {
       type: String,
-      min: 2
-    }
+      min: 2,
+    },
   }).validator(),
 
   run({
@@ -35,14 +40,14 @@ const CreateTrainer = new ValidatedMethod({
     password,
     email,
     firstName,
-    lastName
+    lastName,
   }) {
     if (Roles.userIsInRole(this.userId, 'admin')) {
       // Create the new trainer
       let newTrainerId = Accounts.createUser({
         username: username,
         password: password,
-        email: email
+        email: email,
       });
 
       // Get todays date
@@ -62,8 +67,8 @@ const CreateTrainer = new ValidatedMethod({
           planType: 'Free',
           datePurchased: today,
           expiresOn: expires,
-          hasPaid: false
-        }
+          hasPaid: false,
+        },
       });
 
       // Assign newly created trainer a trainer role
@@ -71,5 +76,5 @@ const CreateTrainer = new ValidatedMethod({
     } else {
       throw new Meteor.Error('not-authorized');
     }
-  }
+  },
 });

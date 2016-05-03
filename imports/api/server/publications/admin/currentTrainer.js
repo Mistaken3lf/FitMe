@@ -1,20 +1,23 @@
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
 Meteor.publish('admin.currentTrainer', function (currentTrainerId) {
   new SimpleSchema({
     currentTrainerId: {
-      type: String
-    }
+      type: String,
+    },
   }).validate({
-    currentTrainerId
+    currentTrainerId,
   });
 
-  if (Roles.userIsInRole(this.userId, "admin")) {
-    //Find a specific trainer based on the flow router
-    //param passed in as currentTrainerId
+  if (Roles.userIsInRole(this.userId, 'admin')) {
+    // Find a specific trainer based on the flow router
+    // param passed in as currentTrainerId
     return Meteor.users.find({
-      _id: currentTrainerId
+      _id: currentTrainerId,
     });
   } else {
-    throw new Meteor.Error("not-authorized");
-    return this.ready();
+    throw new Meteor.Error('not-authorized');
   }
 });

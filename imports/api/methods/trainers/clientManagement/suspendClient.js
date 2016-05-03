@@ -1,55 +1,60 @@
-const suspendClient = new ValidatedMethod({
-  name: "suspendClient",
+import { Meteor } from 'meteor/meteor';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+export const suspendClient = new ValidatedMethod({
+  name: 'suspendClient',
 
   validate: new SimpleSchema({
     id: {
-      type: String
-    }
+      type: String,
+    },
   }).validator(),
 
   run({
-    id
+    id,
   }) {
     if (Roles.userIsInRole(this.userId, 'trainer')) {
-      //Find the current trainer
+      // Find the current trainer
       const currentTrainer = Meteor.users.findOne({
-        _id: this.userId
+        _id: this.userId,
       });
 
-      //If the trainer is suspended then deny them
-      if (currentTrainer.userStatus == "suspended") {
-        throw new Meteor.Error("Your account has been suspended");
+      // If the trainer is suspended then deny them
+      if (currentTrainer.userStatus == 'suspended') {
+        throw new Meteor.Error('Your account has been suspended');
       }
 
-      //Find the client
+      // Find the client
       const user = Meteor.users.findOne(id);
 
-      //Make sure the trainer owns the client
+      // Make sure the trainer owns the client
       if (user.createdBy == this.userId) {
-        //If the client is active suspend them
-        if (user.userStatus == "active") {
+        // If the client is active suspend them
+        if (user.userStatus == 'active') {
           Meteor.users.update({
-            _id: user._id
+            _id: user._id,
           }, {
             $set: {
-              userStatus: "suspended",
-              previouslySuspended: true
-            }
+              userStatus: 'suspended',
+              previouslySuspended: true,
+            },
           });
         } else {
-          //They are already suspended so make them active
+          // They are already suspended so make them active
           Meteor.users.update({
-            _id: user._id
+            _id: user._id,
           }, {
             $set: {
-              userStatus: "active",
-              previouslySuspended: false
-            }
+              userStatus: 'active',
+              previouslySuspended: false,
+            },
           });
         }
       }
     } else {
-      throw new Meteor.Error("Not-Authorized");
+      throw new Meteor.Error('Not-Authorized');
     }
-  }
+  },
 });
