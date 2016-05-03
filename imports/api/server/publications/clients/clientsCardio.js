@@ -1,4 +1,4 @@
-Meteor.publish('myCardio', function () {
+Meteor.publish('clients.cardio', function () {
   if (Roles.userIsInRole(this.userId, "client")) {
     //Find the logged in clients cardio
     return ClientCardio.find({
@@ -6,6 +6,5 @@ Meteor.publish('myCardio', function () {
     });
   } else {
     throw new Meteor.Error("not-authorized");
-    return this.ready();
   }
 });

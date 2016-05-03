@@ -1,4 +1,4 @@
-Meteor.publish('trainerSchedule', function () {
+Meteor.publish('trainer.schedule', function () {
   if (Roles.userIsInRole(this.userId, "trainer")) {
     //Find the trainers master schedule
     return Meteor.users.find({

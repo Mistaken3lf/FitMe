@@ -1,4 +1,4 @@
-Meteor.publish('currentClientsProfile', function (currentClientsId) {
+Meteor.publish('trainer.clientsProfile', function (currentClientsId) {
   new SimpleSchema({
     currentClientsId: {
       type: String

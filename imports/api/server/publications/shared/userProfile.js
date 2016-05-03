@@ -1,4 +1,4 @@
-Meteor.publish('myProfile', function () {
+Meteor.publish('shared.profile', function () {
   if (this.userId) {
     //Find the logged in user
     return Meteor.users.find({
@@ -63,6 +63,5 @@ Meteor.publish('myProfile', function () {
     });
   } else {
     throw new Meteor.Error("not-authorized");
-    return this.ready();
   }
 });

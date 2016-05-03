@@ -1,4 +1,4 @@
-Meteor.publish('myTrainer', function () {
+Meteor.publish('clients.trainer', function () {
   const currentClient = Meteor.users.findOne({
     _id: this.userId
   });

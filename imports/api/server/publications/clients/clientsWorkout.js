@@ -1,4 +1,4 @@
-Meteor.publish('myWorkout', function () {
+Meteor.publish('clients.workout', function () {
   if (Roles.userIsInRole(this.userId, "client")) {
     //Find my workout
     return ClientWorkout.find({

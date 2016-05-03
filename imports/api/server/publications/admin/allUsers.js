@@ -1,4 +1,4 @@
-Meteor.publish('allUsers', function () {
+Meteor.publish('admin.allUsers', function () {
   if (Roles.userIsInRole(this.userId, "admin")) {
     //Find all my users
     return Meteor.users.find({}, {

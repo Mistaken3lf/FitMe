@@ -1,6 +1,6 @@
 import { Roles } from 'meteor/alanning:roles';
 
-Meteor.publish('currentClients', function () {
+Meteor.publish('trainer.currentClients', function () {
   if (Roles.userIsInRole(this.userId, 'trainer')) {
     // Find all clients that the logged in user has created and that belongs
     // to them.

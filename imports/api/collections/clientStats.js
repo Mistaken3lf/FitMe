@@ -1,8 +1,8 @@
 import { Mongo } from 'meteor/mongo';
 
-export const Stats = new Mongo.Collection("clientStats");
+export const ClientStats = new Mongo.Collection("clientStats");
 
-Stats.deny({
+ClientStats.deny({
   insert() {
       return true;
     },

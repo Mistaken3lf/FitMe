@@ -1,8 +1,8 @@
 import { Mongo } from 'meteor/mongo';
 
-export const Cardio = new Mongo.Collection("clientCardio");
+export const ClientWorkout = new Mongo.Collection("clientWorkout");
 
-Cardio.deny({
+ClientWorkout.deny({
   insert() {
       return true;
     },
