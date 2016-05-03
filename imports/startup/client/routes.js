@@ -1,105 +1,107 @@
-import {FlowRouter} from 'meteor/kadira:flow-router';
-import Layout from '../'
+import react from 'react';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { mount } from 'react-mounter';
+import MainLayout from '../ui/shared/layouts/MainLayout.js';
 
 // *********************** Common Routes ************************************ //
 
 // HOME PAGE ROUTE
 FlowRouter.route('/', {
   action() {
-    mount(Layout, {
+    mount(MainLayout, {
       content: <Home />,
     });
-  }
+  },
 });
 
 // LOGIN ROUTE
 FlowRouter.route('/login', {
   action() {
-    mount(Layout, {
-      content: <Login />
+    mount(MainLayout, {
+      content: <Login />,
     });
-  }
+  },
 });
 
 // REGISTER ROUTE
 FlowRouter.route('/register', {
   action() {
-    mount(Layout, {
-      content: <Register />
+    mount(MainLayout, {
+      content: <Register />,
     });
-  }
+  },
 });
 
 // MY PROFILE ROUTE
 FlowRouter.route('/myProfile', {
   action() {
-    mount(Layout, {
-      content: <MyProfile />
+    mount(MainLayout, {
+      content: <MyProfile />,
     });
-  }
+  },
 });
 
 // CHANGE PASSWORD ROUTE
 FlowRouter.route('/changePassword', {
   action() {
-    mount(Layout, {
-      content: <ChangePassword />
+    mount(MainLayout, {
+      content: <ChangePassword />,
     });
-  }
+  },
 });
 
 // FORGOT PASSWORD ROUTE
 FlowRouter.route('/forgotPassword', {
   action() {
-    mount(Layout, {
-      content: <ForgotPassword />
+    mount(MainLayout, {
+      content: <ForgotPassword />,
     });
-  }
+  },
 });
 
 // RESET PASSWORD ROUTE
 FlowRouter.route('/reset-password:token', {
   action() {
-    mount(Layout, {
-      content: <ResetPassword />
+    mount(MainLayout, {
+      content: <ResetPassword />,
     });
-  }
+  },
 });
 
 // TERMS AND CONDITIONS ROUTE
 FlowRouter.route('/termsAndConditions', {
   action() {
-    mount(Layout, {
-      content: <TermsAndConditions />
+    mount(MainLayout, {
+      content: <TermsAndConditions />,
     });
-  }
+  },
 });
 
 // CONTACT PAGE ROUTE
 FlowRouter.route('/contactPage', {
   action() {
-    mount(Layout, {
-      content: <ContactPage />
+    mount(MainLayout, {
+      content: <ContactPage />,
     });
-  }
+  },
 });
 
 // NOT AUTHORIZED ROUTE
 FlowRouter.route('/notAuthorized', {
   action() {
-    mount(Layout, {
-      content: <NotAuthorized />
+    mount(MainLayout, {
+      content: <NotAuthorized />,
     });
-  }
+  },
 });
 
 // NOT FOUND ROUTE
 FlowRouter.notFound = {
   action() {
-    mount(Layout, {
-      content: <NotFound />
+    mount(MainLayout, {
+      content: <NotFound />,
     });
-  }
+  },
 };
 
 
@@ -108,8 +110,8 @@ FlowRouter.notFound = {
 // COMMAND CENTER ROUTE
 FlowRouter.route('/commandCenter', {
   action() {
-    mount(Layout, {
-      content: <CommandCenter />
+    mount(MainLayout, {
+      content: <CommandCenter />,
     });
   },
 });
@@ -117,8 +119,8 @@ FlowRouter.route('/commandCenter', {
 // ADD NEW TRAINER ROUTE
 FlowRouter.route('/addTrainerAdmin', {
   action() {
-    mount(Layout, {
-      content: <AddTrainerAdmin />
+    mount(MainLayout, {
+      content: <AddTrainerAdmin />,
     });
   },
 });
@@ -126,8 +128,8 @@ FlowRouter.route('/addTrainerAdmin', {
 // ADMIN DASHBOARD ROUTE
 FlowRouter.route('/adminDashboard/:_id', {
   action() {
-    mount(Layout, {
-      content: <AdminDashboard />
+    mount(MainLayout, {
+      content: <AdminDashboard />,
     });
   },
 });
@@ -135,8 +137,8 @@ FlowRouter.route('/adminDashboard/:_id', {
 // ADMIN HOME ROUTE
 FlowRouter.route('/adminHome', {
   action() {
-    mount(Layout, {
-      content: <AdminHome />
+    mount(MainLayout, {
+      content: <AdminHome />,
     });
   },
 });
@@ -146,8 +148,8 @@ FlowRouter.route('/adminHome', {
 // ADD NEW CLIENT ROUTE
 FlowRouter.route('/addClient', {
   action() {
-    mount(Layout, {
-      content: <AddClient />
+    mount(MainLayout, {
+      content: <AddClient />,
     });
   },
 });
@@ -155,8 +157,8 @@ FlowRouter.route('/addClient', {
 // CLIENT DASHBOARD ROUTE
 FlowRouter.route('/clientDashboard/:_id', {
   action() {
-    mount(Layout, {
-      content: <ClientsDashboard />
+    mount(MainLayout, {
+      content: <ClientsDashboard />,
     });
   },
 });
@@ -164,8 +166,8 @@ FlowRouter.route('/clientDashboard/:_id', {
 // CURRENT CLIENTS ROUTE
 FlowRouter.route('/currentClients', {
   action() {
-    mount(Layout, {
-      content: <CurrentClients />
+    mount(MainLayout, {
+      content: <CurrentClients />,
     });
   },
 });
@@ -173,8 +175,8 @@ FlowRouter.route('/currentClients', {
 // TRAINER SCHEDULE ROUTE
 FlowRouter.route('/trainerSchedule', {
   action() {
-    mount(Layout, {
-      content: <TrainersSchedule />
+    mount(MainLayout, {
+      content: <TrainersSchedule />,
     });
   },
 });
@@ -182,8 +184,8 @@ FlowRouter.route('/trainerSchedule', {
 // MY ACCOUNT ROUTE
 FlowRouter.route('/myAccount', {
   action() {
-    mount(Layout, {
-      content: <MyAccount />
+    mount(MainLayout, {
+      content: <MyAccount />,
     });
   },
 });
@@ -191,8 +193,8 @@ FlowRouter.route('/myAccount', {
 // TRAINER GUIDE ROUTE
 FlowRouter.route('/trainerGuide', {
   action() {
-    mount(Layout, {
-      content: <TrainerGuide />
+    mount(MainLayout, {
+      content: <TrainerGuide />,
     });
   },
 });
@@ -200,8 +202,8 @@ FlowRouter.route('/trainerGuide', {
 // TRAINER HOME ROUTE
 FlowRouter.route('/trainerHome', {
   action() {
-    mount(Layout, {
-      content: <TrainerHome />
+    mount(MainLayout, {
+      content: <TrainerHome />,
     });
   },
 });
@@ -211,8 +213,8 @@ FlowRouter.route('/trainerHome', {
 // MY DASHBOARD ROUTE
 FlowRouter.route('/myDashboard', {
   action() {
-    mount(Layout, {
-      content: <MyDashboard />
+    mount(MainLayout, {
+      content: <MyDashboard />,
     });
   },
 });
@@ -220,8 +222,8 @@ FlowRouter.route('/myDashboard', {
 // CLIENT HOME ROUTE
 FlowRouter.route('/clientHome', {
   action() {
-    mount(Layout, {
-      content: <ClientHome />
+    mount(MainLayout, {
+      content: <ClientHome />,
     });
   },
 });

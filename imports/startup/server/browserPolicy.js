@@ -15,7 +15,7 @@ var trusted = [
   '*.mxpnl.com',
   '*.zendesk.com',
   '*.googleapis.com',
-  '*.gstatic.com'
+  '*.gstatic.com',
 ];
 
 _.each(trusted, function (origin) {

@@ -1,49 +1,51 @@
 import moment from 'moment';
+import { Meteor } from 'meteor/meteor';
+import { SyncedCron } from 'meteor/percolate:synced-cron';
 
 SyncedCron.add({
   name: 'Auto Suspend Trainers (Every Day)',
-  //Run every night at 3am
+  // Run every night at 3am
   schedule(parser) {
     return parser.text('at 3:00 am');
   },
 
   job() {
-    //Get todays date
-    let today = moment().format("MM/DD/YYYY");
+    // Get todays date
+    let today = moment().format('MM/DD/YYYY');
 
-    //Find all the users
+    // Find all the users
     let curUser = Meteor.users.find();
 
     curUser.forEach((user) => {
-      //Suspend a trainer if their account is expired
+      // Suspend a trainer if their account is expired
       Meteor.users.update({
-        roles: "trainer",
+        roles: 'trainer',
         expiresOn: today,
         userStatus: {
-          $ne: "deleted"
-        }
+          $ne: 'deleted',
+        },
       }, {
         $set: {
-          userStatus: "suspended"
-        }
+          userStatus: 'suspended',
+        },
       }, {
-        multi: true
+        multi: true,
       });
 
-      if (user.userStatus == "suspended") {
-        //Suspend each trainers clients as well
+      if (user.userStatus == 'suspended') {
+        // Suspend each trainers clients as well
         Meteor.users.update({
-          createdBy: user._id
+          createdBy: user._id,
         }, {
           $set: {
-            userStatus: "suspended",
-          }
+            userStatus: 'suspended',
+          },
         }, {
-          multi: true
+          multi: true,
         });
       }
     });
-  }
+  },
 });
 
 // Start Cronjobs
