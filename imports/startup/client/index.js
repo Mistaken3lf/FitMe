@@ -7,4 +7,3 @@ import '/node_modules/bootstrap/dist/js/bootstrap.min.js';
 import './resetPassword.js';
 import './routes.js';
 import './onLogin.js';
-
