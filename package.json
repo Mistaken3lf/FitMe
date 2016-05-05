@@ -4,7 +4,7 @@
   "description": "Workout management web app",
   "main": "index.js",
   "scripts": {
-    "meteor": "meteor --port $IP:$PORT --settings settings-development.json",
+    "meteor": "meteor --settings settings-development.json",
     "deploy-production": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.gofitme.com"
   },
   "eslintConfig": {
