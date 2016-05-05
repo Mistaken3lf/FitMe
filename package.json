@@ -31,6 +31,9 @@
         }
       ]
     },
+    "globals": {
+      "_": true
+    },
     "parserOptions": {
       "sourceType": "module",
       "ecmaFeatures": {
