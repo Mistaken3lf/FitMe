@@ -1,6 +1,8 @@
-import {composeWithTracker} from 'react-komposer';
-import {FlowRouter} from 'meteor/kadira:flow-router';
-import AdminDashboard from '../components/AdminDashboard/AdminDashboard.js';
+import { Meteor } from 'meteor/meteor';
+import { Session } from 'meteor/session';
+import { composeWithTracker } from 'react-komposer';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import AdminDashboard from '../views/adminDashboard/AdminDashboard.js';
 
 function composer(props, onData) {
   const trainerId = FlowRouter.getParam('_id');
@@ -36,7 +38,12 @@ function composer(props, onData) {
     }).fetch();
 
     onData(null, {
-      currentUser, loggingIn, currentTrainer, trainersClientCount, clickedButton, trainersClients,
+      currentUser,
+      loggingIn,
+      currentTrainer,
+      trainersClientCount,
+      clickedButton,
+      trainersClients,
     });
   }
 }

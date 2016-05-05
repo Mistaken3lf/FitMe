@@ -1,5 +1,7 @@
-import {composeWithTracker} from 'react-komposer';
-import CommandCenter from '../components/CommandCenter/CommandCenter.js';
+import { Meteor } from 'meteor/meteor';
+import { Session } from 'meteor/session';
+import { composeWithTracker } from 'react-komposer';
+import CommandCenter from '../views/commandCenter/CommandCenter.js';
 
 function composer(props, onData) {
   if (Meteor.subscribe('allUsers').ready()) {
@@ -41,7 +43,15 @@ function composer(props, onData) {
     }).count();
 
     onData(null, {
-      clickedButton, loggingIn, currentUser, activeTrainers, suspendedTrainers, deletedTrainers, totalTrainers, totalClients, totalUsers,
+      clickedButton,
+      loggingIn,
+      currentUser,
+      activeTrainers,
+      suspendedTrainers,
+      deletedTrainers,
+      totalTrainers,
+      totalClients,
+      totalUsers,
     });
   }
 }

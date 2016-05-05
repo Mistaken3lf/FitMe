@@ -1,6 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import React from 'react';
 import Alert from 'react-s-alert';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class TrainersProfile extends React.Component {
   updateField(e) {
