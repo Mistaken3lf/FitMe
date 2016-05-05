@@ -8,15 +8,15 @@ import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class AdminsDashboard extends React.Component {
   componentDidMount() {
-    if(!Roles.userIsInRole(Meteor.userId(), "admin") && !this.props.loggingIn) {
-      FlowRouter.go("/notAuthorized");
+    if(!Roles.userIsInRole(Meteor.userId(), 'admin') && !this.props.loggingIn) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }
 
   handleClick(e) {
     const clickedButton = e.target.id;
-    Session.set("adminClickedButton", clickedButton);
+    Session.set('adminClickedButton', clickedButton);
   }
 
   render() {
@@ -47,17 +47,17 @@ export default class AdminsDashboard extends React.Component {
                       <div className="col s12 l12 m12">
                         <div className="row">
                           {(() => {
-                            if(this.props.clickedButton == "trainersProfile") {
+                            if(this.props.clickedButton == 'trainersProfile') {
                               return (
-                                <TrainersProfile trainerData={this.props.currentTrainer}/>
+                                <TrainersProfile trainerData={this.props.currentTrainer} />
                               );
-                            } else if(this.props.clickedButton == "trainersClients") {
+                            } else if(this.props.clickedButton == 'trainersClients') {
                               return (
-                                <TrainersClients trainersClients={this.props.trainersClients}/>
+                                <TrainersClients trainersClients={this.props.trainersClients} />
                               );
-                            } else if(this.props.clickedButton == "accountDetails") {
+                            } else if(this.props.clickedButton == 'accountDetails') {
                               return (
-                                <AccountDetails accountDetails={this.props.currentTrainer} clientCount={this.props.trainersClientCount}/>
+                                <AccountDetails accountDetails={this.props.currentTrainer} clientCount={this.props.trainersClientCount} />
                               );
                             } else {
                               return (

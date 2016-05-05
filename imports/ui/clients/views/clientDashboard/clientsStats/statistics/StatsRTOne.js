@@ -41,5 +41,5 @@ MyStatsRTOne = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

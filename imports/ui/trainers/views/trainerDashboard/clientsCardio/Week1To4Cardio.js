@@ -7,13 +7,13 @@ Week1To4Cardio = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsCardio", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsCardio', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -41,8 +41,8 @@ Week1To4Cardio = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     return (
@@ -172,5 +172,5 @@ Week1To4Cardio = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

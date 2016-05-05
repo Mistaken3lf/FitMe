@@ -7,59 +7,59 @@ export default class ResetPassword extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    //Capture the new password
+    // Capture the new password
     const newPassword = this.refs.newPassword.value;
     const newPasswordConfirmation = this.refs.newPasswordConfirmation.value;
 
-    //Make sure the passwords match
+    // Make sure the passwords match
     if (newPassword != newPasswordConfirmation) {
-      Alert.error("Your passwords do not match", {
+      Alert.error('Your passwords do not match', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
       return false;
     }
 
-    if (newPassword == "" || newPassword == null) {
-      Alert.error("Please enter a new password", {
+    if (newPassword == '' || newPassword == null) {
+      Alert.error('Please enter a new password', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (newPasswordConfirmation == "" || newPasswordConfirmation == null) {
-      Alert.error("Please confirm your new password", {
+    } else if (newPasswordConfirmation == '' || newPasswordConfirmation == null) {
+      Alert.error('Please confirm your new password', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      //Reset the users password
+      // Reset the users password
       Accounts.resetPassword(Session.get('resetPassword'), newPassword, (error) => {
         if (error) {
           Alert.error(error.reason, {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
-          Alert.success("Password has been successfully changed", {
+          Alert.success('Password has been successfully changed', {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
 
-          //Unset the reset password token
+          // Unset the reset password token
           Session.set('resetPassword', null);
 
-          //Go to the admins home if they are an admin
-          if (Roles.userIsInRole(Meteor.userId(), "admin")) {
-            FlowRouter.go("/adminHome");
+          // Go to the admins home if they are an admin
+          if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+            FlowRouter.go('/adminHome');
           }
 
-          //Go to the trainer home if they are a trainer
-          if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
-            FlowRouter.go("/trainerHome");
+          // Go to the trainer home if they are a trainer
+          if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
+            FlowRouter.go('/trainerHome');
           }
 
-          //Go to the clients home if they are a client
-          if (Roles.userIsInRole(Meteor.userId(), "client")) {
-            FlowRouter.go("/clientHome");
+          // Go to the clients home if they are a client
+          if (Roles.userIsInRole(Meteor.userId(), 'client')) {
+            FlowRouter.go('/clientHome');
           }
         }
       });
@@ -69,11 +69,11 @@ export default class ResetPassword extends React.Component {
   render() {
     const styles = {
       buttonStyle: {
-        width: "100%"
-      }
+        width: '100%',
+      },
     };
 
-    if (Session.get("resetPassword")) {
+    if (Session.get('resetPassword')) {
       return (
         <div className="row">
           <div className="col s12 m6 offset-m3 l6 offset-l3" id="passwordForgotForm">

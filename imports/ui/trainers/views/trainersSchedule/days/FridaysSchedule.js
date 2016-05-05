@@ -3,20 +3,20 @@ import Alert from 'react-s-alert';
 
 FridaysSchedule = React.createClass({
   removeFromFriday(id) {
-    Meteor.call("resetFridaysSchedule", {
-      id
+    Meteor.call('resetFridaysSchedule', {
+      id,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
   },
 
   goToDashboard(id) {
-    FlowRouter.go("/clientDashboard/" + id);
+    FlowRouter.go('/clientDashboard/' + id);
   },
 
   render() {
@@ -39,5 +39,5 @@ FridaysSchedule = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

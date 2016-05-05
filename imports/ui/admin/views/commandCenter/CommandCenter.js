@@ -9,15 +9,15 @@ import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class CommandCenter extends React.Component {
   componentDidMount() {
-    if(!Roles.userIsInRole(Meteor.userId(), "admin") && !this.props.loggingIn) {
-      FlowRouter.go("/notAuthorized");
+    if(!Roles.userIsInRole(Meteor.userId(), 'admin') && !this.props.loggingIn) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }
 
   handleClick(e) {
     const clickedButton = e.target.id;
-    Session.set("trainerStatus", clickedButton);
+    Session.set('trainerStatus', clickedButton);
   }
 
   render() {
@@ -48,15 +48,15 @@ export default class CommandCenter extends React.Component {
                   <div className="card green">
                     <div className="row">
                       {(() => {
-                        if(this.props.clickedButton == "activeTrainers") {
+                        if(this.props.clickedButton == 'activeTrainers') {
                           return (
                             <ActiveTrainers activeTrainers={this.props.activeTrainers} />
                           );
-                        } else if(this.props.clickedButton == "suspendedTrainers") {
+                        } else if(this.props.clickedButton == 'suspendedTrainers') {
                           return (
                             <SuspendedTrainers suspendedTrainers={this.props.suspendedTrainers} />
                           );
-                        } else if(this.props.clickedButton == "deletedTrainers") {
+                        } else if(this.props.clickedButton == 'deletedTrainers') {
                           return (
                             <DeletedTrainers deletedTrainers={this.props.deletedTrainers} />
                           );

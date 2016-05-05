@@ -4,18 +4,18 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 
 function activateMonthlyPlan() {
   const trainerId = FlowRouter.getParam('_id');
-  Meteor.call("monthlyPlan", {
-    trainerId
+  Meteor.call('monthlyPlan', {
+    trainerId,
   }, (error) => {
     if (error) {
       Alert.error(error.reason, {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      Alert.success("Monthly plan started", {
+      Alert.success('Monthly plan started', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     }
   });
@@ -23,18 +23,18 @@ function activateMonthlyPlan() {
 
 function activateSixMonthPlan() {
   const trainerId = FlowRouter.getParam('_id');
-  Meteor.call("sixMonthPlan", {
-    trainerId
+  Meteor.call('sixMonthPlan', {
+    trainerId,
   }, (error) => {
     if (error) {
       Alert.error(error.reason, {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      Alert.success("Six month plan started", {
+      Alert.success('Six month plan started', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     }
   });
@@ -42,18 +42,18 @@ function activateSixMonthPlan() {
 
 function activateYearlyPlan() {
   const trainerId = FlowRouter.getParam('_id');
-  Meteor.call("yearlyPlan", {
-    trainerId
+  Meteor.call('yearlyPlan', {
+    trainerId,
   }, (error) => {
     if (error) {
       Alert.error(error.reason, {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      Alert.success("Yearly plan started", {
+      Alert.success('Yearly plan started', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     }
   });

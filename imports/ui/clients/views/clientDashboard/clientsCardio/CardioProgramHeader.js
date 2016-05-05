@@ -2,7 +2,7 @@ import React from 'react';
 
 MyCardioProgramHeader = React.createClass({
   maxHeartRate() {
-    //Formula for max heart rate
+    // Formula for max heart rate
     let maxHeartRate = 220 - this.props.cardioData.cardioProgramAge;
     return maxHeartRate;
   },
@@ -58,5 +58,5 @@ MyCardioProgramHeader = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

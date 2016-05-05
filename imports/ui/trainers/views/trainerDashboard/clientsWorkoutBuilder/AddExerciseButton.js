@@ -9,5 +9,5 @@ AddExerciseButton = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

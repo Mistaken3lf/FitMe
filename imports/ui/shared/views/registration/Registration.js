@@ -11,53 +11,53 @@ export default class Registration extends React.Component {
     const password = this.refs.password.value;
     const email = this.refs.email.value;
 
-    if (username == "" || username == null) {
-      Alert.error("Please enter a username", {
+    if (username == '' || username == null) {
+      Alert.error('Please enter a username', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
 
-    } else if (password == "" || password == null) {
-      Alert.error("Please enter a password", {
+    } else if (password == '' || password == null) {
+      Alert.error('Please enter a password', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (firstName == "" || firstName == null) {
-      Alert.error("Please enter your first name", {
+    } else if (firstName == '' || firstName == null) {
+      Alert.error('Please enter your first name', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (lastName == "" || lastName == null) {
-      Alert.error("Please enter your last name", {
+    } else if (lastName == '' || lastName == null) {
+      Alert.error('Please enter your last name', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (email == "" || email == null) {
-      Alert.error("Please enter your email", {
+    } else if (email == '' || email == null) {
+      Alert.error('Please enter your email', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      //Call server method to register the trainer
-      Meteor.call("registerTrainer", {
-        username, password, email, firstName, lastName
+      // Call server method to register the trainer
+      Meteor.call('registerTrainer', {
+        username, password, email, firstName, lastName,
       }, (error) => {
-        //Error registering trainer
+        // Error registering trainer
         if (error) {
-          //Pop up an alert to show the error
+          // Pop up an alert to show the error
           Alert.error(error.reason, {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
-          //Login user with provided credentials
+          // Login user with provided credentials
           Meteor.loginWithPassword(username, password, (error) => {
-            //Failed to login
+            // Failed to login
             if (error) {
-              //Pop up an alert to show the reason for failed login
+              // Pop up an alert to show the reason for failed login
               Alert.error(error.reason, {
                 position: 'top-right',
-                effect: 'jelly'
+                effect: 'jelly',
               });
             } else {
               FlowRouter.go('/trainerHome');
@@ -71,8 +71,8 @@ export default class Registration extends React.Component {
   render() {
     const styles = {
       buttonWidth: {
-        width: "100%"
-      }
+        width: '100%',
+      },
     };
 
     return (

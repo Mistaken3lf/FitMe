@@ -26,5 +26,5 @@ AccountTable = React.createClass({
         </tbody>
       </table>
     );
-  }
+  },
 });

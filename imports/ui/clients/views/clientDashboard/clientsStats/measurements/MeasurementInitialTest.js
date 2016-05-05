@@ -53,5 +53,5 @@ MyMeasureInitialTest = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

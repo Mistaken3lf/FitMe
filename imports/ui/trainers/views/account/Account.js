@@ -8,44 +8,44 @@ trainersAccount = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    const myProfile = Meteor.subscribe("myProfile");
-    const currentClients = Meteor.subscribe("currentClients");
+    const myProfile = Meteor.subscribe('myProfile');
+    const currentClients = Meteor.subscribe('currentClients');
 
     return {
       loading: !myProfile.ready() || !currentClients.ready(),
 
       accountData: Meteor.users.findOne({
-        _id: Meteor.userId()
+        _id: Meteor.userId(),
       }),
 
       clientCount: Meteor.users.find({
-        createdBy: Meteor.userId()
-      }).count()
+        createdBy: Meteor.userId(),
+      }).count(),
     }
   },
 
   deleteAccount() {
-    //Needed for sweet alerts
+    // Needed for sweet alerts
     let previousWindowKeyDown = window.onkeydown;
 
-    //Sweet alert to confirm deletion of client
+    // Sweet alert to confirm deletion of client
     swal({
-      title: "Are you sure?",
-      text: "Your account will be completely removed, all clients, workouts and related data will be removed from FitMe",
-      type: "warning",
+      title: 'Are you sure?',
+      text: 'Your account will be completely removed, all clients, workouts and related data will be removed from FitMe',
+      type: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, delete account!",
-      closeOnConfirm: false
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Yes, delete account!',
+      closeOnConfirm: false,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'Your account has been removed.', 'success');
-        //Call server function to delete the client clicked on
-        Meteor.call("deleteAccount");
-        FlowRouter.go("/");
+        // Call server function to delete the client clicked on
+        Meteor.call('deleteAccount');
+        FlowRouter.go('/');
 
-        //Log user out
+        // Log user out
         Meteor.logout();
       } else {
         swal('Cancelled', 'Account is safe now.', 'error');
@@ -54,7 +54,7 @@ trainersAccount = React.createClass({
   },
 
   changePassword() {
-    FlowRouter.go("/changePassword");
+    FlowRouter.go('/changePassword');
   },
 
   render() {
@@ -62,7 +62,7 @@ trainersAccount = React.createClass({
       return (
         <Loading />
       );
-    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (!Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <NotAuthorized />
       );
@@ -70,7 +70,7 @@ trainersAccount = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div className="row">
           <div className="col s12 m12 l12">
@@ -87,7 +87,7 @@ trainersAccount = React.createClass({
                       <div className="col s12 m12 l12">
                         <div className="row">
                           <div className="col s12 m12 l12">
-                            <AccountTable accountData={this.data.accountData} clientCount={this.data.clientCount}/>
+                            <AccountTable accountData={this.data.accountData} clientCount={this.data.clientCount} />
                           </div>
                         </div>
                         <br />
@@ -143,5 +143,5 @@ trainersAccount = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

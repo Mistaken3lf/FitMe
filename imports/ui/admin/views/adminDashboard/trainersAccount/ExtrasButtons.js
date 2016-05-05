@@ -4,18 +4,18 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 
 function addFiveAddidionalClients() {
   const trainerId = FlowRouter.getParam('_id');
-  Meteor.call("fiveAdditionalClients", {
-    trainerId
+  Meteor.call('fiveAdditionalClients', {
+    trainerId,
   }, (error) => {
     if (error) {
       Alert.error(error.reason, {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      Alert.success("5 additional clients added", {
+      Alert.success('5 additional clients added', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     }
   });
@@ -23,18 +23,18 @@ function addFiveAddidionalClients() {
 
 function addTenAddidionalClients() {
   const trainerId = FlowRouter.getParam('_id');
-  Meteor.call("tenAdditionalClients", {
-    trainerId
+  Meteor.call('tenAdditionalClients', {
+    trainerId,
   }, (error) => {
     if (error) {
       Alert.error(error.reason, {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      Alert.success("10 additional clients added", {
+      Alert.success('10 additional clients added', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     }
   });
@@ -42,18 +42,18 @@ function addTenAddidionalClients() {
 
 function addTwentyAddidionalClients() {
   const trainerId = FlowRouter.getParam('_id');
-  Meteor.call("twentyAdditionalClients", {
-    trainerId
+  Meteor.call('twentyAdditionalClients', {
+    trainerId,
   }, (error) => {
     if (error) {
       Alert.error(error.reason, {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      Alert.success("20 additional clients added", {
+      Alert.success('20 additional clients added', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     }
   });

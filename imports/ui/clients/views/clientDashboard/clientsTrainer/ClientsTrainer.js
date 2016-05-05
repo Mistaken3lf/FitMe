@@ -7,8 +7,8 @@ export default class ClientsTrainer extends React.Component {
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     if(Meteor.loggingIn()) {
@@ -19,7 +19,7 @@ export default class ClientsTrainer extends React.Component {
       return (
         <Loading />
       );
-    } else if(Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if(Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
         <div className="row">
           <div className="card z-depth-3 grey lighten-4">

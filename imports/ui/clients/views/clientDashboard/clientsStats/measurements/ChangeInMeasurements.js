@@ -48,7 +48,7 @@ MyMeasureChange = React.createClass({
   },
 
   todaysDate() {
-    return moment().format("ddd. MMM Do");
+    return moment().format('ddd. MMM Do');
   },
 
   render() {
@@ -94,5 +94,5 @@ MyMeasureChange = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

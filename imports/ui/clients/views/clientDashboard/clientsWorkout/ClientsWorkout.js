@@ -6,16 +6,16 @@ MyWorkout = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    const handle = Meteor.subscribe("myWorkout");
+    const handle = Meteor.subscribe('myWorkout');
 
     const myWorkout = ClientWorkout.findOne({
-      whosWorkout: Meteor.userId()
+      whosWorkout: Meteor.userId(),
     });
 
     return {
       loading: !handle.ready(),
 
-      myWorkout: myWorkout || {}
+      myWorkout: myWorkout || {},
     }
   },
 
@@ -28,7 +28,7 @@ MyWorkout = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
         <div className="card grey lighten-4">
           <div className="col s12 m12 l12">
@@ -58,5 +58,5 @@ MyWorkout = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

@@ -9,47 +9,47 @@ Monday = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsSchedule", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsSchedule', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
   },
 
   cancelAppointment() {
-    if ((this.refs.mondaysScheduleStart.value == "") || (this.refs.mondaysScheduleEnd.value == "") || (this.refs.mondayDescription.value == "")) {
-      Alert.error("You must fill out the entire appointment to cancel!", {
+    if ((this.refs.mondaysScheduleStart.value == '') || (this.refs.mondaysScheduleEnd.value == '') || (this.refs.mondayDescription.value == '')) {
+      Alert.error('You must fill out the entire appointment to cancel!', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
       return;
     } else {
-      //Needed for sweet alerts
+      // Needed for sweet alerts
       let previousWindowKeyDown = window.onkeydown;
 
-      //Sweet alert to confirm deletion of client
+      // Sweet alert to confirm deletion of client
       swal({
-        title: "Are You Sure?",
-        text: "This will cancel your appointment for monday and send the client an email letting them know you will not be able to make the appointment",
-        type: "warning",
+        title: 'Are You Sure?',
+        text: 'This will cancel your appointment for monday and send the client an email letting them know you will not be able to make the appointment',
+        type: 'warning',
         showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Yes",
-        closeOnConfirm: true
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: 'Yes',
+        closeOnConfirm: true,
       }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
-          this.refs.mondaysScheduleStart.value = "";
-          this.refs.mondaysScheduleEnd.value = "";
-          this.refs.mondayDescription.value = "";
+          this.refs.mondaysScheduleStart.value = '';
+          this.refs.mondaysScheduleEnd.value = '';
+          this.refs.mondayDescription.value = '';
           const clientId = FlowRouter.getParam('_id');
-          Meteor.call("cancelMondaysAppointment", {
-            clientId
+          Meteor.call('cancelMondaysAppointment', {
+            clientId,
           });
         } else {
           swal('Cancelled', 'Your appointment will not be canceled.', 'error');
@@ -289,5 +289,5 @@ Monday = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

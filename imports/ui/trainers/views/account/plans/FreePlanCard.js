@@ -6,56 +6,56 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 FreePlan = React.createClass({
   freePlan() {
     const currentTrainer = Meteor.users.findOne({
-      _id: Meteor.userId()
+      _id: Meteor.userId(),
     });
 
-    //Check if the trainer is already in a paid plan and let
-    //them know they are already in a plan
+    // Check if the trainer is already in a paid plan and let
+    // them know they are already in a plan
     if (currentTrainer.hasPaid == true) {
-      //Needed for sweet alerts
+      // Needed for sweet alerts
       let previousWindowKeyDown = window.onkeydown;
 
-      //Sweet alert to confirm deletion of client
+      // Sweet alert to confirm deletion of client
       swal({
-        title: "Are You Sure?",
-        text: "You are currently enrolled in a plan. By switching back to a Free plan, you will lose all your current clients and your client limit will be set back to 1.",
-        type: "warning",
+        title: 'Are You Sure?',
+        text: 'You are currently enrolled in a plan. By switching back to a Free plan, you will lose all your current clients and your client limit will be set back to 1.',
+        type: 'warning',
         showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Yes",
-        closeOnConfirm: true
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: 'Yes',
+        closeOnConfirm: true,
       }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
-          Meteor.call("freeAccountTrainer");
-          Alert.success("Thank you for choosing FitMe", {
+          Meteor.call('freeAccountTrainer');
+          Alert.success('Thank you for choosing FitMe', {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
           swal('Cancelled', 'Your account will not be reset.', 'error');
         }
       });
     } else {
-      //Needed for sweet alerts
+      // Needed for sweet alerts
       let previousWindowKeyDown = window.onkeydown;
 
-      //Sweet alert to confirm deletion of client
+      // Sweet alert to confirm deletion of client
       swal({
-        title: "Reset Your Account To Free?",
-        text: "You will lose all your current clients and your client limit will be dropped to 1",
-        type: "warning",
+        title: 'Reset Your Account To Free?',
+        text: 'You will lose all your current clients and your client limit will be dropped to 1',
+        type: 'warning',
         showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Yes, continue!",
-        closeOnConfirm: true
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: 'Yes, continue!',
+        closeOnConfirm: true,
       }, (isConfirm) => {
         window.onkeydown = previousWindowKeyDown;
         if (isConfirm) {
-          Meteor.call("freeAccountTrainer");
-          Alert.success("Thank you for choosing FitMe", {
+          Meteor.call('freeAccountTrainer');
+          Alert.success('Thank you for choosing FitMe', {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
           swal('Cancelled', 'Your account will not be reset.', 'error');
@@ -65,7 +65,7 @@ FreePlan = React.createClass({
   },
 
   render() {
-    if (this.props.userStatus.userStatus == "suspended") {
+    if (this.props.userStatus.userStatus == 'suspended') {
       return (
         <div className="col s12 m3 l3">
           <div className="card white hoverable darken-1 z-depth-1">
@@ -135,5 +135,5 @@ FreePlan = React.createClass({
         </div>
       );
     }
-  }
+  },
 });

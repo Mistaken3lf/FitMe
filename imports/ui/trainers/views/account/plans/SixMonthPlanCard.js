@@ -5,40 +5,40 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 
 SixMonthPlan = React.createClass({
   sixMonthPlan() {
-    let planType = "";
+    let planType = '';
     let dollarAmount = 0;
 
     const currentTrainer = Meteor.users.findOne({
-      _id: Meteor.userId()
+      _id: Meteor.userId(),
     });
 
-    //Needed for sweet alerts
+    // Needed for sweet alerts
     let previousWindowKeyDown = window.onkeydown;
 
-    //Sweet alert to confirm deletion of client
+    // Sweet alert to confirm deletion of client
     swal({
-      title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  <br><br> By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
-      type: "warning",
+      title: 'Terms and Conditions',
+      text: 'You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  <br><br> By clicking Accept, you will agree to these <a href=\'/termsAndConditions\' target=\'_blank\'>Terms and Conditions</a> and will proceed to make your payment with FitMe.',
+      type: 'warning',
       showCancelButton: true,
       html: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Accept",
-      closeOnConfirm: true
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Accept',
+      closeOnConfirm: true,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        //Find the current trainer
+        // Find the current trainer
         const currentTrainer = Meteor.users.findOne({
-          _id: Meteor.userId()
+          _id: Meteor.userId(),
         });
 
         let email = currentTrainer.emails[0].address;
 
-        //Charge the trainer with stripe
+        // Charge the trainer with stripe
         let checkout = StripeCheckout.configure({
           key: Meteor.settings.public.stripe,
-          image: "https://www.gofitme.com/Navigation/fitMeSidebarLogo.png",
+          image: 'https://www.gofitme.com/Navigation/fitMeSidebarLogo.png',
           locale: 'auto',
           token(token) {
             charge = {
@@ -46,46 +46,46 @@ SixMonthPlan = React.createClass({
               currency: token.currenty || 'usd',
               source: token.id,
               description: planType,
-              receipt_email: email
+              receipt_email: email,
             };
 
-            //Process their payment
+            // Process their payment
             Meteor.call('processPayment', {
-              charge
+              charge,
             }, (error, response) => {
               if (error) {
                 Alert.error(error.reason, {
                   position: 'top-right',
-                  effect: 'jelly'
+                  effect: 'jelly',
                 });
               } else {
-                //Six month plan
-                if (planType == "Six Month") {
-                  Alert.success("Thank you for choosing FitMe", {
+                // Six month plan
+                if (planType == 'Six Month') {
+                  Alert.success('Thank you for choosing FitMe', {
                     position: 'top-right',
-                    effect: 'jelly'
+                    effect: 'jelly',
                   });
-                  Meteor.call("sixMonthPlanTrainer");
+                  Meteor.call('sixMonthPlanTrainer');
                 }
               }
             });
           },
           closed() {
 
-          }
+          },
         });
 
-        //Open checkout for the 6 month plan
+        // Open checkout for the 6 month plan
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: 'Six Month',
-          description: "Six Months Of Access",
+          description: 'Six Months Of Access',
           amount: 6000,
-          bitcoin: true
+          bitcoin: true,
         });
 
-        //Set the plan type and dollar amount for 6 month
-        planType = "Six Month";
+        // Set the plan type and dollar amount for 6 month
+        planType = 'Six Month';
         dollarAmount = 6000;
 
       } else {
@@ -95,7 +95,7 @@ SixMonthPlan = React.createClass({
   },
 
   render() {
-    if (this.props.userStatus.userStatus == "suspended") {
+    if (this.props.userStatus.userStatus == 'suspended') {
       return (
         <div className="col s12 m3 l3">
           <div className="card white hoverable darken-1 z-depth-1">
@@ -165,5 +165,5 @@ SixMonthPlan = React.createClass({
         </div>
       );
     }
-  }
+  },
 });

@@ -47,5 +47,5 @@ FrequentQuestions = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

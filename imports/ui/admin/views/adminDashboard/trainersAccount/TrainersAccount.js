@@ -8,15 +8,15 @@ import DangerZone from './DangerZone.js';
 export default class TrainersAccount extends React.Component {
   sendWarningEmail() {
     const trainerId = FlowRouter.getParam('_id');
-    Meteor.call("sendInactiveEmail", {
-      trainerId
+    Meteor.call('sendInactiveEmail', {
+      trainerId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason);
       } else {
-        Alert.success("Warning email sent", {
-          position: "top-right",
-          effect: "jelly"
+        Alert.success('Warning email sent', {
+          position: 'top-right',
+          effect: 'jelly',
         });
       }
     });

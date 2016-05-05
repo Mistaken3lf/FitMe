@@ -7,8 +7,8 @@ import ClientHomeFooter from './ClientHomeFooter.js';
 
 export default class ClientHome extends React.Component {
   componentDidMount() {
-    if (!Roles.userIsInRole(Meteor.userId(), "client") && !Meteor.loggingIn()) {
-      FlowRouter.go("/notAuthorized");
+    if (!Roles.userIsInRole(Meteor.userId(), 'client') && !Meteor.loggingIn()) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }

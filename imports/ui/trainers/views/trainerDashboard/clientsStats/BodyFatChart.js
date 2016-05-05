@@ -11,5 +11,5 @@ BodyFatChart = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

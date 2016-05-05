@@ -4,10 +4,10 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 export default class ClientNavigation extends React.Component {
   logout(e) {
     e.preventDefault();
-    //Bring user back to home page after logging out
+    // Bring user back to home page after logging out
     FlowRouter.go('/');
 
-    //Log user out
+    // Log user out
     Meteor.logout();
   }
 

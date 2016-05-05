@@ -41,5 +41,5 @@ MyStatsRTTwo = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

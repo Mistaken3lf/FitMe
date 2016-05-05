@@ -8,11 +8,11 @@ const AdminHomeFooter = () => (
           <ul>
             <li>
               <a href="https://www.instagram.com/go_fitme/" target="_blank">
-                <img className="responsive-img icon-IG" src="/Home/ig.png"/></a>
+                <img className="responsive-img icon-IG" src="/Home/ig.png" /></a>
               <a href="https://www.facebook.com/gofitme/?fref=ts" target="_blank">
-                <img className="responsive-img icon-IG" src="/Home/fb.png"/></a>
+                <img className="responsive-img icon-IG" src="/Home/fb.png" /></a>
               <a href="https://twitter.com/go_fitme" target="_blank">
-                <img className="responsive-img icon-IG" src="/Home/tw.png"/></a>
+                <img className="responsive-img icon-IG" src="/Home/tw.png" /></a>
             </li>
           </ul>
           <span>

@@ -6,13 +6,13 @@ MyExerciseTwo = React.createClass({
     const fieldName = e.target.name;
     const data = e.target.value;
 
-    Meteor.call("updateMyWorkout", {
-      fieldName, data
+    Meteor.call('updateMyWorkout', {
+      fieldName, data,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -22,8 +22,8 @@ MyExerciseTwo = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     return (
@@ -85,5 +85,5 @@ MyExerciseTwo = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

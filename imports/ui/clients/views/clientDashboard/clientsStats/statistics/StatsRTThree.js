@@ -41,5 +41,5 @@ MyStatsRTThree = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

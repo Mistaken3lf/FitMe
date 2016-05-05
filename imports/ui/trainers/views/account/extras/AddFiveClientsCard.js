@@ -5,40 +5,40 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 
 AddFiveClients = React.createClass({
   addFiveClients() {
-    let planType = "";
+    let planType = '';
     let dollarAmount = 0;
 
     const currentTrainer = Meteor.users.findOne({
-      _id: Meteor.userId()
+      _id: Meteor.userId(),
     });
 
-    //Needed for sweet alerts
+    // Needed for sweet alerts
     let previousWindowKeyDown = window.onkeydown;
 
-    //Sweet alert to confirm deletion of client
+    // Sweet alert to confirm deletion of client
     swal({
-      title: "Terms and Conditions",
-      text: "You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href='/termsAndConditions' target='_blank'>Terms and Conditions</a> and will proceed to make your payment with FitMe.",
-      type: "warning",
+      title: 'Terms and Conditions',
+      text: 'You will be prompted for payment provided by Stripe. All payments are securely stored and handled through the Stripe website.  By clicking Accept, you will agree to these <a href=\'/termsAndConditions\' target=\'_blank\'>Terms and Conditions</a> and will proceed to make your payment with FitMe.',
+      type: 'warning',
       html: true,
       showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Accept",
-      closeOnConfirm: true
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Accept',
+      closeOnConfirm: true,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
-        //Find the current trainer
+        // Find the current trainer
         const currentTrainer = Meteor.users.findOne({
-          _id: Meteor.userId()
+          _id: Meteor.userId(),
         });
 
         let email = currentTrainer.emails[0].address;
 
-        //Charge the trainer with stripe
+        // Charge the trainer with stripe
         let checkout = StripeCheckout.configure({
           key: Meteor.settings.public.stripe,
-          image: "https://www.gofitme.com/Navigation/fitMeSidebarLogo.png",
+          image: 'https://www.gofitme.com/Navigation/fitMeSidebarLogo.png',
           locale: 'auto',
           token(token) {
             charge = {
@@ -46,45 +46,45 @@ AddFiveClients = React.createClass({
               currency: token.currenty || 'usd',
               source: token.id,
               description: planType,
-              receipt_email: email
+              receipt_email: email,
             };
 
-            //Process their payment
+            // Process their payment
             Meteor.call('processPayment', {
-              charge
+              charge,
             }, (error, response) => {
               if (error) {
                 Alert.error(error.reason, {
                   position: 'top-right',
-                  effect: 'jelly'
+                  effect: 'jelly',
                 });
               } else {
-                if (planType == "Five Additional Clients") {
-                  Alert.success("Thank you for choosing FitMe", {
+                if (planType == 'Five Additional Clients') {
+                  Alert.success('Thank you for choosing FitMe', {
                     position: 'top-right',
-                    effect: 'jelly'
+                    effect: 'jelly',
                   });
-                  Meteor.call("fiveAdditionalClientsTrainer");
+                  Meteor.call('fiveAdditionalClientsTrainer');
                 }
               }
             });
           },
           closed() {
 
-          }
+          },
         });
 
-        //Open checkout for 5 additional clients
+        // Open checkout for 5 additional clients
         checkout.open({
           email: currentTrainer.emails[0].address,
           name: '5 Additional Clients',
-          description: "Add five additional clients to your client limit",
+          description: 'Add five additional clients to your client limit',
           amount: 200,
-          bitcoin: true
+          bitcoin: true,
         });
 
-        //Set the plan type and dollar amount for 5 clients
-        planType = "Five Additional Clients";
+        // Set the plan type and dollar amount for 5 clients
+        planType = 'Five Additional Clients';
         dollarAmount = 200;
 
       } else {
@@ -94,7 +94,7 @@ AddFiveClients = React.createClass({
   },
 
   render() {
-    if (this.props.userStatus.userStatus == "suspended") {
+    if (this.props.userStatus.userStatus == 'suspended') {
       return (
         <div className="col s12 m4 l4">
           <div className="card blue hoverable darken-1 z-depth-1">
@@ -158,5 +158,5 @@ AddFiveClients = React.createClass({
         </div>
       );
     }
-  }
+  },
 });

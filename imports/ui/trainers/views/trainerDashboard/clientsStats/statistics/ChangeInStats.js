@@ -33,7 +33,7 @@ StatsChange = React.createClass({
   },
 
   todaysDate() {
-    return moment().format("ddd. MMM Do");
+    return moment().format('ddd. MMM Do');
   },
 
   render() {
@@ -70,5 +70,5 @@ StatsChange = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

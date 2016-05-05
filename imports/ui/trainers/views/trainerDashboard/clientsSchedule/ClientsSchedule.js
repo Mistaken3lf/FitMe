@@ -8,24 +8,24 @@ Schedule = React.createClass({
 
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
-    const handle = Meteor.subscribe("currentClientsProfile", clientId);
+    const handle = Meteor.subscribe('currentClientsProfile', clientId);
 
     return {
       loading: !handle.ready(),
 
       currentClient: Meteor.users.findOne({
-        _id: clientId
+        _id: clientId,
       }),
     };
   },
 
   startOfWeek() {
-    let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
+    let startOfWeek = moment().startOf('week').format('ddd. MMM Do');
     return startOfWeek;
   },
 
   endOfWeek() {
-    let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
+    let endOfWeek = moment().endOf('week').format('ddd. MMM Do');
     return endOfWeek;
   },
 
@@ -38,7 +38,7 @@ Schedule = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div className="card grey lighten-4">
           <div className="row">
@@ -51,7 +51,7 @@ Schedule = React.createClass({
               <h5 className="center"><b>WEEK OF:</b><br /> {this.startOfWeek()} - {this.endOfWeek()}</h5>
             </div>
             <div className="row">
-              <ScheduleInfo scheduleData={this.data.currentClient}/>
+              <ScheduleInfo scheduleData={this.data.currentClient} />
             </div>
             <div className="row">
               <ClientsMonday scheduleData={this.data.currentClient} />
@@ -76,5 +76,5 @@ Schedule = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

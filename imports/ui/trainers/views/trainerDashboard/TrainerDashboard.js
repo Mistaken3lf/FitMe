@@ -7,23 +7,23 @@ TrainersDashboard = React.createClass({
 
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
-    const handle = Meteor.subscribe("currentClientsProfile", clientId);
+    const handle = Meteor.subscribe('currentClientsProfile', clientId);
 
     return {
       loading: !handle.ready(),
 
       myClient: Meteor.users.findOne({
-        _id: clientId
+        _id: clientId,
       }),
 
-      clickedButton: Session.get("clickedButton")
+      clickedButton: Session.get('clickedButton'),
     }
   },
 
   handleClick(e) {
-    //Set the active template based on button clicked on dashboard
+    // Set the active template based on button clicked on dashboard
     let clickedButton = e.target.id;
-    Session.set("clickedButton", clickedButton);
+    Session.set('clickedButton', clickedButton);
   },
 
   updateProfilePic() {
@@ -35,9 +35,9 @@ TrainersDashboard = React.createClass({
 
       fileReader.onload = (data) => {
         let picture = data.target.result;
-        Meteor.call("updateClientsProfilePicture", {
+        Meteor.call('updateClientsProfilePicture', {
           picture,
-          clientId
+          clientId,
         });
       }
 
@@ -54,13 +54,13 @@ TrainersDashboard = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div>
           <div className="row">
             <div className="circle col s6 m6 l3 offset-s3 offset-m3 offset-l3">
               {(() => {
-                if(this.data.myClient.profilePicture == "" || this.data.myClient.profilePicture == null) {
+                if(this.data.myClient.profilePicture == '' || this.data.myClient.profilePicture == null) {
                   return (
                     <img className="circle responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
                   );
@@ -93,29 +93,29 @@ TrainersDashboard = React.createClass({
               <button className="btn blue clickedButton waves-effect trainerDashButtonStats" id="clientStats" onClick={this.handleClick}>Stats</button>
               <button className="btn blue clickedButton waves-effect trainerDashButtonCardio" id="clientCardio" onClick={this.handleClick}>Cardio</button>
               <button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkout" onClick={this.handleClick}>Workout</button>
-              {/*<button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkoutBuilder" onClick={this.handleClick}>Workout Builder</button>*/}
+              {/* <button className="btn blue clickedButton waves-effect trainerDashButtonWorkout" id="clientWorkoutBuilder" onClick={this.handleClick}>Workout Builder</button>*/}
             </div>
           </div>
           <div className="row">
             <div className="col s12 m12 l12">
               {(() => {
-                if(this.data.clickedButton == "clientProfile") {
+                if(this.data.clickedButton == 'clientProfile') {
                   return (
                     <ClientsProfile />
                   );
-                } else if(this.data.clickedButton == "clientSchedule") {
+                } else if(this.data.clickedButton == 'clientSchedule') {
                   return (
                     <ClientsSchedule />
                   );
-                } else if(this.data.clickedButton == "clientStats") {
+                } else if(this.data.clickedButton == 'clientStats') {
                   return (
                     <ClientsStats />
                   );
-                } else if(this.data.clickedButton == "clientCardio") {
+                } else if(this.data.clickedButton == 'clientCardio') {
                   return (
                     <ClientsCardio />
                   );
-                } else if(this.data.clickedButton == "clientWorkout") {
+                } else if(this.data.clickedButton == 'clientWorkout') {
                   return (
                     <ClientsWorkout />
                   );
@@ -134,5 +134,5 @@ TrainersDashboard = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

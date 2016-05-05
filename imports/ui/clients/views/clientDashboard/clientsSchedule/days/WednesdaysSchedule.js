@@ -2,8 +2,8 @@ import React from 'react';
 
 function updateWednesdaysStatus(e) {
   const wednesdayStatus = e.target.checked;
-  Meteor.call("updateWednesdaysStatus", {
-    wednesdayStatus
+  Meteor.call('updateWednesdaysStatus', {
+    wednesdayStatus,
   });
 }
 

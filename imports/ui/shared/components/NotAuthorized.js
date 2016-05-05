@@ -11,9 +11,10 @@ const NotAuthorized = () => (
         </div>
         <div className="row">
           <div className="col s12 center-align">
-           <h5 className="white-text">You do not have access to this page. If you believe you should
-           have access, please contact FitMe, or your trainer to see whats wrong,
-           Thanks.</h5>
+            <h5 className="white-text">You do not have access to this page. If you believe
+              you should have access, please contact FitMe, or your trainer to see whats
+              wrong, Thanks.
+            </h5>
           </div>
         </div>
       </div>

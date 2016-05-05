@@ -14,19 +14,19 @@ import MySunday from './days/MySunday.js';
 
 export default class MySchedule extends React.Component {
   componentDidMount() {
-    if (!Roles.userIsInRole(Meteor.userId(), "client") && !Meteor.loggingIn()) {
-      FlowRouter.go("/notAuthorized");
+    if (!Roles.userIsInRole(Meteor.userId(), 'client') && !Meteor.loggingIn()) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }
 
   startOfWeek() {
-    let startOfWeek = moment().startOf("week").format("ddd. MMM Do");
+    let startOfWeek = moment().startOf('week').format('ddd. MMM Do');
     return startOfWeek;
   }
 
   endOfWeek() {
-    let endOfWeek = moment().endOf("week").format("ddd. MMM Do");
+    let endOfWeek = moment().endOf('week').format('ddd. MMM Do');
     return endOfWeek;
   }
 
@@ -39,7 +39,7 @@ export default class MySchedule extends React.Component {
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
         <div className="card grey lighten-4">
           <div className="row">
@@ -51,7 +51,7 @@ export default class MySchedule extends React.Component {
             <div className="row">
               <h5 className="center"><b>WEEK OF:</b><br /> {this.startOfWeek()} - {this.endOfWeek()}</h5>
             </div>
-            <MyScheduleInfo scheduleData={this.props.currentClient}/>
+            <MyScheduleInfo scheduleData={this.props.currentClient} />
             <div className="row">
               <div className="col s12 m12 l12">
                 <h6 className="red-text">* You Must Confirm Your Scheduled Appointment</h6>

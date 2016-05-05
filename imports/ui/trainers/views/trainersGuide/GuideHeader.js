@@ -10,5 +10,5 @@ GuideHeader = React.createClass({
         <hr className="guideSeperator" />
       </div>
     );
-  }
+  },
 });

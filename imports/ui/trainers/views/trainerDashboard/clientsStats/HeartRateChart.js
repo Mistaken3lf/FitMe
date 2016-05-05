@@ -11,5 +11,5 @@ HeartRateChart = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

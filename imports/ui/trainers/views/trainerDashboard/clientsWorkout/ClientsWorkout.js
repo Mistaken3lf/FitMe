@@ -7,16 +7,16 @@ ClientsWorkout = React.createClass({
 
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
-    const handle = Meteor.subscribe("currentClientsWorkout", clientId);
+    const handle = Meteor.subscribe('currentClientsWorkout', clientId);
 
     const currentClientsWorkout = ClientWorkout.findOne({
-      whosWorkout: clientId
+      whosWorkout: clientId,
     });
 
     return {
       loading: !handle.ready(),
 
-      currentClientsWorkout: currentClientsWorkout || {}
+      currentClientsWorkout: currentClientsWorkout || {},
     }
   },
 
@@ -29,7 +29,7 @@ ClientsWorkout = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div className="card grey lighten-4">
           <div className="col s12 m12 l12">
@@ -59,5 +59,5 @@ ClientsWorkout = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

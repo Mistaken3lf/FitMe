@@ -8,11 +8,11 @@ TrainerGuide = React.createClass({
       return (
         <Loading />
       );
-    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (!Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <NotAuthorized />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div>
           <GuideHeader />
@@ -25,5 +25,5 @@ TrainerGuide = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

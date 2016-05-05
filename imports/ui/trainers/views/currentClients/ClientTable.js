@@ -6,63 +6,63 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 ClientTable = React.createClass({
   clientDashboard(id) {
     const thisTrainer = Meteor.users.findOne({
-      _id: Meteor.userId()
+      _id: Meteor.userId(),
     }, {
       fields: {
-        userStatus: 1
-      }
+        userStatus: 1,
+      },
     });
 
-    //Dont let user click on a client if they are suspended
-    if (thisTrainer.userStatus == "suspended") {
-      Alert.error("Sorry, your account has been suspended", {
+    // Dont let user click on a client if they are suspended
+    if (thisTrainer.userStatus == 'suspended') {
+      Alert.error('Sorry, your account has been suspended', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      FlowRouter.go("/clientDashboard/" + id);
+      FlowRouter.go('/clientDashboard/' + id);
     }
   },
 
   deleteClient(id) {
-    //Find client to delete
+    // Find client to delete
     const curUser = Meteor.users.findOne({
-      _id: id
+      _id: id,
     });
 
-    //Check if the user is suspended
-    if (curUser.userStatus == "suspended") {
-      Alert.error("Sorry, your account has been suspended", {
+    // Check if the user is suspended
+    if (curUser.userStatus == 'suspended') {
+      Alert.error('Sorry, your account has been suspended', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
       return;
     }
 
-    //Needed for sweet alerts
+    // Needed for sweet alerts
     let previousWindowKeyDown = window.onkeydown;
 
-    //Sweet alert to confirm deletion of client
+    // Sweet alert to confirm deletion of client
     swal({
-      title: "Are you sure?",
-      text: "You will not be able to recover" + " " + curUser.username,
-      type: "warning",
+      title: 'Are you sure?',
+      text: 'You will not be able to recover' + ' ' + curUser.username,
+      type: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, remove user",
-      closeOnConfirm: false
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Yes, remove user',
+      closeOnConfirm: false,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted', 'success');
-        //Call server function to delete the client clicked on
-        Meteor.call("deleteClient", {
-          id
+        // Call server function to delete the client clicked on
+        Meteor.call('deleteClient', {
+          id,
         }, (error, result) => {
           if (error) {
-            Alert.error("Sorry, your account has been suspended", {
+            Alert.error('Sorry, your account has been suspended', {
               position: 'top-right',
-              effect: 'jelly'
+              effect: 'jelly',
             });
           }
         });
@@ -73,14 +73,14 @@ ClientTable = React.createClass({
   },
 
   suspendClient(id) {
-    //Suspend client clicked on
-    Meteor.call("suspendClient", {
-      id
+    // Suspend client clicked on
+    Meteor.call('suspendClient', {
+      id,
     }, (error, result) => {
       if (error) {
-        Alert.error("Sorry, your account has been suspended", {
+        Alert.error('Sorry, your account has been suspended', {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -115,5 +115,5 @@ ClientTable = React.createClass({
         </tbody>
       </table>
     );
-  }
+  },
 });

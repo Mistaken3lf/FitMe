@@ -6,35 +6,35 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class SuspendedTrainers extends React.Component {
   suspendTrainer(id) {
-    //Suspend the trainer clicked on
-    Meteor.call("suspendTrainer", {
-      id
+    // Suspend the trainer clicked on
+    Meteor.call('suspendTrainer', {
+      id,
     });
   }
 
   deleteTrainer(id) {
     const curUser = Meteor.users.findOne({
-      _id: id
+      _id: id,
     });
 
-    //Needed for sweet alerts
+    // Needed for sweet alerts
     let previousWindowKeyDown = window.onkeydown;
 
-    //Sweet alert to confirm the deletion of the trainer
+    // Sweet alert to confirm the deletion of the trainer
     swal({
-      title: "Are you sure?",
-      text: "You will not be able to recover" + " " + curUser.username,
-      type: "warning",
+      title: 'Are you sure?',
+      text: 'You will not be able to recover' + ' ' + curUser.username,
+      type: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, remove user!",
-      closeOnConfirm: false
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Yes, remove user!',
+      closeOnConfirm: false,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'User has been deleted.', 'success');
-        Meteor.call("removeTrainer", {
-          id
+        Meteor.call('removeTrainer', {
+          id,
         });
       } else {
         swal('Cancelled', 'Your user is safe now.', 'error');
@@ -43,25 +43,25 @@ export default class SuspendedTrainers extends React.Component {
   }
 
   paymentWarning(id, expiresOn) {
-    Meteor.call("paymentDueSoon", {
-      expiresOn, id
+    Meteor.call('paymentDueSoon', {
+      expiresOn, id,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       } else {
         Alert.success('Payment warning sent', {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
   }
 
   trainersDashboard(id) {
-    FlowRouter.go("/adminDashboard/" + id);
+    FlowRouter.go('/adminDashboard/' + id);
   }
 
   render() {

@@ -7,16 +7,16 @@ import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class ClientDashboard extends React.Component {
   componentDidMount() {
-    if (!Roles.userIsInRole(Meteor.userId(), "client") && !Meteor.loggingIn()) {
-      FlowRouter.go("/notAuthorized");
+    if (!Roles.userIsInRole(Meteor.userId(), 'client') && !Meteor.loggingIn()) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }
 
   handleClick(e) {
-    //Set the active template based on button clicked on dashboard
+    // Set the active template based on button clicked on dashboard
     let clickedButton = e.target.id;
-    Session.set("myClickedButton", clickedButton);
+    Session.set('myClickedButton', clickedButton);
   }
 
   updateProfilePic() {
@@ -27,8 +27,8 @@ export default class ClientDashboard extends React.Component {
 
       fileReader.onload = (data) => {
         let picture = data.target.result;
-        Meteor.call("updateMyProfilePicture", {
-          picture
+        Meteor.call('updateMyProfilePicture', {
+          picture,
         });
       };
 
@@ -41,13 +41,13 @@ export default class ClientDashboard extends React.Component {
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
         <div>
           <div className="row">
             <div className="col s6 m6 l3 offset-s3 offset-m3 offset-l3">
               {(() => {
-                if(this.props.currentClient.profilePicture == "" || this.props.currentClient.profilePicture == null) {
+                if(this.props.currentClient.profilePicture == '' || this.props.currentClient.profilePicture == null) {
                   return (
                     <img className="circle responsive-img profilePic" src="/Dashboard/Profile/profilePicture.jpg" />
                   );
@@ -85,23 +85,23 @@ export default class ClientDashboard extends React.Component {
           <div className="row">
             <div className="col s12 m12 l12">
               {(() => {
-                if(this.props.myClickedButton == "mySession") {
+                if(this.props.myClickedButton == 'mySession') {
                   return (
                     <MySchedule />
                   );
-                } else if(this.props.myClickedButton == "myStats") {
+                } else if(this.props.myClickedButton == 'myStats') {
                   return (
                     <MyStats />
                   );
-                } else if(this.props.myClickedButton == "myCardio") {
+                } else if(this.props.myClickedButton == 'myCardio') {
                   return (
                     <MyCardio />
                   );
-                } else if(this.props.myClickedButton == "myWorkout") {
+                } else if(this.props.myClickedButton == 'myWorkout') {
                   return (
                     <MyWorkout />
                   );
-                } else if(this.props.myClickedButton == "myTrainer") {
+                } else if(this.props.myClickedButton == 'myTrainer') {
                   return (
                     <MyTrainer />
                   );

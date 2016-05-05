@@ -3,10 +3,10 @@ import Alert from 'react-s-alert';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import SuspendedAccount from '../SuspendedAccount/SuspendedAccount.js';
 
-export default class MyProfile extends React.Component {
+export default class UserProfile extends React.Component {
   componentDidMount() {
     if (!this.props.userProfile && !this.props.loggingIn) {
-      FlowRouter.go("/notAuthorized");
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }
@@ -15,13 +15,13 @@ export default class MyProfile extends React.Component {
     const fieldName = e.target.name;
     const data = e.target.value;
 
-    Meteor.call("updateMyProfile", {
-      fieldName, data
+    Meteor.call('updateMyProfile', {
+      fieldName, data,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -31,11 +31,11 @@ export default class MyProfile extends React.Component {
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
-    if (this.props.userProfile.userStatus == "suspended") {
+    if (this.props.userProfile.userStatus == 'suspended') {
       return (
         <SuspendedAccount />
       );

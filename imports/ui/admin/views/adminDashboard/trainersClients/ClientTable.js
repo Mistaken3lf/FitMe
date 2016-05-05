@@ -4,37 +4,37 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 
 export default class ClientTable extends React.Component {
   suspendClient(id) {
-    //Suspend user clicked on
-    Meteor.call("suspendClientAdmin", {
-      id
+    // Suspend user clicked on
+    Meteor.call('suspendClientAdmin', {
+      id,
     });
   }
 
   deleteClient(id) {
-    //Find client clicked on
+    // Find client clicked on
     const curUser = Meteor.users.findOne({
-      _id: id
+      _id: id,
     });
 
-    //Needed for sweet alerts
+    // Needed for sweet alerts
     let previousWindowKeyDown = window.onkeydown;
 
-    //Popup sweet alert to confirm delete
+    // Popup sweet alert to confirm delete
     swal({
-      title: "Are you sure?",
-      text: "You will not be able to recover" + " " + curUser.username,
-      type: "warning",
+      title: 'Are you sure?',
+      text: 'You will not be able to recover' + ' ' + curUser.username,
+      type: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, remove user!",
-      closeOnConfirm: false
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Yes, remove user!',
+      closeOnConfirm: false,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'Client has been deleted.', 'success');
-        //Call server function to delete the client clicked on
-        Meteor.call("removeClient", {
-          id
+        // Call server function to delete the client clicked on
+        Meteor.call('removeClient', {
+          id,
         });
       } else {
         swal('Cancelled', 'Your client is safe now :)', 'error');

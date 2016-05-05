@@ -5,29 +5,29 @@ export default class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    //Capture username and password from form
+    // Capture username and password from form
     const username = this.refs.username.value;
     const password = this.refs.password.value;
 
-    if (username == "" || username == null) {
-      Alert.error("Please enter your username", {
+    if (username == '' || username == null) {
+      Alert.error('Please enter your username', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (password == "" || password == null) {
-      Alert.error("Please enter your password", {
+    } else if (password == '' || password == null) {
+      Alert.error('Please enter your password', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      //Log user in with userrname and password
+      // Log user in with userrname and password
       Meteor.loginWithPassword(username, password, (error) => {
-        //Invalid login
+        // Invalid login
         if (error) {
-          //Pop up an alert to show login failed
+          // Pop up an alert to show login failed
           Alert.error(error.reason, {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         }
       });
@@ -37,8 +37,8 @@ export default class Login extends React.Component {
   render() {
     const styles = {
       buttonStyle: {
-        width: "100%"
-      }
+        width: '100%',
+      },
     };
 
     return (

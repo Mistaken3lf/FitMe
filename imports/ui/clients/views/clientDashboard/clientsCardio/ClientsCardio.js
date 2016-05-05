@@ -6,16 +6,16 @@ Cardio = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    const handle = Meteor.subscribe("myCardio");
+    const handle = Meteor.subscribe('myCardio');
 
     const myCardio = ClientCardio.findOne({
-      whosCardio: Meteor.userId()
+      whosCardio: Meteor.userId(),
     })
 
     return {
       loading: !handle.ready(),
 
-      myCardio: myCardio || {}
+      myCardio: myCardio || {},
     }
   },
 
@@ -28,7 +28,7 @@ Cardio = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
         <div className="card grey lighten-4">
         <div className="col s12 m12 l12">
@@ -51,5 +51,5 @@ Cardio = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

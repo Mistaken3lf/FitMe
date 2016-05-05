@@ -5,14 +5,14 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class AddTrainerCard extends React.Component {
   componentDidMount() {
-    if(!Roles.userIsInRole(Meteor.userId(), "admin") && !Meteor.loggingIn()) {
-      FlowRouter.go("/notAuthorized");
+    if(!Roles.userIsInRole(Meteor.userId(), 'admin') && !Meteor.loggingIn()) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }
 
   handleSubmit(e) {
-    //Prevent default form submission
+    // Prevent default form submission
     e.preventDefault();
 
     const username = this.refs.username.value;
@@ -20,49 +20,49 @@ export default class AddTrainerCard extends React.Component {
     const email = this.refs.email.value;
     const firstName = this.refs.firstName.value;
     const lastName = this.refs.lastName.value;
-    if (username == "" || username == null) {
-      Alert.error("Please enter a username", {
+    if (username == '' || username == null) {
+      Alert.error('Please enter a username', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (password == "" || password == null) {
-      Alert.error("Please enter a password", {
+    } else if (password == '' || password == null) {
+      Alert.error('Please enter a password', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (firstName == "" || firstName == null) {
-      Alert.error("Please enter a first name", {
+    } else if (firstName == '' || firstName == null) {
+      Alert.error('Please enter a first name', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (lastName == "" || lastName == null) {
-      Alert.error("Please enter a last name", {
+    } else if (lastName == '' || lastName == null) {
+      Alert.error('Please enter a last name', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (email == "" || email == null) {
-      Alert.error("Please enter an email", {
+    } else if (email == '' || email == null) {
+      Alert.error('Please enter an email', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      //Call server method to create the trainer
-      Meteor.call("createTrainer", {
-        username, password, email, firstName, lastName
+      // Call server method to create the trainer
+      Meteor.call('createTrainer', {
+        username, password, email, firstName, lastName,
       }, (error) => {
-        //Error creating trainer
+        // Error creating trainer
         if (error) {
-          //Pop up an alert to show the error
+          // Pop up an alert to show the error
           Alert.error(error.reason, {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
-          //Route back to the command center
+          // Route back to the command center
           FlowRouter.go('/commandCenter');
           Alert.success('Trainer has been created', {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         }
       });
@@ -72,8 +72,8 @@ export default class AddTrainerCard extends React.Component {
   render() {
     const styles = {
       buttonWidth: {
-        width: "100%"
-      }
+        width: '100%',
+      },
     };
 
     return (

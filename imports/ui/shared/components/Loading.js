@@ -2,8 +2,8 @@ import React from 'react';
 
 const styles = {
   spinnerStyle: {
-    marginTop: 300
-  }
+    marginTop: 300,
+  },
 };
 
 const Loading = () => (

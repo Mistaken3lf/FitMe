@@ -6,30 +6,30 @@ export default class ForgotPassword extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    //Capture the users email
+    // Capture the users email
     const email = this.refs.email.value;
 
-    if (email == "" || email == null) {
-      Alert.error("Please enter your email", {
+    if (email == '' || email == null) {
+      Alert.error('Please enter your email', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      //Send email to user with link to reset password
+      // Send email to user with link to reset password
       Accounts.forgotPassword({
-        email: email
+        email: email,
       }, (error) => {
         if (error) {
           Alert.error(error.reason, {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
-          Alert.success("Reset password email has been sent", {
+          Alert.success('Reset password email has been sent', {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
-          FlowRouter.go("/");
+          FlowRouter.go('/');
         }
       });
     }
@@ -38,8 +38,8 @@ export default class ForgotPassword extends React.Component {
   render() {
     const styles = {
       buttonStyle: {
-        width: "100%"
-      }
+        width: '100%',
+      },
     };
 
     return (

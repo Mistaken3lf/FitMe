@@ -7,7 +7,7 @@ AddClient = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
 
-    //Get the client data from the form
+    // Get the client data from the form
     const username = this.refs.username.value;
     const password = this.refs.password.value;
     const email = this.refs.email.value;
@@ -24,57 +24,57 @@ AddClient = React.createClass({
     const bio = this.refs.bio.value;
     const fitnessGoals = this.refs.fitnessGoals.value;
 
-    if (username == "" || username == null) {
-      Alert.error("Please enter a username", {
+    if (username == '' || username == null) {
+      Alert.error('Please enter a username', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (password == "" || password == null) {
-      Alert.error("Please enter a password", {
+    } else if (password == '' || password == null) {
+      Alert.error('Please enter a password', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (firstName == "" || firstName == null) {
-      Alert.error("Please enter a first name", {
+    } else if (firstName == '' || firstName == null) {
+      Alert.error('Please enter a first name', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (email == "" || email == null) {
-      Alert.error("Please enter an email", {
+    } else if (email == '' || email == null) {
+      Alert.error('Please enter an email', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
-    } else if (lastName == "" || lastName == null) {
-      Alert.error("Please enter a last name", {
+    } else if (lastName == '' || lastName == null) {
+      Alert.error('Please enter a last name', {
         position: 'top-right',
-        effect: 'jelly'
+        effect: 'jelly',
       });
     } else {
-      //Call server method createClient with provided info
-      Meteor.call("registerClient", {
-        username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, workPhone, emergencyContact, bio, fitnessGoals
+      // Call server method createClient with provided info
+      Meteor.call('registerClient', {
+        username, password, email, firstName, lastName, birthday, address, city, state, zip, homePhone, workPhone, emergencyContact, bio, fitnessGoals,
       }, (error, result) => {
-        //Create client failed
+        // Create client failed
         if (error) {
-          //Popup a toast to display reason for error
+          // Popup a toast to display reason for error
           Alert.error(error.reason, {
             position: 'top-right',
-            effect: 'jelly'
+            effect: 'jelly',
           });
         } else {
-          //Go back to my current clients after adding one
-          FlowRouter.go("/currentClients");
+          // Go back to my current clients after adding one
+          FlowRouter.go('/currentClients');
 
           if (result) {
             Alert.error(result, {
               position: 'top-right',
-              effect: 'jelly'
+              effect: 'jelly',
             });
 
           } else {
-            Alert.success("Client added", {
+            Alert.success('Client added', {
               position: 'top-right',
-              effect: 'jelly'
+              effect: 'jelly',
             });
           }
         }
@@ -86,11 +86,11 @@ AddClient = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
-    if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div>
           <form onSubmit={this.handleSubmit}>
@@ -205,5 +205,5 @@ AddClient = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

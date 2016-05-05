@@ -7,20 +7,20 @@ CardioProgramHeader = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsCardio", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsCardio', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
   },
 
   maxHeartRate() {
-    //Formula for max heart rate
+    // Formula for max heart rate
     let maxHeartRate = 220 - this.props.cardioData.cardioProgramAge;
     return maxHeartRate;
   },
@@ -76,5 +76,5 @@ CardioProgramHeader = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

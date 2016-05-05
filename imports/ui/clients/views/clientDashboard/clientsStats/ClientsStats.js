@@ -8,20 +8,20 @@ MyStats = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    const handle = Meteor.subscribe("myStats");
+    const handle = Meteor.subscribe('myStats');
 
     const myStats = ClientStats.findOne({
-      whosStats: Meteor.userId()
+      whosStats: Meteor.userId(),
     });
 
     return {
       loading: !handle.ready(),
 
       currentClient: Meteor.users.findOne({
-        _id: Meteor.userId()
+        _id: Meteor.userId(),
       }),
 
-      myStats: myStats || {}
+      myStats: myStats || {},
     }
   },
 
@@ -34,7 +34,7 @@ MyStats = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "client")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
         <div>
           <div className="card grey lighten-4">
@@ -81,5 +81,5 @@ MyStats = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

@@ -25,5 +25,5 @@ CardioRoutine = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

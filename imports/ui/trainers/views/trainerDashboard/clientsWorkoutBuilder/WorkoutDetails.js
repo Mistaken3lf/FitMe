@@ -19,5 +19,5 @@ WorkoutDetails = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

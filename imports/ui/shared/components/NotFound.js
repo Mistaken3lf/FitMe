@@ -11,9 +11,10 @@ const NotFound = () => (
         </div>
         <div className="row">
           <div className="col s12 center-align">
-           <h5 className="white-text">The page your are trying to view does not exist.
-           please check that you have spelled everything correctly. If you are still
-           having problems please contact FitMe, Thanks.</h5>
+            <h5 className="white-text">The page your are trying to view does not exist.
+              please check that you have spelled everything correctly. If you are still having
+              problems please contact FitMe, Thanks.
+            </h5>
           </div>
         </div>
       </div>

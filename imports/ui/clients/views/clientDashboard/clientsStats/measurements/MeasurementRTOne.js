@@ -53,5 +53,5 @@ MyMeasureRTOne = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

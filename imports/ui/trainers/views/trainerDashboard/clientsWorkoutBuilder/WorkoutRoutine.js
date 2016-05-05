@@ -5,8 +5,8 @@ WorkoutRoutine = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     return (
@@ -73,5 +73,5 @@ WorkoutRoutine = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

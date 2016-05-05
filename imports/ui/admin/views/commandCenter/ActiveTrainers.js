@@ -8,13 +8,13 @@ export default class ActiveTrainers extends React.Component {
   suspendTrainer(id) {
     // Suspend the trainer clicked on
     Meteor.call('suspendTrainer', {
-      id
+      id,
     });
   }
 
   deleteTrainer(id) {
     const curUser = Meteor.users.findOne({
-      _id: id
+      _id: id,
     });
 
     // Needed for sweet alerts
@@ -28,13 +28,13 @@ export default class ActiveTrainers extends React.Component {
       showCancelButton: true,
       confirmButtonColor: '#DD6B55',
       confirmButtonText: 'Yes, remove user!',
-      closeOnConfirm: false
+      closeOnConfirm: false,
     }, (isConfirm) => {
       window.onkeydown = previousWindowKeyDown;
       if (isConfirm) {
         swal('Deleted!', 'User has been deleted.', 'success');
         Meteor.call('removeTrainer', {
-          id
+          id,
         });
       } else {
         swal('Cancelled', 'Your user is safe now.', 'error');
@@ -44,18 +44,18 @@ export default class ActiveTrainers extends React.Component {
 
   paymentWarning(id, expiresOn) {
     Meteor.call('paymentDueSoon', {
-      expiresOn, id
+      expiresOn, id,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
 
       } else {
         Alert.success('Payment warning sent', {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -74,7 +74,8 @@ export default class ActiveTrainers extends React.Component {
               <div className='col s12 m12 l12'>
                 <div className='card z-depth-1'>
                   <div className='card-title center-align white-text
-                  allTrainersHeader'>ACTIVE TRAINERS</div>
+                  allTrainersHeader'
+    >ACTIVE TRAINERS</div>
                 </div>
               </div>
             </div>

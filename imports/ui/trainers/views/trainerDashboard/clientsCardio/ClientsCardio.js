@@ -7,16 +7,16 @@ ClientsCardio = React.createClass({
 
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
-    const handle = Meteor.subscribe("currentClientsCardio", clientId);
+    const handle = Meteor.subscribe('currentClientsCardio', clientId);
 
     const currentClientsCardio = ClientCardio.findOne({
-      whosCardio: clientId
+      whosCardio: clientId,
     })
 
     return {
       loading: !handle.ready(),
 
-      currentClientsCardio: currentClientsCardio || {}
+      currentClientsCardio: currentClientsCardio || {},
     }
   },
 
@@ -29,7 +29,7 @@ ClientsCardio = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div className="card grey lighten-4">
         <div className="col s12 m12 l12">
@@ -52,5 +52,5 @@ ClientsCardio = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

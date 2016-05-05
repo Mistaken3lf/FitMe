@@ -7,20 +7,20 @@ function composer(props, onData) {
 
   if (Meteor.subscribe('currentTrainer', trainerId).ready() && Meteor.subscribe('trainersClients', trainerId).ready()) {
     const currentUser = Meteor.users.findOne({
-      _id: Meteor.userId()
+      _id: Meteor.userId(),
     });
 
     let loggingIn = Meteor.loggingIn();
 
     const currentTrainer = Meteor.users.findOne({
-      _id: trainerId
+      _id: trainerId,
     });
 
     const trainersClientCount = Meteor.users.find({
-      createdBy: trainerId
+      createdBy: trainerId,
     }).count();
 
-    const clickedButton = Session.get("adminClickedButton");
+    const clickedButton = Session.get('adminClickedButton');
 
     let trainersClients = Meteor.users.find({
       createdBy: trainerId,
@@ -31,12 +31,12 @@ function composer(props, onData) {
         firstName: 1,
         lastName: 1,
         userStatus: 1,
-        createdBy: 1
-      }
+        createdBy: 1,
+      },
     }).fetch();
 
     onData(null, {
-      currentUser, loggingIn, currentTrainer, trainersClientCount, clickedButton, trainersClients
+      currentUser, loggingIn, currentTrainer, trainersClientCount, clickedButton, trainersClients,
     });
   }
 }

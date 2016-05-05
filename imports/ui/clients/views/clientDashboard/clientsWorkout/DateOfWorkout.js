@@ -10,5 +10,5 @@ MyWorkoutDate = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

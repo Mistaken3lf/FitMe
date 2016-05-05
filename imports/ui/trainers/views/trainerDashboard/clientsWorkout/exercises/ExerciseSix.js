@@ -7,13 +7,13 @@ ExerciseSix = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsWorkout", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsWorkout', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -23,8 +23,8 @@ ExerciseSix = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     return (
@@ -86,5 +86,5 @@ ExerciseSix = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

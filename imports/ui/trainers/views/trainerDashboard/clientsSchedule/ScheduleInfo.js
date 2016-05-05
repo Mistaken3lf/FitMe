@@ -3,7 +3,7 @@ import moment from 'moment';
 
 ScheduleInfo = React.createClass({
   todaysDate() {
-    return moment().format("ddd. MMM Do");
+    return moment().format('ddd. MMM Do');
   },
 
   updateField(e) {
@@ -11,13 +11,13 @@ ScheduleInfo = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsSchedule", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsSchedule', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -45,5 +45,5 @@ ScheduleInfo = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

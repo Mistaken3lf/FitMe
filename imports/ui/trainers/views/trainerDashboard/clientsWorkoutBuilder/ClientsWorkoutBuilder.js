@@ -15,5 +15,5 @@ WorkoutBuilder = React.createClass({
         <AddExerciseButton />
       </div>
     );
-  }
+  },
 });

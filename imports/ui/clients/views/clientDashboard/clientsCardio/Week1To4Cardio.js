@@ -23,8 +23,8 @@ MyWeek1To4Cardio = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     return (
@@ -154,5 +154,5 @@ MyWeek1To4Cardio = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

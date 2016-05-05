@@ -7,8 +7,8 @@ import AdminHomeFooter from './AdminHomeFooter.js';
 
 export default class AdminHome extends React.Component {
   componentDidMount() {
-    if (!Roles.userIsInRole(Meteor.userId(), "admin") && !Meteor.loggingIn()) {
-      FlowRouter.go("/notAuthorized");
+    if (!Roles.userIsInRole(Meteor.userId(), 'admin') && !Meteor.loggingIn()) {
+      FlowRouter.go('/notAuthorized');
       return false;
     }
   }

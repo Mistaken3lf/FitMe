@@ -8,26 +8,26 @@ TrainersSchedule = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    const handle = Meteor.subscribe("trainerSchedule");
-    const myProfile = Meteor.subscribe("myProfile");
+    const handle = Meteor.subscribe('trainerSchedule');
+    const myProfile = Meteor.subscribe('myProfile');
 
     return {
       loading: !handle.ready() && !myProfile.ready(),
 
       currentUser: Meteor.users.findOne({
-        _id: Meteor.userId()
+        _id: Meteor.userId(),
       }),
 
-      //Fetch trainers monday schedule
+      // Fetch trainers monday schedule
       mondaysSchedule: Meteor.users.find({
         mondayStatus: true,
         mondaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         mondaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
       }, {
         fields: {
           username: 1,
@@ -36,24 +36,24 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           mondayDescription: 1,
-          mondayStatus: 1
+          mondayStatus: 1,
         },
         sort: {
-          mondaysScheduleStart: 1
-        }
+          mondaysScheduleStart: 1,
+        },
 
       }).fetch(),
 
-      //Fetch trainers tuesday schedule
+      // Fetch trainers tuesday schedule
       tuesdaysSchedule: Meteor.users.find({
         tuesdayStatus: true,
         tuesdaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         tuesdaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
 
       }, {
         fields: {
@@ -63,24 +63,24 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           tuesdayDescription: 1,
-          tuesdayStatus: 1
+          tuesdayStatus: 1,
         },
         sort: {
-          tuesdaysScheduleStart: 1
-        }
+          tuesdaysScheduleStart: 1,
+        },
       }).fetch(),
 
-      //Fetch trainers wednesday schedule
+      // Fetch trainers wednesday schedule
       wednesdaysSchedule: Meteor.users.find({
         wednesdayStatus: true,
 
         wednesdaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         wednesdaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
       }, {
         fields: {
           username: 1,
@@ -89,23 +89,23 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           wednesdayDescription: 1,
-          wednesdayStatus: 1
+          wednesdayStatus: 1,
         },
         sort: {
-          wednesdaysScheduleStart: 1
-        }
+          wednesdaysScheduleStart: 1,
+        },
       }).fetch(),
 
-      //Fetch trainers thursday schedule
+      // Fetch trainers thursday schedule
       thursdaysSchedule: Meteor.users.find({
         thursdayStatus: true,
         thursdaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         thursdaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
       }, {
         fields: {
           username: 1,
@@ -114,24 +114,24 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           thursdayDescription: 1,
-          thursdayStatus: 1
+          thursdayStatus: 1,
         },
         sort: {
-          thursdaysScheduleStart: 1
-        }
+          thursdaysScheduleStart: 1,
+        },
       }).fetch(),
 
-      //Fetch trainers friday schedule
+      // Fetch trainers friday schedule
       fridaysSchedule: Meteor.users.find({
         fridayStatus: true,
 
         fridaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         fridaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
       }, {
         fields: {
           username: 1,
@@ -140,24 +140,24 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           fridayDescription: 1,
-          fridayStatus: 1
+          fridayStatus: 1,
         },
         sort: {
-          fridaysScheduleStart: 1
-        }
+          fridaysScheduleStart: 1,
+        },
       }).fetch(),
 
-      //Fetch trainers saturday schedule
+      // Fetch trainers saturday schedule
       saturdaysSchedule: Meteor.users.find({
         saturdayStatus: true,
 
         saturdaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         saturdaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
       }, {
         fields: {
           username: 1,
@@ -166,24 +166,24 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           saturdayDescription: 1,
-          saturdayStatus: 1
+          saturdayStatus: 1,
         },
         sort: {
-          saturdaysScheduleStart: 1
-        }
+          saturdaysScheduleStart: 1,
+        },
       }).fetch(),
 
-      //Fetch trainers sunday schedule
+      // Fetch trainers sunday schedule
       sundaysSchedule: Meteor.users.find({
         sundayStatus: true,
 
         sundaysScheduleStart: {
-          $exists: true
+          $exists: true,
         },
 
         sundaysScheduleEnd: {
-          $exists: true
-        }
+          $exists: true,
+        },
       }, {
         fields: {
           username: 1,
@@ -192,22 +192,22 @@ TrainersSchedule = React.createClass({
           firstName: 1,
           lastName: 1,
           sundayDescription: 1,
-          sundayStatus: 1
+          sundayStatus: 1,
         },
         sort: {
-          sundaysScheduleStart: 1
-        }
-      }).fetch()
+          sundaysScheduleStart: 1,
+        },
+      }).fetch(),
     };
   },
 
   startOfWeek() {
-    const startDay = moment().startOf("week").format("ddd. MMM Do");
+    const startDay = moment().startOf('week').format('ddd. MMM Do');
     return startDay;
   },
 
   endOfWeek() {
-    const endDay = moment().endOf("week").format("ddd. MMM Do");
+    const endDay = moment().endOf('week').format('ddd. MMM Do');
     return endDay;
   },
 
@@ -216,7 +216,7 @@ TrainersSchedule = React.createClass({
       return (
         <Loading />
       );
-    } else if (!Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (!Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <NotAuthorized />
       );
@@ -224,11 +224,11 @@ TrainersSchedule = React.createClass({
       return (
         <Loading />
       );
-    } else if (this.data.currentUser.userStatus == "suspended") {
+    } else if (this.data.currentUser.userStatus == 'suspended') {
       return (
         <SuspendedAccount />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div className="row">
           <div className="col s12 m12 l12">
@@ -265,5 +265,5 @@ TrainersSchedule = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });

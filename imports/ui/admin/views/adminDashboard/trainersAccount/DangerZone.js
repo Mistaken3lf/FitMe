@@ -7,30 +7,30 @@ import '/node_modules/sweetalert/dist/sweetalert.css';
 function deleteTrainersAccount() {
   const trainerId = FlowRouter.getParam('_id');
 
-  //Needed for sweet alerts
+  // Needed for sweet alerts
   let previousWindowKeyDown = window.onkeydown;
 
-  //Sweet alert to confirm deletion of client
+  // Sweet alert to confirm deletion of client
   swal({
-    title: "Are you sure?",
-    text: "All Clients WILL Be Deleted!!!",
-    type: "warning",
+    title: 'Are you sure?',
+    text: 'All Clients WILL Be Deleted!!!',
+    type: 'warning',
     showCancelButton: true,
-    confirmButtonColor: "#DD6B55",
-    confirmButtonText: "Yes, reset account!",
-    closeOnConfirm: false
+    confirmButtonColor: '#DD6B55',
+    confirmButtonText: 'Yes, reset account!',
+    closeOnConfirm: false,
   }, (isConfirm) => {
     window.onkeydown = previousWindowKeyDown;
     if (isConfirm) {
       swal('Reset!', 'Account has been reset.', 'success');
-      //Call server function to delete the client clicked on
-      Meteor.call("resetAccount", {
-        trainerId
+      // Call server function to delete the client clicked on
+      Meteor.call('resetAccount', {
+        trainerId,
       });
 
-      Alert.success("Account has been reset", {
-        position: "top-right",
-        effect: "jelly"
+      Alert.success('Account has been reset', {
+        position: 'top-right',
+        effect: 'jelly',
       });
 
     } else {

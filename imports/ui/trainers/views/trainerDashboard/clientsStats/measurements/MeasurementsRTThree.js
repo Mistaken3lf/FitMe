@@ -7,13 +7,13 @@ MeasureRTThree = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsStats", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsStats', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -71,5 +71,5 @@ MeasureRTThree = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

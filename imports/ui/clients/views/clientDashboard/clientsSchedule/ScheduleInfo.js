@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 function todaysDate() {
-  return moment().format("ddd. MMM Do");
+  return moment().format('ddd. MMM Do');
 }
 
 const MyScheduleInfo = ({scheduleData}) => (

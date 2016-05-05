@@ -5,5 +5,5 @@ SaveWorkoutButton = React.createClass({
     return (
       <button className="btn green waves-effect white-text right">Save Workout</button>
     );
-  }
+  },
 });

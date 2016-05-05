@@ -31,5 +31,5 @@ MyStatsInitialTest = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

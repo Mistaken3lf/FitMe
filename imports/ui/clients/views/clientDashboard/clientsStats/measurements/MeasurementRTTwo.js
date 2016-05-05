@@ -53,5 +53,5 @@ MyMeasureRTTwo = React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

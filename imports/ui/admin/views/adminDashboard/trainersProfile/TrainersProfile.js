@@ -8,13 +8,13 @@ export default class TrainersProfile extends React.Component {
     const data = e.target.value;
     const trainerId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateTrainersProfile", {
-      fieldName, data, trainerId
+    Meteor.call('updateTrainersProfile', {
+      fieldName, data, trainerId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -24,8 +24,8 @@ export default class TrainersProfile extends React.Component {
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     return (

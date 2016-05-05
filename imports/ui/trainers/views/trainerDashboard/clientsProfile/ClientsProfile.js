@@ -8,14 +8,14 @@ ClientsProfile = React.createClass({
 
   getMeteorData() {
     const clientId = FlowRouter.getParam('_id');
-    const handle = Meteor.subscribe("currentClientsProfile", clientId);
+    const handle = Meteor.subscribe('currentClientsProfile', clientId);
 
     return {
       loading: !handle.ready(),
 
       currentClient: Meteor.users.findOne({
-        whosProfile: clientId
-      })
+        whosProfile: clientId,
+      }),
     };
   },
 
@@ -24,13 +24,13 @@ ClientsProfile = React.createClass({
     const data = e.target.value;
     const clientId = FlowRouter.getParam('_id');
 
-    Meteor.call("updateClientsProfile", {
-      fieldName, data, clientId
+    Meteor.call('updateClientsProfile', {
+      fieldName, data, clientId,
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly'
+          effect: 'jelly',
         });
       }
     });
@@ -40,8 +40,8 @@ ClientsProfile = React.createClass({
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: "scroll"
-      }
+        overflowY: 'scroll',
+      },
     };
 
     if (Meteor.loggingIn()) {
@@ -52,7 +52,7 @@ ClientsProfile = React.createClass({
       return (
         <Loading />
       );
-    } else if (Roles.userIsInRole(Meteor.userId(), "trainer")) {
+    } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
         <div className="row">
           <div className="card z-depth-3 grey lighten-4">
@@ -147,5 +147,5 @@ ClientsProfile = React.createClass({
         <NotAuthorized />
       );
     }
-  }
+  },
 });
