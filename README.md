@@ -1,4 +1,4 @@
-# Welcome To FitMe
+# Welcome To FitMe!
 
 ### Heroku Meteor Setup Instructions:
 
