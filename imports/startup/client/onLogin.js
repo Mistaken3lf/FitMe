@@ -1,4 +1,5 @@
 import Alert from 'react-s-alert';
+import { Meteor } from 'meteor/meteor';
 import {Roles} from 'meteor/alanning:roles';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import { Accounts } from 'meteor/accounts-base';

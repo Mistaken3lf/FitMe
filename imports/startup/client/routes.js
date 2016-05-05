@@ -1,7 +1,7 @@
-import react from 'react';
+import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { mount } from 'react-mounter';
-import MainLayout from '../ui/shared/layouts/MainLayout.js';
+import MainLayout from '../../ui/shared/layouts/MainLayout.js';
 
 // *********************** Common Routes ************************************ //
 
