@@ -1,11 +1,11 @@
 import moment from 'moment';
-import { Meteor } from 'meteor/meteor';
-import { ValidatedMethod } from 'meteor/mdg:validated-method';
-import { Roles } from 'meteor/alanning:roles';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { ClientCardio } from '../../../collections/clientCardio.js';
-import { ClientStats } from '../../../collections/clientStats.js';
-import { ClientWorkout } from '../../../collections/clientWorkout.js';
+import {Meteor} from 'meteor/meteor';
+import {ValidatedMethod} from 'meteor/mdg:validated-method';
+import {Roles} from 'meteor/alanning:roles';
+import {SimpleSchema} from 'meteor/aldeed:simple-schema';
+import {ClientCardio} from '../../../collections/clientCardio.js';
+import {ClientStats} from '../../../collections/clientStats.js';
+import {ClientWorkout} from '../../../collections/clientWorkout.js';
 
 export const resetTrainersAccount = new ValidatedMethod({
   name: 'resetTrainersAccount',

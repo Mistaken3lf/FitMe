@@ -1,9 +1,15 @@
 import React from 'react';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 import Alert from 'react-s-alert';
 import PlanButtons from './PlanButtons.js';
 import ExtrasButtons from './ExtrasButtons.js';
 import DangerZone from './DangerZone.js';
+import {FlowRouter} from 'meteor/kadira:flow-router';
+import {Meteor} from 'meteor/meteor';
+
+TrainersAccount.propTypes = {
+  accountDetails: React.PropTypes.object.isRequired,
+  clientCount: React.propTypes.number.isRequired,
+};
 
 export default class TrainersAccount extends React.Component {
   sendWarningEmail() {
@@ -55,7 +61,9 @@ export default class TrainersAccount extends React.Component {
                           <td>{this.props.accountDetails.clientLimit}</td>
                           <td>{this.props.accountDetails.lastLogin}</td>
                           <td>
-                            <button className="btn-floating red waves-effect" onClick={this.sendWarningEmail}><i className="material-icons">error_outline</i></button>
+                            <button className="btn-floating red waves-effect" onClick={this.sendWarningEmail}>
+                              <i className="material-icons">error_outline</i>
+                            </button>
                           </td>
                         </tr>
                       </tbody>

@@ -16,12 +16,13 @@ export default class UserProfile extends React.Component {
     const data = e.target.value;
 
     Meteor.call('updateMyProfile', {
-      fieldName, data,
+      fieldName,
+      data
     }, (error) => {
       if (error) {
         Alert.error(error.reason, {
           position: 'top-right',
-          effect: 'jelly',
+          effect: 'jelly'
         });
       }
     });
@@ -31,8 +32,8 @@ export default class UserProfile extends React.Component {
     const styles = {
       textareaHeight: {
         height: 100,
-        overflowY: 'scroll',
-      },
+        overflowY: 'scroll'
+      }
     };
 
     if (this.props.userProfile.userStatus == 'suspended') {
@@ -56,61 +57,61 @@ export default class UserProfile extends React.Component {
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Username:</span>
-                          <input type="text" name="username" placeholder="Username" defaultValue={this.props.userProfile.username} readOnly />
+                          <input type="text" name="username" placeholder="Username" defaultValue={this.props.userProfile.username} readOnly/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">First Name:</span>
-                          <input type="text" name="firstName" className="validate" placeholder="First Name" minLength={2} onChange={this.updateField} defaultValue={this.props.userProfile.firstName} required />
+                          <input type="text" name="firstName" className="validate" placeholder="First Name" minLength={2} onChange={this.updateField} defaultValue={this.props.userProfile.firstName} required/>
                         </div>
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Last Name:</span>
-                          <input type="text" name="lastName" className="validate" placeholder="Last Name" minLength={2} onChange={this.updateField} defaultValue={this.props.userProfile.lastName} required />
+                          <input type="text" name="lastName" className="validate" placeholder="Last Name" minLength={2} onChange={this.updateField} defaultValue={this.props.userProfile.lastName} required/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Date Of Birth:</span>
-                          <input type="date" name="birthday" className="validate" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.props.userProfile.birthday} />
+                          <input type="date" name="birthday" className="validate" placeholder="Date of Birth" onChange={this.updateField} defaultValue={this.props.userProfile.birthday}/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m3 l3">
                           <span className="blue-text myBoldProfileHeading">Address:</span>
-                          <input type="text" name="address" className="validate" placeholder="Address" onChange={this.updateField} defaultValue={this.props.userProfile.address} />
+                          <input type="text" name="address" className="validate" placeholder="Address" onChange={this.updateField} defaultValue={this.props.userProfile.address}/>
                         </div>
                         <div className="input-field col s12 m3 l3">
-                        <span className="blue-text myBoldProfileHeading">City:</span>
-                        <input type="text" name="city" className="validate" placeholder="City" onChange={this.updateField} defaultValue={this.props.userProfile.city} />
+                          <span className="blue-text myBoldProfileHeading">City:</span>
+                          <input type="text" name="city" className="validate" placeholder="City" onChange={this.updateField} defaultValue={this.props.userProfile.city}/>
                         </div>
                         <div className="input-field col s12 m3 l3">
                           <span className="blue-text myBoldProfileHeading">State:</span>
-                          <input type="text" name="state" className="validate" placeholder="State" onChange={this.updateField} defaultValue={this.props.userProfile.state} />
+                          <input type="text" name="state" className="validate" placeholder="State" onChange={this.updateField} defaultValue={this.props.userProfile.state}/>
                         </div>
                         <div className="input-field col s12 m3 l3">
                           <span className="blue-text myBoldProfileHeading">Zip Code</span>
-                          <input type="text" name="zip" className="validate" placeholder="Zip Code" onChange={this.updateField} defaultValue={this.props.userProfile.zip} />
+                          <input type="text" name="zip" className="validate" placeholder="Zip Code" onChange={this.updateField} defaultValue={this.props.userProfile.zip}/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m4 l4">
-                        <span className="blue-text myBoldProfileHeading">Home Phone:</span>
-                          <input type="text" name="homePhone" className="validate" placeholder="Home Phone" onChange={this.updateField} defaultValue={this.props.userProfile.homePhone} />
+                          <span className="blue-text myBoldProfileHeading">Home Phone:</span>
+                          <input type="text" name="homePhone" className="validate" placeholder="Home Phone" onChange={this.updateField} defaultValue={this.props.userProfile.homePhone}/>
                         </div>
                         <div className="input-field col s12 m4 l4">
                           <span className="blue-text myBoldProfileHeading">Work Phone:</span>
-                          <input type="text" name="workPhone" className="validate" placeholder="Work Phone" onChange={this.updateField} defaultValue={this.props.userProfile.workPhone} />
+                          <input type="text" name="workPhone" className="validate" placeholder="Work Phone" onChange={this.updateField} defaultValue={this.props.userProfile.workPhone}/>
                         </div>
                         <div className="input-field col s12 m4 l4">
                           <span className="blue-text myBoldProfileHeading">Emergency Contact:</span>
-                          <input type="text" name="emergencyContact" className="validate" placeholder="Emergency Contact" onChange={this.updateField} defaultValue={this.props.userProfile.emergencyContact} />
+                          <input type="text" name="emergencyContact" className="validate" placeholder="Emergency Contact" onChange={this.updateField} defaultValue={this.props.userProfile.emergencyContact}/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12 m6 l6">
                           <span className="blue-text myBoldProfileHeading">Email:</span>
-                          <input type="email" name="email" placeholder="Email" defaultValue={this.props.userProfile.emails[0].address} readOnly />
+                          <input type="email" name="email" placeholder="Email" defaultValue={this.props.userProfile.emails[0].address} readOnly/>
                         </div>
                       </div>
                       <div className="row">

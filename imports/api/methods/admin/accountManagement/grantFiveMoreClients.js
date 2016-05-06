@@ -1,7 +1,7 @@
-import { Meteor } from 'meteor/meteor';
-import { ValidatedMethod } from 'meteor/mdg:validated-method';
-import { Roles } from 'meteor/alanning:roles';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import {Meteor} from 'meteor/meteor';
+import {ValidatedMethod} from 'meteor/mdg:validated-method';
+import {Roles} from 'meteor/alanning:roles';
+import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
 export const grantFiveMoreClients = new ValidatedMethod({
   name: 'grantFiveMoreClients',

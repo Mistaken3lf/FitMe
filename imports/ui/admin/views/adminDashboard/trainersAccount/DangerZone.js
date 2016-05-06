@@ -1,8 +1,8 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {Meteor} from 'meteor/meteor';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import '/node_modules/sweetalert/dist/sweetalert.min.js';
-import '/node_modules/sweetalert/dist/sweetalert.css';
+import {swal} from 'sweetalert';
 
 function deleteTrainersAccount() {
   const trainerId = FlowRouter.getParam('_id');
@@ -24,9 +24,7 @@ function deleteTrainersAccount() {
     if (isConfirm) {
       swal('Reset!', 'Account has been reset.', 'success');
       // Call server function to delete the client clicked on
-      Meteor.call('resetAccount', {
-        trainerId,
-      });
+      Meteor.call('resetAccount', {trainerId});
 
       Alert.success('Account has been reset', {
         position: 'top-right',

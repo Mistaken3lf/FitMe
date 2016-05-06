@@ -1,6 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
-import {FlowRouter} from 'meteor/kadira:flow-router';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
 
 function activateMonthlyPlan() {
   const trainerId = FlowRouter.getParam('_id');
