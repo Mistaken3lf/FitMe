@@ -1,11 +1,13 @@
 import React from 'react';
-import {Roles} from 'meteor/alanning:roles';
 import AdminNavigation from './AdminNavigation.js';
 import TrainerNavigation from './TrainerNavigation.js';
 import ClientNavigation from './ClientNavigation.js';
 import CommonNavigation from './CommonNavigation.js';
+import {Meteor} from 'meteor/meteor';
+import {Roles} from 'meteor/alanning:roles';
+import {composeWithTracker} from 'react-komposer';
 
-export default class Navigation extends React.Component {
+class Navigation extends React.Component {
   versionNumber() {
     const version = '1.1.9';
 
@@ -15,19 +17,30 @@ export default class Navigation extends React.Component {
   renderNav() {
     if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
       return (
-        <AdminNavigation versionNumber={this.versionNumber()} username={this.props.currentUser.username} />
+        <AdminNavigation
+          versionNumber={this.versionNumber()}
+          username={this.props.currentUser.username}
+        />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), 'trainer')) {
       return (
-        <TrainerNavigation versionNumber={this.versionNumber()} username={this.props.currentUser.username} />
+        <TrainerNavigation
+          versionNumber={this.versionNumber()}
+          username={this.props.currentUser.username}
+        />
       );
     } else if (Roles.userIsInRole(Meteor.userId(), 'client')) {
       return (
-        <ClientNavigation versionNumber={this.versionNumber()} username={this.props.currentUser.username}  />
+        <ClientNavigation
+          versionNumber={this.versionNumber()}
+          username={this.props.currentUser.username}
+        />
       );
     } else {
       return (
-        <CommonNavigation versionNumber={this.versionNumber()} />
+        <CommonNavigation
+          versionNumber={this.versionNumber()}
+        />
       );
     }
   }
@@ -40,3 +53,15 @@ export default class Navigation extends React.Component {
     );
   }
 }
+
+function composer(props, onData) {
+  const currentUser = Meteor.users.findOne({
+    _id: Meteor.userId(),
+  });
+
+  onData(null, {
+    currentUser,
+  });
+}
+
+export default composeWithTracker(composer)(Navigation);
