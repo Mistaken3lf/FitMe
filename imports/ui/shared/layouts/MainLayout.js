@@ -1,10 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Alert from 'react-s-alert';
 import Navigation from '../views/navigation/Navigation.js';
 
-MainLayout.propTypes = {
-  content: PropTypes.object.isRequired,
-};
 
 const MainLayout = ({content}) => (
   <div>
