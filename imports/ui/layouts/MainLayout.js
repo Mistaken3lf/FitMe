@@ -1,6 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 import Navigation from '../views/navigation/Navigation.js';
+import {Grid} from 'react-bootstrap';
 
 
 const MainLayout = ({content}) => (
@@ -9,9 +10,9 @@ const MainLayout = ({content}) => (
       <Navigation />
     </header>
     <main>
-      <div className="container-fluid">
+      <Grid fluid={true}>
         {content}
-      </div>
+      </Grid>
       <Alert stack={{limit: 3}} />
     </main>
   </div>

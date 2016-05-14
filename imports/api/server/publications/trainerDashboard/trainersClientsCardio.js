@@ -3,7 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { ClientCardio } from '../../../collections/clientCardio.js';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-Meteor.publish('trainer.clientsCardio', function (currentClientsId) {
+Meteor.publish('trainersClientsCardio', function (currentClientsId) {
   new SimpleSchema({
     currentClientsId: {
       type: String,

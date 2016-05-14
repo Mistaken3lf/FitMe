@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-Meteor.publish('trainer.clientsProfile', function (currentClientsId) {
+Meteor.publish('trainersClientsProfile', function (currentClientsId) {
   new SimpleSchema({
     currentClientsId: {
       type: String,

@@ -3,7 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { ClientStats } from '../../../collections/clientStats.js';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-Meteor.publish('trainer.clientsStats', function (currentClientsId) {
+Meteor.publish('trainersClientsStats', function (currentClientsId) {
   new SimpleSchema({
     currentClientsId: {
       type: String,

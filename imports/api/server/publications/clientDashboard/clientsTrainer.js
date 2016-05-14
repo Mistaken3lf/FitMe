@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 
-Meteor.publish('clients.trainer', function () {
+Meteor.publish('clientsTrainer', function () {
   const currentClient = Meteor.users.findOne({
     _id: this.userId,
   });
