@@ -17,8 +17,8 @@ export default class CommonNavigation extends React.Component {
           </Nav>
           <Nav pullRight>
             <NavDropdown eventKey={3} title="Login/SignUp" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
+              <MenuItem eventKey={3.1} href="/login">Login</MenuItem>
+              <MenuItem eventKey={3.2}>Sign Up</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

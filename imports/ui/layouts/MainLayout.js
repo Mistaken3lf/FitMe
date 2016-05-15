@@ -1,6 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
-import Navigation from '../views/navigation/Navigation.js';
+import Navigation from '../pages/navigation/Navigation.js';
 import {Grid} from 'react-bootstrap';
 
 

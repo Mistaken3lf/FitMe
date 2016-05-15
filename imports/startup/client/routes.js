@@ -1,8 +1,9 @@
 import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { mount } from 'react-mounter';
-import MainLayout from '../../ui/shared/layouts/MainLayout.js';
-import Home from '../../ui/shared/views/home/Home.js';
+import MainLayout from '../../ui/layouts/MainLayout.js';
+import Home from '../../ui/pages/home/Home.js';
+import Login from '../../ui/pages/login/Login.js';
 
 // *********************** Common Routes ************************************ //
 
