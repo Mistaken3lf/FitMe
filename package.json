@@ -27,8 +27,7 @@
         "always"
       ],
       "import/no-unresolved": [
-        2,
-        {
+        2, {
           "ignore": [
             "^meteor/"
           ]
