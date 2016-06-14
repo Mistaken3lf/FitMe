@@ -1,11 +1,6 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Alert from 'react-s-alert';
-import Navigation from '../pages/navigation/Navigation.js';
-import {Grid} from 'react-bootstrap';
-
-MainLayout.propTypes = {
-  content: PropTypes.object.isRequired,
-};
+import Navigation from '../containers/navigation.js';
 
 const MainLayout = ({content}) => (
   <div>
@@ -13,9 +8,9 @@ const MainLayout = ({content}) => (
       <Navigation />
     </header>
     <main>
-      <Grid fluid>
+      <div className="layoutContainer">
         {content}
-      </Grid>
+      </div>
       <Alert stack={{limit: 3}} />
     </main>
   </div>

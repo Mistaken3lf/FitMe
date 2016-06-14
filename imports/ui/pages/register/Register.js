@@ -1,5 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import {Meteor} from 'meteor/meteor';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 export default class SignUp extends React.Component {
   handleSubmit(e) {

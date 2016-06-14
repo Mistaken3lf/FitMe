@@ -8,11 +8,11 @@ const AdminFooter = () => (
           <ul>
             <li>
               <a href="https://www.instagram.com/go_fitme/" target="_blank">
-                <img className="responsive-img icon-IG" src="/Home/ig.png" /></a>
+                <img className="responsive-img icon-IG" src="/home/ig.png" /></a>
               <a href="https://www.facebook.com/gofitme/?fref=ts" target="_blank">
-                <img className="responsive-img icon-IG" src="/Home/fb.png" /></a>
+                <img className="responsive-img icon-IG" src="/home/fb.png" /></a>
               <a href="https://twitter.com/go_fitme" target="_blank">
-                <img className="responsive-img icon-IG" src="/Home/tw.png" /></a>
+                <img className="responsive-img icon-IG" src="/home/tw.png" /></a>
             </li>
           </ul>
           <span>
@@ -36,7 +36,7 @@ const AdminFooter = () => (
     <div className="footer-copyright grey">
       <div className="container">
         ©2016
-        <img className="responsive-img footer-logo" src="/Home/FitMe-text-logo3.png" />
+        <img className="responsive-img footer-logo" src="/home/FitMe-text-logo3.png" />
         All rights reserved.
         <a className="white-text text-accent-2 right" href="http://www.divelop.io">
           <b>

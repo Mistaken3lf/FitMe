@@ -1,11 +1,15 @@
 import React from 'react';
 
 export default class SignUpAdvertisement extends React.Component {
+  componentDidMount() {
+    $('.parallax').parallax();
+  }
+
   render() {
     return (
       <section id="parallax-mid">
         <div className="parallax-container center-align">
-          <div className="parallax"><img src="/Home/coding.jpg" /></div>
+          <div className="parallax"><img src="/home/coding.jpg" /></div>
           <br />
           <br />
           <br />

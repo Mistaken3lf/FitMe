@@ -17,7 +17,7 @@ const FinalLook = () => (
     </section>
     <div className="row">
       <div className="col s12 m12 l12">
-        <img src="/Home/showcase1.jpg" className="responsive-img" />
+        <img src="/home/showcase1.jpg" className="responsive-img" />
       </div>
     </div>
   </div>

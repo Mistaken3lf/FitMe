@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default class AppPreview extends React.Component {
+  componentDidMount() {
+    $('.slider').slider({
+      full_width: true
+    });
+  }
+
   render() {
     return (
       <div>
@@ -8,7 +14,7 @@ export default class AppPreview extends React.Component {
           <div className="container">
             <br />
             <br />
-            <h1 className="header center blue-text">What's Inside?</h1>
+            <h1 className="header center blue-text">Whats Inside?</h1>
             <div className="row center">
               <h5 className="header col s12 light">Preview the app and see what FitMe can offer you!</h5>
             </div>
@@ -21,14 +27,14 @@ export default class AppPreview extends React.Component {
           <div className="slider">
             <ul className="slides">
               <li>
-                <img src="/Home/car-client.jpg" />
+                <img src="/home/car-client.jpg" />
                 <div className="caption right-align">
                   <h3>CLIENT LIST</h3>
                   <h5 className="dark white-text">View and Manage your clients.</h5>
                 </div>
               </li>
               <li>
-                <img src="/Home/car-sched.jpg" />
+                <img src="/home/car-sched.jpg" />
                 <div className="caption right-align">
                   <h3>Workout Schedule</h3>
                   <h5 className="light white-text">Never miss a session.</h5>
@@ -36,14 +42,14 @@ export default class AppPreview extends React.Component {
                 </div>
               </li>
               <li>
-                <img src="/Home/car-cardio.jpg" />
+                <img src="/home/car-cardio.jpg" />
                 <div className="caption right-align">
                   <h3>Cardio Tracking</h3>
                   <h5 className="light white-text">You do the running, we do the tracking!</h5>
                 </div>
               </li>
               <li>
-                <img src="/Home/car-workout.jpg" />
+                <img src="/home/car-workout.jpg" />
                 <div className="caption right-align">
                   <h3>WORKOUT</h3>
                   <h5 className="light white-text">If you build it, they will come!</h5>

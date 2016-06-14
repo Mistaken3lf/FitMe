@@ -5,9 +5,8 @@ import ClientNavigation from './ClientNavigation.js';
 import CommonNavigation from './CommonNavigation.js';
 import {Meteor} from 'meteor/meteor';
 import {Roles} from 'meteor/alanning:roles';
-import {createContainer} from 'meteor/react-meteor-data';
 
-class Navigation extends Component {
+export default class Navigation extends Component {
   versionNumber() {
     const version = '1.1.9';
 
@@ -57,13 +56,3 @@ class Navigation extends Component {
 Navigation.propType = {
   currentUser: PropTypes.object.isRequired,
 };
-
-export default createContainer(() => {
-  const currentUser = Meteor.users.findOne({
-    id: Meteor.userId(),
-  });
-
-  return {
-    currentUser
-  };
-}, Navigation);

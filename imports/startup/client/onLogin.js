@@ -1,11 +1,12 @@
 import Alert from 'react-s-alert';
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 import {Roles} from 'meteor/alanning:roles';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import { Accounts } from 'meteor/accounts-base';
+import {Accounts} from 'meteor/accounts-base';
+import {updateLoginStatus} from '../../api/methods/login/updateLoginStatus.js';
 
 Accounts.onLogin(() => {
-  Meteor.call('setLoginStatus');
+  Meteor.call("updateLoginStatus");
 
   // Go to the admin home if they are an admin
   if (Roles.userIsInRole(Meteor.userId(), 'admin')) {

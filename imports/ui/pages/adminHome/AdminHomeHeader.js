@@ -12,7 +12,7 @@ const AdminHeader = () => (
         <br />
         <br />
         <br />
-        <img className="responsive-img logo-img" src="/Home/FitMe-text-logo3.png" />
+        <img className="responsive-img logo-img" src="/home/FitMe-text-logo3.png" />
       </div>
       <div className="row center-align">
         <h5 className="header col s12 light white-text">TRAINING | DEDICATION | RESULTS</h5>

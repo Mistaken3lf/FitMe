@@ -1,6 +1,6 @@
 import moment from 'moment';
-import { Meteor } from 'meteor/meteor';
-import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import {Meteor} from 'meteor/meteor';
+import {ValidatedMethod} from 'meteor/mdg:validated-method';
 
 export const updateLoginStatus = new ValidatedMethod({
   name: 'updateLoginStatus',

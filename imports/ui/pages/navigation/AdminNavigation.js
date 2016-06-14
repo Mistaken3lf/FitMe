@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlowRouter} from 'meteor/kadira:flow-router';
+import {Meteor} from 'meteor/meteor';
 
 export default class AdminNavigation extends React.Component {
   logout(e) {
@@ -20,7 +21,7 @@ export default class AdminNavigation extends React.Component {
             <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
             <ul className="side-nav" id="mobile-menu">
               <div className="white">
-                <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
+                <img className="sidebarLogo" src="/navigation/fitMeSidebarLogo.png" />
                 <br />
                 <hr className="navSeperator" />
               </div>
@@ -36,7 +37,7 @@ export default class AdminNavigation extends React.Component {
             </ul>
             <ul className="side-nav fixed" id="desktop-menu">
               <div className="white">
-                <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
+                <img className="sidebarLogo" src="/navigation/fitMeSidebarLogo.png" />
                 <br />
                 <hr className="navSeperator" />
               </div>

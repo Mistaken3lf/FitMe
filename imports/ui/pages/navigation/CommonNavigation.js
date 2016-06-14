@@ -1,28 +1,51 @@
 import React from 'react';
-import {Nav, Navbar, NavItem, MenuItem, NavDropdown} from 'react-bootstrap';
 
 export default class CommonNavigation extends React.Component {
+  componentDidMount() {
+    //Make mobile sidebar on left side collapsible
+    $('.button-collapse').sideNav({
+      menuWidth: 210,
+      edge: 'left',
+      closeOnClick: true
+    });
+  }
+
   render() {
     return (
-      <Navbar fluid={true}>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="/">FitMe</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="/">Home</NavItem>
-          </Nav>
-          <Nav pullRight>
-            <NavDropdown eventKey={3} title="Login/SignUp" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1} href="/login">Login</MenuItem>
-              <MenuItem eventKey={3.2}>Sign Up</MenuItem>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <div className="navbar-fixed">
+        <nav className="blue">
+          <div className="nav-wrapper">
+            <a href="#" className="brand-logo">FitMe</a>
+            <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
+            <ul className="side-nav" id="mobile-menu">
+              <div className="white">
+                <img className="sidebarLogo" src="/navigation/fitMeSidebarLogo.png" />
+                <br />
+                <hr className="navSeperator" />
+              </div>
+              <div>
+                <h6 className="center-align blue-text">Build: v{this.props.versionNumber}</h6>
+              </div>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/login">Login</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/register">Register</a>
+            </ul>
+            <ul className="side-nav fixed" id="desktop-menu">
+              <div className="white">
+                <img className="sidebarLogo" src="/navigation/fitMeSidebarLogo.png" />
+                <br />
+                <hr className="navSeperator" />
+              </div>
+              <div>
+                <h6 className="center-align blue-text">Build: v{this.props.versionNumber}</h6>
+              </div>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/">Home</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/login">Login</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/register">Register</a>
+            </ul>
+          </div>
+        </nav>
+      </div>
     );
   }
 }

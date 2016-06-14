@@ -5,8 +5,8 @@ import { Roles } from 'meteor/alanning:roles';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Accounts } from 'meteor/accounts-base';
 
-export const signUp = new ValidatedMethod({
-  name: 'registerTrainer',
+export const register = new ValidatedMethod({
+  name: 'register',
 
   validate: new SimpleSchema({
     username: {

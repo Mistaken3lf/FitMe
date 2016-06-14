@@ -4,6 +4,9 @@ import {mount} from 'react-mounter';
 import MainLayout from '../../ui/layouts/MainLayout.js';
 import Home from '../../ui/pages/home/Home.js';
 import Login from '../../ui/pages/login/Login.js';
+import Register from '../../ui/pages/register/Register.js';
+import AdminHome from '../../ui/pages/adminHome/AdminHome.js';
+import ForgotPassword from '../../ui/pages/forgotPassword/ForgotPassword.js';
 
 // *********************** Common Routes ************************************ //
 

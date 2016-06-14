@@ -16,9 +16,9 @@ export default class AdminHome extends React.Component {
   render() {
     return (
       <div>
-        <AdminHeader />
-        <AdminWelcome />
-        <AdminFooter />
+        <AdminHomeHeader />
+        <AdminHomeWelcome />
+        <AdminHomeFooter />
       </div>
     );
   }
