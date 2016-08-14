@@ -1,8 +1,9 @@
 import React from 'react';
+import $ from 'jquery';
 
 export default class CommonNavigation extends React.Component {
   componentDidMount() {
-    //Make mobile sidebar on left side collapsible
+    // Make mobile sidebar on left side collapsible
     $('.button-collapse').sideNav({
       menuWidth: 210,
       edge: 'left',

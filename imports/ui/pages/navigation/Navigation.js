@@ -1,10 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import AdminNavigation from './AdminNavigation.js';
 import TrainerNavigation from './TrainerNavigation.js';
 import ClientNavigation from './ClientNavigation.js';
 import CommonNavigation from './CommonNavigation.js';
-import {Meteor} from 'meteor/meteor';
-import {Roles} from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 
 export default class Navigation extends Component {
   versionNumber() {
@@ -52,7 +52,3 @@ export default class Navigation extends Component {
     );
   }
 }
-
-Navigation.propType = {
-  currentUser: PropTypes.object.isRequired,
-};

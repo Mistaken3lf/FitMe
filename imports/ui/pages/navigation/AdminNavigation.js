@@ -1,6 +1,6 @@
 import React from 'react';
-import {FlowRouter} from 'meteor/kadira:flow-router';
-import {Meteor} from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
 
 export default class AdminNavigation extends React.Component {
   logout(e) {

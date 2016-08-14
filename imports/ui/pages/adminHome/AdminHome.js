@@ -1,6 +1,7 @@
 import React from 'react';
-import {Roles} from 'meteor/alanning:roles';
-import {FlowRouter} from 'meteor/kadira:flow-router';
+import { Roles } from 'meteor/alanning:roles';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
 import AdminHomeHeader from './AdminHomeHeader.js';
 import AdminHomeWelcome from './AdminHomeWelcome.js';
 import AdminHomeFooter from './AdminHomeFooter.js';

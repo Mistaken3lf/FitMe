@@ -6,7 +6,7 @@ import {Accounts} from 'meteor/accounts-base';
 import {updateLoginStatus} from '../../api/methods/login/updateLoginStatus.js';
 
 Accounts.onLogin(() => {
-  Meteor.call("updateLoginStatus");
+  updateLoginStatus.call();
 
   // Go to the admin home if they are an admin
   if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
