@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import CommandCenter from '../containers/commandCenter.js';
-import AddTrainerAdmin from '../components/CommandCenter/AddTrainerAdmin.js';
-import AdminHome from '../components/AdminHome/AdminHome.js';
-import AdminDashboard from '../containers/adminDashboard.js';
-import Layout from '../../common/components/Layout/Layout.js';
+import CommandCenter from '../ui/containers/commandCenter.js';
+import AddTrainerAdmin from '../ui/pages/CommandCenter/AddTrainerAdmin.js';
+import AdminHome from '../ui/pages/AdminHome/AdminHome.js';
+import AdminDashboard from '../ui/containers/adminDashboard.js';
+import Layout from '../ui/layout/MainLayout.js';
 
 //GROUP ADMIN ROUTES
 const adminRoutes = FlowRouter.group({

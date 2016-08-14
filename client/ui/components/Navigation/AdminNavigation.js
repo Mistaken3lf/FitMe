@@ -26,7 +26,7 @@ export default class AdminNavigation extends React.Component {
         <nav className="blue">
           <div className="nav-wrapper">
             <a href="#" className="brand-logo">FitMe</a>
-            <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
+            <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="material-icons">menu</i></a>
             <ul className="side-nav" id="mobile-menu">
               <div className="white">
                 <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />

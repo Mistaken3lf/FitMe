@@ -1,6 +1,6 @@
 {
   "name": "fitme",
-  "version": "1.2",
+  "version": "1.2.0",
   "description": "Workout management web app",
   "main": "index.js",
   "scripts": {

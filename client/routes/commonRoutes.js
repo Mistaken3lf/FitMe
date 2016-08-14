@@ -1,18 +1,18 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import Home from '../components/Home/Home.js';
-import ChangePassword from '../components/ChangePassword/ChangePassword.js';
-import ContactPage from '../components/ContactPage/ContactPage.js';
-import ForgotPassword from '../components/ForgotPassword/ForgotPassword.js';
-import Layout from '../components/Layout/Layout.js';
-import Login from '../components/Login/Login.js';
-import NotFound from '../components/NotFound/NotFound.js';
-import NotAuthorized from '../components/NotAuthorized/NotAuthorized.js';
-import Register from '../components/Register/Register.js';
-import ResetPassword from '../components/ResetPassword/ResetPassword.js';
-import TermsAndConditions from '../components/TermsAndConditions/TermsAndConditions.js';
-import MyProfile from '../containers/myProfile.js';
+import Home from '../ui/pages/Home/Home.js';
+import ChangePassword from '../ui/pages/ChangePassword/ChangePassword.js';
+import ContactPage from '../ui/pages/ContactPage/ContactPage.js';
+import ForgotPassword from '../ui/pages/ForgotPassword/ForgotPassword.js';
+import Layout from '../ui/layout/MainLayout.js';
+import Login from '../ui/pages/Login/Login.js';
+import NotFound from '../ui/components/NotFound/NotFound.js';
+import NotAuthorized from '../ui/components/NotAuthorized/NotAuthorized.js';
+import Register from '../ui/pages/Register/Register.js';
+import ResetPassword from '../ui/pages/ResetPassword/ResetPassword.js';
+import TermsAndConditions from '../ui/pages/TermsAndConditions/TermsAndConditions.js';
+import MyProfile from '../ui/containers/myProfile.js';
 
 //SHARED USER ROUTES
 const commmonRoutes = FlowRouter.group({

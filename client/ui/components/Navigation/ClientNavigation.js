@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 
-export default class TrainerNavigation extends React.Component {
+export default class ClientNavigation extends React.Component {
   componentDidMount() {
     //Make mobile sidebar on left side collapsible
     $('.button-collapse').sideNav({
@@ -26,7 +26,7 @@ export default class TrainerNavigation extends React.Component {
         <nav className="blue">
           <div className="nav-wrapper">
             <a href="#" className="brand-logo">FitMe</a>
-            <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
+            <a href="#" data-activates="mobile-menu" className="button-collapse"><i className="material-icons">menu</i></a>
             <ul className="side-nav" id="mobile-menu">
               <div className="white">
                 <img className="sidebarLogo" src="/Navigation/fitMeSidebarLogo.png" />
@@ -37,13 +37,11 @@ export default class TrainerNavigation extends React.Component {
               <div>
                 <h6 className="center-align blue-text">Build: v{this.props.versionNumber}</h6>
               </div>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/trainerHome">Home</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/clientHome">Home</a>
               <a className="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/myAccount">My Account</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/currentClients">My Clients</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/trainerSchedule">Schedule</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/trainerGuide">Guide/FAQs</a>
-              <a className="btn blue white-text waves-effect logout" id="navPad" onClick={this.logout}  href="#!">Logout</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/myDashboard">Dashboard</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
+              <a className="btn blue white-text waves-effect logout" onClick={this.logout} id="navPad"  href="#!">Logout</a>
             </ul>
             <ul className="side-nav fixed" id="desktop-menu">
               <div className="white">
@@ -55,12 +53,10 @@ export default class TrainerNavigation extends React.Component {
               <div>
                 <h6 className="center-align blue-text">Build: v{this.props.versionNumber}</h6>
               </div>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/trainerHome">Home</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/clientHome">Home</a>
               <a className="btn blue white-text waves-effect" id="navPad" href="/myProfile">Profile</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/myAccount">My Account</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/currentClients">My Clients</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/trainerSchedule">Schedule</a>
-              <a className="btn blue white-text waves-effect" id="navPad" href="/trainerGuide">Guide/FAQs</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/myDashboard">Dashboard</a>
+              <a className="btn blue white-text waves-effect" id="navPad" href="/changePassword">Change Password</a>
               <a className="btn blue white-text waves-effect logout" id="navPad" onClick={this.logout}  href="#!">Logout</a>
             </ul>
           </div>
