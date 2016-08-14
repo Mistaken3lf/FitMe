@@ -64,6 +64,7 @@
   "homepage": "https://github.com/Mistaken3lf/FitMe#readme",
   "dependencies": {
     "jquery": "^3.1.0",
+    "meteor-node-stubs": "^0.2.3",
     "moment": "^2.14.1",
     "react": "^15.3.0",
     "react-addons-pure-render-mixin": "^15.3.0",
