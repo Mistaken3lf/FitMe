@@ -26,7 +26,7 @@
   "homepage": "https://github.com/Mistaken3lf/FitMe#readme",
   "dependencies": {
     "moment": "^2.13.0",
-    "react": "^15.0.2",
+    "react": "^15.5.4",
     "react-addons-pure-render-mixin": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-komposer": "^2.0.0",
